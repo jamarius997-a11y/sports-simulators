@@ -1,0 +1,1745 @@
+{
+ "nba:401909907": {
+  "key": "nba:401909907",
+  "league": "nba",
+  "gameId": "401909907",
+  "start": "2026-11-03T00:00Z",
+  "away": {
+   "abbr": "OKC",
+   "name": "Oklahoma City Thunder"
+  },
+  "home": {
+   "abbr": "CLE",
+   "name": "Cleveland Cavaliers"
+  },
+  "rest": [
+   1,
+   1
+  ],
+  "simPHome": 0.5247,
+  "rawPHome": 0.5215,
+  "simMargin": 0.86,
+  "simScore": [
+   111.86,
+   112.72
+  ],
+  "simTotal": 224.57,
+  "mkt": {
+   "line": "CLE -4.5",
+   "total": 229.5,
+   "pHome": 0.6463166764997754,
+   "margin": 4.5
+  },
+  "loggedAt": "2026-11-02T22:28:48.860Z",
+  "result": null
+ },
+ "nba:401909908": {
+  "key": "nba:401909908",
+  "league": "nba",
+  "gameId": "401909908",
+  "start": "2026-11-03T00:30Z",
+  "away": {
+   "abbr": "DET",
+   "name": "Detroit Pistons"
+  },
+  "home": {
+   "abbr": "CHA",
+   "name": "Charlotte Hornets"
+  },
+  "rest": [
+   2,
+   1
+  ],
+  "simPHome": 0.3392,
+  "rawPHome": 0.359,
+  "simMargin": -5.65,
+  "simScore": [
+   105.75,
+   100.11
+  ],
+  "simTotal": 205.86,
+  "mkt": {
+   "line": "DET -5.5",
+   "total": 209.5,
+   "pHome": 0.323097781177753,
+   "margin": -5.5
+  },
+  "loggedAt": "2026-11-02T22:28:49.091Z",
+  "result": null
+ },
+ "nba:401909909": {
+  "key": "nba:401909909",
+  "league": "nba",
+  "gameId": "401909909",
+  "start": "2026-11-03T00:30Z",
+  "away": {
+   "abbr": "ATL",
+   "name": "Atlanta Hawks"
+  },
+  "home": {
+   "abbr": "IND",
+   "name": "Indiana Pacers"
+  },
+  "rest": [
+   1,
+   0
+  ],
+  "simPHome": 0.1856,
+  "rawPHome": 0.2165,
+  "simMargin": -12.7,
+  "simScore": [
+   119.53,
+   106.82
+  ],
+  "simTotal": 226.35,
+  "mkt": {
+   "line": "ATL -10.5",
+   "total": 229.5,
+   "pHome": 0.18944159830705426,
+   "margin": -10.5
+  },
+  "loggedAt": "2026-11-02T22:28:49.313Z",
+  "result": null
+ },
+ "nba:401909910": {
+  "key": "nba:401909910",
+  "league": "nba",
+  "gameId": "401909910",
+  "start": "2026-11-03T00:30Z",
+  "away": {
+   "abbr": "BKN",
+   "name": "Brooklyn Nets"
+  },
+  "home": {
+   "abbr": "NY",
+   "name": "New York Knicks"
+  },
+  "rest": [
+   0,
+   2
+  ],
+  "simPHome": 0.8859,
+  "rawPHome": 0.856,
+  "simMargin": 16.79,
+  "simScore": [
+   98.2,
+   114.99
+  ],
+  "simTotal": 213.19,
+  "mkt": {
+   "line": "NY -14.5",
+   "total": 218.5,
+   "pHome": 0.8889898927761495,
+   "margin": 14.5
+  },
+  "loggedAt": "2026-11-02T22:28:49.543Z",
+  "result": null
+ },
+ "nba:401909911": {
+  "key": "nba:401909911",
+  "league": "nba",
+  "gameId": "401909911",
+  "start": "2026-11-03T00:30Z",
+  "away": {
+   "abbr": "WSH",
+   "name": "Washington Wizards"
+  },
+  "home": {
+   "abbr": "ORL",
+   "name": "Orlando Magic"
+  },
+  "rest": [
+   2,
+   0
+  ],
+  "simPHome": 0.5849,
+  "rawPHome": 0.574,
+  "simMargin": 3.09,
+  "simScore": [
+   110.84,
+   113.93
+  ],
+  "simTotal": 224.77,
+  "mkt": {
+   "line": "ORL -3.5",
+   "total": 224.5,
+   "pHome": 0.6148003972124381,
+   "margin": 3.5
+  },
+  "loggedAt": "2026-11-02T22:28:49.767Z",
+  "result": null
+ },
+ "nba:401909912": {
+  "key": "nba:401909912",
+  "league": "nba",
+  "gameId": "401909912",
+  "start": "2026-11-03T00:30Z",
+  "away": {
+   "abbr": "CHI",
+   "name": "Chicago Bulls"
+  },
+  "home": {
+   "abbr": "PHI",
+   "name": "Philadelphia 76ers"
+  },
+  "rest": [
+   2,
+   1
+  ],
+  "simPHome": 0.8124,
+  "rawPHome": 0.7815,
+  "simMargin": 12.35,
+  "simScore": [
+   109.64,
+   121.99
+  ],
+  "simTotal": 231.62,
+  "mkt": {
+   "line": "PHI -9.5",
+   "total": 238.5,
+   "pHome": 0.7867944967911461,
+   "margin": 9.5
+  },
+  "loggedAt": "2026-11-02T22:28:49.973Z",
+  "result": null
+ },
+ "nba:401909913": {
+  "key": "nba:401909913",
+  "league": "nba",
+  "gameId": "401909913",
+  "start": "2026-11-03T01:00Z",
+  "away": {
+   "abbr": "SAC",
+   "name": "Sacramento Kings"
+  },
+  "home": {
+   "abbr": "DAL",
+   "name": "Dallas Mavericks"
+  },
+  "rest": [
+   1,
+   2
+  ],
+  "simPHome": 0.8362,
+  "rawPHome": 0.805,
+  "simMargin": 14.43,
+  "simScore": [
+   109.24,
+   123.67
+  ],
+  "simTotal": 232.91,
+  "mkt": {
+   "line": "DAL -8.5",
+   "total": 231.5,
+   "pHome": 0.761450824762999,
+   "margin": 8.5
+  },
+  "loggedAt": "2026-11-02T22:28:50.190Z",
+  "result": null
+ },
+ "nba:401909914": {
+  "key": "nba:401909914",
+  "league": "nba",
+  "gameId": "401909914",
+  "start": "2026-11-03T01:00Z",
+  "away": {
+   "abbr": "NO",
+   "name": "New Orleans Pelicans"
+  },
+  "home": {
+   "abbr": "MEM",
+   "name": "Memphis Grizzlies"
+  },
+  "rest": [
+   1,
+   1
+  ],
+  "simPHome": 0.7385,
+  "rawPHome": 0.7115,
+  "simMargin": 8.9,
+  "simScore": [
+   114.11,
+   123.02
+  ],
+  "simTotal": 237.13,
+  "mkt": {
+   "line": "MEM -5.5",
+   "total": 232.5,
+   "pHome": 0.676902218822247,
+   "margin": 5.5
+  },
+  "loggedAt": "2026-11-02T22:28:50.421Z",
+  "result": null
+ },
+ "nba:401909915": {
+  "key": "nba:401909915",
+  "league": "nba",
+  "gameId": "401909915",
+  "start": "2026-11-03T01:00Z",
+  "away": {
+   "abbr": "MIL",
+   "name": "Milwaukee Bucks"
+  },
+  "home": {
+   "abbr": "MIN",
+   "name": "Minnesota Timberwolves"
+  },
+  "rest": [
+   1,
+   1
+  ],
+  "simPHome": 0.8397,
+  "rawPHome": 0.8085,
+  "simMargin": 14.01,
+  "simScore": [
+   107.44,
+   121.44
+  ],
+  "simTotal": 228.88,
+  "mkt": {
+   "line": "MIN -10.5",
+   "total": 230.5,
+   "pHome": 0.8105584016929457,
+   "margin": 10.5
+  },
+  "loggedAt": "2026-11-02T22:28:50.632Z",
+  "result": null
+ },
+ "nba:401909916": {
+  "key": "nba:401909916",
+  "league": "nba",
+  "gameId": "401909916",
+  "start": "2026-11-03T01:30Z",
+  "away": {
+   "abbr": "BOS",
+   "name": "Boston Celtics"
+  },
+  "home": {
+   "abbr": "HOU",
+   "name": "Houston Rockets"
+  },
+  "rest": [
+   0,
+   1
+  ],
+  "simPHome": 0.6371,
+  "rawPHome": 0.62,
+  "simMargin": 5.25,
+  "simScore": [
+   107.45,
+   112.7
+  ],
+  "simTotal": 220.15,
+  "mkt": {
+   "line": "HOU -4.5",
+   "total": 215.5,
+   "pHome": 0.6463166764997754,
+   "margin": 4.5
+  },
+  "loggedAt": "2026-11-02T22:28:50.861Z",
+  "result": null
+ },
+ "nba:401909917": {
+  "key": "nba:401909917",
+  "league": "nba",
+  "gameId": "401909917",
+  "start": "2026-11-03T01:30Z",
+  "away": {
+   "abbr": "UTAH",
+   "name": "Utah Jazz"
+  },
+  "home": {
+   "abbr": "SA",
+   "name": "San Antonio Spurs"
+  },
+  "rest": [
+   1,
+   1
+  ],
+  "simPHome": 0.9247,
+  "rawPHome": 0.8985,
+  "simMargin": 21.23,
+  "simScore": [
+   107.1,
+   128.33
+  ],
+  "simTotal": 235.43,
+  "mkt": {
+   "line": "SA -16.5",
+   "total": 227.5,
+   "pHome": 0.9182974169220298,
+   "margin": 16.5
+  },
+  "loggedAt": "2026-11-02T22:28:51.073Z",
+  "result": null
+ },
+ "nba:401909918": {
+  "key": "nba:401909918",
+  "league": "nba",
+  "gameId": "401909918",
+  "start": "2026-11-03T02:00Z",
+  "away": {
+   "abbr": "POR",
+   "name": "Portland Trail Blazers"
+  },
+  "home": {
+   "abbr": "DEN",
+   "name": "Denver Nuggets"
+  },
+  "rest": [
+   1,
+   2
+  ],
+  "simPHome": 0.5529,
+  "rawPHome": 0.546,
+  "simMargin": 1.99,
+  "simScore": [
+   116.08,
+   118.06
+  ],
+  "simTotal": 234.14,
+  "mkt": {
+   "line": "DEN -4.5",
+   "total": 231.5,
+   "pHome": 0.6463166764997754,
+   "margin": 4.5
+  },
+  "loggedAt": "2026-11-02T22:28:51.274Z",
+  "result": null
+ },
+ "nba:401909919": {
+  "key": "nba:401909919",
+  "league": "nba",
+  "gameId": "401909919",
+  "start": "2026-11-03T03:00Z",
+  "away": {
+   "abbr": "PHX",
+   "name": "Phoenix Suns"
+  },
+  "home": {
+   "abbr": "GS",
+   "name": "Golden State Warriors"
+  },
+  "rest": [
+   2,
+   0
+  ],
+  "simPHome": 0.5603,
+  "rawPHome": 0.5525,
+  "simMargin": 2.12,
+  "simScore": [
+   112.46,
+   114.57
+  ],
+  "simTotal": 227.03,
+  "mkt": {
+   "line": "GS -2.5",
+   "total": 227.5,
+   "pHome": 0.5825421413264573,
+   "margin": 2.5
+  },
+  "loggedAt": "2026-11-02T22:28:51.463Z",
+  "result": null
+ },
+ "nba:401909920": {
+  "key": "nba:401909920",
+  "league": "nba",
+  "gameId": "401909920",
+  "start": "2026-11-03T03:00Z",
+  "away": {
+   "abbr": "TOR",
+   "name": "Toronto Raptors"
+  },
+  "home": {
+   "abbr": "LAC",
+   "name": "LA Clippers"
+  },
+  "rest": [
+   0,
+   0
+  ],
+  "simPHome": 0.3832,
+  "rawPHome": 0.398,
+  "simMargin": -3.83,
+  "simScore": [
+   110.94,
+   107.11
+  ],
+  "simTotal": 218.05,
+  "mkt": {
+   "line": "TOR -4.5",
+   "total": 219.5,
+   "pHome": 0.3536833235002245,
+   "margin": -4.5
+  },
+  "loggedAt": "2026-11-02T22:28:51.671Z",
+  "result": null
+ },
+ "nba:401909921": {
+  "key": "nba:401909921",
+  "league": "nba",
+  "gameId": "401909921",
+  "start": "2026-11-03T03:00Z",
+  "away": {
+   "abbr": "MIA",
+   "name": "Miami Heat"
+  },
+  "home": {
+   "abbr": "LAL",
+   "name": "Los Angeles Lakers"
+  },
+  "rest": [
+   2,
+   0
+  ],
+  "simPHome": 0.5923,
+  "rawPHome": 0.5805,
+  "simMargin": 3.06,
+  "simScore": [
+   119.27,
+   122.33
+  ],
+  "simTotal": 241.6,
+  "mkt": {
+   "line": "LAL -2.5",
+   "total": 236.5,
+   "pHome": 0.5825421413264573,
+   "margin": 2.5
+  },
+  "loggedAt": "2026-11-02T22:28:51.873Z",
+  "result": null
+ },
+ "nba:401909922": {
+  "key": "nba:401909922",
+  "league": "nba",
+  "gameId": "401909922",
+  "start": "2026-11-05T00:00Z",
+  "away": {
+   "abbr": "PHI",
+   "name": "Philadelphia 76ers"
+  },
+  "home": {
+   "abbr": "DET",
+   "name": "Detroit Pistons"
+  },
+  "rest": [
+   1,
+   1
+  ],
+  "simPHome": 0.7052,
+  "rawPHome": 0.681,
+  "simMargin": 7.96,
+  "simScore": [
+   101.69,
+   109.65
+  ],
+  "simTotal": 211.34,
+  "mkt": {
+   "line": null,
+   "total": null,
+   "pHome": null,
+   "margin": null
+  },
+  "loggedAt": "2026-11-02T22:28:52.106Z",
+  "result": null
+ },
+ "nba:401909923": {
+  "key": "nba:401909923",
+  "league": "nba",
+  "gameId": "401909923",
+  "start": "2026-11-05T00:00Z",
+  "away": {
+   "abbr": "ATL",
+   "name": "Atlanta Hawks"
+  },
+  "home": {
+   "abbr": "WSH",
+   "name": "Washington Wizards"
+  },
+  "rest": [
+   1,
+   1
+  ],
+  "simPHome": 0.2937,
+  "rawPHome": 0.318,
+  "simMargin": -7.64,
+  "simScore": [
+   119.51,
+   111.87
+  ],
+  "simTotal": 231.39,
+  "mkt": {
+   "line": null,
+   "total": null,
+   "pHome": null,
+   "margin": null
+  },
+  "loggedAt": "2026-11-02T22:28:52.323Z",
+  "result": null
+ },
+ "nba:401909924": {
+  "key": "nba:401909924",
+  "league": "nba",
+  "gameId": "401909924",
+  "start": "2026-11-05T00:30Z",
+  "away": {
+   "abbr": "MIL",
+   "name": "Milwaukee Bucks"
+  },
+  "home": {
+   "abbr": "BOS",
+   "name": "Boston Celtics"
+  },
+  "rest": [
+   1,
+   1
+  ],
+  "simPHome": 0.8902,
+  "rawPHome": 0.8605,
+  "simMargin": 17.46,
+  "simScore": [
+   103.42,
+   120.88
+  ],
+  "simTotal": 224.3,
+  "mkt": {
+   "line": null,
+   "total": null,
+   "pHome": null,
+   "margin": null
+  },
+  "loggedAt": "2026-11-02T22:28:52.529Z",
+  "result": null
+ },
+ "nba:401909925": {
+  "key": "nba:401909925",
+  "league": "nba",
+  "gameId": "401909925",
+  "start": "2026-11-05T00:30Z",
+  "away": {
+   "abbr": "CHA",
+   "name": "Charlotte Hornets"
+  },
+  "home": {
+   "abbr": "BKN",
+   "name": "Brooklyn Nets"
+  },
+  "rest": [
+   1,
+   1
+  ],
+  "simPHome": 0.3258,
+  "rawPHome": 0.347,
+  "simMargin": -6.5,
+  "simScore": [
+   108.14,
+   101.65
+  ],
+  "simTotal": 209.79,
+  "mkt": {
+   "line": null,
+   "total": null,
+   "pHome": null,
+   "margin": null
+  },
+  "loggedAt": "2026-11-02T22:28:52.742Z",
+  "result": null
+ },
+ "nba:401909926": {
+  "key": "nba:401909926",
+  "league": "nba",
+  "gameId": "401909926",
+  "start": "2026-11-05T00:30Z",
+  "away": {
+   "abbr": "CHI",
+   "name": "Chicago Bulls"
+  },
+  "home": {
+   "abbr": "NY",
+   "name": "New York Knicks"
+  },
+  "rest": [
+   1,
+   1
+  ],
+  "simPHome": 0.8502,
+  "rawPHome": 0.819,
+  "simMargin": 15.3,
+  "simScore": [
+   107.59,
+   122.89
+  ],
+  "simTotal": 230.48,
+  "mkt": {
+   "line": null,
+   "total": null,
+   "pHome": null,
+   "margin": null
+  },
+  "loggedAt": "2026-11-02T22:28:52.946Z",
+  "result": null
+ },
+ "nba:401909927": {
+  "key": "nba:401909927",
+  "league": "nba",
+  "gameId": "401909927",
+  "start": "2026-11-05T01:00Z",
+  "away": {
+   "abbr": "IND",
+   "name": "Indiana Pacers"
+  },
+  "home": {
+   "abbr": "MEM",
+   "name": "Memphis Grizzlies"
+  },
+  "rest": [
+   1,
+   1
+  ],
+  "simPHome": 0.892,
+  "rawPHome": 0.8625,
+  "simMargin": 17.61,
+  "simScore": [
+   104.83,
+   122.44
+  ],
+  "simTotal": 227.28,
+  "mkt": {
+   "line": null,
+   "total": null,
+   "pHome": null,
+   "margin": null
+  },
+  "loggedAt": "2026-11-02T22:28:53.134Z",
+  "result": null
+ },
+ "nba:401909928": {
+  "key": "nba:401909928",
+  "league": "nba",
+  "gameId": "401909928",
+  "start": "2026-11-05T01:00Z",
+  "away": {
+   "abbr": "UTAH",
+   "name": "Utah Jazz"
+  },
+  "home": {
+   "abbr": "NO",
+   "name": "New Orleans Pelicans"
+  },
+  "rest": [
+   1,
+   1
+  ],
+  "simPHome": 0.7493,
+  "rawPHome": 0.7215,
+  "simMargin": 9.74,
+  "simScore": [
+   115.22,
+   124.96
+  ],
+  "simTotal": 240.18,
+  "mkt": {
+   "line": null,
+   "total": null,
+   "pHome": null,
+   "margin": null
+  },
+  "loggedAt": "2026-11-02T22:28:53.348Z",
+  "result": null
+ },
+ "nba:401909929": {
+  "key": "nba:401909929",
+  "league": "nba",
+  "gameId": "401909929",
+  "start": "2026-11-05T01:00Z",
+  "away": {
+   "abbr": "CLE",
+   "name": "Cleveland Cavaliers"
+  },
+  "home": {
+   "abbr": "OKC",
+   "name": "Oklahoma City Thunder"
+  },
+  "rest": [
+   1,
+   1
+  ],
+  "simPHome": 0.566,
+  "rawPHome": 0.5575,
+  "simMargin": 2.1,
+  "simScore": [
+   111.24,
+   113.34
+  ],
+  "simTotal": 224.58,
+  "mkt": {
+   "line": null,
+   "total": null,
+   "pHome": null,
+   "margin": null
+  },
+  "loggedAt": "2026-11-02T22:28:53.563Z",
+  "result": null
+ },
+ "nba:401909930": {
+  "key": "nba:401909930",
+  "league": "nba",
+  "gameId": "401909930",
+  "start": "2026-11-05T01:30Z",
+  "away": {
+   "abbr": "MIN",
+   "name": "Minnesota Timberwolves"
+  },
+  "home": {
+   "abbr": "HOU",
+   "name": "Houston Rockets"
+  },
+  "rest": [
+   1,
+   1
+  ],
+  "simPHome": 0.7151,
+  "rawPHome": 0.69,
+  "simMargin": 7.92,
+  "simScore": [
+   107.81,
+   115.73
+  ],
+  "simTotal": 223.54,
+  "mkt": {
+   "line": null,
+   "total": null,
+   "pHome": null,
+   "margin": null
+  },
+  "loggedAt": "2026-11-02T22:28:53.796Z",
+  "result": null
+ },
+ "nba:401909931": {
+  "key": "nba:401909931",
+  "league": "nba",
+  "gameId": "401909931",
+  "start": "2026-11-05T02:00Z",
+  "away": {
+   "abbr": "TOR",
+   "name": "Toronto Raptors"
+  },
+  "home": {
+   "abbr": "DEN",
+   "name": "Denver Nuggets"
+  },
+  "rest": [
+   1,
+   1
+  ],
+  "simPHome": 0.5826,
+  "rawPHome": 0.572,
+  "simMargin": 2.97,
+  "simScore": [
+   113.71,
+   116.68
+  ],
+  "simTotal": 230.39,
+  "mkt": {
+   "line": null,
+   "total": null,
+   "pHome": null,
+   "margin": null
+  },
+  "loggedAt": "2026-11-02T22:28:54.008Z",
+  "result": null
+ },
+ "nba:401909932": {
+  "key": "nba:401909932",
+  "league": "nba",
+  "gameId": "401909932",
+  "start": "2026-11-05T02:00Z",
+  "away": {
+   "abbr": "POR",
+   "name": "Portland Trail Blazers"
+  },
+  "home": {
+   "abbr": "PHX",
+   "name": "Phoenix Suns"
+  },
+  "rest": [
+   1,
+   1
+  ],
+  "simPHome": 0.4088,
+  "rawPHome": 0.4205,
+  "simMargin": -3.05,
+  "simScore": [
+   114.49,
+   111.44
+  ],
+  "simTotal": 225.93,
+  "mkt": {
+   "line": null,
+   "total": null,
+   "pHome": null,
+   "margin": null
+  },
+  "loggedAt": "2026-11-02T22:28:54.205Z",
+  "result": null
+ },
+ "nba:401909933": {
+  "key": "nba:401909933",
+  "league": "nba",
+  "gameId": "401909933",
+  "start": "2026-11-05T02:30Z",
+  "away": {
+   "abbr": "DAL",
+   "name": "Dallas Mavericks"
+  },
+  "home": {
+   "abbr": "SA",
+   "name": "San Antonio Spurs"
+  },
+  "rest": [
+   1,
+   1
+  ],
+  "simPHome": 0.7984,
+  "rawPHome": 0.768,
+  "simMargin": 12.35,
+  "simScore": [
+   108.78,
+   121.13
+  ],
+  "simTotal": 229.91,
+  "mkt": {
+   "line": null,
+   "total": null,
+   "pHome": null,
+   "margin": null
+  },
+  "loggedAt": "2026-11-02T22:28:54.410Z",
+  "result": null
+ },
+ "nba:401909934": {
+  "key": "nba:401909934",
+  "league": "nba",
+  "gameId": "401909934",
+  "start": "2026-11-05T03:00Z",
+  "away": {
+   "abbr": "LAL",
+   "name": "Los Angeles Lakers"
+  },
+  "home": {
+   "abbr": "SAC",
+   "name": "Sacramento Kings"
+  },
+  "rest": [
+   1,
+   1
+  ],
+  "simPHome": 0.1415,
+  "rawPHome": 0.1725,
+  "simMargin": -16,
+  "simScore": [
+   125.87,
+   109.87
+  ],
+  "simTotal": 235.74,
+  "mkt": {
+   "line": null,
+   "total": null,
+   "pHome": null,
+   "margin": null
+  },
+  "loggedAt": "2026-11-02T22:28:54.605Z",
+  "result": null
+ },
+ "nba:401909935": {
+  "key": "nba:401909935",
+  "league": "nba",
+  "gameId": "401909935",
+  "start": "2026-11-05T03:30Z",
+  "away": {
+   "abbr": "MIA",
+   "name": "Miami Heat"
+  },
+  "home": {
+   "abbr": "LAC",
+   "name": "LA Clippers"
+  },
+  "rest": [
+   1,
+   1
+  ],
+  "simPHome": 0.4552,
+  "rawPHome": 0.461,
+  "simMargin": -1.9,
+  "simScore": [
+   117.57,
+   115.66
+  ],
+  "simTotal": 233.23,
+  "mkt": {
+   "line": null,
+   "total": null,
+   "pHome": null,
+   "margin": null
+  },
+  "loggedAt": "2026-11-02T22:28:54.816Z",
+  "result": null
+ },
+ "nfl:401873036": {
+  "key": "nfl:401873036",
+  "league": "nfl",
+  "gameId": "401873036",
+  "start": "2026-11-03T01:15Z",
+  "away": {
+   "abbr": "CHI",
+   "name": "Chicago Bears"
+  },
+  "home": {
+   "abbr": "SEA",
+   "name": "Seattle Seahawks"
+  },
+  "rest": [
+   null,
+   null
+  ],
+  "simPHome": 0.6419,
+  "rawPHome": 0.6355,
+  "simMargin": 3.87,
+  "simScore": [
+   19.47,
+   23.34
+  ],
+  "simTotal": 42.81,
+  "blendPHome": 0.5977,
+  "mkt": {
+   "line": "SEA -3",
+   "total": 46.5,
+   "pHome": 0.5899284108433875,
+   "margin": 3
+  },
+  "loggedAt": "2026-11-02T22:28:54.958Z",
+  "result": null
+ },
+ "nhl:401892629": {
+  "key": "nhl:401892629",
+  "league": "nhl",
+  "gameId": "401892629",
+  "start": "2026-11-03T00:00Z",
+  "away": {
+   "abbr": "VGK",
+   "name": "Vegas Golden Knights"
+  },
+  "home": {
+   "abbr": "BOS",
+   "name": "Boston Bruins"
+  },
+  "goalies": [
+   "Carter Hart",
+   "Jeremy Swayman"
+  ],
+  "rest": [
+   2,
+   1
+  ],
+  "simPHome": 0.48,
+  "rawPHome": 0.4765,
+  "simMargin": -0.11,
+  "simScore": [
+   3.08,
+   2.97
+  ],
+  "simTotal": 6.05,
+  "mkt": {
+   "line": "VGK -118",
+   "total": 6.5,
+   "pHome": 0.48202449409595716,
+   "margin": null
+  },
+  "loggedAt": "2026-11-02T22:28:55.029Z",
+  "result": null
+ },
+ "nhl:401892630": {
+  "key": "nhl:401892630",
+  "league": "nhl",
+  "gameId": "401892630",
+  "start": "2026-11-03T00:00Z",
+  "away": {
+   "abbr": "DET",
+   "name": "Detroit Red Wings"
+  },
+  "home": {
+   "abbr": "FLA",
+   "name": "Florida Panthers"
+  },
+  "goalies": [
+   "Daniil Tarasov",
+   "Jacob Markstrom"
+  ],
+  "rest": [
+   1,
+   2
+  ],
+  "simPHome": 0.4834,
+  "rawPHome": 0.4805,
+  "simMargin": -0.07,
+  "simScore": [
+   3.1,
+   3.03
+  ],
+  "simTotal": 6.13,
+  "mkt": {
+   "line": "FLA -185",
+   "total": 5.5,
+   "pHome": 0.6211701502560228,
+   "margin": null
+  },
+  "loggedAt": "2026-11-02T22:28:55.074Z",
+  "result": null
+ },
+ "nhl:401892631": {
+  "key": "nhl:401892631",
+  "league": "nhl",
+  "gameId": "401892631",
+  "start": "2026-11-03T01:00Z",
+  "away": {
+   "abbr": "COL",
+   "name": "Colorado Avalanche"
+  },
+  "home": {
+   "abbr": "CHI",
+   "name": "Chicago Blackhawks"
+  },
+  "goalies": [
+   "Mackenzie Blackwood",
+   "Spencer Knight"
+  ],
+  "rest": [
+   1,
+   1
+  ],
+  "simPHome": 0.4668,
+  "rawPHome": 0.461,
+  "simMargin": -0.14,
+  "simScore": [
+   3.19,
+   3.05
+  ],
+  "simTotal": 6.24,
+  "mkt": {
+   "line": "COL -230",
+   "total": 6.5,
+   "pHome": 0.3330433521821081,
+   "margin": null
+  },
+  "loggedAt": "2026-11-02T22:28:55.136Z",
+  "result": null
+ },
+ "nhl:401892632": {
+  "key": "nhl:401892632",
+  "league": "nhl",
+  "gameId": "401892632",
+  "start": "2026-11-03T02:00Z",
+  "away": {
+   "abbr": "CGY",
+   "name": "Calgary Flames"
+  },
+  "home": {
+   "abbr": "SJ",
+   "name": "San Jose Sharks"
+  },
+  "goalies": [
+   "Dustin Wolf",
+   "Yaroslav Askarov"
+  ],
+  "rest": [
+   1,
+   1
+  ],
+  "simPHome": 0.5302,
+  "rawPHome": 0.5355,
+  "simMargin": 0.24,
+  "simScore": [
+   3.16,
+   3.4
+  ],
+  "simTotal": 6.55,
+  "mkt": {
+   "line": "SJ -125",
+   "total": 6.5,
+   "pHome": 0.531632110579479,
+   "margin": null
+  },
+  "loggedAt": "2026-11-02T22:28:55.193Z",
+  "result": null
+ },
+ "nhl:401892633": {
+  "key": "nhl:401892633",
+  "league": "nhl",
+  "gameId": "401892633",
+  "start": "2026-11-04T00:00Z",
+  "away": {
+   "abbr": "UTA",
+   "name": "Utah Mammoth"
+  },
+  "home": {
+   "abbr": "TOR",
+   "name": "Toronto Maple Leafs"
+  },
+  "goalies": [
+   "Karel Vejmelka",
+   "Sergei Bobrovsky"
+  ],
+  "rest": [
+   1,
+   2
+  ],
+  "simPHome": 0.4855,
+  "rawPHome": 0.483,
+  "simMargin": -0.12,
+  "simScore": [
+   3.3,
+   3.18
+  ],
+  "simTotal": 6.48,
+  "mkt": {
+   "line": "UTAH -130",
+   "total": 6.5,
+   "pHome": 0.4591221135843562,
+   "margin": null
+  },
+  "loggedAt": "2026-11-02T22:28:55.252Z",
+  "result": null
+ },
+ "nhl:401892634": {
+  "key": "nhl:401892634",
+  "league": "nhl",
+  "gameId": "401892634",
+  "start": "2026-11-04T00:00Z",
+  "away": {
+   "abbr": "WPG",
+   "name": "Winnipeg Jets"
+  },
+  "home": {
+   "abbr": "MTL",
+   "name": "Montreal Canadiens"
+  },
+  "goalies": [
+   "Stuart Skinner",
+   "Jacob Fowler"
+  ],
+  "rest": [
+   1,
+   2
+  ],
+  "simPHome": 0.5922,
+  "rawPHome": 0.608,
+  "simMargin": 0.62,
+  "simScore": [
+   2.66,
+   3.28
+  ],
+  "simTotal": 5.93,
+  "mkt": {
+   "line": "MTL -180",
+   "total": 5.5,
+   "pHome": 0.6151742993848258,
+   "margin": null
+  },
+  "loggedAt": "2026-11-02T22:28:55.309Z",
+  "result": null
+ },
+ "nhl:401892635": {
+  "key": "nhl:401892635",
+  "league": "nhl",
+  "gameId": "401892635",
+  "start": "2026-11-04T00:00Z",
+  "away": {
+   "abbr": "DET",
+   "name": "Detroit Red Wings"
+  },
+  "home": {
+   "abbr": "TB",
+   "name": "Tampa Bay Lightning"
+  },
+  "goalies": [
+   "John Gibson",
+   "Andrei Vasilevskiy"
+  ],
+  "rest": [
+   0,
+   2
+  ],
+  "simPHome": 0.5562,
+  "rawPHome": 0.566,
+  "simMargin": 0.37,
+  "simScore": [
+   3.02,
+   3.38
+  ],
+  "simTotal": 6.4,
+  "mkt": {
+   "line": "TB -278",
+   "total": 6.5,
+   "pHome": 0.7037796511480723,
+   "margin": null
+  },
+  "loggedAt": "2026-11-02T22:28:55.355Z",
+  "result": null
+ },
+ "nhl:401892637": {
+  "key": "nhl:401892637",
+  "league": "nhl",
+  "gameId": "401892637",
+  "start": "2026-11-04T00:00Z",
+  "away": {
+   "abbr": "STL",
+   "name": "St. Louis Blues"
+  },
+  "home": {
+   "abbr": "NYR",
+   "name": "New York Rangers"
+  },
+  "goalies": [
+   "Joel Hofer",
+   "Dylan Garand"
+  ],
+  "rest": [
+   2,
+   1
+  ],
+  "simPHome": 0.4498,
+  "rawPHome": 0.441,
+  "simMargin": -0.37,
+  "simScore": [
+   3.14,
+   2.77
+  ],
+  "simTotal": 5.91,
+  "mkt": {
+   "line": "NYR -125",
+   "total": 5.5,
+   "pHome": 0.531632110579479,
+   "margin": null
+  },
+  "loggedAt": "2026-11-02T22:28:55.416Z",
+  "result": null
+ },
+ "nhl:401892638": {
+  "key": "nhl:401892638",
+  "league": "nhl",
+  "gameId": "401892638",
+  "start": "2026-11-04T00:00Z",
+  "away": {
+   "abbr": "MIN",
+   "name": "Minnesota Wild"
+  },
+  "home": {
+   "abbr": "PHI",
+   "name": "Philadelphia Flyers"
+  },
+  "goalies": [
+   "Jesper Wallstedt",
+   "Joseph Woll"
+  ],
+  "rest": [
+   1,
+   1
+  ],
+  "simPHome": 0.4035,
+  "rawPHome": 0.387,
+  "simMargin": -0.69,
+  "simScore": [
+   3.33,
+   2.64
+  ],
+  "simTotal": 5.97,
+  "mkt": {
+   "line": "MIN -170",
+   "total": 5.5,
+   "pHome": 0.3974836080099238,
+   "margin": null
+  },
+  "loggedAt": "2026-11-02T22:28:55.456Z",
+  "result": null
+ },
+ "nhl:401892639": {
+  "key": "nhl:401892639",
+  "league": "nhl",
+  "gameId": "401892639",
+  "start": "2026-11-04T00:00Z",
+  "away": {
+   "abbr": "VGK",
+   "name": "Vegas Golden Knights"
+  },
+  "home": {
+   "abbr": "PIT",
+   "name": "Pittsburgh Penguins"
+  },
+  "goalies": [
+   "Adin Hill",
+   "Arturs Silovs"
+  ],
+  "rest": [
+   0,
+   2
+  ],
+  "simPHome": 0.5123,
+  "rawPHome": 0.5145,
+  "simMargin": 0.11,
+  "simScore": [
+   3.17,
+   3.28
+  ],
+  "simTotal": 6.45,
+  "mkt": {
+   "line": "PIT -108",
+   "total": 6.5,
+   "pHome": 0.4968715495031285,
+   "margin": null
+  },
+  "loggedAt": "2026-11-02T22:28:55.496Z",
+  "result": null
+ },
+ "nhl:401892640": {
+  "key": "nhl:401892640",
+  "league": "nhl",
+  "gameId": "401892640",
+  "start": "2026-11-04T00:00Z",
+  "away": {
+   "abbr": "DAL",
+   "name": "Dallas Stars"
+  },
+  "home": {
+   "abbr": "WSH",
+   "name": "Washington Capitals"
+  },
+  "goalies": [
+   "Jake Oettinger",
+   "Logan Thompson"
+  ],
+  "rest": [
+   2,
+   1
+  ],
+  "simPHome": 0.5234,
+  "rawPHome": 0.5275,
+  "simMargin": 0.22,
+  "simScore": [
+   2.91,
+   3.13
+  ],
+  "simTotal": 6.04,
+  "mkt": {
+   "line": "WSH -112",
+   "total": 5.5,
+   "pHome": 0.5055520447774668,
+   "margin": null
+  },
+  "loggedAt": "2026-11-02T22:28:55.535Z",
+  "result": null
+ },
+ "nhl:401892641": {
+  "key": "nhl:401892641",
+  "league": "nhl",
+  "gameId": "401892641",
+  "start": "2026-11-04T00:00Z",
+  "away": {
+   "abbr": "COL",
+   "name": "Colorado Avalanche"
+  },
+  "home": {
+   "abbr": "CBJ",
+   "name": "Columbus Blue Jackets"
+  },
+  "goalies": [
+   "Scott Wedgewood",
+   "Jet Greaves"
+  ],
+  "rest": [
+   0,
+   2
+  ],
+  "simPHome": 0.4647,
+  "rawPHome": 0.4585,
+  "simMargin": -0.25,
+  "simScore": [
+   3.18,
+   2.94
+  ],
+  "simTotal": 6.12,
+  "mkt": {
+   "line": "COL -130",
+   "total": 6.5,
+   "pHome": 0.4591221135843562,
+   "margin": null
+  },
+  "loggedAt": "2026-11-02T22:28:55.574Z",
+  "result": null
+ },
+ "nhl:401892636": {
+  "key": "nhl:401892636",
+  "league": "nhl",
+  "gameId": "401892636",
+  "start": "2026-11-04T00:30Z",
+  "away": {
+   "abbr": "EDM",
+   "name": "Edmonton Oilers"
+  },
+  "home": {
+   "abbr": "NJ",
+   "name": "New Jersey Devils"
+  },
+  "goalies": [
+   "Tristan Jarry",
+   "Connor Hellebuyck"
+  ],
+  "rest": [
+   1,
+   3
+  ],
+  "simPHome": 0.52,
+  "rawPHome": 0.5235,
+  "simMargin": 0.15,
+  "simScore": [
+   3.06,
+   3.21
+  ],
+  "simTotal": 6.26,
+  "mkt": {
+   "line": "NJ -162",
+   "total": 6.5,
+   "pHome": 0.5916943642938018,
+   "margin": null
+  },
+  "loggedAt": "2026-11-02T22:28:55.612Z",
+  "result": null
+ },
+ "nhl:401892642": {
+  "key": "nhl:401892642",
+  "league": "nhl",
+  "gameId": "401892642",
+  "start": "2026-11-04T01:00Z",
+  "away": {
+   "abbr": "CAR",
+   "name": "Carolina Hurricanes"
+  },
+  "home": {
+   "abbr": "NSH",
+   "name": "Nashville Predators"
+  },
+  "goalies": [
+   "Pyotr Kochetkov",
+   "Juuse Saros"
+  ],
+  "rest": [
+   1,
+   2
+  ],
+  "simPHome": 0.3897,
+  "rawPHome": 0.371,
+  "simMargin": -0.77,
+  "simScore": [
+   3.37,
+   2.6
+  ],
+  "simTotal": 5.97,
+  "mkt": {
+   "line": "CAR -192",
+   "total": 6.5,
+   "pHome": 0.3707806252867536,
+   "margin": null
+  },
+  "loggedAt": "2026-11-02T22:28:55.650Z",
+  "result": null
+ },
+ "nhl:401892643": {
+  "key": "nhl:401892643",
+  "league": "nhl",
+  "gameId": "401892643",
+  "start": "2026-11-04T02:00Z",
+  "away": {
+   "abbr": "ANA",
+   "name": "Anaheim Ducks"
+  },
+  "home": {
+   "abbr": "VAN",
+   "name": "Vancouver Canucks"
+  },
+  "goalies": [
+   "Lukas Dostal",
+   "Leevi Merilainen"
+  ],
+  "rest": [
+   1,
+   2
+  ],
+  "simPHome": 0.4843,
+  "rawPHome": 0.4815,
+  "simMargin": -0.11,
+  "simScore": [
+   3.21,
+   3.1
+  ],
+  "simTotal": 6.31,
+  "mkt": {
+   "line": "ANA -148",
+   "total": 6.5,
+   "pHome": 0.42892421670010794,
+   "margin": null
+  },
+  "loggedAt": "2026-11-02T22:28:55.694Z",
+  "result": null
+ },
+ "nhl:401892644": {
+  "key": "nhl:401892644",
+  "league": "nhl",
+  "gameId": "401892644",
+  "start": "2026-11-05T00:30Z",
+  "away": {
+   "abbr": "OTT",
+   "name": "Ottawa Senators"
+  },
+  "home": {
+   "abbr": "BUF",
+   "name": "Buffalo Sabres"
+  },
+  "goalies": [
+   "Samuel Ersson",
+   "Ukko-Pekka Luukkonen"
+  ],
+  "rest": [
+   2,
+   3
+  ],
+  "simPHome": 0.5361,
+  "rawPHome": 0.5425,
+  "simMargin": 0.22,
+  "simScore": [
+   3.19,
+   3.42
+  ],
+  "simTotal": 6.61,
+  "mkt": {
+   "line": null,
+   "total": null,
+   "pHome": null,
+   "margin": null
+  },
+  "loggedAt": "2026-11-02T22:28:55.738Z",
+  "result": null
+ },
+ "nhl:401892645": {
+  "key": "nhl:401892645",
+  "league": "nhl",
+  "gameId": "401892645",
+  "start": "2026-11-05T00:30Z",
+  "away": {
+   "abbr": "CHI",
+   "name": "Chicago Blackhawks"
+  },
+  "home": {
+   "abbr": "FLA",
+   "name": "Florida Panthers"
+  },
+  "goalies": [
+   "Spencer Knight",
+   "Akira Schmid"
+  ],
+  "rest": [
+   1,
+   1
+  ],
+  "simPHome": 0.5617,
+  "rawPHome": 0.5725,
+  "simMargin": 0.42,
+  "simScore": [
+   2.85,
+   3.27
+  ],
+  "simTotal": 6.11,
+  "mkt": {
+   "line": null,
+   "total": null,
+   "pHome": null,
+   "margin": null
+  },
+  "loggedAt": "2026-11-02T22:28:55.777Z",
+  "result": null
+ },
+ "nhl:401892646": {
+  "key": "nhl:401892646",
+  "league": "nhl",
+  "gameId": "401892646",
+  "start": "2026-11-05T03:00Z",
+  "away": {
+   "abbr": "SJ",
+   "name": "San Jose Sharks"
+  },
+  "home": {
+   "abbr": "LA",
+   "name": "Los Angeles Kings"
+  },
+  "goalies": [
+   "Yaroslav Askarov",
+   "Darcy Kuemper"
+  ],
+  "rest": [
+   1,
+   3
+  ],
+  "simPHome": 0.5502,
+  "rawPHome": 0.559,
+  "simMargin": 0.36,
+  "simScore": [
+   3.06,
+   3.42
+  ],
+  "simTotal": 6.48,
+  "mkt": {
+   "line": null,
+   "total": null,
+   "pHome": null,
+   "margin": null
+  },
+  "loggedAt": "2026-11-02T22:28:55.816Z",
+  "result": null
+ },
+ "nhl:401892647": {
+  "key": "nhl:401892647",
+  "league": "nhl",
+  "gameId": "401892647",
+  "start": "2026-11-05T03:00Z",
+  "away": {
+   "abbr": "CGY",
+   "name": "Calgary Flames"
+  },
+  "home": {
+   "abbr": "SEA",
+   "name": "Seattle Kraken"
+  },
+  "goalies": [
+   "Dustin Wolf",
+   "Philipp Grubauer"
+  ],
+  "rest": [
+   1,
+   4
+  ],
+  "simPHome": 0.5789,
+  "rawPHome": 0.5925,
+  "simMargin": 0.65,
+  "simScore": [
+   2.89,
+   3.54
+  ],
+  "simTotal": 6.43,
+  "mkt": {
+   "line": null,
+   "total": null,
+   "pHome": null,
+   "margin": null
+  },
+  "loggedAt": "2026-11-02T22:28:55.863Z",
+  "result": null
+ }
+}

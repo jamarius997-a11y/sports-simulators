@@ -1,0 +1,26 @@
+# Refreshes data, logs picks and scores finished games twice a day, without needing your computer or the Claude app.
+# Setup: put this folder in a GitHub repo, then Settings > Actions > General > Workflow permissions > "Read and write".
+# Optional: Settings > Pages > deploy from the main branch root to get a public link to the page.
+name: refresh
+on:
+  schedule:
+    - cron: '0 15,21 * * *'   # 10:00 and 16:00 US Central (standard time)
+  workflow_dispatch: {}
+permissions:
+  contents: write
+concurrency: refresh
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - run: node refresh.js
+      - name: Commit changes
+        run: |
+          git config user.name "sportssim-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data.js picks-log.json picks-results.js
+          git diff --cached --quiet || git commit -m "Refresh data and picks"
+          git push

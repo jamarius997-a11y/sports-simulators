@@ -1,0 +1,4 @@
+cache/
+backtest-cache*.json
+refresh.log
+node_modules/

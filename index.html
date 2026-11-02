@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sports Simulators</title>
+<style>
+  :root { --bg:#0f1218; --panel:#181d27; --line:#2a3242; --text:#e8ecf3; --muted:#8b96ab; --accent:#4f9dff; --good:#3ecf8e; --bad:#ff6b6b; }
+  @media (prefers-color-scheme: light) { :root { --bg:#f4f6fa; --panel:#fff; --line:#d8dee9; --text:#1a2030; --muted:#5d6878; --accent:#1f6feb; --good:#12945b; --bad:#d63b3b; } }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--text); font:15px/1.45 system-ui,Segoe UI,Roboto,sans-serif; }
+  .wrap { max-width:960px; margin:0 auto; padding:16px; }
+  h1 { font-size:20px; margin:0 0 12px; }
+  .tabs { display:flex; gap:8px; margin-bottom:12px; }
+  .tab { flex:1; padding:10px; border:1px solid var(--line); background:var(--panel); color:var(--text); border-radius:8px; font-weight:600; cursor:pointer; }
+  .tab.on { background:var(--accent); border-color:var(--accent); color:#fff; }
+  .panel { background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:14px; margin-bottom:12px; }
+  .matchup { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+  @media (max-width:560px) { .matchup { grid-template-columns:1fr; } }
+  label { display:block; font-size:12px; color:var(--muted); margin:8px 0 2px; }
+  select, input { width:100%; padding:7px 8px; border-radius:6px; border:1px solid var(--line); background:var(--bg); color:var(--text); font:inherit; }
+  .side h3 { margin:0 0 4px; font-size:13px; text-transform:uppercase; letter-spacing:.05em; color:var(--muted); }
+  .btns { display:flex; flex-wrap:wrap; gap:8px; align-items:flex-end; }
+  .btns > div { min-width:110px; }
+  button.act { padding:9px 14px; border-radius:6px; border:1px solid var(--accent); background:var(--accent); color:#fff; font-weight:600; cursor:pointer; }
+  button.alt { background:transparent; color:var(--accent); }
+  table { width:100%; border-collapse:collapse; font-variant-numeric:tabular-nums; }
+  th, td { padding:5px 8px; text-align:right; border-bottom:1px solid var(--line); }
+  th:first-child, td:first-child { text-align:left; }
+  .score { display:flex; justify-content:space-around; align-items:center; font-size:34px; font-weight:700; margin:6px 0 12px; }
+  .score small { display:block; font-size:12px; color:var(--muted); font-weight:500; }
+  .win { color:var(--good); }
+  .log { max-height:280px; overflow:auto; font-size:13px; color:var(--muted); border-top:1px solid var(--line); padding-top:8px; margin-top:10px; }
+  .log div { padding:2px 0; }
+  .bar { display:flex; align-items:center; gap:8px; font-size:12px; }
+  .bar i { display:block; height:12px; background:var(--accent); border-radius:2px; min-width:1px; }
+  .bar span:first-child { width:48px; text-align:right; color:var(--muted); }
+  .winbar { display:flex; height:26px; border-radius:6px; overflow:hidden; margin:8px 0; font-size:13px; font-weight:600; color:#fff; }
+  .winbar div { display:flex; align-items:center; justify-content:center; }
+  details { margin-top:10px; font-size:13px; } summary { cursor:pointer; color:var(--accent); }
+  .rost td, .rost th { padding:3px 4px; } .rost input { padding:3px 5px; font-size:12px; } .rost input[type=number] { width:64px; }
+  .up td, .up th { font-size:13px; } .up button { padding:3px 8px; font-size:12px; } .pos { color:var(--good); } .neg { color:var(--bad); }
+  .note { font-size:12px; color:var(--muted); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Sports Simulators</h1>
+  <p class="note" id="liveNote" style="margin:-6px 0 10px"></p>
+  <div class="tabs" id="tabs"></div>
+
+  <div class="panel">
+    <div class="matchup">
+      <div class="side"><h3>Away</h3><select id="awaySel"></select><div id="awayFields"></div><details><summary>Roster</summary><div id="awayRoster"></div></details></div>
+      <div class="side"><h3>Home</h3><select id="homeSel"></select><div id="homeFields"></div><details><summary>Roster</summary><div id="homeRoster"></div></details></div>
+    </div>
+    <div class="btns" style="margin-top:14px">
+      <div><label>Seed (blank = random)</label><input id="seed" placeholder="e.g. 42"></div>
+      <button class="act" id="bGame">Sim game</button>
+      <div><label>Games</label><select id="nGames"><option>1000</option><option selected>5000</option><option>20000</option></select></div>
+      <button class="act alt" id="bMC">Monte Carlo</button>
+      <div><label>Series</label><select id="bestOf"><option value="1">Single game</option><option value="3">Best of 3</option><option value="5">Best of 5</option><option value="7" selected>Best of 7</option></select></div>
+      <button class="act alt" id="bSeries">Sim series</button>
+      <button class="act alt" id="bLeague">League table</button>
+    </div>
+    <p class="note" style="margin-bottom:0">Team ratings are rough approximations, not live data &mdash; edit them above. Series: Away team is the lower seed, Home team has home-court/ice/field advantage.</p>
+  </div>
+
+  <div class="panel" id="upcoming"></div>
+
+  <div id="out"></div>
+
+  <div class="panel" id="picks"></div>
+
+  <div class="panel" id="backtest"></div>
+</div>
+<script src="sim.js"></script>
+<script src="data.js" onerror="void 0"></script>
+<script src="backtest-results.js" onerror="void 0"></script>
+<script src="picks-results.js" onerror="void 0"></script>
+<script>
+const $ = id => document.getElementById(id);
+let sport = 'nba';
+const S = Sim.SPORTS;
+
+function rng() { const v = $('seed').value.trim(); return Sim.makeRng(v === '' ? (Math.random() * 4294967296) >>> 0 : (parseInt(v, 10) || 1)); }
+function team(sel) { return S[sport].teams[+sel.value]; }
+function fmt(x) { return Number.isInteger(x) ? x : x.toFixed(1); }
+
+function buildTabs() {
+  $('tabs').innerHTML = '';
+  for (const k in S) {
+    if (k === 'mlb') continue;   // hidden: no live MLB data and it is the offseason (engine kept in sim.js)
+    const b = document.createElement('button');
+    b.className = 'tab' + (k === sport ? ' on' : ''); b.textContent = S[k].label;
+    b.onclick = () => { sport = k; buildTabs(); buildTeams(); $('out').innerHTML = ''; renderUpcoming(); renderPicks(); renderBacktest(); };
+    $('tabs').appendChild(b);
+  }
+}
+function buildFields(side) {
+  const t = team($(side + 'Sel'));
+  $(side + 'Fields').innerHTML = S[sport].fields.map(f =>
+    `<label>${f[1]}</label><input type="number" step="${f[2]}" data-k="${f[0]}" value="${+(+t[f[0]]).toFixed(3)}">`).join('');
+  $(side + 'Fields').querySelectorAll('input').forEach(inp => inp.onchange = () => { const v = parseFloat(inp.value); if (!isNaN(v)) t[inp.dataset.k] = v; });
+}
+function buildTeams() {
+  const opts = S[sport].teams.map((t, i) => `<option value="${i}">${t.name}</option>`).join('');
+  $('awaySel').innerHTML = opts; $('homeSel').innerHTML = opts;
+  $('awaySel').value = 1; $('homeSel').value = 0;
+  buildFields('away'); buildFields('home'); buildRoster('away'); buildRoster('home');
+}
+$('awaySel').onchange = () => { curRest = null; buildFields('away'); buildRoster('away'); };
+$('homeSel').onchange = () => { curRest = null; buildFields('home'); buildRoster('home'); };
+
+// Roster editor: rename players, mark injured players Out, tweak the rating that drives their share of the action.
+function buildRoster(side) {
+  const t = team($(side + 'Sel')), R = Sim.roster(sport, t);
+  const G = {
+    nba: [['Rotation', R.players, 'min', 'Min'], ['', null]],
+    mlb: [['Lineup', R.lineup, 'bat', 'Bat']],
+    nfl: [['QB', R.qb, 'ypa', 'Y/A'], ['RB', R.rb, 'car', 'Car'], ['WR / TE', R.rec, 'tgt', 'Tgt'], ['Defense', R.defense, 'prod', 'Prod']],
+    nhl: [['Forwards', R.fwd, 'w', 'Shot wt'], ['Defense', R.def, 'w', 'Shot wt']],
+  }[sport].filter(g => g[1]);
+  const hasOut = sport !== 'mlb';
+  let html = (t.live ? '<p class="note">Live ratings and rosters (' + (t.liveGp || 0) + ' games this season, blended with last season). Tick <b>Out</b> to sit a player.</p>' : '<p class="note">Names are generated placeholders &mdash; rename them and adjust ratings.</p>');
+  if (sport === 'mlb') {
+    html += '<label>Starting pitcher</label><select data-start>' + '<option value="-1">Random from rotation</option>' +
+      R.rotation.map((p, i) => '<option value="' + i + '"' + (t.startIdx === i ? ' selected' : '') + '>' + p.name + ' (' + (p.adj > 0 ? '+' : '') + p.adj + ' RA)</option>').join('') + '</select>';
+  }
+  if (sport === 'nhl' && R.goalies) {
+    html += '<label>Starting goalie</label><select data-goalie>' + R.goalies.map((g, i) => '<option value="' + i + '"' + ((t.gIdx != null && t.gIdx >= 0 ? t.gIdx : R.goalies.findIndex(x => !x.out)) === i ? ' selected' : '') + '>' + g.name + ' (' + g.sv.toFixed(3) + ' SV%, ' + Math.round(g.gp) + ' GP)' + (g.out ? ' – OUT' : '') + '</option>').join('') + '</select>';
+  }
+  const fmtv = v => (typeof v === 'number' ? Math.round(v * 100) / 100 : v);
+  html += '<table class="rost">';
+  G.forEach((g, gi) => {
+    html += '<tr><th>' + g[0] + '</th><th>Pos</th><th>' + g[3] + '</th>' + (hasOut ? '<th>Out</th>' : '') + '</tr>';
+    g[1].forEach((p, pi) => {
+      html += '<tr><td><input data-g="' + gi + '" data-p="' + pi + '" data-name value="' + p.name.replace(/"/g, '&quot;') + '"></td><td>' + p.pos + '</td>' +
+        '<td><input type="number" step="any" data-g="' + gi + '" data-p="' + pi + '" data-num value="' + fmtv(p[g[2]]) + '"></td>' +
+        (hasOut ? '<td title="' + (p.note || '') + '"><input type="checkbox" data-g="' + gi + '" data-p="' + pi + '" data-out' + (p.out ? ' checked' : '') + '>' + (p.note ? ' <span class="note">' + p.note + '</span>' : '') + '</td>' : '') + '</tr>';
+    });
+  });
+  html += '</table>';
+  if (sport === 'mlb') html += '<label>Rotation (RA adjustment per game; negative = better)</label><table class="rost">' + R.rotation.map((p, i) => '<tr><td><input data-rot="' + i + '" data-name value="' + p.name + '"></td><td></td><td><input type="number" step="0.05" data-rot="' + i + '" data-adj value="' + p.adj + '"></td></tr>').join('') + '</table>';
+  const box = $(side + 'Roster'); box.innerHTML = html;
+  box.querySelectorAll('input').forEach(inp => inp.onchange = () => {
+    const isRot = inp.dataset.rot != null;
+    const tgt = isRot ? R.rotation[+inp.dataset.rot] : G[+inp.dataset.g][1][+inp.dataset.p];
+    if (inp.hasAttribute('data-out')) tgt.out = inp.checked;
+    else if (inp.hasAttribute('data-name')) tgt.name = inp.value || tgt.name;
+    else { const v = parseFloat(inp.value); if (!isNaN(v)) tgt[inp.hasAttribute('data-adj') ? 'adj' : G[+inp.dataset.g][2]] = v; }
+  });
+  const sel = box.querySelector('[data-start]'); if (sel) sel.onchange = () => { t.startIdx = +sel.value; };
+  const gs = box.querySelector('[data-goalie]'); if (gs) gs.onchange = () => { t.gIdx = +gs.value; };
+}
+
+function matchup() {
+  const a = team($('awaySel')), h = team($('homeSel'));
+  if (a === h) { $('out').innerHTML = '<div class="panel">Pick two different teams.</div>'; return null; }
+  return [a, h];
+}
+
+$('bGame').onclick = () => {
+  const m = matchup(); if (!m) return;
+  const g = Sim.simGame(sport, m[0], m[1], rng(), { detail: true, rest: curRest });
+  const w = g.winner;
+  $('out').innerHTML = `<div class="panel">
+    <div class="score">
+      <div class="${w === 0 && !g.tie ? 'win' : ''}">${g.teams[0].id}<br>${g.score[0]}<small>${g.teams[0].name}</small></div>
+      <div style="font-size:14px;color:var(--muted)">${g.tie ? 'Final/OT – tie' : g.extra ? 'Final/' + g.extraLabel.replace('F/', '') : 'Final'}</div>
+      <div class="${w === 1 && !g.tie ? 'win' : ''}">${g.teams[1].id}<br>${g.score[1]}<small>${g.teams[1].name}</small></div>
+    </div>
+    <table><tr><th></th>${g.line.headers.map(h => `<th>${h}</th>`).join('')}</tr>
+      ${[0, 1].map(i => `<tr><td>${g.teams[i].id}</td>${g.line.rows[i].map(v => `<td>${v}</td>`).join('')}</tr>`).join('')}
+    </table>
+    <table style="margin-top:12px"><tr><th>${g.teams[0].id}</th><th></th><th>${g.teams[1].id}</th></tr>
+      ${g.box.map(r => `<tr><td>${r[1]}</td><td style="text-align:center;color:var(--muted)">${r[0]}</td><td>${r[2]}</td></tr>`).join('')}
+    </table>
+    ${[0, 1].map(i => g.tables[i].map(tb => `<h4 style="margin:14px 0 4px">${g.teams[i].name} &mdash; ${tb.title}</h4><table><tr>${tb.headers.map(x => `<th>${x}</th>`).join('')}</tr>${tb.rows.map(r => `<tr>${r.map(v => `<td>${v}</td>`).join('')}</tr>`).join('')}</table>`).join('')).join('')}
+    <div class="log">${g.log.map(l => `<div>${l}</div>`).join('')}</div></div>`;
+};
+
+$('bMC').onclick = () => {
+  const m = matchup(); if (!m) return;
+  const n = +$('nGames').value, r = Sim.monteCarlo(sport, m[0], m[1], n, rng(), { rest: curRest });
+  const pa = r.wins[0] / n * 100, ph = r.wins[1] / n * 100, pt = r.wins[2] / n * 100;
+  let rows = '', peak = 0;
+  for (const v of r.margins.values()) peak = Math.max(peak, v);
+  const keys = [...r.margins.keys()].sort((a, b) => a - b);
+  const lo = Math.max(keys[0], -40 * r.bin), hi = Math.min(keys[keys.length - 1], 40 * r.bin);
+  for (let k = lo; k <= hi; k += r.bin) {
+    const v = r.margins.get(k) || 0;
+    rows += `<div class="bar"><span>${k > 0 ? '+' : ''}${k}</span><i style="width:${v / peak * 70}%"></i><span>${(v / n * 100).toFixed(1)}%</span></div>`;
+  }
+  $('out').innerHTML = `<div class="panel"><b>${n.toLocaleString()} simulated games</b> &mdash; ${m[0].name} @ ${m[1].name}
+    <div class="winbar"><div style="width:${pa}%;background:#c0692b">${m[0].id} ${pa.toFixed(1)}%</div>${pt > 0 ? `<div style="width:${pt}%;background:var(--muted)" title="ties">${pt >= 4 ? 'T ' + pt.toFixed(1) + '%' : ''}</div>` : ''}<div style="width:${ph}%;background:var(--accent)">${m[1].id} ${ph.toFixed(1)}%</div></div>
+    <table><tr><th></th><th>Avg score</th></tr>
+      <tr><td>${m[0].id}</td><td>${r.avg[0].toFixed(2)}</td></tr><tr><td>${m[1].id}</td><td>${r.avg[1].toFixed(2)}</td></tr>
+      <tr><td>Avg total</td><td>${r.avgTotal.toFixed(2)}</td></tr><tr><td>Extra time / innings</td><td>${(r.extraPct * 100).toFixed(1)}%</td></tr></table>
+    <h4 style="margin:14px 0 6px">Margin distribution (${m[1].id} minus ${m[0].id})</h4>${rows}</div>`;
+};
+
+$('bSeries').onclick = () => {
+  const m = matchup(); if (!m) return;
+  const bo = +$('bestOf').value, R = rng();
+  const one = Sim.playSeries(sport, m[1], m[0], bo, R);
+  const mc = Sim.seriesMonteCarlo(sport, m[1], m[0], bo, 2000, R);
+  const hi = m[1], lo = m[0];
+  $('out').innerHTML = `<div class="panel"><b>Best-of-${bo}: ${hi.name} (home) vs ${lo.name}</b>
+    <p>One sample series: <b class="win">${[hi, lo][one.winner].name}</b> win ${Math.max(...one.wins)}&ndash;${Math.min(...one.wins)}</p>
+    <table><tr><th>Game</th><th>Home</th><th>Score</th><th>Winner</th></tr>
+    ${one.games.map((g, i) => `<tr><td>${i + 1}</td><td>${(g.hiHome ? hi : lo).id}</td><td>${g.hiScore}&ndash;${g.loScore} (${hi.id}&ndash;${lo.id})${g.extra ? ' ' + g.extra : ''}</td><td>${(g.hiWon ? hi : lo).id}</td></tr>`).join('')}</table>
+    <h4 style="margin:14px 0 6px">2,000 simulated series</h4>
+    <div class="winbar"><div style="width:${mc.wins[0] / 20}%;background:var(--accent)">${hi.id} ${(mc.wins[0] / 20).toFixed(1)}%</div><div style="width:${mc.wins[1] / 20}%;background:#c0692b">${lo.id} ${(mc.wins[1] / 20).toFixed(1)}%</div></div>
+    ${Object.keys(mc.lengths).sort().map(k => `<div class="bar"><span>${k} gms</span><i style="width:${mc.lengths[k] / 2000 * 100 * 1.4}%"></i><span>${(mc.lengths[k] / 20).toFixed(1)}%</span></div>`).join('')}</div>`;
+};
+
+$('bLeague').onclick = () => {
+  const out = $('out'); out.innerHTML = '<div class="panel">Simulating every team against every other team, home and away&hellip;</div>';
+  setTimeout(() => {
+    const reps = sport === 'mlb' ? 4 : 6, rows = Sim.leagueTable(sport, reps, rng());
+    out.innerHTML = `<div class="panel"><b>League power table</b> <span class="note">(${reps} full home-and-away round robins, ${rows[0].gp} games each)</span>
+    <table><tr><th>#&nbsp;Team</th><th>W</th><th>L</th><th>Win%</th><th>Avg PF</th><th>Avg PA</th></tr>
+    ${rows.map((x, i) => `<tr><td>${i + 1}. ${x.team.name}</td><td>${x.w}</td><td>${x.l}</td><td>${x.pct.toFixed(3)}</td><td>${(x.pf / x.gp).toFixed(1)}</td><td>${(x.pa / x.gp).toFixed(1)}</td></tr>`).join('')}</table></div>`;
+  }, 20);
+};
+
+const liveN = window.LIVE_DATA ? Sim.applyLive(window.LIVE_DATA) : 0;
+$('liveNote').textContent = liveN
+  ? 'Live data: ' + liveN + ' teams (NBA/NFL/NHL) updated ' + new Date(window.LIVE_DATA.generated).toLocaleString() + ' · refresh with: node update-data.js · Data: ESPN, nflverse, and MoneyPuck.com (NHL, non-commercial use)'
+  : 'No live data loaded (data.js missing) — using built-in approximate ratings. Run: node update-data.js';
+// ---------- Upcoming games ----------
+const normName = x => x.toLowerCase().replace(/[^a-z]/g, '');
+function findTeam(sp, side) { const T = S[sp].teams; return T.find(t => normName(t.name) === normName(side.name)) || T.find(t => t.id === side.abbr); }
+function prepGame(g) {
+  const a = findTeam(sport, g.away), h = findTeam(sport, g.home); if (!a || !h) return null;
+  if (sport === 'nhl') [[a, g.away], [h, g.home]].forEach(([t, s]) => {
+    const R = Sim.roster('nhl', t); if (s.probable && R.goalies) { const i = R.goalies.findIndex(x => x.name === s.probable); if (i >= 0) t.gIdx = i; }
+  });
+  return [a, h];
+}
+const imp = ml => ml < 0 ? -ml / (-ml + 100) : 100 / (ml + 100);
+function market(g) {
+  const m = { text: g.line || '–', homeMargin: null, homeProb: null, total: g.total };
+  if (g.homeML != null && g.awayML != null) { const ph = imp(g.homeML), pa = imp(g.awayML); m.homeProb = ph / (ph + pa); }
+  const r = g.line && /^(\S+)\s+([+-]?\d+(?:\.\d+)?)$/.exec(g.line);
+  if (r) {
+    const fav = r[1], v = parseFloat(r[2]), isHome = fav === g.home.abbr;
+    if (Math.abs(v) >= 100) { if (m.homeProb == null) { const p = imp(v); m.homeProb = isHome ? p : 1 - p; } }
+    else m.homeMargin = isHome ? -v : v;
+  }
+  return m;
+}
+const SPREAD_SD = { nfl: 13.2, nba: 12.0 }, normCdf = z => 0.5 * (1 + Math.sign(z) * Math.sqrt(1 - Math.exp(-4 * (z / Math.SQRT2) ** 2 / Math.PI)));
+const BLEND = { nfl: 0.15 };   // sim weight in the NFL sim/market blend (best weight was 0% in 2024 and 25% in 2025)
+let curRest = null;
+function loadGame(g) {
+  curRest = { away: g.awayRest, home: g.homeRest };
+  const T = S[sport].teams, p = prepGame(g); if (!p) return;
+  $('awaySel').value = T.indexOf(p[0]); $('homeSel').value = T.indexOf(p[1]);
+  buildFields('away'); buildFields('home'); buildRoster('away'); buildRoster('home'); window.scrollTo(0, 0);
+}
+function renderUpcoming(results) {
+  const box = $('upcoming'), sched = window.LIVE_DATA && window.LIVE_DATA.schedule && window.LIVE_DATA.schedule[sport];
+  if (!sched) { box.innerHTML = '<b>Upcoming games</b><p class="note">No schedule loaded. Run <code>node update-data.js</code> to fetch it.</p>'; return; }
+  if (!sched.length) { box.innerHTML = '<b>Upcoming games</b><p class="note">No ' + S[sport].label + ' games in the next 3 days.</p>'; return; }
+  const spread = sport !== 'nhl' && sport !== 'mlb';
+  const rows = sched.map((g, i) => {
+    const mk = market(g), r = results && results[i];
+    let simCell = '<td></td><td></td>', edge = '<td></td>';
+    if (r) {
+      simCell = '<td title="raw sim ' + (r.raw * 100).toFixed(0) + '%, calibrated using the backtest">' + g.home.abbr + ' ' + (r.pHome * 100).toFixed(0) + '% (' + (r.margin >= 0 ? '+' : '') + r.margin.toFixed(1) + ')</td><td>' + g.away.abbr + ' ' + r.away.toFixed(sport === 'nhl' ? 1 : 0) + ' – ' + g.home.abbr + ' ' + r.home.toFixed(sport === 'nhl' ? 1 : 0) + '<br><span class="note">total ' + r.total.toFixed(1) + '</span></td>';
+      const mp = mk.homeProb != null ? mk.homeProb : mk.homeMargin != null ? normCdf(mk.homeMargin / SPREAD_SD.nfl) : null;
+      if (sport === 'nfl' && mp != null) { r.blend = BLEND.nfl * r.pHome + (1 - BLEND.nfl) * mp; simCell = simCell.replace('</td><td>', '<br><b title="' + Math.round(BLEND.nfl * 100) + '% sim, ' + Math.round((1 - BLEND.nfl) * 100) + '% market (backtested on 2024 and 2025)">best est. ' + g.home.abbr + ' ' + (r.blend * 100).toFixed(0) + '%</b></td><td>'); }
+      if (sport === 'nhl') simCell = simCell.replace('</td><td>', '<br><span class="note">low confidence</span></td><td>');
+      const bits = [];
+      if (spread && mk.homeMargin != null) { const d = r.margin - mk.homeMargin; bits.push('<span class="' + (d >= 0 ? 'pos' : 'neg') + '">' + g.home.abbr + ' ' + (d >= 0 ? '+' : '') + d.toFixed(1) + ' vs line</span>'); }
+      else if (mk.homeProb != null) { const d = (r.pHome - mk.homeProb) * 100; bits.push('<span class="' + (d >= 0 ? 'pos' : 'neg') + '">' + g.home.abbr + ' ' + (d >= 0 ? '+' : '') + d.toFixed(1) + ' pts vs mkt</span>'); }
+      if (mk.total) { const d = r.total - mk.total; bits.push('total ' + (d >= 0 ? '+' : '') + d.toFixed(1)); }
+      edge = '<td>' + bits.join('<br>') + '</td>';
+    }
+    const when = new Date(g.date).toLocaleString([], { weekday: 'short', hour: 'numeric', minute: '2-digit' });
+    const b2b = sport === 'nba' && (g.awayRest === 0 || g.homeRest === 0) ? '<br><span class="note">Back-to-back: ' + [g.awayRest === 0 ? g.away.abbr : null, g.homeRest === 0 ? g.home.abbr : null].filter(Boolean).join(', ') + '</span>' : '';
+    const prob = sport === 'nhl' && (g.away.probable || g.home.probable) ? '<br><span class="note">G: ' + (g.away.probable || '?') + ' / ' + (g.home.probable || '?') + '</span>' : '';
+    return '<tr><td>' + when + '</td><td>' + g.away.abbr + ' @ ' + g.home.abbr + prob + b2b + '</td><td>' + mk.text + (mk.total ? ' · O/U ' + mk.total : '') + '</td>' + simCell + edge + '<td><button class="act alt" data-load="' + i + '">Load</button></td></tr>';
+  }).join('');
+  box.innerHTML = '<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap"><b>Upcoming ' + S[sport].label + ' games</b><span><button class="act" id="bSimAll">Sim all (2,000 each)</button></span></div>' +
+    '<p class="note" style="margin:4px 0">Sim columns: home win % (calibrated from the backtest below; hover for raw) and projected home margin and projected total. Market from ESPN/DraftKings at last data refresh. Missing key defenders raise the opponent’s scoring a little: the NFL size is backed by a weak backtest signal, the NBA and NHL sizes are judgement calls. NFL shows a best estimate that leans on the betting line, because the line beat the sim in both backtested seasons. NHL win probabilities are only slightly better than a coin flip.</p>' +
+    '<table class="up"><tr><th>Time</th><th>Game</th><th>Market</th><th>Sim win % (margin)</th><th>Projected score</th><th>Sim vs market</th><th></th></tr>' + rows + '</table>';
+  box.querySelectorAll('[data-load]').forEach(b => b.onclick = () => loadGame(sched[+b.dataset.load]));
+  $('bSimAll').onclick = async () => {
+    const R = rng(), res = []; $('bSimAll').textContent = 'Simulating…';
+    for (const g of sched) {
+      await new Promise(r => setTimeout(r, 0));
+      const p = prepGame(g); if (!p) { res.push(null); continue; }
+      const m = Sim.monteCarlo(sport, p[0], p[1], 2000, R, { rest: { away: g.awayRest, home: g.homeRest } });
+      const raw = (m.wins[1] + m.wins[2] / 2) / m.n, a = (window.BACKTEST && window.BACKTEST.leagues[sport] && window.BACKTEST.leagues[sport].stretch) || 1;
+      const z = Math.log(Math.min(0.999, Math.max(0.001, raw)) / (1 - Math.min(0.999, Math.max(0.001, raw))));
+      res.push({ raw, pHome: 1 / (1 + Math.exp(-a * z)), margin: m.avg[1] - m.avg[0], total: m.avgTotal, away: m.avg[0], home: m.avg[1] });
+    }
+    renderUpcoming(res);
+  };
+}
+
+// ---------- Live track record (picks logged before game time, scored after) ----------
+function renderPicks() {
+  const box = $('picks'), P = window.PICKS && window.PICKS.leagues && window.PICKS.leagues[sport];
+  const hdr = '<b>Live track record: ' + S[sport].label + '</b>';
+  if (!P) { box.innerHTML = hdr + '<p class="note">Nothing logged yet. Run <code>node refresh.js</code> (or let the scheduled task do it) to start logging picks.</p>'; return; }
+  if (!P.n) { box.innerHTML = hdr + '<p class="note">' + P.pending + ' games logged and waiting to finish. Results appear after the games are played and the next refresh runs.</p>'; return; }
+  const pc = x => x == null ? '–' : (x * 100).toFixed(1) + '%';
+  box.innerHTML = hdr + '<p class="note">' + P.n + ' finished games scored (' + P.pending + ' still pending). Each pick is the last pre-game snapshot. Market probabilities are derived from the posted line.</p>' +
+    '<table><tr><th></th><th>Sim</th><th>Market</th></tr>' +
+    '<tr><td>Picked the winner (' + P.nMkt + ' games with a line)</td><td>' + pc(P.accSimMkt) + '</td><td>' + pc(P.accMkt) + '</td></tr>' +
+    '<tr><td>Brier (lower is better)</td><td>' + (P.brierSimMkt == null ? '–' : P.brierSimMkt) + '</td><td>' + (P.brierMkt == null ? '–' : P.brierMkt) + '</td></tr>' +
+    '<tr><td>Total error in points (' + P.nTot + ' games)</td><td>' + (P.totMAESim == null ? '–' : P.totMAESim.toFixed(1)) + '</td><td>' + (P.totMAEMkt == null ? '–' : P.totMAEMkt.toFixed(1)) + '</td></tr>' +
+    (P.nBlend ? '<tr><td>NFL blend vs market, Brier (' + P.nBlend + ' games)</td><td>' + P.brierBlend + '</td><td>' + P.brierBlendMkt + '</td></tr>' : '') + (P.nSpread ? '<tr><td>Margin error in points (' + P.nSpread + ' games with a spread)</td><td>' + P.marMAESim.toFixed(1) + '</td><td>' + P.marMAEMkt.toFixed(1) + '</td></tr>' : '') + '</table>' +
+    (P.nCallT ? '<p class="note">When the sim and the market total differed by 2+ points, the sim picked the right side of the total in ' + (P.hitCallT * 100).toFixed(0) + '% of ' + P.nCallT + ' games' + (P.nCallS ? ', and the right side of the spread in ' + (P.hitCallS * 100).toFixed(0) + '% of ' + P.nCallS : '') + ' (50% is break-even luck). Average total error: sim ' + (P.totBias > 0 ? '+' : '') + P.totBias + ' vs actual, market ' + (P.mktTotBias > 0 ? '+' : '') + P.mktTotBias + '.</p>' : '') +
+    (P.n < 100 ? '<p class="note">Small sample (under 100 games): treat these numbers as noise for now.</p>' : '') +
+    '<h4 style="margin:14px 0 4px">Recent results</h4><table class="up"><tr><th>Date</th><th>Game</th><th>Sim home %</th><th>Mkt home %</th><th>Sim / mkt total</th><th>Final (away–home)</th></tr>' +
+    P.recent.map(r => '<tr><td>' + new Date(r.d).toLocaleDateString([], { month: 'short', day: 'numeric' }) + '</td><td>' + r.g + '</td><td>' + pc(r.p) + '</td><td>' + pc(r.mp) + '</td><td>' + r.st.toFixed(1) + ' / ' + (r.mt == null ? '–' : r.mt) + '</td><td>' + r.as + '–' + r.hs + '</td></tr>').join('') + '</table>';
+}
+
+// ---------- Backtest ----------
+function renderBacktest() {
+  const box = $('backtest'), B = window.BACKTEST && window.BACKTEST.leagues && window.BACKTEST.leagues[sport];
+  if (!B) { box.innerHTML = '<b>Accuracy</b><p class="note">' + (sport === 'mlb' ? 'No backtest for MLB yet (it has no live data).' : 'No backtest loaded. Run <code>node backtest.js</code>.') + '</p>'; return; }
+  const better = (a, b) => a < b ? 'pos' : 'neg';
+  box.innerHTML = '<b>How accurate is the ' + S[sport].label + ' sim? (walk-forward backtest)</b>' +
+    '<p class="note">' + B.n.toLocaleString() + ' real games, ' + B.window + '. Each game was predicted using only team results from before that game (' + B.sims + ' sims per game, teams rated after ' + B.minGp + '+ games). Team-level only: no historical injuries or lineups' + (sport === 'nfl' ? '.' : ', and no betting lines to compare against.') + '</p>' +
+    '<table><tr><th></th><th>Sim</th><th>Baseline (home-win rate)</th></tr>' +
+    '<tr><td>Picked the winner</td><td class="' + (B.acc > B.accBase ? 'pos' : 'neg') + '">' + (B.acc * 100).toFixed(1) + '%</td><td>' + (B.accBase * 100).toFixed(1) + '%</td></tr>' +
+    '<tr><td>Brier score (lower is better)</td><td class="' + better(B.brier, B.brierBase) + '">' + B.brier + '</td><td>' + B.brierBase + '</td></tr>' +
+    (B.noRest ? '<tr><td>Brier without the back-to-back adjustment</td><td>' + B.noRest.brier + '</td><td>the adjustment helped slightly</td></tr>' : '') +
+    '<tr><td>Brier after calibration (stretch ×' + B.stretch + ')</td><td class="' + better(B.brierCal, B.brierBase) + '">' + B.brierCal + '</td><td>fit on the same games, so slightly optimistic</td></tr>' +
+    '<tr><td>Log loss (lower is better)</td><td class="' + better(B.logloss, B.loglossBase) + '">' + B.logloss + '</td><td>' + B.loglossBase + '</td></tr>' +
+    '<tr><td>Margin error (avg points off)</td><td>' + B.marginMAE + '</td><td>bias ' + (B.marginBias > 0 ? '+' : '') + B.marginBias + '</td></tr>' +
+    '<tr><td>Total error (avg points off)</td><td>' + B.totalMAE + '</td><td>bias ' + (B.totalBias > 0 ? '+' : '') + B.totalBias + ' (sim ' + B.predTotal + ' vs real ' + B.actualTotal + ')</td></tr></table>' +
+    (B.market ? '<h4 style="margin:14px 0 4px">Versus the closing betting line (' + B.market.n + ' games, free nflverse data)</h4><table><tr><th></th><th>Sim</th><th>Market</th></tr>' +
+      '<tr><td>Brier (lower is better)</td><td>' + B.market.brierSim + '</td><td class="' + (B.market.brierMarket < B.market.brierSim ? 'pos' : 'neg') + '">' + B.market.brierMarket + '</td></tr>' +
+      '<tr><td>Picked the winner</td><td>' + (B.market.accSim * 100).toFixed(1) + '%</td><td>' + (B.market.accMarket * 100).toFixed(1) + '%</td></tr>' +
+      '<tr><td>Margin error (points)</td><td>' + B.market.marginMAESim + '</td><td>' + B.market.marginMAEMarket + '</td></tr>' +
+      '<tr><td>Total error (points)</td><td>' + B.market.totalMAESim + '</td><td>' + B.market.totalMAEMarket + '</td></tr></table>' +
+      '<p class="note">The market is more accurate than the sim. Best blend: ' + Math.round(B.market.simWeight * 100) + '% sim / ' + Math.round((1 - B.market.simWeight) * 100) + '% market (Brier ' + B.market.brierBlend + '), a small gain that could be noise at this sample size' + (B.oos && B.oos.market ? ' (on 2024-25 the best blend was ' + Math.round(B.oos.market.simWeight * 100) + '% sim, so the page uses 15%)' : '') + '.</p>' : '<p class="note">No free closing lines exist for ' + S[sport].label + ', so it can only be compared to simple baselines.</p>') +
+    (B.oos ? '<h4 style="margin:14px 0 4px">Out-of-sample check: same settings on the 2024-25 season (' + B.oos.n.toLocaleString() + ' games)</h4><table><tr><th></th><th>Sim</th><th>Baseline</th></tr><tr><td>Picked the winner</td><td>' + (B.oos.acc * 100).toFixed(1) + '%</td><td>' + (B.oos.accBase * 100).toFixed(1) + '%</td></tr><tr><td>Brier</td><td class="' + better(B.oos.brier, B.oos.brierBase) + '">' + B.oos.brier + '</td><td>' + B.oos.brierBase + '</td></tr>' + (B.oos.market ? '<tr><td>Brier vs closing line</td><td>' + B.oos.market.brierSim + '</td><td>market ' + B.oos.market.brierMarket + '</td></tr>' : '') + '</table><p class="note">Settings were tuned on 2025-26, so 2024-25 is a fair test of whether they hold up on games they were not tuned on.</p>' : '') +
+    '<h4 style="margin:14px 0 4px">Calibration: when the sim says X%, how often does the home team win?</h4>' +
+    '<table><tr><th>Sim said</th><th>Games</th><th>Home actually won</th></tr>' + B.cal.map(c => '<tr><td>' + (c.pred * 100).toFixed(0) + '%</td><td>' + c.n + '</td><td>' + (c.act * 100).toFixed(0) + '%</td></tr>').join('') + '</table>' +
+    '<p class="note">Re-run with <code>node backtest.js</code> (last run ' + new Date(window.BACKTEST.generated).toLocaleDateString() + ').</p>';
+}
+
+buildTabs(); buildTeams(); renderUpcoming(); renderPicks(); renderBacktest();
+</script>
+</body>
+</html>
