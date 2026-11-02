@@ -16,21 +16,21 @@
    1,
    1
   ],
-  "simPHome": 0.5247,
-  "rawPHome": 0.5215,
-  "simMargin": 0.86,
+  "simPHome": 0.546,
+  "rawPHome": 0.54,
+  "simMargin": 1.43,
   "simScore": [
-   111.86,
-   112.72
+   111.1,
+   112.53
   ],
-  "simTotal": 224.57,
+  "simTotal": 223.62,
   "mkt": {
    "line": "CLE -4.5",
    "total": 229.5,
    "pHome": 0.6463166764997754,
    "margin": 4.5
   },
-  "loggedAt": "2026-11-02T22:28:48.860Z",
+  "loggedAt": "2026-11-02T22:38:59.255Z",
   "result": null
  },
  "nba:401909908": {
@@ -50,21 +50,21 @@
    2,
    1
   ],
-  "simPHome": 0.3392,
-  "rawPHome": 0.359,
-  "simMargin": -5.65,
+  "simPHome": 0.364,
+  "rawPHome": 0.381,
+  "simMargin": -4.89,
   "simScore": [
-   105.75,
-   100.11
+   105.62,
+   100.73
   ],
-  "simTotal": 205.86,
+  "simTotal": 206.35,
   "mkt": {
    "line": "DET -5.5",
    "total": 209.5,
    "pHome": 0.323097781177753,
    "margin": -5.5
   },
-  "loggedAt": "2026-11-02T22:28:49.091Z",
+  "loggedAt": "2026-11-02T22:38:59.529Z",
   "result": null
  },
  "nba:401909909": {
@@ -84,21 +84,21 @@
    1,
    0
   ],
-  "simPHome": 0.1856,
-  "rawPHome": 0.2165,
-  "simMargin": -12.7,
+  "simPHome": 0.1917,
+  "rawPHome": 0.2225,
+  "simMargin": -12.19,
   "simScore": [
-   119.53,
-   106.82
+   119.58,
+   107.39
   ],
-  "simTotal": 226.35,
+  "simTotal": 226.97,
   "mkt": {
    "line": "ATL -10.5",
    "total": 229.5,
    "pHome": 0.18944159830705426,
    "margin": -10.5
   },
-  "loggedAt": "2026-11-02T22:28:49.313Z",
+  "loggedAt": "2026-11-02T22:38:59.762Z",
   "result": null
  },
  "nba:401909910": {
@@ -118,21 +118,21 @@
    0,
    2
   ],
-  "simPHome": 0.8859,
-  "rawPHome": 0.856,
-  "simMargin": 16.79,
+  "simPHome": 0.8953,
+  "rawPHome": 0.866,
+  "simMargin": 16.99,
   "simScore": [
-   98.2,
-   114.99
+   98.06,
+   115.06
   ],
-  "simTotal": 213.19,
+  "simTotal": 213.12,
   "mkt": {
    "line": "NY -14.5",
    "total": 218.5,
    "pHome": 0.8889898927761495,
    "margin": 14.5
   },
-  "loggedAt": "2026-11-02T22:28:49.543Z",
+  "loggedAt": "2026-11-02T22:38:59.940Z",
   "result": null
  },
  "nba:401909911": {
@@ -152,21 +152,21 @@
    2,
    0
   ],
-  "simPHome": 0.5849,
-  "rawPHome": 0.574,
-  "simMargin": 3.09,
+  "simPHome": 0.5592,
+  "rawPHome": 0.5515,
+  "simMargin": 2.61,
   "simScore": [
-   110.84,
-   113.93
+   111.14,
+   113.76
   ],
-  "simTotal": 224.77,
+  "simTotal": 224.9,
   "mkt": {
    "line": "ORL -3.5",
    "total": 224.5,
    "pHome": 0.6148003972124381,
    "margin": 3.5
   },
-  "loggedAt": "2026-11-02T22:28:49.767Z",
+  "loggedAt": "2026-11-02T22:39:00.103Z",
   "result": null
  },
  "nba:401909912": {
@@ -186,21 +186,21 @@
    2,
    1
   ],
-  "simPHome": 0.8124,
-  "rawPHome": 0.7815,
-  "simMargin": 12.35,
+  "simPHome": 0.8047,
+  "rawPHome": 0.774,
+  "simMargin": 12.36,
   "simScore": [
-   109.64,
-   121.99
+   109.22,
+   121.58
   ],
-  "simTotal": 231.62,
+  "simTotal": 230.8,
   "mkt": {
    "line": "PHI -9.5",
    "total": 238.5,
    "pHome": 0.7867944967911461,
    "margin": 9.5
   },
-  "loggedAt": "2026-11-02T22:28:49.973Z",
+  "loggedAt": "2026-11-02T22:39:00.270Z",
   "result": null
  },
  "nba:401909913": {
@@ -220,21 +220,21 @@
    1,
    2
   ],
-  "simPHome": 0.8362,
-  "rawPHome": 0.805,
-  "simMargin": 14.43,
+  "simPHome": 0.8185,
+  "rawPHome": 0.7875,
+  "simMargin": 13.39,
   "simScore": [
-   109.24,
-   123.67
+   110.09,
+   123.48
   ],
-  "simTotal": 232.91,
+  "simTotal": 233.57,
   "mkt": {
    "line": "DAL -8.5",
    "total": 231.5,
    "pHome": 0.761450824762999,
    "margin": 8.5
   },
-  "loggedAt": "2026-11-02T22:28:50.190Z",
+  "loggedAt": "2026-11-02T22:39:00.467Z",
   "result": null
  },
  "nba:401909914": {
@@ -254,21 +254,21 @@
    1,
    1
   ],
-  "simPHome": 0.7385,
-  "rawPHome": 0.7115,
-  "simMargin": 8.9,
+  "simPHome": 0.7487,
+  "rawPHome": 0.721,
+  "simMargin": 9.81,
   "simScore": [
-   114.11,
-   123.02
+   113.38,
+   123.19
   ],
-  "simTotal": 237.13,
+  "simTotal": 236.57,
   "mkt": {
    "line": "MEM -5.5",
    "total": 232.5,
    "pHome": 0.676902218822247,
    "margin": 5.5
   },
-  "loggedAt": "2026-11-02T22:28:50.421Z",
+  "loggedAt": "2026-11-02T22:39:00.731Z",
   "result": null
  },
  "nba:401909915": {
@@ -288,21 +288,21 @@
    1,
    1
   ],
-  "simPHome": 0.8397,
-  "rawPHome": 0.8085,
-  "simMargin": 14.01,
+  "simPHome": 0.8005,
+  "rawPHome": 0.77,
+  "simMargin": 13.19,
   "simScore": [
-   107.44,
-   121.44
+   108.12,
+   121.31
   ],
-  "simTotal": 228.88,
+  "simTotal": 229.42,
   "mkt": {
    "line": "MIN -10.5",
    "total": 230.5,
    "pHome": 0.8105584016929457,
    "margin": 10.5
   },
-  "loggedAt": "2026-11-02T22:28:50.632Z",
+  "loggedAt": "2026-11-02T22:39:00.898Z",
   "result": null
  },
  "nba:401909916": {
@@ -322,12 +322,12 @@
    0,
    1
   ],
-  "simPHome": 0.6371,
-  "rawPHome": 0.62,
-  "simMargin": 5.25,
+  "simPHome": 0.6703,
+  "rawPHome": 0.6495,
+  "simMargin": 6.39,
   "simScore": [
-   107.45,
-   112.7
+   106.88,
+   113.27
   ],
   "simTotal": 220.15,
   "mkt": {
@@ -336,7 +336,7 @@
    "pHome": 0.6463166764997754,
    "margin": 4.5
   },
-  "loggedAt": "2026-11-02T22:28:50.861Z",
+  "loggedAt": "2026-11-02T22:39:01.066Z",
   "result": null
  },
  "nba:401909917": {
@@ -356,21 +356,21 @@
    1,
    1
   ],
-  "simPHome": 0.9247,
-  "rawPHome": 0.8985,
-  "simMargin": 21.23,
+  "simPHome": 0.9242,
+  "rawPHome": 0.898,
+  "simMargin": 20.42,
   "simScore": [
-   107.1,
-   128.33
+   106.93,
+   127.35
   ],
-  "simTotal": 235.43,
+  "simTotal": 234.28,
   "mkt": {
    "line": "SA -16.5",
    "total": 227.5,
    "pHome": 0.9182974169220298,
    "margin": 16.5
   },
-  "loggedAt": "2026-11-02T22:28:51.073Z",
+  "loggedAt": "2026-11-02T22:39:01.232Z",
   "result": null
  },
  "nba:401909918": {
@@ -390,21 +390,21 @@
    1,
    2
   ],
-  "simPHome": 0.5529,
-  "rawPHome": 0.546,
-  "simMargin": 1.99,
+  "simPHome": 0.5752,
+  "rawPHome": 0.5655,
+  "simMargin": 2.71,
   "simScore": [
-   116.08,
-   118.06
+   115.47,
+   118.19
   ],
-  "simTotal": 234.14,
+  "simTotal": 233.66,
   "mkt": {
    "line": "DEN -4.5",
    "total": 231.5,
    "pHome": 0.6463166764997754,
    "margin": 4.5
   },
-  "loggedAt": "2026-11-02T22:28:51.274Z",
+  "loggedAt": "2026-11-02T22:39:01.398Z",
   "result": null
  },
  "nba:401909919": {
@@ -424,21 +424,21 @@
    2,
    0
   ],
-  "simPHome": 0.5603,
-  "rawPHome": 0.5525,
-  "simMargin": 2.12,
+  "simPHome": 0.5838,
+  "rawPHome": 0.573,
+  "simMargin": 2.8,
   "simScore": [
-   112.46,
-   114.57
+   112.56,
+   115.36
   ],
-  "simTotal": 227.03,
+  "simTotal": 227.92,
   "mkt": {
    "line": "GS -2.5",
    "total": 227.5,
    "pHome": 0.5825421413264573,
    "margin": 2.5
   },
-  "loggedAt": "2026-11-02T22:28:51.463Z",
+  "loggedAt": "2026-11-02T22:39:01.561Z",
   "result": null
  },
  "nba:401909920": {
@@ -458,21 +458,21 @@
    0,
    0
   ],
-  "simPHome": 0.3832,
-  "rawPHome": 0.398,
-  "simMargin": -3.83,
+  "simPHome": 0.3889,
+  "rawPHome": 0.403,
+  "simMargin": -4.05,
   "simScore": [
-   110.94,
-   107.11
+   111.26,
+   107.21
   ],
-  "simTotal": 218.05,
+  "simTotal": 218.46,
   "mkt": {
    "line": "TOR -4.5",
    "total": 219.5,
    "pHome": 0.3536833235002245,
    "margin": -4.5
   },
-  "loggedAt": "2026-11-02T22:28:51.671Z",
+  "loggedAt": "2026-11-02T22:39:01.731Z",
   "result": null
  },
  "nba:401909921": {
@@ -492,21 +492,21 @@
    2,
    0
   ],
-  "simPHome": 0.5923,
-  "rawPHome": 0.5805,
-  "simMargin": 3.06,
+  "simPHome": 0.574,
+  "rawPHome": 0.5645,
+  "simMargin": 2.92,
   "simScore": [
-   119.27,
-   122.33
+   119.53,
+   122.46
   ],
-  "simTotal": 241.6,
+  "simTotal": 241.99,
   "mkt": {
    "line": "LAL -2.5",
    "total": 236.5,
    "pHome": 0.5825421413264573,
    "margin": 2.5
   },
-  "loggedAt": "2026-11-02T22:28:51.873Z",
+  "loggedAt": "2026-11-02T22:39:01.899Z",
   "result": null
  },
  "nba:401909922": {
@@ -526,21 +526,21 @@
    1,
    1
   ],
-  "simPHome": 0.7052,
-  "rawPHome": 0.681,
-  "simMargin": 7.96,
+  "simPHome": 0.7008,
+  "rawPHome": 0.677,
+  "simMargin": 7.43,
   "simScore": [
-   101.69,
-   109.65
+   101.84,
+   109.27
   ],
-  "simTotal": 211.34,
+  "simTotal": 211.11,
   "mkt": {
    "line": null,
    "total": null,
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-02T22:28:52.106Z",
+  "loggedAt": "2026-11-02T22:39:02.062Z",
   "result": null
  },
  "nba:401909923": {
@@ -560,21 +560,21 @@
    1,
    1
   ],
-  "simPHome": 0.2937,
-  "rawPHome": 0.318,
-  "simMargin": -7.64,
+  "simPHome": 0.2735,
+  "rawPHome": 0.2995,
+  "simMargin": -7.77,
   "simScore": [
-   119.51,
-   111.87
+   119.18,
+   111.4
   ],
-  "simTotal": 231.39,
+  "simTotal": 230.58,
   "mkt": {
    "line": null,
    "total": null,
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-02T22:28:52.323Z",
+  "loggedAt": "2026-11-02T22:39:02.225Z",
   "result": null
  },
  "nba:401909924": {
@@ -594,21 +594,21 @@
    1,
    1
   ],
-  "simPHome": 0.8902,
-  "rawPHome": 0.8605,
-  "simMargin": 17.46,
+  "simPHome": 0.8873,
+  "rawPHome": 0.8575,
+  "simMargin": 17.28,
   "simScore": [
-   103.42,
-   120.88
+   103.97,
+   121.24
   ],
-  "simTotal": 224.3,
+  "simTotal": 225.21,
   "mkt": {
    "line": null,
    "total": null,
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-02T22:28:52.529Z",
+  "loggedAt": "2026-11-02T22:39:02.389Z",
   "result": null
  },
  "nba:401909925": {
@@ -628,21 +628,21 @@
    1,
    1
   ],
-  "simPHome": 0.3258,
-  "rawPHome": 0.347,
-  "simMargin": -6.5,
+  "simPHome": 0.297,
+  "rawPHome": 0.321,
+  "simMargin": -7.19,
   "simScore": [
-   108.14,
-   101.65
+   108.17,
+   100.99
   ],
-  "simTotal": 209.79,
+  "simTotal": 209.16,
   "mkt": {
    "line": null,
    "total": null,
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-02T22:28:52.742Z",
+  "loggedAt": "2026-11-02T22:39:02.559Z",
   "result": null
  },
  "nba:401909926": {
@@ -662,21 +662,21 @@
    1,
    1
   ],
-  "simPHome": 0.8502,
-  "rawPHome": 0.819,
-  "simMargin": 15.3,
+  "simPHome": 0.8472,
+  "rawPHome": 0.816,
+  "simMargin": 14.89,
   "simScore": [
-   107.59,
-   122.89
+   107.78,
+   122.66
   ],
-  "simTotal": 230.48,
+  "simTotal": 230.44,
   "mkt": {
    "line": null,
    "total": null,
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-02T22:28:52.946Z",
+  "loggedAt": "2026-11-02T22:39:02.726Z",
   "result": null
  },
  "nba:401909927": {
@@ -696,21 +696,21 @@
    1,
    1
   ],
-  "simPHome": 0.892,
-  "rawPHome": 0.8625,
-  "simMargin": 17.61,
+  "simPHome": 0.8826,
+  "rawPHome": 0.8525,
+  "simMargin": 16.95,
   "simScore": [
-   104.83,
-   122.44
+   104.94,
+   121.89
   ],
-  "simTotal": 227.28,
+  "simTotal": 226.84,
   "mkt": {
    "line": null,
    "total": null,
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-02T22:28:53.134Z",
+  "loggedAt": "2026-11-02T22:39:02.887Z",
   "result": null
  },
  "nba:401909928": {
@@ -730,21 +730,21 @@
    1,
    1
   ],
-  "simPHome": 0.7493,
-  "rawPHome": 0.7215,
-  "simMargin": 9.74,
+  "simPHome": 0.7211,
+  "rawPHome": 0.6955,
+  "simMargin": 8.35,
   "simScore": [
-   115.22,
-   124.96
+   115.72,
+   124.07
   ],
-  "simTotal": 240.18,
+  "simTotal": 239.8,
   "mkt": {
    "line": null,
    "total": null,
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-02T22:28:53.348Z",
+  "loggedAt": "2026-11-02T22:39:03.053Z",
   "result": null
  },
  "nba:401909929": {
@@ -764,21 +764,21 @@
    1,
    1
   ],
-  "simPHome": 0.566,
-  "rawPHome": 0.5575,
-  "simMargin": 2.1,
+  "simPHome": 0.5935,
+  "rawPHome": 0.5815,
+  "simMargin": 3.51,
   "simScore": [
-   111.24,
-   113.34
+   110.69,
+   114.2
   ],
-  "simTotal": 224.58,
+  "simTotal": 224.89,
   "mkt": {
    "line": null,
    "total": null,
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-02T22:28:53.563Z",
+  "loggedAt": "2026-11-02T22:39:03.223Z",
   "result": null
  },
  "nba:401909930": {
@@ -798,21 +798,21 @@
    1,
    1
   ],
-  "simPHome": 0.7151,
-  "rawPHome": 0.69,
-  "simMargin": 7.92,
+  "simPHome": 0.7019,
+  "rawPHome": 0.678,
+  "simMargin": 7.65,
   "simScore": [
-   107.81,
-   115.73
+   108.14,
+   115.79
   ],
-  "simTotal": 223.54,
+  "simTotal": 223.93,
   "mkt": {
    "line": null,
    "total": null,
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-02T22:28:53.796Z",
+  "loggedAt": "2026-11-02T22:39:03.396Z",
   "result": null
  },
  "nba:401909931": {
@@ -832,21 +832,21 @@
    1,
    1
   ],
-  "simPHome": 0.5826,
-  "rawPHome": 0.572,
-  "simMargin": 2.97,
+  "simPHome": 0.5672,
+  "rawPHome": 0.5585,
+  "simMargin": 2.21,
   "simScore": [
-   113.71,
-   116.68
+   114.22,
+   116.43
   ],
-  "simTotal": 230.39,
+  "simTotal": 230.65,
   "mkt": {
    "line": null,
    "total": null,
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-02T22:28:54.008Z",
+  "loggedAt": "2026-11-02T22:39:03.564Z",
   "result": null
  },
  "nba:401909932": {
@@ -866,21 +866,21 @@
    1,
    1
   ],
-  "simPHome": 0.4088,
-  "rawPHome": 0.4205,
-  "simMargin": -3.05,
+  "simPHome": 0.3906,
+  "rawPHome": 0.4045,
+  "simMargin": -3.84,
   "simScore": [
-   114.49,
-   111.44
+   114.71,
+   110.87
   ],
-  "simTotal": 225.93,
+  "simTotal": 225.58,
   "mkt": {
    "line": null,
    "total": null,
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-02T22:28:54.205Z",
+  "loggedAt": "2026-11-02T22:39:03.731Z",
   "result": null
  },
  "nba:401909933": {
@@ -900,21 +900,21 @@
    1,
    1
   ],
-  "simPHome": 0.7984,
-  "rawPHome": 0.768,
-  "simMargin": 12.35,
+  "simPHome": 0.8277,
+  "rawPHome": 0.7965,
+  "simMargin": 13.47,
   "simScore": [
-   108.78,
-   121.13
+   107.77,
+   121.24
   ],
-  "simTotal": 229.91,
+  "simTotal": 229,
   "mkt": {
    "line": null,
    "total": null,
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-02T22:28:54.410Z",
+  "loggedAt": "2026-11-02T22:39:03.897Z",
   "result": null
  },
  "nba:401909934": {
@@ -934,21 +934,21 @@
    1,
    1
   ],
-  "simPHome": 0.1415,
-  "rawPHome": 0.1725,
-  "simMargin": -16,
+  "simPHome": 0.1498,
+  "rawPHome": 0.181,
+  "simMargin": -15.31,
   "simScore": [
-   125.87,
-   109.87
+   125.93,
+   110.62
   ],
-  "simTotal": 235.74,
+  "simTotal": 236.55,
   "mkt": {
    "line": null,
    "total": null,
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-02T22:28:54.605Z",
+  "loggedAt": "2026-11-02T22:39:04.063Z",
   "result": null
  },
  "nba:401909935": {
@@ -968,21 +968,21 @@
    1,
    1
   ],
-  "simPHome": 0.4552,
-  "rawPHome": 0.461,
-  "simMargin": -1.9,
+  "simPHome": 0.4414,
+  "rawPHome": 0.449,
+  "simMargin": -1.92,
   "simScore": [
-   117.57,
-   115.66
+   117.71,
+   115.79
   ],
-  "simTotal": 233.23,
+  "simTotal": 233.5,
   "mkt": {
    "line": null,
    "total": null,
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-02T22:28:54.816Z",
+  "loggedAt": "2026-11-02T22:39:04.225Z",
   "result": null
  },
  "nfl:401873036": {
@@ -1002,22 +1002,22 @@
    null,
    null
   ],
-  "simPHome": 0.6419,
-  "rawPHome": 0.6355,
-  "simMargin": 3.87,
+  "simPHome": 0.6505,
+  "rawPHome": 0.6438,
+  "simMargin": 4.21,
   "simScore": [
-   19.47,
-   23.34
+   19.06,
+   23.27
   ],
-  "simTotal": 42.81,
-  "blendPHome": 0.5977,
+  "simTotal": 42.34,
+  "blendPHome": 0.599,
   "mkt": {
    "line": "SEA -3",
    "total": 46.5,
    "pHome": 0.5899284108433875,
    "margin": 3
   },
-  "loggedAt": "2026-11-02T22:28:54.958Z",
+  "loggedAt": "2026-11-02T22:39:04.665Z",
   "result": null
  },
  "nhl:401892629": {
@@ -1041,21 +1041,21 @@
    2,
    1
   ],
-  "simPHome": 0.48,
-  "rawPHome": 0.4765,
+  "simPHome": 0.4834,
+  "rawPHome": 0.4805,
   "simMargin": -0.11,
   "simScore": [
-   3.08,
-   2.97
+   3.15,
+   3.04
   ],
-  "simTotal": 6.05,
+  "simTotal": 6.19,
   "mkt": {
    "line": "VGK -118",
    "total": 6.5,
    "pHome": 0.48202449409595716,
    "margin": null
   },
-  "loggedAt": "2026-11-02T22:28:55.029Z",
+  "loggedAt": "2026-11-02T22:39:04.938Z",
   "result": null
  },
  "nhl:401892630": {
@@ -1079,21 +1079,21 @@
    1,
    2
   ],
-  "simPHome": 0.4834,
-  "rawPHome": 0.4805,
-  "simMargin": -0.07,
+  "simPHome": 0.4996,
+  "rawPHome": 0.4995,
+  "simMargin": 0.03,
   "simScore": [
-   3.1,
-   3.03
+   3.04,
+   3.07
   ],
-  "simTotal": 6.13,
+  "simTotal": 6.12,
   "mkt": {
    "line": "FLA -185",
    "total": 5.5,
    "pHome": 0.6211701502560228,
    "margin": null
   },
-  "loggedAt": "2026-11-02T22:28:55.074Z",
+  "loggedAt": "2026-11-02T22:39:05.026Z",
   "result": null
  },
  "nhl:401892631": {
@@ -1117,21 +1117,21 @@
    1,
    1
   ],
-  "simPHome": 0.4668,
-  "rawPHome": 0.461,
-  "simMargin": -0.14,
+  "simPHome": 0.4613,
+  "rawPHome": 0.4545,
+  "simMargin": -0.23,
   "simScore": [
-   3.19,
-   3.05
+   3.31,
+   3.08
   ],
-  "simTotal": 6.24,
+  "simTotal": 6.38,
   "mkt": {
    "line": "COL -230",
    "total": 6.5,
    "pHome": 0.3330433521821081,
    "margin": null
   },
-  "loggedAt": "2026-11-02T22:28:55.136Z",
+  "loggedAt": "2026-11-02T22:39:05.066Z",
   "result": null
  },
  "nhl:401892632": {
@@ -1155,21 +1155,21 @@
    1,
    1
   ],
-  "simPHome": 0.5302,
-  "rawPHome": 0.5355,
-  "simMargin": 0.24,
+  "simPHome": 0.5468,
+  "rawPHome": 0.555,
+  "simMargin": 0.34,
   "simScore": [
-   3.16,
-   3.4
+   3.09,
+   3.43
   ],
-  "simTotal": 6.55,
+  "simTotal": 6.53,
   "mkt": {
    "line": "SJ -125",
    "total": 6.5,
    "pHome": 0.531632110579479,
    "margin": null
   },
-  "loggedAt": "2026-11-02T22:28:55.193Z",
+  "loggedAt": "2026-11-02T22:39:05.106Z",
   "result": null
  },
  "nhl:401892633": {
@@ -1193,21 +1193,21 @@
    1,
    2
   ],
-  "simPHome": 0.4855,
-  "rawPHome": 0.483,
-  "simMargin": -0.12,
+  "simPHome": 0.5013,
+  "rawPHome": 0.5015,
+  "simMargin": -0.07,
   "simScore": [
-   3.3,
+   3.26,
    3.18
   ],
-  "simTotal": 6.48,
+  "simTotal": 6.44,
   "mkt": {
    "line": "UTAH -130",
    "total": 6.5,
    "pHome": 0.4591221135843562,
    "margin": null
   },
-  "loggedAt": "2026-11-02T22:28:55.252Z",
+  "loggedAt": "2026-11-02T22:39:05.147Z",
   "result": null
  },
  "nhl:401892634": {
@@ -1231,21 +1231,21 @@
    1,
    2
   ],
-  "simPHome": 0.5922,
-  "rawPHome": 0.608,
-  "simMargin": 0.62,
+  "simPHome": 0.5866,
+  "rawPHome": 0.6015,
+  "simMargin": 0.59,
   "simScore": [
-   2.66,
-   3.28
+   2.64,
+   3.23
   ],
-  "simTotal": 5.93,
+  "simTotal": 5.88,
   "mkt": {
    "line": "MTL -180",
    "total": 5.5,
    "pHome": 0.6151742993848258,
    "margin": null
   },
-  "loggedAt": "2026-11-02T22:28:55.309Z",
+  "loggedAt": "2026-11-02T22:39:05.187Z",
   "result": null
  },
  "nhl:401892635": {
@@ -1269,21 +1269,21 @@
    0,
    2
   ],
-  "simPHome": 0.5562,
-  "rawPHome": 0.566,
-  "simMargin": 0.37,
+  "simPHome": 0.5366,
+  "rawPHome": 0.543,
+  "simMargin": 0.27,
   "simScore": [
-   3.02,
-   3.38
+   3,
+   3.27
   ],
-  "simTotal": 6.4,
+  "simTotal": 6.28,
   "mkt": {
    "line": "TB -278",
    "total": 6.5,
    "pHome": 0.7037796511480723,
    "margin": null
   },
-  "loggedAt": "2026-11-02T22:28:55.355Z",
+  "loggedAt": "2026-11-02T22:39:05.227Z",
   "result": null
  },
  "nhl:401892637": {
@@ -1307,21 +1307,21 @@
    2,
    1
   ],
-  "simPHome": 0.4498,
-  "rawPHome": 0.441,
-  "simMargin": -0.37,
+  "simPHome": 0.4494,
+  "rawPHome": 0.4405,
+  "simMargin": -0.33,
   "simScore": [
-   3.14,
-   2.77
+   3.21,
+   2.88
   ],
-  "simTotal": 5.91,
+  "simTotal": 6.09,
   "mkt": {
    "line": "NYR -125",
    "total": 5.5,
    "pHome": 0.531632110579479,
    "margin": null
   },
-  "loggedAt": "2026-11-02T22:28:55.416Z",
+  "loggedAt": "2026-11-02T22:39:05.276Z",
   "result": null
  },
  "nhl:401892638": {
@@ -1345,21 +1345,21 @@
    1,
    1
   ],
-  "simPHome": 0.4035,
-  "rawPHome": 0.387,
-  "simMargin": -0.69,
+  "simPHome": 0.3784,
+  "rawPHome": 0.358,
+  "simMargin": -0.89,
   "simScore": [
-   3.33,
-   2.64
+   3.44,
+   2.55
   ],
-  "simTotal": 5.97,
+  "simTotal": 5.98,
   "mkt": {
    "line": "MIN -170",
    "total": 5.5,
    "pHome": 0.3974836080099238,
    "margin": null
   },
-  "loggedAt": "2026-11-02T22:28:55.456Z",
+  "loggedAt": "2026-11-02T22:39:05.316Z",
   "result": null
  },
  "nhl:401892639": {
@@ -1383,21 +1383,21 @@
    0,
    2
   ],
-  "simPHome": 0.5123,
-  "rawPHome": 0.5145,
-  "simMargin": 0.11,
+  "simPHome": 0.5208,
+  "rawPHome": 0.5245,
+  "simMargin": 0.14,
   "simScore": [
-   3.17,
-   3.28
+   3.1,
+   3.24
   ],
-  "simTotal": 6.45,
+  "simTotal": 6.34,
   "mkt": {
    "line": "PIT -108",
    "total": 6.5,
    "pHome": 0.4968715495031285,
    "margin": null
   },
-  "loggedAt": "2026-11-02T22:28:55.496Z",
+  "loggedAt": "2026-11-02T22:39:05.357Z",
   "result": null
  },
  "nhl:401892640": {
@@ -1421,21 +1421,21 @@
    2,
    1
   ],
-  "simPHome": 0.5234,
-  "rawPHome": 0.5275,
-  "simMargin": 0.22,
+  "simPHome": 0.5094,
+  "rawPHome": 0.511,
+  "simMargin": 0.13,
   "simScore": [
-   2.91,
-   3.13
+   2.93,
+   3.06
   ],
-  "simTotal": 6.04,
+  "simTotal": 5.99,
   "mkt": {
    "line": "WSH -112",
    "total": 5.5,
    "pHome": 0.5055520447774668,
    "margin": null
   },
-  "loggedAt": "2026-11-02T22:28:55.535Z",
+  "loggedAt": "2026-11-02T22:39:05.395Z",
   "result": null
  },
  "nhl:401892641": {
@@ -1459,21 +1459,21 @@
    0,
    2
   ],
-  "simPHome": 0.4647,
-  "rawPHome": 0.4585,
-  "simMargin": -0.25,
+  "simPHome": 0.4787,
+  "rawPHome": 0.475,
+  "simMargin": -0.15,
   "simScore": [
-   3.18,
-   2.94
+   3.09,
+   2.93
   ],
-  "simTotal": 6.12,
+  "simTotal": 6.02,
   "mkt": {
    "line": "COL -130",
    "total": 6.5,
    "pHome": 0.4591221135843562,
    "margin": null
   },
-  "loggedAt": "2026-11-02T22:28:55.574Z",
+  "loggedAt": "2026-11-02T22:39:05.434Z",
   "result": null
  },
  "nhl:401892636": {
@@ -1497,21 +1497,21 @@
    1,
    3
   ],
-  "simPHome": 0.52,
-  "rawPHome": 0.5235,
-  "simMargin": 0.15,
+  "simPHome": 0.543,
+  "rawPHome": 0.5505,
+  "simMargin": 0.3,
   "simScore": [
-   3.06,
-   3.21
+   2.95,
+   3.25
   ],
-  "simTotal": 6.26,
+  "simTotal": 6.2,
   "mkt": {
    "line": "NJ -162",
    "total": 6.5,
    "pHome": 0.5916943642938018,
    "margin": null
   },
-  "loggedAt": "2026-11-02T22:28:55.612Z",
+  "loggedAt": "2026-11-02T22:39:05.474Z",
   "result": null
  },
  "nhl:401892642": {
@@ -1535,21 +1535,21 @@
    1,
    2
   ],
-  "simPHome": 0.3897,
-  "rawPHome": 0.371,
-  "simMargin": -0.77,
+  "simPHome": 0.3871,
+  "rawPHome": 0.368,
+  "simMargin": -0.75,
   "simScore": [
    3.37,
-   2.6
+   2.61
   ],
-  "simTotal": 5.97,
+  "simTotal": 5.98,
   "mkt": {
    "line": "CAR -192",
    "total": 6.5,
    "pHome": 0.3707806252867536,
    "margin": null
   },
-  "loggedAt": "2026-11-02T22:28:55.650Z",
+  "loggedAt": "2026-11-02T22:39:05.513Z",
   "result": null
  },
  "nhl:401892643": {
@@ -1573,21 +1573,21 @@
    1,
    2
   ],
-  "simPHome": 0.4843,
-  "rawPHome": 0.4815,
-  "simMargin": -0.11,
+  "simPHome": 0.4864,
+  "rawPHome": 0.484,
+  "simMargin": -0.08,
   "simScore": [
    3.21,
-   3.1
+   3.13
   ],
-  "simTotal": 6.31,
+  "simTotal": 6.34,
   "mkt": {
    "line": "ANA -148",
    "total": 6.5,
    "pHome": 0.42892421670010794,
    "margin": null
   },
-  "loggedAt": "2026-11-02T22:28:55.694Z",
+  "loggedAt": "2026-11-02T22:39:05.573Z",
   "result": null
  },
  "nhl:401892644": {
@@ -1611,21 +1611,21 @@
    2,
    3
   ],
-  "simPHome": 0.5361,
-  "rawPHome": 0.5425,
-  "simMargin": 0.22,
+  "simPHome": 0.5319,
+  "rawPHome": 0.5375,
+  "simMargin": 0.26,
   "simScore": [
-   3.19,
-   3.42
+   3.15,
+   3.41
   ],
-  "simTotal": 6.61,
+  "simTotal": 6.57,
   "mkt": {
    "line": null,
    "total": null,
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-02T22:28:55.738Z",
+  "loggedAt": "2026-11-02T22:39:05.614Z",
   "result": null
  },
  "nhl:401892645": {
@@ -1643,27 +1643,27 @@
   },
   "goalies": [
    "Spencer Knight",
-   "Akira Schmid"
+   "Jacob Markstrom"
   ],
   "rest": [
    1,
    1
   ],
-  "simPHome": 0.5617,
-  "rawPHome": 0.5725,
-  "simMargin": 0.42,
+  "simPHome": 0.5477,
+  "rawPHome": 0.556,
+  "simMargin": 0.3,
   "simScore": [
-   2.85,
+   2.96,
    3.27
   ],
-  "simTotal": 6.11,
+  "simTotal": 6.23,
   "mkt": {
    "line": null,
    "total": null,
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-02T22:28:55.777Z",
+  "loggedAt": "2026-11-02T22:39:05.653Z",
   "result": null
  },
  "nhl:401892646": {
@@ -1687,21 +1687,21 @@
    1,
    3
   ],
-  "simPHome": 0.5502,
-  "rawPHome": 0.559,
-  "simMargin": 0.36,
+  "simPHome": 0.5123,
+  "rawPHome": 0.5145,
+  "simMargin": 0.11,
   "simScore": [
-   3.06,
-   3.42
+   3.2,
+   3.31
   ],
-  "simTotal": 6.48,
+  "simTotal": 6.51,
   "mkt": {
    "line": null,
    "total": null,
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-02T22:28:55.816Z",
+  "loggedAt": "2026-11-02T22:39:05.693Z",
   "result": null
  },
  "nhl:401892647": {
@@ -1725,21 +1725,21 @@
    1,
    4
   ],
-  "simPHome": 0.5789,
-  "rawPHome": 0.5925,
+  "simPHome": 0.5948,
+  "rawPHome": 0.611,
   "simMargin": 0.65,
   "simScore": [
-   2.89,
-   3.54
+   2.9,
+   3.55
   ],
-  "simTotal": 6.43,
+  "simTotal": 6.45,
   "mkt": {
    "line": null,
    "total": null,
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-02T22:28:55.863Z",
+  "loggedAt": "2026-11-02T22:39:05.733Z",
   "result": null
  }
 }
