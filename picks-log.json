@@ -3182,7 +3182,10 @@
    "margin": null
   },
   "loggedAt": "2026-11-07T00:28:32.692Z",
-  "result": null
+  "result": {
+   "homeScore": 4,
+   "awayScore": 3
+  }
  },
  "nhl:401892663": {
   "key": "nhl:401892663",
@@ -3220,7 +3223,10 @@
    "margin": null
   },
   "loggedAt": "2026-11-07T00:28:32.749Z",
-  "result": null
+  "result": {
+   "homeScore": 3,
+   "awayScore": 1
+  }
  },
  "nhl:401892664": {
   "key": "nhl:401892664",
@@ -3617,23 +3623,23 @@
   },
   "rest": [
    1,
-   3
+   null
   ],
-  "simPHome": 0.2389,
-  "rawPHome": 0.2675,
-  "simMargin": -11.04,
+  "simPHome": 0.2534,
+  "rawPHome": 0.281,
+  "simMargin": -9.54,
   "simScore": [
-   121.72,
-   110.68
+   120.76,
+   111.22
   ],
-  "simTotal": 232.4,
+  "simTotal": 231.99,
   "mkt": {
-   "line": null,
-   "total": null,
-   "pHome": null,
-   "margin": null
+   "line": "PHI -9.5",
+   "total": 238.5,
+   "pHome": 0.2132055032088539,
+   "margin": -9.5
   },
-  "loggedAt": "2026-11-07T19:07:38.129Z",
+  "loggedAt": "2026-11-08T00:02:46.751Z",
   "result": null
  },
  "nba:401909946": {
@@ -3651,23 +3657,23 @@
   },
   "rest": [
    1,
-   3
+   null
   ],
-  "simPHome": 0.64,
-  "rawPHome": 0.6225,
-  "simMargin": 4.92,
+  "simPHome": 0.6781,
+  "rawPHome": 0.6565,
+  "simMargin": 6.83,
   "simScore": [
-   109.24,
-   114.16
+   107.2,
+   114.02
   ],
-  "simTotal": 223.4,
+  "simTotal": 221.22,
   "mkt": {
-   "line": null,
-   "total": null,
-   "pHome": null,
-   "margin": null
+   "line": "DET -4.5",
+   "total": 221.5,
+   "pHome": 0.6463166764997754,
+   "margin": 4.5
   },
-  "loggedAt": "2026-11-07T19:07:38.288Z",
+  "loggedAt": "2026-11-08T00:02:46.971Z",
   "result": null
  },
  "nba:401909947": {
@@ -3687,21 +3693,21 @@
    1,
    1
   ],
-  "simPHome": 0.8788,
-  "rawPHome": 0.8485,
-  "simMargin": 17.39,
+  "simPHome": 0.9131,
+  "rawPHome": 0.8855,
+  "simMargin": 19.43,
   "simScore": [
-   105.91,
-   123.31
+   104.74,
+   124.17
   ],
-  "simTotal": 229.22,
+  "simTotal": 228.91,
   "mkt": {
-   "line": null,
-   "total": null,
-   "pHome": null,
-   "margin": null
+   "line": "MIN -11.5",
+   "total": 223.5,
+   "pHome": 0.8326830847410663,
+   "margin": 11.5
   },
-  "loggedAt": "2026-11-07T19:07:38.452Z",
+  "loggedAt": "2026-11-08T00:02:47.158Z",
   "result": null
  },
  "nba:401909948": {
@@ -3721,21 +3727,21 @@
    0,
    1
   ],
-  "simPHome": 0.7953,
-  "rawPHome": 0.765,
-  "simMargin": 11.45,
+  "simPHome": 0.7727,
+  "rawPHome": 0.7435,
+  "simMargin": 11.07,
   "simScore": [
-   103.99,
-   115.44
+   104,
+   115.07
   ],
-  "simTotal": 219.44,
+  "simTotal": 219.07,
   "mkt": {
    "line": null,
    "total": null,
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-07T19:07:38.617Z",
+  "loggedAt": "2026-11-08T00:02:47.330Z",
   "result": null
  },
  "nba:401909949": {
@@ -3755,21 +3761,21 @@
    1,
    1
   ],
-  "simPHome": 0.125,
-  "rawPHome": 0.1555,
-  "simMargin": -16.17,
+  "simPHome": 0.1103,
+  "rawPHome": 0.14,
+  "simMargin": -16.78,
   "simScore": [
-   119.18,
-   103
+   119.16,
+   102.39
   ],
-  "simTotal": 222.18,
+  "simTotal": 221.55,
   "mkt": {
-   "line": null,
-   "total": null,
-   "pHome": null,
-   "margin": null
+   "line": "BOS -12.5",
+   "total": 222.5,
+   "pHome": 0.14686640802197004,
+   "margin": -12.5
   },
-  "loggedAt": "2026-11-07T19:07:38.775Z",
+  "loggedAt": "2026-11-08T00:02:47.489Z",
   "result": null
  },
  "nba:401909950": {
@@ -3787,23 +3793,23 @@
   },
   "rest": [
    1,
-   3
+   null
   ],
-  "simPHome": 0.496,
-  "rawPHome": 0.4965,
-  "simMargin": -0.13,
+  "simPHome": 0.5253,
+  "rawPHome": 0.522,
+  "simMargin": 0.84,
   "simScore": [
-   117.32,
-   117.19
+   116.24,
+   117.08
   ],
-  "simTotal": 234.52,
+  "simTotal": 233.31,
   "mkt": {
-   "line": null,
-   "total": null,
-   "pHome": null,
-   "margin": null
+   "line": "NO -1.5",
+   "total": 225.5,
+   "pHome": 0.4502559693488084,
+   "margin": -1.5
   },
-  "loggedAt": "2026-11-07T19:07:38.936Z",
+  "loggedAt": "2026-11-08T00:02:47.652Z",
   "result": null
  },
  "nba:401909951": {
@@ -3823,21 +3829,21 @@
    2,
    1
   ],
-  "simPHome": 0.2816,
-  "rawPHome": 0.307,
-  "simMargin": -8.46,
+  "simPHome": 0.2855,
+  "rawPHome": 0.3105,
+  "simMargin": -8.05,
   "simScore": [
-   124.9,
-   116.44
+   124.73,
+   116.68
   ],
-  "simTotal": 241.34,
+  "simTotal": 241.41,
   "mkt": {
-   "line": null,
-   "total": null,
-   "pHome": null,
-   "margin": null
+   "line": "MIA -8.5",
+   "total": 238.5,
+   "pHome": 0.23854917523700098,
+   "margin": -8.5
   },
-  "loggedAt": "2026-11-07T19:07:39.097Z",
+  "loggedAt": "2026-11-08T00:02:47.819Z",
   "result": null
  },
  "nfl:401873038": {
@@ -3857,22 +3863,22 @@
    null,
    null
   ],
-  "simPHome": 0.5102,
-  "rawPHome": 0.5098,
-  "simMargin": 0.39,
+  "simPHome": 0.4853,
+  "rawPHome": 0.486,
+  "simMargin": -0.12,
   "simScore": [
-   24.52,
-   24.92
+   24.74,
+   24.62
   ],
-  "simTotal": 49.44,
-  "blendPHome": 0.4126,
+  "simTotal": 49.36,
+  "blendPHome": 0.4214,
   "mkt": {
-   "line": "CIN -3.5",
+   "line": "CIN -3",
    "total": 52.5,
-   "pHome": 0.3953925075767488,
-   "margin": -3.5
+   "pHome": 0.4100715891566124,
+   "margin": -3
   },
-  "loggedAt": "2026-11-07T19:07:40.696Z",
+  "loggedAt": "2026-11-08T00:02:50.378Z",
   "result": null
  },
  "nfl:401873040": {
@@ -3892,22 +3898,22 @@
    null,
    null
   ],
-  "simPHome": 0.4289,
-  "rawPHome": 0.4323,
-  "simMargin": -1.92,
+  "simPHome": 0.4719,
+  "rawPHome": 0.4733,
+  "simMargin": -0.9,
   "simScore": [
-   26.9,
-   24.98
+   26.3,
+   25.4
   ],
-  "simTotal": 51.88,
-  "blendPHome": 0.3758,
+  "simTotal": 51.7,
+  "blendPHome": 0.3823,
   "mkt": {
    "line": "DAL -4.5",
    "total": 51.5,
    "pHome": 0.3664742260704701,
    "margin": -4.5
   },
-  "loggedAt": "2026-11-07T19:07:40.854Z",
+  "loggedAt": "2026-11-08T00:02:50.553Z",
   "result": null
  },
  "nfl:401873045": {
@@ -3927,22 +3933,22 @@
    null,
    null
   ],
-  "simPHome": 0.8187,
-  "rawPHome": 0.8077,
-  "simMargin": 10.16,
+  "simPHome": 0.8086,
+  "rawPHome": 0.7977,
+  "simMargin": 10.42,
   "simScore": [
-   17.27,
-   27.43
+   17.47,
+   27.9
   ],
-  "simTotal": 44.69,
-  "blendPHome": 0.773,
+  "simTotal": 45.37,
+  "blendPHome": 0.7715,
   "mkt": {
    "line": "KC -9.5",
-   "total": 47.5,
+   "total": 48.5,
    "pHome": 0.7649969817377388,
    "margin": 9.5
   },
-  "loggedAt": "2026-11-07T19:07:40.992Z",
+  "loggedAt": "2026-11-08T00:02:50.692Z",
   "result": null
  },
  "nfl:401873042": {
@@ -3962,22 +3968,22 @@
    null,
    null
   ],
-  "simPHome": 0.2631,
-  "rawPHome": 0.2727,
-  "simMargin": -7.56,
+  "simPHome": 0.2529,
+  "rawPHome": 0.2627,
+  "simMargin": -7.81,
   "simScore": [
-   28.66,
-   21.1
+   28.89,
+   21.08
   ],
-  "simTotal": 49.76,
-  "blendPHome": 0.3037,
+  "simTotal": 49.97,
+  "blendPHome": 0.3022,
   "mkt": {
    "line": "DET -6.5",
    "total": 49.5,
    "pHome": 0.3108942664963187,
    "margin": -6.5
   },
-  "loggedAt": "2026-11-07T19:07:41.128Z",
+  "loggedAt": "2026-11-08T00:02:50.828Z",
   "result": null
  },
  "nfl:401873039": {
@@ -3997,22 +4003,22 @@
    null,
    null
   ],
-  "simPHome": 0.6601,
-  "rawPHome": 0.653,
-  "simMargin": 4.47,
+  "simPHome": 0.6822,
+  "rawPHome": 0.6743,
+  "simMargin": 4.79,
   "simScore": [
-   16.35,
-   20.82
+   16.48,
+   21.28
   ],
-  "simTotal": 37.17,
-  "blendPHome": 0.6129,
+  "simTotal": 37.76,
+  "blendPHome": 0.6038,
   "mkt": {
-   "line": "NO -3.5",
+   "line": "NO -3",
    "total": 42.5,
-   "pHome": 0.6046074924232512,
-   "margin": 3.5
+   "pHome": 0.5899284108433875,
+   "margin": 3
   },
-  "loggedAt": "2026-11-07T19:07:41.315Z",
+  "loggedAt": "2026-11-08T00:02:51.038Z",
   "result": null
  },
  "nfl:401873044": {
@@ -4032,22 +4038,22 @@
    null,
    null
   ],
-  "simPHome": 0.5089,
-  "rawPHome": 0.5085,
-  "simMargin": 0.23,
+  "simPHome": 0.5071,
+  "rawPHome": 0.5068,
+  "simMargin": 0.06,
   "simScore": [
-   19.57,
-   19.8
+   19.87,
+   19.93
   ],
-  "simTotal": 39.36,
-  "blendPHome": 0.4249,
+  "simTotal": 39.8,
+  "blendPHome": 0.4246,
   "mkt": {
    "line": "NYG -3",
    "total": 38.5,
    "pHome": 0.4100715891566124,
    "margin": -3
   },
-  "loggedAt": "2026-11-07T19:07:41.455Z",
+  "loggedAt": "2026-11-08T00:02:51.179Z",
   "result": null
  },
  "nfl:401873043": {
@@ -4067,22 +4073,22 @@
    null,
    null
   ],
-  "simPHome": 0.2912,
-  "rawPHome": 0.3,
-  "simMargin": -6.43,
+  "simPHome": 0.2837,
+  "rawPHome": 0.2928,
+  "simMargin": -6.46,
   "simScore": [
-   27.72,
-   21.29
+   27.93,
+   21.47
   ],
-  "simTotal": 49.02,
-  "blendPHome": 0.3552,
+  "simTotal": 49.41,
+  "blendPHome": 0.3541,
   "mkt": {
    "line": "LAR -4.5",
    "total": 47.5,
    "pHome": 0.3664742260704701,
    "margin": -4.5
   },
-  "loggedAt": "2026-11-07T19:07:41.593Z",
+  "loggedAt": "2026-11-08T00:02:51.317Z",
   "result": null
  },
  "nfl:401873041": {
@@ -4102,22 +4108,22 @@
    null,
    null
   ],
-  "simPHome": 0.473,
-  "rawPHome": 0.4743,
-  "simMargin": -0.69,
+  "simPHome": 0.4766,
+  "rawPHome": 0.4778,
+  "simMargin": -0.56,
   "simScore": [
-   22.88,
-   22.19
+   22.18,
+   21.62
   ],
-  "simTotal": 45.06,
-  "blendPHome": 0.4195,
+  "simTotal": 43.8,
+  "blendPHome": 0.4326,
   "mkt": {
-   "line": "DEN -3",
+   "line": "DEN -2.5",
    "total": 44.5,
-   "pHome": 0.4100715891566124,
-   "margin": -3
+   "pHome": 0.42487205346785273,
+   "margin": -2.5
   },
-  "loggedAt": "2026-11-07T19:07:41.731Z",
+  "loggedAt": "2026-11-08T00:02:51.456Z",
   "result": null
  },
  "nfl:401873046": {
@@ -4137,22 +4143,22 @@
    null,
    null
   ],
-  "simPHome": 0.3365,
-  "rawPHome": 0.3438,
-  "simMargin": -4.48,
+  "simPHome": 0.3331,
+  "rawPHome": 0.3405,
+  "simMargin": -4.63,
   "simScore": [
-   21.79,
-   17.31
+   22.05,
+   17.42
   ],
-  "simTotal": 39.1,
-  "blendPHome": 0.3263,
+  "simTotal": 39.47,
+  "blendPHome": 0.3258,
   "mkt": {
    "line": "HOU -6",
    "total": 40.5,
    "pHome": 0.3244653398989963,
    "margin": -6
   },
-  "loggedAt": "2026-11-07T19:07:41.867Z",
+  "loggedAt": "2026-11-08T00:02:51.591Z",
   "result": null
  },
  "nfl:401873049": {
@@ -4172,22 +4178,22 @@
    null,
    null
   ],
-  "simPHome": 0.6786,
-  "rawPHome": 0.6707,
-  "simMargin": 5.45,
+  "simPHome": 0.6863,
+  "rawPHome": 0.6783,
+  "simMargin": 5.04,
   "simScore": [
-   17.4,
-   22.85
+   17.91,
+   22.95
   ],
-  "simTotal": 40.24,
-  "blendPHome": 0.6032,
+  "simTotal": 40.86,
+  "blendPHome": 0.6169,
   "mkt": {
-   "line": "NE -3",
+   "line": "NE -3.5",
    "total": 44.5,
-   "pHome": 0.5899284108433875,
-   "margin": 3
+   "pHome": 0.6046074924232512,
+   "margin": 3.5
   },
-  "loggedAt": "2026-11-07T19:07:42.006Z",
+  "loggedAt": "2026-11-08T00:02:51.730Z",
   "result": null
  },
  "nfl:401873047": {
@@ -4207,22 +4213,22 @@
    null,
    null
   ],
-  "simPHome": 0.8327,
-  "rawPHome": 0.8217,
-  "simMargin": 10.67,
+  "simPHome": 0.8015,
+  "rawPHome": 0.7907,
+  "simMargin": 9.84,
   "simScore": [
-   18.95,
-   29.62
+   19.3,
+   29.14
   ],
-  "simTotal": 48.57,
-  "blendPHome": 0.785,
+  "simTotal": 48.44,
+  "blendPHome": 0.7705,
   "mkt": {
-   "line": "SF -10",
+   "line": "SF -9.5",
    "total": 51.5,
-   "pHome": 0.7766133536658052,
-   "margin": 10
+   "pHome": 0.7649969817377388,
+   "margin": 9.5
   },
-  "loggedAt": "2026-11-07T19:07:42.143Z",
+  "loggedAt": "2026-11-08T00:02:51.867Z",
   "result": null
  },
  "nfl:401873048": {
@@ -4242,22 +4248,22 @@
    null,
    null
   ],
-  "simPHome": 0.8269,
-  "rawPHome": 0.816,
-  "simMargin": 10.49,
+  "simPHome": 0.8486,
+  "rawPHome": 0.8377,
+  "simMargin": 10.96,
   "simScore": [
-   18.76,
-   29.24
+   18.38,
+   29.34
   ],
-  "simTotal": 48,
-  "blendPHome": 0.7537,
+  "simTotal": 47.72,
+  "blendPHome": 0.757,
   "mkt": {
    "line": "SEA -8.5",
    "total": 39.5,
    "pHome": 0.7408374320652398,
    "margin": 8.5
   },
-  "loggedAt": "2026-11-07T19:07:42.281Z",
+  "loggedAt": "2026-11-08T00:02:52.005Z",
   "result": null
  },
  "nfl:401873050": {
@@ -4277,22 +4283,22 @@
    null,
    null
   ],
-  "simPHome": 0.5643,
-  "rawPHome": 0.5613,
-  "simMargin": 2.05,
+  "simPHome": 0.5873,
+  "rawPHome": 0.5833,
+  "simMargin": 2.46,
   "simScore": [
-   21.92,
-   23.97
+   21.5,
+   23.96
   ],
-  "simTotal": 45.89,
-  "blendPHome": 0.6588,
+  "simTotal": 45.47,
+  "blendPHome": 0.6623,
   "mkt": {
    "line": "CHI -6",
    "total": 47.5,
    "pHome": 0.6755346601010037,
    "margin": 6
   },
-  "loggedAt": "2026-11-07T19:07:42.421Z",
+  "loggedAt": "2026-11-08T00:02:52.145Z",
   "result": null
  },
  "nhl:401892674": {
@@ -4313,24 +4319,24 @@
    "Jeremy Swayman"
   ],
   "rest": [
-   3,
+   0,
    2
   ],
-  "simPHome": 0.5272,
-  "rawPHome": 0.532,
-  "simMargin": 0.18,
+  "simPHome": 0.5442,
+  "rawPHome": 0.552,
+  "simMargin": 0.29,
   "simScore": [
-   3.12,
-   3.3
+   3.02,
+   3.31
   ],
-  "simTotal": 6.42,
+  "simTotal": 6.33,
   "mkt": {
-   "line": "BOS -130",
+   "line": "BOS -135",
    "total": 6.5,
-   "pHome": 0.5408778864156438,
+   "pHome": 0.5497302249821847,
    "margin": null
   },
-  "loggedAt": "2026-11-07T19:07:43.129Z",
+  "loggedAt": "2026-11-08T00:02:52.428Z",
   "result": null
  },
  "nhl:401892675": {
@@ -4354,21 +4360,21 @@
    2,
    1
   ],
-  "simPHome": 0.4464,
-  "rawPHome": 0.437,
-  "simMargin": -0.33,
+  "simPHome": 0.4634,
+  "rawPHome": 0.457,
+  "simMargin": -0.27,
   "simScore": [
-   3.27,
+   3.22,
    2.95
   ],
-  "simTotal": 6.22,
+  "simTotal": 6.16,
   "mkt": {
-   "line": "VGK -115",
+   "line": "VGK -112",
    "total": 6.5,
-   "pHome": 0.48814954934905974,
+   "pHome": 0.49444795522253315,
    "margin": null
   },
-  "loggedAt": "2026-11-07T19:07:43.168Z",
+  "loggedAt": "2026-11-08T00:02:52.489Z",
   "result": null
  },
  "nhl:401892677": {
@@ -4392,21 +4398,21 @@
    0,
    2
   ],
-  "simPHome": 0.4957,
-  "rawPHome": 0.495,
-  "simMargin": -0.06,
+  "simPHome": 0.5123,
+  "rawPHome": 0.5145,
+  "simMargin": 0.07,
   "simScore": [
-   3.13,
-   3.07
+   3.1,
+   3.17
   ],
-  "simTotal": 6.21,
+  "simTotal": 6.28,
   "mkt": {
-   "line": "TB -135",
+   "line": "TB -142",
    "total": 6.5,
-   "pHome": 0.4502697750178153,
+   "pHome": 0.43849104353671553,
    "margin": null
   },
-  "loggedAt": "2026-11-07T19:07:43.207Z",
+  "loggedAt": "2026-11-08T00:02:52.528Z",
   "result": null
  },
  "nhl:401892676": {
@@ -4430,21 +4436,21 @@
    0,
    0
   ],
-  "simPHome": 0.4715,
-  "rawPHome": 0.4665,
-  "simMargin": -0.15,
+  "simPHome": 0.4915,
+  "rawPHome": 0.49,
+  "simMargin": -0.05,
   "simScore": [
-   3.25,
-   3.1
+   3.17,
+   3.12
   ],
-  "simTotal": 6.35,
+  "simTotal": 6.29,
   "mkt": {
-   "line": "NJ -135",
+   "line": "NJ -142",
    "total": 6.5,
-   "pHome": 0.4502697750178153,
+   "pHome": 0.43849104353671553,
    "margin": null
   },
-  "loggedAt": "2026-11-07T19:07:43.245Z",
+  "loggedAt": "2026-11-08T00:02:52.566Z",
   "result": null
  },
  "nhl:401892678": {
@@ -4461,28 +4467,28 @@
    "name": "Calgary Flames"
   },
   "goalies": [
-   "Joseph Woll",
+   "Dan Vladar",
    "Dustin Wolf"
   ],
   "rest": [
    2,
    1
   ],
-  "simPHome": 0.5,
-  "rawPHome": 0.5,
-  "simMargin": 0,
+  "simPHome": 0.4974,
+  "rawPHome": 0.497,
+  "simMargin": -0.08,
   "simScore": [
-   3.19,
-   3.19
+   3.11,
+   3.03
   ],
-  "simTotal": 6.37,
+  "simTotal": 6.14,
   "mkt": {
    "line": "PHI -112",
    "total": 5.5,
    "pHome": 0.49444795522253315,
    "margin": null
   },
-  "loggedAt": "2026-11-07T19:07:43.285Z",
+  "loggedAt": "2026-11-08T00:02:52.604Z",
   "result": null
  },
  "nhl:401892679": {
@@ -4499,28 +4505,28 @@
    "name": "Anaheim Ducks"
   },
   "goalies": [
-   "Sergei Murashov",
+   "Arturs Silovs",
    "Laurent Brossoit"
   ],
   "rest": [
    0,
    1
   ],
-  "simPHome": 0.5111,
-  "rawPHome": 0.513,
-  "simMargin": -0.03,
+  "simPHome": 0.4711,
+  "rawPHome": 0.466,
+  "simMargin": -0.16,
   "simScore": [
-   3.5,
-   3.47
+   3.41,
+   3.24
   ],
-  "simTotal": 6.96,
+  "simTotal": 6.65,
   "mkt": {
-   "line": "ANA -125",
+   "line": "ANA -120",
    "total": 6.5,
-   "pHome": 0.531632110579479,
+   "pHome": 0.5219660722053067,
    "margin": null
   },
-  "loggedAt": "2026-11-07T19:07:43.325Z",
+  "loggedAt": "2026-11-08T00:02:52.644Z",
   "result": null
  },
  "nba:401909952": {
@@ -4540,21 +4546,21 @@
    0,
    1
   ],
-  "simPHome": 0.4856,
-  "rawPHome": 0.4875,
-  "simMargin": -0.67,
+  "simPHome": 0.5923,
+  "rawPHome": 0.5805,
+  "simMargin": 3.71,
   "simScore": [
-   117.98,
-   117.31
+   115.89,
+   119.6
   ],
-  "simTotal": 235.29,
+  "simTotal": 235.5,
   "mkt": {
    "line": null,
    "total": null,
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-07T19:07:39.259Z",
+  "loggedAt": "2026-11-08T00:02:47.981Z",
   "result": null
  },
  "nba:401909953": {
@@ -4574,21 +4580,21 @@
    1,
    2
   ],
-  "simPHome": 0.3527,
-  "rawPHome": 0.371,
-  "simMargin": -6.12,
+  "simPHome": 0.3533,
+  "rawPHome": 0.3715,
+  "simMargin": -4.97,
   "simScore": [
-   111.24,
-   105.12
+   110.76,
+   105.79
   ],
-  "simTotal": 216.36,
+  "simTotal": 216.55,
   "mkt": {
    "line": null,
    "total": null,
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-07T19:07:39.426Z",
+  "loggedAt": "2026-11-08T00:02:48.149Z",
   "result": null
  },
  "nba:401909954": {
@@ -4608,21 +4614,21 @@
    1,
    0
   ],
-  "simPHome": 0.8447,
-  "rawPHome": 0.8135,
-  "simMargin": 14.44,
+  "simPHome": 0.874,
+  "rawPHome": 0.8435,
+  "simMargin": 16.96,
   "simScore": [
-   102.39,
-   116.82
+   100.51,
+   117.48
   ],
-  "simTotal": 219.21,
+  "simTotal": 217.99,
   "mkt": {
    "line": null,
    "total": null,
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-07T19:07:39.585Z",
+  "loggedAt": "2026-11-08T00:02:48.311Z",
   "result": null
  },
  "nba:401909955": {
@@ -4642,21 +4648,21 @@
    2,
    2
   ],
-  "simPHome": 0.6405,
-  "rawPHome": 0.623,
-  "simMargin": 4.88,
+  "simPHome": 0.6309,
+  "rawPHome": 0.6145,
+  "simMargin": 5.02,
   "simScore": [
-   112.25,
-   117.13
+   112.55,
+   117.58
   ],
-  "simTotal": 229.38,
+  "simTotal": 230.13,
   "mkt": {
    "line": null,
    "total": null,
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-07T19:07:39.746Z",
+  "loggedAt": "2026-11-08T00:02:48.475Z",
   "result": null
  },
  "nba:401909956": {
@@ -4676,21 +4682,21 @@
    1,
    0
   ],
-  "simPHome": 0.6535,
-  "rawPHome": 0.6345,
-  "simMargin": 5.56,
+  "simPHome": 0.6326,
+  "rawPHome": 0.616,
+  "simMargin": 4.58,
   "simScore": [
-   110.34,
-   115.9
+   110.92,
+   115.51
   ],
-  "simTotal": 226.24,
+  "simTotal": 226.43,
   "mkt": {
    "line": null,
    "total": null,
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-07T19:07:39.907Z",
+  "loggedAt": "2026-11-08T00:02:48.635Z",
   "result": null
  },
  "nba:401909957": {
@@ -4710,21 +4716,21 @@
    1,
    1
   ],
-  "simPHome": 0.7041,
-  "rawPHome": 0.68,
-  "simMargin": 7.49,
+  "simPHome": 0.6864,
+  "rawPHome": 0.664,
+  "simMargin": 7.05,
   "simScore": [
-   111.23,
-   118.72
+   111.75,
+   118.8
   ],
-  "simTotal": 229.96,
+  "simTotal": 230.55,
   "mkt": {
    "line": null,
    "total": null,
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-07T19:07:40.070Z",
+  "loggedAt": "2026-11-08T00:02:48.798Z",
   "result": null
  },
  "nba:401909958": {
@@ -4744,21 +4750,21 @@
    1,
    1
   ],
-  "simPHome": 0.2342,
-  "rawPHome": 0.263,
-  "simMargin": -10.35,
+  "simPHome": 0.2588,
+  "rawPHome": 0.286,
+  "simMargin": -9.71,
   "simScore": [
-   119.44,
-   109.08
+   118.93,
+   109.22
   ],
-  "simTotal": 228.52,
+  "simTotal": 228.16,
   "mkt": {
    "line": null,
    "total": null,
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-07T19:07:40.233Z",
+  "loggedAt": "2026-11-08T00:02:48.961Z",
   "result": null
  },
  "nba:401909959": {
@@ -4778,21 +4784,21 @@
    0,
    1
   ],
-  "simPHome": 0.6942,
-  "rawPHome": 0.671,
-  "simMargin": 7.47,
+  "simPHome": 0.6958,
+  "rawPHome": 0.6725,
+  "simMargin": 7.75,
   "simScore": [
-   115.23,
-   122.7
+   115.16,
+   122.9
   ],
-  "simTotal": 237.93,
+  "simTotal": 238.06,
   "mkt": {
    "line": null,
    "total": null,
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-07T19:07:40.391Z",
+  "loggedAt": "2026-11-08T00:02:49.121Z",
   "result": null
  },
  "nfl:401873051": {
@@ -4812,22 +4818,22 @@
    null,
    null
   ],
-  "simPHome": 0.4866,
-  "rawPHome": 0.4873,
-  "simMargin": -0.21,
+  "simPHome": 0.4732,
+  "rawPHome": 0.4745,
+  "simMargin": -0.54,
   "simScore": [
-   22.08,
-   21.87
+   22.07,
+   21.54
   ],
-  "simTotal": 43.95,
-  "blendPHome": 0.4216,
+  "simTotal": 43.61,
+  "blendPHome": 0.4195,
   "mkt": {
    "line": "BUF -3",
    "total": 43.5,
    "pHome": 0.4100715891566124,
    "margin": -3
   },
-  "loggedAt": "2026-11-07T19:07:42.562Z",
+  "loggedAt": "2026-11-08T00:02:52.286Z",
   "result": null
  },
  "nhl:401892680": {
@@ -4845,27 +4851,27 @@
   },
   "goalies": [
    "Dylan Garand",
-   "Tristan Jarry"
+   "Devon Levi"
   ],
   "rest": [
    1,
    1
   ],
-  "simPHome": 0.5259,
-  "rawPHome": 0.5305,
-  "simMargin": 0.19,
+  "simPHome": 0.5281,
+  "rawPHome": 0.533,
+  "simMargin": 0.2,
   "simScore": [
-   3.1,
-   3.29
+   3.11,
+   3.31
   ],
-  "simTotal": 6.39,
+  "simTotal": 6.42,
   "mkt": {
    "line": null,
    "total": null,
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-07T19:07:43.364Z",
+  "loggedAt": "2026-11-08T00:02:52.682Z",
   "result": null
  },
  "nhl:401892681": {
@@ -4882,28 +4888,28 @@
    "name": "Vancouver Canucks"
   },
   "goalies": [
-   "Dan Vladar",
+   "Joseph Woll",
    "Leevi Merilainen"
   ],
   "rest": [
    0,
    1
   ],
-  "simPHome": 0.5196,
-  "rawPHome": 0.523,
-  "simMargin": 0.14,
+  "simPHome": 0.537,
+  "rawPHome": 0.5435,
+  "simMargin": 0.26,
   "simScore": [
    2.94,
-   3.08
+   3.21
   ],
-  "simTotal": 6.02,
+  "simTotal": 6.15,
   "mkt": {
    "line": null,
    "total": null,
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-07T19:07:43.402Z",
+  "loggedAt": "2026-11-08T00:02:52.738Z",
   "result": null
  },
  "nhl:401892682": {
@@ -4927,21 +4933,491 @@
    1,
    1
   ],
-  "simPHome": 0.4438,
-  "rawPHome": 0.434,
-  "simMargin": -0.34,
+  "simPHome": 0.4489,
+  "rawPHome": 0.44,
+  "simMargin": -0.39,
   "simScore": [
    3.37,
-   3.04
+   2.99
   ],
-  "simTotal": 6.41,
+  "simTotal": 6.36,
   "mkt": {
    "line": null,
    "total": null,
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-07T19:07:43.441Z",
+  "loggedAt": "2026-11-08T00:02:52.776Z",
+  "result": null
+ },
+ "nba:401909960": {
+  "key": "nba:401909960",
+  "league": "nba",
+  "gameId": "401909960",
+  "start": "2026-11-11T00:30Z",
+  "away": {
+   "abbr": "MIL",
+   "name": "Milwaukee Bucks"
+  },
+  "home": {
+   "abbr": "NY",
+   "name": "New York Knicks"
+  },
+  "rest": [
+   1,
+   2
+  ],
+  "simPHome": 0.874,
+  "rawPHome": 0.8435,
+  "simMargin": 16.51,
+  "simScore": [
+   101.98,
+   118.49
+  ],
+  "simTotal": 220.47,
+  "mkt": {
+   "line": null,
+   "total": null,
+   "pHome": null,
+   "margin": null
+  },
+  "loggedAt": "2026-11-08T00:02:49.279Z",
+  "result": null
+ },
+ "nba:401909961": {
+  "key": "nba:401909961",
+  "league": "nba",
+  "gameId": "401909961",
+  "start": "2026-11-11T01:00Z",
+  "away": {
+   "abbr": "BOS",
+   "name": "Boston Celtics"
+  },
+  "home": {
+   "abbr": "PHI",
+   "name": "Philadelphia 76ers"
+  },
+  "rest": [
+   1,
+   1
+  ],
+  "simPHome": 0.3136,
+  "rawPHome": 0.336,
+  "simMargin": -7.08,
+  "simScore": [
+   110.2,
+   103.12
+  ],
+  "simTotal": 213.32,
+  "mkt": {
+   "line": null,
+   "total": null,
+   "pHome": null,
+   "margin": null
+  },
+  "loggedAt": "2026-11-08T00:02:49.442Z",
+  "result": null
+ },
+ "nba:401909962": {
+  "key": "nba:401909962",
+  "league": "nba",
+  "gameId": "401909962",
+  "start": "2026-11-11T02:00Z",
+  "away": {
+   "abbr": "LAC",
+   "name": "LA Clippers"
+  },
+  "home": {
+   "abbr": "PHX",
+   "name": "Phoenix Suns"
+  },
+  "rest": [
+   1,
+   0
+  ],
+  "simPHome": 0.4747,
+  "rawPHome": 0.478,
+  "simMargin": -0.52,
+  "simScore": [
+   112.76,
+   112.24
+  ],
+  "simTotal": 225,
+  "mkt": {
+   "line": null,
+   "total": null,
+   "pHome": null,
+   "margin": null
+  },
+  "loggedAt": "2026-11-08T00:02:49.607Z",
+  "result": null
+ },
+ "nba:401909963": {
+  "key": "nba:401909963",
+  "league": "nba",
+  "gameId": "401909963",
+  "start": "2026-11-11T02:00Z",
+  "away": {
+   "abbr": "MIA",
+   "name": "Miami Heat"
+  },
+  "home": {
+   "abbr": "UTAH",
+   "name": "Utah Jazz"
+  },
+  "rest": [
+   1,
+   1
+  ],
+  "simPHome": 0.2932,
+  "rawPHome": 0.3175,
+  "simMargin": -7.63,
+  "simScore": [
+   124.61,
+   116.98
+  ],
+  "simTotal": 241.59,
+  "mkt": {
+   "line": null,
+   "total": null,
+   "pHome": null,
+   "margin": null
+  },
+  "loggedAt": "2026-11-08T00:02:49.770Z",
+  "result": null
+ },
+ "nba:401909964": {
+  "key": "nba:401909964",
+  "league": "nba",
+  "gameId": "401909964",
+  "start": "2026-11-11T03:00Z",
+  "away": {
+   "abbr": "ORL",
+   "name": "Orlando Magic"
+  },
+  "home": {
+   "abbr": "SAC",
+   "name": "Sacramento Kings"
+  },
+  "rest": [
+   2,
+   1
+  ],
+  "simPHome": 0.4311,
+  "rawPHome": 0.44,
+  "simMargin": -2.44,
+  "simScore": [
+   113.77,
+   111.33
+  ],
+  "simTotal": 225.1,
+  "mkt": {
+   "line": null,
+   "total": null,
+   "pHome": null,
+   "margin": null
+  },
+  "loggedAt": "2026-11-08T00:02:49.930Z",
+  "result": null
+ },
+ "nba:401909965": {
+  "key": "nba:401909965",
+  "league": "nba",
+  "gameId": "401909965",
+  "start": "2026-11-11T04:00Z",
+  "away": {
+   "abbr": "OKC",
+   "name": "Oklahoma City Thunder"
+  },
+  "home": {
+   "abbr": "POR",
+   "name": "Portland Trail Blazers"
+  },
+  "rest": [
+   2,
+   2
+  ],
+  "simPHome": 0.4672,
+  "rawPHome": 0.4715,
+  "simMargin": -1.41,
+  "simScore": [
+   112.25,
+   110.83
+  ],
+  "simTotal": 223.08,
+  "mkt": {
+   "line": null,
+   "total": null,
+   "pHome": null,
+   "margin": null
+  },
+  "loggedAt": "2026-11-08T00:02:50.090Z",
+  "result": null
+ },
+ "nhl:401892683": {
+  "key": "nhl:401892683",
+  "league": "nhl",
+  "gameId": "401892683",
+  "start": "2026-11-11T00:00Z",
+  "away": {
+   "abbr": "COL",
+   "name": "Colorado Avalanche"
+  },
+  "home": {
+   "abbr": "TOR",
+   "name": "Toronto Maple Leafs"
+  },
+  "goalies": [
+   "Mackenzie Blackwood",
+   "Sergei Bobrovsky"
+  ],
+  "rest": [
+   2,
+   1
+  ],
+  "simPHome": 0.4894,
+  "rawPHome": 0.4875,
+  "simMargin": -0.13,
+  "simScore": [
+   3.3,
+   3.17
+  ],
+  "simTotal": 6.47,
+  "mkt": {
+   "line": null,
+   "total": null,
+   "pHome": null,
+   "margin": null
+  },
+  "loggedAt": "2026-11-08T00:02:52.815Z",
+  "result": null
+ },
+ "nhl:401892684": {
+  "key": "nhl:401892684",
+  "league": "nhl",
+  "gameId": "401892684",
+  "start": "2026-11-11T00:00Z",
+  "away": {
+   "abbr": "MIN",
+   "name": "Minnesota Wild"
+  },
+  "home": {
+   "abbr": "MTL",
+   "name": "Montreal Canadiens"
+  },
+  "goalies": [
+   "Jesper Wallstedt",
+   "Jacob Fowler"
+  ],
+  "rest": [
+   2,
+   2
+  ],
+  "simPHome": 0.4711,
+  "rawPHome": 0.466,
+  "simMargin": -0.16,
+  "simScore": [
+   2.92,
+   2.76
+  ],
+  "simTotal": 5.67,
+  "mkt": {
+   "line": null,
+   "total": null,
+   "pHome": null,
+   "margin": null
+  },
+  "loggedAt": "2026-11-08T00:02:52.852Z",
+  "result": null
+ },
+ "nhl:401892685": {
+  "key": "nhl:401892685",
+  "league": "nhl",
+  "gameId": "401892685",
+  "start": "2026-11-11T00:00Z",
+  "away": {
+   "abbr": "WSH",
+   "name": "Washington Capitals"
+  },
+  "home": {
+   "abbr": "OTT",
+   "name": "Ottawa Senators"
+  },
+  "goalies": [
+   "Logan Thompson",
+   "Samuel Ersson"
+  ],
+  "rest": [
+   2,
+   2
+  ],
+  "simPHome": 0.4936,
+  "rawPHome": 0.4925,
+  "simMargin": -0.08,
+  "simScore": [
+   3.25,
+   3.17
+  ],
+  "simTotal": 6.42,
+  "mkt": {
+   "line": null,
+   "total": null,
+   "pHome": null,
+   "margin": null
+  },
+  "loggedAt": "2026-11-08T00:02:52.891Z",
+  "result": null
+ },
+ "nhl:401892688": {
+  "key": "nhl:401892688",
+  "league": "nhl",
+  "gameId": "401892688",
+  "start": "2026-11-11T00:00Z",
+  "away": {
+   "abbr": "NJ",
+   "name": "New Jersey Devils"
+  },
+  "home": {
+   "abbr": "WPG",
+   "name": "Winnipeg Jets"
+  },
+  "goalies": [
+   "Connor Hellebuyck",
+   "Stuart Skinner"
+  ],
+  "rest": [
+   1,
+   1
+  ],
+  "simPHome": 0.4783,
+  "rawPHome": 0.4745,
+  "simMargin": -0.06,
+  "simScore": [
+   3.11,
+   3.05
+  ],
+  "simTotal": 6.16,
+  "mkt": {
+   "line": null,
+   "total": null,
+   "pHome": null,
+   "margin": null
+  },
+  "loggedAt": "2026-11-08T00:02:52.929Z",
+  "result": null
+ },
+ "nhl:401892686": {
+  "key": "nhl:401892686",
+  "league": "nhl",
+  "gameId": "401892686",
+  "start": "2026-11-11T00:30Z",
+  "away": {
+   "abbr": "FLA",
+   "name": "Florida Panthers"
+  },
+  "home": {
+   "abbr": "CBJ",
+   "name": "Columbus Blue Jackets"
+  },
+  "goalies": [
+   "Jacob Markstrom",
+   "Jet Greaves"
+  ],
+  "rest": [
+   1,
+   3
+  ],
+  "simPHome": 0.4928,
+  "rawPHome": 0.4915,
+  "simMargin": 0.02,
+  "simScore": [
+   3.13,
+   3.15
+  ],
+  "simTotal": 6.27,
+  "mkt": {
+   "line": null,
+   "total": null,
+   "pHome": null,
+   "margin": null
+  },
+  "loggedAt": "2026-11-08T00:02:52.967Z",
+  "result": null
+ },
+ "nhl:401892687": {
+  "key": "nhl:401892687",
+  "league": "nhl",
+  "gameId": "401892687",
+  "start": "2026-11-11T01:00Z",
+  "away": {
+   "abbr": "DET",
+   "name": "Detroit Red Wings"
+  },
+  "home": {
+   "abbr": "STL",
+   "name": "St. Louis Blues"
+  },
+  "goalies": [
+   "Daniil Tarasov",
+   "Joel Hofer"
+  ],
+  "rest": [
+   2,
+   2
+  ],
+  "simPHome": 0.5562,
+  "rawPHome": 0.566,
+  "simMargin": 0.4,
+  "simScore": [
+   2.55,
+   2.95
+  ],
+  "simTotal": 5.5,
+  "mkt": {
+   "line": null,
+   "total": null,
+   "pHome": null,
+   "margin": null
+  },
+  "loggedAt": "2026-11-08T00:02:53.005Z",
+  "result": null
+ },
+ "nhl:401892689": {
+  "key": "nhl:401892689",
+  "league": "nhl",
+  "gameId": "401892689",
+  "start": "2026-11-11T03:00Z",
+  "away": {
+   "abbr": "NSH",
+   "name": "Nashville Predators"
+  },
+  "home": {
+   "abbr": "LA",
+   "name": "Los Angeles Kings"
+  },
+  "goalies": [
+   "Juuse Saros",
+   "Darcy Kuemper"
+  ],
+  "rest": [
+   2,
+   2
+  ],
+  "simPHome": 0.4894,
+  "rawPHome": 0.4875,
+  "simMargin": -0.05,
+  "simScore": [
+   3.19,
+   3.14
+  ],
+  "simTotal": 6.34,
+  "mkt": {
+   "line": null,
+   "total": null,
+   "pHome": null,
+   "margin": null
+  },
+  "loggedAt": "2026-11-08T00:02:53.043Z",
   "result": null
  }
 }
