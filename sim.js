@@ -830,6 +830,23 @@
     return n;
   }
   function setLeague(sport, v) { if (sport === 'nba') NBA_LG = v; else if (sport === 'nhl') NHL_LG = v; else if (sport === 'nfl') NFL_LG = v; }
-  const api = { setLeague, applyLive, makeRng, roster, SPORTS, simGame, monteCarlo, playSeries, seriesMonteCarlo, leagueTable };
+  // Key players who are out or uncertain for a team, most important first: [{ name, pos, status, out }]. Used to explain why the sim and the market disagree.
+  const STATUS = [[/out|injured reserve/i, 'Out'], [/doubtful/i, 'Doubtful'], [/questionable/i, 'Questionable'], [/day-to-day/i, 'Day-to-day']];
+  function injuries(sport, team, max) {
+    const r = roster(sport, team), out = [];
+    const add = (p, w) => {
+      if (p.gpr != null && p.gpr < 0.35 && p.out) return;   // out most of the season: already in the team rating, not news
+      const hit = STATUS.find(s => p.note && s[0].test(p.note)); if (!hit && !p.out) return;
+      out.push({ name: p.name, pos: p.pos || '', status: hit ? hit[1] : 'Out', out: hit ? hit[1] === 'Out' : true, w: w * (p.gpr == null ? 1 : Math.max(0.5, p.gpr)) });
+    };
+    if (sport === 'nba') (r.players || []).forEach(p => { if (p.min >= 18) add(p, p.min); });
+    else if (sport === 'nhl') { (r.fwd || []).concat(r.def || []).forEach(p => { if (p.toi >= 15) add(p, p.toi); }); (r.goalies || []).forEach(p => { if (p.gp >= 10) add(p, 40); }); }
+    else if (sport === 'nfl') {
+      (r.qb || []).slice(0, 2).forEach(p => add(p, 100)); (r.rb || []).forEach(p => { if (p.car + p.tgt >= 60) add(p, 20 + (p.car + p.tgt) / 10); });
+      (r.rec || []).forEach(p => { if (p.tgt >= 30) add(p, 10 + p.tgt / 5); }); (r.defense || []).forEach(p => { if (p.prod >= 2) add(p, 10 + p.prod * 3); });
+    }
+    return out.sort((a, b) => b.w - a.w).slice(0, max || 4).map(p => ({ name: p.name, pos: p.pos, status: p.status, out: p.out }));
+  }
+  const api = { setLeague, applyLive, injuries, makeRng, roster, SPORTS, simGame, monteCarlo, playSeries, seriesMonteCarlo, leagueTable };
   if (typeof module !== 'undefined' && module.exports) module.exports = api; else root.Sim = api;
 })(typeof window !== 'undefined' ? window : globalThis);

@@ -1,10 +1,12 @@
-# Refreshes data, logs picks and scores finished games twice a day, without needing your computer or the Claude app.
+# Keeps data, picks and results current without needing your computer or the Claude app.
+# Game days: every 2 hours from 10am to 8pm US Central (more often near tip-off, when lineups and injury news land),
+# plus a morning run that scores last night's games. All times are UTC (Central standard time = UTC-6).
 # Setup: put this folder in a GitHub repo, then Settings > Actions > General > Workflow permissions > "Read and write".
-# Optional: Settings > Pages > deploy from the main branch root to get a public link to the page.
 name: refresh
 on:
   schedule:
-    - cron: '0 15,21 * * *'   # 10:00 and 16:00 US Central (standard time)
+    - cron: '30 13 * * *'
+    - cron: '0 16,18,20,22,0,2 * * *'
   workflow_dispatch: {}
 permissions:
   contents: write
@@ -23,4 +25,5 @@ jobs:
           git config user.email "actions@users.noreply.github.com"
           git add data.js picks-log.json picks-results.js
           git diff --cached --quiet || git commit -m "Refresh data and picks"
+          git pull --rebase -q
           git push

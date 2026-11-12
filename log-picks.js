@@ -56,6 +56,7 @@ for (const sp of ['nba', 'nfl', 'nhl']) {
       goalies: sp === 'nhl' ? [g.away.probable, g.home.probable] : undefined, rest: [g.awayRest, g.homeRest],
       simPHome: +(1 / (1 + Math.exp(-a * z))).toFixed(4), rawPHome: +raw.toFixed(4), simMargin: +(m.avg[1] - m.avg[0]).toFixed(2), simScore: [+m.avg[0].toFixed(2), +m.avg[1].toFixed(2)], simTotal: +m.avgTotal.toFixed(2),
       blendPHome: BLEND[sp] != null && mk.pHome != null ? +(BLEND[sp] * (1 / (1 + Math.exp(-a * z))) + (1 - BLEND[sp]) * mk.pHome).toFixed(4) : undefined,
+      inj: [Sim.injuries(sp, away), Sim.injuries(sp, home)],
       mkt: mk, loggedAt: new Date().toISOString(), result: prev ? prev.result : null,
     };
     prev ? updated++ : added++;
