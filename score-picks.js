@@ -11,7 +11,7 @@ async function board(sp, ymd) {
     return r.ok ? (await r.json()).events || [] : [];
   } catch (e) { return []; }
 }
-const ymdOf = d => d.getFullYear() + String(d.getMonth() + 1).padStart(2, '0') + String(d.getDate()).padStart(2, '0');
+const ymdOf = d => d.getUTCFullYear() + String(d.getUTCMonth() + 1).padStart(2, '0') + String(d.getUTCDate()).padStart(2, '0');   // d is already shifted to US Eastern
 
 (async () => {
   // group unresolved games by league + day, one request per day

@@ -270,18 +270,20 @@ function nflPlayers(rows) {
   return { qb: qbs, rb: rbs, rec: wrte };
 }
 
+// ESPN's scoreboard is keyed by US Eastern date; the machine's own date is wrong after 7pm Eastern on a UTC runner
+const etYmd = d => new Intl.DateTimeFormat('en-CA', { timeZone: 'America/New_York', year: 'numeric', month: '2-digit', day: '2-digit' }).format(d).replace(/-/g, '');
 async function schedule(L, days) {
   const out = [], cfg = LEAGUES[L], hist = [];
   const dayIdx = iso => Math.floor((new Date(iso).getTime() - 5 * 3600e3) / 86400000);
   for (let d = -3; d < 0; d++) {      // recent results, only used to work out days of rest
     const dt = new Date(Date.now() + d * 86400000);
-    const ymd = dt.getFullYear() + String(dt.getMonth() + 1).padStart(2, '0') + String(dt.getDate()).padStart(2, '0');
+    const ymd = etYmd(dt);
     const j = await get(SITE + cfg.sport + '/' + L + '/scoreboard?dates=' + ymd);
     for (const ev of (j && j.events) || []) for (const c of ev.competitions[0].competitors) hist.push({ team: c.team.abbreviation, day: dayIdx(ev.date) });
   }
   for (let d = 0; d < days; d++) {
     const dt = new Date(Date.now() + d * 86400000);
-    const ymd = dt.getFullYear() + String(dt.getMonth() + 1).padStart(2, '0') + String(dt.getDate()).padStart(2, '0');
+    const ymd = etYmd(dt);
     const j = await get(SITE + cfg.sport + '/' + L + '/scoreboard?dates=' + ymd);
     for (const ev of (j && j.events) || []) {
       if (ev.status.type.state !== 'pre') continue;
