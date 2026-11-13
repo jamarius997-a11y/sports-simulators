@@ -140,10 +140,17 @@
     P.forEach(p => { const w = p.usage * p.min; sw += w; su += w * p.usage; st += w * (p.ts || 0.56); });
     const mu = sw ? su / sw : 0, tmu = sw ? st / sw : 0.56;
     const res = P.map(p => ({ p, delta: clamp(0.04 * (p.usage - mu) / 10 + (p.ts ? 0.6 * (p.ts - tmu) : 0), -0.08, 0.08) }));
-    res.pen = Math.min(6, all.filter(p => gone.has(p)).reduce((a, p) => a + 0.3 * (p.gpr == null ? 1 : p.gpr) * (p.min / 36) * Math.max(0, (p.pts36 || 12) - 12), 0));
     res.outNames = all.filter(p => gone.has(p)).map(p => p.name);
-    // defensive absences: steals + blocks per 36 above a typical rotation player (~1.6), a crude proxy; magnitude is a judgement call, not backtested
-    res.defLoss = Math.min(2, all.filter(p => gone.has(p)).reduce((a, p) => a + 0.5 * (p.gpr == null ? 1 : p.gpr) * (p.min / 36) * Math.max(0, (p.stk == null ? 1.6 : p.stk) - 1.6), 0));
+    // Missing players: 0.3 points of margin per unit of (Game Score per 36 - 9) x (minutes / 36). Fit on NBA Stats game logs, 2024-25 and
+    // 2025-26: absences of recent rotation players vs the sim's misses gave 0.26 and 0.35, and this beat the old points-per-36 rule and
+    // on/off plus-minus when fit on one season and tested on the other. Split 65% to the team's own scoring, 35% to its defense.
+    const NBA_ABS = 0.3;
+    const loss = all.filter(p => gone.has(p)).reduce((a, p) => {
+      const g = p.gpr == null ? 1 : p.gpr;
+      if (p.gs36 != null) return a + NBA_ABS * g * (p.min / 36) * Math.max(0, p.gs36 - 9);
+      return a + g * (p.min / 36) * (0.3 * Math.max(0, (p.pts36 || 12) - 12) + 0.5 * Math.max(0, (p.stk == null ? 1.6 : p.stk) - 1.6));   // old rule (data without gs36)
+    }, 0);
+    res.pen = Math.min(6, 0.65 * loss); res.defLoss = Math.min(3, 0.35 * loss);
     return res;
   }
 
@@ -559,21 +566,34 @@
     if (rcv.length < 3) for (let i = rcv.length; i < 4; i++) rcv.push({ p: { name: 'WR', pos: 'WR', tgt: 40 }, w: 40 });
     const kicker = (r.k && r.k.name) || 'Kicker';
     // missing defenders: ~0.1 points per unit of lost defensive production (sacks/hits/TFL/passes defended/INTs), halved from the backtest estimate; capped at 3
-    const dl = r.defense || [];
-    const defLost = Math.min(3, 0.1 * dl.filter(sit).reduce((a, p) => a + (p.gpr == null ? 1 : p.gpr) * p.prod, 0));
-    const outNames = [qbList, r.rb || [], r.rec || [], dl].flat().filter(sit).map(p => p.name);
+    const dl = r.defense || [], ol = r.ol || [];
+    // Missing starters by snap share (nflverse snap counts; 1.0 = plays every snap). 2024-25 injury reports vs the sim's misses gave about
+    // 1.1 / 1.0 / 1.3 points per full-time OL / skill / defensive starter out; shrunk to 0.8 / 0.5 / 1.0 because the estimates are noisy
+    // (skill players also lose less because the sim already hands their targets to teammates). Without snap data: the old production rule.
+    const snapSum = arr => arr.filter(sit).reduce((a, p) => a + (p.snap || 0), 0);
+    const hasSnap = dl.some(p => p.snap != null);
+    const defLost = hasSnap ? Math.min(4, 1.0 * snapSum(dl)) : Math.min(3, 0.1 * dl.filter(sit).reduce((a, p) => a + (p.gpr == null ? 1 : p.gpr) * p.prod, 0));
+    const offLost = Math.min(3, 0.8 * snapSum(ol)) + Math.min(2, 0.5 * snapSum((r.rb || []).concat(r.rec || []).filter(p => p.snap != null)));
+    const outNames = [qbList, r.rb || [], r.rec || [], ol, dl].flat().filter(sit).map(p => p.name);
     // a backup with few attempts is shrunk toward the league average by the data pipeline, but real replacement QBs are below average: pull them down by how little we have seen of them
     const rp = qb === base ? 0 : 1 - qb.att / (qb.att + 300);
     const q = rp ? { cmp: qb.cmp - NFL_REPL.cmp * rp, ypa: qb.ypa - NFL_REPL.ypa * rp, int: qb.int * (1 + NFL_REPL.int * rp) } : qb;
-    return { qb, base, rbs, rcv, kicker, defLost, outNames,
+    return { qb, base, rbs, rcv, kicker, defLost, offLost, outNames,
       cmpRel: clamp(q.cmp / base.cmp, 0.85, 1.12), ypaRel: clamp(q.ypa / base.ypa, 0.8, 1.2), intRel: clamp(q.int / base.int, 0.6, 1.8) };
   }
 
+  // Weather: points added to the game total (negative = fewer). Fit on nflverse 2015-23 outdoor games, tuned on the sim's 2024-25 backtest:
+  // wind over 7 mph and cold under 40F lower scoring. Domes get nothing extra because dome teams' ratings already include their home games indoors.
+  function nflWeatherAdj(w) {
+    if (!w || w.indoor || w.wind == null) return 0;
+    return -0.2 * Math.max(0, w.wind - 7) - 0.1 * Math.max(0, 40 - (w.temp == null ? 55 : w.temp));
+  }
   function nflGame(away, home, rng, opts) {
     opts = opts || {};
     const teams = [away, home];
     const R = teams.map(t => nflPrep(t, rng));
-    const e = [away.pf * home.pa / NFL_LG - 1.0 + R[1].defLost, home.pf * away.pa / NFL_LG + 1.0 + R[0].defLost];
+    const wx = nflWeatherAdj(opts.weather) / 2;
+    const e = [away.pf * home.pa / NFL_LG - 1.0 + R[1].defLost - R[0].offLost + wx, home.pf * away.pa / NFL_LG + 1.0 + R[0].defLost - R[1].offLost + wx];
     const s = e.map(x => clamp(x / NFL_LG, 0.45, 1.8));
     const score = [0, 0], byQ = [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0]];
     const st = [0, 1].map(() => ({ plays: 0, yds: 0, pass: 0, rush: 0, to: 0, pen: 0, penYds: 0, c3: 0, a3: 0, top: 0, sacks: 0 }));
@@ -822,7 +842,7 @@
         const e = byName[norm(t.name)] || d[t.id]; if (!e) continue;
         n++; t.live = true; t.liveGp = e.gp; delete t.roster;
         if (sp === 'nba') { t.off = e.off; t.def = e.def; if (e.players && e.players.length >= 8) t.roster = { players: e.players }; }
-        if (sp === 'nfl') { t.pf = e.off; t.pa = e.def; if (e.players && e.players.qb && e.players.qb.length) t.roster = { qb: e.players.qb, rb: e.players.rb, rec: e.players.rec, defense: e.players.defense || [] }; }
+        if (sp === 'nfl') { t.pf = e.off; t.pa = e.def; if (e.players && e.players.qb && e.players.qb.length) t.roster = { qb: e.players.qb, rb: e.players.rb, rec: e.players.rec, ol: e.players.ol || [], defense: e.players.defense || [] }; }
         if (sp === 'nhl') {
           t.gf = e.off; t.ga = e.def;
           if (e.fwd && e.dmen && e.fwd.length >= 9 && e.dmen.length >= 4 && e.goalies && e.goalies.length) t.roster = { fwd: e.fwd, def: e.dmen, g: { name: e.goalies[0].name }, goalies: e.goalies, svAvg: e.svAvg, garAvg: e.garAvg };
@@ -845,7 +865,8 @@
     else if (sport === 'nhl') { (r.fwd || []).concat(r.def || []).forEach(p => { if (p.toi >= 15) add(p, p.toi); }); (r.goalies || []).forEach(p => { if (p.gp >= 10) add(p, 40); }); }
     else if (sport === 'nfl') {
       (r.qb || []).slice(0, 2).forEach(p => add(p, 100)); (r.rb || []).forEach(p => { if (p.car + p.tgt >= 60) add(p, 20 + (p.car + p.tgt) / 10); });
-      (r.rec || []).forEach(p => { if (p.tgt >= 30) add(p, 10 + p.tgt / 5); }); (r.defense || []).forEach(p => { if (p.prod >= 2) add(p, 10 + p.prod * 3); });
+      (r.rec || []).forEach(p => { if (p.tgt >= 30) add(p, 10 + p.tgt / 5); }); (r.defense || []).forEach(p => { if (p.snap != null ? p.snap >= 0.6 : p.prod >= 2) add(p, p.snap != null ? 10 + 20 * p.snap : 10 + p.prod * 3); });
+      (r.ol || []).forEach(p => { if (p.snap >= 0.6) add(p, 10 + 16 * p.snap); });
     }
     return out.sort((a, b) => b.w - a.w).slice(0, max || 4).map(p => ({ name: p.name, pos: p.pos, status: p.status, out: p.out }));
   }
@@ -854,6 +875,6 @@
     const m = name && /^(\S+)\s+(.+)$/.exec(fold(name)); if (!m || !list) return -1;
     return list.findIndex(g => { const p = fold(g.name).split(' '); return p.slice(1).join(' ') === m[2] && p[0][0] === m[1][0]; });
   }
-  const api = { setLeague, applyLive, injuries, matchGoalie, makeRng, roster, SPORTS, simGame, monteCarlo, playSeries, seriesMonteCarlo, leagueTable };
+  const api = { setLeague, applyLive, injuries, matchGoalie, makeRng, roster, nflWeatherAdj, SPORTS, simGame, monteCarlo, playSeries, seriesMonteCarlo, leagueTable };
   if (typeof module !== 'undefined' && module.exports) module.exports = api; else root.Sim = api;
 })(typeof window !== 'undefined' ? window : globalThis);

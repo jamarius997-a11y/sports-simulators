@@ -54,7 +54,7 @@ for (const sp of ['nba', 'nfl', 'nhl']) {
       const c = Sim.matchGoalie(R.goalies, s.confirmed); if (c >= 0) { t.gIdx = c; return; }
       if (s.probable) { const i = R.goalies.findIndex(x => x.name === s.probable); if (i >= 0) t.gIdx = i; }
     });
-    const m = Sim.monteCarlo(sp, away, home, SIMS, rng, { rest: { away: g.awayRest, home: g.homeRest } });
+    const m = Sim.monteCarlo(sp, away, home, SIMS, rng, { rest: { away: g.awayRest, home: g.homeRest }, weather: g.weather });
     const raw = (m.wins[1] + m.wins[2] / 2) / m.n;
     const z = Math.log(Math.min(0.999, Math.max(0.001, raw)) / (1 - Math.min(0.999, Math.max(0.001, raw))));
     const mk = market(sp, g), key = sp + ':' + g.id;

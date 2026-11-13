@@ -137,14 +137,44 @@ async function nflEpa(year) {
   return out;
 }
 
-function nflDefenders(defs, dc, dp) {
+// nflverse snap counts: each player's share of his team's snaps (offense or defense) in the games he played over the team's last 6 weeks,
+// i.e. his role when healthy. Tested on 2024-25 injury reports against the sim's misses: per full-time starter listed out, a team lost about
+// 1.1 points (offensive line), 1.0 (WR/TE/RB) and 1.3 (defense); snap share beat the old production measure for defenders.
+const snapName = x => String(x).toLowerCase().replace(/\b(jr|sr|ii|iii|iv|v)\b\.?/g, '').replace(/[^a-z]/g, '');
+async function nflSnaps(year) {
+  const S = {}, last = {};
+  try {
+    const r = await fetch('https://github.com/nflverse/nflverse-data/releases/download/snap_counts/snap_counts_' + year + '.csv', { signal: AbortSignal.timeout(60000) });
+    if (!r.ok) return null;
+    const file = path.join(__dirname, 'cache', 'snap_counts_' + year + '.csv');
+    fs.mkdirSync(path.dirname(file), { recursive: true }); fs.writeFileSync(file, await r.text());
+    for (const s of readCsv(file)) {
+      if (s.game_type !== 'REG') continue;
+      const wk = +s.week, pct = Math.max(+s.offense_pct || 0, +s.defense_pct || 0);
+      last[s.team] = Math.max(last[s.team] || 0, wk);
+      (S[s.team + '|' + snapName(s.player)] = S[s.team + '|' + snapName(s.player)] || []).push({ wk, pct });
+    }
+  } catch (e) { return null; }
+  return (team, name) => {
+    const w = (S[team + '|' + snapName(name)] || []).filter(x => x.wk > (last[team] || 0) - 6);
+    return w.length ? r3(w.reduce((a, x) => a + x.pct, 0) / w.length) : 0;
+  };
+}
+
+function nflDefenders(defs, dc, dp, snap) {
   return defs.map(a => {
     const k = normName(a.fullName), c = dc[k], p = dp[k], inj = injuryOf(a);
     const weeks = (c ? c.weeks : 0) + 0.6 * (p ? p.weeks : 0);
-    if (!weeks) return null;
-    const prod = ((c ? c.prod : 0) + 0.6 * (p ? p.prod : 0)) / weeks;
-    return { name: a.fullName, pos: a.position.abbreviation, prod: r1(prod), gpr: c && c.teamWeeks ? r3(Math.min(1, c.weeks / c.teamWeeks)) : 0, out: inj.out, note: inj.note };
-  }).filter(p => p && p.prod >= 0.5).sort((x, y) => y.prod - x.prod).slice(0, 12);
+    const prod = weeks ? ((c ? c.prod : 0) + 0.6 * (p ? p.prod : 0)) / weeks : 0, sn = snap ? snap(a.fullName) : null;
+    if (!weeks && !sn) return null;
+    return { name: a.fullName, pos: a.position.abbreviation, prod: r1(prod), snap: sn, gpr: c && c.teamWeeks ? r3(Math.min(1, c.weeks / c.teamWeeks)) : 0, out: inj.out, note: inj.note };
+  }).filter(p => p && (p.prod >= 0.5 || p.snap >= 0.3)).sort((x, y) => (y.snap || 0) - (x.snap || 0) || y.prod - x.prod).slice(0, 14);
+}
+const OL_POS = ['OT', 'T', 'G', 'OG', 'C', 'OL'];
+function nflLine(ath, snap) {
+  if (!snap) return [];
+  return ath.filter(a => OL_POS.includes(a.position && a.position.abbreviation)).map(a => { const inj = injuryOf(a); return { name: a.fullName, pos: a.position.abbreviation, snap: snap(a.fullName), out: inj.out, note: inj.note }; })
+    .filter(p => p.snap >= 0.3).sort((x, y) => y.snap - x.snap).slice(0, 8);
 }
 
 // NHL: how many expected goals against a skater saves per game, from on-ice vs off-ice xGA (heavily shrunk)
@@ -183,8 +213,10 @@ async function build(L) {
   const key = L, cfg = LEAGUES[L];
   const tj = await get(SITE + cfg.sport + '/' + key + '/teams');
   const teams = tj.sports[0].leagues[0].teams.map(t => t.team);
-  const rj = await get(SITE + cfg.sport + '/' + key + '/teams/' + teams[0].id + '/roster');
-  const year = rj.season.year;
+  // season year from the first roster that loads (ESPN sometimes 404s a single team's roster), else the league's listed season
+  let year = null;
+  for (const t of teams.slice(0, 5)) { const rj = await get(SITE + cfg.sport + '/' + key + '/teams/' + t.id + '/roster'); if (rj && rj.season) { year = rj.season.year; break; } }
+  if (!year) { const s = tj.sports[0].leagues[0].season; if (!s) throw new Error(L + ': no season year from ESPN'); year = s.year; }
   console.log(L.toUpperCase() + ': season ' + year + ', ' + teams.length + ' teams');
 
   const [cur, pri] = await Promise.all([standings(L, key, year), standings(L, key, year - 1)]);
@@ -195,10 +227,11 @@ async function build(L) {
     const wp = p ? cfg.prior : 0, gc = c ? c.gp : 0, den = gc + wp;
     raw[t.id] = { gp: gc, off: ((c ? c.pf * gc : 0) + (p ? p.pf * wp : 0)) / den, def: ((c ? c.pa * gc : 0) + (p ? p.pa * wp : 0)) / den };
   }
-  let gmap = {}, smapC = {}, smapP = {}, dc = {}, dp = {};
+  let gmap = {}, smapC = {}, smapP = {}, dc = {}, dp = {}, snaps = null;
   if (L === 'nfl') {
     let ec, ep;
-    [dc, dp, ec, ep] = await Promise.all([nflDefense(year), nflDefense(year - 1), nflEpa(year), nflEpa(year - 1)]);
+    [dc, dp, ec, ep, snaps] = await Promise.all([nflDefense(year), nflDefense(year - 1), nflEpa(year), nflEpa(year - 1), nflSnaps(year)]);
+    console.log('  nflverse snap counts: ' + (snaps ? 'loaded' : 'unavailable'));
     // EPA per play -> points per game: 1 EPA/play of net efficiency was worth about 52 points/game of net scoring in the 2024-25 fit
     const K = 52, lgPer = E => { let oe = 0, op = 0; for (const k in E) { oe += E[k].oe; op += E[k].op; } return op ? oe / op : 0; }, mc = lgPer(ec), mp = lgPer(ep);
     const lgPts = Object.values(raw).reduce((a, x) => a + x.off + x.def, 0) / (2 * Object.keys(raw).length);
@@ -255,13 +288,23 @@ async function build(L) {
     if (L === 'nhl') { entry.off = r3(raw[t.id].off * scale); entry.def = r3(raw[t.id].def * scale); }
     if (L === 'nba') entry.players = nbaPlayers(rows, raw[t.id].gp);
     if (L === 'nhl') Object.assign(entry, nhlPlayers(rows, gmap, smapC, smapP, await depthOf('nhl', t.id, 'g'), ath));
-    if (L === 'nfl') { entry.players = nflPlayers(rows, await depthOf('nfl', t.id, 'qb'), ath); entry.players.defense = nflDefenders(defs, dc, dp); }
+    if (L === 'nfl') {
+      const code = NFLV_CODE[t.abbreviation] || t.abbreviation, snap = snaps ? name => snaps(code, name) : null;
+      entry.players = nflPlayers(rows, await depthOf('nfl', t.id, 'qb'), ath); entry.players.defense = nflDefenders(defs, dc, dp, snap);
+      if (snap) { for (const p of entry.players.rb.concat(entry.players.rec)) p.snap = snap(p.name); entry.players.ol = nflLine(ath, snap); }
+    }
     result[t.abbreviation] = entry;
   });
   META[L] = { lg: Math.round(lgMean * 1000) / 1000 };
   return result;
 }
 
+// Hollinger Game Score from season totals (the sim's NBA absence cost uses it per 36 minutes)
+function gameScore(s) {
+  const n = k => s[k] || 0, oreb = s.offensiveRebounds != null ? n('offensiveRebounds') : 0.25 * n('rebounds'), dreb = s.defensiveRebounds != null ? n('defensiveRebounds') : 0.75 * n('rebounds');
+  return n('points') + 0.4 * n('fieldGoalsMade') - 0.7 * n('fieldGoalsAttempted') - 0.4 * (n('freeThrowsAttempted') - n('freeThrowsMade')) + 0.7 * oreb + 0.3 * dreb
+    + n('steals') + 0.7 * n('assists') + 0.7 * n('blocks') - 0.4 * n('fouls') - n('turnovers');
+}
 function nbaPlayers(rows, teamGp) {
   return rows.map(({ a, s, pos, inj }) => {
     const gp = s.gamesPlayed || 0, min = s.minutes || 0;
@@ -269,7 +312,8 @@ function nbaPlayers(rows, teamGp) {
     const fga = s.fieldGoalsAttempted || 0, fta = s.freeThrowsAttempted || 0, tov = s.turnovers || 0, pts = s.points || 0;
     const poss = fga + 0.44 * fta + tov;
     return { name: a.fullName, pos, out: inj.out, note: inj.note, gpr: teamGp >= 4 ? r3(Math.min(1, (s.__gpc || 0) / teamGp)) : 1, min: r1(min / gp), usage: r1(36 * poss / min), ts: r3(poss > 0 ? pts / (2 * (fga + 0.44 * fta + 5)) : 0.5),
-      stk: r1(36 * ((s.steals || 0) + (s.blocks || 0)) / min), reb: r1(Math.max(0.5, 36 * (s.rebounds || 0) / min)), ast: r1(Math.max(0.3, 36 * (s.assists || 0) / min)), pts36: r1(36 * pts / min) };
+      stk: r1(36 * ((s.steals || 0) + (s.blocks || 0)) / min), reb: r1(Math.max(0.5, 36 * (s.rebounds || 0) / min)), ast: r1(Math.max(0.3, 36 * (s.assists || 0) / min)), pts36: r1(36 * pts / min),
+      gs36: r1(36 * gameScore(s) / min) };
   }).filter(Boolean).sort((x, y) => y.min - x.min).slice(0, 13);
 }
 
@@ -385,7 +429,8 @@ async function schedule(L, days) {
       const c = ev.competitions[0], home = c.competitors.find(x => x.homeAway === 'home'), away = c.competitors.find(x => x.homeAway === 'away');
       const side = x => ({ abbr: x.team.abbreviation, name: x.team.displayName, probable: ((x.probables || [])[0] && x.probables[0].athlete && x.probables[0].athlete.fullName) || null });
       const o = c.odds && c.odds[0];
-      out.push({ id: ev.id, date: ev.date, away: side(away), home: side(home), line: o ? o.details || null : null, total: o ? o.overUnder || null : null,
+      out.push({ id: ev.id, date: ev.date, away: side(away), home: side(home), venue: L === 'nfl' && c.venue ? { indoor: !!c.venue.indoor, neutral: !!c.neutralSite } : undefined,
+        line: o ? o.details || null : null, total: o ? o.overUnder || null : null,
         homeML: o && o.homeTeamOdds ? o.homeTeamOdds.moneyLine ?? null : null, awayML: o && o.awayTeamOdds ? o.awayTeamOdds.moneyLine ?? null : null });
     }
   }
@@ -399,7 +444,29 @@ async function schedule(L, days) {
     g.awayFrom = from(g.away.abbr); g.homeFrom = from(g.home.abbr);
   }
   if (L === 'nhl') await nhlConfirm(uniq);
+  if (L === 'nfl') await nflWeather(uniq);
   return uniq;
+}
+
+// NFL kickoff weather from Open-Meteo's free forecast (no key): wind (mph) and temperature (F) at the home stadium for the kickoff hour.
+// Indoor venues (ESPN's venue.indoor; retractable roofs count as indoor) get { indoor: true }. Neutral sites have no stadium coordinates here and are skipped.
+async function nflWeather(games) {
+  const Travel = require('./travel.js'); let n = 0;
+  const DOME = ['ARI', 'ATL', 'DAL', 'DET', 'HOU', 'IND', 'LV', 'LAC', 'LAR', 'MIN', 'NO'];   // fixed or retractable roofs, in case ESPN's venue flag is missing
+  for (const g of games) {
+    if (!g.venue) continue;
+    if (g.venue.indoor || (!g.venue.neutral && DOME.includes(g.home.abbr))) { g.weather = { indoor: true }; continue; }
+    const p = !g.venue.neutral && Travel.loc('nfl', g.home.abbr); if (!p) continue;
+    const day = g.date.slice(0, 10);
+    try {
+      const r = await fetch('https://api.open-meteo.com/v1/forecast?latitude=' + p[0] + '&longitude=' + p[1] + '&hourly=temperature_2m,wind_speed_10m,precipitation&wind_speed_unit=mph&temperature_unit=fahrenheit&timezone=UTC&start_date=' + day + '&end_date=' + day, { signal: AbortSignal.timeout(20000) });
+      if (!r.ok) continue;
+      const j = await r.json(), h = new Date(g.date).getUTCHours(), i = (j.hourly.time || []).findIndex(t => +t.slice(11, 13) === h);
+      if (i < 0) continue;
+      g.weather = { wind: Math.round(j.hourly.wind_speed_10m[i]), temp: Math.round(j.hourly.temperature_2m[i]), precip: j.hourly.precipitation[i] }; n++;
+    } catch (e) { /* forecast is optional */ }
+  }
+  console.log('  Open-Meteo: kickoff weather for ' + n + ' outdoor NFL games');
 }
 
 (async () => {

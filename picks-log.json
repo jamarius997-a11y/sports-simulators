@@ -7158,24 +7158,17 @@
    1,
    1
   ],
-  "simPHome": 0.2262,
-  "rawPHome": 0.2555,
-  "simMargin": -10.81,
+  "simPHome": 0.2304,
+  "rawPHome": 0.2595,
+  "simMargin": -10.6,
   "simScore": [
-   113.91,
-   103.1
+   114.2,
+   103.6
   ],
-  "simTotal": 217.01,
+  "simTotal": 217.81,
   "inj": [
    [],
-   [
-    {
-     "name": "Aaron Nesmith",
-     "pos": "G",
-     "status": "Day-to-day",
-     "out": false
-    }
-   ]
+   []
   ],
   "lines": [
    {
@@ -7199,7 +7192,7 @@
    "pHome": 0.23854917523700098,
    "margin": -8.5
   },
-  "loggedAt": "2026-11-13T22:55:53.675Z",
+  "loggedAt": "2026-11-13T23:09:54.588Z",
   "result": null
  },
  "nba:401909297": {
@@ -7219,14 +7212,14 @@
    1,
    1
   ],
-  "simPHome": 0.7536,
-  "rawPHome": 0.7255,
-  "simMargin": 9.7,
+  "simPHome": 0.777,
+  "rawPHome": 0.7475,
+  "simMargin": 10.35,
   "simScore": [
-   107.18,
-   116.87
+   106.46,
+   116.81
   ],
-  "simTotal": 224.05,
+  "simTotal": 223.27,
   "inj": [
    [],
    []
@@ -7257,7 +7250,7 @@
    "pHome": 0.7867944967911461,
    "margin": 9.5
   },
-  "loggedAt": "2026-11-13T22:55:53.801Z",
+  "loggedAt": "2026-11-13T23:09:54.769Z",
   "result": null
  },
  "nba:401909298": {
@@ -7277,14 +7270,14 @@
    1,
    2
   ],
-  "simPHome": 0.496,
-  "rawPHome": 0.4965,
-  "simMargin": -0.41,
+  "simPHome": 0.4989,
+  "rawPHome": 0.499,
+  "simMargin": -0.38,
   "simScore": [
-   119.07,
-   118.67
+   119.64,
+   119.25
   ],
-  "simTotal": 237.74,
+  "simTotal": 238.89,
   "inj": [
    [
     {
@@ -7304,8 +7297,8 @@
     {
      "name": "Pelle Larsson",
      "pos": "G",
-     "status": "Day-to-day",
-     "out": false
+     "status": "Out",
+     "out": true
     },
     {
      "name": "Klay Thompson",
@@ -7341,7 +7334,7 @@
    "pHome": 0.5825421413264573,
    "margin": 2.5
   },
-  "loggedAt": "2026-11-13T22:55:53.934Z",
+  "loggedAt": "2026-11-13T23:09:54.964Z",
   "result": null
  },
  "nba:401909299": {
@@ -7361,14 +7354,14 @@
    null,
    1
   ],
-  "simPHome": 0.1459,
-  "rawPHome": 0.177,
-  "simMargin": -14.71,
+  "simPHome": 0.1789,
+  "rawPHome": 0.21,
+  "simMargin": -13.11,
   "simScore": [
-   128.73,
-   114.02
+   129.34,
+   116.22
   ],
-  "simTotal": 242.74,
+  "simTotal": 245.56,
   "inj": [
    [
     {
@@ -7411,7 +7404,7 @@
    "pHome": 0.2653885083448069,
    "margin": -7.5
   },
-  "loggedAt": "2026-11-13T22:55:54.078Z",
+  "loggedAt": "2026-11-13T23:09:55.174Z",
   "result": null
  },
  "nba:401909300": {
@@ -7431,14 +7424,14 @@
    1,
    1
   ],
-  "simPHome": 0.3014,
-  "rawPHome": 0.325,
-  "simMargin": -7.25,
+  "simPHome": 0.3092,
+  "rawPHome": 0.332,
+  "simMargin": -6.8,
   "simScore": [
-   123.14,
-   115.89
+   124.05,
+   117.25
   ],
-  "simTotal": 239.03,
+  "simTotal": 241.31,
   "inj": [
    [
     {
@@ -7503,7 +7496,7 @@
    "pHome": 0.38519960278756193,
    "margin": -3.5
   },
-  "loggedAt": "2026-11-13T22:55:54.209Z",
+  "loggedAt": "2026-11-13T23:09:55.372Z",
   "result": null
  },
  "nba:401909301": {
@@ -7523,14 +7516,14 @@
    1,
    1
   ],
-  "simPHome": 0.9368,
-  "rawPHome": 0.9125,
-  "simMargin": 22.01,
+  "simPHome": 0.9325,
+  "rawPHome": 0.9075,
+  "simMargin": 21.77,
   "simScore": [
-   100.93,
-   122.94
+   102.37,
+   124.14
   ],
-  "simTotal": 223.88,
+  "simTotal": 226.51,
   "inj": [
    [
     {
@@ -7564,7 +7557,7 @@
    "pHome": 0.904439176173002,
    "margin": 15.5
   },
-  "loggedAt": "2026-11-13T22:55:54.337Z",
+  "loggedAt": "2026-11-13T23:09:55.573Z",
   "result": null
  },
  "nba:401909302": {
@@ -7584,14 +7577,14 @@
    1,
    1
   ],
-  "simPHome": 0.8062,
-  "rawPHome": 0.7755,
-  "simMargin": 12.7,
+  "simPHome": 0.7838,
+  "rawPHome": 0.754,
+  "simMargin": 11.58,
   "simScore": [
-   105.01,
-   117.71
+   108.15,
+   119.73
   ],
-  "simTotal": 222.72,
+  "simTotal": 227.88,
   "inj": [
    [
     {
@@ -7648,7 +7641,7 @@
    "pHome": 0.85313359197803,
    "margin": 12.5
   },
-  "loggedAt": "2026-11-13T22:55:54.477Z",
+  "loggedAt": "2026-11-13T23:09:55.795Z",
   "result": null
  },
  "nba:401909303": {
@@ -7668,14 +7661,14 @@
    1,
    2
   ],
-  "simPHome": 0.1558,
-  "rawPHome": 0.187,
-  "simMargin": -14.89,
+  "simPHome": 0.1508,
+  "rawPHome": 0.182,
+  "simMargin": -14.6,
   "simScore": [
-   122.52,
-   107.63
+   123.63,
+   109.03
   ],
-  "simTotal": 230.15,
+  "simTotal": 232.66,
   "inj": [
    [
     {
@@ -7722,7 +7715,7 @@
    "pHome": 0.18944159830705426,
    "margin": -10.5
   },
-  "loggedAt": "2026-11-13T22:55:54.607Z",
+  "loggedAt": "2026-11-13T23:09:55.999Z",
   "result": null
  },
  "nba:401909304": {
@@ -7742,14 +7735,14 @@
    1,
    2
   ],
-  "simPHome": 0.3674,
-  "rawPHome": 0.384,
-  "simMargin": -4.81,
+  "simPHome": 0.3522,
+  "rawPHome": 0.3705,
+  "simMargin": -4.75,
   "simScore": [
-   111.88,
-   107.06
+   112.47,
+   107.72
   ],
-  "simTotal": 218.94,
+  "simTotal": 220.18,
   "inj": [
    [
     {
@@ -7793,7 +7786,7 @@
    "pHome": 0.2653885083448069,
    "margin": -7.5
   },
-  "loggedAt": "2026-11-13T22:55:54.735Z",
+  "loggedAt": "2026-11-13T23:09:56.200Z",
   "result": null
  },
  "nhl:401892706": {
@@ -7823,12 +7816,12 @@
   ],
   "simPHome": 0.4813,
   "rawPHome": 0.478,
-  "simMargin": -0.1,
+  "simMargin": -0.11,
   "simScore": [
-   3.08,
-   2.98
+   3.11,
+   3
   ],
-  "simTotal": 6.07,
+  "simTotal": 6.11,
   "inj": [
    [
     {
@@ -7848,12 +7841,6 @@
     {
      "name": "Thatcher Demko",
      "pos": "",
-     "status": "Out",
-     "out": true
-    },
-    {
-     "name": "Filip Chytil",
-     "pos": "C",
      "status": "Out",
      "out": true
     }
@@ -7881,7 +7868,7 @@
    "pHome": 0.3375046006624953,
    "margin": null
   },
-  "loggedAt": "2026-11-13T22:55:57.532Z",
+  "loggedAt": "2026-11-13T23:10:01.837Z",
   "result": null
  },
  "nhl:401892707": {
@@ -7909,14 +7896,14 @@
    1,
    1
   ],
-  "simPHome": 0.5558,
-  "rawPHome": 0.5655,
-  "simMargin": 0.33,
+  "simPHome": 0.5605,
+  "rawPHome": 0.571,
+  "simMargin": 0.42,
   "simScore": [
    2.91,
-   3.23
+   3.33
   ],
-  "simTotal": 6.14,
+  "simTotal": 6.24,
   "inj": [
    [
     {
@@ -7957,7 +7944,7 @@
    "pHome": 0.5916943642938018,
    "margin": null
   },
-  "loggedAt": "2026-11-13T22:55:57.563Z",
+  "loggedAt": "2026-11-13T23:10:01.914Z",
   "result": null
  },
  "nba:401909980": {
@@ -7977,14 +7964,14 @@
    2,
    0
   ],
-  "simPHome": 0.181,
-  "rawPHome": 0.212,
-  "simMargin": -13.29,
+  "simPHome": 0.1953,
+  "rawPHome": 0.226,
+  "simMargin": -12.02,
   "simScore": [
-   126.25,
-   112.95
+   126.72,
+   114.7
   ],
-  "simTotal": 239.2,
+  "simTotal": 241.42,
   "inj": [
    [],
    [
@@ -8036,7 +8023,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-13T22:55:54.869Z",
+  "loggedAt": "2026-11-13T23:09:56.408Z",
   "result": null
  },
  "nba:401909981": {
@@ -8056,14 +8043,14 @@
    1,
    0
   ],
-  "simPHome": 0.5523,
-  "rawPHome": 0.5455,
-  "simMargin": 1.75,
+  "simPHome": 0.5224,
+  "rawPHome": 0.5195,
+  "simMargin": 0.94,
   "simScore": [
-   114.02,
-   115.77
+   115.22,
+   116.16
   ],
-  "simTotal": 229.79,
+  "simTotal": 231.39,
   "inj": [
    [
     {
@@ -8114,7 +8101,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-13T22:55:54.997Z",
+  "loggedAt": "2026-11-13T23:09:56.618Z",
   "result": null
  },
  "nba:401909982": {
@@ -8134,22 +8121,22 @@
    1,
    0
   ],
-  "simPHome": 0.2588,
-  "rawPHome": 0.286,
-  "simMargin": -9.21,
+  "simPHome": 0.2529,
+  "rawPHome": 0.2805,
+  "simMargin": -9.42,
   "simScore": [
-   120.43,
-   111.22
+   121.37,
+   111.95
   ],
-  "simTotal": 231.66,
+  "simTotal": 233.32,
   "inj": [
    [],
    [
     {
      "name": "Pelle Larsson",
      "pos": "G",
-     "status": "Day-to-day",
-     "out": false
+     "status": "Out",
+     "out": true
     },
     {
      "name": "Klay Thompson",
@@ -8181,7 +8168,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-13T22:55:55.126Z",
+  "loggedAt": "2026-11-13T23:09:56.827Z",
   "result": null
  },
  "nba:401909983": {
@@ -8201,14 +8188,14 @@
    2,
    0
   ],
-  "simPHome": 0.703,
-  "rawPHome": 0.679,
-  "simMargin": 7.06,
+  "simPHome": 0.6864,
+  "rawPHome": 0.664,
+  "simMargin": 7,
   "simScore": [
-   109.31,
-   116.38
+   109.56,
+   116.56
   ],
-  "simTotal": 225.69,
+  "simTotal": 226.12,
   "inj": [
    [
     {
@@ -8265,7 +8252,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-13T22:55:55.260Z",
+  "loggedAt": "2026-11-13T23:09:57.038Z",
   "result": null
  },
  "nba:401909984": {
@@ -8285,14 +8272,14 @@
    0,
    1
   ],
-  "simPHome": 0.9665,
-  "rawPHome": 0.949,
-  "simMargin": 26.54,
+  "simPHome": 0.9626,
+  "rawPHome": 0.944,
+  "simMargin": 25.64,
   "simScore": [
-   104.2,
-   130.74
+   106.45,
+   132.1
   ],
-  "simTotal": 234.94,
+  "simTotal": 238.55,
   "inj": [
    [
     {
@@ -8332,7 +8319,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-13T22:55:55.389Z",
+  "loggedAt": "2026-11-13T23:09:57.240Z",
   "result": null
  },
  "nhl:401891809": {
@@ -8360,14 +8347,14 @@
    1,
    1
   ],
-  "simPHome": 0.6758,
-  "rawPHome": 0.7035,
-  "simMargin": 1.21,
+  "simPHome": 0.6682,
+  "rawPHome": 0.695,
+  "simMargin": 1.22,
   "simScore": [
-   2.36,
-   3.56
+   2.39,
+   3.6
   ],
-  "simTotal": 5.92,
+  "simTotal": 5.99,
   "inj": [
    [
     {
@@ -8405,7 +8392,7 @@
    "pHome": 0.7466217992533782,
    "margin": null
   },
-  "loggedAt": "2026-11-13T22:55:57.602Z",
+  "loggedAt": "2026-11-13T23:10:01.986Z",
   "result": null
  },
  "nhl:401892708": {
@@ -8433,14 +8420,14 @@
    1,
    1
   ],
-  "simPHome": 0.4455,
-  "rawPHome": 0.436,
-  "simMargin": -0.4,
+  "simPHome": 0.4502,
+  "rawPHome": 0.4415,
+  "simMargin": -0.35,
   "simScore": [
-   3.35,
-   2.95
+   3.26,
+   2.92
   ],
-  "simTotal": 6.3,
+  "simTotal": 6.18,
   "inj": [
    [
     {
@@ -8474,7 +8461,7 @@
    "pHome": 0.4183319260718642,
    "margin": null
   },
-  "loggedAt": "2026-11-13T22:55:57.634Z",
+  "loggedAt": "2026-11-13T23:10:02.054Z",
   "result": null
  },
  "nhl:401892709": {
@@ -8502,14 +8489,14 @@
    1,
    1
   ],
-  "simPHome": 0.4378,
-  "rawPHome": 0.427,
-  "simMargin": -0.43,
+  "simPHome": 0.4579,
+  "rawPHome": 0.4505,
+  "simMargin": -0.33,
   "simScore": [
-   3.15,
-   2.72
+   3.06,
+   2.73
   ],
-  "simTotal": 5.86,
+  "simTotal": 5.79,
   "inj": [
    [
     {
@@ -8543,7 +8530,7 @@
    "pHome": 0.47411526358894773,
    "margin": null
   },
-  "loggedAt": "2026-11-13T22:55:57.668Z",
+  "loggedAt": "2026-11-13T23:10:02.125Z",
   "result": null
  },
  "nhl:401892710": {
@@ -8571,14 +8558,14 @@
    2,
    1
   ],
-  "simPHome": 0.425,
-  "rawPHome": 0.412,
-  "simMargin": -0.49,
+  "simPHome": 0.4464,
+  "rawPHome": 0.437,
+  "simMargin": -0.34,
   "simScore": [
-   3.4,
-   2.91
+   3.26,
+   2.92
   ],
-  "simTotal": 6.31,
+  "simTotal": 6.18,
   "inj": [
    [
     {
@@ -8619,7 +8606,7 @@
    "pHome": 0.4183319260718642,
    "margin": null
   },
-  "loggedAt": "2026-11-13T22:55:57.697Z",
+  "loggedAt": "2026-11-13T23:10:02.215Z",
   "result": null
  },
  "nhl:401892711": {
@@ -8647,14 +8634,14 @@
    1,
    1
   ],
-  "simPHome": 0.5754,
-  "rawPHome": 0.5885,
-  "simMargin": 0.48,
+  "simPHome": 0.5511,
+  "rawPHome": 0.56,
+  "simMargin": 0.38,
   "simScore": [
-   2.63,
-   3.11
+   2.8,
+   3.17
   ],
-  "simTotal": 5.73,
+  "simTotal": 5.97,
   "inj": [
    [
     {
@@ -8711,7 +8698,7 @@
    "pHome": 0.5179755059040428,
    "margin": null
   },
-  "loggedAt": "2026-11-13T22:55:57.722Z",
+  "loggedAt": "2026-11-13T23:10:02.276Z",
   "result": null
  },
  "nhl:401892712": {
@@ -8739,14 +8726,14 @@
    1,
    1
   ],
-  "simPHome": 0.5353,
-  "rawPHome": 0.5415,
-  "simMargin": 0.25,
+  "simPHome": 0.5102,
+  "rawPHome": 0.512,
+  "simMargin": 0.12,
   "simScore": [
-   2.89,
-   3.14
+   2.97,
+   3.09
   ],
-  "simTotal": 6.03,
+  "simTotal": 6.06,
   "inj": [
    [
     {
@@ -8803,7 +8790,7 @@
    "pHome": 0.6624953993375047,
    "margin": null
   },
-  "loggedAt": "2026-11-13T22:55:57.747Z",
+  "loggedAt": "2026-11-13T23:10:02.337Z",
   "result": null
  },
  "nhl:401892713": {
@@ -8831,14 +8818,14 @@
    1,
    2
   ],
-  "simPHome": 0.5174,
-  "rawPHome": 0.5205,
-  "simMargin": 0.14,
+  "simPHome": 0.5187,
+  "rawPHome": 0.522,
+  "simMargin": 0.2,
   "simScore": [
    3.18,
-   3.32
+   3.38
   ],
-  "simTotal": 6.49,
+  "simTotal": 6.57,
   "inj": [
    [
     {
@@ -8883,7 +8870,7 @@
    "pHome": 0.4591221135843562,
    "margin": null
   },
-  "loggedAt": "2026-11-13T22:55:57.777Z",
+  "loggedAt": "2026-11-13T23:10:02.404Z",
   "result": null
  },
  "nhl:401892714": {
@@ -8911,12 +8898,12 @@
    1,
    1
   ],
-  "simPHome": 0.5119,
-  "rawPHome": 0.514,
-  "simMargin": 0.12,
+  "simPHome": 0.4936,
+  "rawPHome": 0.4925,
+  "simMargin": 0.01,
   "simScore": [
-   2.86,
-   2.99
+   2.92,
+   2.93
   ],
   "simTotal": 5.85,
   "inj": [
@@ -8963,7 +8950,7 @@
    "pHome": 0.47803392779469334,
    "margin": null
   },
-  "loggedAt": "2026-11-13T22:55:57.803Z",
+  "loggedAt": "2026-11-13T23:10:02.525Z",
   "result": null
  },
  "nhl:401892715": {
@@ -8991,14 +8978,14 @@
    2,
    1
   ],
-  "simPHome": 0.537,
-  "rawPHome": 0.5435,
-  "simMargin": 0.28,
+  "simPHome": 0.5196,
+  "rawPHome": 0.523,
+  "simMargin": 0.19,
   "simScore": [
-   2.84,
-   3.12
+   2.88,
+   3.07
   ],
-  "simTotal": 5.96,
+  "simTotal": 5.95,
   "inj": [
    [],
    [
@@ -9032,7 +9019,7 @@
    "pHome": 0.5497302249821847,
    "margin": null
   },
-  "loggedAt": "2026-11-13T22:55:57.828Z",
+  "loggedAt": "2026-11-13T23:10:02.639Z",
   "result": null
  },
  "nhl:401892716": {
@@ -9060,14 +9047,14 @@
    1,
    1
   ],
-  "simPHome": 0.572,
-  "rawPHome": 0.5845,
-  "simMargin": 0.54,
+  "simPHome": 0.581,
+  "rawPHome": 0.595,
+  "simMargin": 0.61,
   "simScore": [
-   2.52,
-   3.06
+   2.54,
+   3.16
   ],
-  "simTotal": 5.59,
+  "simTotal": 5.7,
   "inj": [
    [],
    []
@@ -9098,7 +9085,7 @@
    "pHome": 0.48814954934905974,
    "margin": null
   },
-  "loggedAt": "2026-11-13T22:55:57.854Z",
+  "loggedAt": "2026-11-13T23:10:02.729Z",
   "result": null
  },
  "nhl:401892717": {
@@ -9126,14 +9113,14 @@
    1,
    1
   ],
-  "simPHome": 0.5583,
-  "rawPHome": 0.5685,
-  "simMargin": 0.39,
+  "simPHome": 0.5502,
+  "rawPHome": 0.559,
+  "simMargin": 0.28,
   "simScore": [
-   2.84,
-   3.23
+   2.86,
+   3.15
   ],
-  "simTotal": 6.07,
+  "simTotal": 6.01,
   "inj": [
    [
     {
@@ -9180,7 +9167,7 @@
    "pHome": 0.5615089564632845,
    "margin": null
   },
-  "loggedAt": "2026-11-13T22:55:57.883Z",
+  "loggedAt": "2026-11-13T23:10:02.831Z",
   "result": null
  },
  "nhl:401892718": {
@@ -9208,14 +9195,14 @@
    2,
    1
   ],
-  "simPHome": 0.6034,
-  "rawPHome": 0.621,
-  "simMargin": 0.76,
+  "simPHome": 0.6,
+  "rawPHome": 0.617,
+  "simMargin": 0.74,
   "simScore": [
-   2.69,
-   3.45
+   2.75,
+   3.49
   ],
-  "simTotal": 6.15,
+  "simTotal": 6.24,
   "inj": [
    [
     {
@@ -9280,7 +9267,7 @@
    "pHome": 0.35681229900384337,
    "margin": null
   },
-  "loggedAt": "2026-11-13T22:55:57.910Z",
+  "loggedAt": "2026-11-13T23:10:02.896Z",
   "result": null
  },
  "nhl:401892719": {
@@ -9308,14 +9295,14 @@
    1,
    2
   ],
-  "simPHome": 0.5387,
-  "rawPHome": 0.5455,
-  "simMargin": 0.29,
+  "simPHome": 0.5272,
+  "rawPHome": 0.532,
+  "simMargin": 0.2,
   "simScore": [
-   3.04,
-   3.32
+   3.1,
+   3.29
   ],
-  "simTotal": 6.36,
+  "simTotal": 6.39,
   "inj": [
    [
     {
@@ -9355,7 +9342,7 @@
    "pHome": 0.5118504506509403,
    "margin": null
   },
-  "loggedAt": "2026-11-13T22:55:57.937Z",
+  "loggedAt": "2026-11-13T23:10:02.963Z",
   "result": null
  },
  "nhl:401892720": {
@@ -9383,14 +9370,14 @@
    2,
    1
   ],
-  "simPHome": 0.5541,
-  "rawPHome": 0.5635,
-  "simMargin": 0.48,
+  "simPHome": 0.5357,
+  "rawPHome": 0.542,
+  "simMargin": 0.27,
   "simScore": [
-   3,
-   3.48
+   3.1,
+   3.37
   ],
-  "simTotal": 6.48,
+  "simTotal": 6.47,
   "inj": [
    [
     {
@@ -9424,7 +9411,7 @@
    "pHome": 0.6089604175728578,
    "margin": null
   },
-  "loggedAt": "2026-11-13T22:55:57.963Z",
+  "loggedAt": "2026-11-13T23:10:03.048Z",
   "result": null
  },
  "nba:401909985": {
@@ -9444,23 +9431,16 @@
    1,
    2
   ],
-  "simPHome": 0.7046,
-  "rawPHome": 0.6805,
-  "simMargin": 7.77,
+  "simPHome": 0.7019,
+  "rawPHome": 0.678,
+  "simMargin": 7.9,
   "simScore": [
-   107.4,
-   115.16
+   107.71,
+   115.61
   ],
-  "simTotal": 222.56,
+  "simTotal": 223.32,
   "inj": [
-   [
-    {
-     "name": "Aaron Nesmith",
-     "pos": "G",
-     "status": "Day-to-day",
-     "out": false
-    }
-   ],
+   [],
    [
     {
      "name": "LeBron James",
@@ -9492,7 +9472,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-13T22:55:55.517Z",
+  "loggedAt": "2026-11-13T23:09:57.451Z",
   "result": null
  },
  "nba:401909986": {
@@ -9512,14 +9492,14 @@
    3,
    2
   ],
-  "simPHome": 0.4208,
-  "rawPHome": 0.431,
-  "simMargin": -2.58,
+  "simPHome": 0.4117,
+  "rawPHome": 0.423,
+  "simMargin": -2.81,
   "simScore": [
-   115.13,
-   112.55
+   116.55,
+   113.73
   ],
-  "simTotal": 227.67,
+  "simTotal": 230.28,
   "inj": [
    [
     {
@@ -9565,7 +9545,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-13T22:55:55.645Z",
+  "loggedAt": "2026-11-13T23:09:57.649Z",
   "result": null
  },
  "nba:401909987": {
@@ -9585,14 +9565,14 @@
    2,
    1
   ],
-  "simPHome": 0.6275,
-  "rawPHome": 0.6115,
-  "simMargin": 4.45,
+  "simPHome": 0.6321,
+  "rawPHome": 0.6155,
+  "simMargin": 4.84,
   "simScore": [
-   104.87,
-   109.32
+   105.57,
+   110.41
   ],
-  "simTotal": 214.19,
+  "simTotal": 215.98,
   "inj": [
    [
     {
@@ -9632,7 +9612,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-13T22:55:55.780Z",
+  "loggedAt": "2026-11-13T23:09:57.846Z",
   "result": null
  },
  "nba:401909988": {
@@ -9652,14 +9632,14 @@
    1,
    1
   ],
-  "simPHome": 0.0819,
-  "rawPHome": 0.109,
-  "simMargin": -19.87,
+  "simPHome": 0.0973,
+  "rawPHome": 0.126,
+  "simMargin": -18.81,
   "simScore": [
-   123.89,
-   104.02
+   124.75,
+   105.94
   ],
-  "simTotal": 227.9,
+  "simTotal": 230.69,
   "inj": [
    [
     {
@@ -9710,7 +9690,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-13T22:55:55.910Z",
+  "loggedAt": "2026-11-13T23:09:58.055Z",
   "result": null
  },
  "nba:401909989": {
@@ -9730,14 +9710,14 @@
    0,
    3
   ],
-  "simPHome": 0.8512,
-  "rawPHome": 0.82,
-  "simMargin": 15.22,
+  "simPHome": 0.8571,
+  "rawPHome": 0.826,
+  "simMargin": 15.36,
   "simScore": [
-   101.13,
-   116.35
+   101.25,
+   116.62
   ],
-  "simTotal": 217.49,
+  "simTotal": 217.87,
   "inj": [
    [
     {
@@ -9782,7 +9762,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-13T22:55:56.040Z",
+  "loggedAt": "2026-11-13T23:09:58.290Z",
   "result": null
  },
  "nba:401909990": {
@@ -9802,14 +9782,14 @@
    1,
    2
   ],
-  "simPHome": 0.3589,
-  "rawPHome": 0.3765,
-  "simMargin": -5.25,
+  "simPHome": 0.3702,
+  "rawPHome": 0.3865,
+  "simMargin": -4.78,
   "simScore": [
-   110.11,
-   104.87
+   110.28,
+   105.5
   ],
-  "simTotal": 214.98,
+  "simTotal": 215.77,
   "inj": [
    [],
    [
@@ -9847,7 +9827,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-13T22:55:56.165Z",
+  "loggedAt": "2026-11-13T23:09:58.544Z",
   "result": null
  },
  "nba:401909991": {
@@ -9867,14 +9847,14 @@
    1,
    2
   ],
-  "simPHome": 0.1693,
-  "rawPHome": 0.2005,
-  "simMargin": -13.81,
+  "simPHome": 0.1658,
+  "rawPHome": 0.197,
+  "simMargin": -13.86,
   "simScore": [
-   119.12,
-   105.31
+   119.3,
+   105.44
   ],
-  "simTotal": 224.43,
+  "simTotal": 224.74,
   "inj": [
    [],
    [
@@ -9908,7 +9888,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-13T22:55:56.293Z",
+  "loggedAt": "2026-11-13T23:09:58.801Z",
   "result": null
  },
  "nba:401909992": {
@@ -9928,14 +9908,14 @@
    1,
    1
   ],
-  "simPHome": 0.2172,
-  "rawPHome": 0.247,
-  "simMargin": -11.27,
+  "simPHome": 0.2031,
+  "rawPHome": 0.2335,
+  "simMargin": -12.06,
   "simScore": [
-   122.42,
-   111.14
+   122.69,
+   110.63
   ],
-  "simTotal": 233.56,
+  "simTotal": 233.31,
   "inj": [
    [
     {
@@ -9973,7 +9953,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-13T22:55:56.419Z",
+  "loggedAt": "2026-11-13T23:09:59.047Z",
   "result": null
  },
  "nba:401909993": {
@@ -9995,12 +9975,12 @@
   ],
   "simPHome": 0.1454,
   "rawPHome": 0.1765,
-  "simMargin": -15.05,
+  "simMargin": -15.34,
   "simScore": [
-   117.51,
-   102.46
+   118.17,
+   102.84
   ],
-  "simTotal": 219.97,
+  "simTotal": 221.01,
   "inj": [
    [
     {
@@ -10047,7 +10027,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-13T22:55:56.543Z",
+  "loggedAt": "2026-11-13T23:09:59.274Z",
   "result": null
  },
  "nfl:401873053": {
@@ -10067,20 +10047,26 @@
    null,
    null
   ],
-  "simPHome": 0.5876,
-  "rawPHome": 0.5835,
-  "simMargin": 2.54,
+  "simPHome": 0.6406,
+  "rawPHome": 0.6342,
+  "simMargin": 3.89,
   "simScore": [
-   24.48,
-   27.02
+   23.89,
+   27.78
   ],
-  "simTotal": 51.49,
-  "blendPHome": 0.577,
+  "simTotal": 51.67,
+  "blendPHome": 0.585,
   "inj": [
    [
     {
      "name": "Rhamondre Stevenson",
      "pos": "RB",
+     "status": "Questionable",
+     "out": false
+    },
+    {
+     "name": "Kevin Byard",
+     "pos": "S",
      "status": "Questionable",
      "out": false
     },
@@ -10091,10 +10077,10 @@
      "out": false
     },
     {
-     "name": "Kevin Byard",
-     "pos": "S",
-     "status": "Questionable",
-     "out": false
+     "name": "Alijah Vera-Tucker",
+     "pos": "G",
+     "status": "Out",
+     "out": true
     }
    ],
    [
@@ -10109,6 +10095,12 @@
      "pos": "WR",
      "status": "Questionable",
      "out": false
+    },
+    {
+     "name": "Jack Campbell",
+     "pos": "LB",
+     "status": "Out",
+     "out": true
     },
     {
      "name": "D.J. Reed",
@@ -10142,7 +10134,7 @@
    "pHome": 0.5751279465321473,
    "margin": 2.5
   },
-  "loggedAt": "2026-11-13T22:55:56.638Z",
+  "loggedAt": "2026-11-13T23:09:59.446Z",
   "result": null
  },
  "nfl:401873058": {
@@ -10162,15 +10154,15 @@
    null,
    null
   ],
-  "simPHome": 0.2667,
-  "rawPHome": 0.2762,
-  "simMargin": -7.22,
+  "simPHome": 0.2969,
+  "rawPHome": 0.3055,
+  "simMargin": -6.79,
   "simScore": [
-   26.39,
-   19.16
+   26.15,
+   19.35
   ],
-  "simTotal": 45.55,
-  "blendPHome": 0.3886,
+  "simTotal": 45.5,
+  "blendPHome": 0.3931,
   "inj": [
    [
     {
@@ -10180,8 +10172,8 @@
      "out": false
     },
     {
-     "name": "Tyquan Thornton",
-     "pos": "WR",
+     "name": "Jaylon Moore",
+     "pos": "OT",
      "status": "Out",
      "out": true
     },
@@ -10190,26 +10182,20 @@
      "pos": "CB",
      "status": "Questionable",
      "out": false
+    },
+    {
+     "name": "Tyquan Thornton",
+     "pos": "WR",
+     "status": "Out",
+     "out": true
     }
    ],
    [
     {
-     "name": "Gervon Dexter Sr.",
-     "pos": "DT",
-     "status": "Questionable",
-     "out": false
-    },
-    {
-     "name": "James Pearce Jr.",
+     "name": "Divine Deablo",
      "pos": "LB",
-     "status": "Questionable",
+     "status": "Doubtful",
      "out": false
-    },
-    {
-     "name": "Samson Ebukam",
-     "pos": "DE",
-     "status": "Out",
-     "out": true
     }
    ]
   ],
@@ -10231,7 +10217,7 @@
    "pHome": 0.4100715891566124,
    "margin": -3
   },
-  "loggedAt": "2026-11-13T22:55:56.722Z",
+  "loggedAt": "2026-11-13T23:09:59.624Z",
   "result": null
  },
  "nfl:401873056": {
@@ -10251,15 +10237,15 @@
    null,
    null
   ],
-  "simPHome": 0.3805,
-  "rawPHome": 0.386,
-  "simMargin": -3.46,
+  "simPHome": 0.4197,
+  "rawPHome": 0.4235,
+  "simMargin": -2.36,
   "simScore": [
-   22.1,
-   18.64
+   20.96,
+   18.6
   ],
-  "simTotal": 40.74,
-  "blendPHome": 0.3686,
+  "simTotal": 39.56,
+  "blendPHome": 0.3745,
   "inj": [
    [
     {
@@ -10269,20 +10255,20 @@
      "out": false
     },
     {
-     "name": "Will Anderson Jr.",
-     "pos": "DE",
+     "name": "Trent Brown",
+     "pos": "OT",
      "status": "Questionable",
      "out": false
     },
     {
-     "name": "Danielle Hunter",
-     "pos": "DE",
+     "name": "Keylan Rutledge",
+     "pos": "G",
      "status": "Out",
      "out": true
     },
     {
-     "name": "Jayden Higgins",
-     "pos": "WR",
+     "name": "Azeez Al-Shaair",
+     "pos": "LB",
      "status": "Out",
      "out": true
     }
@@ -10314,7 +10300,7 @@
    "pHome": 0.3664742260704701,
    "margin": -4.5
   },
-  "loggedAt": "2026-11-13T22:55:56.791Z",
+  "loggedAt": "2026-11-13T23:09:59.771Z",
   "result": null
  },
  "nfl:401873060": {
@@ -10334,15 +10320,15 @@
    null,
    null
   ],
-  "simPHome": 0.521,
-  "rawPHome": 0.52,
-  "simMargin": 0.49,
+  "simPHome": 0.4785,
+  "rawPHome": 0.4795,
+  "simMargin": -0.59,
   "simScore": [
-   18.08,
-   18.57
+   19.02,
+   18.43
   ],
-  "simTotal": 36.66,
-  "blendPHome": 0.5796,
+  "simTotal": 37.45,
+  "blendPHome": 0.5732,
   "inj": [
    [
     {
@@ -10364,10 +10350,10 @@
      "out": true
     },
     {
-     "name": "Jordan Addison",
-     "pos": "WR",
-     "status": "Questionable",
-     "out": false
+     "name": "Tyrion Ingram-Dawkins",
+     "pos": "DE",
+     "status": "Out",
+     "out": true
     }
    ],
    [
@@ -10378,22 +10364,22 @@
      "out": true
     },
     {
-     "name": "Lukas Van Ness",
-     "pos": "DE",
-     "status": "Questionable",
-     "out": false
-    },
-    {
      "name": "Xavier McKinney",
      "pos": "S",
      "status": "Questionable",
      "out": false
     },
     {
-     "name": "Edgerrin Cooper",
-     "pos": "LB",
-     "status": "Out",
-     "out": true
+     "name": "Travis Glover",
+     "pos": "OT",
+     "status": "Questionable",
+     "out": false
+    },
+    {
+     "name": "Javon Bullard",
+     "pos": "S",
+     "status": "Questionable",
+     "out": false
     }
    ]
   ],
@@ -10415,7 +10401,7 @@
    "pHome": 0.5899284108433875,
    "margin": 3
   },
-  "loggedAt": "2026-11-13T22:55:56.893Z",
+  "loggedAt": "2026-11-13T23:09:59.965Z",
   "result": null
  },
  "nfl:401873057": {
@@ -10435,21 +10421,58 @@
    null,
    null
   ],
-  "simPHome": 0.116,
-  "rawPHome": 0.1263,
-  "simMargin": -12.98,
+  "simPHome": 0.0925,
+  "rawPHome": 0.102,
+  "simMargin": -14.9,
   "simScore": [
-   28.28,
-   15.29
+   28.56,
+   13.66
   ],
-  "simTotal": 43.57,
-  "blendPHome": 0.1977,
+  "simTotal": 42.22,
+  "blendPHome": 0.1941,
   "inj": [
-   [],
    [
     {
-     "name": "Carnell Tate",
-     "pos": "WR",
+     "name": "Robert Hainsey",
+     "pos": "C",
+     "status": "Questionable",
+     "out": false
+    },
+    {
+     "name": "Ezra Cleveland",
+     "pos": "G",
+     "status": "Questionable",
+     "out": false
+    },
+    {
+     "name": "Anton Harrison",
+     "pos": "OT",
+     "status": "Out",
+     "out": true
+    }
+   ],
+   [
+    {
+     "name": "Anthony Hill Jr.",
+     "pos": "LB",
+     "status": "Out",
+     "out": true
+    },
+    {
+     "name": "Jackson Slater",
+     "pos": "G",
+     "status": "Out",
+     "out": true
+    },
+    {
+     "name": "Peter Skoronski",
+     "pos": "G",
+     "status": "Out",
+     "out": true
+    },
+    {
+     "name": "Cody Barton",
+     "pos": "LB",
      "status": "Out",
      "out": true
     }
@@ -10473,7 +10496,7 @@
    "pHome": 0.21209051314301935,
    "margin": -10.5
   },
-  "loggedAt": "2026-11-13T22:55:56.962Z",
+  "loggedAt": "2026-11-13T23:10:00.342Z",
   "result": null
  },
  "nfl:401873059": {
@@ -10493,15 +10516,15 @@
    null,
    null
   ],
-  "simPHome": 0.6383,
-  "rawPHome": 0.632,
-  "simMargin": 3.93,
+  "simPHome": 0.6466,
+  "rawPHome": 0.64,
+  "simMargin": 4.12,
   "simScore": [
-   20.46,
-   24.39
+   19.95,
+   24.07
   ],
-  "simTotal": 44.84,
-  "blendPHome": 0.6097,
+  "simTotal": 44.02,
+  "blendPHome": 0.6109,
   "inj": [
    [
     {
@@ -10517,6 +10540,12 @@
      "out": true
     },
     {
+     "name": "Aaron Brewer",
+     "pos": "C",
+     "status": "Out",
+     "out": true
+    },
+    {
      "name": "Zach Sieler",
      "pos": "DT",
      "status": "Out",
@@ -10525,14 +10554,20 @@
    ],
    [
     {
-     "name": "Alec Pierce",
-     "pos": "WR",
+     "name": "Akeem Davis-Gaither",
+     "pos": "LB",
      "status": "Out",
      "out": true
     },
     {
-     "name": "Arden Key",
-     "pos": "DE",
+     "name": "Jalen Travis",
+     "pos": "OT",
+     "status": "Out",
+     "out": true
+    },
+    {
+     "name": "Alec Pierce",
+     "pos": "WR",
      "status": "Out",
      "out": true
     }
@@ -10556,7 +10591,7 @@
    "pHome": 0.6046074924232512,
    "margin": 3.5
   },
-  "loggedAt": "2026-11-13T22:55:57.036Z",
+  "loggedAt": "2026-11-13T23:10:00.549Z",
   "result": null
  },
  "nfl:401873055": {
@@ -10576,23 +10611,17 @@
    null,
    null
   ],
-  "simPHome": 0.5031,
-  "rawPHome": 0.503,
-  "simMargin": -0.35,
+  "simPHome": 0.4976,
+  "rawPHome": 0.4978,
+  "simMargin": 0.03,
   "simScore": [
-   23.85,
-   23.49
+   23.7,
+   23.73
   ],
-  "simTotal": 47.34,
-  "blendPHome": 0.5643,
+  "simTotal": 47.43,
+  "blendPHome": 0.5635,
   "inj": [
    [
-    {
-     "name": "Xavier Legette",
-     "pos": "WR",
-     "status": "Out",
-     "out": true
-    },
     {
      "name": "Bobby Okereke",
      "pos": "LB",
@@ -10606,16 +10635,34 @@
      "out": false
     },
     {
-     "name": "Jaelan Phillips",
-     "pos": "LB",
-     "status": "Questionable",
-     "out": false
+     "name": "Taylor Moton",
+     "pos": "OT",
+     "status": "Out",
+     "out": true
+    },
+    {
+     "name": "Xavier Legette",
+     "pos": "WR",
+     "status": "Out",
+     "out": true
     }
    ],
    [
     {
      "name": "Travis Etienne Jr.",
      "pos": "RB",
+     "status": "Out",
+     "out": true
+    },
+    {
+     "name": "Taliese Fuaga",
+     "pos": "OT",
+     "status": "Out",
+     "out": true
+    },
+    {
+     "name": "Erik McCoy",
+     "pos": "C",
      "status": "Out",
      "out": true
     }
@@ -10639,7 +10686,7 @@
    "pHome": 0.5751279465321473,
    "margin": 2.5
   },
-  "loggedAt": "2026-11-13T22:55:57.109Z",
+  "loggedAt": "2026-11-13T23:10:00.743Z",
   "result": null
  },
  "nfl:401873054": {
@@ -10659,21 +10706,27 @@
    null,
    null
   ],
-  "simPHome": 0.2081,
-  "rawPHome": 0.2188,
-  "simMargin": -9.28,
+  "simPHome": 0.2136,
+  "rawPHome": 0.2243,
+  "simMargin": -9.69,
   "simScore": [
-   30.27,
-   20.99
+   30.03,
+   20.35
   ],
-  "simTotal": 51.26,
-  "blendPHome": 0.2515,
+  "simTotal": 50.38,
+  "blendPHome": 0.2523,
   "inj": [
    [
     {
      "name": "Christian Benford",
      "pos": "CB",
      "status": "Questionable",
+     "out": false
+    },
+    {
+     "name": "Spencer Brown",
+     "pos": "OT",
+     "status": "Doubtful",
      "out": false
     }
    ],
@@ -10687,18 +10740,6 @@
     {
      "name": "Garrett Wilson",
      "pos": "WR",
-     "status": "Questionable",
-     "out": false
-    },
-    {
-     "name": "Joseph Ossai",
-     "pos": "DE",
-     "status": "Questionable",
-     "out": false
-    },
-    {
-     "name": "Nahshon Wright",
-     "pos": "CB",
      "status": "Questionable",
      "out": false
     }
@@ -10722,7 +10763,7 @@
    "pHome": 0.2591625679347602,
    "margin": -8.5
   },
-  "loggedAt": "2026-11-13T22:55:57.183Z",
+  "loggedAt": "2026-11-13T23:10:01.001Z",
   "result": null
  },
  "nfl:401873062": {
@@ -10742,20 +10783,32 @@
    null,
    null
   ],
-  "simPHome": 0.1788,
-  "rawPHome": 0.1898,
-  "simMargin": -9.99,
+  "simPHome": 0.1831,
+  "rawPHome": 0.194,
+  "simMargin": -9.58,
   "simScore": [
-   26.69,
-   16.7
+   26.32,
+   16.74
   ],
-  "simTotal": 43.39,
-  "blendPHome": 0.2911,
+  "simTotal": 43.06,
+  "blendPHome": 0.2917,
   "inj": [
    [
     {
      "name": "Sam Darnold",
      "pos": "QB",
+     "status": "Out",
+     "out": true
+    },
+    {
+     "name": "Quenton Nelson",
+     "pos": "G",
+     "status": "Out",
+     "out": true
+    },
+    {
+     "name": "Charles Cross",
+     "pos": "OT",
      "status": "Out",
      "out": true
     },
@@ -10786,7 +10839,7 @@
    "pHome": 0.3108942664963187,
    "margin": -6.5
   },
-  "loggedAt": "2026-11-13T22:55:57.268Z",
+  "loggedAt": "2026-11-13T23:10:01.211Z",
   "result": null
  },
  "nfl:401873061": {
@@ -10806,15 +10859,15 @@
    null,
    null
   ],
-  "simPHome": 0.1618,
-  "rawPHome": 0.1727,
-  "simMargin": -12.02,
+  "simPHome": 0.1299,
+  "rawPHome": 0.1405,
+  "simMargin": -13.2,
   "simScore": [
-   29.39,
-   17.38
+   28.97,
+   15.78
   ],
-  "simTotal": 46.77,
-  "blendPHome": 0.224,
+  "simTotal": 44.75,
+  "blendPHome": 0.2192,
   "inj": [
    [
     {
@@ -10824,20 +10877,20 @@
      "out": true
     },
     {
-     "name": "Myles Garrett",
-     "pos": "DE",
-     "status": "Questionable",
-     "out": false
-    },
-    {
-     "name": "Davante Adams",
-     "pos": "WR",
+     "name": "Steve Avila",
+     "pos": "G",
      "status": "Out",
      "out": true
     },
     {
      "name": "Jaylen Watson",
      "pos": "CB",
+     "status": "Out",
+     "out": true
+    },
+    {
+     "name": "Davante Adams",
+     "pos": "WR",
      "status": "Out",
      "out": true
     }
@@ -10856,8 +10909,14 @@
      "out": true
     },
     {
-     "name": "Kendrick Bourne",
-     "pos": "WR",
+     "name": "Hjalte Froholdt",
+     "pos": "C",
+     "status": "Out",
+     "out": true
+    },
+    {
+     "name": "Paris Johnson Jr.",
+     "pos": "OT",
      "status": "Out",
      "out": true
     }
@@ -10881,7 +10940,7 @@
    "pHome": 0.23500301826226122,
    "margin": -9.5
   },
-  "loggedAt": "2026-11-13T22:55:57.337Z",
+  "loggedAt": "2026-11-13T23:10:01.424Z",
   "result": null
  },
  "nfl:401873063": {
@@ -10901,23 +10960,17 @@
    null,
    null
   ],
-  "simPHome": 0.3033,
-  "rawPHome": 0.3118,
-  "simMargin": -6.04,
+  "simPHome": 0.2932,
+  "rawPHome": 0.302,
+  "simMargin": -6.06,
   "simScore": [
-   29.6,
-   23.57
+   29.83,
+   23.77
   ],
-  "simTotal": 53.17,
-  "blendPHome": 0.3816,
+  "simTotal": 53.61,
+  "blendPHome": 0.3555,
   "inj": [
    [
-    {
-     "name": "Mike Evans",
-     "pos": "WR",
-     "status": "Out",
-     "out": true
-    },
     {
      "name": "Renardo Green",
      "pos": "CB",
@@ -10925,19 +10978,31 @@
      "out": false
     },
     {
-     "name": "Christian Kirk",
-     "pos": "WR",
-     "status": "Out",
-     "out": true
+     "name": "Deommodore Lenoir",
+     "pos": "CB",
+     "status": "Questionable",
+     "out": false
     },
     {
-     "name": "Ricky Pearsall",
-     "pos": "WR",
-     "status": "Out",
-     "out": true
+     "name": "Trent Williams",
+     "pos": "OT",
+     "status": "Questionable",
+     "out": false
+    },
+    {
+     "name": "Dre Greenlaw",
+     "pos": "LB",
+     "status": "Questionable",
+     "out": false
     }
    ],
    [
+    {
+     "name": "DaRon Bland",
+     "pos": "CB",
+     "status": "Questionable",
+     "out": false
+    },
     {
      "name": "Donovan Ezeiruaku",
      "pos": "LB",
@@ -10945,10 +11010,10 @@
      "out": true
     },
     {
-     "name": "Joey Porter Jr.",
-     "pos": "CB",
-     "status": "Questionable",
-     "out": false
+     "name": "P.J. Locke",
+     "pos": "S",
+     "status": "Out",
+     "out": true
     }
    ]
   ],
@@ -10958,6 +11023,12 @@
     "pHome": 0.3954,
     "margin": -3.5,
     "total": 55.5
+   },
+   {
+    "t": "2026-11-13T23:10:01.605Z",
+    "pHome": 0.3665,
+    "margin": -4.5,
+    "total": 55.5
    }
   ],
   "travel": [
@@ -10965,12 +11036,12 @@
    null
   ],
   "mkt": {
-   "line": "SF -3.5",
+   "line": "SF -4.5",
    "total": 55.5,
-   "pHome": 0.3953925075767488,
-   "margin": -3.5
+   "pHome": 0.3664742260704701,
+   "margin": -4.5
   },
-  "loggedAt": "2026-11-13T22:55:57.409Z",
+  "loggedAt": "2026-11-13T23:10:01.605Z",
   "result": null
  },
  "nfl:401873064": {
@@ -10990,15 +11061,15 @@
    null,
    null
   ],
-  "simPHome": 0.4772,
-  "rawPHome": 0.4783,
-  "simMargin": -0.64,
+  "simPHome": 0.4895,
+  "rawPHome": 0.49,
+  "simMargin": -0.65,
   "simScore": [
-   24.14,
-   23.5
+   24,
+   23.34
   ],
-  "simTotal": 47.64,
-  "blendPHome": 0.5855,
+  "simTotal": 47.34,
+  "blendPHome": 0.5873,
   "inj": [
    [
     {
@@ -11012,36 +11083,12 @@
      "pos": "WR",
      "status": "Out",
      "out": true
-    },
-    {
-     "name": "Derrick Harmon",
-     "pos": "DT",
-     "status": "Out",
-     "out": true
-    },
-    {
-     "name": "DeShon Elliott",
-     "pos": "S",
-     "status": "Day-to-day",
-     "out": false
     }
    ],
    [
     {
      "name": "Andrei Iosivas",
      "pos": "WR",
-     "status": "Out",
-     "out": true
-    },
-    {
-     "name": "Cashius Howell",
-     "pos": "DE",
-     "status": "Out",
-     "out": true
-    },
-    {
-     "name": "Jalen Davis",
-     "pos": "CB",
      "status": "Out",
      "out": true
     }
@@ -11065,7 +11112,7 @@
    "pHome": 0.6046074924232512,
    "margin": 3.5
   },
-  "loggedAt": "2026-11-13T22:55:57.487Z",
+  "loggedAt": "2026-11-13T23:10:01.754Z",
   "result": null
  },
  "nhl:401892721": {
@@ -11093,14 +11140,14 @@
    0,
    0
   ],
-  "simPHome": 0.4673,
-  "rawPHome": 0.4615,
+  "simPHome": 0.466,
+  "rawPHome": 0.46,
   "simMargin": -0.21,
   "simScore": [
-   3.21,
+   3.22,
    3
   ],
-  "simTotal": 6.2,
+  "simTotal": 6.22,
   "inj": [
    [
     {
@@ -11138,7 +11185,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-13T22:55:57.989Z",
+  "loggedAt": "2026-11-13T23:10:03.122Z",
   "result": null
  },
  "nhl:401892722": {
@@ -11166,14 +11213,14 @@
    0,
    0
   ],
-  "simPHome": 0.5247,
-  "rawPHome": 0.529,
-  "simMargin": 0.16,
+  "simPHome": 0.5013,
+  "rawPHome": 0.5015,
+  "simMargin": 0.04,
   "simScore": [
-   2.88,
-   3.04
+   2.93,
+   2.97
   ],
-  "simTotal": 5.93,
+  "simTotal": 5.91,
   "inj": [
    [],
    [
@@ -11213,7 +11260,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-13T22:55:58.018Z",
+  "loggedAt": "2026-11-13T23:10:03.184Z",
   "result": null
  },
  "nhl:401892723": {
@@ -11241,14 +11288,14 @@
    0,
    0
   ],
-  "simPHome": 0.4877,
-  "rawPHome": 0.4855,
-  "simMargin": -0.14,
+  "simPHome": 0.4834,
+  "rawPHome": 0.4805,
+  "simMargin": -0.11,
   "simScore": [
-   3.08,
-   2.94
+   3.07,
+   2.96
   ],
-  "simTotal": 6.02,
+  "simTotal": 6.04,
   "inj": [
    [
     {
@@ -11282,7 +11329,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-13T22:55:58.045Z",
+  "loggedAt": "2026-11-13T23:10:03.243Z",
   "result": null
  },
  "nhl:401892724": {
@@ -11310,25 +11357,19 @@
    1,
    1
   ],
-  "simPHome": 0.6056,
-  "rawPHome": 0.6235,
-  "simMargin": 0.74,
+  "simPHome": 0.6008,
+  "rawPHome": 0.618,
+  "simMargin": 0.7,
   "simScore": [
-   2.62,
-   3.36
+   2.65,
+   3.35
   ],
-  "simTotal": 5.98,
+  "simTotal": 6,
   "inj": [
    [
     {
      "name": "Thatcher Demko",
      "pos": "",
-     "status": "Out",
-     "out": true
-    },
-    {
-     "name": "Filip Chytil",
-     "pos": "C",
      "status": "Out",
      "out": true
     }
@@ -11364,7 +11405,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-13T22:55:58.071Z",
+  "loggedAt": "2026-11-13T23:10:03.303Z",
   "result": null
  },
  "nhl:401892725": {
@@ -11392,14 +11433,14 @@
    1,
    0
   ],
-  "simPHome": 0.4906,
-  "rawPHome": 0.489,
-  "simMargin": 0.03,
+  "simPHome": 0.4996,
+  "rawPHome": 0.4995,
+  "simMargin": 0.01,
   "simScore": [
-   3.06,
-   3.09
+   3.1,
+   3.1
   ],
-  "simTotal": 6.15,
+  "simTotal": 6.2,
   "inj": [
    [
     {
@@ -11450,7 +11491,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-13T22:55:58.097Z",
+  "loggedAt": "2026-11-13T23:10:03.366Z",
   "result": null
  }
 }

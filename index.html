@@ -142,8 +142,8 @@ function buildTeams() {
   $('awaySel').value = 1; $('homeSel').value = 0;
   buildFields('away'); buildFields('home'); buildRoster('away'); buildRoster('home');
 }
-$('awaySel').onchange = () => { curRest = null; buildFields('away'); buildRoster('away'); };
-$('homeSel').onchange = () => { curRest = null; buildFields('home'); buildRoster('home'); };
+$('awaySel').onchange = () => { curRest = null; curWx = null; buildFields('away'); buildRoster('away'); };
+$('homeSel').onchange = () => { curRest = null; curWx = null; buildFields('home'); buildRoster('home'); };
 
 // Roster editor: rename players, mark injured players Out, tweak the rating that drives their share of the action.
 function buildRoster(side) {
@@ -151,7 +151,7 @@ function buildRoster(side) {
   const G = {
     nba: [['Rotation', R.players, 'min', 'Min'], ['', null]],
     mlb: [['Lineup', R.lineup, 'bat', 'Bat']],
-    nfl: [['QB', R.qb, 'ypa', 'Y/A'], ['RB', R.rb, 'car', 'Car'], ['WR / TE', R.rec, 'tgt', 'Tgt'], ['Defense', R.defense, 'prod', 'Prod']],
+    nfl: [['QB', R.qb, 'ypa', 'Y/A'], ['RB', R.rb, 'car', 'Car'], ['WR / TE', R.rec, 'tgt', 'Tgt'], ['O-line', R.ol && R.ol.length ? R.ol : null, 'snap', 'Snap%'], ['Defense', R.defense, R.defense && R.defense.some(p => p.snap != null) ? 'snap' : 'prod', R.defense && R.defense.some(p => p.snap != null) ? 'Snap%' : 'Prod']],
     nhl: [['Forwards', R.fwd, 'w', 'Shot wt'], ['Defense', R.def, 'w', 'Shot wt']],
   }[sport].filter(g => g[1]);
   const hasOut = sport !== 'mlb';
@@ -195,7 +195,7 @@ function matchup() {
 
 $('bGame').onclick = () => {
   const m = matchup(); if (!m) return;
-  const g = Sim.simGame(sport, m[0], m[1], rng(), { detail: true, rest: curRest });
+  const g = Sim.simGame(sport, m[0], m[1], rng(), { detail: true, rest: curRest, weather: curWx });
   const w = g.winner;
   $('out').innerHTML = `<div class="panel">
     <div class="score">
@@ -215,7 +215,7 @@ $('bGame').onclick = () => {
 
 $('bMC').onclick = () => {
   const m = matchup(); if (!m) return;
-  const n = +$('nGames').value, r = Sim.monteCarlo(sport, m[0], m[1], n, rng(), { rest: curRest });
+  const n = +$('nGames').value, r = Sim.monteCarlo(sport, m[0], m[1], n, rng(), { rest: curRest, weather: curWx });
   const pa = r.wins[0] / n * 100, ph = r.wins[1] / n * 100, pt = r.wins[2] / n * 100;
   let rows = '', peak = 0;
   for (const v of r.margins.values()) peak = Math.max(peak, v);
@@ -265,9 +265,10 @@ $('liveNote').textContent = liveN
 // ---------- Upcoming games ----------
 const normName = x => x.toLowerCase().replace(/[^a-z]/g, '');
 function findTeam(sp, side) { const T = S[sp].teams; return T.find(t => normName(t.name) === normName(side.name)) || T.find(t => t.id === side.abbr); }
-function prepGame(g) {
-  const a = findTeam(sport, g.away), h = findTeam(sport, g.home); if (!a || !h) return null;
-  if (sport === 'nhl') [[a, g.away], [h, g.home]].forEach(([t, s]) => {
+function prepGame(g, sp) {   // sp: the sport being simulated (the visible tab can change mid-run)
+  sp = sp || sport;
+  const a = findTeam(sp, g.away), h = findTeam(sp, g.home); if (!a || !h) return null;
+  if (sp === 'nhl') [[a, g.away], [h, g.home]].forEach(([t, s]) => {
     const R = Sim.roster('nhl', t); if (!R.goalies) return; const c = Sim.matchGoalie(R.goalies, s.confirmed); if (c >= 0) { t.gIdx = c; return; }
     if (s.probable) { const i = R.goalies.findIndex(x => x.name === s.probable); if (i >= 0) t.gIdx = i; }
   });
@@ -287,9 +288,9 @@ function market(g) {
 }
 const SPREAD_SD = { nfl: 13.2, nba: 12.0 }, normCdf = z => 0.5 * (1 + Math.sign(z) * Math.sqrt(1 - Math.exp(-4 * (z / Math.SQRT2) ** 2 / Math.PI)));
 const BLEND = { nfl: 0.15 };   // sim weight in the NFL sim/market blend (best weight was 0% in 2024 and 25% in 2025)
-let curRest = null;
+let curRest = null, curWx = null;
 function loadGame(g) {
-  curRest = { away: g.awayRest, home: g.homeRest };
+  curRest = { away: g.awayRest, home: g.homeRest }; curWx = g.weather || null;
   const T = S[sport].teams, p = prepGame(g); if (!p) return;
   $('awaySel').value = T.indexOf(p[0]); $('homeSel').value = T.indexOf(p[1]);
   buildFields('away'); buildFields('home'); buildRoster('away'); buildRoster('home'); $('tool').open = true; $('tool').scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -312,8 +313,8 @@ async function runSim(force) {
   for (let i = 0; i < sched.length; i++) {
     const g = sched[i]; $('simStatus') && ($('simStatus').textContent = 'Simulating game ' + (i + 1) + ' of ' + sched.length + '…');
     await new Promise(r => setTimeout(r, 0));
-    const p = prepGame(g); if (!p) { res.push(null); continue; }
-    const m = Sim.monteCarlo(sp, p[0], p[1], 2000, R, { rest: { away: g.awayRest, home: g.homeRest } });
+    const p = prepGame(g, sp); if (!p) { res.push(null); continue; }
+    const m = Sim.monteCarlo(sp, p[0], p[1], 2000, R, { rest: { away: g.awayRest, home: g.homeRest }, weather: g.weather });
     const raw = (m.wins[1] + m.wins[2] / 2) / m.n, a = (window.BACKTEST && window.BACKTEST.leagues[sp] && window.BACKTEST.leagues[sp].stretch) || 1;
     const z = Math.log(Math.min(0.999, Math.max(0.001, raw)) / (1 - Math.min(0.999, Math.max(0.001, raw))));
     res.push({ raw, pHome: 1 / (1 + Math.exp(-a * z)), margin: m.avg[1] - m.avg[0], total: m.avgTotal, away: m.avg[0], home: m.avg[1] });
@@ -333,6 +334,7 @@ function gameCard(g, i, r) {
   const chips = [];
   if (sport === 'nba') { if (g.awayRest === 0) chips.push(g.away.abbr + ' back-to-back'); if (g.homeRest === 0) chips.push(g.home.abbr + ' back-to-back'); }
   if (sport === 'nhl') chips.push('low confidence');
+  if (sport === 'nfl' && g.weather && !g.weather.indoor) { const adj = Sim.nflWeatherAdj(g.weather); if (adj <= -0.5 || g.weather.precip >= 0.5) chips.push('Weather: ' + g.weather.wind + ' mph wind, ' + g.weather.temp + '°F' + (g.weather.precip >= 0.5 ? ', rain/snow' : '') + (adj <= -0.5 ? ' (total ' + adj.toFixed(1) + ')' : '')); }
   [[g.away, g.awayFrom], [g.home, g.homeFrom]].forEach(([t, from]) => { const mi = from && from !== g.home.abbr ? Travel.miles(sport, from, g.home.abbr) : null, tz = from ? Travel.tzShift(sport, from, g.home.abbr) : null; if (mi != null && (mi >= 1500 || Math.abs(tz) >= 2)) chips.push(t.abbr + ' traveled ' + Math.round(mi / 100) * 100 + ' mi' + (Math.abs(tz) >= 2 ? ', ' + Math.abs(tz) + ' time zones ' + (tz > 0 ? 'east' : 'west') : '')); });
   let rows = '', verdict = '', cls = '';
   const dash = '<span class="muted">–</span>';

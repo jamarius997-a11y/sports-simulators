@@ -93,8 +93,11 @@ async function loadNflEpa(year) {
   const [wk, prev] = await Promise.all([teamWeek(year), teamWeek(year - 1)]);
   if (!wk) return null;
   await loadNflMarket();   // makes sure cache/nfl_games.csv exists
-  const week = {};
-  for (const g of require('./csv.js').read(path.join(__dirname, 'cache', 'nfl_games.csv'))) if (g.season === String(year) && g.game_type === 'REG') week[g.home_team + '|' + g.away_team] = g.week;
+  const week = {}, weather = {};   // weather: nflverse's recorded kickoff wind/temperature, same shape as the live Open-Meteo forecast
+  for (const g of require('./csv.js').read(path.join(__dirname, 'cache', 'nfl_games.csv'))) if (g.season === String(year) && g.game_type === 'REG') {
+    week[g.home_team + '|' + g.away_team] = g.week;
+    weather[g.home_team + '|' + g.away_team] = g.roof === 'dome' || g.roof === 'closed' ? { indoor: true } : g.wind !== '' ? { wind: +g.wind, temp: g.temp === '' ? null : +g.temp } : null;
+  }
   // last season's per-play offense/defense relative to that league's mean (defense = what opponents' offenses did, via each team-week's opponent)
   const prior = {};
   if (prev) {
@@ -108,7 +111,7 @@ async function loadNflEpa(year) {
     const m = sp ? se / sp : 0;
     for (const t in prior) { const p = prior[t]; prior[t] = { off: p.oe / p.op - m, def: p.de / p.dp - m }; }
   }
-  return { wk, week, prior };
+  return { wk, week, weather, prior };
 }
 
 function days(a, b) { const out = []; for (let d = new Date(a + 'T12:00:00Z'); d <= new Date(b + 'T12:00:00Z'); d = new Date(d.getTime() + 86400000)) out.push(d.toISOString().slice(0, 10).replace(/-/g, '')); return out; }
@@ -162,7 +165,9 @@ function run(L, games, prior, market, useRest, epa) {
         : { id: t.id, name: t.id, pf: blendE(rate(t, 'pf'), epaRate(t, 'pf', lg)), pa: blendE(rate(t, 'pa'), epaRate(t, 'pa', lg)) };
       const home = mk(H), away = mk(A);
       let hw = 0, sm = 0, st = 0;
-      for (let i = 0; i < c.sims; i++) { const r = Sim.simGame(L, away, home, rng, c.rest && useRest ? { rest: { away: ar, home: hr } } : undefined); hw += r.tie ? 0.5 : r.winner; sm += r.score[1] - r.score[0]; st += r.score[0] + r.score[1]; }
+      const wx = epa && process.env.BT_WX !== '0' ? epa.weather[(NFLV[g.h] || g.h) + '|' + (NFLV[g.a] || g.a)] : undefined;   // BT_WX=0 turns weather off
+      const opts = c.rest && useRest ? { rest: { away: ar, home: hr } } : wx ? {} : undefined; if (wx) opts.weather = wx;
+      for (let i = 0; i < c.sims; i++) { const r = Sim.simGame(L, away, home, rng, opts); hw += r.tie ? 0.5 : r.winner; sm += r.score[1] - r.score[0]; st += r.score[0] + r.score[1]; }
       const actual = g.hs === g.as ? 0.5 : g.hs > g.as ? 1 : 0;
       let mkt = null;
       if (market) {
