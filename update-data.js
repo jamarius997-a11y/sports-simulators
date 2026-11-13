@@ -117,7 +117,7 @@ async function nflDefense(year) {
   return out;
 }
 // NFL team efficiency from nflverse weekly team stats: offensive EPA per play, and defensive EPA per play (what opponents' offenses did against them).
-// Walk-forward test on 2024 and 2025 (cache/epa test): a 50/50 blend of points and EPA predicted margins a little better than points alone in both seasons.
+// Weighted 25% EPA / 75% points: in the full-sim backtest (backtest.js, 2024 and 2025) 50% was worse than points alone and 25% was slightly better.
 const NFLV_CODE = { WSH: 'WAS', LAR: 'LA' };
 async function nflEpa(year) {
   const out = {};
@@ -211,7 +211,7 @@ async function build(L) {
       const side = (e, m, k1, k2) => e ? (e[k1] / e[k2] - m) : 0;
       const off = lgPts + K * ((side(c, mc, 'oe', 'op') * wc + side(p, mp, 'oe', 'op') * wp) / den);
       const def = lgPts + K * ((side(c, mc, 'de', 'dp') * wc + side(p, mp, 'de', 'dp') * wp) / den);
-      raw[t.id].off = 0.5 * raw[t.id].off + 0.5 * off; raw[t.id].def = 0.5 * raw[t.id].def + 0.5 * def; used++;
+      raw[t.id].off = 0.75 * raw[t.id].off + 0.25 * off; raw[t.id].def = 0.75 * raw[t.id].def + 0.25 * def; used++;
     }
     console.log('  nflverse EPA: blended into ' + used + ' team ratings');
   }

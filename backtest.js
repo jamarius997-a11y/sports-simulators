@@ -76,6 +76,41 @@ async function loadNflMarket() {
 }
 const NFLV = { WSH: 'WAS', LAR: 'LA' }, imp = ml => ml < 0 ? -ml / (-ml + 100) : 100 / (ml + 100);
 
+// nflverse weekly team stats -> offensive EPA and plays per team-week, plus each game's week (from nfl_games.csv) so results can be matched.
+// Same blend as update-data.js: team rating = 75% points, 25% EPA per play converted at 52 points/game per 1.0 EPA/play. BT_EPA=0 turns it off.
+// Full-sim Brier, 2025 / 2024: points only .2161 / .1944; 25% EPA .2166 / .1931 (accuracy .663 / .738 vs .635 / .738); 50% EPA .2191 / .1953.
+// The gain is about the size of sim noise: EPA helps a little at most, so it gets a small weight.
+const NFL_EPA_K = +(process.env.BT_EPA_K || 52), NFL_EPA_W = process.env.BT_EPA != null ? +process.env.BT_EPA : 0.25;   // BT_EPA = weight (0 = off), BT_EPA_K = points per 1.0 EPA/play   // BT_EPA = weight (0 = off), BT_EPA_K = points per 1.0 EPA/play
+async function teamWeek(year) {
+  const file = path.join(__dirname, 'cache', 'nfl_team_week_' + year + '.csv');
+  if (!fs.existsSync(file)) { const r = await fetch('https://github.com/nflverse/nflverse-data/releases/download/stats_team/stats_team_week_' + year + '.csv'); if (!r.ok) return null; fs.writeFileSync(file, await r.text()); }
+  const wk = {};
+  for (const row of require('./csv.js').read(file)) if (row.season_type === 'REG') wk[row.team + '|' + row.week] = { epa: (+row.passing_epa || 0) + (+row.rushing_epa || 0), plays: (+row.attempts || 0) + (+row.sacks_suffered || 0) + (+row.carries || 0) };
+  return wk;
+}
+async function loadNflEpa(year) {
+  if (!NFL_EPA_W) return null;
+  const [wk, prev] = await Promise.all([teamWeek(year), teamWeek(year - 1)]);
+  if (!wk) return null;
+  await loadNflMarket();   // makes sure cache/nfl_games.csv exists
+  const week = {};
+  for (const g of require('./csv.js').read(path.join(__dirname, 'cache', 'nfl_games.csv'))) if (g.season === String(year) && g.game_type === 'REG') week[g.home_team + '|' + g.away_team] = g.week;
+  // last season's per-play offense/defense relative to that league's mean (defense = what opponents' offenses did, via each team-week's opponent)
+  const prior = {};
+  if (prev) {
+    const opp = {};
+    for (const g of require('./csv.js').read(path.join(__dirname, 'cache', 'nfl_games.csv'))) if (g.season === String(year - 1) && g.game_type === 'REG') { opp[g.home_team + '|' + g.week] = g.away_team; opp[g.away_team + '|' + g.week] = g.home_team; }
+    let se = 0, sp = 0;
+    for (const k in prev) {
+      const [t, w] = k.split('|'), th = prev[opp[k] + '|' + w]; if (!th) continue;
+      const p = prior[t] = prior[t] || { oe: 0, op: 0, de: 0, dp: 0 }; p.oe += prev[k].epa; p.op += prev[k].plays; p.de += th.epa; p.dp += th.plays; se += prev[k].epa; sp += prev[k].plays;
+    }
+    const m = sp ? se / sp : 0;
+    for (const t in prior) { const p = prior[t]; prior[t] = { off: p.oe / p.op - m, def: p.de / p.dp - m }; }
+  }
+  return { wk, week, prior };
+}
+
 function days(a, b) { const out = []; for (let d = new Date(a + 'T12:00:00Z'); d <= new Date(b + 'T12:00:00Z'); d = new Date(d.getTime() + 86400000)) out.push(d.toISOString().slice(0, 10).replace(/-/g, '')); return out; }
 
 async function loadGames(L) {
@@ -98,9 +133,18 @@ async function loadGames(L) {
   return games;
 }
 
-function run(L, games, prior, market, useRest) {
+function run(L, games, prior, market, useRest, epa) {
   const c = Object.assign({}, SEASONS[L]), rng = Sim.makeRng(2026); if (process.env.BT_K) c.k = +process.env.BT_K; if (process.env.BT_W) c.w = +process.env.BT_W; if (process.env.BT_MINGP) c.minGp = +process.env.BT_MINGP; if (process.env.BT_SIMS) c.sims = +process.env.BT_SIMS;
-  const T = {}, tm = id => T[id] || (T[id] = { id, name: id, gp: 0, pf: 0, pa: 0 });
+  const T = {}, tm = id => T[id] || (T[id] = { id, name: id, gp: 0, pf: 0, pa: 0, oe: 0, op: 0, de: 0, dp: 0, eg: 0 });
+  let lgE = 0, lgP = 0;   // league offensive EPA and plays so far
+  const blendE = (pts, e) => e == null ? pts : (1 - NFL_EPA_W) * pts + NFL_EPA_W * e;
+  // EPA-implied points for/against, shrunk toward last season's EPA (prior run) or nothing (no-prior run) with the same weights as points
+  const epaRate = (t, k, lg) => {
+    if (!epa || !lgP) return null;
+    const m = lgE / lgP, cur = t.eg ? (k === 'pf' ? t.oe / t.op : t.de / t.dp) - m : 0, pr = prior && epa.prior[NFLV[t.id] || t.id];
+    const v = pr ? (cur * t.eg + c.w * (k === 'pf' ? pr.off : pr.def)) / (t.eg + c.w) : cur;
+    return lg + NFL_EPA_K * v;
+  };
   let lgG = 0, lgPts = 0, homeW = 0, homeN = 0;
   const last = {};   // team -> day index of previous game (US Eastern-ish)
   const dayOf = d => Math.floor((new Date(d).getTime() - 5 * 3600e3) / 86400000);
@@ -114,7 +158,8 @@ function run(L, games, prior, market, useRest) {
       Sim.setLeague(L, lg);
       const scale = 1;
       const mk = t => L === 'nba' ? { id: t.id, name: t.id, off: rate(t, 'pf') * scale, def: rate(t, 'pa') * scale }
-        : L === 'nhl' ? { id: t.id, name: t.id, gf: rate(t, 'pf'), ga: rate(t, 'pa') } : { id: t.id, name: t.id, pf: rate(t, 'pf'), pa: rate(t, 'pa') };
+        : L === 'nhl' ? { id: t.id, name: t.id, gf: rate(t, 'pf'), ga: rate(t, 'pa') }
+        : { id: t.id, name: t.id, pf: blendE(rate(t, 'pf'), epaRate(t, 'pf', lg)), pa: blendE(rate(t, 'pa'), epaRate(t, 'pa', lg)) };
       const home = mk(H), away = mk(A);
       let hw = 0, sm = 0, st = 0;
       for (let i = 0; i < c.sims; i++) { const r = Sim.simGame(L, away, home, rng, c.rest && useRest ? { rest: { away: ar, home: hr } } : undefined); hw += r.tie ? 0.5 : r.winner; sm += r.score[1] - r.score[0]; st += r.score[0] + r.score[1]; }
@@ -127,6 +172,14 @@ function run(L, games, prior, market, useRest) {
       rows.push({ h: g.h, a: g.a, d: g.d, hr, ar, mk: mkt, p: hw / c.sims, y: actual, base: homeN ? homeW / homeN : 0.55, pm: sm / c.sims, am: g.hs - g.as, pt: st / c.sims, at: g.hs + g.as });
     }
     H.gp++; A.gp++; H.pf += g.hs; H.pa += g.as; A.pf += g.as; A.pa += g.hs;
+    if (epa) {   // add this game's EPA only after it has been predicted (walk-forward)
+      const h = NFLV[g.h] || g.h, a = NFLV[g.a] || g.a, w = epa.week[h + '|' + a], eh = w && epa.wk[h + '|' + w], ea = w && epa.wk[a + '|' + w];
+      if (eh && ea && eh.plays && ea.plays) {
+        H.oe += eh.epa; H.op += eh.plays; H.de += ea.epa; H.dp += ea.plays; H.eg++;
+        A.oe += ea.epa; A.op += ea.plays; A.de += eh.epa; A.dp += eh.plays; A.eg++;
+        lgE += eh.epa + ea.epa; lgP += eh.plays + ea.plays;
+      }
+    }
     lgG++; lgPts += g.hs + g.as;
     homeN++; homeW += g.hs === g.as ? 0.5 : g.hs > g.as ? 1 : 0;
   }
@@ -191,9 +244,12 @@ function mergeOos() {
     console.log(L.toUpperCase() + ': ' + games.length + ' completed games; simulating…');
     const prior = await loadPrior(L);
     const market = L === 'nfl' ? await loadNflMarket() : null;
-    const base = run(L, games, null, null);
-    const noRest = SEASONS[L].rest && !OOS ? run(L, games, prior, market, false) : null;
-    out.leagues[L] = run(L, games, prior, market, true);
+    const epa = L === 'nfl' ? await loadNflEpa(SEASONS.nfl.priorYear + 1) : null;
+    if (L === 'nfl') console.log('  EPA blend: ' + (epa ? (NFL_EPA_W * 100) + '% (nflverse team-week)' : 'off'));
+    const base = run(L, games, null, null, undefined, epa);
+    const noRest = SEASONS[L].rest && !OOS ? run(L, games, prior, market, false, epa) : null;
+    out.leagues[L] = run(L, games, prior, market, true, epa);
+    if (epa) out.leagues[L].epa = NFL_EPA_W;
     if (!OOS && prev[L] && prev[L].oos) out.leagues[L].oos = prev[L].oos;
     if (noRest) out.leagues[L].noRest = { acc: noRest.acc, brier: noRest.brier, logloss: noRest.logloss };
     out.leagues[L].noPrior = { acc: base.acc, brier: base.brier, logloss: base.logloss };
@@ -204,5 +260,6 @@ function mergeOos() {
   }
   out.generated = new Date().toISOString();
   fs.writeFileSync(file, 'window.BACKTEST = ' + JSON.stringify(out) + ';\n');
+  if (!OOS) mergeOos();   // pick up a fresher out-of-sample run (BT_YEAR=2024) if one was made
   console.log('wrote ' + file);
 })();
