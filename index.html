@@ -65,6 +65,10 @@
   table.cmp td { text-align:left; padding:6px 8px; border-bottom:1px solid var(--line); }
   table.cmp td:first-child, table.cmp th:first-child { color:var(--muted); width:34%; padding-left:0; }
   table.cmp tr.best td { background:rgba(79,157,255,.10); }
+  .conf { font-size:11px; font-weight:700; padding:1px 7px; border-radius:999px; margin-left:4px; text-transform:uppercase; letter-spacing:.04em; border:1px solid currentColor; }
+  .c-strong { color:var(--good); } .c-solid { color:var(--accent); } .c-lean { color:#c0862b; } .c-tossup { color:var(--muted); }
+  .picks-sum { font-size:14px; margin:6px 0 12px; } .picks-sum td, .picks-sum th { padding:4px 6px; } .picks-sum td:nth-child(3) { white-space:nowrap; }
+  @media (max-width:560px) { .picks-sum .why { display:none; } }
   .verdict { margin:8px 0 2px; font-size:15px; }
   .game.gap .verdict { color:var(--bad); }
   .inj, .goal { margin-top:8px; font-size:13px; color:var(--muted); line-height:1.5; }
@@ -288,7 +292,15 @@ function market(g) {
   return m;
 }
 const SPREAD_SD = { nfl: 13.2, nba: 12.0 }, normCdf = z => 0.5 * (1 + Math.sign(z) * Math.sqrt(1 - Math.exp(-4 * (z / Math.SQRT2) ** 2 / Math.PI)));
-const BLEND = { nfl: 0.15 };   // sim weight in the NFL sim/market blend (best weight was 0% in 2024 and 25% in 2025)
+// Sim weight in the best-pick blend. The market beat the sim in the NFL backtests (best weight 0% in 2024, 25% in 2025) and in the live
+// track record for every sport so far, so best picks lean on the market; with no line posted yet, the sim's own number is used.
+const BLEND = { nfl: 0.15, nba: 0.15, nhl: 0.15 };
+function bestPick(g, r, mp) {
+  const p = mp != null ? (BLEND[sport] || 0.15) * r.pHome + (1 - (BLEND[sport] || 0.15)) * mp : r.pHome, home = p >= 0.5, q = home ? p : 1 - p;
+  const conf = q >= 0.75 ? 'Strong' : q >= 0.62 ? 'Solid' : q >= 0.55 ? 'Lean' : 'Toss-up';
+  const simSide = r.pHome >= 0.5, why = mp == null ? 'sim only, no line yet' : simSide === (mp >= 0.5) ? 'sim and market agree' : 'sim prefers ' + (simSide ? g.home.abbr : g.away.abbr);
+  return { team: home ? g.home.abbr : g.away.abbr, p: q, conf, why };
+}
 let curRest = null, curWx = null;
 function loadGame(g) {
   curRest = { away: g.awayRest, home: g.homeRest }; curWx = g.weather || null;
@@ -340,9 +352,9 @@ function gameCard(g, i, r) {
   let rows = '', verdict = '', cls = '';
   const dash = '<span class="muted">–</span>';
   if (r) {
-    const showBest = sport === 'nfl' && mp != null; if (showBest) r.blend = BLEND.nfl * r.pHome + (1 - BLEND.nfl) * mp;
-    rows = '<tr><td>Win chance</td><td><b>' + fav(r.pHome) + '</b></td><td>' + (mp != null ? fav(mp) : dash) + '</td></tr>' +
-      (showBest ? '<tr class="best"><td>Best estimate</td><td colspan="2"><b>' + fav(r.blend) + '</b> <span class="muted">(mostly the market; the market beat the sim in both backtested seasons)</span></td></tr>' : '') +
+    const bp = bestPick(g, r, mp);
+    rows = '<tr class="best"><td>Best pick</td><td colspan="2"><b>' + bp.team + ' ' + pc(bp.p) + '</b> <span class="conf c-' + bp.conf.toLowerCase().replace(/[^a-z]/g, '') + '">' + bp.conf + '</span> <span class="muted">' + bp.why + '</span></td></tr>' +
+      '<tr><td>Win chance</td><td><b>' + fav(r.pHome) + '</b></td><td>' + (mp != null ? fav(mp) : dash) + '</td></tr>' +
       (sport !== 'nhl' ? '<tr><td>Margin</td><td>' + by(r.margin) + '</td><td>' + (mk.homeMargin != null ? by(mk.homeMargin) : dash) + '</td></tr>' : '') +
       '<tr><td>Total points</td><td>' + f1(r.total) + '</td><td>' + (mk.total ? mk.total : dash) + '</td></tr>' +
       '<tr><td>Projected score</td><td colspan="2">' + g.away.abbr + ' ' + r.away.toFixed(dec) + ' – ' + g.home.abbr + ' ' + r.home.toFixed(dec) + '</td></tr>';
@@ -371,8 +383,19 @@ function renderUpcoming() {
   const res = simRes[sport], gen = window.LIVE_DATA.generated;
   let html = '', last = null;
   sched.forEach((g, i) => { const c = gameCard(g, i, res && res[i]); if (c.day !== last) { html += '<h3 class="day">' + c.day + '</h3>'; last = c.day; } html += c.html; });
+  // one-glance list of every game's best pick (same numbers as the cards)
+  let sum = '';
+  if (res) {
+    let lastDay = null;
+    sum = '<details class="fold" open><summary>Best picks</summary><p class="note" style="margin:0 0 4px">Mostly the betting market (85%) with the sim as a nudge (15%), because the market has been more accurate so far. Strong 75%+, Solid 62%+, Lean 55%+. Predictions, not betting advice.</p><table class="picks-sum"><tr><th>Game</th><th>Pick</th><th>Win %</th><th class="why"></th></tr>' +
+      sched.map((g, i) => { if (!res[i]) return ''; const bp = bestPick(g, res[i], marketProb(market(g))), d = dayLabel(g.date);
+        const head = d !== lastDay ? '<tr><td colspan="4" class="muted" style="padding-top:8px">' + d + '</td></tr>' : ''; lastDay = d;
+        return head + '<tr><td>' + g.away.abbr + ' @ ' + g.home.abbr + '</td><td><b>' + bp.team + '</b> <span class="conf c-' + bp.conf.toLowerCase().replace(/[^a-z]/g, '') + '">' + bp.conf + '</span></td><td>' + Math.round(bp.p * 100) + '%</td><td class="why muted">' + bp.why + '</td></tr>'; }).join('') +
+      '</table></details>';
+  }
+  html = sum + html;
   box.innerHTML = head + '<p class="note" style="margin:0 0 6px">Data updated ' + new Date(gen).toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' }) + ' (' + Math.round((Date.now() - new Date(gen)) / 60000) + ' min ago). Late scratches can be missing.</p>' +
-    '<details class="how"><summary>How to read this</summary><p class="note">Sim = this simulator, 2,000 games per matchup, calibrated on the backtest. Market = ESPN/DraftKings at the last data update. &ldquo;Margin&rdquo; is the expected winning margin; &ldquo;Total&rdquo; is both teams&rsquo; points added together. Travel chips are information only: backtests found no reliable effect of travel distance or time zones, and the live log is recording it to check again. Missing key defenders raise the opponent&rsquo;s scoring a little (the NFL size is backed by a weak backtest signal; the NBA and NHL sizes are judgement calls). NFL shows a best estimate that leans on the line, because the line beat the sim in both backtested seasons. NHL win chances are only slightly better than a coin flip.</p></details>' + html;
+    '<details class="how"><summary>How to read this</summary><p class="note">Sim = this simulator, 2,000 games per matchup, calibrated on the backtest. Market = ESPN/DraftKings at the last data update. &ldquo;Margin&rdquo; is the expected winning margin; &ldquo;Total&rdquo; is both teams&rsquo; points added together. Travel chips are information only: backtests found no reliable effect of travel distance or time zones, and the live log is recording it to check again. Missing key defenders raise the opponent&rsquo;s scoring a little (the NFL size is backed by a weak backtest signal; the NBA and NHL sizes are judgement calls). Each game&rsquo;s best pick leans on the line (85% market, 15% sim), because the line beat the sim in the NFL backtests and in the live track record for every sport; with no line posted yet it is the sim alone. NHL win chances are only slightly better than a coin flip.</p></details>' + html;
   box.querySelectorAll('[data-load]').forEach(b => b.onclick = () => loadGame(sched[+b.dataset.load]));
   if (!res) runSim();
 }
