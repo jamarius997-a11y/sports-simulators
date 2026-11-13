@@ -4,6 +4,7 @@
 const fs = require('fs'), path = require('path');
 global.window = global;
 const Sim = require('./sim.js');
+const Travel = require('./travel.js');
 require('./data.js');
 try { require('./backtest-results.js'); } catch (e) { /* optional */ }
 Sim.applyLive(window.LIVE_DATA);
@@ -30,6 +31,12 @@ function market(sp, g) {
   return m;
 }
 const BLEND = { nfl: 0.15 };   // sim weight in the sim/market blend (nfl backtests: best weight 0% in 2024, 25% in 2025)
+// every refresh that sees a different market appends a snapshot, so we keep opening-to-closing line movement for free
+function lineHistory(prev, mk) {
+  const h = (prev && prev.lines) || [], last = h[h.length - 1], now = { t: new Date().toISOString(), pHome: mk.pHome != null ? +mk.pHome.toFixed(4) : null, margin: mk.margin, total: mk.total };
+  if (!last || last.pHome !== now.pHome || last.margin !== now.margin || last.total !== now.total) h.push(now);
+  return h.slice(-40);
+}
 function stretch(sp) { const b = window.BACKTEST && window.BACKTEST.leagues && window.BACKTEST.leagues[sp]; return (b && b.stretch) || 1; }
 
 const log = fs.existsSync(FILE) ? JSON.parse(fs.readFileSync(FILE, 'utf8')) : {};
@@ -43,8 +50,9 @@ for (const sp of ['nba', 'nfl', 'nhl']) {
     const away = findTeam(sp, g.away), home = findTeam(sp, g.home);
     if (!away || !home) continue;
     if (sp === 'nhl') [[away, g.away], [home, g.home]].forEach(([t, s]) => {
-      const R = Sim.roster('nhl', t); t.gIdx = -1;
-      if (s.probable && R.goalies) { const i = R.goalies.findIndex(x => x.name === s.probable); if (i >= 0) t.gIdx = i; }
+      const R = Sim.roster('nhl', t); t.gIdx = -1; if (!R.goalies) return;
+      const c = Sim.matchGoalie(R.goalies, s.confirmed); if (c >= 0) { t.gIdx = c; return; }
+      if (s.probable) { const i = R.goalies.findIndex(x => x.name === s.probable); if (i >= 0) t.gIdx = i; }
     });
     const m = Sim.monteCarlo(sp, away, home, SIMS, rng, { rest: { away: g.awayRest, home: g.homeRest } });
     const raw = (m.wins[1] + m.wins[2] / 2) / m.n;
@@ -53,10 +61,12 @@ for (const sp of ['nba', 'nfl', 'nhl']) {
     const prev = log[key];
     log[key] = {
       key, league: sp, gameId: g.id, start: g.date, away: { abbr: g.away.abbr, name: g.away.name }, home: { abbr: g.home.abbr, name: g.home.name },
-      goalies: sp === 'nhl' ? [g.away.probable, g.home.probable] : undefined, rest: [g.awayRest, g.homeRest],
+      goalies: sp === 'nhl' ? [g.away.confirmed || g.away.probable, g.home.confirmed || g.home.probable] : undefined, goalieConfirmed: sp === 'nhl' ? [!!g.away.confirmed, !!g.home.confirmed] : undefined, rest: [g.awayRest, g.homeRest],
       simPHome: +(1 / (1 + Math.exp(-a * z))).toFixed(4), rawPHome: +raw.toFixed(4), simMargin: +(m.avg[1] - m.avg[0]).toFixed(2), simScore: [+m.avg[0].toFixed(2), +m.avg[1].toFixed(2)], simTotal: +m.avgTotal.toFixed(2),
       blendPHome: BLEND[sp] != null && mk.pHome != null ? +(BLEND[sp] * (1 / (1 + Math.exp(-a * z))) + (1 - BLEND[sp]) * mk.pHome).toFixed(4) : undefined,
       inj: [Sim.injuries(sp, away), Sim.injuries(sp, home)],
+      lines: lineHistory(prev, mk),
+      travel: [[g.awayFrom, g.home.abbr], [g.homeFrom, g.home.abbr]].map(([f, to]) => f && f !== to ? { from: f, miles: Math.round(Travel.miles(sp, f, to) || 0), tz: Travel.tzShift(sp, f, to) } : null),
       mkt: mk, loggedAt: new Date().toISOString(), result: prev ? prev.result : null,
     };
     prev ? updated++ : added++;

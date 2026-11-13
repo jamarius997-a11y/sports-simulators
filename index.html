@@ -107,6 +107,7 @@
   <details class="panel fold" id="backtest"></details>
 </div>
 <script src="sim.js"></script>
+<script src="travel.js"></script>
 <script src="data.js" onerror="void 0"></script>
 <script src="backtest-results.js" onerror="void 0"></script>
 <script src="picks-results.js" onerror="void 0"></script>
@@ -267,7 +268,8 @@ function findTeam(sp, side) { const T = S[sp].teams; return T.find(t => normName
 function prepGame(g) {
   const a = findTeam(sport, g.away), h = findTeam(sport, g.home); if (!a || !h) return null;
   if (sport === 'nhl') [[a, g.away], [h, g.home]].forEach(([t, s]) => {
-    const R = Sim.roster('nhl', t); if (s.probable && R.goalies) { const i = R.goalies.findIndex(x => x.name === s.probable); if (i >= 0) t.gIdx = i; }
+    const R = Sim.roster('nhl', t); if (!R.goalies) return; const c = Sim.matchGoalie(R.goalies, s.confirmed); if (c >= 0) { t.gIdx = c; return; }
+    if (s.probable) { const i = R.goalies.findIndex(x => x.name === s.probable); if (i >= 0) t.gIdx = i; }
   });
   return [a, h];
 }
@@ -331,6 +333,7 @@ function gameCard(g, i, r) {
   const chips = [];
   if (sport === 'nba') { if (g.awayRest === 0) chips.push(g.away.abbr + ' back-to-back'); if (g.homeRest === 0) chips.push(g.home.abbr + ' back-to-back'); }
   if (sport === 'nhl') chips.push('low confidence');
+  [[g.away, g.awayFrom], [g.home, g.homeFrom]].forEach(([t, from]) => { const mi = from && from !== g.home.abbr ? Travel.miles(sport, from, g.home.abbr) : null, tz = from ? Travel.tzShift(sport, from, g.home.abbr) : null; if (mi != null && (mi >= 1500 || Math.abs(tz) >= 2)) chips.push(t.abbr + ' traveled ' + Math.round(mi / 100) * 100 + ' mi' + (Math.abs(tz) >= 2 ? ', ' + Math.abs(tz) + ' time zones ' + (tz > 0 ? 'east' : 'west') : '')); });
   let rows = '', verdict = '', cls = '';
   const dash = '<span class="muted">–</span>';
   if (r) {
@@ -352,7 +355,7 @@ function gameCard(g, i, r) {
   } else {
     rows = '<tr><td>Win chance</td><td class="muted">simulating…</td><td>' + (mp != null ? fav(mp) : dash) + '</td></tr>' + '<tr><td>Total points</td><td class="muted">…</td><td>' + (mk.total || dash) + '</td></tr>';
   }
-  const goalie = sport === 'nhl' && (g.away.probable || g.home.probable) ? '<div class="goal"><span class="lbl">Goalies</span>' + g.away.abbr + ' ' + (g.away.probable || '?') + ' · ' + g.home.abbr + ' ' + (g.home.probable || '?') + '</div>' : '';
+  const goalie = sport === 'nhl' && (g.away.probable || g.home.probable || g.away.confirmed || g.home.confirmed) ? '<div class="goal"><span class="lbl">Goalies</span>' + [[g.away], [g.home]].map(([x]) => x.abbr + ' ' + (x.confirmed ? x.confirmed + ' <span class="pos">(confirmed)</span>' : (x.probable || '?') + ' <span class="muted">(probable)</span>')).join(' · ') + '</div>' : '';
   return { day: dayLabel(g.date), html: '<div class="game' + cls + '"><div class="g-top"><span class="when">' + when + '</span>' + chips.map(c => '<span class="chip">' + c + '</span>').join('') + '<button class="act alt" data-load="' + i + '">Open in simulator</button></div>' +
     '<div class="g-teams">' + g.away.abbr + ' <span class="at">@</span> ' + g.home.abbr + '<span class="mline">' + (mk.text !== '–' ? 'Line: ' + mk.text : '') + '</span></div>' +
     '<table class="cmp"><tr><th></th><th>Sim</th><th>Market</th></tr>' + rows + '</table>' + verdict + goalie + injHtml(g) + '</div>' };
@@ -366,7 +369,7 @@ function renderUpcoming() {
   let html = '', last = null;
   sched.forEach((g, i) => { const c = gameCard(g, i, res && res[i]); if (c.day !== last) { html += '<h3 class="day">' + c.day + '</h3>'; last = c.day; } html += c.html; });
   box.innerHTML = head + '<p class="note" style="margin:0 0 6px">Data updated ' + new Date(gen).toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' }) + ' (' + Math.round((Date.now() - new Date(gen)) / 60000) + ' min ago). Late scratches can be missing.</p>' +
-    '<details class="how"><summary>How to read this</summary><p class="note">Sim = this simulator, 2,000 games per matchup, calibrated on the backtest. Market = ESPN/DraftKings at the last data update. &ldquo;Margin&rdquo; is the expected winning margin; &ldquo;Total&rdquo; is both teams&rsquo; points added together. Missing key defenders raise the opponent&rsquo;s scoring a little (the NFL size is backed by a weak backtest signal; the NBA and NHL sizes are judgement calls). NFL shows a best estimate that leans on the line, because the line beat the sim in both backtested seasons. NHL win chances are only slightly better than a coin flip.</p></details>' + html;
+    '<details class="how"><summary>How to read this</summary><p class="note">Sim = this simulator, 2,000 games per matchup, calibrated on the backtest. Market = ESPN/DraftKings at the last data update. &ldquo;Margin&rdquo; is the expected winning margin; &ldquo;Total&rdquo; is both teams&rsquo; points added together. Travel chips are information only: backtests found no reliable effect of travel distance or time zones, and the live log is recording it to check again. Missing key defenders raise the opponent&rsquo;s scoring a little (the NFL size is backed by a weak backtest signal; the NBA and NHL sizes are judgement calls). NFL shows a best estimate that leans on the line, because the line beat the sim in both backtested seasons. NHL win chances are only slightly better than a coin flip.</p></details>' + html;
   box.querySelectorAll('[data-load]').forEach(b => b.onclick = () => loadGame(sched[+b.dataset.load]));
   if (!res) runSim();
 }
@@ -384,6 +387,7 @@ function renderPicks() {
     '<tr><td>Brier (lower is better)</td><td>' + (P.brierSimMkt == null ? '–' : P.brierSimMkt) + '</td><td>' + (P.brierMkt == null ? '–' : P.brierMkt) + '</td></tr>' +
     '<tr><td>Total error in points (' + P.nTot + ' games)</td><td>' + (P.totMAESim == null ? '–' : P.totMAESim.toFixed(1)) + '</td><td>' + (P.totMAEMkt == null ? '–' : P.totMAEMkt.toFixed(1)) + '</td></tr>' +
     (P.nBlend ? '<tr><td>NFL blend vs market, Brier (' + P.nBlend + ' games)</td><td>' + P.brierBlend + '</td><td>' + P.brierBlendMkt + '</td></tr>' : '') + (P.nSpread ? '<tr><td>Margin error in points (' + P.nSpread + ' games with a spread)</td><td>' + P.marMAESim.toFixed(1) + '</td><td>' + P.marMAEMkt.toFixed(1) + '</td></tr>' : '') + '</table>' +
+    (P.nLines ? '<p class="note">Line movement: the market moved by 1+ point of win chance in ' + P.nMoved + ' of ' + P.nLines + ' games with 2+ line readings' + (P.nMoved ? ', and moved toward the sim in ' + (P.movedToSim * 100).toFixed(0) + '% of those (50% is chance; a number above 50% means the sim sees news before the market does)' : '') + '.</p>' : '') +
     (P.nCallT ? '<p class="note">When the sim and the market total differed by 2+ points, the sim picked the right side of the total in ' + (P.hitCallT * 100).toFixed(0) + '% of ' + P.nCallT + ' games' + (P.nCallS ? ', and the right side of the spread in ' + (P.hitCallS * 100).toFixed(0) + '% of ' + P.nCallS : '') + ' (50% is break-even luck). Average total error: sim ' + (P.totBias > 0 ? '+' : '') + P.totBias + ' vs actual, market ' + (P.mktTotBias > 0 ? '+' : '') + P.mktTotBias + '.</p>' : '') +
     (P.n < 100 ? '<p class="note">Small sample (under 100 games): treat these numbers as noise for now.</p>' : '') +
     '<h4 style="margin:14px 0 4px">Recent results</h4><table class="up"><tr><th>Date</th><th>Game</th><th>Sim home %</th><th>Mkt home %</th><th>Sim / mkt total</th><th>Final (away–home)</th></tr>' +

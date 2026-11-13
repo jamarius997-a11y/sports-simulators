@@ -272,6 +272,26 @@ function nflPlayers(rows) {
 
 // ESPN's scoreboard is keyed by US Eastern date; the machine's own date is wrong after 7pm Eastern on a UTC runner
 const etYmd = d => new Intl.DateTimeFormat('en-CA', { timeZone: 'America/New_York', year: 'numeric', month: '2-digit', day: '2-digit' }).format(d).replace(/-/g, '');
+// NHL's own API lists the starting goalies once teams submit lineups (roughly 1-2 hours before puck drop). Before that ESPN's "probable" is all we have.
+const NHL_CODE = abbr => MP_CODE[abbr] || abbr;
+function nhlStarters(box) {
+  const pb = box && box.playerByGameStats, pick = t => { const g = pb && pb[t] && (pb[t].goalies || []).find(x => x.starter === true); return g ? g.name.default : null; };
+  return { away: pick('awayTeam'), home: pick('homeTeam') };
+}
+async function nhlConfirm(games) {
+  const soon = games.filter(g => { const dt = new Date(g.date).getTime() - Date.now(); return dt < 5 * 3600e3 && dt > -3600e3; });
+  if (!soon.length) return;
+  const J = async u => { try { const r = await fetch(u, { headers: { 'User-Agent': 'Mozilla/5.0' }, signal: AbortSignal.timeout(20000) }); return r.ok ? r.json() : null; } catch (e) { return null; } };
+  const sched = await J('https://api-web.nhle.com/v1/schedule/now'); if (!sched) return;
+  const all = (sched.gameWeek || []).flatMap(d => d.games || []); let n = 0;
+  for (const g of soon) {
+    const m = all.find(x => x.awayTeam.abbrev === NHL_CODE(g.away.abbr) && x.homeTeam.abbrev === NHL_CODE(g.home.abbr) && Math.abs(new Date(x.startTimeUTC) - new Date(g.date)) < 3600e3);
+    if (!m) continue;
+    const s = nhlStarters(await J('https://api-web.nhle.com/v1/gamecenter/' + m.id + '/boxscore'));
+    if (s.away) { g.away.confirmed = s.away; n++; } if (s.home) { g.home.confirmed = s.home; n++; }
+  }
+  console.log('  NHL API: ' + n + ' confirmed starters for ' + soon.length + ' games starting soon');
+}
 async function schedule(L, days) {
   const out = [], cfg = LEAGUES[L], hist = [];
   const dayIdx = iso => Math.floor((new Date(iso).getTime() - 5 * 3600e3) / 86400000);
@@ -279,7 +299,7 @@ async function schedule(L, days) {
     const dt = new Date(Date.now() + d * 86400000);
     const ymd = etYmd(dt);
     const j = await get(SITE + cfg.sport + '/' + L + '/scoreboard?dates=' + ymd);
-    for (const ev of (j && j.events) || []) for (const c of ev.competitions[0].competitors) hist.push({ team: c.team.abbreviation, day: dayIdx(ev.date) });
+    for (const ev of (j && j.events) || []) for (const c of ev.competitions[0].competitors) hist.push({ team: c.team.abbreviation, day: dayIdx(ev.date), venue: ev.competitions[0].competitors.find(x => x.homeAway === 'home').team.abbreviation });
   }
   for (let d = 0; d < days; d++) {
     const dt = new Date(Date.now() + d * 86400000);
@@ -299,7 +319,11 @@ async function schedule(L, days) {
     const day = dayIdx(g.date);
     const prev = abbr => { const ds = hist.map(h => h.team === abbr ? h.day : null).concat(uniq.filter(o => o !== g && (o.away.abbr === abbr || o.home.abbr === abbr)).map(o => dayIdx(o.date))).filter(x => x != null && x < day); return ds.length ? day - Math.max(...ds) - 1 : null; };
     g.awayRest = prev(g.away.abbr); g.homeRest = prev(g.home.abbr);
+    // where each team played its previous game (the arena it travels from), for travel distance and time-zone change
+    const from = abbr => { const c = hist.filter(h => h.team === abbr && h.day < day).map(h => ({ day: h.day, venue: h.venue })).concat(uniq.filter(o => o !== g && (o.away.abbr === abbr || o.home.abbr === abbr) && dayIdx(o.date) < day).map(o => ({ day: dayIdx(o.date), venue: o.home.abbr }))); return c.length ? c.sort((x, y) => y.day - x.day)[0].venue : null; };
+    g.awayFrom = from(g.away.abbr); g.homeFrom = from(g.home.abbr);
   }
+  if (L === 'nhl') await nhlConfirm(uniq);
   return uniq;
 }
 

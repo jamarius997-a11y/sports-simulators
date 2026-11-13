@@ -45,12 +45,15 @@ const ymdOf = d => d.getUTCFullYear() + String(d.getUTCMonth() + 1).padStart(2, 
     const right = (arr, p) => arr.filter(e => y(e) !== 0.5).length ? +(arr.filter(e => y(e) !== 0.5 && (p(e) > 0.5) === (y(e) === 1)).length / arr.filter(e => y(e) !== 0.5).length).toFixed(3) : null;
     const S = done.filter(e => e.mkt && e.mkt.margin != null), tot = e => e.result.homeScore + e.result.awayScore, mar = e => e.result.homeScore - e.result.awayScore;
     const callsT = T.filter(e => Math.abs(e.simTotal - e.mkt.total) >= 2 && tot(e) !== e.mkt.total), callsS = S.filter(e => Math.abs(e.simMargin - e.mkt.margin) >= 2 && mar(e) !== e.mkt.margin);
+    const MV = done.filter(e => e.lines && e.lines.length >= 2 && e.lines[0].pHome != null && e.lines[e.lines.length - 1].pHome != null && Math.abs(e.lines[e.lines.length - 1].pHome - e.lines[0].pHome) >= 0.01);
+    const towardSim = e => Math.sign(e.lines[e.lines.length - 1].pHome - e.lines[0].pHome) === Math.sign(e.simPHome - e.lines[0].pHome);
     const BW = { nfl: 0.15 }[sp], B = BW == null ? [] : M.filter(e => e.blendPHome != null);
     out.leagues[sp] = {
       n: done.length, pending,
       acc: right(done, e => e.simPHome), brier: mean(done, e => (e.simPHome - y(e)) ** 2),
       nMkt: M.length, accSimMkt: right(M, e => e.simPHome), accMkt: right(M, e => e.mkt.pHome),
       brierSimMkt: mean(M, e => (e.simPHome - y(e)) ** 2), brierMkt: mean(M, e => (e.mkt.pHome - y(e)) ** 2),
+      nMoved: MV.length, movedToSim: MV.length ? +(MV.filter(towardSim).length / MV.length).toFixed(3) : null, nLines: done.filter(e => e.lines && e.lines.length >= 2).length,
       nBlend: B.length, brierBlend: mean(B, e => (e.blendPHome - y(e)) ** 2), brierBlendMkt: mean(B, e => (e.mkt.pHome - y(e)) ** 2),
       nSpread: S.length, marMAESim: mean(S, e => Math.abs(e.simMargin - mar(e))), marMAEMkt: mean(S, e => Math.abs(e.mkt.margin - mar(e))),
       totBias: mean(T, e => tot(e) - e.simTotal), mktTotBias: mean(T, e => tot(e) - e.mkt.total),

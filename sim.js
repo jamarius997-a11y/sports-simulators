@@ -847,6 +847,11 @@
     }
     return out.sort((a, b) => b.w - a.w).slice(0, max || 4).map(p => ({ name: p.name, pos: p.pos, status: p.status, out: p.out }));
   }
-  const api = { setLeague, applyLive, injuries, makeRng, roster, SPORTS, simGame, monteCarlo, playSeries, seriesMonteCarlo, leagueTable };
+  const fold = s => String(s).normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z ]/g, '').trim();
+  function matchGoalie(list, name) {   // index of the goalie whose surname and first initial match, or -1
+    const m = name && /^(\S+)\s+(.+)$/.exec(fold(name)); if (!m || !list) return -1;
+    return list.findIndex(g => { const p = fold(g.name).split(' '); return p.slice(1).join(' ') === m[2] && p[0][0] === m[1][0]; });
+  }
+  const api = { setLeague, applyLive, injuries, matchGoalie, makeRng, roster, SPORTS, simGame, monteCarlo, playSeries, seriesMonteCarlo, leagueTable };
   if (typeof module !== 'undefined' && module.exports) module.exports = api; else root.Sim = api;
 })(typeof window !== 'undefined' ? window : globalThis);

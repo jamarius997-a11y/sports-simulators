@@ -130,7 +130,7 @@ function run(L, games, prior, market, useRest) {
     lgG++; lgPts += g.hs + g.as;
     homeN++; homeW += g.hs === g.as ? 0.5 : g.hs > g.as ? 1 : 0;
   }
-  if (process.env.BT_DUMP && (process.env.BT_DUMP === 'noprior' ? !prior : !!prior)) fs.writeFileSync(path.join(__dirname, 'cache', 'rows_' + L + '.json'), JSON.stringify(rows));
+  if (process.env.BT_DUMP && (process.env.BT_DUMP === 'noprior' ? !prior : !!prior)) fs.writeFileSync(path.join(__dirname, 'cache', 'rows_' + L + (OOS ? '_2024' : '') + '.json'), JSON.stringify(rows));
   const n = rows.length, mean = f => rows.reduce((a, r) => a + f(r), 0) / n;
   const ll = (p, y) => { p = Math.min(0.999, Math.max(0.001, p)); return -(y * Math.log(p) + (1 - y) * Math.log(1 - p)); };
   const cal = [];
