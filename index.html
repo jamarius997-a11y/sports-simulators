@@ -68,7 +68,8 @@
   .conf { font-size:11px; font-weight:700; padding:1px 7px; border-radius:999px; margin-left:4px; text-transform:uppercase; letter-spacing:.04em; border:1px solid currentColor; }
   .c-strong { color:var(--good); } .c-solid { color:var(--accent); } .c-lean { color:#c0862b; } .c-tossup { color:var(--muted); }
   .picks-sum { font-size:14px; margin:6px 0 12px; } .picks-sum td, .picks-sum th { padding:4px 6px; } .picks-sum td:nth-child(3) { white-space:nowrap; }
-  @media (max-width:560px) { .picks-sum .why { display:none; } }
+  .picks-sum td { text-align:left; } .picks-sum th { text-align:left; }
+  @media (max-width:560px) { .picks-sum { font-size:12px; } .picks-sum .conf { display:none; } .picks-sum td, .picks-sum th { padding:4px 3px; } }
   .verdict { margin:8px 0 2px; font-size:15px; }
   .game.gap .verdict { color:var(--bad); }
   .inj, .goal { margin-top:8px; font-size:13px; color:var(--muted); line-height:1.5; }
@@ -295,6 +296,23 @@ const SPREAD_SD = { nfl: 13.2, nba: 12.0 }, normCdf = z => 0.5 * (1 + Math.sign(
 // Sim weight in the best-pick blend. The market beat the sim in the NFL backtests (best weight 0% in 2024, 25% in 2025) and in the live
 // track record for every sport so far, so best picks lean on the market; with no line posted yet, the sim's own number is used.
 const BLEND = { nfl: 0.15, nba: 0.15, nhl: 0.15 };
+// Spread and total picks: the same 85/15 blend, measured against the posted number. The blend only differs from the line by 15% of the
+// sim's disagreement, so these are small edges; the chance is a normal approximation around the blended number (SDs from the backtests).
+// Live record so far: when the sim disagreed by 2+ points its side hit 48% (NBA spreads) and 44% (NBA totals), so treat these as close to coin flips.
+const ATS_SD = { nba: 12.0, nfl: 13.2 }, TOT_SD = { nba: 18.0, nfl: 13.5, nhl: 2.3 };
+const confLine = q => q >= 0.57 ? 'Solid' : q >= 0.53 ? 'Lean' : 'Toss-up';
+function spreadPick(g, r, mk) {
+  if (mk.homeMargin == null || !ATS_SD[sport]) return null;
+  const w = BLEND[sport] || 0.15, m = w * r.margin + (1 - w) * mk.homeMargin, edge = m - mk.homeMargin, home = edge >= 0;
+  const line = -mk.homeMargin, team = home ? g.home.abbr : g.away.abbr, num = home ? line : -line;
+  return { text: team + ' ' + (num > 0 ? '+' : '') + num, p: normCdf(Math.abs(edge) / ATS_SD[sport]), conf: confLine(normCdf(Math.abs(edge) / ATS_SD[sport])) };
+}
+function totalPick(r, mk) {
+  if (!mk.total || !TOT_SD[sport]) return null;
+  const w = BLEND[sport] || 0.15, t = w * r.total + (1 - w) * mk.total, edge = t - mk.total, q = normCdf(Math.abs(edge) / TOT_SD[sport]);
+  return { text: (edge >= 0 ? 'Over ' : 'Under ') + mk.total, p: q, conf: confLine(q) };
+}
+const pickHtml = x => x ? '<b>' + x.text + '</b> <span class="conf c-' + x.conf.toLowerCase().replace(/[^a-z]/g, '') + '">' + x.conf + '</span> <span class="muted">' + Math.round(x.p * 100) + '%</span>' : '<span class="muted">no line</span>';
 function bestPick(g, r, mp) {
   const p = mp != null ? (BLEND[sport] || 0.15) * r.pHome + (1 - (BLEND[sport] || 0.15)) * mp : r.pHome, home = p >= 0.5, q = home ? p : 1 - p;
   const conf = q >= 0.75 ? 'Strong' : q >= 0.62 ? 'Solid' : q >= 0.55 ? 'Lean' : 'Toss-up';
@@ -354,6 +372,8 @@ function gameCard(g, i, r) {
   if (r) {
     const bp = bestPick(g, r, mp);
     rows = '<tr class="best"><td>Best pick</td><td colspan="2"><b>' + bp.team + ' ' + pc(bp.p) + '</b> <span class="conf c-' + bp.conf.toLowerCase().replace(/[^a-z]/g, '') + '">' + bp.conf + '</span> <span class="muted">' + bp.why + '</span></td></tr>' +
+      (sport !== 'nhl' ? '<tr class="best"><td>Spread pick</td><td colspan="2">' + pickHtml(spreadPick(g, r, mk)) + '</td></tr>' : '') +
+      '<tr class="best"><td>Total pick</td><td colspan="2">' + pickHtml(totalPick(r, mk)) + '</td></tr>' +
       '<tr><td>Win chance</td><td><b>' + fav(r.pHome) + '</b></td><td>' + (mp != null ? fav(mp) : dash) + '</td></tr>' +
       (sport !== 'nhl' ? '<tr><td>Margin</td><td>' + by(r.margin) + '</td><td>' + (mk.homeMargin != null ? by(mk.homeMargin) : dash) + '</td></tr>' : '') +
       '<tr><td>Total points</td><td>' + f1(r.total) + '</td><td>' + (mk.total ? mk.total : dash) + '</td></tr>' +
@@ -387,10 +407,16 @@ function renderUpcoming() {
   let sum = '';
   if (res) {
     let lastDay = null;
-    sum = '<details class="fold" open><summary>Best picks</summary><p class="note" style="margin:0 0 4px">Mostly the betting market (85%) with the sim as a nudge (15%), because the market has been more accurate so far. Strong 75%+, Solid 62%+, Lean 55%+. Predictions, not betting advice.</p><table class="picks-sum"><tr><th>Game</th><th>Pick</th><th>Win %</th><th class="why"></th></tr>' +
-      sched.map((g, i) => { if (!res[i]) return ''; const bp = bestPick(g, res[i], marketProb(market(g))), d = dayLabel(g.date);
-        const head = d !== lastDay ? '<tr><td colspan="4" class="muted" style="padding-top:8px">' + d + '</td></tr>' : ''; lastDay = d;
-        return head + '<tr><td>' + g.away.abbr + ' @ ' + g.home.abbr + '</td><td><b>' + bp.team + '</b> <span class="conf c-' + bp.conf.toLowerCase().replace(/[^a-z]/g, '') + '">' + bp.conf + '</span></td><td>' + Math.round(bp.p * 100) + '%</td><td class="why muted">' + bp.why + '</td></tr>'; }).join('') +
+    const P = window.PICKS && window.PICKS.leagues && window.PICKS.leagues[sport], rec = (n, h) => n ? Math.round(h * 100) + '% of ' + n : 'no games yet';
+    const ats = sport !== 'nhl', cols = ats ? 4 : 3;
+    sum = '<details class="fold" open><summary>Best picks</summary><p class="note" style="margin:0 0 4px">Mostly the betting market (85%) with the sim as a nudge (15%), because the market has been more accurate so far. Winner: Strong 75%+, Solid 62%+, Lean 55%+. ' +
+      'Spread and total picks are much closer to coin flips (Solid 57%+, Lean 53%+; about 52.4% is needed to break even at standard odds). Live record when the sim disagreed with the line by 2+ points: ' +
+      (ats ? 'spreads ' + rec(P && P.nCallS, P && P.hitCallS) + ', ' : '') + 'totals ' + rec(P && P.nCallT, P && P.hitCallT) + '. Predictions, not betting advice.</p>' +
+      '<table class="picks-sum"><tr><th>Game</th><th>Winner</th>' + (ats ? '<th>Spread</th>' : '') + '<th>Total</th></tr>' +
+      sched.map((g, i) => { if (!res[i]) return ''; const mk = market(g), bp = bestPick(g, res[i], marketProb(mk)), d = dayLabel(g.date);
+        const head = d !== lastDay ? '<tr><td colspan="' + cols + '" class="muted" style="padding-top:8px">' + d + '</td></tr>' : ''; lastDay = d;
+        return head + '<tr><td>' + g.away.abbr + ' @ ' + g.home.abbr + '</td><td>' + pickHtml({ text: bp.team, p: bp.p, conf: bp.conf }) + '</td>' +
+          (ats ? '<td>' + pickHtml(spreadPick(g, res[i], mk)) + '</td>' : '') + '<td>' + pickHtml(totalPick(res[i], mk)) + '</td></tr>'; }).join('') +
       '</table></details>';
   }
   html = sum + html;
