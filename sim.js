@@ -431,7 +431,8 @@
     const gl = r.goalies && r.goalies.length ? r.goalies : [{ name: r.g.name, sv: null, gp: 1 }];
     const goalie = team.gIdx != null && team.gIdx >= 0 && gl[team.gIdx] ? gl[team.gIdx] : (gl.find(g => !sits(g, rng)) || gl[0]);
     const w = sk.map(p => Math.max(0.01, p.w)), aw = sk.map((p, i) => w[i] * (p.pos === 'D' ? 2.2 : 1));
-    return { r, sk, w, aw, tw: w.reduce((a, x) => a + x, 0), goalie, svAvg: r.svAvg, garAvg: r.garAvg, lostDef: Math.max(-0.1, Math.min(0.3, r.fwd.concat(r.def).filter(p => gone.has(p)).reduce((a, p) => a + (p.dimp || 0) * (p.gpr == null ? 1 : p.gpr), 0))), out: r.fwd.concat(r.def).filter(p => gone.has(p)).map(p => p.name) };
+    return { r, sk, w, aw, tw: w.reduce((a, x) => a + x, 0), goalie, svAvg: r.svAvg, garAvg: r.garAvg, lostDef: Math.max(-0.1, Math.min(0.3, r.fwd.concat(r.def).filter(p => gone.has(p)).reduce((a, p) => a + (p.dimp || 0) * (p.gpr == null ? 1 : p.gpr), 0))),
+      lostOff: Math.max(-0.1, Math.min(0.4, r.fwd.concat(r.def).filter(p => gone.has(p)).reduce((a, p) => a + (p.oimp || 0) * (p.gpr == null ? 1 : p.gpr), 0))), out: r.fwd.concat(r.def).filter(p => gone.has(p)).map(p => p.name) };
   }
   function pickW(w, tot, rng, skip) {
     for (;;) {
@@ -449,6 +450,7 @@
     const gf = k => { const g = k.goalie; if (g.gar && k.garAvg) return clamp(g.gar / k.garAvg, 0.8, 1.25); if (!g.sv || !k.svAvg) return 1; const w = (g.gp || 1) / ((g.gp || 1) + 10), sv = k.svAvg + (g.sv - k.svAvg) * w; return clamp((1 - sv) / (1 - k.svAvg), 0.75, 1.3); };
     p[0] *= gf(K[1]); p[1] *= gf(K[0]);
     p[0] *= 1 + K[1].lostDef / lam[0]; p[1] *= 1 + K[0].lostDef / lam[1];   // missing defenders let the other side score a little more
+    p[0] *= Math.max(0.6, 1 - K[0].lostOff / lam[0]); p[1] *= Math.max(0.6, 1 - K[1].lostOff / lam[1]);   // missing scorers: the team itself creates fewer chances
     const ps = K.map(k => k.sk.map(() => ({ g: 0, a: 0, sog: 0 })));
     const score = [0, 0], shots = [0, 0], ppg = [0, 0], ppo = [0, 0], pen = [0, 0];
     const byPeriod = [[0, 0, 0], [0, 0, 0]];

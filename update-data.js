@@ -116,6 +116,27 @@ async function nflDefense(year) {
   } catch (e) { /* optional */ }
   return out;
 }
+// NFL team efficiency from nflverse weekly team stats: offensive EPA per play, and defensive EPA per play (what opponents' offenses did against them).
+// Walk-forward test on 2024 and 2025 (cache/epa test): a 50/50 blend of points and EPA predicted margins a little better than points alone in both seasons.
+const NFLV_CODE = { WSH: 'WAS', LAR: 'LA' };
+async function nflEpa(year) {
+  const out = {};
+  try {
+    const r = await fetch('https://github.com/nflverse/nflverse-data/releases/download/stats_team/stats_team_week_' + year + '.csv', { signal: AbortSignal.timeout(60000) });
+    if (!r.ok) return out;
+    const file = path.join(__dirname, 'cache', 'nfl_team_week_' + year + '.csv');
+    fs.mkdirSync(path.dirname(file), { recursive: true }); fs.writeFileSync(file, await r.text());
+    const wk = {};
+    for (const row of readCsv(file)) if (row.season_type === 'REG') wk[row.team + '|' + row.week] = { opp: row.opponent_team, epa: (+row.passing_epa || 0) + (+row.rushing_epa || 0), plays: (+row.attempts || 0) + (+row.sacks_suffered || 0) + (+row.carries || 0) };
+    for (const k in wk) {
+      const [team, week] = k.split('|'), me = wk[k], th = wk[me.opp + '|' + week]; if (!th || !me.plays || !th.plays) continue;
+      const o = out[team] = out[team] || { oe: 0, op: 0, de: 0, dp: 0, gp: 0 };
+      o.oe += me.epa; o.op += me.plays; o.de += th.epa; o.dp += th.plays; o.gp++;
+    }
+  } catch (e) { /* optional: ratings fall back to points only */ }
+  return out;
+}
+
 function nflDefenders(defs, dc, dp) {
   return defs.map(a => {
     const k = normName(a.fullName), c = dc[k], p = dp[k], inj = injuryOf(a);
@@ -132,7 +153,7 @@ async function mpSkaterImpact(year) {
   const ice = {}, tgp = {};
   (tm || []).forEach(r => { ice[r.team] = +r.iceTime; tgp[r.team] = +r.games_played; });
   const out = {};
-  for (const r of sk || []) out[normName(r.name)] = { team: r.team, gp: +r.games_played, t: +r.icetime, on: +r.OnIce_A_xGoals, off: +r.OffIce_A_xGoals, T: ice[r.team], tgp: tgp[r.team] };
+  for (const r of sk || []) out[normName(r.name)] = { team: r.team, gp: +r.games_played, t: +r.icetime, on: +r.OnIce_A_xGoals, off: +r.OffIce_A_xGoals, onF: +r.OnIce_F_xGoals, offF: +r.OffIce_F_xGoals, T: ice[r.team], tgp: tgp[r.team] };
   return out;
 }
 function skaterImpact(cur, pri) {
@@ -142,7 +163,12 @@ function skaterImpact(cur, pri) {
   const on = (c.on || 0) + w * (p.on || 0), off = (c.off || 0) + w * (p.off || 0), gp = (c.gp || 0) + w * (p.gp || 0);
   const perGame = (off / T - on / t) * (t / Math.max(1, gp));        // xG against saved per game played
   const shrink = t / (t + 150000);                                   // on/off splits are very noisy: ~2,500 minutes before trusting half of it
-  return { dimp: r3(Math.max(-0.06, Math.min(0.06, perGame * shrink))), gpr: c.gp && c.tgp ? r3(Math.min(1, c.gp / c.tgp)) : 0 };
+  // offense: expected goals FOR the team gains per game with him on the ice (all situations, so power-play and linemate roles are included).
+  // Year-to-year correlation 0.66-0.71 in MoneyPuck 2022-25, about twice as stable as the defensive number above. On/off also credits a player for his
+  // linemates, so it is shrunk twice as hard (~5,000 minutes to trust half): McDavid lands near 0.08 goals/game and only a handful of stars reach the cap.
+  const onF = (c.onF || 0) + w * (p.onF || 0), offF = (c.offF || 0) + w * (p.offF || 0);
+  const oGame = (onF / t - offF / T) * (t / Math.max(1, gp));
+  return { dimp: r3(Math.max(-0.06, Math.min(0.06, perGame * shrink))), oimp: r3(Math.max(-0.05, Math.min(0.15, oGame * t / (t + 300000)))), gpr: c.gp && c.tgp ? r3(Math.min(1, c.gp / c.tgp)) : 0 };
 }
 
 function injuryOf(a) {
@@ -170,7 +196,25 @@ async function build(L) {
     raw[t.id] = { gp: gc, off: ((c ? c.pf * gc : 0) + (p ? p.pf * wp : 0)) / den, def: ((c ? c.pa * gc : 0) + (p ? p.pa * wp : 0)) / den };
   }
   let gmap = {}, smapC = {}, smapP = {}, dc = {}, dp = {};
-  if (L === 'nfl') [dc, dp] = await Promise.all([nflDefense(year), nflDefense(year - 1)]);
+  if (L === 'nfl') {
+    let ec, ep;
+    [dc, dp, ec, ep] = await Promise.all([nflDefense(year), nflDefense(year - 1), nflEpa(year), nflEpa(year - 1)]);
+    // EPA per play -> points per game: 1 EPA/play of net efficiency was worth about 52 points/game of net scoring in the 2024-25 fit
+    const K = 52, lgPer = E => { let oe = 0, op = 0; for (const k in E) { oe += E[k].oe; op += E[k].op; } return op ? oe / op : 0; }, mc = lgPer(ec), mp = lgPer(ep);
+    const lgPts = Object.values(raw).reduce((a, x) => a + x.off + x.def, 0) / (2 * Object.keys(raw).length);
+    let used = 0;
+    for (const t of teams) {
+      if (!raw[t.id]) continue;
+      const code = NFLV_CODE[t.abbreviation] || t.abbreviation, c = ec[code], p = ep[code];
+      if (!c && !p) continue;
+      const wc = c ? c.gp : 0, wp = p ? cfg.prior : 0, den = wc + wp;
+      const side = (e, m, k1, k2) => e ? (e[k1] / e[k2] - m) : 0;
+      const off = lgPts + K * ((side(c, mc, 'oe', 'op') * wc + side(p, mp, 'oe', 'op') * wp) / den);
+      const def = lgPts + K * ((side(c, mc, 'de', 'dp') * wc + side(p, mp, 'de', 'dp') * wp) / den);
+      raw[t.id].off = 0.5 * raw[t.id].off + 0.5 * off; raw[t.id].def = 0.5 * raw[t.id].def + 0.5 * def; used++;
+    }
+    console.log('  nflverse EPA: blended into ' + used + ' team ratings');
+  }
   if (L === 'nhl') {
     const [mc, mp, gc, gp_] = await Promise.all([mpTeams(year - 1), mpTeams(year - 2), mpGoalies(year - 1), mpGoalies(year - 2)]);
     let used = 0;
@@ -210,8 +254,8 @@ async function build(L) {
     const entry = { name: t.displayName, off: r1(raw[t.id].off * scale * 10) / 10, def: r1(raw[t.id].def * scale * 10) / 10, gp: raw[t.id].gp };
     if (L === 'nhl') { entry.off = r3(raw[t.id].off * scale); entry.def = r3(raw[t.id].def * scale); }
     if (L === 'nba') entry.players = nbaPlayers(rows, raw[t.id].gp);
-    if (L === 'nhl') Object.assign(entry, nhlPlayers(rows, gmap, smapC, smapP));
-    if (L === 'nfl') { entry.players = nflPlayers(rows); entry.players.defense = nflDefenders(defs, dc, dp); }
+    if (L === 'nhl') Object.assign(entry, nhlPlayers(rows, gmap, smapC, smapP, await depthOf('nhl', t.id, 'g'), ath));
+    if (L === 'nfl') { entry.players = nflPlayers(rows, await depthOf('nfl', t.id, 'qb'), ath); entry.players.defense = nflDefenders(defs, dc, dp); }
     result[t.abbreviation] = entry;
   });
   META[L] = { lg: Math.round(lgMean * 1000) / 1000 };
@@ -229,7 +273,7 @@ function nbaPlayers(rows, teamGp) {
   }).filter(Boolean).sort((x, y) => y.min - x.min).slice(0, 13);
 }
 
-function nhlPlayers(rows, gmap, smapC, smapP) {
+function nhlPlayers(rows, gmap, smapC, smapP, depth, ath) {
   const sk = [], gk = [];
   for (const { a, s, pos, inj } of rows) {
     if (pos === 'G') {
@@ -239,13 +283,21 @@ function nhlPlayers(rows, gmap, smapC, smapP) {
     }
     const gp = s.games || 0; if (gp < 1) continue;
     sk.push({ name: a.fullName, pos: pos === 'L' ? 'LW' : pos === 'R' ? 'RW' : pos, out: inj.out, note: inj.note,
-      dimp: (skaterImpact(smapC[normName(a.fullName)], smapP[normName(a.fullName)]) || {}).dimp || 0, gpr: (skaterImpact(smapC[normName(a.fullName)], smapP[normName(a.fullName)]) || {}).gpr || 0,
+      ...(({ dimp = 0, oimp = 0, gpr = 0 }) => ({ dimp, oimp, gpr }))(skaterImpact(smapC[normName(a.fullName)], smapP[normName(a.fullName)]) || {}),
       toi: r1((s.timeOnIcePerGame || (s.timeOnIce || 0) / gp) / 60), w: r1(Math.max(0.3, (s.shotsTotal || 0) / gp)) });
   }
   const norm = p => ({ ...p, w: Math.max(0.3, p.w) });
   const top = (arr, n) => arr.sort((x, y) => y.toi - x.toi).slice(0, n).map(norm);
   const fwd = top(sk.filter(p => p.pos !== 'D'), 14), def = top(sk.filter(p => p.pos === 'D'), 8);
   gk.sort((x, y) => y.gp - x.gp);
+  // depth-chart order first: with no probable or confirmed starter announced, the sim and the page start the first healthy goalie in this list.
+  // A listed goalie with no NHL games yet gets a league-average save percentage.
+  const ord = (depth || []).map(d => {
+    const i = gk.findIndex(g => g.name === d.name); if (i >= 0) return gk.splice(i, 1)[0];
+    const a = (ath || []).find(x => String(x.id) === d.id), inj = a ? injuryOf(a) : { out: false, note: '' };
+    return { name: d.name, out: inj.out, note: inj.note, gp: 0, sv: 0.905, sa: 0, gar: null };
+  });
+  gk.unshift(...ord);
   const saves = gk.reduce((a, g) => a + g.sv * g.sa, 0), sa = gk.reduce((a, g) => a + g.sa, 0);
   return { fwd, dmen: def, goalies: gk.map(g => ({ name: g.name, out: g.out, note: g.note, gp: g.gp, sv: g.sv, gar: g.gar })).slice(0, 3), garAvg: garAvg(gk), svAvg: sa ? r3(saves / sa) : 0.905 };
 }
@@ -255,13 +307,36 @@ function garAvg(gk) {
   return gp ? r3(w.reduce((a, g) => a + g.gar * g.gp, 0) / gp) : null;
 }
 
-function nflPlayers(rows) {
+// ESPN team depth chart (the same endpoint sportsdataverse's depth-chart wrappers read): one position's players in listed order, starter first.
+// Used for NFL quarterbacks and NHL goalies. The NBA chart was checked too, but its starters were already all in the player list, so it adds nothing there.
+async function depthOf(L, teamId, pos) {
+  const j = await get(SITE + LEAGUES[L].sport + '/' + L + '/teams/' + teamId + '/depthcharts');
+  for (const g of (j && j.depthchart) || []) {
+    const p = g.positions && (g.positions[pos] || g.positions[pos.toUpperCase()]);
+    if (p && p.athletes && p.athletes.length) return p.athletes.map(a => ({ id: String(a.id), name: a.displayName || a.fullName }));
+  }
+  return [];
+}
+
+function nflPlayers(rows, depth, ath) {
   const shrink = (num, den, prior, k) => (num + prior * k) / (den + k);
-  const all = rows.map(({ a, s, pos, inj }) => ({ name: a.fullName, pos, out: inj.out, note: inj.note, s }));
-  const qbs = all.filter(p => p.pos === 'QB' && (p.s.passingAttempts || 0) > 0).sort((x, y) => y.s.passingAttempts - x.s.passingAttempts).slice(0, 3).map((p, i) => ({
-    name: p.name, pos: 'QB', out: p.out, note: p.note, base: i === 0, att: r1(p.s.passingAttempts),
-    ypa: r3(shrink(p.s.passingYards || 0, p.s.passingAttempts, 6.9, 150)), cmp: r3(shrink(p.s.completions || 0, p.s.passingAttempts, 0.645, 150)),
-    int: r3(shrink(p.s.interceptions || 0, p.s.passingAttempts, 0.022, 150)), rush: r1((p.s.rushingAttempts || 0) / Math.max(1, p.s.__gp ? p.s.__gp : 1)) }));
+  const all = rows.map(({ a, s, pos, inj }) => ({ id: String(a.id), name: a.fullName, pos, out: inj.out, note: inj.note, s }));
+  const qbStat = p => ({ name: p.name, pos: 'QB', out: p.out, note: p.note, att: r1(p.s.passingAttempts || 0),
+    ypa: r3(shrink(p.s.passingYards || 0, p.s.passingAttempts || 0, 6.9, 150)), cmp: r3(shrink(p.s.completions || 0, p.s.passingAttempts || 0, 0.645, 150)),
+    int: r3(shrink(p.s.interceptions || 0, p.s.passingAttempts || 0, 0.022, 150)), rush: r1((p.s.rushingAttempts || 0) / Math.max(1, p.s.__gp ? p.s.__gp : 1)) });
+  // "base" = the QB with the most attempts, whose play the team rating already reflects. Who starts follows the depth chart:
+  // its QBs go first in listed order (a starter with no NFL attempts yet gets league-average numbers, and the sim's backup penalty), then the rest by attempts.
+  const byAtt = all.filter(p => p.pos === 'QB' && (p.s.passingAttempts || 0) > 0).sort((x, y) => y.s.passingAttempts - x.s.passingAttempts);
+  const list = [];
+  for (const d of (depth || []).slice(0, 3)) {
+    const p = all.find(x => x.id === d.id && x.pos === 'QB');
+    if (p && (p.s.passingAttempts || 0) > 0) { list.push({ ...qbStat(p), depth: list.length + 1 }); continue; }
+    const a = (ath || []).find(x => String(x.id) === d.id), inj = a ? injuryOf(a) : { out: false, note: '' };
+    list.push({ name: d.name, pos: 'QB', out: inj.out, note: inj.note, att: 0, ypa: 6.9, cmp: 0.645, int: 0.022, rush: 0, depth: list.length + 1 });
+  }
+  for (const p of byAtt) if (list.length < 3 || p === byAtt[0]) { if (!list.some(q => q.name === p.name)) list.push(qbStat(p)); }
+  if (byAtt[0]) { const b = list.find(q => q.name === byAtt[0].name); if (b) b.base = true; } else if (list[0]) list[0].base = true;
+  const qbs = list;
   const rbs = all.filter(p => (p.pos === 'RB' || p.pos === 'FB') && (p.s.rushingAttempts || 0) > 3).sort((x, y) => y.s.rushingAttempts - x.s.rushingAttempts).slice(0, 4).map(p => ({
     name: p.name, pos: 'RB', out: p.out, note: p.note, car: r1(p.s.rushingAttempts), ypc: r3(shrink(p.s.rushingYards || 0, p.s.rushingAttempts, 4.3, 40)), tgt: r1(p.s.receivingTargets || 0), rec: r1(p.s.receptions || 0), ryds: r1(p.s.receivingYards || 0) }));
   const rcv = all.filter(p => ['WR', 'TE', 'RB', 'FB'].includes(p.pos) && (p.s.receivingTargets || 0) > 3).map(p => ({
