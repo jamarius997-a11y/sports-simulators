@@ -24,7 +24,8 @@ function market(sp, g) {
   if (g.homeML != null && g.awayML != null) { const ph = imp(g.homeML), pa = imp(g.awayML); m.pHome = ph / (ph + pa); }
   const r = g.line && /^(\S+)\s+([+-]?\d+(?:\.\d+)?)$/.exec(g.line);
   if (r) {
-    const fav = r[1], v = parseFloat(r[2]), isHome = fav === g.home.abbr;
+    // the line can spell a team differently from the schedule (NHL "UTAH" vs "UTA"), so match on a shared prefix and rule out the away team first
+    const fav = r[1], v = parseFloat(r[2]), same = (x, y) => x === y || x.startsWith(y) || y.startsWith(x), isHome = fav !== g.away.abbr && same(fav, g.home.abbr);
     if (Math.abs(v) >= 100) { if (m.pHome == null) { const p = imp(v) / 1.045; m.pHome = isHome ? p : 1 - p; } }   // single-sided moneyline: remove a typical ~4.5% overround
     else { m.margin = isHome ? -v : v; if (m.pHome == null && SD[sp]) m.pHome = cdf(m.margin / SD[sp]); }
   }
