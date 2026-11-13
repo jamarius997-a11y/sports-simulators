@@ -6353,14 +6353,14 @@
    2,
    null
   ],
-  "simPHome": 0.7101,
-  "rawPHome": 0.6855,
-  "simMargin": 7.76,
+  "simPHome": 0.7052,
+  "rawPHome": 0.681,
+  "simMargin": 7.59,
   "simScore": [
-   109.14,
-   116.9
+   109.19,
+   116.78
   ],
-  "simTotal": 226.03,
+  "simTotal": 225.97,
   "inj": [
    [],
    [
@@ -6378,7 +6378,7 @@
    "pHome": 0.676902218822247,
    "margin": 5.5
   },
-  "loggedAt": "2026-11-12T19:21:29.485Z",
+  "loggedAt": "2026-11-13T00:57:24.397Z",
   "result": null
  },
  "nba:401909979": {
@@ -6398,14 +6398,14 @@
    2,
    1
   ],
-  "simPHome": 0.6864,
-  "rawPHome": 0.664,
-  "simMargin": 6.78,
+  "simPHome": 0.7013,
+  "rawPHome": 0.6775,
+  "simMargin": 7.5,
   "simScore": [
-   103.29,
-   110.08
+   102.61,
+   110.11
   ],
-  "simTotal": 213.37,
+  "simTotal": 212.73,
   "inj": [
    [
     {
@@ -6429,7 +6429,7 @@
    "pHome": 0.7063848054158584,
    "margin": 6.5
   },
-  "loggedAt": "2026-11-12T19:21:29.622Z",
+  "loggedAt": "2026-11-13T00:57:24.612Z",
   "result": null
  },
  "nfl:401873052": {
@@ -6449,15 +6449,15 @@
    null,
    null
   ],
-  "simPHome": 0.4093,
-  "rawPHome": 0.4135,
-  "simMargin": -2.37,
+  "simPHome": 0.4837,
+  "rawPHome": 0.4845,
+  "simMargin": -0.63,
   "simScore": [
-   22.03,
-   19.66
+   21.86,
+   21.23
   ],
-  "simTotal": 41.69,
-  "blendPHome": 0.5502,
+  "simTotal": 43.09,
+  "blendPHome": 0.536,
   "inj": [
    [
     {
@@ -6487,32 +6487,32 @@
      "out": true
     },
     {
-     "name": "J.J. McCarthy",
-     "pos": "QB",
-     "status": "Questionable",
-     "out": false
-    },
-    {
-     "name": "Cam Skattebo",
-     "pos": "RB",
+     "name": "Calvin Austin III",
+     "pos": "WR",
      "status": "Out",
      "out": true
     },
     {
-     "name": "Calvin Austin III",
-     "pos": "WR",
+     "name": "Brian Burns",
+     "pos": "LB",
+     "status": "Out",
+     "out": true
+    },
+    {
+     "name": "Tremaine Edmunds",
+     "pos": "LB",
      "status": "Out",
      "out": true
     }
    ]
   ],
   "mkt": {
-   "line": "NYG -2.5",
+   "line": "NYG -1.5",
    "total": 40.5,
-   "pHome": 0.5751279465321473,
-   "margin": 2.5
+   "pHome": 0.5452413381151207,
+   "margin": 1.5
   },
-  "loggedAt": "2026-11-12T19:21:31.747Z",
+  "loggedAt": "2026-11-13T00:57:27.064Z",
   "result": null
  },
  "nhl:401891808": {
@@ -6551,7 +6551,10 @@
    "margin": null
   },
   "loggedAt": "2026-11-12T00:48:41.349Z",
-  "result": null
+  "result": {
+   "homeScore": 1,
+   "awayScore": 4
+  }
  },
  "nhl:401892696": {
   "key": "nhl:401892696",
@@ -6887,29 +6890,23 @@
    "name": "Chicago Blackhawks"
   },
   "goalies": [
-   "Colten Ellis",
+   "Alex Lyon",
    "Spencer Knight"
   ],
   "rest": [
    0,
    null
   ],
-  "simPHome": 0.4894,
-  "rawPHome": 0.4875,
-  "simMargin": -0.1,
+  "simPHome": 0.4549,
+  "rawPHome": 0.447,
+  "simMargin": -0.35,
   "simScore": [
-   3.24,
-   3.14
+   3.26,
+   2.91
   ],
-  "simTotal": 6.37,
+  "simTotal": 6.17,
   "inj": [
    [
-    {
-     "name": "Alex Lyon",
-     "pos": "",
-     "status": "Out",
-     "out": true
-    },
     {
      "name": "Konsta Helenius",
      "pos": "C",
@@ -6917,14 +6914,7 @@
      "out": true
     }
    ],
-   [
-    {
-     "name": "Patrick Kane",
-     "pos": "RW",
-     "status": "Out",
-     "out": true
-    }
-   ]
+   []
   ],
   "mkt": {
    "line": "BUF -155",
@@ -6932,7 +6922,7 @@
    "pHome": 0.4183319260718642,
    "margin": null
   },
-  "loggedAt": "2026-11-12T19:21:32.080Z",
+  "loggedAt": "2026-11-13T00:57:27.204Z",
   "result": null
  },
  "nhl:401892703": {
@@ -6956,14 +6946,14 @@
    1,
    null
   ],
-  "simPHome": 0.5293,
-  "rawPHome": 0.5345,
-  "simMargin": 0.27,
+  "simPHome": 0.534,
+  "rawPHome": 0.54,
+  "simMargin": 0.28,
   "simScore": [
-   2.87,
-   3.13
+   2.88,
+   3.17
   ],
-  "simTotal": 6,
+  "simTotal": 6.05,
   "inj": [
    [],
    [
@@ -6976,12 +6966,12 @@
    ]
   ],
   "mkt": {
-   "line": "DAL -175",
+   "line": "DAL -155",
    "total": 5.5,
-   "pHome": 0.6089604175728578,
+   "pHome": 0.5816680739281358,
    "margin": null
   },
-  "loggedAt": "2026-11-12T19:21:32.112Z",
+  "loggedAt": "2026-11-13T00:57:27.258Z",
   "result": null
  },
  "nhl:401892704": {
@@ -7005,22 +6995,22 @@
    1,
    0
   ],
-  "simPHome": 0.4715,
-  "rawPHome": 0.4665,
-  "simMargin": -0.24,
+  "simPHome": 0.4957,
+  "rawPHome": 0.495,
+  "simMargin": -0.07,
   "simScore": [
-   2.93,
-   2.69
+   2.83,
+   2.76
   ],
-  "simTotal": 5.62,
+  "simTotal": 5.59,
   "inj": [
    [],
    [
     {
      "name": "Logan Cooley",
      "pos": "C",
-     "status": "Day-to-day",
-     "out": false
+     "status": "Out",
+     "out": true
     },
     {
      "name": "Nick Schmaltz",
@@ -7043,12 +7033,12 @@
    ]
   ],
   "mkt": {
-   "line": "UTAH -115",
-   "total": 6.5,
-   "pHome": 0.48814954934905974,
+   "line": "STL -130",
+   "total": 5.5,
+   "pHome": 0.4591221135843562,
    "margin": null
   },
-  "loggedAt": "2026-11-12T19:21:32.144Z",
+  "loggedAt": "2026-11-13T00:57:27.298Z",
   "result": null
  },
  "nhl:401892705": {
@@ -7072,19 +7062,19 @@
    2,
    1
   ],
-  "simPHome": 0.523,
-  "rawPHome": 0.527,
-  "simMargin": 0.16,
+  "simPHome": 0.483,
+  "rawPHome": 0.48,
+  "simMargin": -0.13,
   "simScore": [
-   3.11,
-   3.27
+   3.17,
+   3.04
   ],
-  "simTotal": 6.38,
+  "simTotal": 6.2,
   "inj": [
    [
     {
-     "name": "Matias Maccelli",
-     "pos": "LW",
+     "name": "Jean-Gabriel Pageau",
+     "pos": "C",
      "status": "Out",
      "out": true
     },
@@ -7095,14 +7085,7 @@
      "out": true
     }
    ],
-   [
-    {
-     "name": "Drew Doughty",
-     "pos": "D",
-     "status": "Day-to-day",
-     "out": false
-    }
-   ]
+   []
   ],
   "mkt": {
    "line": "LA -125",
@@ -7110,7 +7093,7 @@
    "pHome": 0.531632110579479,
    "margin": null
   },
-  "loggedAt": "2026-11-12T19:21:32.176Z",
+  "loggedAt": "2026-11-13T00:57:27.335Z",
   "result": null
  },
  "nba:401909296": {
@@ -7130,14 +7113,14 @@
    1,
    1
   ],
-  "simPHome": 0.2236,
-  "rawPHome": 0.253,
-  "simMargin": -10.6,
+  "simPHome": 0.2214,
+  "rawPHome": 0.251,
+  "simMargin": -10.87,
   "simScore": [
-   113.63,
-   103.03
+   114.3,
+   103.44
   ],
-  "simTotal": 216.66,
+  "simTotal": 217.74,
   "inj": [
    [],
    [
@@ -7150,12 +7133,12 @@
    ]
   ],
   "mkt": {
-   "line": null,
-   "total": null,
-   "pHome": null,
-   "margin": null
+   "line": "NY -6.5",
+   "total": 221.5,
+   "pHome": 0.2936151945841417,
+   "margin": -6.5
   },
-  "loggedAt": "2026-11-12T19:21:29.753Z",
+  "loggedAt": "2026-11-13T00:57:24.818Z",
   "result": null
  },
  "nba:401909297": {
@@ -7175,29 +7158,16 @@
    1,
    1
   ],
-  "simPHome": 0.7541,
-  "rawPHome": 0.726,
-  "simMargin": 9.47,
+  "simPHome": 0.7293,
+  "rawPHome": 0.703,
+  "simMargin": 8.76,
   "simScore": [
-   106.79,
-   116.27
+   108.01,
+   116.77
   ],
-  "simTotal": 223.06,
+  "simTotal": 224.78,
   "inj": [
-   [
-    {
-     "name": "Myles Turner",
-     "pos": "C",
-     "status": "Day-to-day",
-     "out": false
-    },
-    {
-     "name": "Ryan Rollins",
-     "pos": "G",
-     "status": "Day-to-day",
-     "out": false
-    }
-   ],
+   [],
    [
     {
      "name": "Tristan da Silva",
@@ -7208,12 +7178,12 @@
    ]
   ],
   "mkt": {
-   "line": null,
-   "total": null,
-   "pHome": null,
-   "margin": null
+   "line": "ORL -9.5",
+   "total": 222.5,
+   "pHome": 0.7867944967911461,
+   "margin": 9.5
   },
-  "loggedAt": "2026-11-12T19:21:29.889Z",
+  "loggedAt": "2026-11-13T00:57:24.978Z",
   "result": null
  },
  "nba:401909298": {
@@ -7233,16 +7203,22 @@
    1,
    2
   ],
-  "simPHome": 0.4506,
-  "rawPHome": 0.457,
-  "simMargin": -1.87,
+  "simPHome": 0.434,
+  "rawPHome": 0.4425,
+  "simMargin": -2.23,
   "simScore": [
-   120.93,
-   119.06
+   118.95,
+   116.73
   ],
-  "simTotal": 239.99,
+  "simTotal": 235.68,
   "inj": [
    [
+    {
+     "name": "Evan Mobley",
+     "pos": "C",
+     "status": "Out",
+     "out": true
+    },
     {
      "name": "Sam Merrill",
      "pos": "G",
@@ -7251,6 +7227,12 @@
     }
    ],
    [
+    {
+     "name": "Giannis Antetokounmpo",
+     "pos": "F",
+     "status": "Day-to-day",
+     "out": false
+    },
     {
      "name": "Pelle Larsson",
      "pos": "G",
@@ -7266,12 +7248,12 @@
    ]
   ],
   "mkt": {
-   "line": null,
-   "total": null,
-   "pHome": null,
-   "margin": null
+   "line": "MIA -1.5",
+   "total": 237.5,
+   "pHome": 0.5497440306511916,
+   "margin": 1.5
   },
-  "loggedAt": "2026-11-12T19:21:30.020Z",
+  "loggedAt": "2026-11-13T00:57:25.131Z",
   "result": null
  },
  "nba:401909299": {
@@ -7291,22 +7273,29 @@
    3,
    1
   ],
-  "simPHome": 0.1851,
-  "rawPHome": 0.216,
-  "simMargin": -13.04,
+  "simPHome": 0.1533,
+  "rawPHome": 0.1845,
+  "simMargin": -14.84,
   "simScore": [
-   128.35,
-   115.31
+   128.95,
+   114.11
   ],
-  "simTotal": 243.67,
+  "simTotal": 243.06,
   "inj": [
-   [],
+   [
+    {
+     "name": "Kingston Flemings",
+     "pos": "G",
+     "status": "Day-to-day",
+     "out": false
+    }
+   ],
    [
     {
      "name": "Caleb Wilson",
      "pos": "F",
-     "status": "Day-to-day",
-     "out": false
+     "status": "Out",
+     "out": true
     },
     {
      "name": "Norman Powell",
@@ -7317,12 +7306,12 @@
    ]
   ],
   "mkt": {
-   "line": null,
-   "total": null,
-   "pHome": null,
-   "margin": null
+   "line": "ATL -6.5",
+   "total": 246.5,
+   "pHome": 0.2936151945841417,
+   "margin": -6.5
   },
-  "loggedAt": "2026-11-12T19:21:30.155Z",
+  "loggedAt": "2026-11-13T00:57:25.292Z",
   "result": null
  },
  "nba:401909300": {
@@ -7342,16 +7331,22 @@
    1,
    1
   ],
-  "simPHome": 0.3342,
-  "rawPHome": 0.3545,
-  "simMargin": -6.42,
+  "simPHome": 0.3759,
+  "rawPHome": 0.3915,
+  "simMargin": -4.2,
   "simScore": [
-   123.49,
-   117.06
+   122.26,
+   118.06
   ],
-  "simTotal": 240.55,
+  "simTotal": 240.32,
   "inj": [
    [
+    {
+     "name": "Zach Edey",
+     "pos": "C",
+     "status": "Out",
+     "out": true
+    },
     {
      "name": "Scotty Pippen Jr.",
      "pos": "G",
@@ -7371,16 +7366,22 @@
      "pos": "G",
      "status": "Day-to-day",
      "out": false
+    },
+    {
+     "name": "Bryce McGowens",
+     "pos": "G",
+     "status": "Day-to-day",
+     "out": false
     }
    ]
   ],
   "mkt": {
-   "line": null,
-   "total": null,
-   "pHome": null,
-   "margin": null
+   "line": "MEM -4.5",
+   "total": 234.5,
+   "pHome": 0.3536833235002245,
+   "margin": -4.5
   },
-  "loggedAt": "2026-11-12T19:21:30.288Z",
+  "loggedAt": "2026-11-13T00:57:25.448Z",
   "result": null
  },
  "nba:401909301": {
@@ -7400,14 +7401,14 @@
    1,
    1
   ],
-  "simPHome": 0.9431,
-  "rawPHome": 0.92,
-  "simMargin": 22.91,
+  "simPHome": 0.9402,
+  "rawPHome": 0.9165,
+  "simMargin": 22.68,
   "simScore": [
-   100.27,
-   123.18
+   100.44,
+   123.12
   ],
-  "simTotal": 223.45,
+  "simTotal": 223.56,
   "inj": [
    [
     {
@@ -7420,12 +7421,12 @@
    []
   ],
   "mkt": {
-   "line": null,
-   "total": null,
-   "pHome": null,
-   "margin": null
+   "line": "HOU -17.5",
+   "total": 217.5,
+   "pHome": 0.9306316742002259,
+   "margin": 17.5
   },
-  "loggedAt": "2026-11-12T19:21:30.416Z",
+  "loggedAt": "2026-11-13T00:57:25.597Z",
   "result": null
  },
  "nba:401909302": {
@@ -7445,14 +7446,14 @@
    1,
    1
   ],
-  "simPHome": 0.8206,
-  "rawPHome": 0.7895,
-  "simMargin": 13.19,
+  "simPHome": 0.8026,
+  "rawPHome": 0.772,
+  "simMargin": 11.72,
   "simScore": [
-   105.3,
-   118.49
+   105.63,
+   117.34
   ],
-  "simTotal": 223.79,
+  "simTotal": 222.97,
   "inj": [
    [
     {
@@ -7470,6 +7471,12 @@
    ],
    [
     {
+     "name": "De'Aaron Fox",
+     "pos": "G",
+     "status": "Day-to-day",
+     "out": false
+    },
+    {
      "name": "Devin Vassell",
      "pos": "G",
      "status": "Day-to-day",
@@ -7478,12 +7485,12 @@
    ]
   ],
   "mkt": {
-   "line": null,
-   "total": null,
-   "pHome": null,
-   "margin": null
+   "line": "SA -13.5",
+   "total": 218.5,
+   "pHome": 0.8718987461253389,
+   "margin": 13.5
   },
-  "loggedAt": "2026-11-12T19:21:30.547Z",
+  "loggedAt": "2026-11-13T00:57:25.750Z",
   "result": null
  },
  "nba:401909303": {
@@ -7503,14 +7510,14 @@
    1,
    2
   ],
-  "simPHome": 0.1658,
-  "rawPHome": 0.197,
-  "simMargin": -13.21,
+  "simPHome": 0.181,
+  "rawPHome": 0.212,
+  "simMargin": -12.88,
   "simScore": [
-   123.01,
-   109.8
+   122.17,
+   109.3
   ],
-  "simTotal": 232.81,
+  "simTotal": 231.47,
   "inj": [
    [
     {
@@ -7536,12 +7543,12 @@
    ]
   ],
   "mkt": {
-   "line": null,
-   "total": null,
-   "pHome": null,
-   "margin": null
+   "line": "POR -10.5",
+   "total": 229.5,
+   "pHome": 0.18944159830705426,
+   "margin": -10.5
   },
-  "loggedAt": "2026-11-12T19:21:30.679Z",
+  "loggedAt": "2026-11-13T00:57:25.903Z",
   "result": null
  },
  "nba:401909304": {
@@ -7561,14 +7568,14 @@
    1,
    2
   ],
-  "simPHome": 0.3612,
-  "rawPHome": 0.3785,
-  "simMargin": -5.32,
+  "simPHome": 0.373,
+  "rawPHome": 0.389,
+  "simMargin": -5.09,
   "simScore": [
-   112.41,
-   107.09
+   112.17,
+   107.08
   ],
-  "simTotal": 219.49,
+  "simTotal": 219.25,
   "inj": [
    [
     {
@@ -7587,12 +7594,12 @@
    []
   ],
   "mkt": {
-   "line": null,
-   "total": null,
-   "pHome": null,
-   "margin": null
+   "line": "OKC -7.5",
+   "total": 221.5,
+   "pHome": 0.2653885083448069,
+   "margin": -7.5
   },
-  "loggedAt": "2026-11-12T19:21:30.809Z",
+  "loggedAt": "2026-11-13T00:57:26.054Z",
   "result": null
  },
  "nhl:401892706": {
@@ -7616,14 +7623,14 @@
    1,
    3
   ],
-  "simPHome": 0.5026,
-  "rawPHome": 0.503,
-  "simMargin": 0.03,
+  "simPHome": 0.4817,
+  "rawPHome": 0.4785,
+  "simMargin": -0.13,
   "simScore": [
-   3.08,
-   3.11
+   3.15,
+   3.02
   ],
-  "simTotal": 6.19,
+  "simTotal": 6.17,
   "inj": [
    [
     {
@@ -7666,7 +7673,7 @@
    "pHome": 0.3375046006624953,
    "margin": null
   },
-  "loggedAt": "2026-11-12T19:21:32.222Z",
+  "loggedAt": "2026-11-13T00:57:27.377Z",
   "result": null
  },
  "nhl:401892707": {
@@ -7690,14 +7697,14 @@
    1,
    1
   ],
-  "simPHome": 0.5716,
-  "rawPHome": 0.584,
-  "simMargin": 0.41,
+  "simPHome": 0.5579,
+  "rawPHome": 0.568,
+  "simMargin": 0.35,
   "simScore": [
    3.01,
-   3.43
+   3.36
   ],
-  "simTotal": 6.44,
+  "simTotal": 6.37,
   "inj": [
    [
     {
@@ -7717,12 +7724,12 @@
    ]
   ],
   "mkt": {
-   "line": "VGK -192",
+   "line": "VGK -185",
    "total": 5.5,
-   "pHome": 0.6292193747132464,
+   "pHome": 0.6211701502560228,
    "margin": null
   },
-  "loggedAt": "2026-11-12T19:21:32.254Z",
+  "loggedAt": "2026-11-13T00:57:27.414Z",
   "result": null
  },
  "nba:401909980": {
@@ -7744,12 +7751,12 @@
   ],
   "simPHome": 0.231,
   "rawPHome": 0.26,
-  "simMargin": -10.17,
+  "simMargin": -10.44,
   "simScore": [
-   125.8,
-   115.62
+   125.9,
+   115.46
   ],
-  "simTotal": 241.42,
+  "simTotal": 241.35,
   "inj": [
    [],
    [
@@ -7764,6 +7771,12 @@
      "pos": "G",
      "status": "Day-to-day",
      "out": false
+    },
+    {
+     "name": "Bryce McGowens",
+     "pos": "G",
+     "status": "Day-to-day",
+     "out": false
     }
    ]
   ],
@@ -7773,7 +7786,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-12T19:21:30.940Z",
+  "loggedAt": "2026-11-13T00:57:26.207Z",
   "result": null
  },
  "nba:401909981": {
@@ -7793,17 +7806,23 @@
    1,
    0
   ],
-  "simPHome": 0.5563,
-  "rawPHome": 0.549,
-  "simMargin": 1.99,
+  "simPHome": 0.4558,
+  "rawPHome": 0.4615,
+  "simMargin": -1.23,
   "simScore": [
-   114.89,
-   116.88
+   115.83,
+   114.61
   ],
-  "simTotal": 231.78,
+  "simTotal": 230.44,
   "inj": [
    [],
    [
+    {
+     "name": "Evan Mobley",
+     "pos": "C",
+     "status": "Out",
+     "out": true
+    },
     {
      "name": "Sam Merrill",
      "pos": "G",
@@ -7818,7 +7837,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-12T19:21:31.069Z",
+  "loggedAt": "2026-11-13T00:57:26.356Z",
   "result": null
  },
  "nba:401909982": {
@@ -7835,20 +7854,26 @@
    "name": "Miami Heat"
   },
   "rest": [
-   1,
+   4,
    0
   ],
-  "simPHome": 0.261,
-  "rawPHome": 0.288,
-  "simMargin": -9.04,
+  "simPHome": 0.2021,
+  "rawPHome": 0.2325,
+  "simMargin": -11.84,
   "simScore": [
-   118.79,
-   109.75
+   119.67,
+   107.83
   ],
-  "simTotal": 228.54,
+  "simTotal": 227.5,
   "inj": [
    [],
    [
+    {
+     "name": "Giannis Antetokounmpo",
+     "pos": "F",
+     "status": "Day-to-day",
+     "out": false
+    },
     {
      "name": "Pelle Larsson",
      "pos": "G",
@@ -7869,7 +7894,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-12T19:21:31.200Z",
+  "loggedAt": "2026-11-13T00:57:26.508Z",
   "result": null
  },
  "nba:401909983": {
@@ -7889,14 +7914,14 @@
    2,
    0
   ],
-  "simPHome": 0.6969,
-  "rawPHome": 0.6735,
-  "simMargin": 7.63,
+  "simPHome": 0.7002,
+  "rawPHome": 0.6765,
+  "simMargin": 7.51,
   "simScore": [
-   109.6,
-   117.24
+   109.39,
+   116.9
   ],
-  "simTotal": 226.84,
+  "simTotal": 226.3,
   "inj": [
    [
     {
@@ -7914,6 +7939,12 @@
    ],
    [
     {
+     "name": "Zach Edey",
+     "pos": "C",
+     "status": "Out",
+     "out": true
+    },
+    {
      "name": "Scotty Pippen Jr.",
      "pos": "G",
      "status": "Out",
@@ -7927,7 +7958,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-12T19:21:31.334Z",
+  "loggedAt": "2026-11-13T00:57:26.664Z",
   "result": null
  },
  "nba:401909984": {
@@ -7947,21 +7978,21 @@
    0,
    1
   ],
-  "simPHome": 0.9372,
-  "rawPHome": 0.913,
-  "simMargin": 22.2,
+  "simPHome": 0.9551,
+  "rawPHome": 0.9345,
+  "simMargin": 24.56,
   "simScore": [
-   106.98,
-   129.17
+   105.01,
+   129.57
   ],
-  "simTotal": 236.15,
+  "simTotal": 234.59,
   "inj": [
    [
     {
      "name": "Caleb Wilson",
      "pos": "F",
-     "status": "Day-to-day",
-     "out": false
+     "status": "Out",
+     "out": true
     },
     {
      "name": "Norman Powell",
@@ -7985,7 +8016,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-12T19:21:31.466Z",
+  "loggedAt": "2026-11-13T00:57:26.816Z",
   "result": null
  },
  "nhl:401891809": {
@@ -8009,14 +8040,14 @@
    null,
    null
   ],
-  "simPHome": 0.647,
-  "rawPHome": 0.671,
-  "simMargin": 1.12,
+  "simPHome": 0.6646,
+  "rawPHome": 0.691,
+  "simMargin": 1.19,
   "simScore": [
-   2.49,
-   3.61
+   2.48,
+   3.67
   ],
-  "simTotal": 6.09,
+  "simTotal": 6.14,
   "inj": [
    [
     {
@@ -8034,7 +8065,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-12T19:21:32.285Z",
+  "loggedAt": "2026-11-13T00:57:27.452Z",
   "result": null
  },
  "nhl:401892708": {
@@ -8058,24 +8089,17 @@
    1,
    1
   ],
-  "simPHome": 0.4587,
-  "rawPHome": 0.4515,
-  "simMargin": -0.27,
+  "simPHome": 0.4438,
+  "rawPHome": 0.434,
+  "simMargin": -0.43,
   "simScore": [
-   3.2,
-   2.93
+   3.28,
+   2.85
   ],
   "simTotal": 6.13,
   "inj": [
    [],
-   [
-    {
-     "name": "Patrick Kane",
-     "pos": "RW",
-     "status": "Out",
-     "out": true
-    }
-   ]
+   []
   ],
   "mkt": {
    "line": null,
@@ -8083,7 +8107,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-12T19:21:32.316Z",
+  "loggedAt": "2026-11-13T00:57:27.489Z",
   "result": null
  },
  "nhl:401892709": {
@@ -8104,17 +8128,17 @@
    "Jeremy Swayman"
   ],
   "rest": [
-   1,
-   1
+   3,
+   null
   ],
-  "simPHome": 0.4481,
-  "rawPHome": 0.439,
-  "simMargin": -0.32,
+  "simPHome": 0.4348,
+  "rawPHome": 0.4235,
+  "simMargin": -0.38,
   "simScore": [
-   3.1,
-   2.78
+   3.09,
+   2.71
   ],
-  "simTotal": 5.88,
+  "simTotal": 5.8,
   "inj": [
    [],
    []
@@ -8125,7 +8149,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-12T19:21:32.347Z",
+  "loggedAt": "2026-11-13T00:57:27.525Z",
   "result": null
  },
  "nhl:401892710": {
@@ -8147,16 +8171,16 @@
   ],
   "rest": [
    2,
-   1
+   3
   ],
-  "simPHome": 0.4494,
-  "rawPHome": 0.4405,
+  "simPHome": 0.4668,
+  "rawPHome": 0.461,
   "simMargin": -0.3,
   "simScore": [
-   3.23,
-   2.93
+   3.27,
+   2.97
   ],
-  "simTotal": 6.16,
+  "simTotal": 6.25,
   "inj": [
    [
     {
@@ -8181,7 +8205,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-12T19:21:32.379Z",
+  "loggedAt": "2026-11-13T00:57:27.563Z",
   "result": null
  },
  "nhl:401892711": {
@@ -8202,17 +8226,17 @@
    "Jacob Fowler"
   ],
   "rest": [
-   1,
-   1
+   3,
+   3
   ],
-  "simPHome": 0.5306,
-  "rawPHome": 0.536,
+  "simPHome": 0.5404,
+  "rawPHome": 0.5475,
   "simMargin": 0.29,
   "simScore": [
-   2.92,
-   3.21
+   2.94,
+   3.23
   ],
-  "simTotal": 6.13,
+  "simTotal": 6.16,
   "inj": [
    [
     {
@@ -8237,7 +8261,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-12T19:21:32.411Z",
+  "loggedAt": "2026-11-13T00:57:27.600Z",
   "result": null
  },
  "nhl:401892712": {
@@ -8258,17 +8282,17 @@
    "Andrei Vasilevskiy"
   ],
   "rest": [
-   1,
-   1
+   3,
+   2
   ],
-  "simPHome": 0.5922,
-  "rawPHome": 0.608,
-  "simMargin": 0.66,
+  "simPHome": 0.6034,
+  "rawPHome": 0.621,
+  "simMargin": 0.72,
   "simScore": [
-   2.88,
-   3.54
+   2.83,
+   3.55
   ],
-  "simTotal": 6.42,
+  "simTotal": 6.39,
   "inj": [
    [
     {
@@ -8290,6 +8314,12 @@
      "pos": "D",
      "status": "Out",
      "out": true
+    },
+    {
+     "name": "Anthony Cirelli",
+     "pos": "C",
+     "status": "Out",
+     "out": true
     }
    ]
   ],
@@ -8299,7 +8329,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-12T19:21:32.443Z",
+  "loggedAt": "2026-11-13T00:57:27.638Z",
   "result": null
  },
  "nhl:401892713": {
@@ -8320,17 +8350,17 @@
    "Arturs Silovs"
   ],
   "rest": [
-   1,
+   3,
    2
   ],
-  "simPHome": 0.5166,
-  "rawPHome": 0.5195,
-  "simMargin": 0.17,
+  "simPHome": 0.5323,
+  "rawPHome": 0.538,
+  "simMargin": 0.19,
   "simScore": [
-   3.17,
-   3.34
+   3.2,
+   3.39
   ],
-  "simTotal": 6.5,
+  "simTotal": 6.59,
   "inj": [
    [
     {
@@ -8361,7 +8391,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-12T19:21:32.475Z",
+  "loggedAt": "2026-11-13T00:57:27.676Z",
   "result": null
  },
  "nhl:401892714": {
@@ -8382,17 +8412,17 @@
    "Logan Thompson"
   ],
   "rest": [
-   1,
-   1
+   3,
+   3
   ],
-  "simPHome": 0.5319,
-  "rawPHome": 0.5375,
-  "simMargin": 0.23,
+  "simPHome": 0.5009,
+  "rawPHome": 0.501,
+  "simMargin": 0.13,
   "simScore": [
-   2.88,
-   3.11
+   2.91,
+   3.04
   ],
-  "simTotal": 5.98,
+  "simTotal": 5.94,
   "inj": [
    [
     {
@@ -8417,7 +8447,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-12T19:21:32.512Z",
+  "loggedAt": "2026-11-13T00:57:27.713Z",
   "result": null
  },
  "nhl:401892715": {
@@ -8439,16 +8469,16 @@
   ],
   "rest": [
    2,
-   1
+   3
   ],
-  "simPHome": 0.5255,
-  "rawPHome": 0.53,
-  "simMargin": 0.22,
+  "simPHome": 0.5647,
+  "rawPHome": 0.576,
+  "simMargin": 0.38,
   "simScore": [
-   2.89,
-   3.11
+   2.79,
+   3.17
   ],
-  "simTotal": 6,
+  "simTotal": 5.95,
   "inj": [
    [],
    []
@@ -8459,7 +8489,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-12T19:21:32.543Z",
+  "loggedAt": "2026-11-13T00:57:27.750Z",
   "result": null
  },
  "nhl:401892716": {
@@ -8480,17 +8510,17 @@
    "Joel Hofer"
   ],
   "rest": [
-   1,
+   3,
    1
   ],
-  "simPHome": 0.5806,
-  "rawPHome": 0.5945,
-  "simMargin": 0.66,
+  "simPHome": 0.5909,
+  "rawPHome": 0.6065,
+  "simMargin": 0.65,
   "simScore": [
-   2.62,
-   3.28
+   2.55,
+   3.2
   ],
-  "simTotal": 5.9,
+  "simTotal": 5.75,
   "inj": [
    [],
    []
@@ -8501,7 +8531,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-12T19:21:32.574Z",
+  "loggedAt": "2026-11-13T00:57:27.787Z",
   "result": null
  },
  "nhl:401892717": {
@@ -8525,22 +8555,16 @@
    1,
    1
   ],
-  "simPHome": 0.5617,
-  "rawPHome": 0.5725,
+  "simPHome": 0.5703,
+  "rawPHome": 0.5825,
   "simMargin": 0.44,
   "simScore": [
-   2.92,
-   3.36
+   2.87,
+   3.31
   ],
-  "simTotal": 6.28,
+  "simTotal": 6.18,
   "inj": [
    [
-    {
-     "name": "Alex Lyon",
-     "pos": "",
-     "status": "Out",
-     "out": true
-    },
     {
      "name": "Konsta Helenius",
      "pos": "C",
@@ -8563,7 +8587,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-12T19:21:32.606Z",
+  "loggedAt": "2026-11-13T00:57:27.824Z",
   "result": null
  },
  "nhl:401892718": {
@@ -8587,14 +8611,14 @@
    2,
    1
   ],
-  "simPHome": 0.6099,
-  "rawPHome": 0.6285,
-  "simMargin": 0.83,
+  "simPHome": 0.6229,
+  "rawPHome": 0.6435,
+  "simMargin": 0.86,
   "simScore": [
    2.8,
-   3.63
+   3.66
   ],
-  "simTotal": 6.43,
+  "simTotal": 6.46,
   "inj": [
    [
     {
@@ -8608,8 +8632,8 @@
     {
      "name": "Logan Cooley",
      "pos": "C",
-     "status": "Day-to-day",
-     "out": false
+     "status": "Out",
+     "out": true
     },
     {
      "name": "Nick Schmaltz",
@@ -8637,7 +8661,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-12T19:21:32.639Z",
+  "loggedAt": "2026-11-13T00:57:27.863Z",
   "result": null
  },
  "nhl:401892719": {
@@ -8661,19 +8685,19 @@
    1,
    2
   ],
-  "simPHome": 0.5187,
-  "rawPHome": 0.522,
-  "simMargin": 0.18,
+  "simPHome": 0.5081,
+  "rawPHome": 0.5095,
+  "simMargin": 0.15,
   "simScore": [
-   3.12,
+   3.15,
    3.3
   ],
-  "simTotal": 6.42,
+  "simTotal": 6.44,
   "inj": [
    [
     {
-     "name": "Matias Maccelli",
-     "pos": "LW",
+     "name": "Jean-Gabriel Pageau",
+     "pos": "C",
      "status": "Out",
      "out": true
     },
@@ -8692,7 +8716,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-12T19:21:32.671Z",
+  "loggedAt": "2026-11-13T00:57:27.900Z",
   "result": null
  },
  "nhl:401892720": {
@@ -8716,12 +8740,12 @@
    2,
    1
   ],
-  "simPHome": 0.5562,
-  "rawPHome": 0.566,
-  "simMargin": 0.35,
+  "simPHome": 0.5575,
+  "rawPHome": 0.5675,
+  "simMargin": 0.37,
   "simScore": [
-   3.04,
-   3.39
+   3.03,
+   3.4
   ],
   "simTotal": 6.43,
   "inj": [
@@ -8733,14 +8757,7 @@
      "out": true
     }
    ],
-   [
-    {
-     "name": "Drew Doughty",
-     "pos": "D",
-     "status": "Day-to-day",
-     "out": false
-    }
-   ]
+   []
   ],
   "mkt": {
    "line": null,
@@ -8748,7 +8765,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-12T19:21:32.703Z",
+  "loggedAt": "2026-11-13T00:57:27.937Z",
   "result": null
  }
 }
