@@ -445,7 +445,20 @@ async function schedule(L, days) {
   }
   if (L === 'nhl') await nhlConfirm(uniq);
   if (L === 'nfl') await nflWeather(uniq);
+  if (L !== 'nhl') await espnPredictor(L, uniq);
   return uniq;
+}
+
+// ESPN's own matchup predictor (BPI for NBA, FPI for NFL): home win chance from the game summary. ESPN drops it once a game ends, so it
+// cannot be backtested; it is logged with each pick (log-picks.js) and shown on the card so it can be judged against results over time.
+async function espnPredictor(L, games) {
+  let n = 0;
+  await pool(games, 6, async g => {
+    const j = await get(SITE + LEAGUES[L].sport + '/' + L + '/summary?event=' + g.id), h = j && j.predictor && j.predictor.homeTeam;
+    const p = h ? parseFloat(h.gameProjection) / 100 : NaN;
+    if (p > 0 && p < 1) { g.espnP = Math.round(p * 1000) / 1000; n++; }
+  });
+  console.log('  ESPN predictor: ' + n + ' of ' + games.length + ' ' + L.toUpperCase() + ' games');
 }
 
 // NFL kickoff weather from Open-Meteo's free forecast (no key): wind (mph) and temperature (F) at the home stadium for the kickoff hour.

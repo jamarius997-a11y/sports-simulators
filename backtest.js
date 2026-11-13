@@ -7,7 +7,7 @@ const Sim = require('./sim.js');
 
 const SEASONS = {
   nba: { sport: 'basketball', start: '2025-10-21', end: '2026-04-12', k: 10, minGp: 12, sims: 400, lg: 114, w: 8, priorYear: 2025, rest: true },
-  nhl: { sport: 'hockey', start: '2025-10-07', end: '2026-04-16', k: 15, minGp: 12, sims: 400, lg: null, w: 5, priorYear: 2024, shrink: 50 },
+  nhl: { sport: 'hockey', start: '2025-10-07', end: '2026-04-16', k: 15, minGp: 12, sims: 400, lg: null, w: 5, priorYear: 2024, shrink: 50, rest: true },
   nfl: { sport: 'football', start: '2025-09-04', end: '2026-01-05', k: 5, minGp: 5, sims: 300, lg: null, w: 3, priorYear: 2024 },
 };
 // BT_YEAR=2024 re-runs the identical settings on the 2024-25 season (out-of-sample check; writes cache/oos_results.json, not the page)

@@ -7158,14 +7158,15 @@
    1,
    1
   ],
-  "simPHome": 0.2315,
-  "rawPHome": 0.2605,
-  "simMargin": -10.44,
+  "espnPHome": 0.226,
+  "simPHome": 0.2241,
+  "rawPHome": 0.2535,
+  "simMargin": -10.45,
   "simScore": [
-   114.12,
-   103.68
+   114.33,
+   103.88
   ],
-  "simTotal": 217.81,
+  "simTotal": 218.21,
   "inj": [
    [],
    []
@@ -7175,6 +7176,12 @@
     "t": "2026-11-13T22:39:59.919Z",
     "pHome": 0.2385,
     "margin": -8.5,
+    "total": 219.5
+   },
+   {
+    "t": "2026-11-13T23:56:35.007Z",
+    "pHome": 0.2654,
+    "margin": -7.5,
     "total": 219.5
    }
   ],
@@ -7187,12 +7194,12 @@
    null
   ],
   "mkt": {
-   "line": "NY -8.5",
+   "line": "NY -7.5",
    "total": 219.5,
-   "pHome": 0.23854917523700098,
-   "margin": -8.5
+   "pHome": 0.2653885083448069,
+   "margin": -7.5
   },
-  "loggedAt": "2026-11-13T23:23:32.635Z",
+  "loggedAt": "2026-11-13T23:56:35.007Z",
   "result": null
  },
  "nba:401909297": {
@@ -7212,14 +7219,15 @@
    1,
    1
   ],
-  "simPHome": 0.7477,
-  "rawPHome": 0.72,
-  "simMargin": 9.36,
+  "espnPHome": 0.775,
+  "simPHome": 0.7712,
+  "rawPHome": 0.742,
+  "simMargin": 10.81,
   "simScore": [
-   107.99,
-   117.35
+   107.01,
+   117.82
   ],
-  "simTotal": 225.33,
+  "simTotal": 224.83,
   "inj": [
    [],
    []
@@ -7250,7 +7258,7 @@
    "pHome": 0.7867944967911461,
    "margin": 9.5
   },
-  "loggedAt": "2026-11-13T23:23:32.789Z",
+  "loggedAt": "2026-11-13T23:56:35.152Z",
   "result": null
  },
  "nba:401909298": {
@@ -7270,14 +7278,15 @@
    1,
    2
   ],
-  "simPHome": 0.4638,
-  "rawPHome": 0.4685,
-  "simMargin": -1.36,
+  "espnPHome": 0.452,
+  "simPHome": 0.469,
+  "rawPHome": 0.473,
+  "simMargin": -0.98,
   "simScore": [
-   120.59,
-   119.23
+   120.08,
+   119.1
   ],
-  "simTotal": 239.81,
+  "simTotal": 239.17,
   "inj": [
    [
     {
@@ -7303,8 +7312,8 @@
     {
      "name": "Klay Thompson",
      "pos": "G",
-     "status": "Day-to-day",
-     "out": false
+     "status": "Out",
+     "out": true
     }
    ]
   ],
@@ -7314,6 +7323,12 @@
     "pHome": 0.5825,
     "margin": 2.5,
     "total": 236.5
+   },
+   {
+    "t": "2026-11-13T23:56:35.291Z",
+    "pHome": 0.5825,
+    "margin": 2.5,
+    "total": 234.5
    }
   ],
   "travel": [
@@ -7330,11 +7345,11 @@
   ],
   "mkt": {
    "line": "MIA -2.5",
-   "total": 236.5,
+   "total": 234.5,
    "pHome": 0.5825421413264573,
    "margin": 2.5
   },
-  "loggedAt": "2026-11-13T23:23:32.934Z",
+  "loggedAt": "2026-11-13T23:56:35.291Z",
   "result": null
  },
  "nba:401909299": {
@@ -7354,35 +7369,23 @@
    null,
    1
   ],
-  "simPHome": 0.201,
-  "rawPHome": 0.2315,
-  "simMargin": -12.58,
+  "espnPHome": 0.25,
+  "simPHome": 0.1815,
+  "rawPHome": 0.2125,
+  "simMargin": -12.79,
   "simScore": [
-   128.53,
-   115.95
+   129.12,
+   116.33
   ],
-  "simTotal": 244.48,
+  "simTotal": 245.45,
   "inj": [
-   [
-    {
-     "name": "Kingston Flemings",
-     "pos": "G",
-     "status": "Day-to-day",
-     "out": false
-    }
-   ],
+   [],
    [
     {
      "name": "Caleb Wilson",
      "pos": "F",
      "status": "Out",
      "out": true
-    },
-    {
-     "name": "Norman Powell",
-     "pos": "G",
-     "status": "Day-to-day",
-     "out": false
     }
    ]
   ],
@@ -7392,6 +7395,12 @@
     "pHome": 0.2654,
     "margin": -7.5,
     "total": 245.5
+   },
+   {
+    "t": "2026-11-13T23:56:35.435Z",
+    "pHome": 0.2936,
+    "margin": -6.5,
+    "total": 246.5
    }
   ],
   "travel": [
@@ -7399,12 +7408,12 @@
    null
   ],
   "mkt": {
-   "line": "ATL -7.5",
-   "total": 245.5,
-   "pHome": 0.2653885083448069,
-   "margin": -7.5
+   "line": "ATL -6.5",
+   "total": 246.5,
+   "pHome": 0.2936151945841417,
+   "margin": -6.5
   },
-  "loggedAt": "2026-11-13T23:23:33.082Z",
+  "loggedAt": "2026-11-13T23:56:35.435Z",
   "result": null
  },
  "nba:401909300": {
@@ -7424,14 +7433,15 @@
    1,
    1
   ],
-  "simPHome": 0.3025,
-  "rawPHome": 0.326,
-  "simMargin": -7.91,
+  "espnPHome": 0.407,
+  "simPHome": 0.318,
+  "rawPHome": 0.34,
+  "simMargin": -6.96,
   "simScore": [
-   124.06,
-   116.15
+   123.92,
+   116.97
   ],
-  "simTotal": 240.2,
+  "simTotal": 240.89,
   "inj": [
    [
     {
@@ -7453,12 +7463,6 @@
      "pos": "F",
      "status": "Out",
      "out": true
-    },
-    {
-     "name": "Bennedict Mathurin",
-     "pos": "G",
-     "status": "Day-to-day",
-     "out": false
     },
     {
      "name": "Dejounte Murray",
@@ -7496,7 +7500,7 @@
    "pHome": 0.38519960278756193,
    "margin": -3.5
   },
-  "loggedAt": "2026-11-13T23:23:33.214Z",
+  "loggedAt": "2026-11-13T23:56:35.566Z",
   "result": null
  },
  "nba:401909301": {
@@ -7516,14 +7520,15 @@
    1,
    1
   ],
-  "simPHome": 0.9238,
-  "rawPHome": 0.8975,
-  "simMargin": 21.27,
+  "espnPHome": 0.885,
+  "simPHome": 0.9269,
+  "rawPHome": 0.901,
+  "simMargin": 20.92,
   "simScore": [
-   102.33,
-   123.61
+   102.66,
+   123.58
   ],
-  "simTotal": 225.94,
+  "simTotal": 226.24,
   "inj": [
    [
     {
@@ -7557,7 +7562,7 @@
    "pHome": 0.904439176173002,
    "margin": 15.5
   },
-  "loggedAt": "2026-11-13T23:23:33.347Z",
+  "loggedAt": "2026-11-13T23:56:35.704Z",
   "result": null
  },
  "nba:401909302": {
@@ -7577,14 +7582,15 @@
    1,
    1
   ],
-  "simPHome": 0.7669,
-  "rawPHome": 0.738,
-  "simMargin": 10.56,
+  "espnPHome": 0.867,
+  "simPHome": 0.7849,
+  "rawPHome": 0.755,
+  "simMargin": 11.28,
   "simScore": [
-   108.72,
-   119.28
+   107.89,
+   119.17
   ],
-  "simTotal": 228,
+  "simTotal": 227.06,
   "inj": [
    [
     {
@@ -7621,6 +7627,12 @@
     "pHome": 0.8531,
     "margin": 12.5,
     "total": 218.5
+   },
+   {
+    "t": "2026-11-13T23:56:35.842Z",
+    "pHome": 0.8531,
+    "margin": 12.5,
+    "total": 217.5
    }
   ],
   "travel": [
@@ -7637,11 +7649,11 @@
   ],
   "mkt": {
    "line": "SA -12.5",
-   "total": 218.5,
+   "total": 217.5,
    "pHome": 0.85313359197803,
    "margin": 12.5
   },
-  "loggedAt": "2026-11-13T23:23:33.493Z",
+  "loggedAt": "2026-11-13T23:56:35.842Z",
   "result": null
  },
  "nba:401909303": {
@@ -7661,14 +7673,15 @@
    1,
    2
   ],
-  "simPHome": 0.1483,
-  "rawPHome": 0.1795,
-  "simMargin": -14.21,
+  "espnPHome": 0.175,
+  "simPHome": 0.1723,
+  "rawPHome": 0.2035,
+  "simMargin": -13.72,
   "simScore": [
-   123.2,
-   108.99
+   122.57,
+   108.85
   ],
-  "simTotal": 232.18,
+  "simTotal": 231.42,
   "inj": [
    [
     {
@@ -7715,7 +7728,7 @@
    "pHome": 0.18944159830705426,
    "margin": -10.5
   },
-  "loggedAt": "2026-11-13T23:23:33.627Z",
+  "loggedAt": "2026-11-13T23:56:35.980Z",
   "result": null
  },
  "nba:401909304": {
@@ -7735,14 +7748,15 @@
    1,
    2
   ],
-  "simPHome": 0.3793,
-  "rawPHome": 0.3945,
-  "simMargin": -4.86,
+  "espnPHome": 0.237,
+  "simPHome": 0.3713,
+  "rawPHome": 0.3875,
+  "simMargin": -4.68,
   "simScore": [
-   112.46,
-   107.6
+   112.29,
+   107.61
   ],
-  "simTotal": 220.06,
+  "simTotal": 219.91,
   "inj": [
    [
     {
@@ -7786,7 +7800,7 @@
    "pHome": 0.2653885083448069,
    "margin": -7.5
   },
-  "loggedAt": "2026-11-13T23:23:33.764Z",
+  "loggedAt": "2026-11-13T23:56:36.112Z",
   "result": null
  },
  "nhl:401892706": {
@@ -7814,14 +7828,14 @@
    1,
    null
   ],
-  "simPHome": 0.4851,
-  "rawPHome": 0.4825,
+  "simPHome": 0.485,
+  "rawPHome": 0.485,
   "simMargin": -0.1,
   "simScore": [
-   3.09,
-   2.99
+   3.11,
+   3.01
   ],
-  "simTotal": 6.08,
+  "simTotal": 6.12,
   "inj": [
    [
     {
@@ -7868,7 +7882,7 @@
    "pHome": 0.3375046006624953,
    "margin": null
   },
-  "loggedAt": "2026-11-13T23:23:37.261Z",
+  "loggedAt": "2026-11-13T23:56:39.103Z",
   "result": null
  },
  "nhl:401892707": {
@@ -7896,14 +7910,14 @@
    1,
    1
   ],
-  "simPHome": 0.5605,
-  "rawPHome": 0.571,
-  "simMargin": 0.43,
+  "simPHome": 0.5365,
+  "rawPHome": 0.5365,
+  "simMargin": 0.29,
   "simScore": [
-   2.94,
-   3.37
+   3.01,
+   3.3
   ],
-  "simTotal": 6.3,
+  "simTotal": 6.31,
   "inj": [
    [
     {
@@ -7944,7 +7958,7 @@
    "pHome": 0.5916943642938018,
    "margin": null
   },
-  "loggedAt": "2026-11-13T23:23:37.313Z",
+  "loggedAt": "2026-11-13T23:56:39.137Z",
   "result": null
  },
  "nba:401909980": {
@@ -7964,14 +7978,15 @@
    2,
    0
   ],
-  "simPHome": 0.1964,
-  "rawPHome": 0.227,
-  "simMargin": -12.12,
+  "espnPHome": 0.215,
+  "simPHome": 0.1897,
+  "rawPHome": 0.2205,
+  "simMargin": -12.09,
   "simScore": [
-   126.83,
-   114.71
+   127.11,
+   115.02
   ],
-  "simTotal": 241.54,
+  "simTotal": 242.13,
   "inj": [
    [],
    [
@@ -7980,12 +7995,6 @@
      "pos": "F",
      "status": "Out",
      "out": true
-    },
-    {
-     "name": "Bennedict Mathurin",
-     "pos": "G",
-     "status": "Day-to-day",
-     "out": false
     },
     {
      "name": "Dejounte Murray",
@@ -8023,7 +8032,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-13T23:23:33.902Z",
+  "loggedAt": "2026-11-13T23:56:36.244Z",
   "result": null
  },
  "nba:401909981": {
@@ -8043,14 +8052,15 @@
    1,
    0
   ],
-  "simPHome": 0.5574,
-  "rawPHome": 0.55,
-  "simMargin": 1.99,
+  "espnPHome": 0.665,
+  "simPHome": 0.5448,
+  "rawPHome": 0.539,
+  "simMargin": 1.72,
   "simScore": [
-   114.49,
-   116.48
+   114.82,
+   116.54
   ],
-  "simTotal": 230.98,
+  "simTotal": 231.36,
   "inj": [
    [
     {
@@ -8101,7 +8111,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-13T23:23:34.042Z",
+  "loggedAt": "2026-11-13T23:56:36.378Z",
   "result": null
  },
  "nba:401909982": {
@@ -8121,14 +8131,15 @@
    1,
    0
   ],
-  "simPHome": 0.2448,
-  "rawPHome": 0.273,
-  "simMargin": -9.79,
+  "espnPHome": 0.427,
+  "simPHome": 0.2422,
+  "rawPHome": 0.2705,
+  "simMargin": -9.85,
   "simScore": [
-   120.77,
-   110.98
+   121.16,
+   111.3
   ],
-  "simTotal": 231.75,
+  "simTotal": 232.46,
   "inj": [
    [],
    [
@@ -8141,8 +8152,8 @@
     {
      "name": "Klay Thompson",
      "pos": "G",
-     "status": "Day-to-day",
-     "out": false
+     "status": "Out",
+     "out": true
     }
    ]
   ],
@@ -8168,7 +8179,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-13T23:23:34.189Z",
+  "loggedAt": "2026-11-13T23:56:36.505Z",
   "result": null
  },
  "nba:401909983": {
@@ -8188,14 +8199,15 @@
    2,
    0
   ],
-  "simPHome": 0.6903,
-  "rawPHome": 0.6675,
-  "simMargin": 6.81,
+  "espnPHome": 0.627,
+  "simPHome": 0.6836,
+  "rawPHome": 0.6615,
+  "simMargin": 6.82,
   "simScore": [
-   109.74,
-   116.54
+   109.55,
+   116.37
   ],
-  "simTotal": 226.28,
+  "simTotal": 225.91,
   "inj": [
    [
     {
@@ -8252,7 +8264,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-13T23:23:34.325Z",
+  "loggedAt": "2026-11-13T23:56:36.641Z",
   "result": null
  },
  "nba:401909984": {
@@ -8272,14 +8284,15 @@
    0,
    1
   ],
-  "simPHome": 0.9539,
-  "rawPHome": 0.933,
-  "simMargin": 24.38,
+  "espnPHome": 0.894,
+  "simPHome": 0.9559,
+  "rawPHome": 0.9355,
+  "simMargin": 24.05,
   "simScore": [
-   106.67,
-   131.05
+   107.16,
+   131.21
   ],
-  "simTotal": 237.72,
+  "simTotal": 238.36,
   "inj": [
    [
     {
@@ -8287,12 +8300,6 @@
      "pos": "F",
      "status": "Out",
      "out": true
-    },
-    {
-     "name": "Norman Powell",
-     "pos": "G",
-     "status": "Day-to-day",
-     "out": false
     }
    ],
    []
@@ -8319,7 +8326,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-13T23:23:34.456Z",
+  "loggedAt": "2026-11-13T23:56:36.778Z",
   "result": null
  },
  "nhl:401891809": {
@@ -8347,14 +8354,14 @@
    1,
    1
   ],
-  "simPHome": 0.6615,
-  "rawPHome": 0.6875,
-  "simMargin": 1.16,
+  "simPHome": 0.6995,
+  "rawPHome": 0.6995,
+  "simMargin": 1.18,
   "simScore": [
-   2.4,
-   3.56
+   2.42,
+   3.6
   ],
-  "simTotal": 5.97,
+  "simTotal": 6.03,
   "inj": [
    [
     {
@@ -8392,7 +8399,7 @@
    "pHome": 0.7466217992533782,
    "margin": null
   },
-  "loggedAt": "2026-11-13T23:23:37.373Z",
+  "loggedAt": "2026-11-13T23:56:39.189Z",
   "result": null
  },
  "nhl:401892708": {
@@ -8420,14 +8427,14 @@
    1,
    1
   ],
-  "simPHome": 0.4485,
-  "rawPHome": 0.4395,
-  "simMargin": -0.32,
+  "simPHome": 0.433,
+  "rawPHome": 0.433,
+  "simMargin": -0.36,
   "simScore": [
-   3.17,
-   2.85
+   3.26,
+   2.9
   ],
-  "simTotal": 6.01,
+  "simTotal": 6.16,
   "inj": [
    [
     {
@@ -8461,7 +8468,7 @@
    "pHome": 0.4183319260718642,
    "margin": null
   },
-  "loggedAt": "2026-11-13T23:23:37.427Z",
+  "loggedAt": "2026-11-13T23:56:39.223Z",
   "result": null
  },
  "nhl:401892709": {
@@ -8489,14 +8496,14 @@
    1,
    1
   ],
-  "simPHome": 0.4541,
-  "rawPHome": 0.446,
-  "simMargin": -0.31,
+  "simPHome": 0.4465,
+  "rawPHome": 0.4465,
+  "simMargin": -0.25,
   "simScore": [
-   3.08,
-   2.77
+   3,
+   2.74
   ],
-  "simTotal": 5.84,
+  "simTotal": 5.74,
   "inj": [
    [
     {
@@ -8530,7 +8537,7 @@
    "pHome": 0.47411526358894773,
    "margin": null
   },
-  "loggedAt": "2026-11-13T23:23:37.487Z",
+  "loggedAt": "2026-11-13T23:56:39.262Z",
   "result": null
  },
  "nhl:401892710": {
@@ -8558,14 +8565,14 @@
    2,
    1
   ],
-  "simPHome": 0.4353,
-  "rawPHome": 0.424,
-  "simMargin": -0.45,
+  "simPHome": 0.433,
+  "rawPHome": 0.433,
+  "simMargin": -0.36,
   "simScore": [
-   3.28,
-   2.83
+   3.21,
+   2.85
   ],
-  "simTotal": 6.11,
+  "simTotal": 6.07,
   "inj": [
    [
     {
@@ -8606,7 +8613,7 @@
    "pHome": 0.4183319260718642,
    "margin": null
   },
-  "loggedAt": "2026-11-13T23:23:37.533Z",
+  "loggedAt": "2026-11-13T23:56:39.296Z",
   "result": null
  },
  "nhl:401892711": {
@@ -8634,14 +8641,14 @@
    1,
    1
   ],
-  "simPHome": 0.557,
-  "rawPHome": 0.567,
-  "simMargin": 0.42,
+  "simPHome": 0.547,
+  "rawPHome": 0.547,
+  "simMargin": 0.26,
   "simScore": [
-   2.68,
-   3.11
+   2.78,
+   3.04
   ],
-  "simTotal": 5.79,
+  "simTotal": 5.81,
   "inj": [
    [
     {
@@ -8698,7 +8705,7 @@
    "pHome": 0.5179755059040428,
    "margin": null
   },
-  "loggedAt": "2026-11-13T23:23:37.570Z",
+  "loggedAt": "2026-11-13T23:56:39.328Z",
   "result": null
  },
  "nhl:401892712": {
@@ -8726,14 +8733,14 @@
    1,
    1
   ],
-  "simPHome": 0.5349,
-  "rawPHome": 0.541,
-  "simMargin": 0.26,
+  "simPHome": 0.521,
+  "rawPHome": 0.521,
+  "simMargin": 0.13,
   "simScore": [
-   2.91,
-   3.17
+   2.98,
+   3.11
   ],
-  "simTotal": 6.08,
+  "simTotal": 6.09,
   "inj": [
    [
     {
@@ -8790,7 +8797,7 @@
    "pHome": 0.6624953993375047,
    "margin": null
   },
-  "loggedAt": "2026-11-13T23:23:37.612Z",
+  "loggedAt": "2026-11-13T23:56:39.356Z",
   "result": null
  },
  "nhl:401892713": {
@@ -8818,14 +8825,14 @@
    1,
    2
   ],
-  "simPHome": 0.5055,
-  "rawPHome": 0.5065,
-  "simMargin": 0.11,
+  "simPHome": 0.513,
+  "rawPHome": 0.513,
+  "simMargin": 0.07,
   "simScore": [
-   3.19,
+   3.25,
    3.31
   ],
-  "simTotal": 6.5,
+  "simTotal": 6.56,
   "inj": [
    [
     {
@@ -8870,7 +8877,7 @@
    "pHome": 0.4591221135843562,
    "margin": null
   },
-  "loggedAt": "2026-11-13T23:23:37.660Z",
+  "loggedAt": "2026-11-13T23:56:39.384Z",
   "result": null
  },
  "nhl:401892714": {
@@ -8898,14 +8905,14 @@
    1,
    1
   ],
-  "simPHome": 0.5162,
-  "rawPHome": 0.519,
-  "simMargin": 0.15,
+  "simPHome": 0.5095,
+  "rawPHome": 0.5095,
+  "simMargin": 0.04,
   "simScore": [
-   2.9,
-   3.05
+   2.94,
+   2.98
   ],
-  "simTotal": 5.95,
+  "simTotal": 5.92,
   "inj": [
    [
     {
@@ -8950,7 +8957,7 @@
    "pHome": 0.47803392779469334,
    "margin": null
   },
-  "loggedAt": "2026-11-13T23:23:37.696Z",
+  "loggedAt": "2026-11-13T23:56:39.419Z",
   "result": null
  },
  "nhl:401892715": {
@@ -8978,14 +8985,14 @@
    2,
    1
   ],
-  "simPHome": 0.5477,
-  "rawPHome": 0.556,
-  "simMargin": 0.33,
+  "simPHome": 0.544,
+  "rawPHome": 0.544,
+  "simMargin": 0.24,
   "simScore": [
-   2.79,
-   3.11
+   2.81,
+   3.05
   ],
-  "simTotal": 5.9,
+  "simTotal": 5.86,
   "inj": [
    [],
    [
@@ -9019,7 +9026,7 @@
    "pHome": 0.5497302249821847,
    "margin": null
   },
-  "loggedAt": "2026-11-13T23:23:37.738Z",
+  "loggedAt": "2026-11-13T23:56:39.446Z",
   "result": null
  },
  "nhl:401892716": {
@@ -9047,14 +9054,14 @@
    1,
    1
   ],
-  "simPHome": 0.5883,
-  "rawPHome": 0.6035,
-  "simMargin": 0.6,
+  "simPHome": 0.6055,
+  "rawPHome": 0.6055,
+  "simMargin": 0.62,
   "simScore": [
-   2.53,
-   3.12
+   2.54,
+   3.16
   ],
-  "simTotal": 5.65,
+  "simTotal": 5.7,
   "inj": [
    [],
    []
@@ -9085,7 +9092,7 @@
    "pHome": 0.48814954934905974,
    "margin": null
   },
-  "loggedAt": "2026-11-13T23:23:37.781Z",
+  "loggedAt": "2026-11-13T23:56:39.473Z",
   "result": null
  },
  "nhl:401892717": {
@@ -9113,14 +9120,14 @@
    1,
    1
   ],
-  "simPHome": 0.5357,
-  "rawPHome": 0.542,
-  "simMargin": 0.29,
+  "simPHome": 0.545,
+  "rawPHome": 0.545,
+  "simMargin": 0.25,
   "simScore": [
-   2.87,
+   2.91,
    3.16
   ],
-  "simTotal": 6.03,
+  "simTotal": 6.07,
   "inj": [
    [
     {
@@ -9167,7 +9174,7 @@
    "pHome": 0.5615089564632845,
    "margin": null
   },
-  "loggedAt": "2026-11-13T23:23:37.829Z",
+  "loggedAt": "2026-11-13T23:56:39.502Z",
   "result": null
  },
  "nhl:401892718": {
@@ -9195,14 +9202,14 @@
    2,
    1
   ],
-  "simPHome": 0.6168,
-  "rawPHome": 0.6365,
-  "simMargin": 0.77,
+  "simPHome": 0.6055,
+  "rawPHome": 0.6055,
+  "simMargin": 0.69,
   "simScore": [
-   2.7,
-   3.46
+   2.74,
+   3.43
   ],
-  "simTotal": 6.16,
+  "simTotal": 6.17,
   "inj": [
    [
     {
@@ -9222,8 +9229,8 @@
     {
      "name": "Logan Cooley",
      "pos": "C",
-     "status": "Day-to-day",
-     "out": false
+     "status": "Out",
+     "out": true
     },
     {
      "name": "John Marino",
@@ -9273,7 +9280,7 @@
    "pHome": 0.6431877009961566,
    "margin": null
   },
-  "loggedAt": "2026-11-13T23:23:37.875Z",
+  "loggedAt": "2026-11-13T23:56:39.533Z",
   "result": null
  },
  "nhl:401892719": {
@@ -9301,14 +9308,14 @@
    1,
    2
   ],
-  "simPHome": 0.5247,
-  "rawPHome": 0.529,
-  "simMargin": 0.21,
+  "simPHome": 0.554,
+  "rawPHome": 0.554,
+  "simMargin": 0.33,
   "simScore": [
-   3.07,
-   3.28
+   3.01,
+   3.33
   ],
-  "simTotal": 6.35,
+  "simTotal": 6.34,
   "inj": [
    [
     {
@@ -9348,7 +9355,7 @@
    "pHome": 0.5118504506509403,
    "margin": null
   },
-  "loggedAt": "2026-11-13T23:23:37.916Z",
+  "loggedAt": "2026-11-13T23:56:39.561Z",
   "result": null
  },
  "nhl:401892720": {
@@ -9376,14 +9383,14 @@
    2,
    1
   ],
-  "simPHome": 0.5472,
-  "rawPHome": 0.5555,
-  "simMargin": 0.35,
+  "simPHome": 0.5735,
+  "rawPHome": 0.5735,
+  "simMargin": 0.45,
   "simScore": [
-   3.03,
-   3.39
+   3.01,
+   3.47
   ],
-  "simTotal": 6.42,
+  "simTotal": 6.48,
   "inj": [
    [
     {
@@ -9417,7 +9424,7 @@
    "pHome": 0.6089604175728578,
    "margin": null
   },
-  "loggedAt": "2026-11-13T23:23:37.961Z",
+  "loggedAt": "2026-11-13T23:56:39.590Z",
   "result": null
  },
  "nba:401909985": {
@@ -9437,14 +9444,15 @@
    1,
    2
   ],
-  "simPHome": 0.7265,
-  "rawPHome": 0.7005,
-  "simMargin": 8.34,
+  "espnPHome": 0.83,
+  "simPHome": 0.7254,
+  "rawPHome": 0.6995,
+  "simMargin": 8.19,
   "simScore": [
-   107.75,
-   116.09
+   107.62,
+   115.81
   ],
-  "simTotal": 223.84,
+  "simTotal": 223.43,
   "inj": [
    [],
    [
@@ -9478,7 +9486,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-13T23:23:34.597Z",
+  "loggedAt": "2026-11-13T23:56:36.913Z",
   "result": null
  },
  "nba:401909986": {
@@ -9498,14 +9506,15 @@
    3,
    2
   ],
+  "espnPHome": 0.513,
   "simPHome": 0.4271,
   "rawPHome": 0.4365,
-  "simMargin": -2.79,
+  "simMargin": -2.75,
   "simScore": [
-   116.1,
-   113.31
+   116.31,
+   113.56
   ],
-  "simTotal": 229.41,
+  "simTotal": 229.86,
   "inj": [
    [
     {
@@ -9551,7 +9560,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-13T23:23:34.726Z",
+  "loggedAt": "2026-11-13T23:56:37.048Z",
   "result": null
  },
  "nba:401909987": {
@@ -9571,14 +9580,15 @@
    2,
    1
   ],
-  "simPHome": 0.6292,
-  "rawPHome": 0.613,
-  "simMargin": 4.87,
+  "espnPHome": 0.555,
+  "simPHome": 0.6134,
+  "rawPHome": 0.599,
+  "simMargin": 4.42,
   "simScore": [
-   105.37,
-   110.24
+   105.58,
+   110
   ],
-  "simTotal": 215.61,
+  "simTotal": 215.58,
   "inj": [
    [
     {
@@ -9618,7 +9628,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-13T23:23:34.861Z",
+  "loggedAt": "2026-11-13T23:56:37.184Z",
   "result": null
  },
  "nba:401909988": {
@@ -9638,14 +9648,15 @@
    1,
    1
   ],
-  "simPHome": 0.0955,
-  "rawPHome": 0.124,
-  "simMargin": -18.75,
+  "espnPHome": 0.114,
+  "simPHome": 0.0851,
+  "rawPHome": 0.1125,
+  "simMargin": -19.24,
   "simScore": [
-   124.44,
-   105.69
+   125.1,
+   105.86
   ],
-  "simTotal": 230.13,
+  "simTotal": 230.96,
   "inj": [
    [
     {
@@ -9696,7 +9707,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-13T23:23:34.992Z",
+  "loggedAt": "2026-11-13T23:56:37.319Z",
   "result": null
  },
  "nba:401909989": {
@@ -9716,14 +9727,15 @@
    0,
    3
   ],
-  "simPHome": 0.8477,
-  "rawPHome": 0.8165,
-  "simMargin": 14.84,
+  "espnPHome": 0.817,
+  "simPHome": 0.8571,
+  "rawPHome": 0.826,
+  "simMargin": 14.93,
   "simScore": [
-   101.67,
-   116.51
+   102.01,
+   116.94
   ],
-  "simTotal": 218.17,
+  "simTotal": 218.95,
   "inj": [
    [
     {
@@ -9768,7 +9780,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-13T23:23:35.135Z",
+  "loggedAt": "2026-11-13T23:56:37.450Z",
   "result": null
  },
  "nba:401909990": {
@@ -9788,14 +9800,15 @@
    1,
    2
   ],
-  "simPHome": 0.3583,
-  "rawPHome": 0.376,
-  "simMargin": -5.03,
+  "espnPHome": 0.298,
+  "simPHome": 0.39,
+  "rawPHome": 0.404,
+  "simMargin": -4.21,
   "simScore": [
-   110.44,
-   105.41
+   110.27,
+   106.07
   ],
-  "simTotal": 215.86,
+  "simTotal": 216.34,
   "inj": [
    [],
    [
@@ -9833,7 +9846,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-13T23:23:35.272Z",
+  "loggedAt": "2026-11-13T23:56:37.583Z",
   "result": null
  },
  "nba:401909991": {
@@ -9853,14 +9866,15 @@
    1,
    2
   ],
-  "simPHome": 0.183,
-  "rawPHome": 0.214,
-  "simMargin": -13.37,
+  "espnPHome": 0.267,
+  "simPHome": 0.1653,
+  "rawPHome": 0.1965,
+  "simMargin": -13.53,
   "simScore": [
-   118.89,
-   105.51
+   118.75,
+   105.22
   ],
-  "simTotal": 224.4,
+  "simTotal": 223.97,
   "inj": [
    [],
    [
@@ -9894,7 +9908,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-13T23:23:35.412Z",
+  "loggedAt": "2026-11-13T23:56:37.718Z",
   "result": null
  },
  "nba:401909992": {
@@ -9914,23 +9928,17 @@
    1,
    1
   ],
-  "simPHome": 0.1876,
-  "rawPHome": 0.2185,
-  "simMargin": -11.64,
+  "espnPHome": 0.25,
+  "simPHome": 0.2005,
+  "rawPHome": 0.231,
+  "simMargin": -12.15,
   "simScore": [
-   122.09,
-   110.45
+   123.05,
+   110.9
   ],
-  "simTotal": 232.54,
+  "simTotal": 233.95,
   "inj": [
-   [
-    {
-     "name": "Kingston Flemings",
-     "pos": "G",
-     "status": "Day-to-day",
-     "out": false
-    }
-   ],
+   [],
    []
   ],
   "lines": [
@@ -9959,7 +9967,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-13T23:23:35.543Z",
+  "loggedAt": "2026-11-13T23:56:37.848Z",
   "result": null
  },
  "nba:401909993": {
@@ -9979,14 +9987,15 @@
    1,
    1
   ],
-  "simPHome": 0.14,
-  "rawPHome": 0.171,
-  "simMargin": -15.12,
+  "espnPHome": 0.134,
+  "simPHome": 0.1603,
+  "rawPHome": 0.1915,
+  "simMargin": -15.16,
   "simScore": [
-   118.26,
-   103.15
+   117.98,
+   102.81
   ],
-  "simTotal": 221.41,
+  "simTotal": 220.79,
   "inj": [
    [
     {
@@ -10033,7 +10042,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-13T23:23:35.670Z",
+  "loggedAt": "2026-11-13T23:56:37.984Z",
   "result": null
  },
  "nfl:401873053": {
@@ -10053,15 +10062,16 @@
    null,
    null
   ],
-  "simPHome": 0.6117,
-  "rawPHome": 0.6065,
-  "simMargin": 3.26,
+  "espnPHome": 0.526,
+  "simPHome": 0.6072,
+  "rawPHome": 0.6022,
+  "simMargin": 3.06,
   "simScore": [
-   24.24,
-   27.5
+   24.5,
+   27.56
   ],
-  "simTotal": 51.74,
-  "blendPHome": 0.5806,
+  "simTotal": 52.06,
+  "blendPHome": 0.5799,
   "inj": [
    [
     {
@@ -10140,7 +10150,7 @@
    "pHome": 0.5751279465321473,
    "margin": 2.5
   },
-  "loggedAt": "2026-11-13T23:23:35.795Z",
+  "loggedAt": "2026-11-13T23:56:38.086Z",
   "result": null
  },
  "nfl:401873058": {
@@ -10160,15 +10170,16 @@
    null,
    null
   ],
-  "simPHome": 0.3005,
-  "rawPHome": 0.309,
-  "simMargin": -6.22,
+  "espnPHome": 0.215,
+  "simPHome": 0.2822,
+  "rawPHome": 0.2913,
+  "simMargin": -6.96,
   "simScore": [
-   26.01,
-   19.79
+   26.19,
+   19.23
   ],
-  "simTotal": 45.8,
-  "blendPHome": 0.3936,
+  "simTotal": 45.42,
+  "blendPHome": 0.3909,
   "inj": [
    [
     {
@@ -10223,7 +10234,7 @@
    "pHome": 0.4100715891566124,
    "margin": -3
   },
-  "loggedAt": "2026-11-13T23:23:35.921Z",
+  "loggedAt": "2026-11-13T23:56:38.180Z",
   "result": null
  },
  "nfl:401873056": {
@@ -10243,15 +10254,16 @@
    null,
    null
   ],
-  "simPHome": 0.3954,
-  "rawPHome": 0.4002,
-  "simMargin": -2.85,
+  "espnPHome": 0.233,
+  "simPHome": 0.3891,
+  "rawPHome": 0.3942,
+  "simMargin": -2.76,
   "simScore": [
-   21.29,
-   18.44
+   21.16,
+   18.4
   ],
-  "simTotal": 39.74,
-  "blendPHome": 0.3708,
+  "simTotal": 39.56,
+  "blendPHome": 0.3699,
   "inj": [
    [
     {
@@ -10306,7 +10318,7 @@
    "pHome": 0.3664742260704701,
    "margin": -4.5
   },
-  "loggedAt": "2026-11-13T23:23:36.026Z",
+  "loggedAt": "2026-11-13T23:56:38.258Z",
   "result": null
  },
  "nfl:401873060": {
@@ -10326,15 +10338,16 @@
    null,
    null
   ],
-  "simPHome": 0.4806,
-  "rawPHome": 0.4815,
-  "simMargin": -0.55,
+  "espnPHome": 0.552,
+  "simPHome": 0.4693,
+  "rawPHome": 0.4708,
+  "simMargin": -0.95,
   "simScore": [
-   18.87,
-   18.32
+   19.06,
+   18.11
   ],
-  "simTotal": 37.19,
-  "blendPHome": 0.5735,
+  "simTotal": 37.18,
+  "blendPHome": 0.5718,
   "inj": [
    [
     {
@@ -10407,7 +10420,7 @@
    "pHome": 0.5899284108433875,
    "margin": 3
   },
-  "loggedAt": "2026-11-13T23:23:36.169Z",
+  "loggedAt": "2026-11-13T23:56:38.364Z",
   "result": null
  },
  "nfl:401873057": {
@@ -10427,26 +10440,21 @@
    null,
    null
   ],
-  "simPHome": 0.0869,
-  "rawPHome": 0.0963,
-  "simMargin": -14.75,
+  "espnPHome": 0.159,
+  "simPHome": 0.0819,
+  "rawPHome": 0.091,
+  "simMargin": -15.13,
   "simScore": [
-   28.4,
-   13.65
+   28.83,
+   13.69
   ],
-  "simTotal": 42.06,
-  "blendPHome": 0.1933,
+  "simTotal": 42.52,
+  "blendPHome": 0.1926,
   "inj": [
    [
     {
      "name": "Robert Hainsey",
      "pos": "C",
-     "status": "Questionable",
-     "out": false
-    },
-    {
-     "name": "Ezra Cleveland",
-     "pos": "G",
      "status": "Questionable",
      "out": false
     },
@@ -10502,7 +10510,7 @@
    "pHome": 0.21209051314301935,
    "margin": -10.5
   },
-  "loggedAt": "2026-11-13T23:23:36.304Z",
+  "loggedAt": "2026-11-13T23:56:38.468Z",
   "result": null
  },
  "nfl:401873059": {
@@ -10522,15 +10530,16 @@
    null,
    null
   ],
-  "simPHome": 0.6315,
-  "rawPHome": 0.6255,
-  "simMargin": 3.65,
+  "espnPHome": 0.82,
+  "simPHome": 0.6242,
+  "rawPHome": 0.6185,
+  "simMargin": 3.53,
   "simScore": [
-   20.32,
-   23.97
+   20.26,
+   23.79
   ],
-  "simTotal": 44.28,
-  "blendPHome": 0.6086,
+  "simTotal": 44.05,
+  "blendPHome": 0.6075,
   "inj": [
    [
     {
@@ -10597,7 +10606,7 @@
    "pHome": 0.6046074924232512,
    "margin": 3.5
   },
-  "loggedAt": "2026-11-13T23:23:36.434Z",
+  "loggedAt": "2026-11-13T23:56:38.547Z",
   "result": null
  },
  "nfl:401873055": {
@@ -10617,15 +10626,16 @@
    null,
    null
   ],
-  "simPHome": 0.5131,
-  "rawPHome": 0.5125,
-  "simMargin": 0.34,
+  "espnPHome": 0.5,
+  "simPHome": 0.4969,
+  "rawPHome": 0.497,
+  "simMargin": -0.44,
   "simScore": [
-   23.78,
-   24.12
+   24.08,
+   23.64
   ],
-  "simTotal": 47.89,
-  "blendPHome": 0.5658,
+  "simTotal": 47.71,
+  "blendPHome": 0.5634,
   "inj": [
    [
     {
@@ -10692,7 +10702,7 @@
    "pHome": 0.5751279465321473,
    "margin": 2.5
   },
-  "loggedAt": "2026-11-13T23:23:36.560Z",
+  "loggedAt": "2026-11-13T23:56:38.631Z",
   "result": null
  },
  "nfl:401873054": {
@@ -10712,15 +10722,16 @@
    null,
    null
   ],
-  "simPHome": 0.2225,
-  "rawPHome": 0.233,
-  "simMargin": -9.01,
+  "espnPHome": 0.173,
+  "simPHome": 0.203,
+  "rawPHome": 0.2137,
+  "simMargin": -9.95,
   "simScore": [
-   29.66,
-   20.65
+   30.21,
+   20.27
   ],
-  "simTotal": 50.31,
-  "blendPHome": 0.2537,
+  "simTotal": 50.48,
+  "blendPHome": 0.2507,
   "inj": [
    [
     {
@@ -10769,7 +10780,7 @@
    "pHome": 0.2591625679347602,
    "margin": -8.5
   },
-  "loggedAt": "2026-11-13T23:23:36.688Z",
+  "loggedAt": "2026-11-13T23:56:38.726Z",
   "result": null
  },
  "nfl:401873062": {
@@ -10789,15 +10800,16 @@
    null,
    null
   ],
-  "simPHome": 0.1864,
-  "rawPHome": 0.1973,
-  "simMargin": -9.51,
+  "espnPHome": 0.256,
+  "simPHome": 0.1829,
+  "rawPHome": 0.1938,
+  "simMargin": -9.62,
   "simScore": [
-   26.15,
-   16.64
+   26.27,
+   16.65
   ],
-  "simTotal": 42.8,
-  "blendPHome": 0.2922,
+  "simTotal": 42.92,
+  "blendPHome": 0.2917,
   "inj": [
    [
     {
@@ -10845,7 +10857,7 @@
    "pHome": 0.3108942664963187,
    "margin": -6.5
   },
-  "loggedAt": "2026-11-13T23:23:36.821Z",
+  "loggedAt": "2026-11-13T23:56:38.804Z",
   "result": null
  },
  "nfl:401873061": {
@@ -10865,15 +10877,16 @@
    null,
    null
   ],
-  "simPHome": 0.1363,
-  "rawPHome": 0.147,
-  "simMargin": -12.63,
+  "espnPHome": 0.126,
+  "simPHome": 0.1201,
+  "rawPHome": 0.1305,
+  "simMargin": -13.42,
   "simScore": [
-   29.01,
-   16.38
+   29.24,
+   15.82
   ],
-  "simTotal": 45.39,
-  "blendPHome": 0.2202,
+  "simTotal": 45.06,
+  "blendPHome": 0.2178,
   "inj": [
    [
     {
@@ -10946,7 +10959,7 @@
    "pHome": 0.23500301826226122,
    "margin": -9.5
   },
-  "loggedAt": "2026-11-13T23:23:36.941Z",
+  "loggedAt": "2026-11-13T23:56:38.880Z",
   "result": null
  },
  "nfl:401873063": {
@@ -10966,15 +10979,16 @@
    null,
    null
   ],
-  "simPHome": 0.302,
-  "rawPHome": 0.3105,
+  "espnPHome": 0.359,
+  "simPHome": 0.2976,
+  "rawPHome": 0.3063,
   "simMargin": -5.82,
   "simScore": [
-   29.66,
-   23.84
+   30.01,
+   24.19
   ],
-  "simTotal": 53.51,
-  "blendPHome": 0.3568,
+  "simTotal": 54.19,
+  "blendPHome": 0.3561,
   "inj": [
    [
     {
@@ -11047,7 +11061,7 @@
    "pHome": 0.3664742260704701,
    "margin": -4.5
   },
-  "loggedAt": "2026-11-13T23:23:37.073Z",
+  "loggedAt": "2026-11-13T23:56:38.972Z",
   "result": null
  },
  "nfl:401873064": {
@@ -11067,15 +11081,16 @@
    null,
    null
   ],
-  "simPHome": 0.494,
-  "rawPHome": 0.4943,
-  "simMargin": -0.23,
+  "espnPHome": 0.705,
+  "simPHome": 0.4921,
+  "rawPHome": 0.4925,
+  "simMargin": -0.41,
   "simScore": [
-   23.84,
-   23.61
+   23.98,
+   23.58
   ],
-  "simTotal": 47.44,
-  "blendPHome": 0.588,
+  "simTotal": 47.56,
+  "blendPHome": 0.5877,
   "inj": [
    [
     {
@@ -11118,7 +11133,7 @@
    "pHome": 0.6046074924232512,
    "margin": 3.5
   },
-  "loggedAt": "2026-11-13T23:23:37.194Z",
+  "loggedAt": "2026-11-13T23:56:39.052Z",
   "result": null
  },
  "nhl:401892721": {
@@ -11146,14 +11161,14 @@
    0,
    0
   ],
-  "simPHome": 0.4826,
-  "rawPHome": 0.4795,
-  "simMargin": -0.14,
+  "simPHome": 0.446,
+  "rawPHome": 0.446,
+  "simMargin": -0.29,
   "simScore": [
-   3.14,
-   3
+   3.31,
+   3.02
   ],
-  "simTotal": 6.14,
+  "simTotal": 6.33,
   "inj": [
    [
     {
@@ -11191,7 +11206,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-13T23:23:38.000Z",
+  "loggedAt": "2026-11-13T23:56:39.621Z",
   "result": null
  },
  "nhl:401892722": {
@@ -11219,14 +11234,14 @@
    0,
    0
   ],
-  "simPHome": 0.506,
-  "rawPHome": 0.507,
-  "simMargin": 0.06,
+  "simPHome": 0.512,
+  "rawPHome": 0.512,
+  "simMargin": 0.07,
   "simScore": [
-   2.97,
-   3.03
+   2.96,
+   3.02
   ],
-  "simTotal": 6.01,
+  "simTotal": 5.98,
   "inj": [
    [],
    [
@@ -11266,7 +11281,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-13T23:23:38.036Z",
+  "loggedAt": "2026-11-13T23:56:39.648Z",
   "result": null
  },
  "nhl:401892723": {
@@ -11294,14 +11309,14 @@
    0,
    0
   ],
-  "simPHome": 0.4732,
-  "rawPHome": 0.4685,
-  "simMargin": -0.16,
+  "simPHome": 0.4925,
+  "rawPHome": 0.4925,
+  "simMargin": -0.12,
   "simScore": [
-   3.18,
-   3.02
+   3.1,
+   2.98
   ],
-  "simTotal": 6.19,
+  "simTotal": 6.07,
   "inj": [
    [
     {
@@ -11335,7 +11350,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-13T23:23:38.082Z",
+  "loggedAt": "2026-11-13T23:56:39.675Z",
   "result": null
  },
  "nhl:401892724": {
@@ -11363,14 +11378,14 @@
    1,
    1
   ],
-  "simPHome": 0.5982,
-  "rawPHome": 0.615,
-  "simMargin": 0.68,
+  "simPHome": 0.5915,
+  "rawPHome": 0.5915,
+  "simMargin": 0.61,
   "simScore": [
-   2.63,
+   2.7,
    3.31
   ],
-  "simTotal": 5.95,
+  "simTotal": 6.01,
   "inj": [
    [
     {
@@ -11411,7 +11426,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-13T23:23:38.126Z",
+  "loggedAt": "2026-11-13T23:56:39.701Z",
   "result": null
  },
  "nhl:401892725": {
@@ -11439,14 +11454,14 @@
    1,
    0
   ],
-  "simPHome": 0.494,
-  "rawPHome": 0.493,
-  "simMargin": 0.02,
+  "simPHome": 0.4525,
+  "rawPHome": 0.4525,
+  "simMargin": -0.23,
   "simScore": [
-   3.13,
-   3.14
+   3.24,
+   3
   ],
-  "simTotal": 6.27,
+  "simTotal": 6.24,
   "inj": [
    [
     {
@@ -11497,7 +11512,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-13T23:23:38.171Z",
+  "loggedAt": "2026-11-13T23:56:39.728Z",
   "result": null
  }
 }

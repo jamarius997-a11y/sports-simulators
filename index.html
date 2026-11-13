@@ -363,7 +363,7 @@ function gameCard(g, i, r) {
   const by = m => (m >= 0 ? g.home.abbr : g.away.abbr) + ' by ' + f1(Math.abs(m));
   const mp = marketProb(mk), when = new Date(g.date).toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
   const chips = [];
-  if (sport === 'nba') { if (g.awayRest === 0) chips.push(g.away.abbr + ' back-to-back'); if (g.homeRest === 0) chips.push(g.home.abbr + ' back-to-back'); }
+  if (sport === 'nba' || sport === 'nhl') { if (g.awayRest === 0) chips.push(g.away.abbr + ' back-to-back'); if (g.homeRest === 0) chips.push(g.home.abbr + ' back-to-back'); }
   if (sport === 'nhl') chips.push('low confidence');
   if (sport === 'nfl' && g.weather && !g.weather.indoor) { const adj = Sim.nflWeatherAdj(g.weather); if (adj <= -0.5 || g.weather.precip >= 0.5) chips.push('Weather: ' + g.weather.wind + ' mph wind, ' + g.weather.temp + '°F' + (g.weather.precip >= 0.5 ? ', rain/snow' : '') + (adj <= -0.5 ? ' (total ' + adj.toFixed(1) + ')' : '')); }
   [[g.away, g.awayFrom], [g.home, g.homeFrom]].forEach(([t, from]) => { const mi = from && from !== g.home.abbr ? Travel.miles(sport, from, g.home.abbr) : null, tz = from ? Travel.tzShift(sport, from, g.home.abbr) : null; if (mi != null && (mi >= 1500 || Math.abs(tz) >= 2)) chips.push(t.abbr + ' traveled ' + Math.round(mi / 100) * 100 + ' mi' + (Math.abs(tz) >= 2 ? ', ' + Math.abs(tz) + ' time zones ' + (tz > 0 ? 'east' : 'west') : '')); });
@@ -375,6 +375,7 @@ function gameCard(g, i, r) {
       (sport !== 'nhl' ? '<tr class="best"><td>Spread pick</td><td colspan="2">' + pickHtml(spreadPick(g, r, mk)) + '</td></tr>' : '') +
       '<tr class="best"><td>Total pick</td><td colspan="2">' + pickHtml(totalPick(r, mk)) + '</td></tr>' +
       '<tr><td>Win chance</td><td><b>' + fav(r.pHome) + '</b></td><td>' + (mp != null ? fav(mp) : dash) + '</td></tr>' +
+      (g.espnP != null ? '<tr><td>ESPN model</td><td colspan="2">' + fav(g.espnP) + ' <span class="muted">(' + (sport === 'nba' ? 'BPI' : 'FPI') + '; tracked, not used in picks yet)</span></td></tr>' : '') +
       (sport !== 'nhl' ? '<tr><td>Margin</td><td>' + by(r.margin) + '</td><td>' + (mk.homeMargin != null ? by(mk.homeMargin) : dash) + '</td></tr>' : '') +
       '<tr><td>Total points</td><td>' + f1(r.total) + '</td><td>' + (mk.total ? mk.total : dash) + '</td></tr>' +
       '<tr><td>Projected score</td><td colspan="2">' + g.away.abbr + ' ' + r.away.toFixed(dec) + ' – ' + g.home.abbr + ' ' + r.home.toFixed(dec) + '</td></tr>';
@@ -438,6 +439,7 @@ function renderPicks() {
     '<tr><td>Picked the winner (' + P.nMkt + ' games with a line)</td><td>' + pc(P.accSimMkt) + '</td><td>' + pc(P.accMkt) + '</td></tr>' +
     '<tr><td>Brier (lower is better)</td><td>' + (P.brierSimMkt == null ? '–' : P.brierSimMkt) + '</td><td>' + (P.brierMkt == null ? '–' : P.brierMkt) + '</td></tr>' +
     '<tr><td>Total error in points (' + P.nTot + ' games)</td><td>' + (P.totMAESim == null ? '–' : P.totMAESim.toFixed(1)) + '</td><td>' + (P.totMAEMkt == null ? '–' : P.totMAEMkt.toFixed(1)) + '</td></tr>' +
+    (P.nEspn ? '<tr><td>ESPN model vs sim vs market, Brier (' + P.nEspn + ' games)</td><td>sim ' + P.brierEspnSim + ' · ESPN ' + P.brierEspn + '</td><td>' + P.brierEspnMkt + '</td></tr>' : '') +
     (P.nBlend ? '<tr><td>NFL blend vs market, Brier (' + P.nBlend + ' games)</td><td>' + P.brierBlend + '</td><td>' + P.brierBlendMkt + '</td></tr>' : '') + (P.nSpread ? '<tr><td>Margin error in points (' + P.nSpread + ' games with a spread)</td><td>' + P.marMAESim.toFixed(1) + '</td><td>' + P.marMAEMkt.toFixed(1) + '</td></tr>' : '') + '</table>' +
     (P.nLines ? '<p class="note">Line movement: the market moved by 1+ point of win chance in ' + P.nMoved + ' of ' + P.nLines + ' games with 2+ line readings' + (P.nMoved ? ', and moved toward the sim in ' + (P.movedToSim * 100).toFixed(0) + '% of those (50% is chance; a number above 50% means the sim sees news before the market does)' : '') + '.</p>' : '') +
     (P.nCallT ? '<p class="note">When the sim and the market total differed by 2+ points, the sim picked the right side of the total in ' + (P.hitCallT * 100).toFixed(0) + '% of ' + P.nCallT + ' games' + (P.nCallS ? ', and the right side of the spread in ' + (P.hitCallS * 100).toFixed(0) + '% of ' + P.nCallS : '') + ' (50% is break-even luck). Average total error: sim ' + (P.totBias > 0 ? '+' : '') + P.totBias + ' vs actual, market ' + (P.mktTotBias > 0 ? '+' : '') + P.mktTotBias + '.</p>' : '') +

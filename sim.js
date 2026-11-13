@@ -428,6 +428,7 @@
   // NHL
   // =====================================================================
   let NHL_LG = 3.05; const NHL_SHOTS_PER_MIN = 0.5, NHL_PEN_PER_MIN = 0.048;
+  const NHL_B2B_OFF = typeof process !== 'undefined' && process.env && process.env.BT_NHL_B2B === '0' ? 0 : 0.10, NHL_B2B_DEF = NHL_B2B_OFF ? 0.15 : 0;
 
   function nhlSkaters(team, rng) {
     const r = roster('nhl', team);
@@ -458,6 +459,11 @@
     p[0] *= gf(K[1]); p[1] *= gf(K[0]);
     p[0] *= 1 + K[1].lostDef / lam[0]; p[1] *= 1 + K[0].lostDef / lam[1];   // missing defenders let the other side score a little more
     p[0] *= Math.max(0.6, 1 - K[0].lostOff / lam[0]); p[1] *= Math.max(0.6, 1 - K[1].lostOff / lam[1]);   // missing scorers: the team itself creates fewer chances
+    // Second night of a back-to-back: about 0.25 goals of margin (0.10 fewer scored, 0.15 more allowed, mostly tired or backup goalies).
+    // 2024-25 and 2025-26 backtest residuals: away team on a back-to-back cost 0.17-0.42 goals vs rested games; home side noisier, ~0.3 pooled.
+    const rest = opts.rest || {}, b2b = [rest.away === 0 ? 1 : 0, rest.home === 0 ? 1 : 0];
+    p[0] *= (1 - NHL_B2B_OFF * b2b[0] / lam[0]) * (1 + NHL_B2B_DEF * b2b[1] / lam[0]);
+    p[1] *= (1 - NHL_B2B_OFF * b2b[1] / lam[1]) * (1 + NHL_B2B_DEF * b2b[0] / lam[1]);
     const ps = K.map(k => k.sk.map(() => ({ g: 0, a: 0, sog: 0 })));
     const score = [0, 0], shots = [0, 0], ppg = [0, 0], ppo = [0, 0], pen = [0, 0];
     const byPeriod = [[0, 0, 0], [0, 0, 0]];

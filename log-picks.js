@@ -63,6 +63,7 @@ for (const sp of ['nba', 'nfl', 'nhl']) {
     log[key] = {
       key, league: sp, gameId: g.id, start: g.date, away: { abbr: g.away.abbr, name: g.away.name }, home: { abbr: g.home.abbr, name: g.home.name },
       goalies: sp === 'nhl' ? [g.away.confirmed || g.away.probable, g.home.confirmed || g.home.probable] : undefined, goalieConfirmed: sp === 'nhl' ? [!!g.away.confirmed, !!g.home.confirmed] : undefined, rest: [g.awayRest, g.homeRest],
+      espnPHome: g.espnP != null ? g.espnP : undefined,   // ESPN BPI/FPI, logged so it can be scored against results later
       simPHome: +(1 / (1 + Math.exp(-a * z))).toFixed(4), rawPHome: +raw.toFixed(4), simMargin: +(m.avg[1] - m.avg[0]).toFixed(2), simScore: [+m.avg[0].toFixed(2), +m.avg[1].toFixed(2)], simTotal: +m.avgTotal.toFixed(2),
       blendPHome: BLEND[sp] != null && mk.pHome != null ? +(BLEND[sp] * (1 / (1 + Math.exp(-a * z))) + (1 - BLEND[sp]) * mk.pHome).toFixed(4) : undefined,
       inj: [Sim.injuries(sp, away), Sim.injuries(sp, home)],

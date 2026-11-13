@@ -53,6 +53,8 @@ const ymdOf = d => d.getUTCFullYear() + String(d.getUTCMonth() + 1).padStart(2, 
       acc: right(done, e => e.simPHome), brier: mean(done, e => (e.simPHome - y(e)) ** 2),
       nMkt: M.length, accSimMkt: right(M, e => e.simPHome), accMkt: right(M, e => e.mkt.pHome),
       brierSimMkt: mean(M, e => (e.simPHome - y(e)) ** 2), brierMkt: mean(M, e => (e.mkt.pHome - y(e)) ** 2),
+      // ESPN BPI/FPI on the same games (logged from Nov 2026 on): if it beats the sim here, it can replace or join the sim in the best-pick blend
+      ...(E => ({ nEspn: E.length, brierEspn: mean(E, e => (e.espnPHome - y(e)) ** 2), brierEspnSim: mean(E, e => (e.simPHome - y(e)) ** 2), brierEspnMkt: mean(E, e => (e.mkt.pHome - y(e)) ** 2) }))(M.filter(e => e.espnPHome != null)),
       nMoved: MV.length, movedToSim: MV.length ? +(MV.filter(towardSim).length / MV.length).toFixed(3) : null, nLines: done.filter(e => e.lines && e.lines.length >= 2).length,
       nBlend: B.length, brierBlend: mean(B, e => (e.blendPHome - y(e)) ** 2), brierBlendMkt: mean(B, e => (e.mkt.pHome - y(e)) ** 2),
       nSpread: S.length, marMAESim: mean(S, e => Math.abs(e.simMargin - mar(e))), marMAEMkt: mean(S, e => Math.abs(e.mkt.margin - mar(e))),
