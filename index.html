@@ -8,7 +8,7 @@
   :root { --bg:#0f1218; --panel:#181d27; --line:#2a3242; --text:#e8ecf3; --muted:#8b96ab; --accent:#4f9dff; --good:#3ecf8e; --bad:#ff6b6b; }
   @media (prefers-color-scheme: light) { :root { --bg:#f4f6fa; --panel:#fff; --line:#d8dee9; --text:#1a2030; --muted:#5d6878; --accent:#1f6feb; --good:#12945b; --bad:#d63b3b; } }
   * { box-sizing:border-box; }
-  body { margin:0; background:var(--bg); color:var(--text); font:15px/1.45 system-ui,Segoe UI,Roboto,sans-serif; }
+  body { margin:0; background:var(--bg); color:var(--text); font:16px/1.5 system-ui,Segoe UI,Roboto,sans-serif; }
   .wrap { max-width:960px; margin:0 auto; padding:16px; }
   h1 { font-size:20px; margin:0 0 12px; }
   .tabs { display:flex; gap:8px; margin-bottom:12px; }
@@ -40,7 +40,39 @@
   details { margin-top:10px; font-size:13px; } summary { cursor:pointer; color:var(--accent); }
   .rost td, .rost th { padding:3px 4px; } .rost input { padding:3px 5px; font-size:12px; } .rost input[type=number] { width:64px; }
   .up td, .up th { font-size:13px; } .up button { padding:3px 8px; font-size:12px; } .pos { color:var(--good); } .neg { color:var(--bad); }
-  .note { font-size:12px; color:var(--muted); }
+  .note { font-size:13px; color:var(--muted); }
+  .muted { color:var(--muted); font-weight:400; font-size:13px; }
+  h1 { font-size:24px; letter-spacing:-.01em; }
+  h2 { font-size:19px; margin:0; }
+  .tab { font-size:16px; padding:12px; }
+  .panel > summary, details.fold > summary, details.tool > summary { cursor:pointer; font-weight:600; font-size:16px; list-style:none; color:var(--text); }
+  details.fold > summary::before, details.tool > summary::before { content:'\25B8'; display:inline-block; width:1.1em; color:var(--accent); }
+  details.fold[open] > summary::before, details.tool[open] > summary::before { content:'\25BE'; }
+  details.fold[open] > summary, details.tool[open] > summary { margin-bottom:10px; }
+  .board-head { display:flex; justify-content:space-between; align-items:baseline; gap:8px; margin-bottom:4px; }
+  h3.day { margin:18px 0 8px; font-size:13px; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); }
+  .game { border:1px solid var(--line); border-radius:10px; padding:12px 14px; margin-bottom:10px; background:var(--bg); }
+  .game.gap { border-color:var(--bad); box-shadow:inset 4px 0 0 var(--bad); }
+  .g-top { display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .g-top .when { font-weight:600; color:var(--muted); font-size:14px; }
+  .g-top button { margin-left:auto; padding:5px 10px; font-size:13px; }
+  .chip { font-size:12px; padding:2px 8px; border-radius:999px; border:1px solid var(--line); color:var(--muted); }
+  .g-teams { font-size:22px; font-weight:700; margin:2px 0 6px; display:flex; align-items:baseline; gap:8px; flex-wrap:wrap; }
+  .g-teams .at { color:var(--muted); font-weight:400; font-size:16px; }
+  .g-teams .mline { margin-left:auto; font-size:13px; font-weight:400; color:var(--muted); }
+  table.cmp { font-size:15px; margin:4px 0; }
+  table.cmp th { font-size:12px; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); text-align:left; border-bottom:1px solid var(--line); }
+  table.cmp td { text-align:left; padding:6px 8px; border-bottom:1px solid var(--line); }
+  table.cmp td:first-child, table.cmp th:first-child { color:var(--muted); width:34%; padding-left:0; }
+  table.cmp tr.best td { background:rgba(79,157,255,.10); }
+  .verdict { margin:8px 0 2px; font-size:15px; }
+  .game.gap .verdict { color:var(--bad); }
+  .inj, .goal { margin-top:8px; font-size:13px; color:var(--muted); line-height:1.5; }
+  .inj .lbl, .goal .lbl { display:block; font-size:11px; text-transform:uppercase; letter-spacing:.08em; margin-bottom:1px; }
+  .inj b, .goal b { color:var(--text); }
+  .st-out { color:var(--bad); } .st-q { color:#d9a441; }
+  details.how { margin:2px 0 6px; }
+  @media (max-width:560px) { .wrap { padding:12px; } .g-teams { font-size:20px; } table.cmp td:first-child, table.cmp th:first-child { width:30%; } }
 </style>
 </head>
 <body>
@@ -49,7 +81,9 @@
   <p class="note" id="liveNote" style="margin:-6px 0 10px"></p>
   <div class="tabs" id="tabs"></div>
 
-  <div class="panel">
+  <div class="panel" id="upcoming"></div>
+
+  <details class="panel tool" id="tool"><summary>Simulator: pick any two teams and run a game, series or season</summary>
     <div class="matchup">
       <div class="side"><h3>Away</h3><select id="awaySel"></select><div id="awayFields"></div><details><summary>Roster</summary><div id="awayRoster"></div></details></div>
       <div class="side"><h3>Home</h3><select id="homeSel"></select><div id="homeFields"></div><details><summary>Roster</summary><div id="homeRoster"></div></details></div>
@@ -64,15 +98,13 @@
       <button class="act alt" id="bLeague">League table</button>
     </div>
     <p class="note" style="margin-bottom:0">Team ratings are rough approximations, not live data &mdash; edit them above. Series: Away team is the lower seed, Home team has home-court/ice/field advantage.</p>
-  </div>
-
-  <div class="panel" id="upcoming"></div>
+  </details>
 
   <div id="out"></div>
 
-  <div class="panel" id="picks"></div>
+  <details class="panel fold" id="picks"></details>
 
-  <div class="panel" id="backtest"></div>
+  <details class="panel fold" id="backtest"></details>
 </div>
 <script src="sim.js"></script>
 <script src="data.js" onerror="void 0"></script>
@@ -227,7 +259,7 @@ $('bLeague').onclick = () => {
 
 const liveN = window.LIVE_DATA ? Sim.applyLive(window.LIVE_DATA) : 0;
 $('liveNote').textContent = liveN
-  ? 'Live data: ' + liveN + ' teams (NBA/NFL/NHL) updated ' + new Date(window.LIVE_DATA.generated).toLocaleString() + ' · refresh with: node update-data.js · Data: ESPN, nflverse, and MoneyPuck.com (NHL, non-commercial use)'
+  ? 'Live ratings for ' + liveN + ' teams. Data: ESPN, nflverse and MoneyPuck.com (NHL, non-commercial use). Refreshes every 2 hours on game days.'
   : 'No live data loaded (data.js missing) — using built-in approximate ratings. Run: node update-data.js';
 // ---------- Upcoming games ----------
 const normName = x => x.toLowerCase().replace(/[^a-z]/g, '');
@@ -253,68 +285,96 @@ function market(g) {
 }
 const SPREAD_SD = { nfl: 13.2, nba: 12.0 }, normCdf = z => 0.5 * (1 + Math.sign(z) * Math.sqrt(1 - Math.exp(-4 * (z / Math.SQRT2) ** 2 / Math.PI)));
 const BLEND = { nfl: 0.15 };   // sim weight in the NFL sim/market blend (best weight was 0% in 2024 and 25% in 2025)
-const ST = { Out: 'out', Doubtful: 'D', Questionable: 'Q', 'Day-to-day': 'DTD' };
-function injLine(g) {
-  const a = findTeam(sport, g.away), h = findTeam(sport, g.home); if (!a || !h || !Sim.injuries) return '';
-  const part = (abbr, t) => { const l = Sim.injuries(sport, t, 3); return l.length ? '<b>' + abbr + '</b> ' + l.map(p => p.name + ' (' + ST[p.status] + ')').join(', ') : ''; };
-  const bits = [part(g.away.abbr, a), part(g.home.abbr, h)].filter(Boolean);
-  return bits.length ? '<br><span class="note">' + bits.join(' · ') + '</span>' : '';
-}
-function marketProb(mk) { return mk.homeProb != null ? mk.homeProb : (mk.homeMargin != null && SPREAD_SD[sport]) ? normCdf(mk.homeMargin / SPREAD_SD[sport]) : null; }
 let curRest = null;
 function loadGame(g) {
   curRest = { away: g.awayRest, home: g.homeRest };
   const T = S[sport].teams, p = prepGame(g); if (!p) return;
   $('awaySel').value = T.indexOf(p[0]); $('homeSel').value = T.indexOf(p[1]);
-  buildFields('away'); buildFields('home'); buildRoster('away'); buildRoster('home'); window.scrollTo(0, 0);
+  buildFields('away'); buildFields('home'); buildRoster('away'); buildRoster('home'); $('tool').open = true; $('tool').scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
-function renderUpcoming(results) {
+const ST = { Out: 'out', Doubtful: 'doubtful', Questionable: 'Q', 'Day-to-day': 'day-to-day' };
+function injHtml(g) {
+  const a = findTeam(sport, g.away), h = findTeam(sport, g.home); if (!a || !h || !Sim.injuries) return '';
+  const part = (abbr, t) => { const l = Sim.injuries(sport, t, 3); return l.length ? '<div><b>' + abbr + '</b> ' + l.map(p => '<span class="' + (p.out ? 'st-out' : 'st-q') + '">' + p.name + ' (' + ST[p.status] + ')</span>').join(', ') + '</div>' : ''; };
+  const bits = part(g.away.abbr, a) + part(g.home.abbr, h);
+  return bits ? '<div class="inj"><span class="lbl">Injuries</span>' + bits + '</div>' : '';
+}
+function marketProb(mk) { return mk.homeProb != null ? mk.homeProb : (mk.homeMargin != null && SPREAD_SD[sport]) ? normCdf(mk.homeMargin / SPREAD_SD[sport]) : null; }
+
+const simRes = {};   // sport -> results array (kept so switching tabs does not re-simulate)
+let simBusy = false;
+async function runSim(force) {
+  const sched = window.LIVE_DATA && window.LIVE_DATA.schedule && window.LIVE_DATA.schedule[sport];
+  if (!sched || !sched.length || simBusy || (simRes[sport] && !force)) return;
+  simBusy = true; const sp = sport, R = rng(), res = [];
+  for (let i = 0; i < sched.length; i++) {
+    const g = sched[i]; $('simStatus') && ($('simStatus').textContent = 'Simulating game ' + (i + 1) + ' of ' + sched.length + '…');
+    await new Promise(r => setTimeout(r, 0));
+    const p = prepGame(g); if (!p) { res.push(null); continue; }
+    const m = Sim.monteCarlo(sp, p[0], p[1], 2000, R, { rest: { away: g.awayRest, home: g.homeRest } });
+    const raw = (m.wins[1] + m.wins[2] / 2) / m.n, a = (window.BACKTEST && window.BACKTEST.leagues[sp] && window.BACKTEST.leagues[sp].stretch) || 1;
+    const z = Math.log(Math.min(0.999, Math.max(0.001, raw)) / (1 - Math.min(0.999, Math.max(0.001, raw))));
+    res.push({ raw, pHome: 1 / (1 + Math.exp(-a * z)), margin: m.avg[1] - m.avg[0], total: m.avgTotal, away: m.avg[0], home: m.avg[1] });
+  }
+  simRes[sp] = res; simBusy = false; if (sport === sp) renderUpcoming(); else runSim();
+}
+const TOT_GAP = { nba: 4, nfl: 2.5, nhl: 0.4 };
+function dayLabel(d) {
+  const t0 = new Date(); t0.setHours(0, 0, 0, 0); const diff = Math.round((new Date(d).setHours(0, 0, 0, 0) - t0) / 86400000);
+  return diff <= 0 ? 'Today' : diff === 1 ? 'Tomorrow' : new Date(d).toLocaleDateString([], { weekday: 'long', month: 'short', day: 'numeric' });
+}
+function gameCard(g, i, r) {
+  const mk = market(g), dec = sport === 'nhl' ? 1 : 0, f1 = x => x.toFixed(1), pc = x => Math.round(x * 100) + '%';
+  const fav = p => p >= 0.5 ? g.home.abbr + ' ' + pc(p) : g.away.abbr + ' ' + pc(1 - p);
+  const by = m => (m >= 0 ? g.home.abbr : g.away.abbr) + ' by ' + f1(Math.abs(m));
+  const mp = marketProb(mk), when = new Date(g.date).toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
+  const chips = [];
+  if (sport === 'nba') { if (g.awayRest === 0) chips.push(g.away.abbr + ' back-to-back'); if (g.homeRest === 0) chips.push(g.home.abbr + ' back-to-back'); }
+  if (sport === 'nhl') chips.push('low confidence');
+  let rows = '', verdict = '', cls = '';
+  const dash = '<span class="muted">–</span>';
+  if (r) {
+    const showBest = sport === 'nfl' && mp != null; if (showBest) r.blend = BLEND.nfl * r.pHome + (1 - BLEND.nfl) * mp;
+    rows = '<tr><td>Win chance</td><td><b>' + fav(r.pHome) + '</b></td><td>' + (mp != null ? fav(mp) : dash) + '</td></tr>' +
+      (showBest ? '<tr class="best"><td>Best estimate</td><td colspan="2"><b>' + fav(r.blend) + '</b> <span class="muted">(mostly the market; the market beat the sim in both backtested seasons)</span></td></tr>' : '') +
+      (sport !== 'nhl' ? '<tr><td>Margin</td><td>' + by(r.margin) + '</td><td>' + (mk.homeMargin != null ? by(mk.homeMargin) : dash) + '</td></tr>' : '') +
+      '<tr><td>Total points</td><td>' + f1(r.total) + '</td><td>' + (mk.total ? mk.total : dash) + '</td></tr>' +
+      '<tr><td>Projected score</td><td colspan="2">' + g.away.abbr + ' ' + r.away.toFixed(dec) + ' – ' + g.home.abbr + ' ' + r.home.toFixed(dec) + '</td></tr>';
+    const v = [];
+    if (mp != null) {
+      const d = (r.pHome - mp) * 100;
+      if (Math.abs(d) >= 12) { cls = ' gap'; v.push('<b>Big gap with the market.</b> The sim gives ' + (d > 0 ? g.home.abbr : g.away.abbr) + ' ' + Math.round(Math.abs(d)) + ' points more win chance. Check the injuries below before trusting either side.'); }
+      else if (Math.abs(d) >= 5) v.push('Sim likes ' + (d > 0 ? g.home.abbr : g.away.abbr) + ' a bit more than the market (+' + Math.round(Math.abs(d)) + ' pts).');
+      else v.push('Sim and market agree on the winner chance.');
+    }
+    if (mk.total && Math.abs(r.total - mk.total) >= TOT_GAP[sport]) v.push('Sim total is ' + f1(Math.abs(r.total - mk.total)) + ' ' + (r.total > mk.total ? 'above' : 'below') + ' the line.');
+    verdict = '<div class="verdict">' + v.join(' ') + '</div>';
+  } else {
+    rows = '<tr><td>Win chance</td><td class="muted">simulating…</td><td>' + (mp != null ? fav(mp) : dash) + '</td></tr>' + '<tr><td>Total points</td><td class="muted">…</td><td>' + (mk.total || dash) + '</td></tr>';
+  }
+  const goalie = sport === 'nhl' && (g.away.probable || g.home.probable) ? '<div class="goal"><span class="lbl">Goalies</span>' + g.away.abbr + ' ' + (g.away.probable || '?') + ' · ' + g.home.abbr + ' ' + (g.home.probable || '?') + '</div>' : '';
+  return { day: dayLabel(g.date), html: '<div class="game' + cls + '"><div class="g-top"><span class="when">' + when + '</span>' + chips.map(c => '<span class="chip">' + c + '</span>').join('') + '<button class="act alt" data-load="' + i + '">Open in simulator</button></div>' +
+    '<div class="g-teams">' + g.away.abbr + ' <span class="at">@</span> ' + g.home.abbr + '<span class="mline">' + (mk.text !== '–' ? 'Line: ' + mk.text : '') + '</span></div>' +
+    '<table class="cmp"><tr><th></th><th>Sim</th><th>Market</th></tr>' + rows + '</table>' + verdict + goalie + injHtml(g) + '</div>' };
+}
+function renderUpcoming() {
   const box = $('upcoming'), sched = window.LIVE_DATA && window.LIVE_DATA.schedule && window.LIVE_DATA.schedule[sport];
-  if (!sched) { box.innerHTML = '<b>Upcoming games</b><p class="note">No schedule loaded. Run <code>node update-data.js</code> to fetch it.</p>'; return; }
-  if (!sched.length) { box.innerHTML = '<b>Upcoming games</b><p class="note">No ' + S[sport].label + ' games in the next 3 days.</p>'; return; }
-  const spread = sport !== 'nhl' && sport !== 'mlb';
-  const rows = sched.map((g, i) => {
-    const mk = market(g), r = results && results[i];
-    let simCell = '<td></td><td></td>', edge = '<td></td>';
-    if (r) {
-      simCell = '<td title="raw sim ' + (r.raw * 100).toFixed(0) + '%, calibrated using the backtest">' + g.home.abbr + ' ' + (r.pHome * 100).toFixed(0) + '% (' + (r.margin >= 0 ? '+' : '') + r.margin.toFixed(1) + ')</td><td>' + g.away.abbr + ' ' + r.away.toFixed(sport === 'nhl' ? 1 : 0) + ' – ' + g.home.abbr + ' ' + r.home.toFixed(sport === 'nhl' ? 1 : 0) + '<br><span class="note">total ' + r.total.toFixed(1) + '</span></td>';
-      const mp = marketProb(mk);
-      if (sport === 'nfl' && mp != null) { r.blend = BLEND.nfl * r.pHome + (1 - BLEND.nfl) * mp; simCell = simCell.replace('</td><td>', '<br><b title="' + Math.round(BLEND.nfl * 100) + '% sim, ' + Math.round((1 - BLEND.nfl) * 100) + '% market (backtested on 2024 and 2025)">best est. ' + g.home.abbr + ' ' + (r.blend * 100).toFixed(0) + '%</b></td><td>'); }
-      if (sport === 'nhl') simCell = simCell.replace('</td><td>', '<br><span class="note">low confidence</span></td><td>');
-      const bits = [];
-      if (spread && mk.homeMargin != null) { const d = r.margin - mk.homeMargin; bits.push('<span class="' + (d >= 0 ? 'pos' : 'neg') + '">' + g.home.abbr + ' ' + (d >= 0 ? '+' : '') + d.toFixed(1) + ' vs line</span>'); }
-      else if (mk.homeProb != null) { const d = (r.pHome - mk.homeProb) * 100; bits.push('<span class="' + (d >= 0 ? 'pos' : 'neg') + '">' + g.home.abbr + ' ' + (d >= 0 ? '+' : '') + d.toFixed(1) + ' pts vs mkt</span>'); }
-      if (mk.total) { const d = r.total - mk.total; bits.push('total ' + (d >= 0 ? '+' : '') + d.toFixed(1)); }
-      const mpg = marketProb(mk); if (mpg != null && Math.abs(r.pHome - mpg) >= 0.12) bits.unshift('<span class="neg"><b>Big gap vs market:</b> check the injuries listed under the game</span>');
-      edge = '<td>' + bits.join('<br>') + '</td>';
-    }
-    const when = new Date(g.date).toLocaleString([], { weekday: 'short', hour: 'numeric', minute: '2-digit' });
-    const b2b = sport === 'nba' && (g.awayRest === 0 || g.homeRest === 0) ? '<br><span class="note">Back-to-back: ' + [g.awayRest === 0 ? g.away.abbr : null, g.homeRest === 0 ? g.home.abbr : null].filter(Boolean).join(', ') + '</span>' : '';
-    const prob = sport === 'nhl' && (g.away.probable || g.home.probable) ? '<br><span class="note">G: ' + (g.away.probable || '?') + ' / ' + (g.home.probable || '?') + '</span>' : '';
-    return '<tr><td>' + when + '</td><td>' + g.away.abbr + ' @ ' + g.home.abbr + prob + b2b + injLine(g) + '</td><td>' + mk.text + (mk.total ? ' · O/U ' + mk.total : '') + '</td>' + simCell + edge + '<td><button class="act alt" data-load="' + i + '">Load</button></td></tr>';
-  }).join('');
-  box.innerHTML = '<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap"><b>Upcoming ' + S[sport].label + ' games</b><span><button class="act" id="bSimAll">Sim all (2,000 each)</button></span></div>' +
-    '<p class="note" style="margin:4px 0">Lineups and injuries as of ' + new Date(window.LIVE_DATA.generated).toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' }) + ' (' + Math.round((Date.now() - new Date(window.LIVE_DATA.generated)) / 60000) + ' min ago); the data refreshes every 2 hours on game days, so late scratches may be missing. Sim columns: home win % (calibrated from the backtest below; hover for raw) and projected home margin and projected total. Market from ESPN/DraftKings at last data refresh. Missing key defenders raise the opponent’s scoring a little: the NFL size is backed by a weak backtest signal, the NBA and NHL sizes are judgement calls. NFL shows a best estimate that leans on the betting line, because the line beat the sim in both backtested seasons. NHL win probabilities are only slightly better than a coin flip.</p>' +
-    '<table class="up"><tr><th>Time</th><th>Game</th><th>Market</th><th>Sim win % (margin)</th><th>Projected score</th><th>Sim vs market</th><th></th></tr>' + rows + '</table>';
+  const head = '<div class="board-head"><h2>Upcoming ' + S[sport].label + ' games</h2><span class="muted" id="simStatus"></span></div>';
+  if (!sched) { box.innerHTML = head + '<p class="note">No schedule loaded. Run <code>node update-data.js</code> to fetch it.</p>'; return; }
+  if (!sched.length) { box.innerHTML = head + '<p class="note">No ' + S[sport].label + ' games in the next 3 days.</p>'; return; }
+  const res = simRes[sport], gen = window.LIVE_DATA.generated;
+  let html = '', last = null;
+  sched.forEach((g, i) => { const c = gameCard(g, i, res && res[i]); if (c.day !== last) { html += '<h3 class="day">' + c.day + '</h3>'; last = c.day; } html += c.html; });
+  box.innerHTML = head + '<p class="note" style="margin:0 0 6px">Data updated ' + new Date(gen).toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' }) + ' (' + Math.round((Date.now() - new Date(gen)) / 60000) + ' min ago). Late scratches can be missing.</p>' +
+    '<details class="how"><summary>How to read this</summary><p class="note">Sim = this simulator, 2,000 games per matchup, calibrated on the backtest. Market = ESPN/DraftKings at the last data update. &ldquo;Margin&rdquo; is the expected winning margin; &ldquo;Total&rdquo; is both teams&rsquo; points added together. Missing key defenders raise the opponent&rsquo;s scoring a little (the NFL size is backed by a weak backtest signal; the NBA and NHL sizes are judgement calls). NFL shows a best estimate that leans on the line, because the line beat the sim in both backtested seasons. NHL win chances are only slightly better than a coin flip.</p></details>' + html;
   box.querySelectorAll('[data-load]').forEach(b => b.onclick = () => loadGame(sched[+b.dataset.load]));
-  $('bSimAll').onclick = async () => {
-    const R = rng(), res = []; $('bSimAll').textContent = 'Simulating…';
-    for (const g of sched) {
-      await new Promise(r => setTimeout(r, 0));
-      const p = prepGame(g); if (!p) { res.push(null); continue; }
-      const m = Sim.monteCarlo(sport, p[0], p[1], 2000, R, { rest: { away: g.awayRest, home: g.homeRest } });
-      const raw = (m.wins[1] + m.wins[2] / 2) / m.n, a = (window.BACKTEST && window.BACKTEST.leagues[sport] && window.BACKTEST.leagues[sport].stretch) || 1;
-      const z = Math.log(Math.min(0.999, Math.max(0.001, raw)) / (1 - Math.min(0.999, Math.max(0.001, raw))));
-      res.push({ raw, pHome: 1 / (1 + Math.exp(-a * z)), margin: m.avg[1] - m.avg[0], total: m.avgTotal, away: m.avg[0], home: m.avg[1] });
-    }
-    renderUpcoming(res);
-  };
+  if (!res) runSim();
 }
 
 // ---------- Live track record (picks logged before game time, scored after) ----------
 function renderPicks() {
   const box = $('picks'), P = window.PICKS && window.PICKS.leagues && window.PICKS.leagues[sport];
-  const hdr = '<b>Live track record: ' + S[sport].label + '</b>';
+  const hdr = '<summary>Live track record: ' + S[sport].label + ' <span class="muted">(how the sim has done on real games since logging began)</span></summary>';
   if (!P) { box.innerHTML = hdr + '<p class="note">Nothing logged yet. Run <code>node refresh.js</code> (or let the scheduled task do it) to start logging picks.</p>'; return; }
   if (!P.n) { box.innerHTML = hdr + '<p class="note">' + P.pending + ' games logged and waiting to finish. Results appear after the games are played and the next refresh runs.</p>'; return; }
   const pc = x => x == null ? '–' : (x * 100).toFixed(1) + '%';
@@ -333,9 +393,9 @@ function renderPicks() {
 // ---------- Backtest ----------
 function renderBacktest() {
   const box = $('backtest'), B = window.BACKTEST && window.BACKTEST.leagues && window.BACKTEST.leagues[sport];
-  if (!B) { box.innerHTML = '<b>Accuracy</b><p class="note">' + (sport === 'mlb' ? 'No backtest for MLB yet (it has no live data).' : 'No backtest loaded. Run <code>node backtest.js</code>.') + '</p>'; return; }
+  if (!B) { box.innerHTML = '<summary>How accurate is the sim?</summary><p class="note">' + (sport === 'mlb' ? 'No backtest for MLB yet (it has no live data).' : 'No backtest loaded. Run <code>node backtest.js</code>.') + '</p>'; return; }
   const better = (a, b) => a < b ? 'pos' : 'neg';
-  box.innerHTML = '<b>How accurate is the ' + S[sport].label + ' sim? (walk-forward backtest)</b>' +
+  box.innerHTML = '<summary>How accurate is the ' + S[sport].label + ' sim? <span class="muted">(backtest on past seasons)</span></summary>' +
     '<p class="note">' + B.n.toLocaleString() + ' real games, ' + B.window + '. Each game was predicted using only team results from before that game (' + B.sims + ' sims per game, teams rated after ' + B.minGp + '+ games). Team-level only: no historical injuries or lineups' + (sport === 'nfl' ? '.' : ', and no betting lines to compare against.') + '</p>' +
     '<table><tr><th></th><th>Sim</th><th>Baseline (home-win rate)</th></tr>' +
     '<tr><td>Picked the winner</td><td class="' + (B.acc > B.accBase ? 'pos' : 'neg') + '">' + (B.acc * 100).toFixed(1) + '%</td><td>' + (B.accBase * 100).toFixed(1) + '%</td></tr>' +
