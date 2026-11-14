@@ -106,7 +106,7 @@
     const fw = [14, 12, 11, 9, 8, 7, 6, 5, 4, 3, 3, 2], dw = [4, 3, 2.5, 2, 1.5, 1], fp = ['C', 'LW', 'RW'];
     return { fwd: fw.map((w, i) => ({ name: name(), pos: fp[i % 3], w: jit(w, 0.2) })), def: dw.map(w => ({ name: name(), pos: 'D', w: jit(w, 0.2) })), g: { name: name() }, goalies: null, svAvg: 0.905 };
   }
-  function roster(sport, team) { return team.roster || (team.roster = genRoster(sport === 'ncaaf' ? 'nfl' : sport, team)); }   // college football reuses the NFL play-by-play engine and its placeholder depth chart
+  function roster(sport, team) { return team.roster || (team.roster = sport === 'ncaab' ? { players: [] } : genRoster(sport === 'ncaaf' ? 'nfl' : sport, team)); }   // college football reuses the NFL play-by-play engine; a team with no box-score data yet gets its placeholder depth chart
 
   // =====================================================================
   // NBA
@@ -600,8 +600,11 @@
     const teams = [away, home];
     const R = teams.map(t => nflPrep(t, rng));
     const wx = nflWeatherAdj(opts.weather) / 2, col = !!opts.college, hf = opts.neutral ? 0 : NCAAF_HCA / 2;
+    // College: the team rating already holds the quarterback's play, so the NFL's passer scaling is switched off; a starter who is out costs a flat NCAAF_QB points.
+    const qbl = R.map(r => col && r.qb !== r.base ? NCAAF_QB : 0);
+    if (col) R.forEach(r => { r.cmpRel = r.ypaRel = r.intRel = 1; });
     // College: ratings are opponent-adjusted points per game, combined additively (a 60-point offense against a bad defense is common, so the NFL's ratio form overshoots).
-    const e = col ? [clamp(away.pf + home.pa - NCAAF_LG - hf, 2, 75), clamp(home.pf + away.pa - NCAAF_LG + hf, 2, 75)] : [away.pf * home.pa / NFL_LG - 1.0 + R[1].defLost - R[0].offLost + wx, home.pf * away.pa / NFL_LG + 1.0 + R[0].defLost - R[1].offLost + wx];
+    const e = col ? [clamp(away.pf + home.pa - NCAAF_LG - hf - qbl[0] * 2 / 3 + qbl[1] / 3, 2, 75), clamp(home.pf + away.pa - NCAAF_LG + hf - qbl[1] * 2 / 3 + qbl[0] / 3, 2, 75)] : [away.pf * home.pa / NFL_LG - 1.0 + R[1].defLost - R[0].offLost + wx, home.pf * away.pa / NFL_LG + 1.0 + R[0].defLost - R[1].offLost + wx];
     const s = opts.strength || (col ? nflStrengths(e) : e.map(x => clamp(x / NFL_LG, 0.45, 1.8)));
     const score = [0, 0], byQ = [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0]];
     const st = [0, 1].map(() => ({ plays: 0, yds: 0, pass: 0, rush: 0, to: 0, pen: 0, penYds: 0, c3: 0, a3: 0, top: 0, sacks: 0 }));
@@ -787,8 +790,12 @@
   // =====================================================================
   // Teams come from data.js (FBS football teams, Division I basketball teams), so both lists start empty. Ratings are opponent-adjusted
   // points for / against per game versus an average team (college.js), which matters far more here than in the pro leagues
-  // because schedules differ so much. Both are team-level: no real rosters, injuries or weather.
+  // because schedules differ so much. Players come from this season's box scores (college.js). There is no usable college injury report, so
+  // "out" means a regular who did not play in his team's last game; the costs below were fit on that same flag (2024 and 2025 seasons, sim's misses
+  // against who had sat out the game before): about 1.0 and 2.7 points for a starting quarterback, and for basketball about 5 points per
+  // (minutes share x Game Score per 40 above 8, in tens). No weather.
   let NCAAF_LG = 27, NCAAB_LG = 72.5;
+  const NCAAF_QB = 1.8, NCAAB_ABS = 0.5, NCAAB_STRETCH = 0.25;   // NCAAB_STRETCH: favorites by more than 10 win by 25% more than the ratings add up to (blowouts run away)
   const NCAAF_HCA = 3.5, NCAAB_HCA = 3.5;   // home edge in points of margin (0 at neutral sites); the same values rate the teams in college.js
   // The NFL engine at each offensive strength, measured by simulation (6,000 games per row against a strength-1.0 opponent):
   // [strength, points scored, factor on the opponent's points]. The factor exists because a weak offense gives the ball back quickly.
@@ -817,7 +824,10 @@
   function ncaabGame(away, home, rng, opts) {
     opts = opts || {};
     const teams = [away, home], hf = opts.neutral ? 0 : NCAAB_HCA / 2;
-    const e = [clamp(away.off + home.def - NCAAB_LG - hf, 35, 130), clamp(home.off + away.def - NCAAB_LG + hf, 35, 130)];
+    const act = teams.map(t => { const ps = (t.roster && t.roster.players) || [], inn = ps.filter(p => !sits(p, rng)); return { inn, lost: Math.min(8, ps.filter(p => !inn.includes(p)).reduce((a, p) => a + NCAAB_ABS * (p.min / 40) * (p.gpr == null ? 1 : p.gpr) * Math.max(0, (p.gs40 || 0) - 8), 0)) }; });
+    const raw = [away.off + home.def - NCAAB_LG - hf - act[0].lost / 2 + act[1].lost / 2, home.off + away.def - NCAAB_LG + hf - act[1].lost / 2 + act[0].lost / 2];
+    const gapM = raw[1] - raw[0], str = Math.sign(gapM) * NCAAB_STRETCH * Math.max(0, Math.abs(gapM) - 10) / 2;
+    const e = [clamp(raw[0] - str, 35, 130), clamp(raw[1] + str, 35, 130)];
     // High-scoring matchups are part pace, part efficiency: possessions scale with the square root of the expected total.
     const paceMean = CB.pace * Math.sqrt((e[0] + e[1]) / (2 * NCAAB_LG)), poss = paceMean * clamp(1 + normal(rng) * CB.paceSd, 0.85, 1.15);
     const sh = e.map(x => {
@@ -866,7 +876,14 @@
         ['3P', st[0].tpm + '-' + st[0].tpa, st[1].tpm + '-' + st[1].tpa], ['FT', st[0].ftm + '-' + st[0].fta, st[1].ftm + '-' + st[1].fta],
         ['Rebounds', st[0].reb, st[1].reb], ['Turnovers', st[0].tov, st[1].tov],
       ],
-      tables: opts.detail ? [[], []] : undefined, log,
+      tables: opts.detail ? [0, 1].map(i => {
+        // player lines: the team's minutes, points, rebounds and assists dealt out to the players who dressed, by their season shares
+        const ps = act[i].inn; if (ps.length < 5) return [];
+        const mt = ps.reduce((a, p) => a + p.min, 0), tm = 200 + 25 * (period - 2), mins = ps.map(p => Math.min(40 + 5 * (period - 2), p.min * tm / mt));
+        const deal = (total, w) => { const out = ps.map(() => 0), sum = w.reduce((a, x) => a + x, 0); for (let k = 0; k < total; k++) { let r = rng() * sum, j = 0; while (j < w.length - 1 && (r -= w[j]) > 0) j++; out[j]++; } return out; };
+        const sc = mins.map((m, j) => m / Math.max(1, ps[j].min)), pts = deal(score[i], ps.map((p, j) => Math.max(0.3, p.pts || 1) * sc[j])), reb = deal(st[i].reb, ps.map((p, j) => Math.max(0.3, p.reb || 1) * sc[j])), ast = deal(Math.round(st[i].fgm * 0.53), ps.map((p, j) => Math.max(0.2, p.ast || 0.5) * sc[j]));
+        return [{ title: 'Players', headers: ['Player', 'MIN', 'PTS', 'REB', 'AST'], rows: ps.map((p, j) => [p.name, Math.round(mins[j]), pts[j], reb[j], ast[j]]).sort((a, b) => b[1] - a[1]) }];
+      }) : undefined, log,
     };
   }
 
@@ -961,7 +978,7 @@
     for (const sp of ['ncaaf', 'ncaab']) {
       const d = data[sp]; if (!d) continue;
       const T = SPORTS[sp].teams; T.length = 0;
-      for (const k of Object.keys(d)) { const e = d[k]; T.push(Object.assign({ id: e.abbr, name: e.name, eid: k, live: true, liveGp: e.gp }, sp === 'ncaaf' ? { pf: e.off, pa: e.def } : { off: e.off, def: e.def })); n++; }
+      for (const k of Object.keys(d)) { const e = d[k]; T.push(Object.assign({ id: e.abbr, name: e.name, eid: k, live: true, liveGp: e.gp }, sp === 'ncaaf' ? { pf: e.off, pa: e.def } : { off: e.off, def: e.def }, e.players ? { roster: sp === 'ncaab' ? { players: e.players } : { qb: e.players.qb, rb: e.players.rb, rec: e.players.rec, ol: [], defense: [] } } : {})); n++; }
       T.sort((a, b) => a.name.localeCompare(b.name));
     }
     return n;
@@ -970,7 +987,10 @@
   // Key players who are out or uncertain for a team, most important first: [{ name, pos, status, out }]. Used to explain why the sim and the market disagree.
   const STATUS = [[/out|injured reserve/i, 'Out'], [/doubtful/i, 'Doubtful'], [/questionable/i, 'Questionable'], [/day-to-day/i, 'Day-to-day']];
   function injuries(sport, team, max) {
-    if (SPORTS[sport].college) return [];   // team-level model: no injury data
+    if (SPORTS[sport].college) {   // no injury report: regulars who sat out the team's last game (see the college section)
+      const r = team.roster || {}, list = sport === 'ncaab' ? (r.players || []).map(p => ({ p, w: p.min * Math.max(1, (p.gs40 || 0) - 8) })) : (r.qb || []).filter(p => p.base).map(p => ({ p, w: 100 }));
+      return list.filter(x => x.p.out).sort((a, b) => b.w - a.w).slice(0, max || 4).map(x => ({ name: x.p.name, pos: x.p.pos || '', status: 'Missed', out: true, note: x.p.note }));
+    }
     const r = roster(sport, team), out = [];
     const add = (p, w) => {
       if (p.gpr != null && p.gpr < 0.35 && p.out) return;   // out most of the season: already in the team rating, not news

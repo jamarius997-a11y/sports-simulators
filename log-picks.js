@@ -67,7 +67,7 @@ for (const sp of ['nba', 'nfl', 'nhl', 'ncaaf', 'ncaab']) {
       espnPHome: g.espnP != null ? g.espnP : undefined,   // ESPN BPI/FPI, logged so it can be scored against results later
       simPHome: +(1 / (1 + Math.exp(-a * z))).toFixed(4), rawPHome: +raw.toFixed(4), simMargin: +(m.avg[1] - m.avg[0]).toFixed(2), simScore: [+m.avg[0].toFixed(2), +m.avg[1].toFixed(2)], simTotal: +m.avgTotal.toFixed(2),
       blendPHome: BLEND[sp] != null && mk.pHome != null ? +(BLEND[sp] * (1 / (1 + Math.exp(-a * z))) + (1 - BLEND[sp]) * mk.pHome).toFixed(4) : undefined,
-      inj: col ? undefined : [Sim.injuries(sp, away), Sim.injuries(sp, home)],
+      inj: col ? [Sim.injuries(sp, away, 2), Sim.injuries(sp, home, 2)].map(l => l.map(p => ({ name: p.name, status: p.status }))) : [Sim.injuries(sp, away), Sim.injuries(sp, home)],
       lines: col ? lineHistory(prev, mk).slice(-8) : lineHistory(prev, mk),
       travel: col ? undefined : [[g.awayFrom, g.home.abbr], [g.homeFrom, g.home.abbr]].map(([f, to]) => f && f !== to ? { from: f, miles: Math.round(Travel.miles(sp, f, to) || 0), tz: Travel.tzShift(sp, f, to) } : null),
       mkt: mk, loggedAt: new Date().toISOString(), result: prev ? prev.result : null,

@@ -213,32 +213,47 @@ function injuryOf(a) {
 }
 const r1 = x => Math.round(x * 10) / 10, r3 = x => Math.round(x * 1000) / 1000;
 
-// College teams: opponent-adjusted ratings from this season's results (college.js), starting from last season's ratings.
-// college-cache.json (committed) keeps last season's ratings and this season's finished days, so a refresh only downloads the last 3 days.
+// College teams: opponent-adjusted ratings from this season's results (college.js), starting from last season's ratings, plus each team's
+// players from the box scores. college-cache.json (committed) keeps last season's ratings, this season's finished days and the player totals,
+// so a refresh only downloads days that were not finished last time. A day is closed (box scores read, never downloaded again) once all its
+// games are final, or after 3 days whatever its state; days close in order so "missed the last game" stays right.
 async function buildCollege(L) {
-  const C = require('./college.js'), cfg = C.CFG[L], year = C.seasonOf(L), file = path.join(__dirname, 'college-cache.json');
+  const C = require('./college.js'), cfg = C.CFG[L], year = C.seasonOf(L), file = path.join(__dirname, 'college-cache.json'), VER = 2;
   let cache = {}; try { cache = JSON.parse(fs.readFileSync(file, 'utf8')); } catch (e) { /* first run */ }
-  const c = cache[L] && cache[L].season === year ? cache[L] : { season: year, prior: null, days: {} };
+  const c = cache[L] && cache[L].season === year && cache[L].v === VER ? cache[L] : { v: VER, season: year, prior: null, days: {}, open: {}, pl: {} };
   const mem = await C.members(L, year);
   if (Object.keys(mem).length < 50) throw new Error(L + ': team list failed to load');
-  const base = { members: new Set(Object.keys(mem)), hca: cfg.hca, k: cfg.k, carry: cfg.carry, gap: cfg.gap };
-  if (!c.prior) {
-    const p = C.rate(Object.values(await C.seasonGames(L, year - 1)).flat(), Object.assign({}, base, { lg: 0 }));
+  const M = new Set(Object.keys(mem)), base = { members: M, hca: cfg.hca, k: cfg.k, carry: cfg.carry, gap: cfg.gap, gapD: cfg.gapD };
+  if (!c.prior) {   // once a season: last season's games and box scores (a large download the first time)
+    const raw = await C.seasonGames(L, year - 1), D = await C.seasonDetail(L, year - 1, m => console.log('  ' + m)), days = {};
+    for (const d in raw) days[d] = raw[d].map(g => C.gameRow(L, g, D[g[5]]));
+    const p = C.rate(C.flat(L, days, M), Object.assign({}, base, { lg: 0 }));
     c.prior = { lg: r1(p.lg), teams: {} };
     for (const id in p.teams) c.prior.teams[id] = { o: Math.round(p.teams[id].o * 100) / 100, d: Math.round(p.teams[id].d * 100) / 100 };
     console.log(L.toUpperCase() + ': rated the ' + (year - 1) + ' season as a starting point (' + Object.keys(p.teams).length + ' teams)');
   }
-  const all = C.seasonDays(L, year), recent = new Set(all.slice(-3)), need = all.filter(d => !(d in c.days) || recent.has(d));
-  const got = await C.pool(need, 8, d => C.dayGames(L, d));
-  need.forEach((d, i) => { if (got[i]) c.days[d] = got[i]; });
-  cache[L] = c; fs.writeFileSync(file, JSON.stringify(cache));
-  const games = Object.values(c.days).flat(), R = C.rate(games, Object.assign({}, base, { prior: c.prior.teams, lg: c.prior.lg }));
-  console.log(L.toUpperCase() + ': season ' + year + ', ' + Object.keys(mem).length + ' teams, ' + games.length + ' games played (' + need.length + ' days downloaded)');
-  const result = {};
-  for (const id in mem) {
-    const p = c.prior.teams[id], t = R.teams[id] || { o: p ? p.o * cfg.carry : 0, d: p ? p.d * cfg.carry : 0, n: 0 };
-    result[id] = { abbr: mem[id].abbr, name: mem[id].name, off: r1(R.lg + t.o), def: r1(R.lg + t.d), gp: t.n };
+  const all = C.seasonDays(L, year), need = all.filter(d => !(d in c.days)), got = await C.pool(need, 8, d => C.dayGames(L, d));
+  let inOrder = true, boxes = 0; c.open = {};
+  for (let i = 0; i < need.length; i++) {
+    const d = need[i], games = got[i], age = all.length - 1 - all.indexOf(d);
+    if (!games) { inOrder = false; continue; }
+    if (inOrder && (games.pending === 0 || age > 3)) {
+      const det = await C.pool(games, 10, g => C.gameDetail(L, g[5]));
+      c.days[d] = games.map((g, k) => { C.track(L, c.pl, g, det[k]); return C.gameRow(L, g, det[k]); }); boxes += games.length;
+    } else { inOrder = false; if (games.length) c.open[d] = games.map(g => g.slice(0, 6)); }
   }
+  for (const id in c.pl) if (!M.has(id)) delete c.pl[id];
+  cache[L] = c; fs.writeFileSync(file, JSON.stringify(cache));
+  const days = Object.assign({}, c.days, c.open), R = C.rate(C.flat(L, days, M), Object.assign({}, base, { prior: c.prior.teams, lg: c.prior.lg }));
+  const nGames = Object.values(days).reduce((a, x) => a + x.length, 0);
+  console.log(L.toUpperCase() + ': season ' + year + ', ' + Object.keys(mem).length + ' teams, ' + nGames + ' games played (' + need.length + ' days checked, ' + boxes + ' box scores read)');
+  const result = {}; let withPl = 0, flagged = 0;
+  for (const id in mem) {
+    const p = c.prior.teams[id], t = R.teams[id] || { o: p ? p.o * cfg.carry : 0, d: p ? p.d * cfg.carry : 0, n: 0 }, pl = C.players(L, c.pl[id]);
+    result[id] = { abbr: mem[id].abbr, name: mem[id].name, off: r1(R.lg + t.o), def: r1(R.lg + t.d), gp: t.n };
+    if (pl) { result[id].players = pl; withPl++; flagged += (L === 'ncaab' ? pl : pl.qb).filter(x => x.out).length; }
+  }
+  console.log('  players for ' + withPl + ' teams; ' + flagged + (L === 'ncaab' ? ' regulars' : ' starting quarterbacks') + ' missed their team\'s last game');
   META[L] = { lg: Math.round(R.lg * 1000) / 1000 };
   return result;
 }

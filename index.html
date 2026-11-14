@@ -154,16 +154,18 @@ $('homeSel').onchange = () => { curRest = null; curWx = null; curNeutral = false
 // Roster editor: rename players, mark injured players Out, tweak the rating that drives their share of the action.
 function buildRoster(side) {
   const t = team($(side + 'Sel'));
-  if (sport === 'ncaab') { $(side + 'Roster').innerHTML = '<p class="note">College basketball is simulated at the team level (no player data). Edit the two ratings above instead.</p>'; return; }
   const R = Sim.roster(sport, t);
+  if (sport === 'ncaab' && !(R.players && R.players.length)) { $(side + 'Roster').innerHTML = '<p class="note">No box scores for this team yet this season, so there are no players to show. Edit the two ratings above instead.</p>'; return; }
   const G = {
     nba: [['Rotation', R.players, 'min', 'Min'], ['', null]],
     mlb: [['Lineup', R.lineup, 'bat', 'Bat']],
     nfl: [['QB', R.qb, 'ypa', 'Y/A'], ['RB', R.rb, 'car', 'Car'], ['WR / TE', R.rec, 'tgt', 'Tgt'], ['O-line', R.ol && R.ol.length ? R.ol : null, 'snap', 'Snap%'], ['Defense', R.defense, R.defense && R.defense.some(p => p.snap != null) ? 'snap' : 'prod', R.defense && R.defense.some(p => p.snap != null) ? 'Snap%' : 'Prod']],
     nhl: [['Forwards', R.fwd, 'w', 'Shot wt'], ['Defense', R.def, 'w', 'Shot wt']],
-  }[sport === 'ncaaf' ? 'nfl' : sport].filter(g => g[1]);
+    ncaab: [['Rotation', R.players, 'min', 'Min']],
+    ncaaf: [['QB', R.qb, 'att', 'Att'], ['RB', R.rb, 'car', 'Car'], ['Receivers', R.rec, 'tgt', 'Tgt']],
+  }[sport].filter(g => g[1]);
   const hasOut = sport !== 'mlb';
-  let html = sport === 'ncaaf' ? '<p class="note">Live team ratings. College rosters are not loaded: this depth chart is a generated placeholder that only fills in the box score.</p>' : (t.live ? '<p class="note">Live ratings and rosters (' + (t.liveGp || 0) + ' games this season, blended with last season). Tick <b>Out</b> to sit a player.</p>' : '<p class="note">Names are generated placeholders &mdash; rename them and adjust ratings.</p>');
+  let html = S[sport].college ? (t.roster && t.live ? '<p class="note">Live ratings, and players from this season&rsquo;s box scores. There is no college injury report: <b>Out</b> is pre-ticked for a ' + (sport === 'ncaaf' ? 'starting quarterback' : 'regular') + ' who did not play in the team&rsquo;s last game. Untick it if he is back.</p>' : '<p class="note">Live team ratings. No box scores for this team yet: these names are generated placeholders.</p>') : (t.live ? '<p class="note">Live ratings and rosters (' + (t.liveGp || 0) + ' games this season, blended with last season). Tick <b>Out</b> to sit a player.</p>' : '<p class="note">Names are generated placeholders &mdash; rename them and adjust ratings.</p>');
   if (sport === 'mlb') {
     html += '<label>Starting pitcher</label><select data-start>' + '<option value="-1">Random from rotation</option>' +
       R.rotation.map((p, i) => '<option value="' + i + '"' + (t.startIdx === i ? ' selected' : '') + '>' + p.name + ' (' + (p.adj > 0 ? '+' : '') + p.adj + ' RA)</option>').join('') + '</select>';
@@ -176,7 +178,7 @@ function buildRoster(side) {
   G.forEach((g, gi) => {
     html += '<tr><th>' + g[0] + '</th><th>Pos</th><th>' + g[3] + '</th>' + (hasOut ? '<th>Out</th>' : '') + '</tr>';
     g[1].forEach((p, pi) => {
-      html += '<tr><td><input data-g="' + gi + '" data-p="' + pi + '" data-name value="' + p.name.replace(/"/g, '&quot;') + '"></td><td>' + p.pos + '</td>' +
+      html += '<tr><td><input data-g="' + gi + '" data-p="' + pi + '" data-name value="' + p.name.replace(/"/g, '&quot;') + '"></td><td>' + (p.pos || '') + '</td>' +
         '<td><input type="number" step="any" data-g="' + gi + '" data-p="' + pi + '" data-num value="' + fmtv(p[g[2]]) + '"></td>' +
         (hasOut ? '<td title="' + (p.note || '') + '"><input type="checkbox" data-g="' + gi + '" data-p="' + pi + '" data-out' + (p.out ? ' checked' : '') + '>' + (p.note ? ' <span class="note">' + p.note + '</span>' : '') + '</td>' : '') + '</tr>';
     });
@@ -329,7 +331,7 @@ function loadGame(g) {
   $('awaySel').value = T.indexOf(p[0]); $('homeSel').value = T.indexOf(p[1]);
   buildFields('away'); buildFields('home'); buildRoster('away'); buildRoster('home'); $('tool').open = true; $('tool').scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
-const ST = { Out: 'out', Doubtful: 'doubtful', Questionable: 'Q', 'Day-to-day': 'day-to-day' };
+const ST = { Out: 'out', Doubtful: 'doubtful', Questionable: 'Q', 'Day-to-day': 'day-to-day', Missed: 'missed last game' };
 function injHtml(g) {
   const a = findTeam(sport, g.away), h = findTeam(sport, g.home); if (!a || !h || !Sim.injuries) return '';
   const part = (abbr, t) => { const l = Sim.injuries(sport, t, 3); return l.length ? '<div><b>' + abbr + '</b> ' + l.map(p => '<span class="' + (p.out ? 'st-out' : 'st-q') + '">' + p.name + ' (' + ST[p.status] + ')</span>').join(', ') + '</div>' : ''; };
@@ -460,7 +462,7 @@ function renderBacktest() {
   if (!B) { box.innerHTML = '<summary>How accurate is the sim?</summary><p class="note">' + (sport === 'mlb' ? 'No backtest for MLB yet (it has no live data).' : 'No backtest loaded. Run <code>node ' + (S[sport].college ? 'backtest-college.js' : 'backtest.js') + '</code>.') + '</p>'; return; }
   const better = (a, b) => a < b ? 'pos' : 'neg';
   box.innerHTML = '<summary>How accurate is the ' + S[sport].label + ' sim? <span class="muted">(backtest on past seasons)</span></summary>' +
-    '<p class="note">' + B.n.toLocaleString() + ' real games, ' + B.window + '. Each game was predicted using only team results from before that game' + (S[sport].college ? ', plus the season before as a starting point' : '') + ' (' + B.sims + ' sims per game, teams rated after ' + B.minGp + '+ games). Team-level only: no historical injuries or lineups' + (sport === 'nfl' ? '.' : ', and no betting lines to compare against.') + '</p>' +
+    '<p class="note">' + B.n.toLocaleString() + ' real games, ' + B.window + '. Each game was predicted using only team results from before that game' + (S[sport].college ? ', plus the season before as a starting point' : '') + ' (' + B.sims + ' sims per game, teams rated after ' + B.minGp + '+ games). ' + (S[sport].college ? 'Ratings use each game&rsquo;s box score, and a regular who sat out his team&rsquo;s previous game is treated as out.' : 'Team-level only: no historical injuries or lineups' + (sport === 'nfl' ? '.' : ', and no betting lines to compare against.')) + '</p>' +
     '<table><tr><th></th><th>Sim</th><th>Baseline (home-win rate)</th></tr>' +
     '<tr><td>Picked the winner</td><td class="' + (B.acc > B.accBase ? 'pos' : 'neg') + '">' + (B.acc * 100).toFixed(1) + '%</td><td>' + (B.accBase * 100).toFixed(1) + '%</td></tr>' +
     '<tr><td>Brier score (lower is better)</td><td class="' + better(B.brier, B.brierBase) + '">' + B.brier + '</td><td>' + B.brierBase + '</td></tr>' +
@@ -469,13 +471,14 @@ function renderBacktest() {
     '<tr><td>Log loss (lower is better)</td><td class="' + better(B.logloss, B.loglossBase) + '">' + B.logloss + '</td><td>' + B.loglossBase + '</td></tr>' +
     '<tr><td>Margin error (avg points off)</td><td>' + B.marginMAE + '</td><td>bias ' + (B.marginBias > 0 ? '+' : '') + B.marginBias + '</td></tr>' +
     '<tr><td>Total error (avg points off)</td><td>' + B.totalMAE + '</td><td>bias ' + (B.totalBias > 0 ? '+' : '') + B.totalBias + ' (sim ' + B.predTotal + ' vs real ' + B.actualTotal + ')</td></tr></table>' +
-    (B.market ? '<h4 style="margin:14px 0 4px">Versus the closing betting line (' + B.market.n + ' games, free nflverse data)</h4><table><tr><th></th><th>Sim</th><th>Market</th></tr>' +
+    (B.market ? '<h4 style="margin:14px 0 4px">Versus the closing betting line (' + B.market.n.toLocaleString() + ' games, ' + (S[sport].college ? 'lines from ESPN' : 'free nflverse data') + ')</h4><table><tr><th></th><th>Sim</th><th>Market</th></tr>' +
       '<tr><td>Brier (lower is better)</td><td>' + B.market.brierSim + '</td><td class="' + (B.market.brierMarket < B.market.brierSim ? 'pos' : 'neg') + '">' + B.market.brierMarket + '</td></tr>' +
       '<tr><td>Picked the winner</td><td>' + (B.market.accSim * 100).toFixed(1) + '%</td><td>' + (B.market.accMarket * 100).toFixed(1) + '%</td></tr>' +
       '<tr><td>Margin error (points)</td><td>' + B.market.marginMAESim + '</td><td>' + B.market.marginMAEMarket + '</td></tr>' +
-      '<tr><td>Total error (points)</td><td>' + B.market.totalMAESim + '</td><td>' + B.market.totalMAEMarket + '</td></tr></table>' +
-      '<p class="note">The market is more accurate than the sim. Best blend: ' + Math.round(B.market.simWeight * 100) + '% sim / ' + Math.round((1 - B.market.simWeight) * 100) + '% market (Brier ' + B.market.brierBlend + '), a small gain that could be noise at this sample size' + (B.oos && B.oos.market ? ' (on 2024-25 the best blend was ' + Math.round(B.oos.market.simWeight * 100) + '% sim, so the page uses 15%)' : '') + '.</p>' : '<p class="note">No free closing lines exist for ' + S[sport].label + ', so it can only be compared to simple baselines.</p>') +
-    (B.oos ? '<h4 style="margin:14px 0 4px">Out-of-sample check: same settings on the 2024-25 season (' + B.oos.n.toLocaleString() + ' games)</h4><table><tr><th></th><th>Sim</th><th>Baseline</th></tr><tr><td>Picked the winner</td><td>' + (B.oos.acc * 100).toFixed(1) + '%</td><td>' + (B.oos.accBase * 100).toFixed(1) + '%</td></tr><tr><td>Brier</td><td class="' + better(B.oos.brier, B.oos.brierBase) + '">' + B.oos.brier + '</td><td>' + B.oos.brierBase + '</td></tr>' + (B.oos.market ? '<tr><td>Brier vs closing line</td><td>' + B.oos.market.brierSim + '</td><td>market ' + B.oos.market.brierMarket + '</td></tr>' : '') + '</table><p class="note">Settings were tuned on 2025-26, so 2024-25 is a fair test of whether they hold up on games they were not tuned on.</p>' : '') +
+      '<tr><td>Total error (points)</td><td>' + B.market.totalMAESim + '</td><td>' + B.market.totalMAEMarket + '</td></tr>' +
+      (B.market.ats ? '<tr><td>Betting the sim&rsquo;s side when it was 3+ points off the spread</td><td>' + B.market.ats.w + '-' + B.market.ats.l + ' (' + (100 * B.market.ats.w / (B.market.ats.w + B.market.ats.l)).toFixed(1) + '%)</td><td>52.4% breaks even</td></tr><tr><td>Same for totals (over/under)</td><td>' + B.market.ou.w + '-' + B.market.ou.l + ' (' + (100 * B.market.ou.w / (B.market.ou.w + B.market.ou.l)).toFixed(1) + '%)</td><td>52.4% breaks even</td></tr>' : '') + '</table>' +
+      '<p class="note">The market is more accurate than the sim. Best blend: ' + Math.round(B.market.simWeight * 100) + '% sim / ' + Math.round((1 - B.market.simWeight) * 100) + '% market (Brier ' + B.market.brierBlend + '), a small gain that could be noise at this sample size' + (B.oos && B.oos.market ? ' (on the season before the best blend was ' + Math.round(B.oos.market.simWeight * 100) + '% sim, so the page uses 15%)' : '') + '.</p>' : '<p class="note">No free closing lines exist for ' + S[sport].label + ', so it can only be compared to simple baselines.</p>') +
+    (B.oos ? '<h4 style="margin:14px 0 4px">Out-of-sample check: same settings on the ' + (S[sport].college ? 'season before' : '2024-25 season') + ' (' + B.oos.n.toLocaleString() + ' games)</h4><table><tr><th></th><th>Sim</th><th>Baseline</th></tr><tr><td>Picked the winner</td><td>' + (B.oos.acc * 100).toFixed(1) + '%</td><td>' + (B.oos.accBase * 100).toFixed(1) + '%</td></tr><tr><td>Brier</td><td class="' + better(B.oos.brier, B.oos.brierBase) + '">' + B.oos.brier + '</td><td>' + B.oos.brierBase + '</td></tr>' + (B.oos.market ? '<tr><td>Brier vs closing line</td><td>' + B.oos.market.brierSim + '</td><td>market ' + B.oos.market.brierMarket + '</td></tr><tr><td>Margin error vs closing line (points)</td><td>' + B.oos.market.marginMAESim + '</td><td>market ' + B.oos.market.marginMAEMarket + '</td></tr>' : '') + '</table><p class="note">Settings were tuned on ' + (S[sport].college ? 'the later season, so the one before' : '2025-26, so 2024-25') + ' is a fair test of whether they hold up on games they were not tuned on.</p>' : '') +
     '<h4 style="margin:14px 0 4px">Calibration: when the sim says X%, how often does the home team win?</h4>' +
     '<table><tr><th>Sim said</th><th>Games</th><th>Home actually won</th></tr>' + B.cal.map(c => '<tr><td>' + (c.pred * 100).toFixed(0) + '%</td><td>' + c.n + '</td><td>' + (c.act * 100).toFixed(0) + '%</td></tr>').join('') + '</table>' +
     '<p class="note">Re-run with <code>node ' + (S[sport].college ? 'backtest-college.js' : 'backtest.js') + '</code> (last run ' + new Date(window.BACKTEST.generated).toLocaleDateString() + ').</p>';
