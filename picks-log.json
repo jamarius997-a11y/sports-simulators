@@ -8010,15 +8010,15 @@
    2,
    0
   ],
-  "espnPHome": 0.199,
-  "simPHome": 0.181,
-  "rawPHome": 0.212,
-  "simMargin": -12.86,
+  "espnPHome": 0.193,
+  "simPHome": 0.1943,
+  "rawPHome": 0.225,
+  "simMargin": -12.65,
   "simScore": [
-   128,
-   115.14
+   128.07,
+   115.42
   ],
-  "simTotal": 243.13,
+  "simTotal": 243.48,
   "inj": [
    [],
    [
@@ -8076,7 +8076,7 @@
    "pHome": 0.14686640802197004,
    "margin": -12.5
   },
-  "loggedAt": "2026-11-14T18:49:41.545Z",
+  "loggedAt": "2026-11-14T20:30:48.896Z",
   "result": null
  },
  "nba:401909981": {
@@ -8096,15 +8096,15 @@
    1,
    0
   ],
-  "espnPHome": 0.656,
-  "simPHome": 0.4741,
-  "rawPHome": 0.4775,
-  "simMargin": -1.13,
+  "espnPHome": 0.49,
+  "simPHome": 0.4874,
+  "rawPHome": 0.489,
+  "simMargin": -0.97,
   "simScore": [
-   116.77,
-   115.64
+   116.25,
+   115.28
   ],
-  "simTotal": 232.41,
+  "simTotal": 231.53,
   "inj": [
    [
     {
@@ -8159,6 +8159,12 @@
     "pHome": 0.3537,
     "margin": -4.5,
     "total": 228.5
+   },
+   {
+    "t": "2026-11-14T20:30:49.091Z",
+    "pHome": 0.3537,
+    "margin": -4.5,
+    "total": 227.5
    }
   ],
   "travel": [
@@ -8175,11 +8181,11 @@
   ],
   "mkt": {
    "line": "DAL -4.5",
-   "total": 228.5,
+   "total": 227.5,
    "pHome": 0.3536833235002245,
    "margin": -4.5
   },
-  "loggedAt": "2026-11-14T18:49:41.731Z",
+  "loggedAt": "2026-11-14T20:30:49.091Z",
   "result": null
  },
  "nba:401909982": {
@@ -8199,15 +8205,15 @@
    1,
    0
   ],
-  "espnPHome": 0.453,
-  "simPHome": 0.2572,
-  "rawPHome": 0.2845,
-  "simMargin": -9.96,
+  "espnPHome": 0.363,
+  "simPHome": 0.2406,
+  "rawPHome": 0.269,
+  "simMargin": -9.62,
   "simScore": [
-   120.88,
-   110.92
+   121.41,
+   111.8
   ],
-  "simTotal": 231.81,
+  "simTotal": 233.21,
   "inj": [
    [],
    [
@@ -8249,6 +8255,12 @@
     "pHome": 0.3852,
     "margin": -3.5,
     "total": 229.5
+   },
+   {
+    "t": "2026-11-14T20:30:49.259Z",
+    "pHome": 0.3537,
+    "margin": -4.5,
+    "total": 229.5
    }
   ],
   "travel": [
@@ -8260,12 +8272,12 @@
    null
   ],
   "mkt": {
-   "line": "DET -3.5",
+   "line": "DET -4.5",
    "total": 229.5,
-   "pHome": 0.38519960278756193,
-   "margin": -3.5
+   "pHome": 0.3536833235002245,
+   "margin": -4.5
   },
-  "loggedAt": "2026-11-14T18:49:41.897Z",
+  "loggedAt": "2026-11-14T20:30:49.259Z",
   "result": null
  },
  "nba:401909983": {
@@ -8285,15 +8297,15 @@
    2,
    0
   ],
-  "espnPHome": 0.657,
-  "simPHome": 0.7363,
-  "rawPHome": 0.7095,
-  "simMargin": 9.12,
+  "espnPHome": 0.66,
+  "simPHome": 0.6568,
+  "rawPHome": 0.6375,
+  "simMargin": 6.12,
   "simScore": [
-   109.52,
-   118.64
+   110.39,
+   116.51
   ],
-  "simTotal": 228.16,
+  "simTotal": 226.9,
   "inj": [
    [
     {
@@ -8310,6 +8322,18 @@
     }
    ],
    [
+    {
+     "name": "Ty Jerome",
+     "pos": "G",
+     "status": "Out",
+     "out": true
+    },
+    {
+     "name": "Jerami Grant",
+     "pos": "F",
+     "status": "Day-to-day",
+     "out": false
+    },
     {
      "name": "Zach Edey",
      "pos": "C",
@@ -8342,6 +8366,12 @@
     "pHome": 0.5825,
     "margin": 2.5,
     "total": 228.5
+   },
+   {
+    "t": "2026-11-14T20:30:49.435Z",
+    "pHome": 0.5497,
+    "margin": 1.5,
+    "total": 227.5
    }
   ],
   "travel": [
@@ -8357,12 +8387,12 @@
    }
   ],
   "mkt": {
-   "line": "MEM -2.5",
-   "total": 228.5,
-   "pHome": 0.5825421413264573,
-   "margin": 2.5
+   "line": "MEM -1.5",
+   "total": 227.5,
+   "pHome": 0.5497440306511916,
+   "margin": 1.5
   },
-  "loggedAt": "2026-11-14T18:49:42.070Z",
+  "loggedAt": "2026-11-14T20:30:49.435Z",
   "result": null
  },
  "nba:401909984": {
@@ -8382,15 +8412,15 @@
    0,
    1
   ],
-  "espnPHome": 0.894,
-  "simPHome": 0.9539,
-  "rawPHome": 0.933,
-  "simMargin": 24.26,
+  "espnPHome": 0.907,
+  "simPHome": 0.9485,
+  "rawPHome": 0.9265,
+  "simMargin": 24.09,
   "simScore": [
-   106.81,
-   131.08
+   106.82,
+   130.92
   ],
-  "simTotal": 237.89,
+  "simTotal": 237.74,
   "inj": [
    [
     {
@@ -8432,6 +8462,12 @@
     "pHome": 0.9044,
     "margin": 15.5,
     "total": 235.5
+   },
+   {
+    "t": "2026-11-14T20:30:49.599Z",
+    "pHome": 0.9044,
+    "margin": 15.5,
+    "total": 234.5
    }
   ],
   "travel": [
@@ -8444,11 +8480,11 @@
   ],
   "mkt": {
    "line": "MIN -15.5",
-   "total": 235.5,
+   "total": 234.5,
    "pHome": 0.904439176173002,
    "margin": 15.5
   },
-  "loggedAt": "2026-11-14T18:49:42.236Z",
+  "loggedAt": "2026-11-14T20:30:49.599Z",
   "result": null
  },
  "nhl:401891809": {
@@ -8630,14 +8666,14 @@
    1,
    1
   ],
-  "simPHome": 0.448,
-  "rawPHome": 0.448,
-  "simMargin": -0.3,
+  "simPHome": 0.458,
+  "rawPHome": 0.458,
+  "simMargin": -0.25,
   "simScore": [
-   3.09,
-   2.79
+   3.08,
+   2.84
   ],
-  "simTotal": 5.87,
+  "simTotal": 5.92,
   "inj": [
    [],
    []
@@ -8676,7 +8712,7 @@
    "pHome": 0.4591221135843562,
    "margin": null
   },
-  "loggedAt": "2026-11-14T18:49:47.525Z",
+  "loggedAt": "2026-11-14T20:30:54.804Z",
   "result": null
  },
  "nhl:401892710": {
@@ -8704,14 +8740,14 @@
    2,
    1
   ],
-  "simPHome": 0.45,
-  "rawPHome": 0.45,
-  "simMargin": -0.27,
+  "simPHome": 0.43,
+  "rawPHome": 0.43,
+  "simMargin": -0.37,
   "simScore": [
-   3.13,
-   2.85
+   3.22,
+   2.84
   ],
-  "simTotal": 5.98,
+  "simTotal": 6.06,
   "inj": [
    [
     {
@@ -8758,7 +8794,7 @@
    "pHome": 0.42892421670010794,
    "margin": null
   },
-  "loggedAt": "2026-11-14T18:49:47.565Z",
+  "loggedAt": "2026-11-14T20:30:54.881Z",
   "result": null
  },
  "nhl:401892711": {
@@ -8786,12 +8822,12 @@
    1,
    1
   ],
-  "simPHome": 0.462,
-  "rawPHome": 0.462,
-  "simMargin": -0.18,
+  "simPHome": 0.4745,
+  "rawPHome": 0.4745,
+  "simMargin": -0.2,
   "simScore": [
-   3.15,
-   2.98
+   3.16,
+   2.96
   ],
   "simTotal": 6.13,
   "inj": [
@@ -8848,6 +8884,12 @@
     "pHome": 0.5497,
     "margin": null,
     "total": 6.5
+   },
+   {
+    "t": "2026-11-14T20:30:54.929Z",
+    "pHome": 0.5615,
+    "margin": null,
+    "total": 6.5
    }
   ],
   "travel": [
@@ -8863,12 +8905,12 @@
    }
   ],
   "mkt": {
-   "line": "MTL -135",
+   "line": "MTL -142",
    "total": 6.5,
-   "pHome": 0.5497302249821847,
+   "pHome": 0.5615089564632845,
    "margin": null
   },
-  "loggedAt": "2026-11-14T18:49:47.606Z",
+  "loggedAt": "2026-11-14T20:30:54.929Z",
   "result": null
  },
  "nhl:401892712": {
@@ -8896,14 +8938,14 @@
    1,
    1
   ],
-  "simPHome": 0.5245,
-  "rawPHome": 0.5245,
-  "simMargin": 0.2,
+  "simPHome": 0.535,
+  "rawPHome": 0.535,
+  "simMargin": 0.19,
   "simScore": [
-   2.94,
-   3.14
+   2.9,
+   3.1
   ],
-  "simTotal": 6.08,
+  "simTotal": 6,
   "inj": [
    [
     {
@@ -8960,7 +9002,7 @@
    "pHome": 0.6624953993375047,
    "margin": null
   },
-  "loggedAt": "2026-11-14T18:49:47.647Z",
+  "loggedAt": "2026-11-14T20:30:54.973Z",
   "result": null
  },
  "nhl:401892713": {
@@ -8988,14 +9030,14 @@
    1,
    2
   ],
-  "simPHome": 0.4705,
-  "rawPHome": 0.4705,
-  "simMargin": -0.13,
+  "simPHome": 0.46,
+  "rawPHome": 0.46,
+  "simMargin": -0.17,
   "simScore": [
-   3.04,
-   2.9
+   3.09,
+   2.91
   ],
-  "simTotal": 5.94,
+  "simTotal": 6,
   "inj": [
    [
     {
@@ -9046,7 +9088,7 @@
    "pHome": 0.4502697750178153,
    "margin": null
   },
-  "loggedAt": "2026-11-14T18:49:47.687Z",
+  "loggedAt": "2026-11-14T20:30:55.013Z",
   "result": null
  },
  "nhl:401892714": {
@@ -9074,14 +9116,14 @@
    1,
    1
   ],
-  "simPHome": 0.432,
-  "rawPHome": 0.432,
-  "simMargin": -0.41,
+  "simPHome": 0.429,
+  "rawPHome": 0.429,
+  "simMargin": -0.4,
   "simScore": [
-   3.37,
-   2.96
+   3.41,
+   3.01
   ],
-  "simTotal": 6.32,
+  "simTotal": 6.43,
   "inj": [
    [
     {
@@ -9132,7 +9174,7 @@
    "pHome": 0.4502697750178153,
    "margin": null
   },
-  "loggedAt": "2026-11-14T18:49:47.728Z",
+  "loggedAt": "2026-11-14T20:30:55.055Z",
   "result": null
  },
  "nhl:401892715": {
@@ -9160,14 +9202,14 @@
    2,
    1
   ],
-  "simPHome": 0.598,
-  "rawPHome": 0.598,
-  "simMargin": 0.53,
+  "simPHome": 0.582,
+  "rawPHome": 0.582,
+  "simMargin": 0.5,
   "simScore": [
-   2.71,
-   3.24
+   2.75,
+   3.25
   ],
-  "simTotal": 5.94,
+  "simTotal": 6.01,
   "inj": [
    [],
    [
@@ -9201,7 +9243,7 @@
    "pHome": 0.5497302249821847,
    "margin": null
   },
-  "loggedAt": "2026-11-14T18:49:47.768Z",
+  "loggedAt": "2026-11-14T20:30:55.095Z",
   "result": null
  },
  "nhl:401892716": {
@@ -9229,14 +9271,14 @@
    1,
    1
   ],
-  "simPHome": 0.5985,
-  "rawPHome": 0.5985,
-  "simMargin": 0.6,
+  "simPHome": 0.617,
+  "rawPHome": 0.617,
+  "simMargin": 0.7,
   "simScore": [
-   2.56,
-   3.16
+   2.5,
+   3.2
   ],
-  "simTotal": 5.72,
+  "simTotal": 5.7,
   "inj": [
    [],
    []
@@ -9273,7 +9315,7 @@
    "pHome": 0.5055520447774668,
    "margin": null
   },
-  "loggedAt": "2026-11-14T18:49:47.808Z",
+  "loggedAt": "2026-11-14T20:30:55.134Z",
   "result": null
  },
  "nhl:401892717": {
@@ -9301,14 +9343,14 @@
    1,
    1
   ],
-  "simPHome": 0.5055,
-  "rawPHome": 0.5055,
-  "simMargin": 0.09,
+  "simPHome": 0.521,
+  "rawPHome": 0.521,
+  "simMargin": 0.14,
   "simScore": [
-   2.89,
-   2.98
+   2.87,
+   3.01
   ],
-  "simTotal": 5.86,
+  "simTotal": 5.89,
   "inj": [
    [
     {
@@ -9361,7 +9403,7 @@
    "pHome": 0.5497302249821847,
    "margin": null
   },
-  "loggedAt": "2026-11-14T18:49:47.849Z",
+  "loggedAt": "2026-11-14T20:30:55.175Z",
   "result": null
  },
  "nhl:401892718": {
@@ -9389,21 +9431,21 @@
    2,
    1
   ],
-  "simPHome": 0.606,
-  "rawPHome": 0.606,
-  "simMargin": 0.67,
+  "simPHome": 0.6005,
+  "rawPHome": 0.6005,
+  "simMargin": 0.64,
   "simScore": [
-   2.72,
-   3.38
+   2.7,
+   3.35
   ],
-  "simTotal": 6.1,
+  "simTotal": 6.05,
   "inj": [
    [
     {
      "name": "Alexander Wennberg",
      "pos": "C",
-     "status": "Day-to-day",
-     "out": false
+     "status": "Out",
+     "out": true
     },
     {
      "name": "Igor Chernyshov",
@@ -9457,6 +9499,12 @@
     "pHome": 0.6358,
     "margin": null,
     "total": 6.5
+   },
+   {
+    "t": "2026-11-14T20:30:55.216Z",
+    "pHome": 0.6212,
+    "margin": null,
+    "total": 6.5
    }
   ],
   "travel": [
@@ -9468,12 +9516,12 @@
    null
   ],
   "mkt": {
-   "line": "UTAH -198",
+   "line": "UTAH -185",
    "total": 6.5,
-   "pHome": 0.6358177322500884,
+   "pHome": 0.6211701502560228,
    "margin": null
   },
-  "loggedAt": "2026-11-14T18:49:47.890Z",
+  "loggedAt": "2026-11-14T20:30:55.216Z",
   "result": null
  },
  "nhl:401892719": {
@@ -9490,7 +9538,7 @@
    "name": "Anaheim Ducks"
   },
   "goalies": [
-   "Ilya Sorokin",
+   "Semyon Varlamov",
    "Lukas Dostal"
   ],
   "goalieConfirmed": [
@@ -9501,14 +9549,14 @@
    1,
    2
   ],
-  "simPHome": 0.528,
-  "rawPHome": 0.528,
-  "simMargin": 0.2,
+  "simPHome": 0.546,
+  "rawPHome": 0.546,
+  "simMargin": 0.29,
   "simScore": [
-   3.08,
-   3.27
+   3.01,
+   3.3
   ],
-  "simTotal": 6.35,
+  "simTotal": 6.32,
   "inj": [
    [
     {
@@ -9532,6 +9580,12 @@
     "pHome": 0.5119,
     "margin": null,
     "total": 6.5
+   },
+   {
+    "t": "2026-11-14T20:30:55.257Z",
+    "pHome": 0.4944,
+    "margin": null,
+    "total": 6.5
    }
   ],
   "travel": [
@@ -9543,12 +9597,12 @@
    null
   ],
   "mkt": {
-   "line": "ANA -115",
+   "line": "NYI -112",
    "total": 6.5,
-   "pHome": 0.5118504506509403,
+   "pHome": 0.49444795522253315,
    "margin": null
   },
-  "loggedAt": "2026-11-14T18:49:47.931Z",
+  "loggedAt": "2026-11-14T20:30:55.257Z",
   "result": null
  },
  "nhl:401892720": {
@@ -9566,7 +9620,7 @@
   },
   "goalies": [
    "Dustin Wolf",
-   "Darcy Kuemper"
+   "Anton Forsberg"
   ],
   "goalieConfirmed": [
    false,
@@ -9576,14 +9630,14 @@
    2,
    1
   ],
-  "simPHome": 0.5555,
-  "rawPHome": 0.5555,
-  "simMargin": 0.35,
+  "simPHome": 0.6015,
+  "rawPHome": 0.6015,
+  "simMargin": 0.62,
   "simScore": [
-   3.04,
-   3.39
+   2.62,
+   3.23
   ],
-  "simTotal": 6.43,
+  "simTotal": 5.85,
   "inj": [
    [
     {
@@ -9593,7 +9647,14 @@
      "out": true
     }
    ],
-   []
+   [
+    {
+     "name": "Artemi Panarin",
+     "pos": "LW",
+     "status": "Out",
+     "out": true
+    }
+   ]
   ],
   "lines": [
    {
@@ -9617,7 +9678,7 @@
    "pHome": 0.6089604175728578,
    "margin": null
   },
-  "loggedAt": "2026-11-14T18:49:47.971Z",
+  "loggedAt": "2026-11-14T20:30:55.297Z",
   "result": null
  },
  "nba:401909985": {
@@ -9637,15 +9698,15 @@
    1,
    2
   ],
-  "espnPHome": 0.832,
-  "simPHome": 0.7107,
-  "rawPHome": 0.686,
-  "simMargin": 7.87,
+  "espnPHome": 0.826,
+  "simPHome": 0.6936,
+  "rawPHome": 0.6705,
+  "simMargin": 7.19,
   "simScore": [
-   107.16,
-   115.04
+   107.84,
+   115.02
   ],
-  "simTotal": 222.2,
+  "simTotal": 222.86,
   "inj": [
    [
     {
@@ -9686,7 +9747,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-14T18:49:42.402Z",
+  "loggedAt": "2026-11-14T20:30:49.764Z",
   "result": null
  },
  "nba:401909986": {
@@ -9706,15 +9767,15 @@
    3,
    2
   ],
-  "espnPHome": 0.531,
-  "simPHome": 0.4265,
-  "rawPHome": 0.436,
-  "simMargin": -2.49,
+  "espnPHome": 0.521,
+  "simPHome": 0.4271,
+  "rawPHome": 0.4365,
+  "simMargin": -3.09,
   "simScore": [
-   116.2,
-   113.72
+   116.57,
+   113.48
   ],
-  "simTotal": 229.92,
+  "simTotal": 230.05,
   "inj": [
    [
     {
@@ -9760,7 +9821,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-14T18:49:42.568Z",
+  "loggedAt": "2026-11-14T20:30:49.929Z",
   "result": null
  },
  "nba:401909987": {
@@ -9780,15 +9841,15 @@
    2,
    1
   ],
-  "espnPHome": 0.542,
-  "simPHome": 0.6281,
-  "rawPHome": 0.612,
-  "simMargin": 4.82,
+  "espnPHome": 0.556,
+  "simPHome": 0.6264,
+  "rawPHome": 0.6105,
+  "simMargin": 4.41,
   "simScore": [
-   105.28,
-   110.11
+   105.64,
+   110.05
   ],
-  "simTotal": 215.39,
+  "simTotal": 215.7,
   "inj": [
    [
     {
@@ -9828,7 +9889,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-14T18:49:42.737Z",
+  "loggedAt": "2026-11-14T20:30:50.097Z",
   "result": null
  },
  "nba:401909988": {
@@ -9848,15 +9909,15 @@
    1,
    1
   ],
-  "espnPHome": 0.109,
-  "simPHome": 0.0628,
-  "rawPHome": 0.087,
-  "simMargin": -21.83,
+  "espnPHome": 0.11,
+  "simPHome": 0.0692,
+  "rawPHome": 0.0945,
+  "simMargin": -21.43,
   "simScore": [
-   126.15,
-   104.33
+   125.97,
+   104.54
   ],
-  "simTotal": 230.48,
+  "simTotal": 230.51,
   "inj": [
    [],
    [
@@ -9900,7 +9961,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-14T18:49:42.901Z",
+  "loggedAt": "2026-11-14T20:30:50.261Z",
   "result": null
  },
  "nba:401909989": {
@@ -9920,15 +9981,15 @@
    0,
    3
   ],
-  "espnPHome": 0.815,
-  "simPHome": 0.8576,
-  "rawPHome": 0.8265,
-  "simMargin": 15.02,
+  "espnPHome": 0.811,
+  "simPHome": 0.8507,
+  "rawPHome": 0.8195,
+  "simMargin": 14.71,
   "simScore": [
-   101.59,
-   116.61
+   102.08,
+   116.79
   ],
-  "simTotal": 218.2,
+  "simTotal": 218.88,
   "inj": [
    [
     {
@@ -9973,7 +10034,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-14T18:49:43.069Z",
+  "loggedAt": "2026-11-14T20:30:50.426Z",
   "result": null
  },
  "nba:401909990": {
@@ -9993,15 +10054,15 @@
    1,
    2
   ],
-  "espnPHome": 0.314,
-  "simPHome": 0.3878,
-  "rawPHome": 0.402,
-  "simMargin": -4.1,
+  "espnPHome": 0.313,
+  "simPHome": 0.398,
+  "rawPHome": 0.411,
+  "simMargin": -3.74,
   "simScore": [
-   109.89,
-   105.78
+   109.74,
+   106
   ],
-  "simTotal": 215.67,
+  "simTotal": 215.74,
   "inj": [
    [],
    [
@@ -10039,7 +10100,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-14T18:49:43.236Z",
+  "loggedAt": "2026-11-14T20:30:50.592Z",
   "result": null
  },
  "nba:401909991": {
@@ -10059,15 +10120,15 @@
    1,
    2
   ],
-  "espnPHome": 0.281,
-  "simPHome": 0.1563,
-  "rawPHome": 0.1875,
-  "simMargin": -14.06,
+  "espnPHome": 0.271,
+  "simPHome": 0.1718,
+  "rawPHome": 0.203,
+  "simMargin": -13.73,
   "simScore": [
-   119.8,
-   105.74
+   119.55,
+   105.82
   ],
-  "simTotal": 225.54,
+  "simTotal": 225.37,
   "inj": [
    [],
    [
@@ -10101,7 +10162,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-14T18:49:43.398Z",
+  "loggedAt": "2026-11-14T20:30:50.754Z",
   "result": null
  },
  "nba:401909992": {
@@ -10121,15 +10182,15 @@
    1,
    1
   ],
-  "espnPHome": 0.262,
-  "simPHome": 0.2443,
-  "rawPHome": 0.2725,
-  "simMargin": -10.1,
+  "espnPHome": 0.259,
+  "simPHome": 0.2273,
+  "rawPHome": 0.2565,
+  "simMargin": -10.69,
   "simScore": [
-   121.15,
-   111.05
+   121.87,
+   111.18
   ],
-  "simTotal": 232.2,
+  "simTotal": 233.05,
   "inj": [
    [
     {
@@ -10167,7 +10228,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-14T18:49:43.562Z",
+  "loggedAt": "2026-11-14T20:30:50.918Z",
   "result": null
  },
  "nba:401909993": {
@@ -10187,15 +10248,15 @@
    1,
    1
   ],
-  "espnPHome": 0.146,
-  "simPHome": 0.1608,
-  "rawPHome": 0.192,
-  "simMargin": -14.11,
+  "espnPHome": 0.145,
+  "simPHome": 0.1563,
+  "rawPHome": 0.1875,
+  "simMargin": -14.57,
   "simScore": [
-   117.56,
-   103.45
+   117.82,
+   103.25
   ],
-  "simTotal": 221.01,
+  "simTotal": 221.06,
   "inj": [
    [
     {
@@ -10242,7 +10303,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-14T18:49:43.724Z",
+  "loggedAt": "2026-11-14T20:30:51.080Z",
   "result": null
  },
  "nfl:401873053": {
@@ -10263,15 +10324,15 @@
    null
   ],
   "espnPHome": 0.526,
-  "simPHome": 0.6077,
-  "rawPHome": 0.6028,
-  "simMargin": 3.35,
+  "simPHome": 0.6028,
+  "rawPHome": 0.598,
+  "simMargin": 3.4,
   "simScore": [
-   24.31,
-   27.66
+   24.13,
+   27.53
   ],
-  "simTotal": 51.97,
-  "blendPHome": 0.58,
+  "simTotal": 51.66,
+  "blendPHome": 0.5793,
   "inj": [
    [
     {
@@ -10350,7 +10411,7 @@
    "pHome": 0.5751279465321473,
    "margin": 2.5
   },
-  "loggedAt": "2026-11-14T18:49:45.364Z",
+  "loggedAt": "2026-11-14T20:30:52.716Z",
   "result": null
  },
  "nfl:401873058": {
@@ -10371,15 +10432,15 @@
    null
   ],
   "espnPHome": 0.215,
-  "simPHome": 0.3196,
-  "rawPHome": 0.3275,
-  "simMargin": -5.3,
+  "simPHome": 0.3038,
+  "rawPHome": 0.3123,
+  "simMargin": -5.19,
   "simScore": [
-   24.72,
-   19.42
+   24.57,
+   19.38
   ],
-  "simTotal": 44.14,
-  "blendPHome": 0.3965,
+  "simTotal": 43.95,
+  "blendPHome": 0.3941,
   "inj": [
    [
     {
@@ -10434,7 +10495,7 @@
    "pHome": 0.4100715891566124,
    "margin": -3
   },
-  "loggedAt": "2026-11-14T18:49:45.599Z",
+  "loggedAt": "2026-11-14T20:30:52.941Z",
   "result": null
  },
  "nfl:401873056": {
@@ -10455,15 +10516,15 @@
    null
   ],
   "espnPHome": 0.233,
-  "simPHome": 0.4221,
-  "rawPHome": 0.4258,
-  "simMargin": -2.05,
+  "simPHome": 0.4119,
+  "rawPHome": 0.416,
+  "simMargin": -2.22,
   "simScore": [
-   21.06,
-   19.01
+   20.51,
+   18.29
   ],
-  "simTotal": 40.08,
-  "blendPHome": 0.3748,
+  "simTotal": 38.8,
+  "blendPHome": 0.3733,
   "inj": [
    [
     {
@@ -10518,7 +10579,7 @@
    "pHome": 0.3664742260704701,
    "margin": -4.5
   },
-  "loggedAt": "2026-11-14T18:49:45.760Z",
+  "loggedAt": "2026-11-14T20:30:53.129Z",
   "result": null
  },
  "nfl:401873060": {
@@ -10539,15 +10600,15 @@
    null
   ],
   "espnPHome": 0.552,
-  "simPHome": 0.4696,
-  "rawPHome": 0.471,
-  "simMargin": -0.81,
+  "simPHome": 0.4764,
+  "rawPHome": 0.4775,
+  "simMargin": -0.53,
   "simScore": [
-   18.96,
-   18.15
+   19.03,
+   18.5
   ],
-  "simTotal": 37.11,
-  "blendPHome": 0.5593,
+  "simTotal": 37.53,
+  "blendPHome": 0.5603,
   "inj": [
    [
     {
@@ -10626,7 +10687,7 @@
    "pHome": 0.5751279465321473,
    "margin": 2.5
   },
-  "loggedAt": "2026-11-14T18:49:45.909Z",
+  "loggedAt": "2026-11-14T20:30:53.278Z",
   "result": null
  },
  "nfl:401873057": {
@@ -10647,23 +10708,17 @@
    null
   ],
   "espnPHome": 0.159,
-  "simPHome": 0.0795,
-  "rawPHome": 0.0885,
-  "simMargin": -15.27,
+  "simPHome": 0.0755,
+  "rawPHome": 0.0843,
+  "simMargin": -15.78,
   "simScore": [
-   28.92,
-   13.65
+   29.06,
+   13.28
   ],
-  "simTotal": 42.56,
-  "blendPHome": 0.1922,
+  "simTotal": 42.33,
+  "blendPHome": 0.1916,
   "inj": [
    [
-    {
-     "name": "Robert Hainsey",
-     "pos": "C",
-     "status": "Questionable",
-     "out": false
-    },
     {
      "name": "Anton Harrison",
      "pos": "OT",
@@ -10716,7 +10771,7 @@
    "pHome": 0.21209051314301935,
    "margin": -10.5
   },
-  "loggedAt": "2026-11-14T18:49:46.059Z",
+  "loggedAt": "2026-11-14T20:30:53.427Z",
   "result": null
  },
  "nfl:401873059": {
@@ -10737,15 +10792,15 @@
    null
   ],
   "espnPHome": 0.82,
-  "simPHome": 0.6247,
-  "rawPHome": 0.619,
-  "simMargin": 3.72,
+  "simPHome": 0.6406,
+  "rawPHome": 0.6342,
+  "simMargin": 3.75,
   "simScore": [
-   19.91,
-   23.63
+   20.12,
+   23.87
   ],
-  "simTotal": 43.55,
-  "blendPHome": 0.6322,
+  "simTotal": 43.99,
+  "blendPHome": 0.6346,
   "inj": [
    [
     {
@@ -10812,7 +10867,7 @@
    "pHome": 0.6335257739295299,
    "margin": 4.5
   },
-  "loggedAt": "2026-11-14T18:49:46.209Z",
+  "loggedAt": "2026-11-14T20:30:53.576Z",
   "result": null
  },
  "nfl:401873055": {
@@ -10833,15 +10888,15 @@
    null
   ],
   "espnPHome": 0.5,
-  "simPHome": 0.5058,
-  "rawPHome": 0.5055,
-  "simMargin": 0.14,
+  "simPHome": 0.5084,
+  "rawPHome": 0.508,
+  "simMargin": 0.24,
   "simScore": [
-   23.84,
-   23.99
+   23.73,
+   23.97
   ],
-  "simTotal": 47.83,
-  "blendPHome": 0.5647,
+  "simTotal": 47.7,
+  "blendPHome": 0.5651,
   "inj": [
    [
     {
@@ -10865,8 +10920,8 @@
     {
      "name": "Xavier Legette",
      "pos": "WR",
-     "status": "Out",
-     "out": true
+     "status": "Questionable",
+     "out": false
     }
    ],
    [
@@ -10908,7 +10963,7 @@
    "pHome": 0.5751279465321473,
    "margin": 2.5
   },
-  "loggedAt": "2026-11-14T18:49:46.361Z",
+  "loggedAt": "2026-11-14T20:30:53.728Z",
   "result": null
  },
  "nfl:401873054": {
@@ -10929,15 +10984,15 @@
    null
   ],
   "espnPHome": 0.173,
-  "simPHome": 0.2205,
-  "rawPHome": 0.231,
-  "simMargin": -9.21,
+  "simPHome": 0.1954,
+  "rawPHome": 0.2062,
+  "simMargin": -9.39,
   "simScore": [
-   29.79,
-   20.58
+   29.91,
+   20.52
   ],
-  "simTotal": 50.37,
-  "blendPHome": 0.2534,
+  "simTotal": 50.43,
+  "blendPHome": 0.2711,
   "inj": [
    [
     {
@@ -10974,6 +11029,12 @@
     "pHome": 0.2592,
     "margin": -8.5,
     "total": 50.5
+   },
+   {
+    "t": "2026-11-14T20:30:53.878Z",
+    "pHome": 0.2845,
+    "margin": -7.5,
+    "total": 50.5
    }
   ],
   "travel": [
@@ -10981,12 +11042,12 @@
    null
   ],
   "mkt": {
-   "line": "BUF -8.5",
+   "line": "BUF -7.5",
    "total": 50.5,
-   "pHome": 0.2591625679347602,
-   "margin": -8.5
+   "pHome": 0.2844910336656859,
+   "margin": -7.5
   },
-  "loggedAt": "2026-11-14T18:49:46.512Z",
+  "loggedAt": "2026-11-14T20:30:53.878Z",
   "result": null
  },
  "nfl:401873062": {
@@ -11007,15 +11068,15 @@
    null
   ],
   "espnPHome": 0.256,
-  "simPHome": 0.1985,
-  "rawPHome": 0.2092,
-  "simMargin": -9.22,
+  "simPHome": 0.1924,
+  "rawPHome": 0.2032,
+  "simMargin": -9.31,
   "simScore": [
-   26.05,
-   16.83
+   25.94,
+   16.64
   ],
-  "simTotal": 42.88,
-  "blendPHome": 0.294,
+  "simTotal": 42.58,
+  "blendPHome": 0.2931,
   "inj": [
    [
     {
@@ -11063,7 +11124,7 @@
    "pHome": 0.3108942664963187,
    "margin": -6.5
   },
-  "loggedAt": "2026-11-14T18:49:46.667Z",
+  "loggedAt": "2026-11-14T20:30:54.035Z",
   "result": null
  },
  "nfl:401873061": {
@@ -11084,15 +11145,15 @@
    null
   ],
   "espnPHome": 0.126,
-  "simPHome": 0.1348,
-  "rawPHome": 0.1455,
-  "simMargin": -12.64,
+  "simPHome": 0.1336,
+  "rawPHome": 0.1442,
+  "simMargin": -12.57,
   "simScore": [
-   28.91,
-   16.27
+   28.87,
+   16.29
   ],
-  "simTotal": 45.19,
-  "blendPHome": 0.22,
+  "simTotal": 45.16,
+  "blendPHome": 0.2198,
   "inj": [
    [
     {
@@ -11165,7 +11226,7 @@
    "pHome": 0.23500301826226122,
    "margin": -9.5
   },
-  "loggedAt": "2026-11-14T18:49:46.821Z",
+  "loggedAt": "2026-11-14T20:30:54.190Z",
   "result": null
  },
  "nfl:401873063": {
@@ -11186,15 +11247,15 @@
    null
   ],
   "espnPHome": 0.359,
-  "simPHome": 0.3041,
-  "rawPHome": 0.3125,
-  "simMargin": -5.83,
+  "simPHome": 0.2935,
+  "rawPHome": 0.3023,
+  "simMargin": -6.54,
   "simScore": [
-   29.75,
-   23.92
+   30.32,
+   23.78
   ],
-  "simTotal": 53.67,
-  "blendPHome": 0.3571,
+  "simTotal": 54.1,
+  "blendPHome": 0.3801,
   "inj": [
    [
     {
@@ -11255,6 +11316,12 @@
     "pHome": 0.3665,
     "margin": -4.5,
     "total": 55.5
+   },
+   {
+    "t": "2026-11-14T20:30:54.337Z",
+    "pHome": 0.3954,
+    "margin": -3.5,
+    "total": 55.5
    }
   ],
   "travel": [
@@ -11262,12 +11329,12 @@
    null
   ],
   "mkt": {
-   "line": "SF -4.5",
+   "line": "SF -3.5",
    "total": 55.5,
-   "pHome": 0.3664742260704701,
-   "margin": -4.5
+   "pHome": 0.3953925075767488,
+   "margin": -3.5
   },
-  "loggedAt": "2026-11-14T18:49:46.967Z",
+  "loggedAt": "2026-11-14T20:30:54.337Z",
   "result": null
  },
  "nfl:401873064": {
@@ -11288,15 +11355,15 @@
    null
   ],
   "espnPHome": 0.705,
-  "simPHome": 0.4979,
-  "rawPHome": 0.498,
-  "simMargin": -0.45,
+  "simPHome": 0.4903,
+  "rawPHome": 0.4908,
+  "simMargin": -0.17,
   "simScore": [
-   24.05,
-   23.6
+   23.73,
+   23.56
   ],
-  "simTotal": 47.65,
-  "blendPHome": 0.5886,
+  "simTotal": 47.3,
+  "blendPHome": 0.5875,
   "inj": [
    [
     {
@@ -11345,7 +11412,7 @@
    "pHome": 0.6046074924232512,
    "margin": 3.5
   },
-  "loggedAt": "2026-11-14T18:49:47.112Z",
+  "loggedAt": "2026-11-14T20:30:54.481Z",
   "result": null
  },
  "nhl:401892721": {
@@ -11373,14 +11440,14 @@
    0,
    0
   ],
-  "simPHome": 0.4725,
-  "rawPHome": 0.4725,
-  "simMargin": -0.11,
+  "simPHome": 0.4655,
+  "rawPHome": 0.4655,
+  "simMargin": -0.15,
   "simScore": [
-   3.14,
-   3.03
+   3.2,
+   3.05
   ],
-  "simTotal": 6.18,
+  "simTotal": 6.24,
   "inj": [
    [
     {
@@ -11424,7 +11491,7 @@
    "pHome": 0.4183319260718642,
    "margin": null
   },
-  "loggedAt": "2026-11-14T18:49:48.012Z",
+  "loggedAt": "2026-11-14T20:30:55.337Z",
   "result": null
  },
  "nhl:401892722": {
@@ -11452,14 +11519,14 @@
    0,
    0
   ],
-  "simPHome": 0.5055,
-  "rawPHome": 0.5055,
-  "simMargin": 0.1,
+  "simPHome": 0.4995,
+  "rawPHome": 0.4995,
+  "simMargin": 0.03,
   "simScore": [
-   2.95,
-   3.05
+   2.99,
+   3.02
   ],
-  "simTotal": 5.99,
+  "simTotal": 6.01,
   "inj": [
    [],
    [
@@ -11505,7 +11572,7 @@
    "pHome": 0.5497302249821847,
    "margin": null
   },
-  "loggedAt": "2026-11-14T18:49:48.052Z",
+  "loggedAt": "2026-11-14T20:30:55.377Z",
   "result": null
  },
  "nhl:401892723": {
@@ -11533,14 +11600,14 @@
    0,
    0
   ],
-  "simPHome": 0.4695,
-  "rawPHome": 0.4695,
-  "simMargin": -0.21,
+  "simPHome": 0.478,
+  "rawPHome": 0.478,
+  "simMargin": -0.08,
   "simScore": [
-   3.22,
-   3
+   3.1,
+   3.02
   ],
-  "simTotal": 6.22,
+  "simTotal": 6.12,
   "inj": [
    [
     {
@@ -11580,7 +11647,7 @@
    "pHome": 0.5816680739281358,
    "margin": null
   },
-  "loggedAt": "2026-11-14T18:49:48.092Z",
+  "loggedAt": "2026-11-14T20:30:55.417Z",
   "result": null
  },
  "nhl:401892724": {
@@ -11608,14 +11675,14 @@
    1,
    1
   ],
-  "simPHome": 0.626,
-  "rawPHome": 0.626,
+  "simPHome": 0.6175,
+  "rawPHome": 0.6175,
   "simMargin": 0.74,
   "simScore": [
-   2.7,
-   3.44
+   2.69,
+   3.43
   ],
-  "simTotal": 6.14,
+  "simTotal": 6.13,
   "inj": [
    [
     {
@@ -11662,7 +11729,7 @@
    "pHome": 0.7693029364855991,
    "margin": null
   },
-  "loggedAt": "2026-11-14T18:49:48.138Z",
+  "loggedAt": "2026-11-14T20:30:55.465Z",
   "result": null
  },
  "nhl:401892725": {
@@ -11690,14 +11757,14 @@
    1,
    0
   ],
-  "simPHome": 0.4465,
-  "rawPHome": 0.4465,
-  "simMargin": -0.34,
+  "simPHome": 0.4565,
+  "rawPHome": 0.4565,
+  "simMargin": -0.23,
   "simScore": [
-   3.35,
-   3.01
+   3.22,
+   2.99
   ],
-  "simTotal": 6.36,
+  "simTotal": 6.21,
   "inj": [
    [
     {
@@ -11711,8 +11778,8 @@
     {
      "name": "Alexander Wennberg",
      "pos": "C",
-     "status": "Day-to-day",
-     "out": false
+     "status": "Out",
+     "out": true
     },
     {
      "name": "Igor Chernyshov",
@@ -11754,7 +11821,7 @@
    "pHome": 0.3974836080099238,
    "margin": null
   },
-  "loggedAt": "2026-11-14T18:49:48.182Z",
+  "loggedAt": "2026-11-14T20:30:55.507Z",
   "result": null
  },
  "ncaaf:401858296": {
@@ -13227,14 +13294,14 @@
    null
   ],
   "espnPHome": 0.665,
-  "simPHome": 0.6793,
-  "rawPHome": 0.7075,
-  "simMargin": 6.93,
+  "simPHome": 0.6919,
+  "rawPHome": 0.7215,
+  "simMargin": 7.55,
   "simScore": [
-   27.31,
+   26.69,
    34.24
   ],
-  "simTotal": 61.55,
+  "simTotal": 60.93,
   "inj": [
    [],
    []
@@ -13265,7 +13332,7 @@
    "pHome": 0.7346114916551931,
    "margin": 10
   },
-  "loggedAt": "2026-11-14T18:49:50.501Z",
+  "loggedAt": "2026-11-14T20:30:55.850Z",
   "result": null
  },
  "ncaaf:401856886": {
@@ -13286,14 +13353,14 @@
    null
   ],
   "espnPHome": 0.509,
-  "simPHome": 0.5892,
-  "rawPHome": 0.6045,
-  "simMargin": 3.06,
+  "simPHome": 0.5956,
+  "rawPHome": 0.612,
+  "simMargin": 3.19,
   "simScore": [
-   25.68,
-   28.75
+   25.3,
+   28.49
   ],
-  "simTotal": 54.43,
+  "simTotal": 53.79,
   "inj": [
    [],
    []
@@ -13312,7 +13379,7 @@
    "pHome": 0.4379066952354649,
    "margin": -2.5
   },
-  "loggedAt": "2026-11-14T18:49:50.637Z",
+  "loggedAt": "2026-11-14T20:30:56.015Z",
   "result": null
  },
  "ncaaf:401862828": {
@@ -13333,14 +13400,14 @@
    null
   ],
   "espnPHome": 0.415,
-  "simPHome": 0.4562,
-  "rawPHome": 0.4485,
-  "simMargin": -1.49,
+  "simPHome": 0.4664,
+  "rawPHome": 0.4605,
+  "simMargin": -1.27,
   "simScore": [
-   23.61,
-   22.12
+   23.92,
+   22.65
   ],
-  "simTotal": 45.73,
+  "simTotal": 46.57,
   "inj": [
    [],
    [
@@ -13356,15 +13423,21 @@
     "pHome": 0.5744,
     "margin": 3,
     "total": 48.5
+   },
+   {
+    "t": "2026-11-14T20:30:56.189Z",
+    "pHome": 0.5988,
+    "margin": 4,
+    "total": 49.5
    }
   ],
   "mkt": {
-   "line": "RICE -3",
-   "total": 48.5,
-   "pHome": 0.5743850854197133,
-   "margin": 3
+   "line": "RICE -4",
+   "total": 49.5,
+   "pHome": 0.5987516569059941,
+   "margin": 4
   },
-  "loggedAt": "2026-11-14T18:49:50.772Z",
+  "loggedAt": "2026-11-14T20:30:56.189Z",
   "result": null
  },
  "ncaaf:401871099": {
@@ -13385,14 +13458,14 @@
    null
   ],
   "espnPHome": 0.886,
-  "simPHome": 0.945,
-  "rawPHome": 0.966,
-  "simMargin": 22.08,
+  "simPHome": 0.9404,
+  "rawPHome": 0.9625,
+  "simMargin": 21.35,
   "simScore": [
-   17.66,
-   39.74
+   18.06,
+   39.4
   ],
-  "simTotal": 57.4,
+  "simTotal": 57.46,
   "inj": [
    [
     {
@@ -13416,7 +13489,7 @@
    "pHome": 0.8650590691295024,
    "margin": 17.5
   },
-  "loggedAt": "2026-11-14T18:49:50.908Z",
+  "loggedAt": "2026-11-14T20:30:56.327Z",
   "result": null
  },
  "ncaaf:401856857": {
@@ -13437,14 +13510,14 @@
    null
   ],
   "espnPHome": 0.665,
-  "simPHome": 0.6008,
-  "rawPHome": 0.618,
-  "simMargin": 3.9,
+  "simPHome": 0.6056,
+  "rawPHome": 0.6235,
+  "simMargin": 4.06,
   "simScore": [
-   24.7,
-   28.6
+   24.71,
+   28.77
   ],
-  "simTotal": 53.3,
+  "simTotal": 53.47,
   "inj": [
    [],
    [
@@ -13474,7 +13547,7 @@
    "pHome": 0.5866082011608907,
    "margin": 3.5
   },
-  "loggedAt": "2026-11-14T18:49:51.043Z",
+  "loggedAt": "2026-11-14T20:30:56.465Z",
   "result": null
  },
  "ncaaf:401858521": {
@@ -13495,14 +13568,14 @@
    null
   ],
   "espnPHome": 0.485,
-  "simPHome": 0.4668,
-  "rawPHome": 0.461,
-  "simMargin": -0.98,
+  "simPHome": 0.4724,
+  "rawPHome": 0.4675,
+  "simMargin": -0.95,
   "simScore": [
-   23.61,
-   22.63
+   23.85,
+   22.9
   ],
-  "simTotal": 46.25,
+  "simTotal": 46.74,
   "inj": [
    [],
    []
@@ -13521,7 +13594,7 @@
    "pHome": 0.4379066952354649,
    "margin": -2.5
   },
-  "loggedAt": "2026-11-14T18:49:51.181Z",
+  "loggedAt": "2026-11-14T20:30:56.603Z",
   "result": null
  },
  "ncaaf:401860914": {
@@ -13542,14 +13615,14 @@
    null
   ],
   "espnPHome": 0.821,
-  "simPHome": 0.7069,
-  "rawPHome": 0.738,
-  "simMargin": 7.46,
+  "simPHome": 0.6888,
+  "rawPHome": 0.718,
+  "simMargin": 7.58,
   "simScore": [
-   30.02,
-   37.48
+   29.67,
+   37.26
   ],
-  "simTotal": 67.51,
+  "simTotal": 66.93,
   "inj": [
    [],
    [
@@ -13579,7 +13652,7 @@
    "pHome": 0.8506694397134258,
    "margin": 16.5
   },
-  "loggedAt": "2026-11-14T18:49:51.319Z",
+  "loggedAt": "2026-11-14T20:30:56.741Z",
   "result": null
  },
  "ncaaf:401869928": {
@@ -13600,14 +13673,14 @@
    null
   ],
   "espnPHome": 0.395,
-  "simPHome": 0.4694,
-  "rawPHome": 0.464,
-  "simMargin": -0.97,
+  "simPHome": 0.4719,
+  "rawPHome": 0.467,
+  "simMargin": -1.22,
   "simScore": [
-   28.36,
-   27.39
+   28.32,
+   27.09
   ],
-  "simTotal": 55.74,
+  "simTotal": 55.41,
   "inj": [
    [],
    []
@@ -13626,7 +13699,7 @@
    "pHome": 0.4626514174220434,
    "margin": -1.5
   },
-  "loggedAt": "2026-11-14T18:49:51.456Z",
+  "loggedAt": "2026-11-14T20:30:56.878Z",
   "result": null
  },
  "ncaaf:401856884": {
@@ -13647,14 +13720,14 @@
    null
   ],
   "espnPHome": 0.538,
-  "simPHome": 0.5952,
-  "rawPHome": 0.6115,
-  "simMargin": 3.82,
+  "simPHome": 0.5978,
+  "rawPHome": 0.6145,
+  "simMargin": 3.57,
   "simScore": [
-   27.02,
-   30.85
+   27.22,
+   30.79
   ],
-  "simTotal": 57.87,
+  "simTotal": 58.01,
   "inj": [
    [],
    []
@@ -13673,7 +13746,7 @@
    "pHome": 0.5743850854197133,
    "margin": 3
   },
-  "loggedAt": "2026-11-14T18:49:51.593Z",
+  "loggedAt": "2026-11-14T20:30:57.029Z",
   "result": null
  },
  "ncaaf:401856858": {
@@ -13694,14 +13767,14 @@
    null
   ],
   "espnPHome": 0.681,
-  "simPHome": 0.6629,
-  "rawPHome": 0.689,
-  "simMargin": 6.09,
+  "simPHome": 0.6651,
+  "rawPHome": 0.6915,
+  "simMargin": 6.1,
   "simScore": [
-   21.67,
-   27.76
+   22.13,
+   28.24
   ],
-  "simTotal": 49.44,
+  "simTotal": 50.37,
   "inj": [
    [],
    []
@@ -13720,7 +13793,7 @@
    "pHome": 0.7027652261936193,
    "margin": 8.5
   },
-  "loggedAt": "2026-11-14T18:49:51.729Z",
+  "loggedAt": "2026-11-14T20:30:57.166Z",
   "result": null
  },
  "ncaaf:401858298": {
@@ -13741,14 +13814,14 @@
    null
   ],
   "espnPHome": 0.397,
-  "simPHome": 0.4065,
-  "rawPHome": 0.3905,
-  "simMargin": -3.61,
+  "simPHome": 0.4108,
+  "rawPHome": 0.3955,
+  "simMargin": -3.72,
   "simScore": [
-   31.08,
-   27.47
+   31.52,
+   27.81
   ],
-  "simTotal": 58.55,
+  "simTotal": 59.33,
   "inj": [
    [],
    []
@@ -13767,7 +13840,7 @@
    "pHome": 0.41339179883910926,
    "margin": -3.5
   },
-  "loggedAt": "2026-11-14T18:49:51.866Z",
+  "loggedAt": "2026-11-14T20:30:57.305Z",
   "result": null
  },
  "ncaaf:401858524": {
@@ -13788,14 +13861,14 @@
    null
   ],
   "espnPHome": 0.835,
-  "simPHome": 0.8137,
-  "rawPHome": 0.85,
-  "simMargin": 12.59,
+  "simPHome": 0.8122,
+  "rawPHome": 0.8485,
+  "simMargin": 12.12,
   "simScore": [
-   15.67,
-   28.26
+   16.21,
+   28.33
   ],
-  "simTotal": 43.93,
+  "simTotal": 44.54,
   "inj": [
    [],
    []
@@ -13820,7 +13893,7 @@
    "pHome": 0.7837114427986249,
    "margin": 12.5
   },
-  "loggedAt": "2026-11-14T18:49:52.000Z",
+  "loggedAt": "2026-11-14T20:30:57.439Z",
   "result": null
  },
  "ncaaf:401864538": {
@@ -13841,14 +13914,14 @@
    null
   ],
   "espnPHome": 0.807,
-  "simPHome": 0.8203,
-  "rawPHome": 0.8565,
-  "simMargin": 12.82,
+  "simPHome": 0.8327,
+  "rawPHome": 0.8685,
+  "simMargin": 12.89,
   "simScore": [
-   17.95,
-   30.76
+   17.57,
+   30.46
   ],
-  "simTotal": 48.71,
+  "simTotal": 48.02,
   "inj": [
    [
     {
@@ -13878,7 +13951,7 @@
    "pHome": 0.8105584016929457,
    "margin": 14
   },
-  "loggedAt": "2026-11-14T18:49:52.135Z",
+  "loggedAt": "2026-11-14T20:30:57.572Z",
   "result": null
  },
  "ncaaf:401871100": {
@@ -13899,14 +13972,14 @@
    null
   ],
   "espnPHome": 0.584,
-  "simPHome": 0.6277,
-  "rawPHome": 0.649,
-  "simMargin": 4.88,
+  "simPHome": 0.6422,
+  "rawPHome": 0.6655,
+  "simMargin": 5.14,
   "simScore": [
-   26.48,
-   31.36
+   26.32,
+   31.46
   ],
-  "simTotal": 57.84,
+  "simTotal": 57.77,
   "inj": [
    [
     {
@@ -13935,7 +14008,7 @@
    "pHome": 0.5743850854197133,
    "margin": 3
   },
-  "loggedAt": "2026-11-14T18:49:52.273Z",
+  "loggedAt": "2026-11-14T20:30:57.707Z",
   "result": null
  },
  "ncaaf:401862826": {
@@ -13956,14 +14029,14 @@
    null
   ],
   "espnPHome": 0.766,
-  "simPHome": 0.741,
-  "rawPHome": 0.775,
-  "simMargin": 9.33,
+  "simPHome": 0.7248,
+  "rawPHome": 0.7575,
+  "simMargin": 8.71,
   "simScore": [
-   31.85,
-   41.18
+   32.09,
+   40.8
   ],
-  "simTotal": 73.03,
+  "simTotal": 72.89,
   "inj": [
    [],
    []
@@ -13994,7 +14067,7 @@
    "pHome": 0.6579049670932782,
    "margin": 6.5
   },
-  "loggedAt": "2026-11-14T18:49:52.413Z",
+  "loggedAt": "2026-11-14T20:30:57.847Z",
   "result": null
  },
  "ncaaf:401856885": {
@@ -14015,14 +14088,14 @@
    null
   ],
   "espnPHome": 0.526,
-  "simPHome": 0.6678,
-  "rawPHome": 0.6945,
-  "simMargin": 5.7,
+  "simPHome": 0.636,
+  "rawPHome": 0.6585,
+  "simMargin": 5.49,
   "simScore": [
-   20.36,
-   26.06
+   20.58,
+   26.07
   ],
-  "simTotal": 46.42,
+  "simTotal": 46.65,
   "inj": [
    [],
    []
@@ -14041,7 +14114,7 @@
    "pHome": 0.6108046615917744,
    "margin": 4.5
   },
-  "loggedAt": "2026-11-14T18:49:52.549Z",
+  "loggedAt": "2026-11-14T20:30:57.982Z",
   "result": null
  },
  "ncaaf:401858519": {
@@ -14062,14 +14135,14 @@
    null
   ],
   "espnPHome": 0.871,
-  "simPHome": 0.8851,
-  "rawPHome": 0.917,
-  "simMargin": 16.21,
+  "simPHome": 0.8891,
+  "rawPHome": 0.9205,
+  "simMargin": 16.91,
   "simScore": [
-   17.33,
-   33.54
+   16.71,
+   33.62
   ],
-  "simTotal": 50.87,
+  "simTotal": 50.34,
   "inj": [
    [],
    []
@@ -14088,7 +14161,7 @@
    "pHome": 0.8650590691295024,
    "margin": 17.5
   },
-  "loggedAt": "2026-11-14T18:49:52.685Z",
+  "loggedAt": "2026-11-14T20:30:58.132Z",
   "result": null
  },
  "ncaaf:401858299": {
@@ -14109,14 +14182,14 @@
    null
   ],
   "espnPHome": 0.904,
-  "simPHome": 0.8484,
-  "rawPHome": 0.8835,
-  "simMargin": 14.97,
+  "simPHome": 0.8389,
+  "rawPHome": 0.8745,
+  "simMargin": 14.62,
   "simScore": [
-   21.99,
-   36.96
+   22.23,
+   36.85
   ],
-  "simTotal": 58.96,
+  "simTotal": 59.08,
   "inj": [
    [],
    []
@@ -14147,7 +14220,7 @@
    "pHome": 0.8650590691295024,
    "margin": 17.5
   },
-  "loggedAt": "2026-11-14T18:49:52.822Z",
+  "loggedAt": "2026-11-14T20:30:58.268Z",
   "result": null
  },
  "ncaaf:401864539": {
@@ -14168,14 +14241,14 @@
    null
   ],
   "espnPHome": 0.868,
-  "simPHome": 0.912,
-  "rawPHome": 0.94,
-  "simMargin": 18.12,
+  "simPHome": 0.9019,
+  "rawPHome": 0.9315,
+  "simMargin": 18,
   "simScore": [
-   15.66,
-   33.78
+   15.55,
+   33.55
   ],
-  "simTotal": 49.44,
+  "simTotal": 49.1,
   "inj": [
    [],
    []
@@ -14200,7 +14273,7 @@
    "pHome": 0.8650590691295024,
    "margin": 17.5
   },
-  "loggedAt": "2026-11-14T18:49:52.964Z",
+  "loggedAt": "2026-11-14T20:30:58.402Z",
   "result": null
  },
  "ncaaf:401856882": {
@@ -14221,14 +14294,14 @@
    null
   ],
   "espnPHome": 0.228,
-  "simPHome": 0.3157,
-  "rawPHome": 0.287,
-  "simMargin": -6.3,
+  "simPHome": 0.3473,
+  "rawPHome": 0.3225,
+  "simMargin": -5.99,
   "simScore": [
-   31.36,
-   25.06
+   31.39,
+   25.4
   ],
-  "simTotal": 56.41,
+  "simTotal": 56.8,
   "inj": [
    [],
    []
@@ -14247,7 +14320,7 @@
    "pHome": 0.31934880799974574,
    "margin": -7.5
   },
-  "loggedAt": "2026-11-14T18:49:53.101Z",
+  "loggedAt": "2026-11-14T20:30:58.539Z",
   "result": null
  },
  "ncaaf:401862827": {
@@ -14268,14 +14341,14 @@
    null
   ],
   "espnPHome": 0.368,
-  "simPHome": 0.3473,
-  "rawPHome": 0.3225,
-  "simMargin": -5.99,
+  "simPHome": 0.3407,
+  "rawPHome": 0.315,
+  "simMargin": -5.87,
   "simScore": [
-   43.37,
-   37.39
+   43,
+   37.13
   ],
-  "simTotal": 80.76,
+  "simTotal": 80.14,
   "inj": [
    [],
    []
@@ -14294,7 +14367,7 @@
    "pHome": 0.4379066952354649,
    "margin": -2.5
   },
-  "loggedAt": "2026-11-14T18:49:53.245Z",
+  "loggedAt": "2026-11-14T20:30:58.679Z",
   "result": null
  },
  "ncaaf:401856863": {
@@ -14315,14 +14388,14 @@
    null
   ],
   "espnPHome": 0.515,
-  "simPHome": 0.606,
-  "rawPHome": 0.624,
-  "simMargin": 4.12,
+  "simPHome": 0.5931,
+  "rawPHome": 0.609,
+  "simMargin": 3.54,
   "simScore": [
-   34.2,
-   38.33
+   34.09,
+   37.62
   ],
-  "simTotal": 72.53,
+  "simTotal": 71.71,
   "inj": [
    [
     {
@@ -14346,7 +14419,7 @@
    "pHome": 0.5866082011608907,
    "margin": 3.5
   },
-  "loggedAt": "2026-11-14T18:49:53.382Z",
+  "loggedAt": "2026-11-14T20:30:58.817Z",
   "result": null
  },
  "ncaaf:401860915": {
@@ -14367,14 +14440,14 @@
    null
   ],
   "espnPHome": 0.449,
-  "simPHome": 0.4489,
-  "rawPHome": 0.44,
-  "simMargin": -1.78,
+  "simPHome": 0.4301,
+  "rawPHome": 0.418,
+  "simMargin": -2.82,
   "simScore": [
-   21.14,
-   19.36
+   21.7,
+   18.88
   ],
-  "simTotal": 40.5,
+  "simTotal": 40.59,
   "inj": [
    [
     {
@@ -14409,7 +14482,7 @@
    "pHome": 0.4256149145802866,
    "margin": -3
   },
-  "loggedAt": "2026-11-14T18:49:53.518Z",
+  "loggedAt": "2026-11-14T20:30:58.952Z",
   "result": null
  },
  "ncaaf:401864540": {
@@ -14430,14 +14503,14 @@
    null
   ],
   "espnPHome": 0.214,
-  "simPHome": 0.2904,
-  "rawPHome": 0.259,
-  "simMargin": -8,
+  "simPHome": 0.2863,
+  "rawPHome": 0.2545,
+  "simMargin": -7.91,
   "simScore": [
-   26.32,
-   18.32
+   26.39,
+   18.49
   ],
-  "simTotal": 44.64,
+  "simTotal": 44.88,
   "inj": [
    [],
    []
@@ -14456,7 +14529,7 @@
    "pHome": 0.3306471818593226,
    "margin": -7
   },
-  "loggedAt": "2026-11-14T18:49:53.654Z",
+  "loggedAt": "2026-11-14T20:30:59.087Z",
   "result": null
  },
  "ncaaf:401856864": {
@@ -14477,14 +14550,14 @@
    null
   ],
   "espnPHome": 0.396,
-  "simPHome": 0.4263,
-  "rawPHome": 0.4135,
-  "simMargin": -2.79,
+  "simPHome": 0.4185,
+  "rawPHome": 0.4045,
+  "simMargin": -3.15,
   "simScore": [
-   30.25,
-   27.46
+   30.31,
+   27.16
   ],
-  "simTotal": 57.71,
+  "simTotal": 57.46,
   "inj": [
    [],
    []
@@ -14503,14 +14576,14 @@
    "pHome": 0.4626514174220434,
    "margin": -1.5
   },
-  "loggedAt": "2026-11-14T18:49:53.789Z",
+  "loggedAt": "2026-11-14T20:30:59.222Z",
   "result": null
  },
  "ncaaf:401860917": {
   "key": "ncaaf:401860917",
   "league": "ncaaf",
   "gameId": "401860917",
-  "start": "2026-11-15T03:30Z",
+  "start": "2026-11-15T03:45Z",
   "away": {
    "abbr": "CSU",
    "name": "Colorado State Rams"
@@ -14524,14 +14597,14 @@
    null
   ],
   "espnPHome": 0.704,
-  "simPHome": 0.6856,
-  "rawPHome": 0.7145,
-  "simMargin": 7.06,
+  "simPHome": 0.7001,
+  "rawPHome": 0.7305,
+  "simMargin": 7.3,
   "simScore": [
-   30.12,
-   37.18
+   30.15,
+   37.45
   ],
-  "simTotal": 67.3,
+  "simTotal": 67.6,
   "inj": [
    [],
    []
@@ -14562,7 +14635,7 @@
    "pHome": 0.7027652261936193,
    "margin": 8.5
   },
-  "loggedAt": "2026-11-14T18:49:53.925Z",
+  "loggedAt": "2026-11-14T20:30:59.359Z",
   "result": null
  },
  "ncaaf:401864537": {
@@ -14583,14 +14656,14 @@
    null
   ],
   "espnPHome": 0.33,
-  "simPHome": 0.2817,
-  "rawPHome": 0.2495,
-  "simMargin": -8.16,
+  "simPHome": 0.2609,
+  "rawPHome": 0.227,
+  "simMargin": -8.48,
   "simScore": [
-   24.38,
-   16.22
+   24.94,
+   16.46
   ],
-  "simTotal": 40.6,
+  "simTotal": 41.4,
   "inj": [
    [],
    []
@@ -14615,7 +14688,7 @@
    "pHome": 0.3306471818593226,
    "margin": -7
   },
-  "loggedAt": "2026-11-14T18:49:54.061Z",
+  "loggedAt": "2026-11-14T20:30:59.494Z",
   "result": null
  },
  "ncaaf:401856887": {
@@ -14636,14 +14709,14 @@
    null
   ],
   "espnPHome": 0.426,
-  "simPHome": 0.5085,
-  "rawPHome": 0.51,
-  "simMargin": 0.15,
+  "simPHome": 0.5081,
+  "rawPHome": 0.5095,
+  "simMargin": 0.41,
   "simScore": [
-   24.84,
-   24.99
+   24.54,
+   24.95
   ],
-  "simTotal": 49.83,
+  "simTotal": 49.49,
   "inj": [
    [],
    []
@@ -14668,7 +14741,7 @@
    "pHome": 0.5620933047645351,
    "margin": 2.5
   },
-  "loggedAt": "2026-11-14T18:49:54.221Z",
+  "loggedAt": "2026-11-14T20:30:59.629Z",
   "result": null
  },
  "ncaab:401919004": {
@@ -14854,14 +14927,14 @@
    null
   ],
   "espnPHome": 0.37,
-  "simPHome": 0.5194,
-  "rawPHome": 0.5155,
-  "simMargin": 0.7,
+  "simPHome": 0.5231,
+  "rawPHome": 0.5185,
+  "simMargin": 0.88,
   "simScore": [
-   75.27,
-   75.97
+   75.39,
+   76.27
   ],
-  "simTotal": 151.24,
+  "simTotal": 151.66,
   "inj": [
    [],
    []
@@ -14886,7 +14959,7 @@
    "pHome": 0.44575938360008216,
    "margin": -1.5
   },
-  "loggedAt": "2026-11-14T18:49:55.328Z",
+  "loggedAt": "2026-11-14T20:31:00.470Z",
   "result": null
  },
  "ncaab:401920750": {
@@ -15775,12 +15848,12 @@
    null
   ],
   "espnPHome": 0.223,
-  "simPHome": 0.1487,
-  "rawPHome": 0.1985,
-  "simMargin": -11.17,
+  "simPHome": 0.1326,
+  "rawPHome": 0.182,
+  "simMargin": -11.34,
   "simScore": [
-   81.74,
-   70.57
+   81.83,
+   70.48
   ],
   "simTotal": 152.31,
   "inj": [
@@ -15807,7 +15880,7 @@
    "pHome": 0.16828643765628548,
    "margin": -10.5
   },
-  "loggedAt": "2026-11-14T18:49:54.615Z",
+  "loggedAt": "2026-11-14T20:30:59.702Z",
   "result": null
  },
  "ncaab:401925889": {
@@ -15828,14 +15901,14 @@
    null
   ],
   "espnPHome": 0.491,
-  "simPHome": 0.5468,
-  "rawPHome": 0.5375,
-  "simMargin": 0.94,
+  "simPHome": 0.5319,
+  "rawPHome": 0.5255,
+  "simMargin": 0.85,
   "simScore": [
-   72.59,
-   73.53
+   72.92,
+   73.77
   ],
-  "simTotal": 146.12,
+  "simTotal": 146.69,
   "inj": [
    [],
    []
@@ -15866,7 +15939,7 @@
    "pHome": 0.4100715891566124,
    "margin": -2.5
   },
-  "loggedAt": "2026-11-14T18:49:54.634Z",
+  "loggedAt": "2026-11-14T20:30:59.759Z",
   "result": null
  },
  "ncaab:401922046": {
@@ -15887,14 +15960,14 @@
    2
   ],
   "espnPHome": 0.709,
-  "simPHome": 0.61,
-  "rawPHome": 0.5885,
-  "simMargin": 2.93,
+  "simPHome": 0.5649,
+  "rawPHome": 0.552,
+  "simMargin": 1.76,
   "simScore": [
-   73.32,
-   76.24
+   73.97,
+   75.73
   ],
-  "simTotal": 149.56,
+  "simTotal": 149.7,
   "inj": [
    [],
    []
@@ -15917,15 +15990,21 @@
     "pHome": 0.7232,
     "margin": 6.5,
     "total": 136.5
+   },
+   {
+    "t": "2026-11-14T20:30:59.778Z",
+    "pHome": 0.7232,
+    "margin": 6.5,
+    "total": 137.5
    }
   ],
   "mkt": {
    "line": "ODU -6.5",
-   "total": 136.5,
+   "total": 137.5,
    "pHome": 0.723224941825682,
    "margin": 6.5
   },
-  "loggedAt": "2026-11-14T18:49:54.653Z",
+  "loggedAt": "2026-11-14T20:30:59.778Z",
   "result": null
  },
  "ncaab:401921221": {
@@ -15946,14 +16025,14 @@
    2
   ],
   "espnPHome": 0.734,
-  "simPHome": 0.7465,
-  "rawPHome": 0.7035,
-  "simMargin": 7.08,
+  "simPHome": 0.7425,
+  "rawPHome": 0.7,
+  "simMargin": 6.66,
   "simScore": [
-   63.29,
-   70.37
+   63.38,
+   70.05
   ],
-  "simTotal": 133.65,
+  "simTotal": 133.43,
   "inj": [
    [],
    []
@@ -15978,7 +16057,7 @@
    "pHome": 0.5542406163999178,
    "margin": 1.5
   },
-  "loggedAt": "2026-11-14T18:49:54.672Z",
+  "loggedAt": "2026-11-14T20:30:59.797Z",
   "result": null
  },
  "ncaab:401920307": {
@@ -15999,14 +16078,14 @@
    null
   ],
   "espnPHome": 0.874,
-  "simPHome": 0.865,
-  "rawPHome": 0.8155,
-  "simMargin": 11.66,
+  "simPHome": 0.8458,
+  "rawPHome": 0.796,
+  "simMargin": 11.05,
   "simScore": [
-   72.02,
-   83.68
+   72.3,
+   83.35
   ],
-  "simTotal": 155.7,
+  "simTotal": 155.66,
   "inj": [
    [],
    []
@@ -16037,7 +16116,7 @@
    "pHome": 0.9473164302617331,
    "margin": 17.5
   },
-  "loggedAt": "2026-11-14T18:49:54.692Z",
+  "loggedAt": "2026-11-14T20:30:59.816Z",
   "result": null
  },
  "ncaab:401918979": {
@@ -16058,14 +16137,14 @@
    2
   ],
   "espnPHome": 0.848,
-  "simPHome": 0.8468,
-  "rawPHome": 0.797,
-  "simMargin": 11.01,
+  "simPHome": 0.8547,
+  "rawPHome": 0.805,
+  "simMargin": 11.43,
   "simScore": [
-   64.27,
-   75.28
+   64.03,
+   75.46
   ],
-  "simTotal": 139.55,
+  "simTotal": 139.49,
   "inj": [
    [],
    []
@@ -16096,7 +16175,7 @@
    "pHome": 0.9235231487319524,
    "margin": 15.5
   },
-  "loggedAt": "2026-11-14T18:49:54.710Z",
+  "loggedAt": "2026-11-14T20:30:59.835Z",
   "result": null
  },
  "ncaab:401911264": {
@@ -16117,14 +16196,14 @@
    2
   ],
   "espnPHome": 0.895,
-  "simPHome": 0.9193,
-  "rawPHome": 0.875,
-  "simMargin": 15.31,
+  "simPHome": 0.9045,
+  "rawPHome": 0.858,
+  "simMargin": 14.62,
   "simScore": [
-   64.28,
-   79.59
+   64.5,
+   79.12
   ],
-  "simTotal": 143.87,
+  "simTotal": 143.62,
   "inj": [
    [],
    []
@@ -16149,7 +16228,7 @@
    "pHome": 0.9362520528769038,
    "margin": 16.5
   },
-  "loggedAt": "2026-11-14T18:49:54.729Z",
+  "loggedAt": "2026-11-14T20:30:59.854Z",
   "result": null
  },
  "ncaab:401909728": {
@@ -16170,14 +16249,14 @@
    null
   ],
   "espnPHome": 0.842,
-  "simPHome": 0.7805,
-  "rawPHome": 0.734,
-  "simMargin": 8.58,
+  "simPHome": 0.7833,
+  "rawPHome": 0.7365,
+  "simMargin": 8.81,
   "simScore": [
-   75.25,
-   83.83
+   75.04,
+   83.85
   ],
-  "simTotal": 159.07,
+  "simTotal": 158.89,
   "inj": [
    [],
    []
@@ -16208,7 +16287,7 @@
    "pHome": 0.9568409514236293,
    "margin": 18.5
   },
-  "loggedAt": "2026-11-14T18:49:54.749Z",
+  "loggedAt": "2026-11-14T20:30:59.873Z",
   "result": null
  },
  "ncaab:401920741": {
@@ -16229,14 +16308,14 @@
    2
   ],
   "espnPHome": 0.698,
-  "simPHome": 0.7056,
-  "rawPHome": 0.668,
-  "simMargin": 5.98,
+  "simPHome": 0.7161,
+  "rawPHome": 0.677,
+  "simMargin": 5.52,
   "simScore": [
-   71.19,
-   77.17
+   71.6,
+   77.11
   ],
-  "simTotal": 148.35,
+  "simTotal": 148.71,
   "inj": [
    [],
    []
@@ -16261,7 +16340,7 @@
    "pHome": 0.8074133240442305,
    "margin": 9.5
   },
-  "loggedAt": "2026-11-14T18:49:54.768Z",
+  "loggedAt": "2026-11-14T20:30:59.892Z",
   "result": null
  },
  "ncaab:401927387": {
@@ -16282,14 +16361,14 @@
    2
   ],
   "espnPHome": 0.452,
-  "simPHome": 0.4221,
-  "rawPHome": 0.4375,
-  "simMargin": -2.1,
+  "simPHome": 0.4507,
+  "rawPHome": 0.4605,
+  "simMargin": -1.72,
   "simScore": [
-   81.59,
-   79.49
+   81.18,
+   79.46
   ],
-  "simTotal": 161.08,
+  "simTotal": 160.64,
   "inj": [
    [],
    []
@@ -16308,7 +16387,7 @@
    "pHome": 0.5542406163999178,
    "margin": 1.5
   },
-  "loggedAt": "2026-11-14T18:49:54.787Z",
+  "loggedAt": "2026-11-14T20:30:59.913Z",
   "result": null
  },
  "ncaab:401920567": {
@@ -16329,14 +16408,14 @@
    1
   ],
   "espnPHome": 0.495,
-  "simPHome": 0.4488,
-  "rawPHome": 0.459,
-  "simMargin": -1.05,
+  "simPHome": 0.4875,
+  "rawPHome": 0.49,
+  "simMargin": -0.44,
   "simScore": [
-   76.77,
-   75.72
+   76.67,
+   76.23
   ],
-  "simTotal": 152.49,
+  "simTotal": 152.91,
   "inj": [
    [],
    [
@@ -16378,7 +16457,7 @@
    "pHome": 0.5542406163999178,
    "margin": 1.5
   },
-  "loggedAt": "2026-11-14T18:49:54.806Z",
+  "loggedAt": "2026-11-14T20:30:59.933Z",
   "result": null
  },
  "ncaab:401918055": {
@@ -16399,14 +16478,14 @@
    2
   ],
   "espnPHome": 0.838,
-  "simPHome": 0.7538,
-  "rawPHome": 0.71,
-  "simMargin": 7.77,
+  "simPHome": 0.7527,
+  "rawPHome": 0.709,
+  "simMargin": 7.6,
   "simScore": [
-   77.09,
-   84.85
+   77.35,
+   84.94
   ],
-  "simTotal": 161.94,
+  "simTotal": 162.29,
   "inj": [
    [],
    []
@@ -16423,15 +16502,21 @@
     "pHome": 0.909,
     "margin": 14.5,
     "total": 159.5
+   },
+   {
+    "t": "2026-11-14T20:30:59.952Z",
+    "pHome": 0.909,
+    "margin": 14.5,
+    "total": 160.5
    }
   ],
   "mkt": {
    "line": "CAL -14.5",
-   "total": 159.5,
+   "total": 160.5,
    "pHome": 0.9090183037943464,
    "margin": 14.5
   },
-  "loggedAt": "2026-11-14T18:49:54.826Z",
+  "loggedAt": "2026-11-14T20:30:59.952Z",
   "result": null
  },
  "ncaab:401926777": {
@@ -16452,14 +16537,14 @@
    null
   ],
   "espnPHome": 0.454,
-  "simPHome": 0.4744,
-  "rawPHome": 0.4795,
-  "simMargin": -0.39,
+  "simPHome": 0.4731,
+  "rawPHome": 0.4785,
+  "simMargin": -0.71,
   "simScore": [
-   74.52,
-   74.13
+   74.66,
+   73.95
   ],
-  "simTotal": 148.65,
+  "simTotal": 148.61,
   "inj": [
    [],
    []
@@ -16490,7 +16575,7 @@
    "pHome": 0.6249180828608419,
    "margin": 3.5
   },
-  "loggedAt": "2026-11-14T18:49:54.845Z",
+  "loggedAt": "2026-11-14T20:30:59.971Z",
   "result": null
  },
  "ncaab:401925827": {
@@ -16511,14 +16596,14 @@
    2
   ],
   "espnPHome": 0.883,
-  "simPHome": 0.8001,
-  "rawPHome": 0.752,
-  "simMargin": 9.02,
+  "simPHome": 0.8059,
+  "rawPHome": 0.7575,
+  "simMargin": 9.39,
   "simScore": [
-   67.13,
-   76.15
+   67.03,
+   76.42
   ],
-  "simTotal": 143.28,
+  "simTotal": 143.44,
   "inj": [
    [
     {
@@ -16546,15 +16631,21 @@
     "pHome": 0.8074,
     "margin": 9.5,
     "total": 132.5
+   },
+   {
+    "t": "2026-11-14T20:30:59.991Z",
+    "pHome": 0.8074,
+    "margin": 9.5,
+    "total": 133.5
    }
   ],
   "mkt": {
    "line": "UNT -9.5",
-   "total": 132.5,
+   "total": 133.5,
    "pHome": 0.8074133240442305,
    "margin": 9.5
   },
-  "loggedAt": "2026-11-14T18:49:54.865Z",
+  "loggedAt": "2026-11-14T20:30:59.991Z",
   "result": null
  },
  "ncaab:401919782": {
@@ -16575,14 +16666,14 @@
    null
   ],
   "espnPHome": 0.72,
-  "simPHome": 0.7032,
-  "rawPHome": 0.666,
-  "simMargin": 5.83,
+  "simPHome": 0.7265,
+  "rawPHome": 0.686,
+  "simMargin": 6.59,
   "simScore": [
-   73.19,
-   79.02
+   72.97,
+   79.55
   ],
-  "simTotal": 152.21,
+  "simTotal": 152.52,
   "inj": [
    [],
    []
@@ -16607,7 +16698,7 @@
    "pHome": 0.5899284108433875,
    "margin": 2.5
   },
-  "loggedAt": "2026-11-14T18:49:54.884Z",
+  "loggedAt": "2026-11-14T20:31:00.010Z",
   "result": null
  },
  "ncaab:401909534": {
@@ -16628,14 +16719,14 @@
    null
   ],
   "espnPHome": 0.76,
-  "simPHome": 0.7143,
-  "rawPHome": 0.6755,
-  "simMargin": 6.74,
+  "simPHome": 0.7459,
+  "rawPHome": 0.703,
+  "simMargin": 7.65,
   "simScore": [
-   76.46,
-   83.2
+   76.1,
+   83.75
   ],
-  "simTotal": 159.67,
+  "simTotal": 159.85,
   "inj": [
    [],
    []
@@ -16666,7 +16757,7 @@
    "pHome": 0.8540231110938928,
    "margin": 11.5
   },
-  "loggedAt": "2026-11-14T18:49:54.903Z",
+  "loggedAt": "2026-11-14T20:31:00.030Z",
   "result": null
  },
  "ncaab:401920193": {
@@ -16689,12 +16780,12 @@
   "espnPHome": 0.63,
   "simPHome": 0.7701,
   "rawPHome": 0.7245,
-  "simMargin": 8.1,
+  "simMargin": 7.73,
   "simScore": [
-   72.04,
-   80.14
+   72.31,
+   80.04
   ],
-  "simTotal": 152.18,
+  "simTotal": 152.35,
   "inj": [
    [],
    []
@@ -16711,15 +16802,21 @@
     "pHome": 0.659,
     "margin": 4.5,
     "total": 152.5
+   },
+   {
+    "t": "2026-11-14T20:31:00.049Z",
+    "pHome": 0.6249,
+    "margin": 3.5,
+    "total": 152.5
    }
   ],
   "mkt": {
-   "line": "JOES -4.5",
+   "line": "JOES -3.5",
    "total": 152.5,
-   "pHome": 0.6589516224854985,
-   "margin": 4.5
+   "pHome": 0.6249180828608419,
+   "margin": 3.5
   },
-  "loggedAt": "2026-11-14T18:49:54.923Z",
+  "loggedAt": "2026-11-14T20:31:00.049Z",
   "result": null
  },
  "ncaab:401925774": {
@@ -16740,14 +16837,14 @@
    null
   ],
   "espnPHome": 0.824,
-  "simPHome": 0.8397,
-  "rawPHome": 0.79,
-  "simMargin": 10.61,
+  "simPHome": 0.8448,
+  "rawPHome": 0.795,
+  "simMargin": 10.49,
   "simScore": [
-   64.76,
-   75.37
+   64.68,
+   75.17
   ],
-  "simTotal": 140.13,
+  "simTotal": 139.85,
   "inj": [
    [],
    []
@@ -16772,7 +16869,7 @@
    "pHome": 0.8317135623437145,
    "margin": 10.5
   },
-  "loggedAt": "2026-11-14T18:49:54.942Z",
+  "loggedAt": "2026-11-14T20:31:00.068Z",
   "result": null
  },
  "ncaab:401925108": {
@@ -16793,14 +16890,14 @@
    null
   ],
   "espnPHome": 0.68,
-  "simPHome": 0.7253,
-  "rawPHome": 0.685,
-  "simMargin": 6.4,
+  "simPHome": 0.7242,
+  "rawPHome": 0.684,
+  "simMargin": 6.43,
   "simScore": [
-   66.3,
+   66.28,
    72.7
   ],
-  "simTotal": 139,
+  "simTotal": 138.98,
   "inj": [
    [],
    [
@@ -16830,7 +16927,7 @@
    "pHome": 0.6589516224854985,
    "margin": 4.5
   },
-  "loggedAt": "2026-11-14T18:49:54.980Z",
+  "loggedAt": "2026-11-14T20:31:00.125Z",
   "result": null
  },
  "ncaab:401921775": {
@@ -16851,14 +16948,14 @@
    null
   ],
   "espnPHome": 0.991,
-  "simPHome": 0.9821,
-  "rawPHome": 0.961,
-  "simMargin": 24.38,
+  "simPHome": 0.9841,
+  "rawPHome": 0.9645,
+  "simMargin": 24.61,
   "simScore": [
-   58.06,
-   82.44
+   58.01,
+   82.62
   ],
-  "simTotal": 140.5,
+  "simTotal": 140.63,
   "inj": [
    [],
    []
@@ -16889,7 +16986,7 @@
    "pHome": 0.9995230524088338,
    "margin": 34.5
   },
-  "loggedAt": "2026-11-14T18:49:54.999Z",
+  "loggedAt": "2026-11-14T20:31:00.144Z",
   "result": null
  },
  "ncaab:401921063": {
@@ -16910,14 +17007,14 @@
    null
   ],
   "espnPHome": 0.805,
-  "simPHome": 0.7085,
-  "rawPHome": 0.6705,
-  "simMargin": 6.12,
+  "simPHome": 0.7062,
+  "rawPHome": 0.6685,
+  "simMargin": 5.54,
   "simScore": [
-   69.92,
-   76.05
+   70.28,
+   75.83
   ],
-  "simTotal": 145.97,
+  "simTotal": 146.11,
   "inj": [
    [],
    []
@@ -16948,7 +17045,7 @@
    "pHome": 0.7811706605289616,
    "margin": 8.5
   },
-  "loggedAt": "2026-11-14T18:49:55.019Z",
+  "loggedAt": "2026-11-14T20:31:00.164Z",
   "result": null
  },
  "ncaab:401920867": {
@@ -16969,14 +17066,14 @@
    null
   ],
   "espnPHome": 0.876,
-  "simPHome": 0.8587,
-  "rawPHome": 0.809,
-  "simMargin": 11.87,
+  "simPHome": 0.8412,
+  "rawPHome": 0.7915,
+  "simMargin": 11.32,
   "simScore": [
-   65.58,
-   77.45
+   65.96,
+   77.28
   ],
-  "simTotal": 143.03,
+  "simTotal": 143.24,
   "inj": [
    [],
    []
@@ -17007,7 +17104,7 @@
    "pHome": 0.8540231110938928,
    "margin": 11.5
   },
-  "loggedAt": "2026-11-14T18:49:55.038Z",
+  "loggedAt": "2026-11-14T20:31:00.183Z",
   "result": null
  },
  "ncaab:401920705": {
@@ -17028,14 +17125,14 @@
    2
   ],
   "espnPHome": 0.664,
-  "simPHome": 0.6724,
-  "rawPHome": 0.64,
-  "simMargin": 4.94,
+  "simPHome": 0.6393,
+  "rawPHome": 0.6125,
+  "simMargin": 4.11,
   "simScore": [
-   77.55,
-   82.49
+   78.09,
+   82.2
   ],
-  "simTotal": 160.04,
+  "simTotal": 160.29,
   "inj": [
    [],
    []
@@ -17060,7 +17157,7 @@
    "pHome": 0.6249180828608419,
    "margin": 3.5
   },
-  "loggedAt": "2026-11-14T18:49:55.057Z",
+  "loggedAt": "2026-11-14T20:31:00.202Z",
   "result": null
  },
  "ncaab:401919017": {
@@ -17081,14 +17178,14 @@
    2
   ],
   "espnPHome": 0.466,
-  "simPHome": 0.4775,
-  "rawPHome": 0.482,
-  "simMargin": -0.51,
+  "simPHome": 0.4856,
+  "rawPHome": 0.4885,
+  "simMargin": -0.53,
   "simScore": [
-   77.94,
-   77.43
+   77.88,
+   77.35
   ],
-  "simTotal": 155.37,
+  "simTotal": 155.23,
   "inj": [
    [],
    []
@@ -17113,7 +17210,7 @@
    "pHome": 0.4100715891566124,
    "margin": -2.5
   },
-  "loggedAt": "2026-11-14T18:49:55.076Z",
+  "loggedAt": "2026-11-14T20:31:00.221Z",
   "result": null
  },
  "ncaab:401917951": {
@@ -17134,14 +17231,14 @@
    2
   ],
   "espnPHome": 0.893,
-  "simPHome": 0.6724,
-  "rawPHome": 0.64,
-  "simMargin": 5.05,
+  "simPHome": 0.7026,
+  "rawPHome": 0.6655,
+  "simMargin": 5.6,
   "simScore": [
-   73.07,
-   78.12
+   72.63,
+   78.23
   ],
-  "simTotal": 151.19,
+  "simTotal": 150.86,
   "inj": [
    [],
    []
@@ -17172,7 +17269,7 @@
    "pHome": 0.8540231110938928,
    "margin": 11.5
   },
-  "loggedAt": "2026-11-14T18:49:55.096Z",
+  "loggedAt": "2026-11-14T20:31:00.241Z",
   "result": null
  },
  "ncaab:401911376": {
@@ -17193,14 +17290,14 @@
    null
   ],
   "espnPHome": 0.717,
-  "simPHome": 0.751,
-  "rawPHome": 0.7075,
-  "simMargin": 7.32,
+  "simPHome": 0.7695,
+  "rawPHome": 0.724,
+  "simMargin": 7.44,
   "simScore": [
-   72.56,
-   79.88
+   72.26,
+   79.7
   ],
-  "simTotal": 152.45,
+  "simTotal": 151.96,
   "inj": [
    [],
    []
@@ -17217,15 +17314,21 @@
     "pHome": 0.6918,
     "margin": 5.5,
     "total": 148.5
+   },
+   {
+    "t": "2026-11-14T20:31:00.260Z",
+    "pHome": 0.659,
+    "margin": 4.5,
+    "total": 148.5
    }
   ],
   "mkt": {
-   "line": "CHSO -5.5",
+   "line": "CHSO -4.5",
    "total": 148.5,
-   "pHome": 0.6917914210056952,
-   "margin": 5.5
+   "pHome": 0.6589516224854985,
+   "margin": 4.5
   },
-  "loggedAt": "2026-11-14T18:49:55.115Z",
+  "loggedAt": "2026-11-14T20:31:00.260Z",
   "result": null
  },
  "ncaab:401911308": {
@@ -17246,14 +17349,14 @@
    null
   ],
   "espnPHome": 0.704,
-  "simPHome": 0.8488,
-  "rawPHome": 0.799,
-  "simMargin": 11.03,
+  "simPHome": 0.8438,
+  "rawPHome": 0.794,
+  "simMargin": 10.81,
   "simScore": [
-   68.75,
-   79.78
+   68.89,
+   79.69
   ],
-  "simTotal": 148.53,
+  "simTotal": 148.58,
   "inj": [
    [],
    []
@@ -17290,7 +17393,7 @@
    "pHome": 0.8074133240442305,
    "margin": 9.5
   },
-  "loggedAt": "2026-11-14T18:49:55.134Z",
+  "loggedAt": "2026-11-14T20:31:00.278Z",
   "result": null
  },
  "ncaab:401920961": {
@@ -17311,14 +17414,14 @@
    null
   ],
   "espnPHome": 0.678,
-  "simPHome": 0.455,
-  "rawPHome": 0.464,
-  "simMargin": -1.4,
+  "simPHome": 0.4376,
+  "rawPHome": 0.45,
+  "simMargin": -1.7,
   "simScore": [
-   82.93,
-   81.53
+   83.52,
+   81.82
   ],
-  "simTotal": 164.46,
+  "simTotal": 165.34,
   "inj": [
    [],
    []
@@ -17349,7 +17452,7 @@
    "pHome": 0.4100715891566124,
    "margin": -2.5
   },
-  "loggedAt": "2026-11-14T18:49:55.154Z",
+  "loggedAt": "2026-11-14T20:31:00.298Z",
   "result": null
  },
  "ncaab:401920568": {
@@ -17370,14 +17473,14 @@
    1
   ],
   "espnPHome": 0.847,
-  "simPHome": 0.8027,
-  "rawPHome": 0.7545,
-  "simMargin": 8.79,
+  "simPHome": 0.7805,
+  "rawPHome": 0.734,
+  "simMargin": 8.34,
   "simScore": [
-   67.13,
-   75.91
+   67.16,
+   75.5
   ],
-  "simTotal": 143.04,
+  "simTotal": 142.67,
   "inj": [
    [],
    []
@@ -17402,7 +17505,7 @@
    "pHome": 0.8317135623437145,
    "margin": 10.5
   },
-  "loggedAt": "2026-11-14T18:49:55.173Z",
+  "loggedAt": "2026-11-14T20:31:00.317Z",
   "result": null
  },
  "ncaab:401911276": {
@@ -17423,14 +17526,14 @@
    null
   ],
   "espnPHome": 0.845,
-  "simPHome": 0.896,
-  "rawPHome": 0.8485,
-  "simMargin": 13.59,
+  "simPHome": 0.8974,
+  "rawPHome": 0.85,
+  "simMargin": 13.49,
   "simScore": [
-   64.37,
-   77.96
+   63.9,
+   77.39
   ],
-  "simTotal": 142.33,
+  "simTotal": 141.29,
   "inj": [
    [
     {
@@ -17460,7 +17563,7 @@
    "pHome": 0.9473164302617331,
    "margin": 17.5
   },
-  "loggedAt": "2026-11-14T18:49:55.192Z",
+  "loggedAt": "2026-11-14T20:31:00.336Z",
   "result": null
  },
  "ncaab:401911188": {
@@ -17481,14 +17584,14 @@
    null
   ],
   "espnPHome": 0.248,
-  "simPHome": 0.4116,
-  "rawPHome": 0.429,
-  "simMargin": -2.34,
+  "simPHome": 0.4017,
+  "rawPHome": 0.421,
+  "simMargin": -2.55,
   "simScore": [
-   75.65,
-   73.3
+   75.68,
+   73.13
   ],
-  "simTotal": 148.95,
+  "simTotal": 148.81,
   "inj": [
    [],
    []
@@ -17519,7 +17622,7 @@
    "pHome": 0.2767750581743181,
    "margin": -6.5
   },
-  "loggedAt": "2026-11-14T18:49:55.211Z",
+  "loggedAt": "2026-11-14T20:31:00.355Z",
   "result": null
  },
  "ncaab:401925079": {
@@ -17540,14 +17643,14 @@
    null
   ],
   "espnPHome": 0.795,
-  "simPHome": 0.6802,
-  "rawPHome": 0.6465,
-  "simMargin": 5.22,
+  "simPHome": 0.6826,
+  "rawPHome": 0.6485,
+  "simMargin": 5.15,
   "simScore": [
-   67.74,
-   72.96
+   67.7,
+   72.86
   ],
-  "simTotal": 140.71,
+  "simTotal": 140.56,
   "inj": [
    [
     {
@@ -17571,7 +17674,7 @@
    "pHome": 0.8074133240442305,
    "margin": 9.5
   },
-  "loggedAt": "2026-11-14T18:49:55.231Z",
+  "loggedAt": "2026-11-14T20:31:00.374Z",
   "result": null
  },
  "ncaab:401925063": {
@@ -17592,12 +17695,12 @@
    null
   ],
   "espnPHome": 0.518,
-  "simPHome": 0.5841,
-  "rawPHome": 0.5675,
-  "simMargin": 2.18,
+  "simPHome": 0.5729,
+  "rawPHome": 0.5585,
+  "simMargin": 2.05,
   "simScore": [
-   65.56,
-   67.73
+   65.62,
+   67.67
   ],
   "simTotal": 133.29,
   "inj": [
@@ -17630,7 +17733,7 @@
    "pHome": 0.44575938360008216,
    "margin": -1.5
   },
-  "loggedAt": "2026-11-14T18:49:55.250Z",
+  "loggedAt": "2026-11-14T20:31:00.393Z",
   "result": null
  },
  "ncaab:401911520": {
@@ -17651,14 +17754,14 @@
    null
   ],
   "espnPHome": 0.688,
-  "simPHome": 0.602,
-  "rawPHome": 0.582,
-  "simMargin": 3.1,
+  "simPHome": 0.6204,
+  "rawPHome": 0.597,
+  "simMargin": 3.12,
   "simScore": [
-   75.97,
-   79.07
+   75.9,
+   79.02
   ],
-  "simTotal": 155.04,
+  "simTotal": 154.92,
   "inj": [
    [],
    []
@@ -17689,7 +17792,7 @@
    "pHome": 0.6249180828608419,
    "margin": 3.5
   },
-  "loggedAt": "2026-11-14T18:49:55.270Z",
+  "loggedAt": "2026-11-14T20:31:00.412Z",
   "result": null
  },
  "ncaab:401911347": {
@@ -17710,14 +17813,14 @@
    2
   ],
   "espnPHome": 0.986,
-  "simPHome": 0.9806,
-  "rawPHome": 0.9585,
-  "simMargin": 24.05,
+  "simPHome": 0.9794,
+  "rawPHome": 0.9565,
+  "simMargin": 24.43,
   "simScore": [
-   71.29,
-   95.34
+   71.07,
+   95.5
   ],
-  "simTotal": 166.63,
+  "simTotal": 166.56,
   "inj": [
    [
     {
@@ -17753,7 +17856,7 @@
    "pHome": 0.9986470741272955,
    "margin": 31.5
   },
-  "loggedAt": "2026-11-14T18:49:55.289Z",
+  "loggedAt": "2026-11-14T20:31:00.432Z",
   "result": null
  },
  "ncaab:401920760": {
@@ -17774,14 +17877,14 @@
    null
   ],
   "espnPHome": 0.493,
-  "simPHome": 0.5443,
-  "rawPHome": 0.5355,
-  "simMargin": 0.9,
+  "simPHome": 0.5337,
+  "rawPHome": 0.527,
+  "simMargin": 0.92,
   "simScore": [
-   74.5,
-   75.4
+   74.65,
+   75.57
   ],
-  "simTotal": 149.91,
+  "simTotal": 150.22,
   "inj": [
    [],
    []
@@ -17800,7 +17903,7 @@
    "pHome": 0.5899284108433875,
    "margin": 2.5
   },
-  "loggedAt": "2026-11-14T18:49:55.308Z",
+  "loggedAt": "2026-11-14T20:31:00.451Z",
   "result": null
  },
  "ncaab:401917530": {
@@ -17821,14 +17924,14 @@
    2
   ],
   "espnPHome": 0.47,
-  "simPHome": 0.5605,
-  "rawPHome": 0.5485,
-  "simMargin": 1.23,
+  "simPHome": 0.5531,
+  "rawPHome": 0.5425,
+  "simMargin": 1.06,
   "simScore": [
-   81.85,
-   83.08
+   81.99,
+   83.05
   ],
-  "simTotal": 164.93,
+  "simTotal": 165.04,
   "inj": [
    [],
    [
@@ -17858,7 +17961,7 @@
    "pHome": 0.44575938360008216,
    "margin": -1.5
   },
-  "loggedAt": "2026-11-14T18:49:55.347Z",
+  "loggedAt": "2026-11-14T20:31:00.490Z",
   "result": null
  },
  "ncaab:401911455": {
@@ -17879,14 +17982,14 @@
    2
   ],
   "espnPHome": 0.885,
-  "simPHome": 0.7963,
-  "rawPHome": 0.7485,
-  "simMargin": 9.58,
+  "simPHome": 0.7871,
+  "rawPHome": 0.74,
+  "simMargin": 8.73,
   "simScore": [
-   72.97,
-   82.55
+   73.28,
+   82.01
   ],
-  "simTotal": 155.52,
+  "simTotal": 155.29,
   "inj": [
    [],
    []
@@ -17911,7 +18014,7 @@
    "pHome": 0.8074133240442305,
    "margin": 9.5
   },
-  "loggedAt": "2026-11-14T18:49:55.366Z",
+  "loggedAt": "2026-11-14T20:31:00.509Z",
   "result": null
  },
  "ncaab:401918949": {
@@ -17932,14 +18035,14 @@
    null
   ],
   "espnPHome": 0.307,
-  "simPHome": 0.2211,
-  "rawPHome": 0.2675,
-  "simMargin": -8.25,
+  "simPHome": 0.2389,
+  "rawPHome": 0.2835,
+  "simMargin": -7.85,
   "simScore": [
-   86.37,
-   78.12
+   86.25,
+   78.41
   ],
-  "simTotal": 164.5,
+  "simTotal": 164.66,
   "inj": [
    [],
    []
@@ -17950,15 +18053,21 @@
     "pHome": null,
     "margin": null,
     "total": null
+   },
+   {
+    "t": "2026-11-14T20:31:00.529Z",
+    "pHome": 0.1926,
+    "margin": -9.5,
+    "total": 163.5
    }
   ],
   "mkt": {
-   "line": null,
-   "total": null,
-   "pHome": null,
-   "margin": null
+   "line": "LOU -9.5",
+   "total": 163.5,
+   "pHome": 0.19258667595576956,
+   "margin": -9.5
   },
-  "loggedAt": "2026-11-14T18:49:55.386Z",
+  "loggedAt": "2026-11-14T20:31:00.529Z",
   "result": null
  },
  "ncaab:401926063": {
@@ -17979,14 +18088,14 @@
    3
   ],
   "espnPHome": 0.792,
-  "simPHome": 0.676,
-  "rawPHome": 0.643,
-  "simMargin": 5.14,
+  "simPHome": 0.6508,
+  "rawPHome": 0.622,
+  "simMargin": 4.53,
   "simScore": [
-   76.56,
-   81.7
+   76.82,
+   81.35
   ],
-  "simTotal": 158.27,
+  "simTotal": 158.17,
   "inj": [
    [],
    []
@@ -17997,15 +18106,21 @@
     "pHome": null,
     "margin": null,
     "total": null
+   },
+   {
+    "t": "2026-11-14T20:31:00.548Z",
+    "pHome": 0.8074,
+    "margin": 9.5,
+    "total": 158.5
    }
   ],
   "mkt": {
-   "line": null,
-   "total": null,
-   "pHome": null,
-   "margin": null
+   "line": "NEB -9.5",
+   "total": 158.5,
+   "pHome": 0.8074133240442305,
+   "margin": 9.5
   },
-  "loggedAt": "2026-11-14T18:49:55.406Z",
+  "loggedAt": "2026-11-14T20:31:00.548Z",
   "result": null
  },
  "ncaab:401925896": {
@@ -18026,14 +18141,14 @@
    null
   ],
   "espnPHome": 0.847,
-  "simPHome": 0.8713,
-  "rawPHome": 0.822,
-  "simMargin": 12.6,
+  "simPHome": 0.8798,
+  "rawPHome": 0.831,
+  "simMargin": 12.7,
   "simScore": [
-   68.1,
-   80.7
+   67.97,
+   80.67
   ],
-  "simTotal": 148.8,
+  "simTotal": 148.64,
   "inj": [
    [],
    []
@@ -18052,7 +18167,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-14T18:49:55.425Z",
+  "loggedAt": "2026-11-14T20:31:00.567Z",
   "result": null
  },
  "ncaab:401924858": {
@@ -18073,14 +18188,14 @@
    2
   ],
   "espnPHome": 0.486,
-  "simPHome": 0.4494,
-  "rawPHome": 0.4595,
-  "simMargin": -1.16,
+  "simPHome": 0.4731,
+  "rawPHome": 0.4785,
+  "simMargin": -0.73,
   "simScore": [
-   74.28,
-   73.12
+   73.91,
+   73.17
   ],
-  "simTotal": 147.4,
+  "simTotal": 147.08,
   "inj": [
    [
     {
@@ -18113,7 +18228,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-14T18:49:55.444Z",
+  "loggedAt": "2026-11-14T20:31:00.586Z",
   "result": null
  },
  "ncaab:401920771": {
@@ -18134,14 +18249,14 @@
    3
   ],
   "espnPHome": 0.548,
-  "simPHome": 0.5903,
-  "rawPHome": 0.5725,
-  "simMargin": 2.67,
+  "simPHome": 0.5773,
+  "rawPHome": 0.562,
+  "simMargin": 2.14,
   "simScore": [
-   71.01,
-   73.68
+   70.97,
+   73.11
   ],
-  "simTotal": 144.68,
+  "simTotal": 144.08,
   "inj": [
    [],
    []
@@ -18160,7 +18275,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-14T18:49:55.463Z",
+  "loggedAt": "2026-11-14T20:31:00.605Z",
   "result": null
  },
  "ncaab:401920235": {
@@ -18181,14 +18296,14 @@
    2
   ],
   "espnPHome": 0.615,
-  "simPHome": 0.4981,
-  "rawPHome": 0.4985,
-  "simMargin": 0.11,
+  "simPHome": 0.5081,
+  "rawPHome": 0.5065,
+  "simMargin": 0.48,
   "simScore": [
-   75.91,
-   76.02
+   75.9,
+   76.38
   ],
-  "simTotal": 151.92,
+  "simTotal": 152.28,
   "inj": [
    [],
    [
@@ -18212,7 +18327,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-14T18:49:55.482Z",
+  "loggedAt": "2026-11-14T20:31:00.625Z",
   "result": null
  },
  "ncaab:401912210": {
@@ -18233,14 +18348,14 @@
    3
   ],
   "espnPHome": 0.697,
-  "simPHome": 0.6568,
-  "rawPHome": 0.627,
-  "simMargin": 4.09,
+  "simPHome": 0.6296,
+  "rawPHome": 0.6045,
+  "simMargin": 3.71,
   "simScore": [
-   63.47,
-   67.56
+   63.81,
+   67.52
   ],
-  "simTotal": 131.03,
+  "simTotal": 131.33,
   "inj": [
    [],
    []
@@ -18259,7 +18374,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-14T18:49:55.501Z",
+  "loggedAt": "2026-11-14T20:31:00.644Z",
   "result": null
  },
  "ncaab:401909774": {
@@ -18280,14 +18395,14 @@
    null
   ],
   "espnPHome": 0.996,
-  "simPHome": 0.9994,
-  "rawPHome": 0.9975,
-  "simMargin": 34.64,
+  "simPHome": 0.9991,
+  "rawPHome": 0.9965,
+  "simMargin": 35.27,
   "simScore": [
-   52.03,
-   86.68
+   51.88,
+   87.15
   ],
-  "simTotal": 138.71,
+  "simTotal": 139.03,
   "inj": [
    [],
    []
@@ -18306,7 +18421,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-14T18:49:55.519Z",
+  "loggedAt": "2026-11-14T20:31:00.663Z",
   "result": null
  },
  "ncaab:401909554": {
@@ -18327,14 +18442,14 @@
    null
   ],
   "espnPHome": 0.939,
-  "simPHome": 0.891,
-  "rawPHome": 0.843,
-  "simMargin": 12.66,
+  "simPHome": 0.8946,
+  "rawPHome": 0.847,
+  "simMargin": 13.06,
   "simScore": [
-   63.39,
-   76.06
+   63.02,
+   76.07
   ],
-  "simTotal": 139.45,
+  "simTotal": 139.09,
   "inj": [
    [
     {
@@ -18358,7 +18473,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-14T18:49:55.538Z",
+  "loggedAt": "2026-11-14T20:31:00.683Z",
   "result": null
  },
  "ncaab:401918453": {
@@ -18379,14 +18494,14 @@
    3
   ],
   "espnPHome": 0.974,
-  "simPHome": 0.9699,
-  "rawPHome": 0.9415,
-  "simMargin": 21.53,
+  "simPHome": 0.9652,
+  "rawPHome": 0.9345,
+  "simMargin": 21.82,
   "simScore": [
-   72.82,
-   94.36
+   72.92,
+   94.74
   ],
-  "simTotal": 167.18,
+  "simTotal": 167.66,
   "inj": [
    [],
    []
@@ -18405,7 +18520,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-14T18:49:55.557Z",
+  "loggedAt": "2026-11-14T20:31:00.703Z",
   "result": null
  },
  "ncaab:401925926": {
@@ -18426,14 +18541,14 @@
    3
   ],
   "espnPHome": 0.93,
-  "simPHome": 0.9205,
-  "rawPHome": 0.8765,
-  "simMargin": 15.78,
+  "simPHome": 0.9159,
+  "rawPHome": 0.871,
+  "simMargin": 15.36,
   "simScore": [
-   69.73,
-   85.51
+   69.64,
+   85
   ],
-  "simTotal": 155.25,
+  "simTotal": 154.63,
   "inj": [
    [],
    []
@@ -18452,7 +18567,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-14T18:49:55.577Z",
+  "loggedAt": "2026-11-14T20:31:00.724Z",
   "result": null
  },
  "ncaab:401925812": {
@@ -18473,14 +18588,14 @@
    null
   ],
   "espnPHome": 0.534,
-  "simPHome": 0.563,
-  "rawPHome": 0.5505,
-  "simMargin": 1.34,
+  "simPHome": 0.5549,
+  "rawPHome": 0.544,
+  "simMargin": 1.47,
   "simScore": [
-   72.95,
-   74.28
+   72.71,
+   74.19
   ],
-  "simTotal": 147.23,
+  "simTotal": 146.9,
   "inj": [
    [],
    []
@@ -18499,7 +18614,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-14T18:49:55.596Z",
+  "loggedAt": "2026-11-14T20:31:00.744Z",
   "result": null
  },
  "ncaab:401921760": {
@@ -18520,14 +18635,14 @@
    null
   ],
   "espnPHome": 0.589,
-  "simPHome": 0.5543,
-  "rawPHome": 0.5435,
-  "simMargin": 1.41,
+  "simPHome": 0.545,
+  "rawPHome": 0.536,
+  "simMargin": 1.47,
   "simScore": [
-   73.18,
-   74.6
+   73.09,
+   74.57
   ],
-  "simTotal": 147.78,
+  "simTotal": 147.66,
   "inj": [
    [],
    []
@@ -18538,15 +18653,21 @@
     "pHome": 0.6249,
     "margin": 3.5,
     "total": 143.5
+   },
+   {
+    "t": "2026-11-14T20:31:00.763Z",
+    "pHome": 0.6249,
+    "margin": 3.5,
+    "total": 144.5
    }
   ],
   "mkt": {
    "line": "UTAH -3.5",
-   "total": 143.5,
+   "total": 144.5,
    "pHome": 0.6249180828608419,
    "margin": 3.5
   },
-  "loggedAt": "2026-11-14T18:49:55.616Z",
+  "loggedAt": "2026-11-14T20:31:00.763Z",
   "result": null
  },
  "ncaab:401921287": {
@@ -18567,14 +18688,14 @@
    3
   ],
   "espnPHome": 0.586,
-  "simPHome": 0.4376,
-  "rawPHome": 0.45,
-  "simMargin": -1.33,
+  "simPHome": 0.51,
+  "rawPHome": 0.508,
+  "simMargin": -0.33,
   "simScore": [
-   73.4,
-   72.07
+   73.13,
+   72.8
   ],
-  "simTotal": 145.47,
+  "simTotal": 145.92,
   "inj": [
    [],
    []
@@ -18593,7 +18714,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-14T18:49:55.635Z",
+  "loggedAt": "2026-11-14T20:31:00.782Z",
   "result": null
  },
  "ncaab:401920136": {
@@ -18614,14 +18735,14 @@
    1
   ],
   "espnPHome": 0.717,
-  "simPHome": 0.5964,
-  "rawPHome": 0.5775,
-  "simMargin": 3.29,
+  "simPHome": 0.6259,
+  "rawPHome": 0.6015,
+  "simMargin": 3.52,
   "simScore": [
-   77.41,
-   80.69
+   77.37,
+   80.89
   ],
-  "simTotal": 158.1,
+  "simTotal": 158.25,
   "inj": [
    [],
    [
@@ -18645,7 +18766,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-14T18:49:55.655Z",
+  "loggedAt": "2026-11-14T20:31:00.802Z",
   "result": null
  },
  "ncaab:401920065": {
@@ -18666,14 +18787,14 @@
    2
   ],
   "espnPHome": 0.754,
-  "simPHome": 0.8803,
-  "rawPHome": 0.8315,
-  "simMargin": 12.68,
+  "simPHome": 0.8798,
+  "rawPHome": 0.831,
+  "simMargin": 12.64,
   "simScore": [
-   61.72,
-   74.4
+   61.28,
+   73.92
   ],
-  "simTotal": 136.12,
+  "simTotal": 135.21,
   "inj": [
    [
     {
@@ -18697,7 +18818,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-14T18:49:55.674Z",
+  "loggedAt": "2026-11-14T20:31:00.820Z",
   "result": null
  },
  "ncaab:401909525": {
@@ -18718,14 +18839,14 @@
    3
   ],
   "espnPHome": 0.561,
-  "simPHome": 0.4116,
-  "rawPHome": 0.429,
-  "simMargin": -2.61,
+  "simPHome": 0.4079,
+  "rawPHome": 0.426,
+  "simMargin": -2.26,
   "simScore": [
-   77.08,
-   74.47
+   76.52,
+   74.26
   ],
-  "simTotal": 151.56,
+  "simTotal": 150.78,
   "inj": [
    [],
    []
@@ -18736,15 +18857,21 @@
     "pHome": null,
     "margin": null,
     "total": null
+   },
+   {
+    "t": "2026-11-14T20:31:00.839Z",
+    "pHome": 0.5542,
+    "margin": 1.5,
+    "total": 153.5
    }
   ],
   "mkt": {
-   "line": null,
-   "total": null,
-   "pHome": null,
-   "margin": null
+   "line": "MARQ -1.5",
+   "total": 153.5,
+   "pHome": 0.5542406163999178,
+   "margin": 1.5
   },
-  "loggedAt": "2026-11-14T18:49:55.693Z",
+  "loggedAt": "2026-11-14T20:31:00.839Z",
   "result": null
  },
  "ncaab:401906866": {
@@ -18765,14 +18892,14 @@
    null
   ],
   "espnPHome": 0.698,
-  "simPHome": 0.515,
-  "rawPHome": 0.512,
-  "simMargin": 0.78,
+  "simPHome": 0.5555,
+  "rawPHome": 0.5445,
+  "simMargin": 1.15,
   "simScore": [
-   82.25,
-   83.03
+   82.06,
+   83.21
   ],
-  "simTotal": 165.28,
+  "simTotal": 165.27,
   "inj": [
    [],
    []
@@ -18783,15 +18910,21 @@
     "pHome": null,
     "margin": null,
     "total": null
+   },
+   {
+    "t": "2026-11-14T20:31:00.859Z",
+    "pHome": 0.7232,
+    "margin": 6.5,
+    "total": 160.5
    }
   ],
   "mkt": {
-   "line": null,
-   "total": null,
-   "pHome": null,
-   "margin": null
+   "line": "TEX -6.5",
+   "total": 160.5,
+   "pHome": 0.723224941825682,
+   "margin": 6.5
   },
-  "loggedAt": "2026-11-14T18:49:55.712Z",
+  "loggedAt": "2026-11-14T20:31:00.859Z",
   "result": null
  },
  "ncaab:401926068": {
@@ -18812,14 +18945,14 @@
    3
   ],
   "espnPHome": 0.465,
-  "simPHome": 0.5169,
-  "rawPHome": 0.5135,
-  "simMargin": 0.43,
+  "simPHome": 0.5369,
+  "rawPHome": 0.5295,
+  "simMargin": 0.83,
   "simScore": [
-   71.74,
-   72.17
+   71.53,
+   72.35
   ],
-  "simTotal": 143.91,
+  "simTotal": 143.88,
   "inj": [
    [],
    [
@@ -18843,7 +18976,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-14T18:49:55.732Z",
+  "loggedAt": "2026-11-14T20:31:00.878Z",
   "result": null
  },
  "ncaab:401921168": {
@@ -18866,12 +18999,12 @@
   "espnPHome": 0.651,
   "simPHome": 0.7865,
   "rawPHome": 0.7395,
-  "simMargin": 8.65,
+  "simMargin": 8.51,
   "simScore": [
-   72.38,
-   81.03
+   72.39,
+   80.89
   ],
-  "simTotal": 153.41,
+  "simTotal": 153.28,
   "inj": [
    [
     {
@@ -18900,7 +19033,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-14T18:49:55.751Z",
+  "loggedAt": "2026-11-14T20:31:00.897Z",
   "result": null
  },
  "ncaab:401911251": {
@@ -18921,14 +19054,14 @@
    null
   ],
   "espnPHome": 0.743,
-  "simPHome": 0.7219,
-  "rawPHome": 0.682,
-  "simMargin": 6.13,
+  "simPHome": 0.6938,
+  "rawPHome": 0.658,
+  "simMargin": 5.66,
   "simScore": [
-   77.81,
-   83.93
+   77.91,
+   83.57
   ],
-  "simTotal": 161.74,
+  "simTotal": 161.47,
   "inj": [
    [],
    []
@@ -18947,7 +19080,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-14T18:49:55.771Z",
+  "loggedAt": "2026-11-14T20:31:00.917Z",
   "result": null
  },
  "ncaab:401909493": {
@@ -18968,14 +19101,14 @@
    null
   ],
   "espnPHome": 0.602,
-  "simPHome": 0.7265,
-  "rawPHome": 0.686,
-  "simMargin": 6.7,
+  "simPHome": 0.7219,
+  "rawPHome": 0.682,
+  "simMargin": 6.33,
   "simScore": [
-   69.67,
-   76.37
+   70,
+   76.33
   ],
-  "simTotal": 146.03,
+  "simTotal": 146.33,
   "inj": [
    [],
    []
@@ -18986,15 +19119,21 @@
     "pHome": null,
     "margin": null,
     "total": null
+   },
+   {
+    "t": "2026-11-14T20:31:00.936Z",
+    "pHome": 0.6249,
+    "margin": 3.5,
+    "total": 145.5
    }
   ],
   "mkt": {
-   "line": null,
-   "total": null,
-   "pHome": null,
-   "margin": null
+   "line": "IOWA -3.5",
+   "total": 145.5,
+   "pHome": 0.6249180828608419,
+   "margin": 3.5
   },
-  "loggedAt": "2026-11-14T18:49:55.790Z",
+  "loggedAt": "2026-11-14T20:31:00.936Z",
   "result": null
  },
  "ncaab:401928789": {
@@ -19015,14 +19154,14 @@
    3
   ],
   "espnPHome": 0.854,
-  "simPHome": 0.9133,
-  "rawPHome": 0.868,
-  "simMargin": 15.15,
+  "simPHome": 0.9163,
+  "rawPHome": 0.8715,
+  "simMargin": 15.24,
   "simScore": [
-   66.95,
-   82.1
+   66.8,
+   82.04
   ],
-  "simTotal": 149.05,
+  "simTotal": 148.83,
   "inj": [
    [],
    []
@@ -19041,7 +19180,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-14T18:49:55.809Z",
+  "loggedAt": "2026-11-14T20:31:00.974Z",
   "result": null
  },
  "ncaab:401919825": {
@@ -19062,14 +19201,14 @@
    3
   ],
   "espnPHome": 0.881,
-  "simPHome": 0.7794,
-  "rawPHome": 0.733,
-  "simMargin": 8.34,
+  "simPHome": 0.7882,
+  "rawPHome": 0.741,
+  "simMargin": 8.57,
   "simScore": [
-   66.06,
-   74.4
+   65.88,
+   74.46
   ],
-  "simTotal": 140.45,
+  "simTotal": 140.34,
   "inj": [
    [
     {
@@ -19097,7 +19236,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-14T18:49:55.828Z",
+  "loggedAt": "2026-11-14T20:31:00.992Z",
   "result": null
  },
  "ncaab:401917531": {
@@ -19118,14 +19257,14 @@
    2
   ],
   "espnPHome": 0.893,
-  "simPHome": 0.8803,
-  "rawPHome": 0.8315,
-  "simMargin": 13.2,
+  "simPHome": 0.8855,
+  "rawPHome": 0.837,
+  "simMargin": 13.03,
   "simScore": [
-   67.05,
-   80.26
+   67.39,
+   80.42
   ],
-  "simTotal": 147.31,
+  "simTotal": 147.81,
   "inj": [
    [],
    [
@@ -19149,7 +19288,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-14T18:49:55.847Z",
+  "loggedAt": "2026-11-14T20:31:01.011Z",
   "result": null
  },
  "ncaab:401917528": {
@@ -19170,14 +19309,14 @@
    3
   ],
   "espnPHome": 0.889,
-  "simPHome": 0.8443,
-  "rawPHome": 0.7945,
-  "simMargin": 10.64,
+  "simPHome": 0.8458,
+  "rawPHome": 0.796,
+  "simMargin": 11.03,
   "simScore": [
-   69.03,
-   79.67
+   68.66,
+   79.69
   ],
-  "simTotal": 148.69,
+  "simTotal": 148.35,
   "inj": [
    [],
    []
@@ -19196,7 +19335,7 @@
    "pHome": 0.9362520528769038,
    "margin": 16.5
   },
-  "loggedAt": "2026-11-14T18:49:55.866Z",
+  "loggedAt": "2026-11-14T20:31:01.031Z",
   "result": null
  },
  "ncaab:401923393": {
@@ -19217,14 +19356,14 @@
    3
   ],
   "espnPHome": 0.318,
-  "simPHome": 0.5624,
-  "rawPHome": 0.55,
-  "simMargin": 1.39,
+  "simPHome": 0.5531,
+  "rawPHome": 0.5425,
+  "simMargin": 1.4,
   "simScore": [
-   70.17,
-   71.56
+   70.02,
+   71.42
   ],
-  "simTotal": 141.73,
+  "simTotal": 141.44,
   "inj": [
    [],
    [
@@ -19248,7 +19387,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-14T18:49:55.885Z",
+  "loggedAt": "2026-11-14T20:31:01.050Z",
   "result": null
  },
  "ncaab:401917175": {
@@ -19269,14 +19408,14 @@
    2
   ],
   "espnPHome": 0.955,
-  "simPHome": 0.8969,
-  "rawPHome": 0.8495,
-  "simMargin": 13.74,
+  "simPHome": 0.8978,
+  "rawPHome": 0.8505,
+  "simMargin": 14.01,
   "simScore": [
-   65.25,
-   78.99
+   64.89,
+   78.89
   ],
-  "simTotal": 144.24,
+  "simTotal": 143.78,
   "inj": [
    [],
    []
@@ -19295,7 +19434,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-14T18:49:55.904Z",
+  "loggedAt": "2026-11-14T20:31:01.068Z",
   "result": null
  },
  "ncaab:401926073": {
@@ -19316,14 +19455,14 @@
    3
   ],
   "espnPHome": 0.921,
-  "simPHome": 0.8789,
-  "rawPHome": 0.83,
-  "simMargin": 13.59,
+  "simPHome": 0.8798,
+  "rawPHome": 0.831,
+  "simMargin": 13.01,
   "simScore": [
-   71.38,
-   84.97
+   71.47,
+   84.48
   ],
-  "simTotal": 156.34,
+  "simTotal": 155.95,
   "inj": [
    [
     {
@@ -19347,7 +19486,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-14T18:49:55.924Z",
+  "loggedAt": "2026-11-14T20:31:01.088Z",
   "result": null
  },
  "ncaab:401911017": {
@@ -19368,14 +19507,14 @@
    null
   ],
   "espnPHome": 0.84,
-  "simPHome": 0.8665,
-  "rawPHome": 0.817,
-  "simMargin": 12.11,
+  "simPHome": 0.8679,
+  "rawPHome": 0.8185,
+  "simMargin": 12.29,
   "simScore": [
-   69.36,
-   81.47
+   69.8,
+   82.09
   ],
-  "simTotal": 150.83,
+  "simTotal": 151.9,
   "inj": [
    [],
    []
@@ -19394,7 +19533,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-14T18:49:55.943Z",
+  "loggedAt": "2026-11-14T20:31:01.107Z",
   "result": null
  },
  "ncaab:401920124": {
@@ -19415,14 +19554,14 @@
    2
   ],
   "espnPHome": 0.82,
-  "simPHome": 0.8107,
-  "rawPHome": 0.762,
-  "simMargin": 9.76,
+  "simPHome": 0.8222,
+  "rawPHome": 0.773,
+  "simMargin": 9.87,
   "simScore": [
-   75.56,
-   85.32
+   75.57,
+   85.44
   ],
-  "simTotal": 160.88,
+  "simTotal": 161.02,
   "inj": [
    [],
    []
@@ -19441,7 +19580,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-14T18:49:55.963Z",
+  "loggedAt": "2026-11-14T20:31:01.126Z",
   "result": null
  },
  "ncaab:401920681": {
@@ -19462,14 +19601,14 @@
    3
   ],
   "espnPHome": 0.822,
-  "simPHome": 0.8133,
-  "rawPHome": 0.7645,
-  "simMargin": 10.2,
+  "simPHome": 0.799,
+  "rawPHome": 0.751,
+  "simMargin": 9.48,
   "simScore": [
-   72.2,
-   82.41
+   72.76,
+   82.24
   ],
-  "simTotal": 154.61,
+  "simTotal": 155,
   "inj": [
    [],
    []
@@ -19480,15 +19619,21 @@
     "pHome": null,
     "margin": null,
     "total": null
+   },
+   {
+    "t": "2026-11-14T20:31:01.145Z",
+    "pHome": 0.8743,
+    "margin": 12.5,
+    "total": 150.5
    }
   ],
   "mkt": {
-   "line": null,
-   "total": null,
-   "pHome": null,
-   "margin": null
+   "line": "SJU -12.5",
+   "total": 150.5,
+   "pHome": 0.8743274203056427,
+   "margin": 12.5
   },
-  "loggedAt": "2026-11-14T18:49:55.982Z",
+  "loggedAt": "2026-11-14T20:31:01.145Z",
   "result": null
  },
  "ncaab:401926772": {
@@ -19511,12 +19656,12 @@
   "espnPHome": 0.995,
   "simPHome": 0.9972,
   "rawPHome": 0.991,
-  "simMargin": 33.58,
+  "simMargin": 33.97,
   "simScore": [
-   64.03,
-   97.61
+   64.05,
+   98.02
   ],
-  "simTotal": 161.65,
+  "simTotal": 162.06,
   "inj": [
    [],
    []
@@ -19535,7 +19680,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-14T18:49:56.001Z",
+  "loggedAt": "2026-11-14T20:31:01.164Z",
   "result": null
  },
  "ncaab:401929419": {
@@ -19556,14 +19701,14 @@
    2
   ],
   "espnPHome": 0.937,
-  "simPHome": 0.9226,
-  "rawPHome": 0.879,
-  "simMargin": 15.41,
+  "simPHome": 0.9235,
+  "rawPHome": 0.88,
+  "simMargin": 15.31,
   "simScore": [
-   63.03,
-   78.44
+   62.85,
+   78.16
   ],
-  "simTotal": 141.47,
+  "simTotal": 141.01,
   "inj": [
    [
     {
@@ -19587,7 +19732,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-14T18:49:56.020Z",
+  "loggedAt": "2026-11-14T20:31:01.183Z",
   "result": null
  },
  "ncaab:401929200": {
@@ -19608,14 +19753,14 @@
    3
   ],
   "espnPHome": 0.34,
-  "simPHome": 0.2915,
-  "rawPHome": 0.3295,
-  "simMargin": -5.65,
+  "simPHome": 0.2968,
+  "rawPHome": 0.334,
+  "simMargin": -5.5,
   "simScore": [
-   78.81,
-   73.16
+   78.89,
+   73.38
   ],
-  "simTotal": 151.98,
+  "simTotal": 152.27,
   "inj": [
    [],
    []
@@ -19634,7 +19779,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-14T18:49:56.039Z",
+  "loggedAt": "2026-11-14T20:31:01.202Z",
   "result": null
  },
  "ncaab:401920896": {
@@ -19655,14 +19800,14 @@
    null
   ],
   "espnPHome": 0.975,
-  "simPHome": 0.9662,
-  "rawPHome": 0.936,
-  "simMargin": 20.33,
+  "simPHome": 0.9635,
+  "rawPHome": 0.932,
+  "simMargin": 19.88,
   "simScore": [
-   64.24,
-   84.57
+   64.11,
+   83.99
   ],
-  "simTotal": 148.81,
+  "simTotal": 148.1,
   "inj": [
    [],
    []
@@ -19681,7 +19826,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-14T18:49:56.058Z",
+  "loggedAt": "2026-11-14T20:31:01.222Z",
   "result": null
  },
  "ncaab:401911472": {
@@ -19704,12 +19849,12 @@
   "espnPHome": 0.938,
   "simPHome": 0.8942,
   "rawPHome": 0.8465,
-  "simMargin": 13.82,
+  "simMargin": 13.85,
   "simScore": [
-   68.03,
-   81.85
+   68.11,
+   81.97
   ],
-  "simTotal": 149.88,
+  "simTotal": 150.08,
   "inj": [
    [],
    []
@@ -19728,7 +19873,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-14T18:49:56.077Z",
+  "loggedAt": "2026-11-14T20:31:01.240Z",
   "result": null
  },
  "ncaab:401921087": {
@@ -19749,14 +19894,14 @@
    1
   ],
   "espnPHome": 0.467,
-  "simPHome": 0.5773,
-  "rawPHome": 0.562,
-  "simMargin": 2.27,
+  "simPHome": 0.576,
+  "rawPHome": 0.561,
+  "simMargin": 1.95,
   "simScore": [
-   72.98,
-   75.26
+   73.36,
+   75.31
   ],
-  "simTotal": 148.24,
+  "simTotal": 148.67,
   "inj": [
    [],
    []
@@ -19775,7 +19920,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-14T18:49:56.097Z",
+  "loggedAt": "2026-11-14T20:31:01.260Z",
   "result": null
  },
  "ncaab:401916298": {
@@ -19796,14 +19941,14 @@
    2
   ],
   "espnPHome": 0.984,
-  "simPHome": 0.9933,
-  "rawPHome": 0.982,
-  "simMargin": 27.39,
+  "simPHome": 0.9919,
+  "rawPHome": 0.979,
+  "simMargin": 26.64,
   "simScore": [
-   64.67,
-   92.06
+   65.3,
+   91.94
   ],
-  "simTotal": 156.73,
+  "simTotal": 157.24,
   "inj": [
    [],
    []
@@ -19822,7 +19967,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-14T18:49:56.116Z",
+  "loggedAt": "2026-11-14T20:31:01.279Z",
   "result": null
  },
  "ncaab:401916317": {
@@ -19843,14 +19988,14 @@
    2
   ],
   "espnPHome": 0.99,
-  "simPHome": 0.9901,
-  "rawPHome": 0.9755,
-  "simMargin": 26.25,
+  "simPHome": 0.9867,
+  "rawPHome": 0.969,
+  "simMargin": 26,
   "simScore": [
-   65.81,
-   92.06
+   66.34,
+   92.33
   ],
-  "simTotal": 157.87,
+  "simTotal": 158.67,
   "inj": [
    [
     {
@@ -19874,7 +20019,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-14T18:49:56.136Z",
+  "loggedAt": "2026-11-14T20:31:01.298Z",
   "result": null
  },
  "ncaab:401921804": {
@@ -19895,14 +20040,14 @@
    2
   ],
   "espnPHome": 0.976,
-  "simPHome": 0.905,
-  "rawPHome": 0.8585,
-  "simMargin": 14.85,
+  "simPHome": 0.9076,
+  "rawPHome": 0.8615,
+  "simMargin": 14.82,
   "simScore": [
-   69.04,
-   83.88
+   68.92,
+   83.74
   ],
-  "simTotal": 152.92,
+  "simTotal": 152.65,
   "inj": [
    [],
    []
@@ -19921,7 +20066,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-14T18:49:56.154Z",
+  "loggedAt": "2026-11-14T20:31:01.317Z",
   "result": null
  },
  "ncaab:401928841": {
@@ -19942,14 +20087,14 @@
    4
   ],
   "espnPHome": 0.813,
-  "simPHome": 0.6938,
-  "rawPHome": 0.658,
-  "simMargin": 5.43,
+  "simPHome": 0.67,
+  "rawPHome": 0.638,
+  "simMargin": 4.65,
   "simScore": [
-   80.56,
-   85.99
+   81.36,
+   86.01
   ],
-  "simTotal": 166.56,
+  "simTotal": 167.37,
   "inj": [
    [],
    []
@@ -19968,7 +20113,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-14T18:49:56.174Z",
+  "loggedAt": "2026-11-14T20:31:01.337Z",
   "result": null
  },
  "ncaab:401925864": {
@@ -19989,14 +20134,14 @@
    4
   ],
   "espnPHome": 0.742,
-  "simPHome": 0.734,
-  "rawPHome": 0.6925,
-  "simMargin": 7.07,
+  "simPHome": 0.7482,
+  "rawPHome": 0.705,
+  "simMargin": 7.22,
   "simScore": [
-   71.96,
-   79.04
+   71.88,
+   79.1
   ],
-  "simTotal": 151,
+  "simTotal": 150.98,
   "inj": [
    [],
    []
@@ -20015,7 +20160,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-14T18:49:56.194Z",
+  "loggedAt": "2026-11-14T20:31:01.356Z",
   "result": null
  },
  "ncaab:401919807": {
@@ -20036,14 +20181,14 @@
    2
   ],
   "espnPHome": 0.369,
-  "simPHome": 0.5206,
-  "rawPHome": 0.5165,
-  "simMargin": 0.51,
+  "simPHome": 0.5181,
+  "rawPHome": 0.5145,
+  "simMargin": 0.49,
   "simScore": [
-   75.4,
-   75.91
+   75.43,
+   75.92
   ],
-  "simTotal": 151.31,
+  "simTotal": 151.34,
   "inj": [
    [
     {
@@ -20072,7 +20217,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-14T18:49:56.214Z",
+  "loggedAt": "2026-11-14T20:31:01.376Z",
   "result": null
  },
  "ncaab:401918075": {
@@ -20089,18 +20234,18 @@
    "name": "Clemson Tigers"
   },
   "rest": [
-   1,
+   null,
    2
   ],
   "espnPHome": 0.966,
-  "simPHome": 0.8914,
-  "rawPHome": 0.8435,
-  "simMargin": 13.38,
+  "simPHome": 0.8933,
+  "rawPHome": 0.8455,
+  "simMargin": 13.21,
   "simScore": [
-   66.04,
-   79.42
+   66.05,
+   79.26
   ],
-  "simTotal": 145.46,
+  "simTotal": 145.31,
   "inj": [
    [],
    []
@@ -20119,7 +20264,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-14T18:49:56.232Z",
+  "loggedAt": "2026-11-14T20:31:01.396Z",
   "result": null
  },
  "ncaab:401911240": {
@@ -20140,14 +20285,14 @@
    2
   ],
   "espnPHome": 0.837,
-  "simPHome": 0.8202,
-  "rawPHome": 0.771,
-  "simMargin": 9.81,
+  "simPHome": 0.799,
+  "rawPHome": 0.751,
+  "simMargin": 9.6,
   "simScore": [
-   73.61,
-   83.42
+   74.17,
+   83.77
   ],
-  "simTotal": 157.04,
+  "simTotal": 157.95,
   "inj": [
    [],
    []
@@ -20166,7 +20311,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-14T18:49:56.252Z",
+  "loggedAt": "2026-11-14T20:31:01.415Z",
   "result": null
  },
  "ncaab:401906783": {
@@ -20187,14 +20332,14 @@
    2
   ],
   "espnPHome": 0.945,
-  "simPHome": 0.9107,
-  "rawPHome": 0.865,
-  "simMargin": 14.75,
+  "simPHome": 0.9193,
+  "rawPHome": 0.875,
+  "simMargin": 15.72,
   "simScore": [
-   69.39,
-   84.14
+   69.08,
+   84.79
   ],
-  "simTotal": 153.53,
+  "simTotal": 153.87,
   "inj": [
    [],
    []
@@ -20213,7 +20358,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-14T18:49:56.271Z",
+  "loggedAt": "2026-11-14T20:31:01.434Z",
   "result": null
  },
  "ncaab:401927364": {
@@ -20234,14 +20379,14 @@
    2
   ],
   "espnPHome": 0.865,
-  "simPHome": 0.8488,
-  "rawPHome": 0.799,
-  "simMargin": 10.66,
+  "simPHome": 0.8458,
+  "rawPHome": 0.796,
+  "simMargin": 11.19,
   "simScore": [
-   67.97,
-   78.63
+   68.08,
+   79.27
   ],
-  "simTotal": 146.6,
+  "simTotal": 147.35,
   "inj": [
    [],
    []
@@ -20260,7 +20405,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-14T18:49:56.290Z",
+  "loggedAt": "2026-11-14T20:31:01.453Z",
   "result": null
  },
  "ncaab:401926143": {
@@ -20281,14 +20426,14 @@
    1
   ],
   "espnPHome": 0.592,
-  "simPHome": 0.6338,
-  "rawPHome": 0.608,
-  "simMargin": 3.68,
+  "simPHome": 0.6192,
+  "rawPHome": 0.596,
+  "simMargin": 3.34,
   "simScore": [
-   71.53,
-   75.21
+   71.9,
+   75.24
   ],
-  "simTotal": 146.74,
+  "simTotal": 147.14,
   "inj": [
    [],
    []
@@ -20307,7 +20452,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-14T18:49:56.310Z",
+  "loggedAt": "2026-11-14T20:31:01.473Z",
   "result": null
  },
  "ncaab:401920735": {
@@ -20328,14 +20473,14 @@
    2
   ],
   "espnPHome": 0.835,
-  "simPHome": 0.7032,
-  "rawPHome": 0.666,
-  "simMargin": 5.74,
+  "simPHome": 0.7271,
+  "rawPHome": 0.6865,
+  "simMargin": 6.51,
   "simScore": [
-   69.29,
-   75.02
+   68.86,
+   75.37
   ],
-  "simTotal": 144.31,
+  "simTotal": 144.23,
   "inj": [
    [],
    []
@@ -20354,7 +20499,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-14T18:49:56.329Z",
+  "loggedAt": "2026-11-14T20:31:01.492Z",
   "result": null
  },
  "ncaab:401917964": {
@@ -20375,14 +20520,14 @@
    null
   ],
   "espnPHome": 0.594,
-  "simPHome": 0.4969,
-  "rawPHome": 0.4975,
-  "simMargin": -0.38,
+  "simPHome": 0.4875,
+  "rawPHome": 0.49,
+  "simMargin": -0.54,
   "simScore": [
-   70.93,
-   70.55
+   71.3,
+   70.76
   ],
-  "simTotal": 141.47,
+  "simTotal": 142.06,
   "inj": [
    [],
    []
@@ -20401,7 +20546,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-14T18:49:56.348Z",
+  "loggedAt": "2026-11-14T20:31:01.511Z",
   "result": null
  },
  "ncaab:401917917": {
@@ -20422,14 +20567,14 @@
    3
   ],
   "espnPHome": 0.937,
-  "simPHome": 0.8123,
-  "rawPHome": 0.7635,
-  "simMargin": 9.8,
+  "simPHome": 0.7984,
+  "rawPHome": 0.7505,
+  "simMargin": 9.4,
   "simScore": [
-   75.38,
-   85.17
+   76.03,
+   85.43
   ],
-  "simTotal": 160.55,
+  "simTotal": 161.46,
   "inj": [
    [],
    []
@@ -20448,7 +20593,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-14T18:49:56.367Z",
+  "loggedAt": "2026-11-14T20:31:01.530Z",
   "result": null
  },
  "ncaab:401916307": {
@@ -20469,14 +20614,14 @@
    3
   ],
   "espnPHome": 0.986,
-  "simPHome": 0.9891,
-  "rawPHome": 0.9735,
-  "simMargin": 24.7,
+  "simPHome": 0.9853,
+  "rawPHome": 0.9665,
+  "simMargin": 24.18,
   "simScore": [
-   56.27,
-   80.97
+   56.49,
+   80.67
   ],
-  "simTotal": 137.23,
+  "simTotal": 137.16,
   "inj": [
    [],
    []
@@ -20495,7 +20640,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-14T18:49:56.386Z",
+  "loggedAt": "2026-11-14T20:31:01.549Z",
   "result": null
  },
  "ncaab:401909798": {
@@ -20516,14 +20661,14 @@
    null
   ],
   "espnPHome": 0.81,
-  "simPHome": 0.6885,
-  "rawPHome": 0.6535,
-  "simMargin": 5.52,
+  "simPHome": 0.6926,
+  "rawPHome": 0.657,
+  "simMargin": 5.61,
   "simScore": [
-   73.41,
-   78.93
+   73.75,
+   79.35
   ],
-  "simTotal": 152.34,
+  "simTotal": 153.1,
   "inj": [
    [],
    []
@@ -20542,7 +20687,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-14T18:49:56.405Z",
+  "loggedAt": "2026-11-14T20:31:01.568Z",
   "result": null
  },
  "ncaab:401920808": {
@@ -20563,14 +20708,14 @@
    3
   ],
   "espnPHome": 0.982,
-  "simPHome": 0.9722,
-  "rawPHome": 0.945,
-  "simMargin": 22.89,
+  "simPHome": 0.9809,
+  "rawPHome": 0.959,
+  "simMargin": 23.74,
   "simScore": [
-   66.24,
-   89.13
+   66.45,
+   90.19
   ],
-  "simTotal": 155.37,
+  "simTotal": 156.63,
   "inj": [
    [],
    [
@@ -20594,7 +20739,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-14T18:49:56.424Z",
+  "loggedAt": "2026-11-14T20:31:01.587Z",
   "result": null
  },
  "ncaab:401929192": {
@@ -20615,14 +20760,14 @@
    2
   ],
   "espnPHome": 0.886,
-  "simPHome": 0.7761,
-  "rawPHome": 0.73,
-  "simMargin": 8.77,
+  "simPHome": 0.786,
+  "rawPHome": 0.739,
+  "simMargin": 8.59,
   "simScore": [
-   72.98,
-   81.75
+   72.77,
+   81.35
   ],
-  "simTotal": 154.72,
+  "simTotal": 154.12,
   "inj": [
    [],
    []
@@ -20641,7 +20786,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-14T18:49:56.444Z",
+  "loggedAt": "2026-11-14T20:31:01.607Z",
   "result": null
  },
  "ncaab:401924265": {
@@ -20662,14 +20807,14 @@
    4
   ],
   "espnPHome": 0.987,
-  "simPHome": 0.9815,
-  "rawPHome": 0.96,
-  "simMargin": 24.27,
+  "simPHome": 0.9858,
+  "rawPHome": 0.9675,
+  "simMargin": 24.63,
   "simScore": [
-   62.35,
-   86.63
+   62.02,
+   86.65
   ],
-  "simTotal": 148.98,
+  "simTotal": 148.67,
   "inj": [
    [],
    []
@@ -20688,7 +20833,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-14T18:49:56.463Z",
+  "loggedAt": "2026-11-14T20:31:01.625Z",
   "result": null
  },
  "ncaab:401920373": {
@@ -20709,14 +20854,14 @@
    2
   ],
   "espnPHome": 0.926,
-  "simPHome": 0.8756,
-  "rawPHome": 0.8265,
-  "simMargin": 12.23,
+  "simPHome": 0.8789,
+  "rawPHome": 0.83,
+  "simMargin": 12.67,
   "simScore": [
-   73.4,
-   85.63
+   72.78,
+   85.45
   ],
-  "simTotal": 159.03,
+  "simTotal": 158.23,
   "inj": [
    [],
    []
@@ -20735,7 +20880,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-14T18:49:56.482Z",
+  "loggedAt": "2026-11-14T20:31:01.645Z",
   "result": null
  },
  "ncaab:401917532": {
@@ -20756,14 +20901,14 @@
    2
   ],
   "espnPHome": 0.955,
-  "simPHome": 0.9264,
-  "rawPHome": 0.8835,
-  "simMargin": 15.69,
+  "simPHome": 0.9167,
+  "rawPHome": 0.872,
+  "simMargin": 15.79,
   "simScore": [
-   68.72,
-   84.41
+   68.71,
+   84.5
   ],
-  "simTotal": 153.14,
+  "simTotal": 153.22,
   "inj": [
    [],
    []
@@ -20782,7 +20927,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-14T18:49:56.502Z",
+  "loggedAt": "2026-11-14T20:31:01.664Z",
   "result": null
  },
  "nba:401909994": {
@@ -20802,15 +20947,15 @@
    2,
    0
   ],
-  "espnPHome": 0.765,
-  "simPHome": 0.7932,
-  "rawPHome": 0.763,
-  "simMargin": 11.01,
+  "espnPHome": 0.762,
+  "simPHome": 0.8031,
+  "rawPHome": 0.7725,
+  "simMargin": 12.38,
   "simScore": [
-   102.01,
-   113.01
+   101.38,
+   113.76
   ],
-  "simTotal": 215.02,
+  "simTotal": 215.14,
   "inj": [
    [],
    [
@@ -20844,7 +20989,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-14T18:49:43.891Z",
+  "loggedAt": "2026-11-14T20:30:51.248Z",
   "result": null
  },
  "nba:401909995": {
@@ -20864,15 +21009,15 @@
    1,
    1
   ],
-  "espnPHome": 0.834,
-  "simPHome": 0.7984,
-  "rawPHome": 0.768,
-  "simMargin": 12.29,
+  "espnPHome": 0.798,
+  "simPHome": 0.7958,
+  "rawPHome": 0.7655,
+  "simMargin": 11.87,
   "simScore": [
-   115.55,
-   127.83
+   115.24,
+   127.12
   ],
-  "simTotal": 243.38,
+  "simTotal": 242.36,
   "inj": [
    [
     {
@@ -20949,7 +21094,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-14T18:49:44.059Z",
+  "loggedAt": "2026-11-14T20:30:51.416Z",
   "result": null
  },
  "nba:401909996": {
@@ -20969,17 +21114,29 @@
    1,
    0
   ],
-  "espnPHome": 0.454,
-  "simPHome": 0.2379,
-  "rawPHome": 0.2665,
-  "simMargin": -10.34,
+  "espnPHome": 0.443,
+  "simPHome": 0.2702,
+  "rawPHome": 0.2965,
+  "simMargin": -8.16,
   "simScore": [
-   122.17,
-   111.83
+   120.7,
+   112.54
   ],
-  "simTotal": 234,
+  "simTotal": 233.24,
   "inj": [
    [
+    {
+     "name": "Ty Jerome",
+     "pos": "G",
+     "status": "Out",
+     "out": true
+    },
+    {
+     "name": "Jerami Grant",
+     "pos": "F",
+     "status": "Day-to-day",
+     "out": false
+    },
     {
      "name": "Zach Edey",
      "pos": "C",
@@ -21024,7 +21181,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-14T18:49:44.223Z",
+  "loggedAt": "2026-11-14T20:30:51.578Z",
   "result": null
  },
  "nba:401909997": {
@@ -21044,15 +21201,15 @@
    0,
    1
   ],
-  "espnPHome": 0.322,
-  "simPHome": 0.3804,
-  "rawPHome": 0.3955,
-  "simMargin": -3.88,
+  "espnPHome": 0.318,
+  "simPHome": 0.4202,
+  "rawPHome": 0.4305,
+  "simMargin": -3.2,
   "simScore": [
-   111.8,
-   107.92
+   110.78,
+   107.57
   ],
-  "simTotal": 219.71,
+  "simTotal": 218.35,
   "inj": [
    [
     {
@@ -21103,7 +21260,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-14T18:49:44.393Z",
+  "loggedAt": "2026-11-14T20:30:51.747Z",
   "result": null
  },
  "nba:401909998": {
@@ -21123,15 +21280,15 @@
    0,
    1
   ],
-  "espnPHome": 0.405,
-  "simPHome": 0.3404,
-  "rawPHome": 0.36,
-  "simMargin": -6.44,
+  "espnPHome": 0.361,
+  "simPHome": 0.3533,
+  "rawPHome": 0.3715,
+  "simMargin": -5.39,
   "simScore": [
-   119.52,
-   113.07
+   119.04,
+   113.65
   ],
-  "simTotal": 232.59,
+  "simTotal": 232.7,
   "inj": [
    [],
    [
@@ -21177,7 +21334,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-14T18:49:44.555Z",
+  "loggedAt": "2026-11-14T20:30:51.910Z",
   "result": null
  },
  "nba:401909999": {
@@ -21197,15 +21354,15 @@
    2,
    1
   ],
-  "espnPHome": 0.617,
-  "simPHome": 0.6478,
-  "rawPHome": 0.6295,
-  "simMargin": 5.37,
+  "espnPHome": 0.606,
+  "simPHome": 0.6563,
+  "rawPHome": 0.637,
+  "simMargin": 5.94,
   "simScore": [
-   112.37,
-   117.74
+   112.15,
+   118.09
   ],
-  "simTotal": 230.12,
+  "simTotal": 230.25,
   "inj": [
    [
     {
@@ -21239,7 +21396,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-14T18:49:44.720Z",
+  "loggedAt": "2026-11-14T20:30:52.073Z",
   "result": null
  },
  "nba:401910000": {
@@ -21259,15 +21416,15 @@
    2,
    1
   ],
-  "espnPHome": 0.408,
-  "simPHome": 0.2998,
-  "rawPHome": 0.3235,
-  "simMargin": -7.02,
+  "espnPHome": 0.394,
+  "simPHome": 0.3482,
+  "rawPHome": 0.367,
+  "simMargin": -5.88,
   "simScore": [
-   122.43,
-   115.42
+   122.03,
+   116.15
   ],
-  "simTotal": 237.85,
+  "simTotal": 238.19,
   "inj": [
    [
     {
@@ -21326,7 +21483,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-14T18:49:44.882Z",
+  "loggedAt": "2026-11-14T20:30:52.235Z",
   "result": null
  },
  "nba:401910001": {
@@ -21347,14 +21504,14 @@
    1
   ],
   "espnPHome": 0.709,
-  "simPHome": 0.7309,
-  "rawPHome": 0.7045,
-  "simMargin": 8.55,
+  "simPHome": 0.7249,
+  "rawPHome": 0.699,
+  "simMargin": 8.22,
   "simScore": [
-   110.54,
-   119.09
+   110.71,
+   118.93
   ],
-  "simTotal": 229.63,
+  "simTotal": 229.64,
   "inj": [
    [],
    []
@@ -21385,7 +21542,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-14T18:49:45.045Z",
+  "loggedAt": "2026-11-14T20:30:52.398Z",
   "result": null
  },
  "nfl:401873065": {
@@ -21406,15 +21563,15 @@
    null
   ],
   "espnPHome": 0.449,
-  "simPHome": 0.7417,
-  "rawPHome": 0.732,
-  "simMargin": 6.81,
+  "simPHome": 0.734,
+  "rawPHome": 0.7245,
+  "simMargin": 6.7,
   "simScore": [
-   17.45,
-   24.26
+   17.5,
+   24.2
   ],
-  "simTotal": 41.72,
-  "blendPHome": 0.6498,
+  "simTotal": 41.7,
+  "blendPHome": 0.6486,
   "inj": [
    [
     {
@@ -21475,7 +21632,7 @@
    "pHome": 0.6335257739295299,
    "margin": 4.5
   },
-  "loggedAt": "2026-11-14T18:49:47.293Z",
+  "loggedAt": "2026-11-14T20:30:54.631Z",
   "result": null
  },
  "nhl:401892726": {
@@ -21503,14 +21660,14 @@
    1,
    2
   ],
-  "simPHome": 0.3975,
-  "rawPHome": 0.3975,
-  "simMargin": -0.57,
+  "simPHome": 0.4315,
+  "rawPHome": 0.4315,
+  "simMargin": -0.49,
   "simScore": [
-   3.31,
+   3.23,
    2.74
   ],
-  "simTotal": 6.04,
+  "simTotal": 5.97,
   "inj": [
    [
     {
@@ -21567,7 +21724,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-14T18:49:48.226Z",
+  "loggedAt": "2026-11-14T20:30:55.548Z",
   "result": null
  },
  "nhl:401892727": {
@@ -21595,14 +21752,14 @@
    0,
    1
   ],
-  "simPHome": 0.678,
-  "rawPHome": 0.678,
-  "simMargin": 1.1,
+  "simPHome": 0.6735,
+  "rawPHome": 0.6735,
+  "simMargin": 1.05,
   "simScore": [
-   2.58,
-   3.67
+   2.59,
+   3.64
   ],
-  "simTotal": 6.25,
+  "simTotal": 6.23,
   "inj": [
    [
     {
@@ -21661,7 +21818,53 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-14T18:49:48.270Z",
+  "loggedAt": "2026-11-14T20:30:55.589Z",
+  "result": null
+ },
+ "ncaab:401934396": {
+  "key": "ncaab:401934396",
+  "league": "ncaab",
+  "gameId": "401934396",
+  "start": "2026-11-15T21:00Z",
+  "away": {
+   "abbr": "AF",
+   "name": "Air Force Falcons"
+  },
+  "home": {
+   "abbr": "PAC",
+   "name": "Pacific Tigers"
+  },
+  "rest": [
+   3,
+   3
+  ],
+  "simPHome": 0.8264,
+  "rawPHome": 0.777,
+  "simMargin": 10.39,
+  "simScore": [
+   68.62,
+   79.02
+  ],
+  "simTotal": 147.64,
+  "inj": [
+   [],
+   []
+  ],
+  "lines": [
+   {
+    "t": "2026-11-14T20:31:00.955Z",
+    "pHome": null,
+    "margin": null,
+    "total": null
+   }
+  ],
+  "mkt": {
+   "line": null,
+   "total": null,
+   "pHome": null,
+   "margin": null
+  },
+  "loggedAt": "2026-11-14T20:31:00.955Z",
   "result": null
  }
 }
