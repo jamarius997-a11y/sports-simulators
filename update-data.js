@@ -1,5 +1,5 @@
 // Pulls live team ratings, rosters, injuries and player stats from ESPN's public JSON API
-// and writes data.js (loaded by index.html). Usage: node update-data.js [nba|nfl|nhl ...]
+// and writes data.js (loaded by index.html). Usage: node update-data.js [nba|nfl|nhl|ncaaf|ncaab ...]
 'use strict';
 const { read: readCsv } = require('./csv.js');
 const fs = require('fs'), path = require('path');
@@ -8,7 +8,11 @@ const LEAGUES = {
   nba: { sport: 'basketball', prior: 8, lg: 114, curMin: 12 },
   nfl: { sport: 'football', prior: 3, lg: 22.5, curMin: 6 },
   nhl: { sport: 'hockey', prior: 5, lg: 3.05, curMin: 12, shrink: 50 },
+  // college: ESPN's league name differs from ours, and its scoreboard only lists ranked teams unless a group is named (80 = FBS, 50 = Division I)
+  ncaaf: { sport: 'football', key: 'college-football', groups: 80, college: true },
+  ncaab: { sport: 'basketball', key: 'mens-college-basketball', groups: 50, college: true },
 };
+const lkey = L => LEAGUES[L].key || L, boardUrl = (L, ymd) => SITE + LEAGUES[L].sport + '/' + lkey(L) + '/scoreboard?dates=' + ymd + (LEAGUES[L].groups ? '&groups=' + LEAGUES[L].groups + '&limit=500' : '');
 const META = {};
 const SITE = 'https://site.api.espn.com/apis/site/v2/sports/', V2 = 'https://site.api.espn.com/apis/v2/sports/', CORE = 'https://sports.core.api.espn.com/v2/sports/';
 
@@ -209,7 +213,38 @@ function injuryOf(a) {
 }
 const r1 = x => Math.round(x * 10) / 10, r3 = x => Math.round(x * 1000) / 1000;
 
+// College teams: opponent-adjusted ratings from this season's results (college.js), starting from last season's ratings.
+// college-cache.json (committed) keeps last season's ratings and this season's finished days, so a refresh only downloads the last 3 days.
+async function buildCollege(L) {
+  const C = require('./college.js'), cfg = C.CFG[L], year = C.seasonOf(L), file = path.join(__dirname, 'college-cache.json');
+  let cache = {}; try { cache = JSON.parse(fs.readFileSync(file, 'utf8')); } catch (e) { /* first run */ }
+  const c = cache[L] && cache[L].season === year ? cache[L] : { season: year, prior: null, days: {} };
+  const mem = await C.members(L, year);
+  if (Object.keys(mem).length < 50) throw new Error(L + ': team list failed to load');
+  const base = { members: new Set(Object.keys(mem)), hca: cfg.hca, k: cfg.k, carry: cfg.carry, gap: cfg.gap };
+  if (!c.prior) {
+    const p = C.rate(Object.values(await C.seasonGames(L, year - 1)).flat(), Object.assign({}, base, { lg: 0 }));
+    c.prior = { lg: r1(p.lg), teams: {} };
+    for (const id in p.teams) c.prior.teams[id] = { o: Math.round(p.teams[id].o * 100) / 100, d: Math.round(p.teams[id].d * 100) / 100 };
+    console.log(L.toUpperCase() + ': rated the ' + (year - 1) + ' season as a starting point (' + Object.keys(p.teams).length + ' teams)');
+  }
+  const all = C.seasonDays(L, year), recent = new Set(all.slice(-3)), need = all.filter(d => !(d in c.days) || recent.has(d));
+  const got = await C.pool(need, 8, d => C.dayGames(L, d));
+  need.forEach((d, i) => { if (got[i]) c.days[d] = got[i]; });
+  cache[L] = c; fs.writeFileSync(file, JSON.stringify(cache));
+  const games = Object.values(c.days).flat(), R = C.rate(games, Object.assign({}, base, { prior: c.prior.teams, lg: c.prior.lg }));
+  console.log(L.toUpperCase() + ': season ' + year + ', ' + Object.keys(mem).length + ' teams, ' + games.length + ' games played (' + need.length + ' days downloaded)');
+  const result = {};
+  for (const id in mem) {
+    const p = c.prior.teams[id], t = R.teams[id] || { o: p ? p.o * cfg.carry : 0, d: p ? p.d * cfg.carry : 0, n: 0 };
+    result[id] = { abbr: mem[id].abbr, name: mem[id].name, off: r1(R.lg + t.o), def: r1(R.lg + t.d), gp: t.n };
+  }
+  META[L] = { lg: Math.round(R.lg * 1000) / 1000 };
+  return result;
+}
+
 async function build(L) {
+  if (LEAGUES[L].college) return buildCollege(L);
   const key = L, cfg = LEAGUES[L];
   const tj = await get(SITE + cfg.sport + '/' + key + '/teams');
   const teams = tj.sports[0].leagues[0].teams.map(t => t.team);
@@ -417,19 +452,21 @@ async function schedule(L, days) {
   for (let d = -3; d < 0; d++) {      // recent results, only used to work out days of rest
     const dt = new Date(Date.now() + d * 86400000);
     const ymd = etYmd(dt);
-    const j = await get(SITE + cfg.sport + '/' + L + '/scoreboard?dates=' + ymd);
+    const j = await get(boardUrl(L, ymd));
     for (const ev of (j && j.events) || []) for (const c of ev.competitions[0].competitors) hist.push({ team: c.team.abbreviation, day: dayIdx(ev.date), venue: ev.competitions[0].competitors.find(x => x.homeAway === 'home').team.abbreviation });
   }
   for (let d = 0; d < days; d++) {
     const dt = new Date(Date.now() + d * 86400000);
     const ymd = etYmd(dt);
-    const j = await get(SITE + cfg.sport + '/' + L + '/scoreboard?dates=' + ymd);
+    const j = await get(boardUrl(L, ymd));
     for (const ev of (j && j.events) || []) {
       if (ev.status.type.state !== 'pre') continue;
       const c = ev.competitions[0], home = c.competitors.find(x => x.homeAway === 'home'), away = c.competitors.find(x => x.homeAway === 'away');
-      const side = x => ({ abbr: x.team.abbreviation, name: x.team.displayName, probable: ((x.probables || [])[0] && x.probables[0].athlete && x.probables[0].athlete.fullName) || null });
+      const rank = x => cfg.college && x.curatedRank && x.curatedRank.current >= 1 && x.curatedRank.current <= 25 ? x.curatedRank.current : undefined;
+      const side = x => ({ abbr: x.team.abbreviation, name: x.team.displayName, id: cfg.college ? x.team.id : undefined, rank: rank(x), probable: ((x.probables || [])[0] && x.probables[0].athlete && x.probables[0].athlete.fullName) || null });
       const o = c.odds && c.odds[0];
-      out.push({ id: ev.id, date: ev.date, away: side(away), home: side(home), venue: L === 'nfl' && c.venue ? { indoor: !!c.venue.indoor, neutral: !!c.neutralSite } : undefined,
+      out.push({ id: ev.id, date: ev.date, away: side(away), home: side(home), venue: cfg.college ? { neutral: !!c.neutralSite } : L === 'nfl' && c.venue ? { indoor: !!c.venue.indoor, neutral: !!c.neutralSite } : undefined,
+        homeFav: o && o.homeTeamOdds && o.awayTeamOdds && o.homeTeamOdds.favorite !== o.awayTeamOdds.favorite ? !!o.homeTeamOdds.favorite : undefined,   // which side the line favors (college abbreviations in the line text can be ambiguous)
         line: o ? o.details || null : null, total: o ? o.overUnder || null : null,
         homeML: o && o.homeTeamOdds ? o.homeTeamOdds.moneyLine ?? null : null, awayML: o && o.awayTeamOdds ? o.awayTeamOdds.moneyLine ?? null : null });
     }
@@ -449,12 +486,12 @@ async function schedule(L, days) {
   return uniq;
 }
 
-// ESPN's own matchup predictor (BPI for NBA, FPI for NFL): home win chance from the game summary. ESPN drops it once a game ends, so it
+// ESPN's own matchup predictor (BPI for basketball, FPI for football): home win chance from the game summary. ESPN drops it once a game ends, so it
 // cannot be backtested; it is logged with each pick (log-picks.js) and shown on the card so it can be judged against results over time.
 async function espnPredictor(L, games) {
   let n = 0;
   await pool(games, 6, async g => {
-    const j = await get(SITE + LEAGUES[L].sport + '/' + L + '/summary?event=' + g.id), h = j && j.predictor && j.predictor.homeTeam;
+    const j = await get(SITE + LEAGUES[L].sport + '/' + lkey(L) + '/summary?event=' + g.id), h = j && j.predictor && j.predictor.homeTeam;
     const p = h ? parseFloat(h.gameProjection) / 100 : NaN;
     if (p > 0 && p < 1) { g.espnP = Math.round(p * 1000) / 1000; n++; }
   });

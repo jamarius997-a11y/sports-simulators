@@ -1,4 +1,5 @@
-// Sports simulators: NBA (possession-based), MLB (plate-appearance), NHL (minute/shot-based).
+// Sports simulators: NBA (possession-based), MLB (plate-appearance), NHL (minute/shot-based), NFL and college football (play-by-play),
+// college basketball (possession-based).
 // Team ratings are illustrative approximations and are editable in the UI.
 (function (root) {
   'use strict';
@@ -105,7 +106,7 @@
     const fw = [14, 12, 11, 9, 8, 7, 6, 5, 4, 3, 3, 2], dw = [4, 3, 2.5, 2, 1.5, 1], fp = ['C', 'LW', 'RW'];
     return { fwd: fw.map((w, i) => ({ name: name(), pos: fp[i % 3], w: jit(w, 0.2) })), def: dw.map(w => ({ name: name(), pos: 'D', w: jit(w, 0.2) })), g: { name: name() }, goalies: null, svAvg: 0.905 };
   }
-  function roster(sport, team) { return team.roster || (team.roster = genRoster(sport, team)); }
+  function roster(sport, team) { return team.roster || (team.roster = genRoster(sport === 'ncaaf' ? 'nfl' : sport, team)); }   // college football reuses the NFL play-by-play engine and its placeholder depth chart
 
   // =====================================================================
   // NBA
@@ -598,9 +599,10 @@
     opts = opts || {};
     const teams = [away, home];
     const R = teams.map(t => nflPrep(t, rng));
-    const wx = nflWeatherAdj(opts.weather) / 2;
-    const e = [away.pf * home.pa / NFL_LG - 1.0 + R[1].defLost - R[0].offLost + wx, home.pf * away.pa / NFL_LG + 1.0 + R[0].defLost - R[1].offLost + wx];
-    const s = e.map(x => clamp(x / NFL_LG, 0.45, 1.8));
+    const wx = nflWeatherAdj(opts.weather) / 2, col = !!opts.college, hf = opts.neutral ? 0 : NCAAF_HCA / 2;
+    // College: ratings are opponent-adjusted points per game, combined additively (a 60-point offense against a bad defense is common, so the NFL's ratio form overshoots).
+    const e = col ? [clamp(away.pf + home.pa - NCAAF_LG - hf, 2, 75), clamp(home.pf + away.pa - NCAAF_LG + hf, 2, 75)] : [away.pf * home.pa / NFL_LG - 1.0 + R[1].defLost - R[0].offLost + wx, home.pf * away.pa / NFL_LG + 1.0 + R[0].defLost - R[1].offLost + wx];
+    const s = opts.strength || (col ? nflStrengths(e) : e.map(x => clamp(x / NFL_LG, 0.45, 1.8)));
     const score = [0, 0], byQ = [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0]];
     const st = [0, 1].map(() => ({ plays: 0, yds: 0, pass: 0, rush: 0, to: 0, pen: 0, penYds: 0, c3: 0, a3: 0, top: 0, sacks: 0 }));
     const qbS = R.map(() => ({ cmp: 0, att: 0, yds: 0, td: 0, int: 0, sk: 0 }));
@@ -608,10 +610,10 @@
     const recS = R.map(r => r.rcv.map(() => ({ tgt: 0, rec: 0, yds: 0, td: 0 })));
     const kS = R.map(() => ({ fgm: 0, fga: 0, xpm: 0, xpa: 0, long: 0 }));
     const log = [];
-    let el = 0, otEnd = 0;
+    let el = 0, otEnd = 0, colOT = false;
     const segEnd = () => el < 1800 ? 1800 : el < 3600 ? 3600 : otEnd;
     const qOf = t => t >= 3600 ? 4 : Math.floor(t / 900);
-    const stamp = () => { const q = qOf(el), left = el >= 3600 ? 600 - (el - 3600) : 900 - (el % 900); const m = Math.floor(left / 60), sc = Math.floor(left % 60); return (q === 4 ? 'OT' : 'Q' + (q + 1)) + ' ' + m + ':' + String(sc).padStart(2, '0'); };
+    const stamp = () => { if (colOT) return 'OT'; const q = qOf(el), left = el >= 3600 ? 600 - (el - 3600) : 900 - (el % 900); const m = Math.floor(left / 60), sc = Math.floor(left % 60); return (q === 4 ? 'OT' : 'Q' + (q + 1)) + ' ' + m + ':' + String(sc).padStart(2, '0'); };
     const addScore = (i, pts) => { score[i] += pts; byQ[i][qOf(el)] += pts; };
     const wpick = (arr, w) => { let tot = 0; for (let k = 0; k < arr.length; k++) tot += w(arr[k]); let r = rng() * tot; for (let k = 0; k < arr.length; k++) { r -= w(arr[k]); if (r <= 0) return k; } return arr.length - 1; };
     const ko = () => clamp(Math.round(37 + normal(rng) * 5), 24, 55);
@@ -628,7 +630,8 @@
         if (down === 4) {
           const fgD = 100 - yl + 17;
           let go = false;
-          if (hurry && lead < 0 && left < 240 && !(lead >= -3 && fgD <= 56)) go = true;
+          if (colOT) go = lead < -3 || fgD > 56;   // college overtime: no punting; kick unless a field goal cannot keep the game alive
+          else if (hurry && lead < 0 && left < 240 && !(lead >= -3 && fgD <= 56)) go = true;
           else if (dist <= 2 && yl >= 40 && fgD > 33) go = rng() < 0.45;
           else if (dist <= 1 && yl >= 30) go = rng() < 0.55;
           else if (yl >= 94 && dist <= 3) go = rng() < 0.35;
@@ -727,7 +730,16 @@
     }
     // ---- overtime ----
     let otPlayed = false;
-    if (score[0] === score[1]) {
+    if (col && score[0] === score[1]) {
+      // College overtime: each team gets the ball at the opponent's 25; from the third overtime on it is alternating two-point tries.
+      otPlayed = true; colOT = true; el = 3600; otEnd = 1e9;
+      let f = rng() < 0.5 ? 0 : 1;
+      for (let rd = 1; score[0] === score[1]; rd++, f = 1 - f) {
+        if (rd > 12) { addScore(rng() < 0.5 ? 0 : 1, 2); break; }
+        if (rd >= 3) { for (const i of [f, 1 - f]) if (rng() < 0.43) addScore(i, 2); }
+        else { drive(f, 75, false); drive(1 - f, 75, false); }
+      }
+    } else if (score[0] === score[1]) {
       otPlayed = true; el = 3600; otEnd = 3600 + (opts.playoff ? 900 * 6 : 600);
       poss = rng() < 0.5 ? 0 : 1; yl = ko();
       let drives = 0;
@@ -757,7 +769,7 @@
     }
     const headers = ['1', '2', '3', '4'].concat(otPlayed ? ['OT'] : []).concat(['T']);
     return {
-      sport: 'nfl', teams, score, winner, tie, extra: otPlayed, extraLabel: otPlayed ? 'OT' : '',
+      sport: col ? 'ncaaf' : 'nfl', teams, score, winner, tie, extra: otPlayed, extraLabel: otPlayed ? 'OT' : '',
       line: { headers, rows: [0, 1].map(i => byQ[i].slice(0, otPlayed ? 5 : 4).concat([score[i]])) },
       box: [
         ['Total yards', st[0].yds, st[1].yds], ['Passing yards', st[0].pass, st[1].pass], ['Rushing yards', st[0].rush, st[1].rush],
@@ -771,6 +783,94 @@
   }
 
   // =====================================================================
+  // College football and men's college basketball
+  // =====================================================================
+  // Teams come from data.js (FBS football teams, Division I basketball teams), so both lists start empty. Ratings are opponent-adjusted
+  // points for / against per game versus an average team (college.js), which matters far more here than in the pro leagues
+  // because schedules differ so much. Both are team-level: no real rosters, injuries or weather.
+  let NCAAF_LG = 27, NCAAB_LG = 72.5;
+  const NCAAF_HCA = 3.5, NCAAB_HCA = 3.5;   // home edge in points of margin (0 at neutral sites); the same values rate the teams in college.js
+  // The NFL engine at each offensive strength, measured by simulation (6,000 games per row against a strength-1.0 opponent):
+  // [strength, points scored, factor on the opponent's points]. The factor exists because a weak offense gives the ball back quickly.
+  // College inverts this to turn each side's expected points into a strength; the NFL's own 0.45-1.8 range never needs it.
+  const NFL_CURVE = [[0.05, 1.5, 1.43], [0.1, 2.8, 1.28], [0.15, 4.2, 1.2], [0.25, 7, 1.115], [0.35, 9.7, 1.075], [0.5, 13.4, 1.04], [0.65, 16.9, 1.015], [0.8, 19.7, 1], [1, 23.2, 1],
+    [1.2, 25.9, 0.99], [1.4, 28.2, 0.98], [1.6, 30.4, 0.975], [1.8, 32.3, 0.97], [2.1, 34.8, 0.965], [2.4, 37.4, 0.963], [2.7, 39.4, 0.962], [3, 41.1, 0.962], [3.5, 43.7, 0.965],
+    [4, 45.8, 0.968], [5, 49.8, 0.974], [6.5, 54.7, 0.99], [8, 58.2, 1], [10, 62.3, 1.02], [13, 65.8, 1.04], [17, 69, 1.065], [22, 72.4, 1.09]];
+  function curveAt(x, from, to) {   // linear interpolation between columns of NFL_CURVE
+    const C = NFL_CURVE; if (x <= C[0][from]) return C[0][to];
+    for (let i = 1; i < C.length; i++) if (x <= C[i][from]) return C[i - 1][to] + (C[i][to] - C[i - 1][to]) * (x - C[i - 1][from]) / (C[i][from] - C[i - 1][from]);
+    return C[C.length - 1][to];
+  }
+  function nflStrengths(e) {
+    let s = [1, 1];
+    for (let k = 0; k < 4; k++) s = [curveAt(e[0] / curveAt(s[1], 0, 2), 1, 0), curveAt(e[1] / curveAt(s[0], 0, 2), 1, 0)];
+    return s;
+  }
+  function ncaafGame(away, home, rng, opts) { return nflGame(away, home, rng, Object.assign({}, opts, { college: true, weather: null })); }
+
+  // Basketball: possession by possession, two 20-minute halves. Division I averages for the possession mix.
+  const CB = { tov: 0.165, ft: 0.105, oreb: 0.28, three: 0.39, ftp: 0.72, p3: 0.338, p2: 0.502, pace: 68.5, noise: 0.02, paceSd: 0.04 };
+  function cbEV(d) {
+    const p3 = CB.p3 + d, p2 = CB.p2 + 1.5 * d, e = CB.three * 3 * p3 + (1 - CB.three) * 2 * p2, miss = 1 - (CB.three * p3 + (1 - CB.three) * p2);
+    return (1 - CB.tov - CB.ft) * e / (1 - miss * CB.oreb) + CB.ft * 2 * CB.ftp;
+  }
+  function ncaabGame(away, home, rng, opts) {
+    opts = opts || {};
+    const teams = [away, home], hf = opts.neutral ? 0 : NCAAB_HCA / 2;
+    const e = [clamp(away.off + home.def - NCAAB_LG - hf, 35, 130), clamp(home.off + away.def - NCAAB_LG + hf, 35, 130)];
+    // High-scoring matchups are part pace, part efficiency: possessions scale with the square root of the expected total.
+    const paceMean = CB.pace * Math.sqrt((e[0] + e[1]) / (2 * NCAAB_LG)), poss = paceMean * clamp(1 + normal(rng) * CB.paceSd, 0.85, 1.15);
+    const sh = e.map(x => {
+      const target = clamp(x / paceMean * lognormal(1, CB.noise, rng), 0.45, 1.75);   // each team has a hot or cold night
+      let lo = -0.3, hi = 0.3;
+      for (let i = 0; i < 30; i++) { const m = (lo + hi) / 2; if (cbEV(m) < target) lo = m; else hi = m; }
+      const d = (lo + hi) / 2; return { p3: clamp(CB.p3 + d, 0.08, 0.7), p2: clamp(CB.p2 + 1.5 * d, 0.15, 0.85) };
+    });
+    const st = [0, 1].map(() => ({ fgm: 0, fga: 0, tpm: 0, tpa: 0, ftm: 0, fta: 0, tov: 0, reb: 0 }));
+    const score = [0, 0], periods = [[], []];
+    let leadChanges = 0, lastLeader = -1; const maxLead = [0, 0];
+    function possession(i) {
+      const o = sh[i], s = st[i], d = st[1 - i], r = rng();
+      if (r < CB.tov) { s.tov++; return 0; }
+      if (r < CB.tov + CB.ft) { let pts = 0; s.fta += 2; for (let k = 0; k < 2; k++) if (rng() < CB.ftp) { pts++; s.ftm++; } return pts; }
+      for (;;) {
+        const three = rng() < CB.three; s.fga++; if (three) s.tpa++;
+        if (rng() < (three ? o.p3 : o.p2)) { s.fgm++; if (three) s.tpm++; return three ? 3 : 2; }
+        if (rng() < CB.oreb) { s.reb++; continue; }
+        d.reb++; return 0;
+      }
+    }
+    let period = 0;
+    for (;;) {
+      period++;
+      const n = period === 1 ? Math.round(poss / 2 + normal(rng)) : period === 2 ? Math.round(poss) - Math.round(poss / 2) : Math.max(5, Math.round(poss / 8 + normal(rng) * 0.7));
+      const start = score.slice();
+      for (let k = 0; k < n; k++) for (let i = 0; i < 2; i++) {
+        score[i] += possession(i);
+        const leader = score[0] > score[1] ? 0 : score[1] > score[0] ? 1 : -1;
+        if (leader !== -1) { if (lastLeader !== -1 && leader !== lastLeader) leadChanges++; lastLeader = leader; maxLead[leader] = Math.max(maxLead[leader], Math.abs(score[0] - score[1])); }
+      }
+      periods[0].push(score[0] - start[0]); periods[1].push(score[1] - start[1]);
+      if (period >= 2 && score[0] !== score[1]) break;
+      if (period > 8) { score[rng() < 0.5 ? 0 : 1]++; break; }
+    }
+    const names = ['H1', 'H2'].concat(Array.from({ length: period - 2 }, (_, k) => k ? 'OT' + (k + 1) : 'OT'));
+    const pct = (m, a) => a ? (100 * m / a).toFixed(1) + '%' : '-', cum = [0, 0];
+    const log = periods[0].map((_, k) => { cum[0] += periods[0][k]; cum[1] += periods[1][k]; return (k === 0 ? 'Halftime' : k === 1 ? 'End of regulation' : names[k] + ' final') + ': ' + away.id + ' ' + cum[0] + ' – ' + home.id + ' ' + cum[1]; });
+    log.push('Lead changes: ' + leadChanges + ' · Largest lead: ' + away.id + ' ' + maxLead[0] + ', ' + home.id + ' ' + maxLead[1]);
+    return {
+      sport: 'ncaab', teams, score, winner: score[0] > score[1] ? 0 : 1, extra: period > 2, extraLabel: period > 2 ? names[period - 1] : '',
+      line: { headers: names.concat(['T']), rows: [0, 1].map(i => periods[i].concat([score[i]])) },
+      box: [
+        ['FG', st[0].fgm + '-' + st[0].fga, st[1].fgm + '-' + st[1].fga], ['FG%', pct(st[0].fgm, st[0].fga), pct(st[1].fgm, st[1].fga)],
+        ['3P', st[0].tpm + '-' + st[0].tpa, st[1].tpm + '-' + st[1].tpa], ['FT', st[0].ftm + '-' + st[0].fta, st[1].ftm + '-' + st[1].fta],
+        ['Rebounds', st[0].reb, st[1].reb], ['Turnovers', st[0].tov, st[1].tov],
+      ],
+      tables: opts.detail ? [[], []] : undefined, log,
+    };
+  }
+
+  // =====================================================================
   // Common API
   // =====================================================================
   const SPORTS = {
@@ -778,6 +878,8 @@
     mlb: { label: 'MLB', teams: MLB_TEAMS, game: mlbGame, bin: 1, fields: [['rs', 'Runs scored / game', 0.1], ['ra', 'Runs allowed / game', 0.1]] },
     nfl: { label: 'NFL', teams: NFL_TEAMS, game: nflGame, bin: 3, fields: [['pf', 'Points for / game', 0.5], ['pa', 'Points against / game', 0.5]] },
     nhl: { label: 'NHL', teams: NHL_TEAMS, game: nhlGame, bin: 1, fields: [['gf', 'Goals for / game', 0.05], ['ga', 'Goals against / game', 0.05]] },
+    ncaaf: { label: 'NCAA FB', teams: [], game: ncaafGame, bin: 3, college: true, fields: [['pf', 'Points for / game (vs average team)', 0.5], ['pa', 'Points against / game (vs average team)', 0.5]] },
+    ncaab: { label: 'NCAA BB', teams: [], game: ncaabGame, bin: 3, college: true, fields: [['off', 'Points for / game (vs average team)', 0.5], ['def', 'Points against / game (vs average team)', 0.5]] },
   };
 
   function simGame(sport, away, home, rng, opts) { return SPORTS[sport].game(away, home, rng, opts); }
@@ -855,12 +957,20 @@
         }
       }
     }
+    // College: the team list itself comes from the data (keyed by ESPN team id; abbreviations are not unique enough to key on).
+    for (const sp of ['ncaaf', 'ncaab']) {
+      const d = data[sp]; if (!d) continue;
+      const T = SPORTS[sp].teams; T.length = 0;
+      for (const k of Object.keys(d)) { const e = d[k]; T.push(Object.assign({ id: e.abbr, name: e.name, eid: k, live: true, liveGp: e.gp }, sp === 'ncaaf' ? { pf: e.off, pa: e.def } : { off: e.off, def: e.def })); n++; }
+      T.sort((a, b) => a.name.localeCompare(b.name));
+    }
     return n;
   }
-  function setLeague(sport, v) { if (sport === 'nba') NBA_LG = v; else if (sport === 'nhl') NHL_LG = v; else if (sport === 'nfl') NFL_LG = v; }
+  function setLeague(sport, v) { if (sport === 'nba') NBA_LG = v; else if (sport === 'nhl') NHL_LG = v; else if (sport === 'nfl') NFL_LG = v; else if (sport === 'ncaaf') NCAAF_LG = v; else if (sport === 'ncaab') NCAAB_LG = v; }
   // Key players who are out or uncertain for a team, most important first: [{ name, pos, status, out }]. Used to explain why the sim and the market disagree.
   const STATUS = [[/out|injured reserve/i, 'Out'], [/doubtful/i, 'Doubtful'], [/questionable/i, 'Questionable'], [/day-to-day/i, 'Day-to-day']];
   function injuries(sport, team, max) {
+    if (SPORTS[sport].college) return [];   // team-level model: no injury data
     const r = roster(sport, team), out = [];
     const add = (p, w) => {
       if (p.gpr != null && p.gpr < 0.35 && p.out) return;   // out most of the season: already in the team rating, not news

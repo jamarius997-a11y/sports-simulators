@@ -23,7 +23,7 @@ jobs:
         run: |
           git config user.name "sportssim-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add data.js picks-log.json picks-results.js
+          git add data.js picks-log.json picks-results.js college-cache.json
           git diff --cached --quiet || git commit -m "Refresh data and picks"
           git pull --rebase -q
           git push

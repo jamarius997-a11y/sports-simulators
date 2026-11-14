@@ -7200,7 +7200,10 @@
    "margin": -7.5
   },
   "loggedAt": "2026-11-13T23:56:35.007Z",
-  "result": null
+  "result": {
+   "homeScore": 106,
+   "awayScore": 104
+  }
  },
  "nba:401909297": {
   "key": "nba:401909297",
@@ -7259,7 +7262,10 @@
    "margin": 9.5
   },
   "loggedAt": "2026-11-13T23:56:35.152Z",
-  "result": null
+  "result": {
+   "homeScore": 107,
+   "awayScore": 99
+  }
  },
  "nba:401909298": {
   "key": "nba:401909298",
@@ -7350,7 +7356,10 @@
    "margin": 2.5
   },
   "loggedAt": "2026-11-13T23:56:35.291Z",
-  "result": null
+  "result": {
+   "homeScore": 133,
+   "awayScore": 121
+  }
  },
  "nba:401909299": {
   "key": "nba:401909299",
@@ -7414,7 +7423,10 @@
    "margin": -6.5
   },
   "loggedAt": "2026-11-13T23:56:35.435Z",
-  "result": null
+  "result": {
+   "homeScore": 125,
+   "awayScore": 117
+  }
  },
  "nba:401909300": {
   "key": "nba:401909300",
@@ -7501,7 +7513,10 @@
    "margin": -3.5
   },
   "loggedAt": "2026-11-13T23:56:35.566Z",
-  "result": null
+  "result": {
+   "homeScore": 111,
+   "awayScore": 142
+  }
  },
  "nba:401909301": {
   "key": "nba:401909301",
@@ -7563,7 +7578,10 @@
    "margin": 15.5
   },
   "loggedAt": "2026-11-13T23:56:35.704Z",
-  "result": null
+  "result": {
+   "homeScore": 125,
+   "awayScore": 118
+  }
  },
  "nba:401909302": {
   "key": "nba:401909302",
@@ -7654,7 +7672,10 @@
    "margin": 12.5
   },
   "loggedAt": "2026-11-13T23:56:35.842Z",
-  "result": null
+  "result": {
+   "homeScore": 123,
+   "awayScore": 85
+  }
  },
  "nba:401909303": {
   "key": "nba:401909303",
@@ -7729,7 +7750,10 @@
    "margin": -10.5
   },
   "loggedAt": "2026-11-13T23:56:35.980Z",
-  "result": null
+  "result": {
+   "homeScore": 107,
+   "awayScore": 120
+  }
  },
  "nba:401909304": {
   "key": "nba:401909304",
@@ -7801,7 +7825,10 @@
    "margin": -7.5
   },
   "loggedAt": "2026-11-13T23:56:36.112Z",
-  "result": null
+  "result": {
+   "homeScore": 113,
+   "awayScore": 112
+  }
  },
  "nhl:401892706": {
   "key": "nhl:401892706",
@@ -7883,7 +7910,10 @@
    "margin": null
   },
   "loggedAt": "2026-11-13T23:56:39.103Z",
-  "result": null
+  "result": {
+   "homeScore": 1,
+   "awayScore": 5
+  }
  },
  "nhl:401892707": {
   "key": "nhl:401892707",
@@ -7959,7 +7989,10 @@
    "margin": null
   },
   "loggedAt": "2026-11-13T23:56:39.137Z",
-  "result": null
+  "result": {
+   "homeScore": 2,
+   "awayScore": 3
+  }
  },
  "nba:401909980": {
   "key": "nba:401909980",
@@ -7979,14 +8012,14 @@
    0
   ],
   "espnPHome": 0.215,
-  "simPHome": 0.1897,
-  "rawPHome": 0.2205,
-  "simMargin": -12.09,
+  "simPHome": 0.201,
+  "rawPHome": 0.2315,
+  "simMargin": -12,
   "simScore": [
-   127.11,
-   115.02
+   126.88,
+   114.88
   ],
-  "simTotal": 242.13,
+  "simTotal": 241.76,
   "inj": [
    [],
    [
@@ -8032,7 +8065,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-13T23:56:36.244Z",
+  "loggedAt": "2026-11-14T08:56:16.876Z",
   "result": null
  },
  "nba:401909981": {
@@ -8053,14 +8086,14 @@
    0
   ],
   "espnPHome": 0.665,
-  "simPHome": 0.5448,
-  "rawPHome": 0.539,
-  "simMargin": 1.72,
+  "simPHome": 0.558,
+  "rawPHome": 0.5505,
+  "simMargin": 1.86,
   "simScore": [
-   114.82,
-   116.54
+   114.75,
+   116.61
   ],
-  "simTotal": 231.36,
+  "simTotal": 231.37,
   "inj": [
    [
     {
@@ -8111,7 +8144,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-13T23:56:36.378Z",
+  "loggedAt": "2026-11-14T08:56:16.998Z",
   "result": null
  },
  "nba:401909982": {
@@ -8132,14 +8165,14 @@
    0
   ],
   "espnPHome": 0.427,
-  "simPHome": 0.2422,
-  "rawPHome": 0.2705,
-  "simMargin": -9.85,
+  "simPHome": 0.2459,
+  "rawPHome": 0.274,
+  "simMargin": -9.86,
   "simScore": [
-   121.16,
-   111.3
+   120.67,
+   110.8
   ],
-  "simTotal": 232.46,
+  "simTotal": 231.47,
   "inj": [
    [],
    [
@@ -8179,7 +8212,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-13T23:56:36.505Z",
+  "loggedAt": "2026-11-14T08:56:17.124Z",
   "result": null
  },
  "nba:401909983": {
@@ -8200,14 +8233,14 @@
    0
   ],
   "espnPHome": 0.627,
-  "simPHome": 0.6836,
-  "rawPHome": 0.6615,
-  "simMargin": 6.82,
+  "simPHome": 0.6803,
+  "rawPHome": 0.6585,
+  "simMargin": 7.08,
   "simScore": [
-   109.55,
-   116.37
+   109.39,
+   116.46
   ],
-  "simTotal": 225.91,
+  "simTotal": 225.85,
   "inj": [
    [
     {
@@ -8264,7 +8297,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-13T23:56:36.641Z",
+  "loggedAt": "2026-11-14T08:56:17.251Z",
   "result": null
  },
  "nba:401909984": {
@@ -8285,14 +8318,14 @@
    1
   ],
   "espnPHome": 0.894,
-  "simPHome": 0.9559,
-  "rawPHome": 0.9355,
-  "simMargin": 24.05,
+  "simPHome": 0.9575,
+  "rawPHome": 0.9375,
+  "simMargin": 24.42,
   "simScore": [
-   107.16,
-   131.21
+   107.19,
+   131.61
   ],
-  "simTotal": 238.36,
+  "simTotal": 238.8,
   "inj": [
    [
     {
@@ -8326,7 +8359,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-13T23:56:36.778Z",
+  "loggedAt": "2026-11-14T08:56:17.375Z",
   "result": null
  },
  "nhl:401891809": {
@@ -8354,14 +8387,14 @@
    1,
    1
   ],
-  "simPHome": 0.6995,
-  "rawPHome": 0.6995,
-  "simMargin": 1.18,
+  "simPHome": 0.682,
+  "rawPHome": 0.682,
+  "simMargin": 1.14,
   "simScore": [
-   2.42,
-   3.6
+   2.4,
+   3.55
   ],
-  "simTotal": 6.03,
+  "simTotal": 5.95,
   "inj": [
    [
     {
@@ -8399,7 +8432,7 @@
    "pHome": 0.7466217992533782,
    "margin": null
   },
-  "loggedAt": "2026-11-13T23:56:39.189Z",
+  "loggedAt": "2026-11-14T08:56:19.470Z",
   "result": null
  },
  "nhl:401892708": {
@@ -8427,14 +8460,14 @@
    1,
    1
   ],
-  "simPHome": 0.433,
-  "rawPHome": 0.433,
-  "simMargin": -0.36,
+  "simPHome": 0.419,
+  "rawPHome": 0.419,
+  "simMargin": -0.46,
   "simScore": [
-   3.26,
-   2.9
+   3.33,
+   2.86
   ],
-  "simTotal": 6.16,
+  "simTotal": 6.19,
   "inj": [
    [
     {
@@ -8468,7 +8501,7 @@
    "pHome": 0.4183319260718642,
    "margin": null
   },
-  "loggedAt": "2026-11-13T23:56:39.223Z",
+  "loggedAt": "2026-11-14T08:56:19.500Z",
   "result": null
  },
  "nhl:401892709": {
@@ -8496,14 +8529,14 @@
    1,
    1
   ],
-  "simPHome": 0.4465,
-  "rawPHome": 0.4465,
-  "simMargin": -0.25,
+  "simPHome": 0.467,
+  "rawPHome": 0.467,
+  "simMargin": -0.19,
   "simScore": [
-   3,
-   2.74
+   3.02,
+   2.83
   ],
-  "simTotal": 5.74,
+  "simTotal": 5.85,
   "inj": [
    [
     {
@@ -8537,7 +8570,7 @@
    "pHome": 0.47411526358894773,
    "margin": null
   },
-  "loggedAt": "2026-11-13T23:56:39.262Z",
+  "loggedAt": "2026-11-14T08:56:19.536Z",
   "result": null
  },
  "nhl:401892710": {
@@ -8565,14 +8598,14 @@
    2,
    1
   ],
-  "simPHome": 0.433,
-  "rawPHome": 0.433,
-  "simMargin": -0.36,
+  "simPHome": 0.446,
+  "rawPHome": 0.446,
+  "simMargin": -0.28,
   "simScore": [
-   3.21,
-   2.85
+   3.24,
+   2.96
   ],
-  "simTotal": 6.07,
+  "simTotal": 6.2,
   "inj": [
    [
     {
@@ -8613,7 +8646,7 @@
    "pHome": 0.4183319260718642,
    "margin": null
   },
-  "loggedAt": "2026-11-13T23:56:39.296Z",
+  "loggedAt": "2026-11-14T08:56:19.565Z",
   "result": null
  },
  "nhl:401892711": {
@@ -8641,14 +8674,14 @@
    1,
    1
   ],
-  "simPHome": 0.547,
-  "rawPHome": 0.547,
-  "simMargin": 0.26,
+  "simPHome": 0.5565,
+  "rawPHome": 0.5565,
+  "simMargin": 0.31,
   "simScore": [
-   2.78,
-   3.04
+   2.77,
+   3.09
   ],
-  "simTotal": 5.81,
+  "simTotal": 5.86,
   "inj": [
    [
     {
@@ -8705,7 +8738,7 @@
    "pHome": 0.5179755059040428,
    "margin": null
   },
-  "loggedAt": "2026-11-13T23:56:39.328Z",
+  "loggedAt": "2026-11-14T08:56:19.601Z",
   "result": null
  },
  "nhl:401892712": {
@@ -8733,14 +8766,14 @@
    1,
    1
   ],
-  "simPHome": 0.521,
-  "rawPHome": 0.521,
-  "simMargin": 0.13,
+  "simPHome": 0.5455,
+  "rawPHome": 0.5455,
+  "simMargin": 0.32,
   "simScore": [
-   2.98,
-   3.11
+   2.87,
+   3.19
   ],
-  "simTotal": 6.09,
+  "simTotal": 6.07,
   "inj": [
    [
     {
@@ -8797,7 +8830,7 @@
    "pHome": 0.6624953993375047,
    "margin": null
   },
-  "loggedAt": "2026-11-13T23:56:39.356Z",
+  "loggedAt": "2026-11-14T08:56:19.630Z",
   "result": null
  },
  "nhl:401892713": {
@@ -8825,14 +8858,14 @@
    1,
    2
   ],
-  "simPHome": 0.513,
-  "rawPHome": 0.513,
-  "simMargin": 0.07,
+  "simPHome": 0.528,
+  "rawPHome": 0.528,
+  "simMargin": 0.19,
   "simScore": [
-   3.25,
-   3.31
+   3.19,
+   3.38
   ],
-  "simTotal": 6.56,
+  "simTotal": 6.57,
   "inj": [
    [
     {
@@ -8877,7 +8910,7 @@
    "pHome": 0.4591221135843562,
    "margin": null
   },
-  "loggedAt": "2026-11-13T23:56:39.384Z",
+  "loggedAt": "2026-11-14T08:56:19.655Z",
   "result": null
  },
  "nhl:401892714": {
@@ -8905,14 +8938,14 @@
    1,
    1
   ],
-  "simPHome": 0.5095,
-  "rawPHome": 0.5095,
-  "simMargin": 0.04,
+  "simPHome": 0.515,
+  "rawPHome": 0.515,
+  "simMargin": 0.09,
   "simScore": [
-   2.94,
-   2.98
+   2.96,
+   3.05
   ],
-  "simTotal": 5.92,
+  "simTotal": 6.01,
   "inj": [
    [
     {
@@ -8957,7 +8990,7 @@
    "pHome": 0.47803392779469334,
    "margin": null
   },
-  "loggedAt": "2026-11-13T23:56:39.419Z",
+  "loggedAt": "2026-11-14T08:56:19.680Z",
   "result": null
  },
  "nhl:401892715": {
@@ -8985,14 +9018,14 @@
    2,
    1
   ],
-  "simPHome": 0.544,
-  "rawPHome": 0.544,
-  "simMargin": 0.24,
+  "simPHome": 0.5475,
+  "rawPHome": 0.5475,
+  "simMargin": 0.31,
   "simScore": [
-   2.81,
-   3.05
+   2.8,
+   3.11
   ],
-  "simTotal": 5.86,
+  "simTotal": 5.91,
   "inj": [
    [],
    [
@@ -9026,7 +9059,7 @@
    "pHome": 0.5497302249821847,
    "margin": null
   },
-  "loggedAt": "2026-11-13T23:56:39.446Z",
+  "loggedAt": "2026-11-14T08:56:19.715Z",
   "result": null
  },
  "nhl:401892716": {
@@ -9054,14 +9087,14 @@
    1,
    1
   ],
-  "simPHome": 0.6055,
-  "rawPHome": 0.6055,
-  "simMargin": 0.62,
+  "simPHome": 0.613,
+  "rawPHome": 0.613,
+  "simMargin": 0.72,
   "simScore": [
-   2.54,
+   2.45,
    3.16
   ],
-  "simTotal": 5.7,
+  "simTotal": 5.61,
   "inj": [
    [],
    []
@@ -9092,7 +9125,7 @@
    "pHome": 0.48814954934905974,
    "margin": null
   },
-  "loggedAt": "2026-11-13T23:56:39.473Z",
+  "loggedAt": "2026-11-14T08:56:19.743Z",
   "result": null
  },
  "nhl:401892717": {
@@ -9120,14 +9153,14 @@
    1,
    1
   ],
-  "simPHome": 0.545,
-  "rawPHome": 0.545,
-  "simMargin": 0.25,
+  "simPHome": 0.5425,
+  "rawPHome": 0.5425,
+  "simMargin": 0.29,
   "simScore": [
-   2.91,
-   3.16
+   2.9,
+   3.19
   ],
-  "simTotal": 6.07,
+  "simTotal": 6.1,
   "inj": [
    [
     {
@@ -9174,7 +9207,7 @@
    "pHome": 0.5615089564632845,
    "margin": null
   },
-  "loggedAt": "2026-11-13T23:56:39.502Z",
+  "loggedAt": "2026-11-14T08:56:19.767Z",
   "result": null
  },
  "nhl:401892718": {
@@ -9202,14 +9235,14 @@
    2,
    1
   ],
-  "simPHome": 0.6055,
-  "rawPHome": 0.6055,
-  "simMargin": 0.69,
+  "simPHome": 0.6145,
+  "rawPHome": 0.6145,
+  "simMargin": 0.72,
   "simScore": [
    2.74,
-   3.43
+   3.45
   ],
-  "simTotal": 6.17,
+  "simTotal": 6.19,
   "inj": [
    [
     {
@@ -9280,7 +9313,7 @@
    "pHome": 0.6431877009961566,
    "margin": null
   },
-  "loggedAt": "2026-11-13T23:56:39.533Z",
+  "loggedAt": "2026-11-14T08:56:19.796Z",
   "result": null
  },
  "nhl:401892719": {
@@ -9308,14 +9341,14 @@
    1,
    2
   ],
-  "simPHome": 0.554,
-  "rawPHome": 0.554,
-  "simMargin": 0.33,
+  "simPHome": 0.535,
+  "rawPHome": 0.535,
+  "simMargin": 0.18,
   "simScore": [
-   3.01,
-   3.33
+   3.06,
+   3.23
   ],
-  "simTotal": 6.34,
+  "simTotal": 6.29,
   "inj": [
    [
     {
@@ -9355,7 +9388,7 @@
    "pHome": 0.5118504506509403,
    "margin": null
   },
-  "loggedAt": "2026-11-13T23:56:39.561Z",
+  "loggedAt": "2026-11-14T08:56:19.830Z",
   "result": null
  },
  "nhl:401892720": {
@@ -9383,14 +9416,14 @@
    2,
    1
   ],
-  "simPHome": 0.5735,
-  "rawPHome": 0.5735,
-  "simMargin": 0.45,
+  "simPHome": 0.5445,
+  "rawPHome": 0.5445,
+  "simMargin": 0.27,
   "simScore": [
-   3.01,
-   3.47
+   3.13,
+   3.4
   ],
-  "simTotal": 6.48,
+  "simTotal": 6.53,
   "inj": [
    [
     {
@@ -9424,7 +9457,7 @@
    "pHome": 0.6089604175728578,
    "margin": null
   },
-  "loggedAt": "2026-11-13T23:56:39.590Z",
+  "loggedAt": "2026-11-14T08:56:19.857Z",
   "result": null
  },
  "nba:401909985": {
@@ -9445,14 +9478,14 @@
    2
   ],
   "espnPHome": 0.83,
-  "simPHome": 0.7254,
-  "rawPHome": 0.6995,
-  "simMargin": 8.19,
+  "simPHome": 0.6997,
+  "rawPHome": 0.676,
+  "simMargin": 7.42,
   "simScore": [
-   107.62,
-   115.81
+   107.98,
+   115.4
   ],
-  "simTotal": 223.43,
+  "simTotal": 223.39,
   "inj": [
    [],
    [
@@ -9486,7 +9519,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-13T23:56:36.913Z",
+  "loggedAt": "2026-11-14T08:56:17.511Z",
   "result": null
  },
  "nba:401909986": {
@@ -9507,14 +9540,14 @@
    2
   ],
   "espnPHome": 0.513,
-  "simPHome": 0.4271,
-  "rawPHome": 0.4365,
-  "simMargin": -2.75,
+  "simPHome": 0.454,
+  "rawPHome": 0.46,
+  "simMargin": -1.72,
   "simScore": [
-   116.31,
-   113.56
+   115.8,
+   114.08
   ],
-  "simTotal": 229.86,
+  "simTotal": 229.87,
   "inj": [
    [
     {
@@ -9560,7 +9593,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-13T23:56:37.048Z",
+  "loggedAt": "2026-11-14T08:56:17.634Z",
   "result": null
  },
  "nba:401909987": {
@@ -9581,14 +9614,14 @@
    1
   ],
   "espnPHome": 0.555,
-  "simPHome": 0.6134,
-  "rawPHome": 0.599,
-  "simMargin": 4.42,
+  "simPHome": 0.6122,
+  "rawPHome": 0.598,
+  "simMargin": 3.93,
   "simScore": [
-   105.58,
-   110
+   105.9,
+   109.83
   ],
-  "simTotal": 215.58,
+  "simTotal": 215.74,
   "inj": [
    [
     {
@@ -9628,7 +9661,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-13T23:56:37.184Z",
+  "loggedAt": "2026-11-14T08:56:17.759Z",
   "result": null
  },
  "nba:401909988": {
@@ -9649,14 +9682,14 @@
    1
   ],
   "espnPHome": 0.114,
-  "simPHome": 0.0851,
-  "rawPHome": 0.1125,
-  "simMargin": -19.24,
+  "simPHome": 0.0973,
+  "rawPHome": 0.126,
+  "simMargin": -18.77,
   "simScore": [
    125.1,
-   105.86
+   106.32
   ],
-  "simTotal": 230.96,
+  "simTotal": 231.42,
   "inj": [
    [
     {
@@ -9707,7 +9740,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-13T23:56:37.319Z",
+  "loggedAt": "2026-11-14T08:56:17.880Z",
   "result": null
  },
  "nba:401909989": {
@@ -9728,14 +9761,14 @@
    3
   ],
   "espnPHome": 0.817,
-  "simPHome": 0.8571,
-  "rawPHome": 0.826,
-  "simMargin": 14.93,
+  "simPHome": 0.8437,
+  "rawPHome": 0.8125,
+  "simMargin": 15.18,
   "simScore": [
-   102.01,
-   116.94
+   101.81,
+   116.99
   ],
-  "simTotal": 218.95,
+  "simTotal": 218.8,
   "inj": [
    [
     {
@@ -9780,7 +9813,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-13T23:56:37.450Z",
+  "loggedAt": "2026-11-14T08:56:18.001Z",
   "result": null
  },
  "nba:401909990": {
@@ -9801,14 +9834,14 @@
    2
   ],
   "espnPHome": 0.298,
-  "simPHome": 0.39,
-  "rawPHome": 0.404,
-  "simMargin": -4.21,
+  "simPHome": 0.3787,
+  "rawPHome": 0.394,
+  "simMargin": -4.43,
   "simScore": [
-   110.27,
-   106.07
+   110.07,
+   105.64
   ],
-  "simTotal": 216.34,
+  "simTotal": 215.71,
   "inj": [
    [],
    [
@@ -9846,7 +9879,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-13T23:56:37.583Z",
+  "loggedAt": "2026-11-14T08:56:18.126Z",
   "result": null
  },
  "nba:401909991": {
@@ -9867,14 +9900,14 @@
    2
   ],
   "espnPHome": 0.267,
-  "simPHome": 0.1653,
-  "rawPHome": 0.1965,
-  "simMargin": -13.53,
+  "simPHome": 0.1693,
+  "rawPHome": 0.2005,
+  "simMargin": -14.14,
   "simScore": [
-   118.75,
-   105.22
+   119.11,
+   104.97
   ],
-  "simTotal": 223.97,
+  "simTotal": 224.07,
   "inj": [
    [],
    [
@@ -9908,7 +9941,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-13T23:56:37.718Z",
+  "loggedAt": "2026-11-14T08:56:18.249Z",
   "result": null
  },
  "nba:401909992": {
@@ -9929,14 +9962,14 @@
    1
   ],
   "espnPHome": 0.25,
-  "simPHome": 0.2005,
-  "rawPHome": 0.231,
-  "simMargin": -12.15,
+  "simPHome": 0.222,
+  "rawPHome": 0.2515,
+  "simMargin": -11.27,
   "simScore": [
-   123.05,
-   110.9
+   122.06,
+   110.79
   ],
-  "simTotal": 233.95,
+  "simTotal": 232.84,
   "inj": [
    [],
    []
@@ -9967,7 +10000,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-13T23:56:37.848Z",
+  "loggedAt": "2026-11-14T08:56:18.373Z",
   "result": null
  },
  "nba:401909993": {
@@ -9988,14 +10021,14 @@
    1
   ],
   "espnPHome": 0.134,
-  "simPHome": 0.1603,
-  "rawPHome": 0.1915,
-  "simMargin": -15.16,
+  "simPHome": 0.1498,
+  "rawPHome": 0.181,
+  "simMargin": -15.15,
   "simScore": [
-   117.98,
-   102.81
+   118.01,
+   102.86
   ],
-  "simTotal": 220.79,
+  "simTotal": 220.87,
   "inj": [
    [
     {
@@ -10042,7 +10075,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-13T23:56:37.984Z",
+  "loggedAt": "2026-11-14T08:56:18.490Z",
   "result": null
  },
  "nfl:401873053": {
@@ -10063,15 +10096,15 @@
    null
   ],
   "espnPHome": 0.526,
-  "simPHome": 0.6072,
-  "rawPHome": 0.6022,
-  "simMargin": 3.06,
+  "simPHome": 0.6004,
+  "rawPHome": 0.5958,
+  "simMargin": 3.01,
   "simScore": [
-   24.5,
-   27.56
+   24.39,
+   27.4
   ],
-  "simTotal": 52.06,
-  "blendPHome": 0.5799,
+  "simTotal": 51.79,
+  "blendPHome": 0.5789,
   "inj": [
    [
     {
@@ -10150,7 +10183,7 @@
    "pHome": 0.5751279465321473,
    "margin": 2.5
   },
-  "loggedAt": "2026-11-13T23:56:38.086Z",
+  "loggedAt": "2026-11-14T08:56:18.580Z",
   "result": null
  },
  "nfl:401873058": {
@@ -10171,15 +10204,15 @@
    null
   ],
   "espnPHome": 0.215,
-  "simPHome": 0.2822,
-  "rawPHome": 0.2913,
-  "simMargin": -6.96,
+  "simPHome": 0.2734,
+  "rawPHome": 0.2828,
+  "simMargin": -6.82,
   "simScore": [
-   26.19,
-   19.23
+   25.97,
+   19.16
   ],
-  "simTotal": 45.42,
-  "blendPHome": 0.3909,
+  "simTotal": 45.13,
+  "blendPHome": 0.3896,
   "inj": [
    [
     {
@@ -10234,7 +10267,7 @@
    "pHome": 0.4100715891566124,
    "margin": -3
   },
-  "loggedAt": "2026-11-13T23:56:38.180Z",
+  "loggedAt": "2026-11-14T08:56:18.661Z",
   "result": null
  },
  "nfl:401873056": {
@@ -10255,15 +10288,15 @@
    null
   ],
   "espnPHome": 0.233,
-  "simPHome": 0.3891,
-  "rawPHome": 0.3942,
-  "simMargin": -2.76,
+  "simPHome": 0.3928,
+  "rawPHome": 0.3977,
+  "simMargin": -2.67,
   "simScore": [
-   21.16,
-   18.4
+   21.14,
+   18.47
   ],
-  "simTotal": 39.56,
-  "blendPHome": 0.3699,
+  "simTotal": 39.61,
+  "blendPHome": 0.3704,
   "inj": [
    [
     {
@@ -10318,7 +10351,7 @@
    "pHome": 0.3664742260704701,
    "margin": -4.5
   },
-  "loggedAt": "2026-11-13T23:56:38.258Z",
+  "loggedAt": "2026-11-14T08:56:18.733Z",
   "result": null
  },
  "nfl:401873060": {
@@ -10339,15 +10372,15 @@
    null
   ],
   "espnPHome": 0.552,
-  "simPHome": 0.4693,
-  "rawPHome": 0.4708,
-  "simMargin": -0.95,
+  "simPHome": 0.4738,
+  "rawPHome": 0.475,
+  "simMargin": -0.57,
   "simScore": [
-   19.06,
-   18.11
+   19.03,
+   18.46
   ],
-  "simTotal": 37.18,
-  "blendPHome": 0.5718,
+  "simTotal": 37.49,
+  "blendPHome": 0.5725,
   "inj": [
    [
     {
@@ -10420,7 +10453,7 @@
    "pHome": 0.5899284108433875,
    "margin": 3
   },
-  "loggedAt": "2026-11-13T23:56:38.364Z",
+  "loggedAt": "2026-11-14T08:56:18.832Z",
   "result": null
  },
  "nfl:401873057": {
@@ -10441,15 +10474,15 @@
    null
   ],
   "espnPHome": 0.159,
-  "simPHome": 0.0819,
-  "rawPHome": 0.091,
-  "simMargin": -15.13,
+  "simPHome": 0.0884,
+  "rawPHome": 0.0978,
+  "simMargin": -14.66,
   "simScore": [
-   28.83,
-   13.69
+   28.29,
+   13.63
   ],
-  "simTotal": 42.52,
-  "blendPHome": 0.1926,
+  "simTotal": 41.92,
+  "blendPHome": 0.1935,
   "inj": [
    [
     {
@@ -10510,7 +10543,7 @@
    "pHome": 0.21209051314301935,
    "margin": -10.5
   },
-  "loggedAt": "2026-11-13T23:56:38.468Z",
+  "loggedAt": "2026-11-14T08:56:18.901Z",
   "result": null
  },
  "nfl:401873059": {
@@ -10531,14 +10564,14 @@
    null
   ],
   "espnPHome": 0.82,
-  "simPHome": 0.6242,
-  "rawPHome": 0.6185,
-  "simMargin": 3.53,
+  "simPHome": 0.6239,
+  "rawPHome": 0.6182,
+  "simMargin": 4.06,
   "simScore": [
-   20.26,
-   23.79
+   20.13,
+   24.19
   ],
-  "simTotal": 44.05,
+  "simTotal": 44.32,
   "blendPHome": 0.6075,
   "inj": [
    [
@@ -10606,7 +10639,7 @@
    "pHome": 0.6046074924232512,
    "margin": 3.5
   },
-  "loggedAt": "2026-11-13T23:56:38.547Z",
+  "loggedAt": "2026-11-14T08:56:18.981Z",
   "result": null
  },
  "nfl:401873055": {
@@ -10627,15 +10660,15 @@
    null
   ],
   "espnPHome": 0.5,
-  "simPHome": 0.4969,
-  "rawPHome": 0.497,
-  "simMargin": -0.44,
+  "simPHome": 0.5189,
+  "rawPHome": 0.518,
+  "simMargin": 0.37,
   "simScore": [
-   24.08,
-   23.64
+   23.56,
+   23.93
   ],
-  "simTotal": 47.71,
-  "blendPHome": 0.5634,
+  "simTotal": 47.49,
+  "blendPHome": 0.5667,
   "inj": [
    [
     {
@@ -10702,7 +10735,7 @@
    "pHome": 0.5751279465321473,
    "margin": 2.5
   },
-  "loggedAt": "2026-11-13T23:56:38.631Z",
+  "loggedAt": "2026-11-14T08:56:19.055Z",
   "result": null
  },
  "nfl:401873054": {
@@ -10723,15 +10756,15 @@
    null
   ],
   "espnPHome": 0.173,
-  "simPHome": 0.203,
-  "rawPHome": 0.2137,
-  "simMargin": -9.95,
+  "simPHome": 0.1975,
+  "rawPHome": 0.2082,
+  "simMargin": -10,
   "simScore": [
-   30.21,
-   20.27
+   30.13,
+   20.13
   ],
-  "simTotal": 50.48,
-  "blendPHome": 0.2507,
+  "simTotal": 50.26,
+  "blendPHome": 0.2499,
   "inj": [
    [
     {
@@ -10780,7 +10813,7 @@
    "pHome": 0.2591625679347602,
    "margin": -8.5
   },
-  "loggedAt": "2026-11-13T23:56:38.726Z",
+  "loggedAt": "2026-11-14T08:56:19.127Z",
   "result": null
  },
  "nfl:401873062": {
@@ -10801,15 +10834,15 @@
    null
   ],
   "espnPHome": 0.256,
-  "simPHome": 0.1829,
-  "rawPHome": 0.1938,
-  "simMargin": -9.62,
+  "simPHome": 0.2129,
+  "rawPHome": 0.2235,
+  "simMargin": -8.69,
   "simScore": [
-   26.27,
-   16.65
+   25.9,
+   17.21
   ],
-  "simTotal": 42.92,
-  "blendPHome": 0.2917,
+  "simTotal": 43.11,
+  "blendPHome": 0.2962,
   "inj": [
    [
     {
@@ -10857,7 +10890,7 @@
    "pHome": 0.3108942664963187,
    "margin": -6.5
   },
-  "loggedAt": "2026-11-13T23:56:38.804Z",
+  "loggedAt": "2026-11-14T08:56:19.209Z",
   "result": null
  },
  "nfl:401873061": {
@@ -10878,15 +10911,15 @@
    null
   ],
   "espnPHome": 0.126,
-  "simPHome": 0.1201,
-  "rawPHome": 0.1305,
-  "simMargin": -13.42,
+  "simPHome": 0.1435,
+  "rawPHome": 0.1542,
+  "simMargin": -12.52,
   "simScore": [
-   29.24,
-   15.82
+   28.57,
+   16.05
   ],
-  "simTotal": 45.06,
-  "blendPHome": 0.2178,
+  "simTotal": 44.62,
+  "blendPHome": 0.2213,
   "inj": [
    [
     {
@@ -10959,7 +10992,7 @@
    "pHome": 0.23500301826226122,
    "margin": -9.5
   },
-  "loggedAt": "2026-11-13T23:56:38.880Z",
+  "loggedAt": "2026-11-14T08:56:19.280Z",
   "result": null
  },
  "nfl:401873063": {
@@ -10980,15 +11013,15 @@
    null
   ],
   "espnPHome": 0.359,
-  "simPHome": 0.2976,
-  "rawPHome": 0.3063,
-  "simMargin": -5.82,
+  "simPHome": 0.3087,
+  "rawPHome": 0.317,
+  "simMargin": -5.66,
   "simScore": [
-   30.01,
-   24.19
+   29.93,
+   24.27
   ],
-  "simTotal": 54.19,
-  "blendPHome": 0.3561,
+  "simTotal": 54.2,
+  "blendPHome": 0.3578,
   "inj": [
    [
     {
@@ -11061,7 +11094,7 @@
    "pHome": 0.3664742260704701,
    "margin": -4.5
   },
-  "loggedAt": "2026-11-13T23:56:38.972Z",
+  "loggedAt": "2026-11-14T08:56:19.349Z",
   "result": null
  },
  "nfl:401873064": {
@@ -11082,15 +11115,15 @@
    null
   ],
   "espnPHome": 0.705,
-  "simPHome": 0.4921,
-  "rawPHome": 0.4925,
-  "simMargin": -0.41,
+  "simPHome": 0.4861,
+  "rawPHome": 0.4868,
+  "simMargin": -0.39,
   "simScore": [
-   23.98,
-   23.58
+   23.77,
+   23.38
   ],
-  "simTotal": 47.56,
-  "blendPHome": 0.5877,
+  "simTotal": 47.15,
+  "blendPHome": 0.5868,
   "inj": [
    [
     {
@@ -11133,7 +11166,7 @@
    "pHome": 0.6046074924232512,
    "margin": 3.5
   },
-  "loggedAt": "2026-11-13T23:56:39.052Z",
+  "loggedAt": "2026-11-14T08:56:19.426Z",
   "result": null
  },
  "nhl:401892721": {
@@ -11161,12 +11194,12 @@
    0,
    0
   ],
-  "simPHome": 0.446,
-  "rawPHome": 0.446,
-  "simMargin": -0.29,
+  "simPHome": 0.451,
+  "rawPHome": 0.451,
+  "simMargin": -0.26,
   "simScore": [
-   3.31,
-   3.02
+   3.29,
+   3.04
   ],
   "simTotal": 6.33,
   "inj": [
@@ -11206,7 +11239,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-13T23:56:39.621Z",
+  "loggedAt": "2026-11-14T08:56:19.882Z",
   "result": null
  },
  "nhl:401892722": {
@@ -11234,14 +11267,14 @@
    0,
    0
   ],
-  "simPHome": 0.512,
-  "rawPHome": 0.512,
-  "simMargin": 0.07,
+  "simPHome": 0.5055,
+  "rawPHome": 0.5055,
+  "simMargin": 0.02,
   "simScore": [
-   2.96,
+   3,
    3.02
   ],
-  "simTotal": 5.98,
+  "simTotal": 6.02,
   "inj": [
    [],
    [
@@ -11281,7 +11314,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-13T23:56:39.648Z",
+  "loggedAt": "2026-11-14T08:56:19.909Z",
   "result": null
  },
  "nhl:401892723": {
@@ -11309,14 +11342,14 @@
    0,
    0
   ],
-  "simPHome": 0.4925,
-  "rawPHome": 0.4925,
-  "simMargin": -0.12,
+  "simPHome": 0.4735,
+  "rawPHome": 0.4735,
+  "simMargin": -0.21,
   "simScore": [
-   3.1,
-   2.98
+   3.2,
+   2.99
   ],
-  "simTotal": 6.07,
+  "simTotal": 6.19,
   "inj": [
    [
     {
@@ -11350,7 +11383,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-13T23:56:39.675Z",
+  "loggedAt": "2026-11-14T08:56:19.934Z",
   "result": null
  },
  "nhl:401892724": {
@@ -11378,14 +11411,14 @@
    1,
    1
   ],
-  "simPHome": 0.5915,
-  "rawPHome": 0.5915,
-  "simMargin": 0.61,
+  "simPHome": 0.6075,
+  "rawPHome": 0.6075,
+  "simMargin": 0.65,
   "simScore": [
    2.7,
-   3.31
+   3.35
   ],
-  "simTotal": 6.01,
+  "simTotal": 6.05,
   "inj": [
    [
     {
@@ -11426,7 +11459,7 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-13T23:56:39.701Z",
+  "loggedAt": "2026-11-14T08:56:19.963Z",
   "result": null
  },
  "nhl:401892725": {
@@ -11454,14 +11487,14 @@
    1,
    0
   ],
-  "simPHome": 0.4525,
-  "rawPHome": 0.4525,
-  "simMargin": -0.23,
+  "simPHome": 0.4735,
+  "rawPHome": 0.4735,
+  "simMargin": -0.17,
   "simScore": [
-   3.24,
-   3
+   3.25,
+   3.08
   ],
-  "simTotal": 6.24,
+  "simTotal": 6.33,
   "inj": [
    [
     {
@@ -11512,7 +11545,7403 @@
    "pHome": null,
    "margin": null
   },
-  "loggedAt": "2026-11-13T23:56:39.728Z",
+  "loggedAt": "2026-11-14T08:56:19.991Z",
+  "result": null
+ },
+ "ncaaf:401858296": {
+  "key": "ncaaf:401858296",
+  "league": "ncaaf",
+  "gameId": "401858296",
+  "start": "2026-11-14T17:00Z",
+  "away": {
+   "abbr": "DUKE",
+   "name": "Duke Blue Devils"
+  },
+  "home": {
+   "abbr": "MIA",
+   "name": "Miami Hurricanes"
+  },
+  "rest": [
+   null,
+   null
+  ],
+  "espnPHome": 0.88,
+  "simPHome": 0.8717,
+  "rawPHome": 0.905,
+  "simMargin": 16.35,
+  "simScore": [
+   20.9,
+   37.24
+  ],
+  "simTotal": 58.14,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:20.090Z",
+    "pHome": 0.8106,
+    "margin": 14,
+    "total": 54.5
+   }
+  ],
+  "mkt": {
+   "line": "MIA -14",
+   "total": 54.5,
+   "pHome": 0.8105584016929457,
+   "margin": 14
+  },
+  "loggedAt": "2026-11-14T08:56:20.090Z",
+  "result": null
+ },
+ "ncaaf:401858301": {
+  "key": "ncaaf:401858301",
+  "league": "ncaaf",
+  "gameId": "401858301",
+  "start": "2026-11-14T17:00Z",
+  "away": {
+   "abbr": "WAKE",
+   "name": "Wake Forest Demon Deacons"
+  },
+  "home": {
+   "abbr": "SMU",
+   "name": "SMU Mustangs"
+  },
+  "rest": [
+   null,
+   null
+  ],
+  "espnPHome": 0.409,
+  "simPHome": 0.3336,
+  "rawPHome": 0.307,
+  "simMargin": -6.19,
+  "simScore": [
+   33.65,
+   27.46
+  ],
+  "simTotal": 61.11,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:20.157Z",
+    "pHome": 0.5373,
+    "margin": 1.5,
+    "total": 60.5
+   }
+  ],
+  "mkt": {
+   "line": "SMU -1.5",
+   "total": 60.5,
+   "pHome": 0.5373485825779566,
+   "margin": 1.5
+  },
+  "loggedAt": "2026-11-14T08:56:20.157Z",
+  "result": null
+ },
+ "ncaaf:401858522": {
+  "key": "ncaaf:401858522",
+  "league": "ncaaf",
+  "gameId": "401858522",
+  "start": "2026-11-14T17:00Z",
+  "away": {
+   "abbr": "NU",
+   "name": "Northwestern Wildcats"
+  },
+  "home": {
+   "abbr": "OSU",
+   "name": "Ohio State Buckeyes"
+  },
+  "rest": [
+   null,
+   null
+  ],
+  "espnPHome": 0.854,
+  "simPHome": 0.8543,
+  "rawPHome": 0.889,
+  "simMargin": 14.71,
+  "simScore": [
+   18.61,
+   33.31
+  ],
+  "simTotal": 51.92,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:20.228Z",
+    "pHome": 0.8106,
+    "margin": 14,
+    "total": 44.5
+   }
+  ],
+  "mkt": {
+   "line": "OSU -14",
+   "total": 44.5,
+   "pHome": 0.8105584016929457,
+   "margin": 14
+  },
+  "loggedAt": "2026-11-14T08:56:20.228Z",
+  "result": null
+ },
+ "ncaaf:401856859": {
+  "key": "ncaaf:401856859",
+  "league": "ncaaf",
+  "gameId": "401856859",
+  "start": "2026-11-14T17:00Z",
+  "away": {
+   "abbr": "CIN",
+   "name": "Cincinnati Bearcats"
+  },
+  "home": {
+   "abbr": "ISU",
+   "name": "Iowa State Cyclones"
+  },
+  "rest": [
+   null,
+   null
+  ],
+  "espnPHome": 0.51,
+  "simPHome": 0.6321,
+  "rawPHome": 0.654,
+  "simMargin": 4.83,
+  "simScore": [
+   28.63,
+   33.46
+  ],
+  "simTotal": 62.09,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:20.291Z",
+    "pHome": 0.5744,
+    "margin": 3,
+    "total": 58.5
+   }
+  ],
+  "mkt": {
+   "line": "ISU -3",
+   "total": 58.5,
+   "pHome": 0.5743850854197133,
+   "margin": 3
+  },
+  "loggedAt": "2026-11-14T08:56:20.291Z",
+  "result": null
+ },
+ "ncaaf:401858300": {
+  "key": "ncaaf:401858300",
+  "league": "ncaaf",
+  "gameId": "401858300",
+  "start": "2026-11-14T17:00Z",
+  "away": {
+   "abbr": "SYR",
+   "name": "Syracuse Orange"
+  },
+  "home": {
+   "abbr": "NCSU",
+   "name": "NC State Wolfpack"
+  },
+  "rest": [
+   null,
+   null
+  ],
+  "espnPHome": 0.466,
+  "simPHome": 0.5647,
+  "rawPHome": 0.576,
+  "simMargin": 2.61,
+  "simScore": [
+   27.41,
+   30.02
+  ],
+  "simTotal": 57.43,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:20.356Z",
+    "pHome": 0.4256,
+    "margin": -3,
+    "total": 53.5
+   }
+  ],
+  "mkt": {
+   "line": "SYR -3",
+   "total": 53.5,
+   "pHome": 0.4256149145802866,
+   "margin": -3
+  },
+  "loggedAt": "2026-11-14T08:56:20.356Z",
+  "result": null
+ },
+ "ncaaf:401858520": {
+  "key": "ncaaf:401858520",
+  "league": "ncaaf",
+  "gameId": "401858520",
+  "start": "2026-11-14T17:00Z",
+  "away": {
+   "abbr": "WIS",
+   "name": "Wisconsin Badgers"
+  },
+  "home": {
+   "abbr": "MD",
+   "name": "Maryland Terrapins"
+  },
+  "rest": [
+   null,
+   null
+  ],
+  "espnPHome": 0.226,
+  "simPHome": 0.3157,
+  "rawPHome": 0.287,
+  "simMargin": -6.85,
+  "simScore": [
+   25.19,
+   18.35
+  ],
+  "simTotal": 43.54,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:20.419Z",
+    "pHome": 0.2972,
+    "margin": -8.5,
+    "total": 42.5
+   }
+  ],
+  "mkt": {
+   "line": "WIS -8.5",
+   "total": 42.5,
+   "pHome": 0.29723477380638075,
+   "margin": -8.5
+  },
+  "loggedAt": "2026-11-14T08:56:20.419Z",
+  "result": null
+ },
+ "ncaaf:401861967": {
+  "key": "ncaaf:401861967",
+  "league": "ncaaf",
+  "gameId": "401861967",
+  "start": "2026-11-14T17:00Z",
+  "away": {
+   "abbr": "JMU",
+   "name": "James Madison Dukes"
+  },
+  "home": {
+   "abbr": "CONN",
+   "name": "UConn Huskies"
+  },
+  "rest": [
+   null,
+   null
+  ],
+  "espnPHome": 0.246,
+  "simPHome": 0.2688,
+  "rawPHome": 0.2355,
+  "simMargin": -9.1,
+  "simScore": [
+   37.29,
+   28.19
+  ],
+  "simTotal": 65.49,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:20.480Z",
+    "pHome": 0.3892,
+    "margin": -4.5,
+    "total": 57.5
+   }
+  ],
+  "mkt": {
+   "line": "JMU -4.5",
+   "total": 57.5,
+   "pHome": 0.3891953384082256,
+   "margin": -4.5
+  },
+  "loggedAt": "2026-11-14T08:56:20.480Z",
+  "result": null
+ },
+ "ncaaf:401858297": {
+  "key": "ncaaf:401858297",
+  "league": "ncaaf",
+  "gameId": "401858297",
+  "start": "2026-11-14T17:30Z",
+  "away": {
+   "abbr": "GT",
+   "name": "Georgia Tech Yellow Jackets"
+  },
+  "home": {
+   "abbr": "CLEM",
+   "name": "Clemson Tigers"
+  },
+  "rest": [
+   null,
+   null
+  ],
+  "espnPHome": 0.843,
+  "simPHome": 0.8254,
+  "rawPHome": 0.8615,
+  "simMargin": 13.64,
+  "simScore": [
+   17.21,
+   30.84
+  ],
+  "simTotal": 48.05,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:20.544Z",
+    "pHome": 0.8353,
+    "margin": 15.5,
+    "total": 47.5
+   }
+  ],
+  "mkt": {
+   "line": "CLEM -15.5",
+   "total": 47.5,
+   "pHome": 0.8353314082918077,
+   "margin": 15.5
+  },
+  "loggedAt": "2026-11-14T08:56:20.544Z",
+  "result": null
+ },
+ "ncaaf:401858525": {
+  "key": "ncaaf:401858525",
+  "league": "ncaaf",
+  "gameId": "401858525",
+  "start": "2026-11-14T17:30Z",
+  "away": {
+   "abbr": "NEB",
+   "name": "Nebraska Cornhuskers"
+  },
+  "home": {
+   "abbr": "RUTG",
+   "name": "Rutgers Scarlet Knights"
+  },
+  "rest": [
+   null,
+   null
+  ],
+  "espnPHome": 0.128,
+  "simPHome": 0.1761,
+  "rawPHome": 0.14,
+  "simMargin": -13.35,
+  "simScore": [
+   35.65,
+   22.3
+  ],
+  "simTotal": 57.94,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:20.612Z",
+    "pHome": 0.181,
+    "margin": -14.5,
+    "total": 51.5
+   }
+  ],
+  "mkt": {
+   "line": "NEB -14.5",
+   "total": 51.5,
+   "pHome": 0.18095033881826306,
+   "margin": -14.5
+  },
+  "loggedAt": "2026-11-14T08:56:20.612Z",
+  "result": null
+ },
+ "ncaaf:401856889": {
+  "key": "ncaaf:401856889",
+  "league": "ncaaf",
+  "gameId": "401856889",
+  "start": "2026-11-14T17:45Z",
+  "away": {
+   "abbr": "ALA",
+   "name": "Alabama Crimson Tide"
+  },
+  "home": {
+   "abbr": "VAN",
+   "name": "Vanderbilt Commodores"
+  },
+  "rest": [
+   null,
+   null
+  ],
+  "espnPHome": 0.052,
+  "simPHome": 0.1016,
+  "rawPHome": 0.0715,
+  "simMargin": -18.82,
+  "simScore": [
+   38.16,
+   19.34
+  ],
+  "simTotal": 57.5,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:20.678Z",
+    "pHome": 0.1894,
+    "margin": -14,
+    "total": 47.5
+   }
+  ],
+  "mkt": {
+   "line": "ALA -14",
+   "total": 47.5,
+   "pHome": 0.18944159830705426,
+   "margin": -14
+  },
+  "loggedAt": "2026-11-14T08:56:20.678Z",
+  "result": null
+ },
+ "ncaaf:401862825": {
+  "key": "ncaaf:401862825",
+  "league": "ncaaf",
+  "gameId": "401862825",
+  "start": "2026-11-14T18:00Z",
+  "away": {
+   "abbr": "ECU",
+   "name": "East Carolina Pirates"
+  },
+  "home": {
+   "abbr": "CLT",
+   "name": "Charlotte 49ers"
+  },
+  "rest": [
+   null,
+   null
+  ],
+  "espnPHome": 0.122,
+  "simPHome": 0.1505,
+  "rawPHome": 0.1155,
+  "simMargin": -14.05,
+  "simScore": [
+   31.75,
+   17.69
+  ],
+  "simTotal": 49.44,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:20.740Z",
+    "pHome": 0.2552,
+    "margin": -10.5,
+    "total": 45.5
+   }
+  ],
+  "mkt": {
+   "line": "ECU -10.5",
+   "total": 45.5,
+   "pHome": 0.255154841937805,
+   "margin": -10.5
+  },
+  "loggedAt": "2026-11-14T08:56:20.740Z",
+  "result": null
+ },
+ "ncaaf:401862829": {
+  "key": "ncaaf:401862829",
+  "league": "ncaaf",
+  "gameId": "401862829",
+  "start": "2026-11-14T18:00Z",
+  "away": {
+   "abbr": "UAB",
+   "name": "UAB Blazers"
+  },
+  "home": {
+   "abbr": "TEM",
+   "name": "Temple Owls"
+  },
+  "rest": [
+   null,
+   null
+  ],
+  "espnPHome": 0.68,
+  "simPHome": 0.658,
+  "rawPHome": 0.6835,
+  "simMargin": 5.76,
+  "simScore": [
+   22.14,
+   27.89
+  ],
+  "simTotal": 50.03,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:20.804Z",
+    "pHome": 0.5621,
+    "margin": 2.5,
+    "total": 47.5
+   }
+  ],
+  "mkt": {
+   "line": "TEM -2.5",
+   "total": 47.5,
+   "pHome": 0.5620933047645351,
+   "margin": 2.5
+  },
+  "loggedAt": "2026-11-14T08:56:20.804Z",
+  "result": null
+ },
+ "ncaaf:401869937": {
+  "key": "ncaaf:401869937",
+  "league": "ncaaf",
+  "gameId": "401869937",
+  "start": "2026-11-14T18:00Z",
+  "away": {
+   "abbr": "ARST",
+   "name": "Arkansas State Red Wolves"
+  },
+  "home": {
+   "abbr": "CCU",
+   "name": "Coastal Carolina Chanticleers"
+  },
+  "rest": [
+   null,
+   null
+  ],
+  "espnPHome": 0.523,
+  "simPHome": 0.5926,
+  "rawPHome": 0.6085,
+  "simMargin": 3.01,
+  "simScore": [
+   22.76,
+   25.77
+  ],
+  "simTotal": 48.53,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:20.870Z",
+    "pHome": 0.5373,
+    "margin": 1.5,
+    "total": 52.5
+   }
+  ],
+  "mkt": {
+   "line": "CCU -1.5",
+   "total": 52.5,
+   "pHome": 0.5373485825779566,
+   "margin": 1.5
+  },
+  "loggedAt": "2026-11-14T08:56:20.870Z",
+  "result": null
+ },
+ "ncaaf:401856862": {
+  "key": "ncaaf:401856862",
+  "league": "ncaaf",
+  "gameId": "401856862",
+  "start": "2026-11-14T19:00Z",
+  "away": {
+   "abbr": "KSU",
+   "name": "Kansas State Wildcats"
+  },
+  "home": {
+   "abbr": "TCU",
+   "name": "TCU Horned Frogs"
+  },
+  "rest": [
+   null,
+   null
+  ],
+  "espnPHome": 0.742,
+  "simPHome": 0.7796,
+  "rawPHome": 0.8155,
+  "simMargin": 10.41,
+  "simScore": [
+   17.81,
+   28.22
+  ],
+  "simTotal": 46.03,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:20.936Z",
+    "pHome": 0.8018,
+    "margin": 13.5,
+    "total": 44.5
+   }
+  ],
+  "mkt": {
+   "line": "TCU -13.5",
+   "total": 44.5,
+   "pHome": 0.8018363791419605,
+   "margin": 13.5
+  },
+  "loggedAt": "2026-11-14T08:56:20.936Z",
+  "result": null
+ },
+ "ncaaf:401870769": {
+  "key": "ncaaf:401870769",
+  "league": "ncaaf",
+  "gameId": "401870769",
+  "start": "2026-11-14T19:00Z",
+  "away": {
+   "abbr": "KENN",
+   "name": "Kennesaw State Owls"
+  },
+  "home": {
+   "abbr": "SHSU",
+   "name": "Sam Houston Bearkats"
+  },
+  "rest": [
+   null,
+   null
+  ],
+  "espnPHome": 0.314,
+  "simPHome": 0.3269,
+  "rawPHome": 0.2995,
+  "simMargin": -6.38,
+  "simScore": [
+   26.29,
+   19.9
+  ],
+  "simTotal": 46.19,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:21.000Z",
+    "pHome": 0.3306,
+    "margin": -7,
+    "total": 46.5
+   }
+  ],
+  "mkt": {
+   "line": "KENN -7",
+   "total": 46.5,
+   "pHome": 0.3306471818593226,
+   "margin": -7
+  },
+  "loggedAt": "2026-11-14T08:56:21.000Z",
+  "result": null
+ },
+ "ncaaf:401856888": {
+  "key": "ncaaf:401856888",
+  "league": "ncaaf",
+  "gameId": "401856888",
+  "start": "2026-11-14T20:00Z",
+  "away": {
+   "abbr": "TENN",
+   "name": "Tennessee Volunteers"
+  },
+  "home": {
+   "abbr": "TA&M",
+   "name": "Texas A&M Aggies"
+  },
+  "rest": [
+   null,
+   null
+  ],
+  "espnPHome": 0.414,
+  "simPHome": 0.4604,
+  "rawPHome": 0.4535,
+  "simMargin": -1.32,
+  "simScore": [
+   22.93,
+   21.61
+  ],
+  "simTotal": 44.54,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:21.065Z",
+    "pHome": 0.4627,
+    "margin": -1.5,
+    "total": 43.5
+   }
+  ],
+  "mkt": {
+   "line": "TENN -1.5",
+   "total": 43.5,
+   "pHome": 0.4626514174220434,
+   "margin": -1.5
+  },
+  "loggedAt": "2026-11-14T08:56:21.065Z",
+  "result": null
+ },
+ "ncaaf:401870796": {
+  "key": "ncaaf:401870796",
+  "league": "ncaaf",
+  "gameId": "401870796",
+  "start": "2026-11-14T20:00Z",
+  "away": {
+   "abbr": "NMSU",
+   "name": "New Mexico State Aggies"
+  },
+  "home": {
+   "abbr": "MOST",
+   "name": "Missouri State Bears"
+  },
+  "rest": [
+   null,
+   null
+  ],
+  "espnPHome": 0.586,
+  "simPHome": 0.5699,
+  "rawPHome": 0.582,
+  "simMargin": 2.77,
+  "simScore": [
+   24.21,
+   26.97
+  ],
+  "simTotal": 51.18,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:21.127Z",
+    "pHome": 0.5373,
+    "margin": 1.5,
+    "total": 49.5
+   }
+  ],
+  "mkt": {
+   "line": "MOST -1.5",
+   "total": 49.5,
+   "pHome": 0.5373485825779566,
+   "margin": 1.5
+  },
+  "loggedAt": "2026-11-14T08:56:21.127Z",
+  "result": null
+ },
+ "ncaaf:401871060": {
+  "key": "ncaaf:401871060",
+  "league": "ncaaf",
+  "gameId": "401871060",
+  "start": "2026-11-14T20:00Z",
+  "away": {
+   "abbr": "FIU",
+   "name": "Florida International Panthers"
+  },
+  "home": {
+   "abbr": "DEL",
+   "name": "Delaware Blue Hens"
+  },
+  "rest": [
+   null,
+   null
+  ],
+  "espnPHome": 0.676,
+  "simPHome": 0.6443,
+  "rawPHome": 0.668,
+  "simMargin": 5.18,
+  "simScore": [
+   22.25,
+   27.43
+  ],
+  "simTotal": 49.68,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:21.190Z",
+    "pHome": 0.5866,
+    "margin": 3.5,
+    "total": 54.5
+   }
+  ],
+  "mkt": {
+   "line": "DEL -3.5",
+   "total": 54.5,
+   "pHome": 0.5866082011608907,
+   "margin": 3.5
+  },
+  "loggedAt": "2026-11-14T08:56:21.190Z",
+  "result": null
+ },
+ "ncaaf:401856883": {
+  "key": "ncaaf:401856883",
+  "league": "ncaaf",
+  "gameId": "401856883",
+  "start": "2026-11-14T20:30Z",
+  "away": {
+   "abbr": "MIZ",
+   "name": "Missouri Tigers"
+  },
+  "home": {
+   "abbr": "UGA",
+   "name": "Georgia Bulldogs"
+  },
+  "rest": [
+   null,
+   null
+  ],
+  "espnPHome": 0.888,
+  "simPHome": 0.8937,
+  "rawPHome": 0.9245,
+  "simMargin": 16.55,
+  "simScore": [
+   16.51,
+   33.06
+  ],
+  "simTotal": 49.57,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:21.253Z",
+    "pHome": 0.8507,
+    "margin": 16.5,
+    "total": 47.5
+   }
+  ],
+  "mkt": {
+   "line": "UGA -16.5",
+   "total": 47.5,
+   "pHome": 0.8506694397134258,
+   "margin": 16.5
+  },
+  "loggedAt": "2026-11-14T08:56:21.253Z",
+  "result": null
+ },
+ "ncaaf:401858294": {
+  "key": "ncaaf:401858294",
+  "league": "ncaaf",
+  "gameId": "401858294",
+  "start": "2026-11-14T20:30Z",
+  "away": {
+   "abbr": "BC",
+   "name": "Boston College Eagles"
+  },
+  "home": {
+   "abbr": "ND",
+   "name": "Notre Dame Fighting Irish"
+  },
+  "rest": [
+   null,
+   null
+  ],
+  "espnPHome": 0.985,
+  "simPHome": 0.9949,
+  "rawPHome": 0.998,
+  "simMargin": 32.92,
+  "simScore": [
+   8.38,
+   41.3
+  ],
+  "simTotal": 49.67,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:21.317Z",
+    "pHome": 0.9704,
+    "margin": 29.5,
+    "total": 51.5
+   }
+  ],
+  "mkt": {
+   "line": "ND -29.5",
+   "total": 51.5,
+   "pHome": 0.9704122321570916,
+   "margin": 29.5
+  },
+  "loggedAt": "2026-11-14T08:56:21.317Z",
+  "result": null
+ },
+ "ncaaf:401858518": {
+  "key": "ncaaf:401858518",
+  "league": "ncaaf",
+  "gameId": "401858518",
+  "start": "2026-11-14T20:30Z",
+  "away": {
+   "abbr": "USC",
+   "name": "USC Trojans"
+  },
+  "home": {
+   "abbr": "IU",
+   "name": "Indiana Hoosiers"
+  },
+  "rest": [
+   null,
+   null
+  ],
+  "espnPHome": 0.782,
+  "simPHome": 0.8127,
+  "rawPHome": 0.849,
+  "simMargin": 12.22,
+  "simScore": [
+   19.38,
+   31.6
+  ],
+  "simTotal": 50.97,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:21.383Z",
+    "pHome": 0.7242,
+    "margin": 9.5,
+    "total": 50.5
+   }
+  ],
+  "mkt": {
+   "line": "IU -9.5",
+   "total": 50.5,
+   "pHome": 0.7241824948510582,
+   "margin": 9.5
+  },
+  "loggedAt": "2026-11-14T08:56:21.383Z",
+  "result": null
+ },
+ "ncaaf:401858523": {
+  "key": "ncaaf:401858523",
+  "league": "ncaaf",
+  "gameId": "401858523",
+  "start": "2026-11-14T20:30Z",
+  "away": {
+   "abbr": "MICH",
+   "name": "Michigan Wolverines"
+  },
+  "home": {
+   "abbr": "ORE",
+   "name": "Oregon Ducks"
+  },
+  "rest": [
+   null,
+   null
+  ],
+  "espnPHome": 0.857,
+  "simPHome": 0.8823,
+  "rawPHome": 0.9145,
+  "simMargin": 15.79,
+  "simScore": [
+   13.83,
+   29.63
+  ],
+  "simTotal": 43.45,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:21.447Z",
+    "pHome": 0.7448,
+    "margin": 10.5,
+    "total": 38.5
+   }
+  ],
+  "mkt": {
+   "line": "ORE -10.5",
+   "total": 38.5,
+   "pHome": 0.744845158062195,
+   "margin": 10.5
+  },
+  "loggedAt": "2026-11-14T08:56:21.447Z",
+  "result": null
+ },
+ "ncaaf:401858295": {
+  "key": "ncaaf:401858295",
+  "league": "ncaaf",
+  "gameId": "401858295",
+  "start": "2026-11-14T20:30Z",
+  "away": {
+   "abbr": "CAL",
+   "name": "California Golden Bears"
+  },
+  "home": {
+   "abbr": "UVA",
+   "name": "Virginia Cavaliers"
+  },
+  "rest": [
+   null,
+   null
+  ],
+  "espnPHome": 0.871,
+  "simPHome": 0.8678,
+  "rawPHome": 0.9015,
+  "simMargin": 15.38,
+  "simScore": [
+   15.24,
+   30.62
+  ],
+  "simTotal": 45.86,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:21.516Z",
+    "pHome": 0.7647,
+    "margin": 11.5,
+    "total": 46.5
+   }
+  ],
+  "mkt": {
+   "line": "UVA -11.5",
+   "total": 46.5,
+   "pHome": 0.764702538243754,
+   "margin": 11.5
+  },
+  "loggedAt": "2026-11-14T08:56:21.516Z",
+  "result": null
+ },
+ "ncaaf:401864536": {
+  "key": "ncaaf:401864536",
+  "league": "ncaaf",
+  "gameId": "401864536",
+  "start": "2026-11-14T20:30Z",
+  "away": {
+   "abbr": "NEV",
+   "name": "Nevada Wolf Pack"
+  },
+  "home": {
+   "abbr": "NIU",
+   "name": "Northern Illinois Huskies"
+  },
+  "rest": [
+   null,
+   null
+  ],
+  "espnPHome": 0.258,
+  "simPHome": 0.3018,
+  "rawPHome": 0.2715,
+  "simMargin": -7.22,
+  "simScore": [
+   27.06,
+   19.84
+  ],
+  "simTotal": 46.91,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:21.579Z",
+    "pHome": 0.3654,
+    "margin": -5.5,
+    "total": 47.5
+   }
+  ],
+  "mkt": {
+   "line": "NEV -5.5",
+   "total": 47.5,
+   "pHome": 0.3654026661496571,
+   "margin": -5.5
+  },
+  "loggedAt": "2026-11-14T08:56:21.579Z",
+  "result": null
+ },
+ "ncaaf:401869952": {
+  "key": "ncaaf:401869952",
+  "league": "ncaaf",
+  "gameId": "401869952",
+  "start": "2026-11-14T20:30Z",
+  "away": {
+   "abbr": "GASO",
+   "name": "Georgia Southern Eagles"
+  },
+  "home": {
+   "abbr": "GAST",
+   "name": "Georgia State Panthers"
+  },
+  "rest": [
+   null,
+   null
+  ],
+  "espnPHome": 0.388,
+  "simPHome": 0.4792,
+  "rawPHome": 0.4755,
+  "simMargin": -0.42,
+  "simScore": [
+   29.95,
+   29.53
+  ],
+  "simTotal": 59.48,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:21.642Z",
+    "pHome": 0.3537,
+    "margin": -6,
+    "total": 56.5
+   }
+  ],
+  "mkt": {
+   "line": "GASO -6",
+   "total": 56.5,
+   "pHome": 0.3536833235002245,
+   "margin": -6
+  },
+  "loggedAt": "2026-11-14T08:56:21.642Z",
+  "result": null
+ },
+ "ncaaf:401870752": {
+  "key": "ncaaf:401870752",
+  "league": "ncaaf",
+  "gameId": "401870752",
+  "start": "2026-11-14T20:30Z",
+  "away": {
+   "abbr": "JXST",
+   "name": "Jacksonville State Gamecocks"
+  },
+  "home": {
+   "abbr": "WKU",
+   "name": "Western Kentucky Hilltoppers"
+  },
+  "rest": [
+   null,
+   null
+  ],
+  "espnPHome": 0.279,
+  "simPHome": 0.3045,
+  "rawPHome": 0.2745,
+  "simMargin": -7.43,
+  "simScore": [
+   30.99,
+   23.56
+  ],
+  "simTotal": 54.55,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:21.709Z",
+    "pHome": 0.3193,
+    "margin": -7.5,
+    "total": 54.5
+   }
+  ],
+  "mkt": {
+   "line": "JXST -7.5",
+   "total": 54.5,
+   "pHome": 0.31934880799974574,
+   "margin": -7.5
+  },
+  "loggedAt": "2026-11-14T08:56:21.709Z",
+  "result": null
+ },
+ "ncaaf:401871061": {
+  "key": "ncaaf:401871061",
+  "league": "ncaaf",
+  "gameId": "401871061",
+  "start": "2026-11-14T20:30Z",
+  "away": {
+   "abbr": "MTSU",
+   "name": "Middle Tennessee Blue Raiders"
+  },
+  "home": {
+   "abbr": "LIB",
+   "name": "Liberty Flames"
+  },
+  "rest": [
+   null,
+   null
+  ],
+  "espnPHome": 0.948,
+  "simPHome": 0.9596,
+  "rawPHome": 0.9765,
+  "simMargin": 23.58,
+  "simScore": [
+   14.31,
+   37.9
+  ],
+  "simTotal": 52.21,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:21.777Z",
+    "pHome": 0.9081,
+    "margin": 21,
+    "total": 53.5
+   }
+  ],
+  "mkt": {
+   "line": "LIB -21",
+   "total": 53.5,
+   "pHome": 0.9080505347842291,
+   "margin": 21
+  },
+  "loggedAt": "2026-11-14T08:56:21.777Z",
+  "result": null
+ },
+ "ncaaf:401856861": {
+  "key": "ncaaf:401856861",
+  "league": "ncaaf",
+  "gameId": "401856861",
+  "start": "2026-11-14T20:30Z",
+  "away": {
+   "abbr": "KU",
+   "name": "Kansas Jayhawks"
+  },
+  "home": {
+   "abbr": "WVU",
+   "name": "West Virginia Mountaineers"
+  },
+  "rest": [
+   null,
+   null
+  ],
+  "espnPHome": 0.538,
+  "simPHome": 0.5315,
+  "rawPHome": 0.537,
+  "simMargin": 0.87,
+  "simScore": [
+   35.64,
+   36.51
+  ],
+  "simTotal": 72.14,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:21.846Z",
+    "pHome": 0.5621,
+    "margin": 2.5,
+    "total": 68.5
+   }
+  ],
+  "mkt": {
+   "line": "WVU -2.5",
+   "total": 68.5,
+   "pHome": 0.5620933047645351,
+   "margin": 2.5
+  },
+  "loggedAt": "2026-11-14T08:56:21.846Z",
+  "result": null
+ },
+ "ncaaf:401860916": {
+  "key": "ncaaf:401860916",
+  "league": "ncaaf",
+  "gameId": "401860916",
+  "start": "2026-11-14T21:00Z",
+  "away": {
+   "abbr": "FRES",
+   "name": "Fresno State Bulldogs"
+  },
+  "home": {
+   "abbr": "TXST",
+   "name": "Texas State Bobcats"
+  },
+  "rest": [
+   null,
+   null
+  ],
+  "espnPHome": 0.665,
+  "simPHome": 0.6673,
+  "rawPHome": 0.694,
+  "simMargin": 6.37,
+  "simScore": [
+   26.92,
+   33.29
+  ],
+  "simTotal": 60.21,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:21.912Z",
+    "pHome": 0.7242,
+    "margin": 9.5,
+    "total": 59.5
+   }
+  ],
+  "mkt": {
+   "line": "TXST -9.5",
+   "total": 59.5,
+   "pHome": 0.7241824948510582,
+   "margin": 9.5
+  },
+  "loggedAt": "2026-11-14T08:56:21.912Z",
+  "result": null
+ },
+ "ncaaf:401856886": {
+  "key": "ncaaf:401856886",
+  "league": "ncaaf",
+  "gameId": "401856886",
+  "start": "2026-11-14T21:15Z",
+  "away": {
+   "abbr": "AUB",
+   "name": "Auburn Tigers"
+  },
+  "home": {
+   "abbr": "MSST",
+   "name": "Mississippi State Bulldogs"
+  },
+  "rest": [
+   null,
+   null
+  ],
+  "espnPHome": 0.509,
+  "simPHome": 0.5819,
+  "rawPHome": 0.596,
+  "simMargin": 2.88,
+  "simScore": [
+   25.11,
+   27.99
+  ],
+  "simTotal": 53.11,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:21.977Z",
+    "pHome": 0.4379,
+    "margin": -2.5,
+    "total": 51.5
+   }
+  ],
+  "mkt": {
+   "line": "AUB -2.5",
+   "total": 51.5,
+   "pHome": 0.4379066952354649,
+   "margin": -2.5
+  },
+  "loggedAt": "2026-11-14T08:56:21.977Z",
+  "result": null
+ },
+ "ncaaf:401862828": {
+  "key": "ncaaf:401862828",
+  "league": "ncaaf",
+  "gameId": "401862828",
+  "start": "2026-11-14T21:30Z",
+  "away": {
+   "abbr": "TULN",
+   "name": "Tulane Green Wave"
+  },
+  "home": {
+   "abbr": "RICE",
+   "name": "Rice Owls"
+  },
+  "rest": [
+   null,
+   null
+  ],
+  "espnPHome": 0.415,
+  "simPHome": 0.4685,
+  "rawPHome": 0.463,
+  "simMargin": -1.43,
+  "simScore": [
+   23.71,
+   22.28
+  ],
+  "simTotal": 45.99,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:22.043Z",
+    "pHome": 0.5744,
+    "margin": 3,
+    "total": 48.5
+   }
+  ],
+  "mkt": {
+   "line": "RICE -3",
+   "total": 48.5,
+   "pHome": 0.5743850854197133,
+   "margin": 3
+  },
+  "loggedAt": "2026-11-14T08:56:22.043Z",
+  "result": null
+ },
+ "ncaaf:401871099": {
+  "key": "ncaaf:401871099",
+  "league": "ncaaf",
+  "gameId": "401871099",
+  "start": "2026-11-14T22:00Z",
+  "away": {
+   "abbr": "USM",
+   "name": "Southern Miss Golden Eagles"
+  },
+  "home": {
+   "abbr": "LT",
+   "name": "Louisiana Tech Bulldogs"
+  },
+  "rest": [
+   null,
+   null
+  ],
+  "espnPHome": 0.885,
+  "simPHome": 0.9262,
+  "rawPHome": 0.9515,
+  "simMargin": 20.66,
+  "simScore": [
+   18.85,
+   39.52
+  ],
+  "simTotal": 58.37,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:22.106Z",
+    "pHome": 0.8651,
+    "margin": 17.5,
+    "total": 56.5
+   }
+  ],
+  "mkt": {
+   "line": "LT -17.5",
+   "total": 56.5,
+   "pHome": 0.8650590691295024,
+   "margin": 17.5
+  },
+  "loggedAt": "2026-11-14T08:56:22.106Z",
+  "result": null
+ },
+ "ncaaf:401856857": {
+  "key": "ncaaf:401856857",
+  "league": "ncaaf",
+  "gameId": "401856857",
+  "start": "2026-11-14T22:30Z",
+  "away": {
+   "abbr": "ASU",
+   "name": "Arizona State Sun Devils"
+  },
+  "home": {
+   "abbr": "UCF",
+   "name": "UCF Knights"
+  },
+  "rest": [
+   null,
+   null
+  ],
+  "espnPHome": 0.676,
+  "simPHome": 0.7023,
+  "rawPHome": 0.733,
+  "simMargin": 7.66,
+  "simScore": [
+   23.86,
+   31.52
+  ],
+  "simTotal": 55.39,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:22.168Z",
+    "pHome": 0.5866,
+    "margin": 3.5,
+    "total": 47.5
+   }
+  ],
+  "mkt": {
+   "line": "UCF -3.5",
+   "total": 47.5,
+   "pHome": 0.5866082011608907,
+   "margin": 3.5
+  },
+  "loggedAt": "2026-11-14T08:56:22.168Z",
+  "result": null
+ },
+ "ncaaf:401858521": {
+  "key": "ncaaf:401858521",
+  "league": "ncaaf",
+  "gameId": "401858521",
+  "start": "2026-11-14T22:30Z",
+  "away": {
+   "abbr": "WASH",
+   "name": "Washington Huskies"
+  },
+  "home": {
+   "abbr": "MSU",
+   "name": "Michigan State Spartans"
+  },
+  "rest": [
+   null,
+   null
+  ],
+  "espnPHome": 0.484,
+  "simPHome": 0.4536,
+  "rawPHome": 0.4455,
+  "simMargin": -1.54,
+  "simScore": [
+   23.91,
+   22.37
+  ],
+  "simTotal": 46.29,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:22.236Z",
+    "pHome": 0.4379,
+    "margin": -2.5,
+    "total": 44.5
+   }
+  ],
+  "mkt": {
+   "line": "WASH -2.5",
+   "total": 44.5,
+   "pHome": 0.4379066952354649,
+   "margin": -2.5
+  },
+  "loggedAt": "2026-11-14T08:56:22.236Z",
+  "result": null
+ },
+ "ncaaf:401860914": {
+  "key": "ncaaf:401860914",
+  "league": "ncaaf",
+  "gameId": "401860914",
+  "start": "2026-11-14T23:00Z",
+  "away": {
+   "abbr": "ORST",
+   "name": "Oregon State Beavers"
+  },
+  "home": {
+   "abbr": "BOIS",
+   "name": "Boise State Broncos"
+  },
+  "rest": [
+   null,
+   null
+  ],
+  "espnPHome": 0.818,
+  "simPHome": 0.7561,
+  "rawPHome": 0.791,
+  "simMargin": 10.31,
+  "simScore": [
+   28.38,
+   38.69
+  ],
+  "simTotal": 67.08,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:22.305Z",
+    "pHome": 0.8507,
+    "margin": 16.5,
+    "total": 63.5
+   }
+  ],
+  "mkt": {
+   "line": "BOIS -16.5",
+   "total": 63.5,
+   "pHome": 0.8506694397134258,
+   "margin": 16.5
+  },
+  "loggedAt": "2026-11-14T08:56:22.305Z",
+  "result": null
+ },
+ "ncaaf:401869928": {
+  "key": "ncaaf:401869928",
+  "league": "ncaaf",
+  "gameId": "401869928",
+  "start": "2026-11-14T23:00Z",
+  "away": {
+   "abbr": "APP",
+   "name": "App State Mountaineers"
+  },
+  "home": {
+   "abbr": "MRSH",
+   "name": "Marshall Thundering Herd"
+  },
+  "rest": [
+   null,
+   null
+  ],
+  "espnPHome": 0.394,
+  "simPHome": 0.4276,
+  "rawPHome": 0.415,
+  "simMargin": -2.03,
+  "simScore": [
+   27.54,
+   25.52
+  ],
+  "simTotal": 53.06,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:22.370Z",
+    "pHome": 0.4627,
+    "margin": -1.5,
+    "total": 54.5
+   }
+  ],
+  "mkt": {
+   "line": "APP -1.5",
+   "total": 54.5,
+   "pHome": 0.4626514174220434,
+   "margin": -1.5
+  },
+  "loggedAt": "2026-11-14T08:56:22.370Z",
+  "result": null
+ },
+ "ncaaf:401856884": {
+  "key": "ncaaf:401856884",
+  "league": "ncaaf",
+  "gameId": "401856884",
+  "start": "2026-11-14T23:15Z",
+  "away": {
+   "abbr": "FLA",
+   "name": "Florida Gators"
+  },
+  "home": {
+   "abbr": "UK",
+   "name": "Kentucky Wildcats"
+  },
+  "rest": [
+   null,
+   null
+  ],
+  "espnPHome": 0.538,
+  "simPHome": 0.5888,
+  "rawPHome": 0.604,
+  "simMargin": 3.32,
+  "simScore": [
+   27.53,
+   30.84
+  ],
+  "simTotal": 58.37,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:22.433Z",
+    "pHome": 0.5744,
+    "margin": 3,
+    "total": 52.5
+   }
+  ],
+  "mkt": {
+   "line": "UK -3",
+   "total": 52.5,
+   "pHome": 0.5743850854197133,
+   "margin": 3
+  },
+  "loggedAt": "2026-11-14T08:56:22.433Z",
+  "result": null
+ },
+ "ncaaf:401856858": {
+  "key": "ncaaf:401856858",
+  "league": "ncaaf",
+  "gameId": "401856858",
+  "start": "2026-11-15T00:00Z",
+  "away": {
+   "abbr": "BAY",
+   "name": "Baylor Bears"
+  },
+  "home": {
+   "abbr": "BYU",
+   "name": "BYU Cougars"
+  },
+  "rest": [
+   null,
+   null
+  ],
+  "espnPHome": 0.685,
+  "simPHome": 0.6673,
+  "rawPHome": 0.694,
+  "simMargin": 6.27,
+  "simScore": [
+   21.31,
+   27.58
+  ],
+  "simTotal": 48.88,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:22.495Z",
+    "pHome": 0.7028,
+    "margin": 8.5,
+    "total": 50.5
+   }
+  ],
+  "mkt": {
+   "line": "BYU -8.5",
+   "total": 50.5,
+   "pHome": 0.7027652261936193,
+   "margin": 8.5
+  },
+  "loggedAt": "2026-11-14T08:56:22.495Z",
+  "result": null
+ },
+ "ncaaf:401858298": {
+  "key": "ncaaf:401858298",
+  "league": "ncaaf",
+  "gameId": "401858298",
+  "start": "2026-11-15T00:00Z",
+  "away": {
+   "abbr": "LOU",
+   "name": "Louisville Cardinals"
+  },
+  "home": {
+   "abbr": "UNC",
+   "name": "North Carolina Tar Heels"
+  },
+  "rest": [
+   null,
+   null
+  ],
+  "espnPHome": 0.4,
+  "simPHome": 0.4216,
+  "rawPHome": 0.408,
+  "simMargin": -3.06,
+  "simScore": [
+   31.27,
+   28.21
+  ],
+  "simTotal": 59.49,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:22.559Z",
+    "pHome": 0.4134,
+    "margin": -3.5,
+    "total": 57.5
+   }
+  ],
+  "mkt": {
+   "line": "LOU -3.5",
+   "total": 57.5,
+   "pHome": 0.41339179883910926,
+   "margin": -3.5
+  },
+  "loggedAt": "2026-11-14T08:56:22.559Z",
+  "result": null
+ },
+ "ncaaf:401858524": {
+  "key": "ncaaf:401858524",
+  "league": "ncaaf",
+  "gameId": "401858524",
+  "start": "2026-11-15T00:00Z",
+  "away": {
+   "abbr": "MINN",
+   "name": "Minnesota Golden Gophers"
+  },
+  "home": {
+   "abbr": "PSU",
+   "name": "Penn State Nittany Lions"
+  },
+  "rest": [
+   null,
+   null
+  ],
+  "espnPHome": 0.835,
+  "simPHome": 0.8052,
+  "rawPHome": 0.8415,
+  "simMargin": 11.6,
+  "simScore": [
+   17.32,
+   28.93
+  ],
+  "simTotal": 46.25,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:22.623Z",
+    "pHome": 0.7647,
+    "margin": 11.5,
+    "total": 42.5
+   }
+  ],
+  "mkt": {
+   "line": "PSU -11.5",
+   "total": 42.5,
+   "pHome": 0.764702538243754,
+   "margin": 11.5
+  },
+  "loggedAt": "2026-11-14T08:56:22.623Z",
+  "result": null
+ },
+ "ncaaf:401864538": {
+  "key": "ncaaf:401864538",
+  "league": "ncaaf",
+  "gameId": "401864538",
+  "start": "2026-11-15T00:00Z",
+  "away": {
+   "abbr": "SJSU",
+   "name": "San José State Spartans"
+  },
+  "home": {
+   "abbr": "AFA",
+   "name": "Air Force Falcons"
+  },
+  "rest": [
+   null,
+   null
+  ],
+  "espnPHome": 0.807,
+  "simPHome": 0.784,
+  "rawPHome": 0.82,
+  "simMargin": 10.44,
+  "simScore": [
+   18.74,
+   29.18
+  ],
+  "simTotal": 47.92,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:22.687Z",
+    "pHome": 0.8018,
+    "margin": 13.5,
+    "total": 48.5
+   }
+  ],
+  "mkt": {
+   "line": "AF -13.5",
+   "total": 48.5,
+   "pHome": 0.8018363791419605,
+   "margin": 13.5
+  },
+  "loggedAt": "2026-11-14T08:56:22.687Z",
+  "result": null
+ },
+ "ncaaf:401871100": {
+  "key": "ncaaf:401871100",
+  "league": "ncaaf",
+  "gameId": "401871100",
+  "start": "2026-11-15T00:00Z",
+  "away": {
+   "abbr": "TROY",
+   "name": "Troy Trojans"
+  },
+  "home": {
+   "abbr": "USA",
+   "name": "South Alabama Jaguars"
+  },
+  "rest": [
+   null,
+   null
+  ],
+  "espnPHome": 0.584,
+  "simPHome": 0.647,
+  "rawPHome": 0.671,
+  "simMargin": 5.28,
+  "simScore": [
+   27.59,
+   32.87
+  ],
+  "simTotal": 60.46,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:22.749Z",
+    "pHome": 0.5744,
+    "margin": 3,
+    "total": 55.5
+   }
+  ],
+  "mkt": {
+   "line": "USA -3",
+   "total": 55.5,
+   "pHome": 0.5743850854197133,
+   "margin": 3
+  },
+  "loggedAt": "2026-11-14T08:56:22.749Z",
+  "result": null
+ },
+ "ncaaf:401862826": {
+  "key": "ncaaf:401862826",
+  "league": "ncaaf",
+  "gameId": "401862826",
+  "start": "2026-11-15T00:15Z",
+  "away": {
+   "abbr": "FAU",
+   "name": "Florida Atlantic Owls"
+  },
+  "home": {
+   "abbr": "TLSA",
+   "name": "Tulsa Golden Hurricane"
+  },
+  "rest": [
+   null,
+   null
+  ],
+  "espnPHome": 0.766,
+  "simPHome": 0.7087,
+  "rawPHome": 0.74,
+  "simMargin": 8.2,
+  "simScore": [
+   32.66,
+   40.86
+  ],
+  "simTotal": 73.53,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:22.814Z",
+    "pHome": 0.6579,
+    "margin": 6.5,
+    "total": 73.5
+   }
+  ],
+  "mkt": {
+   "line": "TLSA -6.5",
+   "total": 73.5,
+   "pHome": 0.6579049670932782,
+   "margin": 6.5
+  },
+  "loggedAt": "2026-11-14T08:56:22.814Z",
+  "result": null
+ },
+ "ncaaf:401856885": {
+  "key": "ncaaf:401856885",
+  "league": "ncaaf",
+  "gameId": "401856885",
+  "start": "2026-11-15T00:30Z",
+  "away": {
+   "abbr": "TEX",
+   "name": "Texas Longhorns"
+  },
+  "home": {
+   "abbr": "LSU",
+   "name": "LSU Tigers"
+  },
+  "rest": [
+   null,
+   null
+  ],
+  "espnPHome": 0.526,
+  "simPHome": 0.6077,
+  "rawPHome": 0.626,
+  "simMargin": 3.83,
+  "simScore": [
+   21.95,
+   25.78
+  ],
+  "simTotal": 47.74,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:22.878Z",
+    "pHome": 0.6108,
+    "margin": 4.5,
+    "total": 46.5
+   }
+  ],
+  "mkt": {
+   "line": "LSU -4.5",
+   "total": 46.5,
+   "pHome": 0.6108046615917744,
+   "margin": 4.5
+  },
+  "loggedAt": "2026-11-14T08:56:22.878Z",
+  "result": null
+ },
+ "ncaaf:401858519": {
+  "key": "ncaaf:401858519",
+  "league": "ncaaf",
+  "gameId": "401858519",
+  "start": "2026-11-15T00:30Z",
+  "away": {
+   "abbr": "PUR",
+   "name": "Purdue Boilermakers"
+  },
+  "home": {
+   "abbr": "IOWA",
+   "name": "Iowa Hawkeyes"
+  },
+  "rest": [
+   null,
+   null
+  ],
+  "espnPHome": 0.87,
+  "simPHome": 0.9001,
+  "rawPHome": 0.93,
+  "simMargin": 18.42,
+  "simScore": [
+   15.82,
+   34.24
+  ],
+  "simTotal": 50.06,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:22.940Z",
+    "pHome": 0.8651,
+    "margin": 17.5,
+    "total": 47.5
+   }
+  ],
+  "mkt": {
+   "line": "IOWA -17.5",
+   "total": 47.5,
+   "pHome": 0.8650590691295024,
+   "margin": 17.5
+  },
+  "loggedAt": "2026-11-14T08:56:22.940Z",
+  "result": null
+ },
+ "ncaaf:401858299": {
+  "key": "ncaaf:401858299",
+  "league": "ncaaf",
+  "gameId": "401858299",
+  "start": "2026-11-15T00:30Z",
+  "away": {
+   "abbr": "STAN",
+   "name": "Stanford Cardinal"
+  },
+  "home": {
+   "abbr": "VT",
+   "name": "Virginia Tech Hokies"
+  },
+  "rest": [
+   null,
+   null
+  ],
+  "espnPHome": 0.905,
+  "simPHome": 0.8823,
+  "rawPHome": 0.9145,
+  "simMargin": 16.66,
+  "simScore": [
+   21.26,
+   37.92
+  ],
+  "simTotal": 59.18,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:23.004Z",
+    "pHome": 0.8353,
+    "margin": 15.5,
+    "total": 57.5
+   }
+  ],
+  "mkt": {
+   "line": "VT -15.5",
+   "total": 57.5,
+   "pHome": 0.8353314082918077,
+   "margin": 15.5
+  },
+  "loggedAt": "2026-11-14T08:56:23.004Z",
+  "result": null
+ },
+ "ncaaf:401864539": {
+  "key": "ncaaf:401864539",
+  "league": "ncaaf",
+  "gameId": "401864539",
+  "start": "2026-11-15T00:30Z",
+  "away": {
+   "abbr": "UNLV",
+   "name": "UNLV Rebels"
+  },
+  "home": {
+   "abbr": "UNM",
+   "name": "New Mexico Lobos"
+  },
+  "rest": [
+   null,
+   null
+  ],
+  "espnPHome": 0.868,
+  "simPHome": 0.9007,
+  "rawPHome": 0.9305,
+  "simMargin": 18.34,
+  "simScore": [
+   15.69,
+   34.03
+  ],
+  "simTotal": 49.72,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:23.067Z",
+    "pHome": 0.8507,
+    "margin": 16.5,
+    "total": 46.5
+   }
+  ],
+  "mkt": {
+   "line": "UNM -16.5",
+   "total": 46.5,
+   "pHome": 0.8506694397134258,
+   "margin": 16.5
+  },
+  "loggedAt": "2026-11-14T08:56:23.067Z",
+  "result": null
+ },
+ "ncaaf:401856882": {
+  "key": "ncaaf:401856882",
+  "league": "ncaaf",
+  "gameId": "401856882",
+  "start": "2026-11-15T00:45Z",
+  "away": {
+   "abbr": "SC",
+   "name": "South Carolina Gamecocks"
+  },
+  "home": {
+   "abbr": "ARK",
+   "name": "Arkansas Razorbacks"
+  },
+  "rest": [
+   null,
+   null
+  ],
+  "espnPHome": 0.228,
+  "simPHome": 0.2972,
+  "rawPHome": 0.2665,
+  "simMargin": -7.49,
+  "simScore": [
+   31.43,
+   23.94
+  ],
+  "simTotal": 55.37,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:23.140Z",
+    "pHome": 0.3193,
+    "margin": -7.5,
+    "total": 51.5
+   }
+  ],
+  "mkt": {
+   "line": "SC -7.5",
+   "total": 51.5,
+   "pHome": 0.31934880799974574,
+   "margin": -7.5
+  },
+  "loggedAt": "2026-11-14T08:56:23.140Z",
+  "result": null
+ },
+ "ncaaf:401862827": {
+  "key": "ncaaf:401862827",
+  "league": "ncaaf",
+  "gameId": "401862827",
+  "start": "2026-11-15T02:00Z",
+  "away": {
+   "abbr": "UNT",
+   "name": "North Texas Mean Green"
+  },
+  "home": {
+   "abbr": "UTSA",
+   "name": "UTSA Roadrunners"
+  },
+  "rest": [
+   null,
+   null
+  ],
+  "espnPHome": 0.368,
+  "simPHome": 0.3649,
+  "rawPHome": 0.3425,
+  "simMargin": -4.89,
+  "simScore": [
+   44.06,
+   39.17
+  ],
+  "simTotal": 83.22,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:23.206Z",
+    "pHome": 0.4379,
+    "margin": -2.5,
+    "total": 76.5
+   }
+  ],
+  "mkt": {
+   "line": "UNT -2.5",
+   "total": 76.5,
+   "pHome": 0.4379066952354649,
+   "margin": -2.5
+  },
+  "loggedAt": "2026-11-14T08:56:23.206Z",
+  "result": null
+ },
+ "ncaaf:401856863": {
+  "key": "ncaaf:401856863",
+  "league": "ncaaf",
+  "gameId": "401856863",
+  "start": "2026-11-15T02:30Z",
+  "away": {
+   "abbr": "TTU",
+   "name": "Texas Tech Red Raiders"
+  },
+  "home": {
+   "abbr": "OKST",
+   "name": "Oklahoma State Cowboys"
+  },
+  "rest": [
+   null,
+   null
+  ],
+  "espnPHome": 0.516,
+  "simPHome": 0.5043,
+  "rawPHome": 0.505,
+  "simMargin": 0.27,
+  "simScore": [
+   36.34,
+   36.61
+  ],
+  "simTotal": 72.96,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:23.270Z",
+    "pHome": 0.5866,
+    "margin": 3.5,
+    "total": 73.5
+   }
+  ],
+  "mkt": {
+   "line": "OKST -3.5",
+   "total": 73.5,
+   "pHome": 0.5866082011608907,
+   "margin": 3.5
+  },
+  "loggedAt": "2026-11-14T08:56:23.270Z",
+  "result": null
+ },
+ "ncaaf:401860915": {
+  "key": "ncaaf:401860915",
+  "league": "ncaaf",
+  "gameId": "401860915",
+  "start": "2026-11-15T02:30Z",
+  "away": {
+   "abbr": "USU",
+   "name": "Utah State Aggies"
+  },
+  "home": {
+   "abbr": "SDSU",
+   "name": "San Diego State Aztecs"
+  },
+  "rest": [
+   null,
+   null
+  ],
+  "espnPHome": 0.448,
+  "simPHome": 0.4694,
+  "rawPHome": 0.464,
+  "simMargin": -1.1,
+  "simScore": [
+   21.35,
+   20.25
+  ],
+  "simTotal": 41.59,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:23.332Z",
+    "pHome": 0.4379,
+    "margin": -2.5,
+    "total": 44.5
+   }
+  ],
+  "mkt": {
+   "line": "USU -2.5",
+   "total": 44.5,
+   "pHome": 0.4379066952354649,
+   "margin": -2.5
+  },
+  "loggedAt": "2026-11-14T08:56:23.332Z",
+  "result": null
+ },
+ "ncaaf:401864540": {
+  "key": "ncaaf:401864540",
+  "league": "ncaaf",
+  "gameId": "401864540",
+  "start": "2026-11-15T03:00Z",
+  "away": {
+   "abbr": "WYO",
+   "name": "Wyoming Cowboys"
+  },
+  "home": {
+   "abbr": "UTEP",
+   "name": "UTEP Miners"
+  },
+  "rest": [
+   null,
+   null
+  ],
+  "espnPHome": 0.214,
+  "simPHome": 0.2228,
+  "rawPHome": 0.187,
+  "simMargin": -10.32,
+  "simScore": [
+   27.17,
+   16.85
+  ],
+  "simTotal": 44.01,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:23.396Z",
+    "pHome": 0.3306,
+    "margin": -7,
+    "total": 40.5
+   }
+  ],
+  "mkt": {
+   "line": "WYO -7",
+   "total": 40.5,
+   "pHome": 0.3306471818593226,
+   "margin": -7
+  },
+  "loggedAt": "2026-11-14T08:56:23.396Z",
+  "result": null
+ },
+ "ncaaf:401856864": {
+  "key": "ncaaf:401856864",
+  "league": "ncaaf",
+  "gameId": "401856864",
+  "start": "2026-11-15T03:30Z",
+  "away": {
+   "abbr": "UTAH",
+   "name": "Utah Utes"
+  },
+  "home": {
+   "abbr": "ARIZ",
+   "name": "Arizona Wildcats"
+  },
+  "rest": [
+   null,
+   null
+  ],
+  "espnPHome": 0.396,
+  "simPHome": 0.384,
+  "rawPHome": 0.3645,
+  "simMargin": -4.28,
+  "simScore": [
+   30.56,
+   26.28
+  ],
+  "simTotal": 56.85,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:23.459Z",
+    "pHome": 0.4627,
+    "margin": -1.5,
+    "total": 55.5
+   }
+  ],
+  "mkt": {
+   "line": "UTAH -1.5",
+   "total": 55.5,
+   "pHome": 0.4626514174220434,
+   "margin": -1.5
+  },
+  "loggedAt": "2026-11-14T08:56:23.459Z",
+  "result": null
+ },
+ "ncaaf:401860917": {
+  "key": "ncaaf:401860917",
+  "league": "ncaaf",
+  "gameId": "401860917",
+  "start": "2026-11-15T03:30Z",
+  "away": {
+   "abbr": "CSU",
+   "name": "Colorado State Rams"
+  },
+  "home": {
+   "abbr": "WSU",
+   "name": "Washington State Cougars"
+  },
+  "rest": [
+   null,
+   null
+  ],
+  "espnPHome": 0.703,
+  "simPHome": 0.7215,
+  "rawPHome": 0.754,
+  "simMargin": 8.19,
+  "simScore": [
+   30.23,
+   38.41
+  ],
+  "simTotal": 68.64,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:23.524Z",
+    "pHome": 0.7242,
+    "margin": 9.5,
+    "total": 65.5
+   }
+  ],
+  "mkt": {
+   "line": "WSU -9.5",
+   "total": 65.5,
+   "pHome": 0.7241824948510582,
+   "margin": 9.5
+  },
+  "loggedAt": "2026-11-14T08:56:23.524Z",
+  "result": null
+ },
+ "ncaaf:401864537": {
+  "key": "ncaaf:401864537",
+  "league": "ncaaf",
+  "gameId": "401864537",
+  "start": "2026-11-15T04:00Z",
+  "away": {
+   "abbr": "NDSU",
+   "name": "North Dakota State Bison"
+  },
+  "home": {
+   "abbr": "HAW",
+   "name": "Hawai'i Rainbow Warriors"
+  },
+  "rest": [
+   null,
+   null
+  ],
+  "espnPHome": 0.329,
+  "simPHome": 0.2185,
+  "rawPHome": 0.1825,
+  "simMargin": -9.89,
+  "simScore": [
+   24.65,
+   14.75
+  ],
+  "simTotal": 39.4,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:23.598Z",
+    "pHome": 0.3306,
+    "margin": -7,
+    "total": 38.5
+   }
+  ],
+  "mkt": {
+   "line": "NDSU -7",
+   "total": 38.5,
+   "pHome": 0.3306471818593226,
+   "margin": -7
+  },
+  "loggedAt": "2026-11-14T08:56:23.598Z",
+  "result": null
+ },
+ "ncaaf:401856887": {
+  "key": "ncaaf:401856887",
+  "league": "ncaaf",
+  "gameId": "401856887",
+  "start": "2026-11-15T18:00Z",
+  "away": {
+   "abbr": "MISS",
+   "name": "Ole Miss Rebels"
+  },
+  "home": {
+   "abbr": "OU",
+   "name": "Oklahoma Sooners"
+  },
+  "rest": [
+   null,
+   null
+  ],
+  "espnPHome": 0.427,
+  "simPHome": 0.4639,
+  "rawPHome": 0.4575,
+  "simMargin": -1.06,
+  "simScore": [
+   25.15,
+   24.09
+  ],
+  "simTotal": 49.24,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:23.663Z",
+    "pHome": 0.5621,
+    "margin": 2.5,
+    "total": 49.5
+   }
+  ],
+  "mkt": {
+   "line": "OU -2.5",
+   "total": 49.5,
+   "pHome": 0.5620933047645351,
+   "margin": 2.5
+  },
+  "loggedAt": "2026-11-14T08:56:23.663Z",
+  "result": null
+ },
+ "ncaab:401919004": {
+  "key": "ncaab:401919004",
+  "league": "ncaab",
+  "gameId": "401919004",
+  "start": "2026-11-14T17:00Z",
+  "away": {
+   "abbr": "TULN",
+   "name": "Tulane Green Wave"
+  },
+  "home": {
+   "abbr": "AKR",
+   "name": "Akron Zips"
+  },
+  "rest": [
+   null,
+   null
+  ],
+  "espnPHome": 0.848,
+  "simPHome": 0.9018,
+  "rawPHome": 0.873,
+  "simMargin": 15.54,
+  "simScore": [
+   76.03,
+   91.57
+  ],
+  "simTotal": 167.6,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:23.691Z",
+    "pHome": 0.8743,
+    "margin": 12.5,
+    "total": 155.5
+   }
+  ],
+  "mkt": {
+   "line": "AKR -12.5",
+   "total": 155.5,
+   "pHome": 0.8743274203056427,
+   "margin": 12.5
+  },
+  "loggedAt": "2026-11-14T08:56:23.691Z",
+  "result": null
+ },
+ "ncaab:401919847": {
+  "key": "ncaab:401919847",
+  "league": "ncaab",
+  "gameId": "401919847",
+  "start": "2026-11-14T18:00Z",
+  "away": {
+   "abbr": "STO",
+   "name": "Stonehill Skyhawks"
+  },
+  "home": {
+   "abbr": "TTU",
+   "name": "Texas Tech Red Raiders"
+  },
+  "rest": [
+   null,
+   null
+  ],
+  "espnPHome": 0.996,
+  "simPHome": 0.9806,
+  "rawPHome": 0.968,
+  "simMargin": 25.36,
+  "simScore": [
+   54.64,
+   80
+  ],
+  "simTotal": 134.64,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:23.708Z",
+    "pHome": 1,
+    "margin": 40.5,
+    "total": 142.5
+   }
+  ],
+  "mkt": {
+   "line": "TTU -40.5",
+   "total": 142.5,
+   "pHome": 0.9999553265202468,
+   "margin": 40.5
+  },
+  "loggedAt": "2026-11-14T08:56:23.708Z",
+  "result": null
+ },
+ "ncaab:401923303": {
+  "key": "ncaab:401923303",
+  "league": "ncaab",
+  "gameId": "401923303",
+  "start": "2026-11-14T18:00Z",
+  "away": {
+   "abbr": "DREX",
+   "name": "Drexel Dragons"
+  },
+  "home": {
+   "abbr": "ME",
+   "name": "Maine Black Bears"
+  },
+  "rest": [
+   2,
+   null
+  ],
+  "espnPHome": 0.47,
+  "simPHome": 0.4989,
+  "rawPHome": 0.499,
+  "simMargin": 0.18,
+  "simScore": [
+   64.7,
+   64.88
+  ],
+  "simTotal": 129.58,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:23.725Z",
+    "pHome": 0.341,
+    "margin": -4.5,
+    "total": 130.5
+   }
+  ],
+  "mkt": {
+   "line": "DREX -4.5",
+   "total": 130.5,
+   "pHome": 0.34104837751450146,
+   "margin": -4.5
+  },
+  "loggedAt": "2026-11-14T08:56:23.725Z",
+  "result": null
+ },
+ "ncaab:401922031": {
+  "key": "ncaab:401922031",
+  "league": "ncaab",
+  "gameId": "401922031",
+  "start": "2026-11-14T18:00Z",
+  "away": {
+   "abbr": "MONT",
+   "name": "Montana Grizzlies"
+  },
+  "home": {
+   "abbr": "UND",
+   "name": "North Dakota Fighting Hawks"
+  },
+  "rest": [
+   null,
+   null
+  ],
+  "espnPHome": 0.377,
+  "simPHome": 0.3392,
+  "rawPHome": 0.359,
+  "simMargin": -4.65,
+  "simScore": [
+   78.89,
+   74.25
+  ],
+  "simTotal": 153.14,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:23.746Z",
+    "pHome": 0.5542,
+    "margin": 1.5,
+    "total": 150.5
+   }
+  ],
+  "mkt": {
+   "line": "UND -1.5",
+   "total": 150.5,
+   "pHome": 0.5542406163999178,
+   "margin": 1.5
+  },
+  "loggedAt": "2026-11-14T08:56:23.746Z",
+  "result": null
+ },
+ "ncaab:401920750": {
+  "key": "ncaab:401920750",
+  "league": "ncaab",
+  "gameId": "401920750",
+  "start": "2026-11-14T18:00Z",
+  "away": {
+   "abbr": "MRSH",
+   "name": "Marshall Thundering Herd"
+  },
+  "home": {
+   "abbr": "YSU",
+   "name": "Youngstown State Penguins"
+  },
+  "rest": [
+   null,
+   null
+  ],
+  "espnPHome": 0.543,
+  "simPHome": 0.5351,
+  "rawPHome": 0.5305,
+  "simMargin": 0.84,
+  "simScore": [
+   78.46,
+   79.3
+  ],
+  "simTotal": 157.76,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:23.764Z",
+    "pHome": 0.4458,
+    "margin": -1.5,
+    "total": 159.5
+   }
+  ],
+  "mkt": {
+   "line": "MRSH -1.5",
+   "total": 159.5,
+   "pHome": 0.44575938360008216,
+   "margin": -1.5
+  },
+  "loggedAt": "2026-11-14T08:56:23.764Z",
+  "result": null
+ },
+ "ncaab:401920074": {
+  "key": "ncaab:401920074",
+  "league": "ncaab",
+  "gameId": "401920074",
+  "start": "2026-11-14T18:00Z",
+  "away": {
+   "abbr": "BRAD",
+   "name": "Bradley Braves"
+  },
+  "home": {
+   "abbr": "GMU",
+   "name": "George Mason Patriots"
+  },
+  "rest": [
+   1,
+   1
+  ],
+  "espnPHome": 0.793,
+  "simPHome": 0.7222,
+  "rawPHome": 0.6965,
+  "simMargin": 6.33,
+  "simScore": [
+   61.66,
+   67.99
+  ],
+  "simTotal": 129.65,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:23.785Z",
+    "pHome": 0.8926,
+    "margin": 13.5,
+    "total": 128.5
+   }
+  ],
+  "mkt": {
+   "line": "GMU -13.5",
+   "total": 128.5,
+   "pHome": 0.8926437207785982,
+   "margin": 13.5
+  },
+  "loggedAt": "2026-11-14T08:56:23.785Z",
+  "result": null
+ },
+ "ncaab:401912229": {
+  "key": "ncaab:401912229",
+  "league": "ncaab",
+  "gameId": "401912229",
+  "start": "2026-11-14T18:00Z",
+  "away": {
+   "abbr": "STMN",
+   "name": "St. Thomas Tommies"
+  },
+  "home": {
+   "abbr": "ARMY",
+   "name": "Army Black Knights"
+  },
+  "rest": [
+   2,
+   null
+  ],
+  "espnPHome": 0.453,
+  "simPHome": 0.4925,
+  "rawPHome": 0.4935,
+  "simMargin": -0.37,
+  "simScore": [
+   78,
+   77.63
+  ],
+  "simTotal": 155.63,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:23.799Z",
+    "pHome": 0.2469,
+    "margin": -7.5,
+    "total": 148.5
+   }
+  ],
+  "mkt": {
+   "line": "STMN -7.5",
+   "total": 148.5,
+   "pHome": 0.2469314115116225,
+   "margin": -7.5
+  },
+  "loggedAt": "2026-11-14T08:56:23.799Z",
+  "result": null
+ },
+ "ncaab:401911231": {
+  "key": "ncaab:401911231",
+  "league": "ncaab",
+  "gameId": "401911231",
+  "start": "2026-11-14T18:30Z",
+  "away": {
+   "abbr": "LUC",
+   "name": "Loyola Chicago Ramblers"
+  },
+  "home": {
+   "abbr": "CSU",
+   "name": "Colorado State Rams"
+  },
+  "rest": [
+   2,
+   2
+  ],
+  "espnPHome": 0.843,
+  "simPHome": 0.8412,
+  "rawPHome": 0.81,
+  "simMargin": 11.24,
+  "simScore": [
+   68.79,
+   80.03
+  ],
+  "simTotal": 148.82,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:23.816Z",
+    "pHome": 0.8074,
+    "margin": 9.5,
+    "total": 151.5
+   }
+  ],
+  "mkt": {
+   "line": "CSU -9.5",
+   "total": 151.5,
+   "pHome": 0.8074133240442305,
+   "margin": 9.5
+  },
+  "loggedAt": "2026-11-14T08:56:23.816Z",
+  "result": null
+ },
+ "ncaab:401922230": {
+  "key": "ncaab:401922230",
+  "league": "ncaab",
+  "gameId": "401922230",
+  "start": "2026-11-14T19:00Z",
+  "away": {
+   "abbr": "WOF",
+   "name": "Wofford Terriers"
+  },
+  "home": {
+   "abbr": "QUC",
+   "name": "Queens University Royals"
+  },
+  "rest": [
+   2,
+   null
+  ],
+  "espnPHome": 0.752,
+  "simPHome": 0.6557,
+  "rawPHome": 0.6365,
+  "simMargin": 5.12,
+  "simScore": [
+   86.03,
+   91.15
+  ],
+  "simTotal": 177.18,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:23.832Z",
+    "pHome": 0.7531,
+    "margin": 7.5,
+    "total": 172.5
+   }
+  ],
+  "mkt": {
+   "line": "QUC -7.5",
+   "total": 172.5,
+   "pHome": 0.7530685884883774,
+   "margin": 7.5
+  },
+  "loggedAt": "2026-11-14T08:56:23.832Z",
+  "result": null
+ },
+ "ncaab:401922220": {
+  "key": "ncaab:401922220",
+  "league": "ncaab",
+  "gameId": "401922220",
+  "start": "2026-11-14T19:00Z",
+  "away": {
+   "abbr": "CIT",
+   "name": "The Citadel Bulldogs"
+  },
+  "home": {
+   "abbr": "UNF",
+   "name": "North Florida Ospreys"
+  },
+  "rest": [
+   null,
+   null
+  ],
+  "espnPHome": 0.623,
+  "simPHome": 0.3934,
+  "rawPHome": 0.407,
+  "simMargin": -3.59,
+  "simScore": [
+   79.98,
+   76.39
+  ],
+  "simTotal": 156.37,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:23.844Z",
+    "pHome": 0.659,
+    "margin": 4.5,
+    "total": 154.5
+   }
+  ],
+  "mkt": {
+   "line": "UNF -4.5",
+   "total": 154.5,
+   "pHome": 0.6589516224854985,
+   "margin": 4.5
+  },
+  "loggedAt": "2026-11-14T08:56:23.844Z",
+  "result": null
+ },
+ "ncaab:401921096": {
+  "key": "ncaab:401921096",
+  "league": "ncaab",
+  "gameId": "401921096",
+  "start": "2026-11-14T19:00Z",
+  "away": {
+   "abbr": "RICE",
+   "name": "Rice Owls"
+  },
+  "home": {
+   "abbr": "SFA",
+   "name": "Stephen F. Austin Lumberjacks"
+  },
+  "rest": [
+   null,
+   2
+  ],
+  "espnPHome": 0.829,
+  "simPHome": 0.91,
+  "rawPHome": 0.882,
+  "simMargin": 15.32,
+  "simScore": [
+   66.92,
+   82.25
+  ],
+  "simTotal": 149.17,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:23.856Z",
+    "pHome": 0.854,
+    "margin": 11.5,
+    "total": 148.5
+   }
+  ],
+  "mkt": {
+   "line": "SFA -11.5",
+   "total": 148.5,
+   "pHome": 0.8540231110938928,
+   "margin": 11.5
+  },
+  "loggedAt": "2026-11-14T08:56:23.856Z",
+  "result": null
+ },
+ "ncaab:401920915": {
+  "key": "ncaab:401920915",
+  "league": "ncaab",
+  "gameId": "401920915",
+  "start": "2026-11-14T19:00Z",
+  "away": {
+   "abbr": "NIU",
+   "name": "Northern Illinois Huskies"
+  },
+  "home": {
+   "abbr": "BELL",
+   "name": "Bellarmine Knights"
+  },
+  "rest": [
+   2,
+   2
+  ],
+  "espnPHome": 0.545,
+  "simPHome": 0.531,
+  "rawPHome": 0.527,
+  "simMargin": 0.89,
+  "simScore": [
+   78.07,
+   78.96
+  ],
+  "simTotal": 157.02,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:23.869Z",
+    "pHome": 0.5542,
+    "margin": 1.5,
+    "total": 150.5
+   }
+  ],
+  "mkt": {
+   "line": "BELL -1.5",
+   "total": 150.5,
+   "pHome": 0.5542406163999178,
+   "margin": 1.5
+  },
+  "loggedAt": "2026-11-14T08:56:23.869Z",
+  "result": null
+ },
+ "ncaab:401918993": {
+  "key": "ncaab:401918993",
+  "league": "ncaab",
+  "gameId": "401918993",
+  "start": "2026-11-14T19:00Z",
+  "away": {
+   "abbr": "COPP",
+   "name": "Coppin State Eagles"
+  },
+  "home": {
+   "abbr": "USF",
+   "name": "South Florida Bulls"
+  },
+  "rest": [
+   1,
+   2
+  ],
+  "espnPHome": 0.97,
+  "simPHome": 0.9773,
+  "rawPHome": 0.9635,
+  "simMargin": 23.66,
+  "simScore": [
+   64.63,
+   88.28
+  ],
+  "simTotal": 152.91,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:23.882Z",
+    "pHome": 0.9953,
+    "margin": 27.5,
+    "total": 150.5
+   }
+  ],
+  "mkt": {
+   "line": "USF -27.5",
+   "total": 150.5,
+   "pHome": 0.9953012469384213,
+   "margin": 27.5
+  },
+  "loggedAt": "2026-11-14T08:56:23.882Z",
+  "result": null
+ },
+ "ncaab:401911392": {
+  "key": "ncaab:401911392",
+  "league": "ncaab",
+  "gameId": "401911392",
+  "start": "2026-11-14T19:00Z",
+  "away": {
+   "abbr": "GWEB",
+   "name": "Gardner-Webb Runnin' Bulldogs"
+  },
+  "home": {
+   "abbr": "SC",
+   "name": "South Carolina Gamecocks"
+  },
+  "rest": [
+   2,
+   2
+  ],
+  "espnPHome": 0.978,
+  "simPHome": 0.9837,
+  "rawPHome": 0.9725,
+  "simMargin": 25.48,
+  "simScore": [
+   59.23,
+   84.71
+  ],
+  "simTotal": 143.94,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:23.896Z",
+    "pHome": 0.9937,
+    "margin": 26.5,
+    "total": 145.5
+   }
+  ],
+  "mkt": {
+   "line": "SC -26.5",
+   "total": 145.5,
+   "pHome": 0.9937475667655877,
+   "margin": 26.5
+  },
+  "loggedAt": "2026-11-14T08:56:23.896Z",
+  "result": null
+ },
+ "ncaab:401911015": {
+  "key": "ncaab:401911015",
+  "league": "ncaab",
+  "gameId": "401911015",
+  "start": "2026-11-14T19:00Z",
+  "away": {
+   "abbr": "M-OH",
+   "name": "Miami (OH) RedHawks"
+  },
+  "home": {
+   "abbr": "EVAN",
+   "name": "Evansville Purple Aces"
+  },
+  "rest": [
+   null,
+   null
+  ],
+  "espnPHome": 0.191,
+  "simPHome": 0.1964,
+  "rawPHome": 0.227,
+  "simMargin": -10.41,
+  "simScore": [
+   83.75,
+   73.34
+  ],
+  "simTotal": 157.08,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:23.908Z",
+    "pHome": 0.2188,
+    "margin": -8.5,
+    "total": 151.5
+   }
+  ],
+  "mkt": {
+   "line": "M-OH -8.5",
+   "total": 151.5,
+   "pHome": 0.21882933947103844,
+   "margin": -8.5
+  },
+  "loggedAt": "2026-11-14T08:56:23.908Z",
+  "result": null
+ },
+ "ncaab:401921038": {
+  "key": "ncaab:401921038",
+  "league": "ncaab",
+  "gameId": "401921038",
+  "start": "2026-11-14T19:30Z",
+  "away": {
+   "abbr": "JKST",
+   "name": "Jackson State Tigers"
+  },
+  "home": {
+   "abbr": "WIN",
+   "name": "Winthrop Eagles"
+  },
+  "rest": [
+   2,
+   null
+  ],
+  "espnPHome": 0.814,
+  "simPHome": 0.8878,
+  "rawPHome": 0.858,
+  "simMargin": 13.94,
+  "simScore": [
+   75.57,
+   89.51
+  ],
+  "simTotal": 165.07,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:23.920Z",
+    "pHome": 0.7531,
+    "margin": 7.5,
+    "total": 165.5
+   }
+  ],
+  "mkt": {
+   "line": "WIN -7.5",
+   "total": 165.5,
+   "pHome": 0.7530685884883774,
+   "margin": 7.5
+  },
+  "loggedAt": "2026-11-14T08:56:23.920Z",
+  "result": null
+ },
+ "ncaab:401924921": {
+  "key": "ncaab:401924921",
+  "league": "ncaab",
+  "gameId": "401924921",
+  "start": "2026-11-14T20:00Z",
+  "away": {
+   "abbr": "WYO",
+   "name": "Wyoming Cowboys"
+  },
+  "home": {
+   "abbr": "DEN",
+   "name": "Denver Pioneers"
+  },
+  "rest": [
+   null,
+   null
+  ],
+  "espnPHome": 0.379,
+  "simPHome": 0.3505,
+  "rawPHome": 0.369,
+  "simMargin": -4.06,
+  "simScore": [
+   77.53,
+   73.47
+  ],
+  "simTotal": 151,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:23.932Z",
+    "pHome": 0.2469,
+    "margin": -7.5,
+    "total": 148.5
+   }
+  ],
+  "mkt": {
+   "line": "WYO -7.5",
+   "total": 148.5,
+   "pHome": 0.2469314115116225,
+   "margin": -7.5
+  },
+  "loggedAt": "2026-11-14T08:56:23.932Z",
+  "result": null
+ },
+ "ncaab:401921689": {
+  "key": "ncaab:401921689",
+  "league": "ncaab",
+  "gameId": "401921689",
+  "start": "2026-11-14T20:30Z",
+  "away": {
+   "abbr": "LSU",
+   "name": "LSU Tigers"
+  },
+  "home": {
+   "abbr": "GONZ",
+   "name": "Gonzaga Bulldogs"
+  },
+  "rest": [
+   null,
+   null
+  ],
+  "espnPHome": 0.862,
+  "simPHome": 0.6808,
+  "rawPHome": 0.659,
+  "simMargin": 5.7,
+  "simScore": [
+   75.66,
+   81.36
+  ],
+  "simTotal": 157.02,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:23.953Z",
+    "pHome": 0.6918,
+    "margin": 5.5,
+    "total": 161.5
+   }
+  ],
+  "mkt": {
+   "line": "GONZ -5.5",
+   "total": 161.5,
+   "pHome": 0.6917914210056952,
+   "margin": 5.5
+  },
+  "loggedAt": "2026-11-14T08:56:23.953Z",
+  "result": null
+ },
+ "ncaab:401911016": {
+  "key": "ncaab:401911016",
+  "league": "ncaab",
+  "gameId": "401911016",
+  "start": "2026-11-14T20:30Z",
+  "away": {
+   "abbr": "CMU",
+   "name": "Central Michigan Chippewas"
+  },
+  "home": {
+   "abbr": "NKU",
+   "name": "Northern Kentucky Norse"
+  },
+  "rest": [
+   null,
+   null
+  ],
+  "espnPHome": 0.635,
+  "simPHome": 0.4426,
+  "rawPHome": 0.45,
+  "simMargin": -1.41,
+  "simScore": [
+   83.73,
+   82.32
+  ],
+  "simTotal": 166.04,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:23.969Z",
+    "pHome": 0.6249,
+    "margin": 3.5,
+    "total": 162.5
+   }
+  ],
+  "mkt": {
+   "line": "NKU -3.5",
+   "total": 162.5,
+   "pHome": 0.6249180828608419,
+   "margin": 3.5
+  },
+  "loggedAt": "2026-11-14T08:56:23.969Z",
+  "result": null
+ },
+ "ncaab:401928804": {
+  "key": "ncaab:401928804",
+  "league": "ncaab",
+  "gameId": "401928804",
+  "start": "2026-11-14T21:00Z",
+  "away": {
+   "abbr": "TOL",
+   "name": "Toledo Rockets"
+  },
+  "home": {
+   "abbr": "DETM",
+   "name": "Detroit Mercy Titans"
+  },
+  "rest": [
+   null,
+   null
+  ],
+  "espnPHome": 0.226,
+  "simPHome": 0.1769,
+  "rawPHome": 0.208,
+  "simMargin": -10.31,
+  "simScore": [
+   79.7,
+   69.39
+  ],
+  "simTotal": 149.08,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:23.986Z",
+    "pHome": 0.146,
+    "margin": -11.5,
+    "total": 153.5
+   }
+  ],
+  "mkt": {
+   "line": "TOL -11.5",
+   "total": 153.5,
+   "pHome": 0.14597688890610716,
+   "margin": -11.5
+  },
+  "loggedAt": "2026-11-14T08:56:23.986Z",
+  "result": null
+ },
+ "ncaab:401925889": {
+  "key": "ncaab:401925889",
+  "league": "ncaab",
+  "gameId": "401925889",
+  "start": "2026-11-14T21:00Z",
+  "away": {
+   "abbr": "SDST",
+   "name": "South Dakota State Jackrabbits"
+  },
+  "home": {
+   "abbr": "UNCO",
+   "name": "Northern Colorado Bears"
+  },
+  "rest": [
+   2,
+   null
+  ],
+  "espnPHome": 0.489,
+  "simPHome": 0.619,
+  "rawPHome": 0.604,
+  "simMargin": 3.2,
+  "simScore": [
+   74.12,
+   77.32
+  ],
+  "simTotal": 151.44,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:24.003Z",
+    "pHome": 0.341,
+    "margin": -4.5,
+    "total": 151.5
+   }
+  ],
+  "mkt": {
+   "line": "SDST -4.5",
+   "total": 151.5,
+   "pHome": 0.34104837751450146,
+   "margin": -4.5
+  },
+  "loggedAt": "2026-11-14T08:56:24.003Z",
+  "result": null
+ },
+ "ncaab:401922046": {
+  "key": "ncaab:401922046",
+  "league": "ncaab",
+  "gameId": "401922046",
+  "start": "2026-11-14T21:00Z",
+  "away": {
+   "abbr": "LONG",
+   "name": "Longwood Lancers"
+  },
+  "home": {
+   "abbr": "ODU",
+   "name": "Old Dominion Monarchs"
+  },
+  "rest": [
+   null,
+   2
+  ],
+  "espnPHome": 0.715,
+  "simPHome": 0.5997,
+  "rawPHome": 0.587,
+  "simMargin": 3.15,
+  "simScore": [
+   73.94,
+   77.09
+  ],
+  "simTotal": 151.04,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:24.021Z",
+    "pHome": 0.7531,
+    "margin": 7.5,
+    "total": 138.5
+   }
+  ],
+  "mkt": {
+   "line": "ODU -7.5",
+   "total": 138.5,
+   "pHome": 0.7530685884883774,
+   "margin": 7.5
+  },
+  "loggedAt": "2026-11-14T08:56:24.021Z",
+  "result": null
+ },
+ "ncaab:401921221": {
+  "key": "ncaab:401921221",
+  "league": "ncaab",
+  "gameId": "401921221",
+  "start": "2026-11-14T21:00Z",
+  "away": {
+   "abbr": "HAMP",
+   "name": "Hampton Pirates"
+  },
+  "home": {
+   "abbr": "NAVY",
+   "name": "Navy Midshipmen"
+  },
+  "rest": [
+   null,
+   2
+  ],
+  "espnPHome": 0.732,
+  "simPHome": 0.7493,
+  "rawPHome": 0.7215,
+  "simMargin": 7.49,
+  "simScore": [
+   62.44,
+   69.92
+  ],
+  "simTotal": 132.36,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:24.033Z",
+    "pHome": 0.5542,
+    "margin": 1.5,
+    "total": 138.5
+   }
+  ],
+  "mkt": {
+   "line": "NAVY -1.5",
+   "total": 138.5,
+   "pHome": 0.5542406163999178,
+   "margin": 1.5
+  },
+  "loggedAt": "2026-11-14T08:56:24.033Z",
+  "result": null
+ },
+ "ncaab:401920307": {
+  "key": "ncaab:401920307",
+  "league": "ncaab",
+  "gameId": "401920307",
+  "start": "2026-11-14T21:00Z",
+  "away": {
+   "abbr": "UNCA",
+   "name": "UNC Asheville Bulldogs"
+  },
+  "home": {
+   "abbr": "GT",
+   "name": "Georgia Tech Yellow Jackets"
+  },
+  "rest": [
+   2,
+   null
+  ],
+  "espnPHome": 0.872,
+  "simPHome": 0.8246,
+  "rawPHome": 0.7935,
+  "simMargin": 11.1,
+  "simScore": [
+   72.1,
+   83.2
+  ],
+  "simTotal": 155.29,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:24.045Z",
+    "pHome": 0.9363,
+    "margin": 16.5,
+    "total": 153.5
+   }
+  ],
+  "mkt": {
+   "line": "GT -16.5",
+   "total": 153.5,
+   "pHome": 0.9362520528769038,
+   "margin": 16.5
+  },
+  "loggedAt": "2026-11-14T08:56:24.045Z",
+  "result": null
+ },
+ "ncaab:401918979": {
+  "key": "ncaab:401918979",
+  "league": "ncaab",
+  "gameId": "401918979",
+  "start": "2026-11-14T21:00Z",
+  "away": {
+   "abbr": "DSU",
+   "name": "Delaware State Hornets"
+  },
+  "home": {
+   "abbr": "ECU",
+   "name": "East Carolina Pirates"
+  },
+  "rest": [
+   null,
+   2
+  ],
+  "espnPHome": 0.847,
+  "simPHome": 0.7749,
+  "rawPHome": 0.7455,
+  "simMargin": 8.58,
+  "simScore": [
+   66,
+   74.58
+  ],
+  "simTotal": 140.59,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:24.057Z",
+    "pHome": 0.9363,
+    "margin": 16.5,
+    "total": 147.5
+   }
+  ],
+  "mkt": {
+   "line": "ECU -16.5",
+   "total": 147.5,
+   "pHome": 0.9362520528769038,
+   "margin": 16.5
+  },
+  "loggedAt": "2026-11-14T08:56:24.057Z",
+  "result": null
+ },
+ "ncaab:401911264": {
+  "key": "ncaab:401911264",
+  "league": "ncaab",
+  "gameId": "401911264",
+  "start": "2026-11-14T21:00Z",
+  "away": {
+   "abbr": "LAF",
+   "name": "Lafayette Leopards"
+  },
+  "home": {
+   "abbr": "SBU",
+   "name": "St. Bonaventure Bonnies"
+  },
+  "rest": [
+   null,
+   2
+  ],
+  "espnPHome": 0.894,
+  "simPHome": 0.9036,
+  "rawPHome": 0.875,
+  "simMargin": 14.74,
+  "simScore": [
+   65.13,
+   79.87
+  ],
+  "simTotal": 145,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:24.069Z",
+    "pHome": 0.9235,
+    "margin": 15.5,
+    "total": 139.5
+   }
+  ],
+  "mkt": {
+   "line": "SBU -15.5",
+   "total": 139.5,
+   "pHome": 0.9235231487319524,
+   "margin": 15.5
+  },
+  "loggedAt": "2026-11-14T08:56:24.069Z",
+  "result": null
+ },
+ "ncaab:401909728": {
+  "key": "ncaab:401909728",
+  "league": "ncaab",
+  "gameId": "401909728",
+  "start": "2026-11-14T21:00Z",
+  "away": {
+   "abbr": "SUU",
+   "name": "Southern Utah Thunderbirds"
+  },
+  "home": {
+   "abbr": "WAKE",
+   "name": "Wake Forest Demon Deacons"
+  },
+  "rest": [
+   1,
+   null
+  ],
+  "espnPHome": 0.845,
+  "simPHome": 0.7008,
+  "rawPHome": 0.677,
+  "simMargin": 6.08,
+  "simScore": [
+   77.43,
+   83.51
+  ],
+  "simTotal": 160.95,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:24.082Z",
+    "pHome": 0.9568,
+    "margin": 18.5,
+    "total": 156.5
+   }
+  ],
+  "mkt": {
+   "line": "WAKE -18.5",
+   "total": 156.5,
+   "pHome": 0.9568409514236293,
+   "margin": 18.5
+  },
+  "loggedAt": "2026-11-14T08:56:24.082Z",
+  "result": null
+ },
+ "ncaab:401920741": {
+  "key": "ncaab:401920741",
+  "league": "ncaab",
+  "gameId": "401920741",
+  "start": "2026-11-14T21:30Z",
+  "away": {
+   "abbr": "UPST",
+   "name": "South Carolina Upstate Spartans"
+  },
+  "home": {
+   "abbr": "CAM",
+   "name": "Campbell Fighting Camels"
+  },
+  "rest": [
+   2,
+   2
+  ],
+  "espnPHome": 0.701,
+  "simPHome": 0.6808,
+  "rawPHome": 0.659,
+  "simMargin": 5.49,
+  "simScore": [
+   71.46,
+   76.95
+  ],
+  "simTotal": 148.4,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:24.094Z",
+    "pHome": 0.7812,
+    "margin": 8.5,
+    "total": 147.5
+   }
+  ],
+  "mkt": {
+   "line": "CAM -8.5",
+   "total": 147.5,
+   "pHome": 0.7811706605289616,
+   "margin": 8.5
+  },
+  "loggedAt": "2026-11-14T08:56:24.094Z",
+  "result": null
+ },
+ "ncaab:401927387": {
+  "key": "ncaab:401927387",
+  "league": "ncaab",
+  "gameId": "401927387",
+  "start": "2026-11-14T22:00Z",
+  "away": {
+   "abbr": "UNI",
+   "name": "Northern Iowa Panthers"
+  },
+  "home": {
+   "abbr": "OAK",
+   "name": "Oakland Golden Grizzlies"
+  },
+  "rest": [
+   0,
+   2
+  ],
+  "espnPHome": 0.436,
+  "simPHome": 0.3381,
+  "rawPHome": 0.358,
+  "simMargin": -5.03,
+  "simScore": [
+   84.48,
+   79.46
+  ],
+  "simTotal": 163.94,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:24.106Z",
+    "pHome": 0.5542,
+    "margin": 1.5,
+    "total": 157.5
+   }
+  ],
+  "mkt": {
+   "line": "OAK -1.5",
+   "total": 157.5,
+   "pHome": 0.5542406163999178,
+   "margin": 1.5
+  },
+  "loggedAt": "2026-11-14T08:56:24.106Z",
+  "result": null
+ },
+ "ncaab:401920567": {
+  "key": "ncaab:401920567",
+  "league": "ncaab",
+  "gameId": "401920567",
+  "start": "2026-11-14T22:00Z",
+  "away": {
+   "abbr": "MORG",
+   "name": "Morgan State Bears"
+  },
+  "home": {
+   "abbr": "L-MD",
+   "name": "Loyola Maryland Greyhounds"
+  },
+  "rest": [
+   1,
+   1
+  ],
+  "espnPHome": 0.492,
+  "simPHome": 0.4787,
+  "rawPHome": 0.4815,
+  "simMargin": -0.47,
+  "simScore": [
+   76.55,
+   76.08
+  ],
+  "simTotal": 152.63,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:24.119Z",
+    "pHome": 0.4458,
+    "margin": -1.5,
+    "total": 150.5
+   }
+  ],
+  "mkt": {
+   "line": "MORG -1.5",
+   "total": 150.5,
+   "pHome": 0.44575938360008216,
+   "margin": -1.5
+  },
+  "loggedAt": "2026-11-14T08:56:24.119Z",
+  "result": null
+ },
+ "ncaab:401918055": {
+  "key": "ncaab:401918055",
+  "league": "ncaab",
+  "gameId": "401918055",
+  "start": "2026-11-14T22:00Z",
+  "away": {
+   "abbr": "UTU",
+   "name": "Utah Tech Trailblazers"
+  },
+  "home": {
+   "abbr": "CAL",
+   "name": "California Golden Bears"
+  },
+  "rest": [
+   null,
+   2
+  ],
+  "espnPHome": 0.838,
+  "simPHome": 0.8057,
+  "rawPHome": 0.775,
+  "simMargin": 9.93,
+  "simScore": [
+   77.24,
+   87.17
+  ],
+  "simTotal": 164.41,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:24.133Z",
+    "pHome": 0.9363,
+    "margin": 16.5,
+    "total": 158.5
+   }
+  ],
+  "mkt": {
+   "line": "CAL -16.5",
+   "total": 158.5,
+   "pHome": 0.9362520528769038,
+   "margin": 16.5
+  },
+  "loggedAt": "2026-11-14T08:56:24.133Z",
+  "result": null
+ },
+ "ncaab:401926777": {
+  "key": "ncaab:401926777",
+  "league": "ncaab",
+  "gameId": "401926777",
+  "start": "2026-11-14T23:00Z",
+  "away": {
+   "abbr": "UCR",
+   "name": "UC Riverside Highlanders"
+  },
+  "home": {
+   "abbr": "FRES",
+   "name": "Fresno State Bulldogs"
+  },
+  "rest": [
+   1,
+   null
+  ],
+  "espnPHome": 0.459,
+  "simPHome": 0.4288,
+  "rawPHome": 0.438,
+  "simMargin": -1.9,
+  "simScore": [
+   75.83,
+   73.93
+  ],
+  "simTotal": 149.76,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:24.146Z",
+    "pHome": 0.659,
+    "margin": 4.5,
+    "total": 149.5
+   }
+  ],
+  "mkt": {
+   "line": "FRES -4.5",
+   "total": 149.5,
+   "pHome": 0.6589516224854985,
+   "margin": 4.5
+  },
+  "loggedAt": "2026-11-14T08:56:24.146Z",
+  "result": null
+ },
+ "ncaab:401925827": {
+  "key": "ncaab:401925827",
+  "league": "ncaab",
+  "gameId": "401925827",
+  "start": "2026-11-14T23:00Z",
+  "away": {
+   "abbr": "USA",
+   "name": "South Alabama Jaguars"
+  },
+  "home": {
+   "abbr": "UNT",
+   "name": "North Texas Mean Green"
+  },
+  "rest": [
+   1,
+   2
+  ],
+  "espnPHome": 0.881,
+  "simPHome": 0.8241,
+  "rawPHome": 0.793,
+  "simMargin": 10.81,
+  "simScore": [
+   66.11,
+   76.92
+  ],
+  "simTotal": 143.02,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:24.158Z",
+    "pHome": 0.7812,
+    "margin": 8.5,
+    "total": 133.5
+   }
+  ],
+  "mkt": {
+   "line": "UNT -8.5",
+   "total": 133.5,
+   "pHome": 0.7811706605289616,
+   "margin": 8.5
+  },
+  "loggedAt": "2026-11-14T08:56:24.158Z",
+  "result": null
+ },
+ "ncaab:401919782": {
+  "key": "ncaab:401919782",
+  "league": "ncaab",
+  "gameId": "401919782",
+  "start": "2026-11-14T23:00Z",
+  "away": {
+   "abbr": "MAN",
+   "name": "Manhattan Jaspers"
+  },
+  "home": {
+   "abbr": "LEM",
+   "name": "Le Moyne Dolphins"
+  },
+  "rest": [
+   null,
+   null
+  ],
+  "espnPHome": 0.715,
+  "simPHome": 0.7568,
+  "rawPHome": 0.7285,
+  "simMargin": 7.65,
+  "simScore": [
+   72.2,
+   79.85
+  ],
+  "simTotal": 152.06,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:24.170Z",
+    "pHome": 0.6249,
+    "margin": 3.5,
+    "total": 148.5
+   }
+  ],
+  "mkt": {
+   "line": "LEM -3.5",
+   "total": 148.5,
+   "pHome": 0.6249180828608419,
+   "margin": 3.5
+  },
+  "loggedAt": "2026-11-14T08:56:24.170Z",
+  "result": null
+ },
+ "ncaab:401909534": {
+  "key": "ncaab:401909534",
+  "league": "ncaab",
+  "gameId": "401909534",
+  "start": "2026-11-14T23:00Z",
+  "away": {
+   "abbr": "COLO",
+   "name": "Colorado Buffaloes"
+  },
+  "home": {
+   "abbr": "PROV",
+   "name": "Providence Friars"
+  },
+  "rest": [
+   null,
+   null
+  ],
+  "espnPHome": 0.762,
+  "simPHome": 0.6792,
+  "rawPHome": 0.6575,
+  "simMargin": 5.2,
+  "simScore": [
+   77.79,
+   82.98
+  ],
+  "simTotal": 160.77,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:24.182Z",
+    "pHome": 0.8743,
+    "margin": 12.5,
+    "total": 156.5
+   }
+  ],
+  "mkt": {
+   "line": "PROV -12.5",
+   "total": 156.5,
+   "pHome": 0.8743274203056427,
+   "margin": 12.5
+  },
+  "loggedAt": "2026-11-14T08:56:24.182Z",
+  "result": null
+ },
+ "ncaab:401920193": {
+  "key": "ncaab:401920193",
+  "league": "ncaab",
+  "gameId": "401920193",
+  "start": "2026-11-14T23:30Z",
+  "away": {
+   "abbr": "PENN",
+   "name": "Pennsylvania Quakers"
+  },
+  "home": {
+   "abbr": "JOES",
+   "name": "Saint Joseph's Hawks"
+  },
+  "rest": [
+   2,
+   2
+  ],
+  "espnPHome": 0.625,
+  "simPHome": 0.7605,
+  "rawPHome": 0.732,
+  "simMargin": 8.14,
+  "simScore": [
+   71.23,
+   79.38
+  ],
+  "simTotal": 150.61,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:24.195Z",
+    "pHome": 0.659,
+    "margin": 4.5,
+    "total": 153.5
+   }
+  ],
+  "mkt": {
+   "line": "JOES -4.5",
+   "total": 153.5,
+   "pHome": 0.6589516224854985,
+   "margin": 4.5
+  },
+  "loggedAt": "2026-11-14T08:56:24.195Z",
+  "result": null
+ },
+ "ncaab:401925774": {
+  "key": "ncaab:401925774",
+  "league": "ncaab",
+  "gameId": "401925774",
+  "start": "2026-11-15T00:00Z",
+  "away": {
+   "abbr": "HOW",
+   "name": "Howard Bison"
+  },
+  "home": {
+   "abbr": "DAV",
+   "name": "Davidson Wildcats"
+  },
+  "rest": [
+   1,
+   null
+  ],
+  "espnPHome": 0.82,
+  "simPHome": 0.8417,
+  "rawPHome": 0.8105,
+  "simMargin": 11.73,
+  "simScore": [
+   64.37,
+   76.11
+  ],
+  "simTotal": 140.48,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:24.207Z",
+    "pHome": 0.8074,
+    "margin": 9.5,
+    "total": 141.5
+   }
+  ],
+  "mkt": {
+   "line": "DAV -9.5",
+   "total": 141.5,
+   "pHome": 0.8074133240442305,
+   "margin": 9.5
+  },
+  "loggedAt": "2026-11-14T08:56:24.207Z",
+  "result": null
+ },
+ "ncaab:401925108": {
+  "key": "ncaab:401925108",
+  "league": "ncaab",
+  "gameId": "401925108",
+  "start": "2026-11-15T00:00Z",
+  "away": {
+   "abbr": "RGV",
+   "name": "UT Rio Grande Valley Vaqueros"
+  },
+  "home": {
+   "abbr": "UTA",
+   "name": "UT Arlington Mavericks"
+  },
+  "rest": [
+   null,
+   null
+  ],
+  "espnPHome": 0.688,
+  "simPHome": 0.6596,
+  "rawPHome": 0.64,
+  "simMargin": 4.82,
+  "simScore": [
+   67.39,
+   72.21
+  ],
+  "simTotal": 139.6,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:24.219Z",
+    "pHome": 0.6249,
+    "margin": 3.5,
+    "total": 141.5
+   }
+  ],
+  "mkt": {
+   "line": "UTA -3.5",
+   "total": 141.5,
+   "pHome": 0.6249180828608419,
+   "margin": 3.5
+  },
+  "loggedAt": "2026-11-14T08:56:24.219Z",
+  "result": null
+ },
+ "ncaab:401921775": {
+  "key": "ncaab:401921775",
+  "league": "ncaab",
+  "gameId": "401921775",
+  "start": "2026-11-15T00:00Z",
+  "away": {
+   "abbr": "RID",
+   "name": "Rider Broncs"
+  },
+  "home": {
+   "abbr": "VILL",
+   "name": "Villanova Wildcats"
+  },
+  "rest": [
+   2,
+   null
+  ],
+  "espnPHome": 0.991,
+  "simPHome": 0.9823,
+  "rawPHome": 0.9705,
+  "simMargin": 25.05,
+  "simScore": [
+   58.33,
+   83.38
+  ],
+  "simTotal": 141.71,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:24.231Z",
+    "pHome": 0.9997,
+    "margin": 35.5,
+    "total": 145.5
+   }
+  ],
+  "mkt": {
+   "line": "VILL -35.5",
+   "total": 145.5,
+   "pHome": 0.9996700414190038,
+   "margin": 35.5
+  },
+  "loggedAt": "2026-11-14T08:56:24.231Z",
+  "result": null
+ },
+ "ncaab:401921063": {
+  "key": "ncaab:401921063",
+  "league": "ncaab",
+  "gameId": "401921063",
+  "start": "2026-11-15T00:00Z",
+  "away": {
+   "abbr": "PRST",
+   "name": "Portland State Vikings"
+  },
+  "home": {
+   "abbr": "SF",
+   "name": "San Francisco Dons"
+  },
+  "rest": [
+   2,
+   null
+  ],
+  "espnPHome": 0.801,
+  "simPHome": 0.6875,
+  "rawPHome": 0.665,
+  "simMargin": 5.64,
+  "simScore": [
+   69.71,
+   75.34
+  ],
+  "simTotal": 145.05,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:24.245Z",
+    "pHome": 0.854,
+    "margin": 11.5,
+    "total": 143.5
+   }
+  ],
+  "mkt": {
+   "line": "SF -11.5",
+   "total": 143.5,
+   "pHome": 0.8540231110938928,
+   "margin": 11.5
+  },
+  "loggedAt": "2026-11-14T08:56:24.245Z",
+  "result": null
+ },
+ "ncaab:401920867": {
+  "key": "ncaab:401920867",
+  "league": "ncaab",
+  "gameId": "401920867",
+  "start": "2026-11-15T00:00Z",
+  "away": {
+   "abbr": "NJIT",
+   "name": "NJIT Highlanders"
+  },
+  "home": {
+   "abbr": "FAIR",
+   "name": "Fairfield Stags"
+  },
+  "rest": [
+   2,
+   null
+  ],
+  "espnPHome": 0.876,
+  "simPHome": 0.8372,
+  "rawPHome": 0.806,
+  "simMargin": 11.81,
+  "simScore": [
+   63.59,
+   75.4
+  ],
+  "simTotal": 138.98,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:24.259Z",
+    "pHome": 0.854,
+    "margin": 11.5,
+    "total": 139.5
+   }
+  ],
+  "mkt": {
+   "line": "FAIR -11.5",
+   "total": 139.5,
+   "pHome": 0.8540231110938928,
+   "margin": 11.5
+  },
+  "loggedAt": "2026-11-14T08:56:24.259Z",
+  "result": null
+ },
+ "ncaab:401920705": {
+  "key": "ncaab:401920705",
+  "league": "ncaab",
+  "gameId": "401920705",
+  "start": "2026-11-15T00:00Z",
+  "away": {
+   "abbr": "LIP",
+   "name": "Lipscomb Bisons"
+  },
+  "home": {
+   "abbr": "WCU",
+   "name": "Western Carolina Catamounts"
+  },
+  "rest": [
+   null,
+   2
+  ],
+  "espnPHome": 0.664,
+  "simPHome": 0.6675,
+  "rawPHome": 0.647,
+  "simMargin": 5.44,
+  "simScore": [
+   78.2,
+   83.65
+  ],
+  "simTotal": 161.85,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:24.271Z",
+    "pHome": 0.6249,
+    "margin": 3.5,
+    "total": 155.5
+   }
+  ],
+  "mkt": {
+   "line": "WCU -3.5",
+   "total": 155.5,
+   "pHome": 0.6249180828608419,
+   "margin": 3.5
+  },
+  "loggedAt": "2026-11-14T08:56:24.271Z",
+  "result": null
+ },
+ "ncaab:401919017": {
+  "key": "ncaab:401919017",
+  "league": "ncaab",
+  "gameId": "401919017",
+  "start": "2026-11-15T00:00Z",
+  "away": {
+   "abbr": "UAB",
+   "name": "UAB Blazers"
+  },
+  "home": {
+   "abbr": "JXST",
+   "name": "Jacksonville State Gamecocks"
+  },
+  "rest": [
+   null,
+   2
+  ],
+  "espnPHome": 0.47,
+  "simPHome": 0.61,
+  "rawPHome": 0.596,
+  "simMargin": 3.19,
+  "simScore": [
+   75.43,
+   78.62
+  ],
+  "simTotal": 154.05,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:24.285Z",
+    "pHome": 0.3751,
+    "margin": -3.5,
+    "total": 149.5
+   }
+  ],
+  "mkt": {
+   "line": "UAB -3.5",
+   "total": 149.5,
+   "pHome": 0.37508191713915806,
+   "margin": -3.5
+  },
+  "loggedAt": "2026-11-14T08:56:24.285Z",
+  "result": null
+ },
+ "ncaab:401917951": {
+  "key": "ncaab:401917951",
+  "league": "ncaab",
+  "gameId": "401917951",
+  "start": "2026-11-15T00:00Z",
+  "away": {
+   "abbr": "APSU",
+   "name": "Austin Peay Governors"
+  },
+  "home": {
+   "abbr": "WICH",
+   "name": "Wichita State Shockers"
+  },
+  "rest": [
+   null,
+   2
+  ],
+  "espnPHome": 0.892,
+  "simPHome": 0.7227,
+  "rawPHome": 0.697,
+  "simMargin": 7.26,
+  "simScore": [
+   73.42,
+   80.68
+  ],
+  "simTotal": 154.09,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:24.297Z",
+    "pHome": 0.8743,
+    "margin": 12.5,
+    "total": 153.5
+   }
+  ],
+  "mkt": {
+   "line": "WICH -12.5",
+   "total": 153.5,
+   "pHome": 0.8743274203056427,
+   "margin": 12.5
+  },
+  "loggedAt": "2026-11-14T08:56:24.297Z",
+  "result": null
+ },
+ "ncaab:401911376": {
+  "key": "ncaab:401911376",
+  "league": "ncaab",
+  "gameId": "401911376",
+  "start": "2026-11-15T00:00Z",
+  "away": {
+   "abbr": "WGA",
+   "name": "West Georgia Wolves"
+  },
+  "home": {
+   "abbr": "CHSO",
+   "name": "Charleston Southern Buccaneers"
+  },
+  "rest": [
+   2,
+   null
+  ],
+  "espnPHome": 0.72,
+  "simPHome": 0.7568,
+  "rawPHome": 0.7285,
+  "simMargin": 8.32,
+  "simScore": [
+   71.97,
+   80.28
+  ],
+  "simTotal": 152.25,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:24.310Z",
+    "pHome": 0.6249,
+    "margin": 3.5,
+    "total": 148.5
+   }
+  ],
+  "mkt": {
+   "line": "CHSO -3.5",
+   "total": 148.5,
+   "pHome": 0.6249180828608419,
+   "margin": 3.5
+  },
+  "loggedAt": "2026-11-14T08:56:24.310Z",
+  "result": null
+ },
+ "ncaab:401911308": {
+  "key": "ncaab:401911308",
+  "league": "ncaab",
+  "gameId": "401911308",
+  "start": "2026-11-15T00:00Z",
+  "away": {
+   "abbr": "BRWN",
+   "name": "Brown Bears"
+  },
+  "home": {
+   "abbr": "SIE",
+   "name": "Siena Saints"
+  },
+  "rest": [
+   1,
+   null
+  ],
+  "espnPHome": 0.708,
+  "simPHome": 0.8302,
+  "rawPHome": 0.799,
+  "simMargin": 10.71,
+  "simScore": [
+   67.75,
+   78.46
+  ],
+  "simTotal": 146.2,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:24.324Z",
+    "pHome": 0.854,
+    "margin": 11.5,
+    "total": 160.5
+   }
+  ],
+  "mkt": {
+   "line": "SIE -11.5",
+   "total": 160.5,
+   "pHome": 0.8540231110938928,
+   "margin": 11.5
+  },
+  "loggedAt": "2026-11-14T08:56:24.324Z",
+  "result": null
+ },
+ "ncaab:401920961": {
+  "key": "ncaab:401920961",
+  "league": "ncaab",
+  "gameId": "401920961",
+  "start": "2026-11-15T00:30Z",
+  "away": {
+   "abbr": "IUIN",
+   "name": "IU Indianapolis Jaguars"
+  },
+  "home": {
+   "abbr": "MORE",
+   "name": "Morehead State Eagles"
+  },
+  "rest": [
+   2,
+   null
+  ],
+  "espnPHome": 0.678,
+  "simPHome": 0.4408,
+  "rawPHome": 0.4485,
+  "simMargin": -1.97,
+  "simScore": [
+   83.17,
+   81.2
+  ],
+  "simTotal": 164.38,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:24.336Z",
+    "pHome": 0.4101,
+    "margin": -2.5,
+    "total": 163.5
+   }
+  ],
+  "mkt": {
+   "line": "IUIN -2.5",
+   "total": 163.5,
+   "pHome": 0.4100715891566124,
+   "margin": -2.5
+  },
+  "loggedAt": "2026-11-14T08:56:24.336Z",
+  "result": null
+ },
+ "ncaab:401920568": {
+  "key": "ncaab:401920568",
+  "league": "ncaab",
+  "gameId": "401920568",
+  "start": "2026-11-15T00:30Z",
+  "away": {
+   "abbr": "UMBC",
+   "name": "UMBC Retrievers"
+  },
+  "home": {
+   "abbr": "TOW",
+   "name": "Towson Tigers"
+  },
+  "rest": [
+   1,
+   1
+  ],
+  "espnPHome": 0.847,
+  "simPHome": 0.7696,
+  "rawPHome": 0.7405,
+  "simMargin": 8.49,
+  "simScore": [
+   66.08,
+   74.57
+  ],
+  "simTotal": 140.65,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:24.348Z",
+    "pHome": 0.8317,
+    "margin": 10.5,
+    "total": 146.5
+   }
+  ],
+  "mkt": {
+   "line": "TOW -10.5",
+   "total": 146.5,
+   "pHome": 0.8317135623437145,
+   "margin": 10.5
+  },
+  "loggedAt": "2026-11-14T08:56:24.348Z",
+  "result": null
+ },
+ "ncaab:401911276": {
+  "key": "ncaab:401911276",
+  "league": "ncaab",
+  "gameId": "401911276",
+  "start": "2026-11-15T00:30Z",
+  "away": {
+   "abbr": "BING",
+   "name": "Binghamton Bearcats"
+  },
+  "home": {
+   "abbr": "DUQ",
+   "name": "Duquesne Dukes"
+  },
+  "rest": [
+   2,
+   null
+  ],
+  "espnPHome": 0.839,
+  "simPHome": 0.8078,
+  "rawPHome": 0.777,
+  "simMargin": 10.23,
+  "simScore": [
+   67.12,
+   77.34
+  ],
+  "simTotal": 144.46,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:24.360Z",
+    "pHome": 0.9363,
+    "margin": 16.5,
+    "total": 145.5
+   }
+  ],
+  "mkt": {
+   "line": "DUQ -16.5",
+   "total": 145.5,
+   "pHome": 0.9362520528769038,
+   "margin": 16.5
+  },
+  "loggedAt": "2026-11-14T08:56:24.360Z",
+  "result": null
+ },
+ "ncaab:401911188": {
+  "key": "ncaab:401911188",
+  "league": "ncaab",
+  "gameId": "401911188",
+  "start": "2026-11-15T00:30Z",
+  "away": {
+   "abbr": "CIN",
+   "name": "Cincinnati Bearcats"
+  },
+  "home": {
+   "abbr": "DAY",
+   "name": "Dayton Flyers"
+  },
+  "rest": [
+   null,
+   null
+  ],
+  "espnPHome": 0.245,
+  "simPHome": 0.3753,
+  "rawPHome": 0.391,
+  "simMargin": -3.73,
+  "simScore": [
+   74.72,
+   70.99
+  ],
+  "simTotal": 145.71,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:24.373Z",
+    "pHome": 0.2768,
+    "margin": -6.5,
+    "total": 148.5
+   }
+  ],
+  "mkt": {
+   "line": "CIN -6.5",
+   "total": 148.5,
+   "pHome": 0.2767750581743181,
+   "margin": -6.5
+  },
+  "loggedAt": "2026-11-14T08:56:24.373Z",
+  "result": null
+ },
+ "ncaab:401925079": {
+  "key": "ncaab:401925079",
+  "league": "ncaab",
+  "gameId": "401925079",
+  "start": "2026-11-15T01:00Z",
+  "away": {
+   "abbr": "NWST",
+   "name": "Northwestern State Demons"
+  },
+  "home": {
+   "abbr": "LR",
+   "name": "Little Rock Trojans"
+  },
+  "rest": [
+   null,
+   null
+  ],
+  "espnPHome": 0.792,
+  "simPHome": 0.6675,
+  "rawPHome": 0.647,
+  "simMargin": 4.85,
+  "simScore": [
+   69.52,
+   74.37
+  ],
+  "simTotal": 143.88,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:24.387Z",
+    "pHome": 0.8074,
+    "margin": 9.5,
+    "total": 143.5
+   }
+  ],
+  "mkt": {
+   "line": "LR -9.5",
+   "total": 143.5,
+   "pHome": 0.8074133240442305,
+   "margin": 9.5
+  },
+  "loggedAt": "2026-11-14T08:56:24.387Z",
+  "result": null
+ },
+ "ncaab:401925063": {
+  "key": "ncaab:401925063",
+  "league": "ncaab",
+  "gameId": "401925063",
+  "start": "2026-11-15T01:00Z",
+  "away": {
+   "abbr": "LT",
+   "name": "Louisiana Tech Bulldogs"
+  },
+  "home": {
+   "abbr": "NICH",
+   "name": "Nicholls Colonels"
+  },
+  "rest": [
+   null,
+   null
+  ],
+  "espnPHome": 0.521,
+  "simPHome": 0.5241,
+  "rawPHome": 0.521,
+  "simMargin": 0.72,
+  "simScore": [
+   66.03,
+   66.74
+  ],
+  "simTotal": 132.77,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:24.399Z",
+    "pHome": 0.5899,
+    "margin": 2.5,
+    "total": 138.5
+   }
+  ],
+  "mkt": {
+   "line": "NICH -2.5",
+   "total": 138.5,
+   "pHome": 0.5899284108433875,
+   "margin": 2.5
+  },
+  "loggedAt": "2026-11-14T08:56:24.399Z",
+  "result": null
+ },
+ "ncaab:401911520": {
+  "key": "ncaab:401911520",
+  "league": "ncaab",
+  "gameId": "401911520",
+  "start": "2026-11-15T01:00Z",
+  "away": {
+   "abbr": "UCD",
+   "name": "UC Davis Aggies"
+  },
+  "home": {
+   "abbr": "SAC",
+   "name": "Sacramento State Hornets"
+  },
+  "rest": [
+   2,
+   null
+  ],
+  "espnPHome": 0.689,
+  "simPHome": 0.6298,
+  "rawPHome": 0.6135,
+  "simMargin": 3.89,
+  "simScore": [
+   75.9,
+   79.79
+  ],
+  "simTotal": 155.69,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:24.412Z",
+    "pHome": 0.6249,
+    "margin": 3.5,
+    "total": 160.5
+   }
+  ],
+  "mkt": {
+   "line": "SAC -3.5",
+   "total": 160.5,
+   "pHome": 0.6249180828608419,
+   "margin": 3.5
+  },
+  "loggedAt": "2026-11-14T08:56:24.412Z",
+  "result": null
+ },
+ "ncaab:401911347": {
+  "key": "ncaab:401911347",
+  "league": "ncaab",
+  "gameId": "401911347",
+  "start": "2026-11-15T01:00Z",
+  "away": {
+   "abbr": "ULM",
+   "name": "UL Monroe Warhawks"
+  },
+  "home": {
+   "abbr": "GCU",
+   "name": "Grand Canyon Lopes"
+  },
+  "rest": [
+   0,
+   2
+  ],
+  "espnPHome": 0.985,
+  "simPHome": 0.951,
+  "rawPHome": 0.9295,
+  "simMargin": 20.62,
+  "simScore": [
+   72.18,
+   92.8
+  ],
+  "simTotal": 164.98,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:24.424Z",
+    "pHome": 0.9986,
+    "margin": 31.5,
+    "total": 166.5
+   }
+  ],
+  "mkt": {
+   "line": "GCU -31.5",
+   "total": 166.5,
+   "pHome": 0.9986470741272955,
+   "margin": 31.5
+  },
+  "loggedAt": "2026-11-14T08:56:24.424Z",
+  "result": null
+ },
+ "ncaab:401920760": {
+  "key": "ncaab:401920760",
+  "league": "ncaab",
+  "gameId": "401920760",
+  "start": "2026-11-15T01:30Z",
+  "away": {
+   "abbr": "FUR",
+   "name": "Furman Paladins"
+  },
+  "home": {
+   "abbr": "BEL",
+   "name": "Belmont Bruins"
+  },
+  "rest": [
+   2,
+   null
+  ],
+  "espnPHome": 0.492,
+  "simPHome": 0.5213,
+  "rawPHome": 0.5185,
+  "simMargin": 0.84,
+  "simScore": [
+   76.01,
+   76.85
+  ],
+  "simTotal": 152.85,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:24.437Z",
+    "pHome": 0.5899,
+    "margin": 2.5,
+    "total": 154.5
+   }
+  ],
+  "mkt": {
+   "line": "BEL -2.5",
+   "total": 154.5,
+   "pHome": 0.5899284108433875,
+   "margin": 2.5
+  },
+  "loggedAt": "2026-11-14T08:56:24.437Z",
+  "result": null
+ },
+ "ncaab:401917530": {
+  "key": "ncaab:401917530",
+  "league": "ncaab",
+  "gameId": "401917530",
+  "start": "2026-11-15T03:00Z",
+  "away": {
+   "abbr": "UNM",
+   "name": "New Mexico Lobos"
+  },
+  "home": {
+   "abbr": "SCU",
+   "name": "Santa Clara Broncos"
+  },
+  "rest": [
+   null,
+   2
+  ],
+  "espnPHome": 0.475,
+  "simPHome": 0.5247,
+  "rawPHome": 0.5215,
+  "simMargin": 0.24,
+  "simScore": [
+   81.34,
+   81.58
+  ],
+  "simTotal": 162.92,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:24.451Z",
+    "pHome": 0.4458,
+    "margin": -1.5,
+    "total": 166.5
+   }
+  ],
+  "mkt": {
+   "line": "UNM -1.5",
+   "total": 166.5,
+   "pHome": 0.44575938360008216,
+   "margin": -1.5
+  },
+  "loggedAt": "2026-11-14T08:56:24.451Z",
+  "result": null
+ },
+ "ncaab:401911455": {
+  "key": "ncaab:401911455",
+  "league": "ncaab",
+  "gameId": "401911455",
+  "start": "2026-11-15T03:00Z",
+  "away": {
+   "abbr": "UVU",
+   "name": "Utah Valley Wolverines"
+  },
+  "home": {
+   "abbr": "NEV",
+   "name": "Nevada Wolf Pack"
+  },
+  "rest": [
+   null,
+   2
+  ],
+  "espnPHome": 0.884,
+  "simPHome": 0.7885,
+  "rawPHome": 0.7585,
+  "simMargin": 9.05,
+  "simScore": [
+   74.24,
+   83.29
+  ],
+  "simTotal": 157.53,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:24.463Z",
+    "pHome": 0.8317,
+    "margin": 10.5,
+    "total": 152.5
+   }
+  ],
+  "mkt": {
+   "line": "NEV -10.5",
+   "total": 152.5,
+   "pHome": 0.8317135623437145,
+   "margin": 10.5
+  },
+  "loggedAt": "2026-11-14T08:56:24.463Z",
+  "result": null
+ },
+ "ncaab:401918949": {
+  "key": "ncaab:401918949",
+  "league": "ncaab",
+  "gameId": "401918949",
+  "start": "2026-11-15T18:00Z",
+  "away": {
+   "abbr": "LOU",
+   "name": "Louisville Cardinals"
+  },
+  "home": {
+   "abbr": "MEM",
+   "name": "Memphis Tigers"
+  },
+  "rest": [
+   null,
+   null
+  ],
+  "espnPHome": 0.315,
+  "simPHome": 0.2416,
+  "rawPHome": 0.27,
+  "simMargin": -8.45,
+  "simScore": [
+   86.52,
+   78.07
+  ],
+  "simTotal": 164.59,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:24.476Z",
+    "pHome": null,
+    "margin": null,
+    "total": null
+   }
+  ],
+  "mkt": {
+   "line": null,
+   "total": null,
+   "pHome": null,
+   "margin": null
+  },
+  "loggedAt": "2026-11-14T08:56:24.476Z",
+  "result": null
+ },
+ "ncaab:401926063": {
+  "key": "ncaab:401926063",
+  "league": "ncaab",
+  "gameId": "401926063",
+  "start": "2026-11-15T18:00Z",
+  "away": {
+   "abbr": "BOIS",
+   "name": "Boise State Broncos"
+  },
+  "home": {
+   "abbr": "NEB",
+   "name": "Nebraska Cornhuskers"
+  },
+  "rest": [
+   3,
+   3
+  ],
+  "espnPHome": 0.792,
+  "simPHome": 0.6574,
+  "rawPHome": 0.638,
+  "simMargin": 5.39,
+  "simScore": [
+   75.94,
+   81.33
+  ],
+  "simTotal": 157.28,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:24.488Z",
+    "pHome": null,
+    "margin": null,
+    "total": null
+   }
+  ],
+  "mkt": {
+   "line": null,
+   "total": null,
+   "pHome": null,
+   "margin": null
+  },
+  "loggedAt": "2026-11-14T08:56:24.489Z",
+  "result": null
+ },
+ "ncaab:401925896": {
+  "key": "ncaab:401925896",
+  "league": "ncaab",
+  "gameId": "401925896",
+  "start": "2026-11-15T18:00Z",
+  "away": {
+   "abbr": "NORF",
+   "name": "Norfolk State Spartans"
+  },
+  "home": {
+   "abbr": "GAST",
+   "name": "Georgia State Panthers"
+  },
+  "rest": [
+   3,
+   null
+  ],
+  "espnPHome": 0.849,
+  "simPHome": 0.8442,
+  "rawPHome": 0.813,
+  "simMargin": 11.57,
+  "simScore": [
+   70.02,
+   81.59
+  ],
+  "simTotal": 151.61,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:24.501Z",
+    "pHome": null,
+    "margin": null,
+    "total": null
+   }
+  ],
+  "mkt": {
+   "line": null,
+   "total": null,
+   "pHome": null,
+   "margin": null
+  },
+  "loggedAt": "2026-11-14T08:56:24.501Z",
+  "result": null
+ },
+ "ncaab:401924858": {
+  "key": "ncaab:401924858",
+  "league": "ncaab",
+  "gameId": "401924858",
+  "start": "2026-11-15T18:00Z",
+  "away": {
+   "abbr": "QUIN",
+   "name": "Quinnipiac Bobcats"
+  },
+  "home": {
+   "abbr": "CCSU",
+   "name": "Central Connecticut Blue Devils"
+  },
+  "rest": [
+   2,
+   2
+  ],
+  "espnPHome": 0.491,
+  "simPHome": 0.5046,
+  "rawPHome": 0.504,
+  "simMargin": 0.24,
+  "simScore": [
+   73.24,
+   73.48
+  ],
+  "simTotal": 146.72,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:24.514Z",
+    "pHome": null,
+    "margin": null,
+    "total": null
+   }
+  ],
+  "mkt": {
+   "line": null,
+   "total": null,
+   "pHome": null,
+   "margin": null
+  },
+  "loggedAt": "2026-11-14T08:56:24.514Z",
+  "result": null
+ },
+ "ncaab:401920771": {
+  "key": "ncaab:401920771",
+  "league": "ncaab",
+  "gameId": "401920771",
+  "start": "2026-11-15T18:00Z",
+  "away": {
+   "abbr": "COLG",
+   "name": "Colgate Raiders"
+  },
+  "home": {
+   "abbr": "DEL",
+   "name": "Delaware Blue Hens"
+  },
+  "rest": [
+   3,
+   3
+  ],
+  "espnPHome": 0.544,
+  "simPHome": 0.6808,
+  "rawPHome": 0.659,
+  "simMargin": 5.5,
+  "simScore": [
+   70.71,
+   76.21
+  ],
+  "simTotal": 146.92,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:24.527Z",
+    "pHome": null,
+    "margin": null,
+    "total": null
+   }
+  ],
+  "mkt": {
+   "line": null,
+   "total": null,
+   "pHome": null,
+   "margin": null
+  },
+  "loggedAt": "2026-11-14T08:56:24.527Z",
+  "result": null
+ },
+ "ncaab:401920235": {
+  "key": "ncaab:401920235",
+  "league": "ncaab",
+  "gameId": "401920235",
+  "start": "2026-11-15T18:00Z",
+  "away": {
+   "abbr": "DART",
+   "name": "Dartmouth Big Green"
+  },
+  "home": {
+   "abbr": "BU",
+   "name": "Boston University Terriers"
+  },
+  "rest": [
+   3,
+   2
+  ],
+  "espnPHome": 0.617,
+  "simPHome": 0.5115,
+  "rawPHome": 0.51,
+  "simMargin": 0.42,
+  "simScore": [
+   78.04,
+   78.45
+  ],
+  "simTotal": 156.49,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:24.539Z",
+    "pHome": null,
+    "margin": null,
+    "total": null
+   }
+  ],
+  "mkt": {
+   "line": null,
+   "total": null,
+   "pHome": null,
+   "margin": null
+  },
+  "loggedAt": "2026-11-14T08:56:24.539Z",
+  "result": null
+ },
+ "ncaab:401912210": {
+  "key": "ncaab:401912210",
+  "league": "ncaab",
+  "gameId": "401912210",
+  "start": "2026-11-15T18:00Z",
+  "away": {
+   "abbr": "HARV",
+   "name": "Harvard Crimson"
+  },
+  "home": {
+   "abbr": "AMER",
+   "name": "American University Eagles"
+  },
+  "rest": [
+   1,
+   3
+  ],
+  "espnPHome": 0.658,
+  "simPHome": 0.6014,
+  "rawPHome": 0.5885,
+  "simMargin": 3.05,
+  "simScore": [
+   64.98,
+   68.03
+  ],
+  "simTotal": 133.02,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:24.551Z",
+    "pHome": null,
+    "margin": null,
+    "total": null
+   }
+  ],
+  "mkt": {
+   "line": null,
+   "total": null,
+   "pHome": null,
+   "margin": null
+  },
+  "loggedAt": "2026-11-14T08:56:24.551Z",
+  "result": null
+ },
+ "ncaab:401909774": {
+  "key": "ncaab:401909774",
+  "league": "ncaab",
+  "gameId": "401909774",
+  "start": "2026-11-15T18:00Z",
+  "away": {
+   "abbr": "NIA",
+   "name": "Niagara Purple Eagles"
+  },
+  "home": {
+   "abbr": "ISU",
+   "name": "Iowa State Cyclones"
+  },
+  "rest": [
+   2,
+   null
+  ],
+  "espnPHome": 0.996,
+  "simPHome": 0.9944,
+  "rawPHome": 0.989,
+  "simMargin": 30.17,
+  "simScore": [
+   54.73,
+   84.9
+  ],
+  "simTotal": 139.64,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:24.563Z",
+    "pHome": null,
+    "margin": null,
+    "total": null
+   }
+  ],
+  "mkt": {
+   "line": null,
+   "total": null,
+   "pHome": null,
+   "margin": null
+  },
+  "loggedAt": "2026-11-14T08:56:24.563Z",
+  "result": null
+ },
+ "ncaab:401909554": {
+  "key": "ncaab:401909554",
+  "league": "ncaab",
+  "gameId": "401909554",
+  "start": "2026-11-15T18:30Z",
+  "away": {
+   "abbr": "UNH",
+   "name": "New Hampshire Wildcats"
+  },
+  "home": {
+   "abbr": "BC",
+   "name": "Boston College Eagles"
+  },
+  "rest": [
+   3,
+   null
+  ],
+  "espnPHome": 0.938,
+  "simPHome": 0.8367,
+  "rawPHome": 0.8055,
+  "simMargin": 11.43,
+  "simScore": [
+   62.52,
+   73.95
+  ],
+  "simTotal": 136.46,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:24.576Z",
+    "pHome": null,
+    "margin": null,
+    "total": null
+   }
+  ],
+  "mkt": {
+   "line": null,
+   "total": null,
+   "pHome": null,
+   "margin": null
+  },
+  "loggedAt": "2026-11-14T08:56:24.576Z",
+  "result": null
+ },
+ "ncaab:401918453": {
+  "key": "ncaab:401918453",
+  "league": "ncaab",
+  "gameId": "401918453",
+  "start": "2026-11-15T19:00Z",
+  "away": {
+   "abbr": "W&M",
+   "name": "William & Mary Tribe"
+  },
+  "home": {
+   "abbr": "MICH",
+   "name": "Michigan Wolverines"
+  },
+  "rest": [
+   3,
+   3
+  ],
+  "espnPHome": 0.974,
+  "simPHome": 0.941,
+  "rawPHome": 0.9175,
+  "simMargin": 19.11,
+  "simScore": [
+   74.63,
+   93.74
+  ],
+  "simTotal": 168.36,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:24.591Z",
+    "pHome": null,
+    "margin": null,
+    "total": null
+   }
+  ],
+  "mkt": {
+   "line": null,
+   "total": null,
+   "pHome": null,
+   "margin": null
+  },
+  "loggedAt": "2026-11-14T08:56:24.591Z",
+  "result": null
+ },
+ "ncaab:401925926": {
+  "key": "ncaab:401925926",
+  "league": "ncaab",
+  "gameId": "401925926",
+  "start": "2026-11-15T19:00Z",
+  "away": {
+   "abbr": "SCST",
+   "name": "South Carolina State Bulldogs"
+  },
+  "home": {
+   "abbr": "COFC",
+   "name": "Charleston Cougars"
+  },
+  "rest": [
+   3,
+   3
+  ],
+  "espnPHome": 0.928,
+  "simPHome": 0.9189,
+  "rawPHome": 0.892,
+  "simMargin": 16.32,
+  "simScore": [
+   70.64,
+   86.96
+  ],
+  "simTotal": 157.6,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:24.608Z",
+    "pHome": null,
+    "margin": null,
+    "total": null
+   }
+  ],
+  "mkt": {
+   "line": null,
+   "total": null,
+   "pHome": null,
+   "margin": null
+  },
+  "loggedAt": "2026-11-14T08:56:24.608Z",
+  "result": null
+ },
+ "ncaab:401925812": {
+  "key": "ncaab:401925812",
+  "league": "ncaab",
+  "gameId": "401925812",
+  "start": "2026-11-15T19:00Z",
+  "away": {
+   "abbr": "TEM",
+   "name": "Temple Owls"
+  },
+  "home": {
+   "abbr": "LAS",
+   "name": "La Salle Explorers"
+  },
+  "rest": [
+   3,
+   null
+  ],
+  "espnPHome": 0.539,
+  "simPHome": 0.5397,
+  "rawPHome": 0.5345,
+  "simMargin": 1.23,
+  "simScore": [
+   72.12,
+   73.36
+  ],
+  "simTotal": 145.48,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:24.621Z",
+    "pHome": null,
+    "margin": null,
+    "total": null
+   }
+  ],
+  "mkt": {
+   "line": null,
+   "total": null,
+   "pHome": null,
+   "margin": null
+  },
+  "loggedAt": "2026-11-14T08:56:24.621Z",
+  "result": null
+ },
+ "ncaab:401921760": {
+  "key": "ncaab:401921760",
+  "league": "ncaab",
+  "gameId": "401921760",
+  "start": "2026-11-15T19:00Z",
+  "away": {
+   "abbr": "WASH",
+   "name": "Washington Huskies"
+  },
+  "home": {
+   "abbr": "UTAH",
+   "name": "Utah Utes"
+  },
+  "rest": [
+   null,
+   null
+  ],
+  "espnPHome": 0.59,
+  "simPHome": 0.55,
+  "rawPHome": 0.5435,
+  "simMargin": 1.44,
+  "simScore": [
+   72.89,
+   74.33
+  ],
+  "simTotal": 147.22,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:24.641Z",
+    "pHome": 0.6249,
+    "margin": 3.5,
+    "total": 143.5
+   }
+  ],
+  "mkt": {
+   "line": "UTAH -3.5",
+   "total": 143.5,
+   "pHome": 0.6249180828608419,
+   "margin": 3.5
+  },
+  "loggedAt": "2026-11-14T08:56:24.641Z",
+  "result": null
+ },
+ "ncaab:401921287": {
+  "key": "ncaab:401921287",
+  "league": "ncaab",
+  "gameId": "401921287",
+  "start": "2026-11-15T19:00Z",
+  "away": {
+   "abbr": "UALB",
+   "name": "UAlbany Great Danes"
+  },
+  "home": {
+   "abbr": "HC",
+   "name": "Holy Cross Crusaders"
+  },
+  "rest": [
+   3,
+   3
+  ],
+  "espnPHome": 0.589,
+  "simPHome": 0.4879,
+  "rawPHome": 0.4895,
+  "simMargin": -0.16,
+  "simScore": [
+   73.87,
+   73.71
+  ],
+  "simTotal": 147.59,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:24.658Z",
+    "pHome": null,
+    "margin": null,
+    "total": null
+   }
+  ],
+  "mkt": {
+   "line": null,
+   "total": null,
+   "pHome": null,
+   "margin": null
+  },
+  "loggedAt": "2026-11-14T08:56:24.658Z",
+  "result": null
+ },
+ "ncaab:401920136": {
+  "key": "ncaab:401920136",
+  "league": "ncaab",
+  "gameId": "401920136",
+  "start": "2026-11-15T19:00Z",
+  "away": {
+   "abbr": "CSUB",
+   "name": "Cal State Bakersfield Roadrunners"
+  },
+  "home": {
+   "abbr": "NDSU",
+   "name": "North Dakota State Bison"
+  },
+  "rest": [
+   2,
+   1
+  ],
+  "espnPHome": 0.708,
+  "simPHome": 0.6808,
+  "rawPHome": 0.659,
+  "simMargin": 5.16,
+  "simScore": [
+   78.52,
+   83.68
+  ],
+  "simTotal": 162.19,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:24.671Z",
+    "pHome": null,
+    "margin": null,
+    "total": null
+   }
+  ],
+  "mkt": {
+   "line": null,
+   "total": null,
+   "pHome": null,
+   "margin": null
+  },
+  "loggedAt": "2026-11-14T08:56:24.671Z",
+  "result": null
+ },
+ "ncaab:401920065": {
+  "key": "ncaab:401920065",
+  "league": "ncaab",
+  "gameId": "401920065",
+  "start": "2026-11-15T19:00Z",
+  "away": {
+   "abbr": "PRIN",
+   "name": "Princeton Tigers"
+  },
+  "home": {
+   "abbr": "URI",
+   "name": "Rhode Island Rams"
+  },
+  "rest": [
+   3,
+   2
+  ],
+  "espnPHome": 0.752,
+  "simPHome": 0.8526,
+  "rawPHome": 0.8215,
+  "simMargin": 11.88,
+  "simScore": [
+   61.15,
+   73.03
+  ],
+  "simTotal": 134.18,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:24.683Z",
+    "pHome": null,
+    "margin": null,
+    "total": null
+   }
+  ],
+  "mkt": {
+   "line": null,
+   "total": null,
+   "pHome": null,
+   "margin": null
+  },
+  "loggedAt": "2026-11-14T08:56:24.683Z",
+  "result": null
+ },
+ "ncaab:401909525": {
+  "key": "ncaab:401909525",
+  "league": "ncaab",
+  "gameId": "401909525",
+  "start": "2026-11-15T19:30Z",
+  "away": {
+   "abbr": "MIZ",
+   "name": "Missouri Tigers"
+  },
+  "home": {
+   "abbr": "MARQ",
+   "name": "Marquette Golden Eagles"
+  },
+  "rest": [
+   null,
+   3
+  ],
+  "espnPHome": 0.563,
+  "simPHome": 0.3781,
+  "rawPHome": 0.3935,
+  "simMargin": -3.69,
+  "simScore": [
+   76.65,
+   72.97
+  ],
+  "simTotal": 149.62,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:24.695Z",
+    "pHome": null,
+    "margin": null,
+    "total": null
+   }
+  ],
+  "mkt": {
+   "line": null,
+   "total": null,
+   "pHome": null,
+   "margin": null
+  },
+  "loggedAt": "2026-11-14T08:56:24.695Z",
+  "result": null
+ },
+ "ncaab:401906866": {
+  "key": "ncaab:401906866",
+  "league": "ncaab",
+  "gameId": "401906866",
+  "start": "2026-11-15T20:00Z",
+  "away": {
+   "abbr": "BAY",
+   "name": "Baylor Bears"
+  },
+  "home": {
+   "abbr": "TEX",
+   "name": "Texas Longhorns"
+  },
+  "rest": [
+   null,
+   null
+  ],
+  "espnPHome": 0.692,
+  "simPHome": 0.6117,
+  "rawPHome": 0.5975,
+  "simMargin": 3.2,
+  "simScore": [
+   79.31,
+   82.51
+  ],
+  "simTotal": 161.83,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:24.709Z",
+    "pHome": null,
+    "margin": null,
+    "total": null
+   }
+  ],
+  "mkt": {
+   "line": null,
+   "total": null,
+   "pHome": null,
+   "margin": null
+  },
+  "loggedAt": "2026-11-14T08:56:24.710Z",
+  "result": null
+ },
+ "ncaab:401926068": {
+  "key": "ncaab:401926068",
+  "league": "ncaab",
+  "gameId": "401926068",
+  "start": "2026-11-15T20:00Z",
+  "away": {
+   "abbr": "PFW",
+   "name": "Purdue Fort Wayne Mastodons"
+  },
+  "home": {
+   "abbr": "EIU",
+   "name": "Eastern Illinois Panthers"
+  },
+  "rest": [
+   2,
+   3
+  ],
+  "espnPHome": 0.468,
+  "simPHome": 0.5385,
+  "rawPHome": 0.5335,
+  "simMargin": 0.78,
+  "simScore": [
+   73.84,
+   74.62
+  ],
+  "simTotal": 148.46,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:24.722Z",
+    "pHome": null,
+    "margin": null,
+    "total": null
+   }
+  ],
+  "mkt": {
+   "line": null,
+   "total": null,
+   "pHome": null,
+   "margin": null
+  },
+  "loggedAt": "2026-11-14T08:56:24.722Z",
+  "result": null
+ },
+ "ncaab:401921168": {
+  "key": "ncaab:401921168",
+  "league": "ncaab",
+  "gameId": "401921168",
+  "start": "2026-11-15T20:00Z",
+  "away": {
+   "abbr": "CLE",
+   "name": "Cleveland State Vikings"
+  },
+  "home": {
+   "abbr": "AAMU",
+   "name": "Alabama A&M Bulldogs"
+  },
+  "rest": [
+   1,
+   2
+  ],
+  "espnPHome": 0.656,
+  "simPHome": 0.7822,
+  "rawPHome": 0.7525,
+  "simMargin": 8.99,
+  "simScore": [
+   74.05,
+   83.04
+  ],
+  "simTotal": 157.09,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:24.737Z",
+    "pHome": null,
+    "margin": null,
+    "total": null
+   }
+  ],
+  "mkt": {
+   "line": null,
+   "total": null,
+   "pHome": null,
+   "margin": null
+  },
+  "loggedAt": "2026-11-14T08:56:24.737Z",
+  "result": null
+ },
+ "ncaab:401911251": {
+  "key": "ncaab:401911251",
+  "league": "ncaab",
+  "gameId": "401911251",
+  "start": "2026-11-15T20:00Z",
+  "away": {
+   "abbr": "HPU",
+   "name": "High Point Panthers"
+  },
+  "home": {
+   "abbr": "SLU",
+   "name": "Saint Louis Billikens"
+  },
+  "rest": [
+   2,
+   null
+  ],
+  "espnPHome": 0.741,
+  "simPHome": 0.8412,
+  "rawPHome": 0.81,
+  "simMargin": 11.96,
+  "simScore": [
+   74.47,
+   86.44
+  ],
+  "simTotal": 160.91,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:24.749Z",
+    "pHome": null,
+    "margin": null,
+    "total": null
+   }
+  ],
+  "mkt": {
+   "line": null,
+   "total": null,
+   "pHome": null,
+   "margin": null
+  },
+  "loggedAt": "2026-11-14T08:56:24.749Z",
+  "result": null
+ },
+ "ncaab:401909493": {
+  "key": "ncaab:401909493",
+  "league": "ncaab",
+  "gameId": "401909493",
+  "start": "2026-11-15T20:00Z",
+  "away": {
+   "abbr": "CREI",
+   "name": "Creighton Bluejays"
+  },
+  "home": {
+   "abbr": "IOWA",
+   "name": "Iowa Hawkeyes"
+  },
+  "rest": [
+   null,
+   null
+  ],
+  "espnPHome": 0.602,
+  "simPHome": 0.753,
+  "rawPHome": 0.725,
+  "simMargin": 8.2,
+  "simScore": [
+   68.24,
+   76.44
+  ],
+  "simTotal": 144.67,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:24.761Z",
+    "pHome": null,
+    "margin": null,
+    "total": null
+   }
+  ],
+  "mkt": {
+   "line": null,
+   "total": null,
+   "pHome": null,
+   "margin": null
+  },
+  "loggedAt": "2026-11-14T08:56:24.761Z",
+  "result": null
+ },
+ "ncaab:401928789": {
+  "key": "ncaab:401928789",
+  "league": "ncaab",
+  "gameId": "401928789",
+  "start": "2026-11-15T21:00Z",
+  "away": {
+   "abbr": "NMSU",
+   "name": "New Mexico State Aggies"
+  },
+  "home": {
+   "abbr": "SDSU",
+   "name": "San Diego State Aztecs"
+  },
+  "rest": [
+   2,
+   3
+  ],
+  "espnPHome": 0.852,
+  "simPHome": 0.8911,
+  "rawPHome": 0.8615,
+  "simMargin": 14.16,
+  "simScore": [
+   68.01,
+   82.17
+  ],
+  "simTotal": 150.18,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:24.774Z",
+    "pHome": null,
+    "margin": null,
+    "total": null
+   }
+  ],
+  "mkt": {
+   "line": null,
+   "total": null,
+   "pHome": null,
+   "margin": null
+  },
+  "loggedAt": "2026-11-14T08:56:24.774Z",
+  "result": null
+ },
+ "ncaab:401919825": {
+  "key": "ncaab:401919825",
+  "league": "ncaab",
+  "gameId": "401919825",
+  "start": "2026-11-15T21:00Z",
+  "away": {
+   "abbr": "MERC",
+   "name": "Mercyhurst Lakers"
+  },
+  "home": {
+   "abbr": "JMU",
+   "name": "James Madison Dukes"
+  },
+  "rest": [
+   2,
+   3
+  ],
+  "espnPHome": 0.884,
+  "simPHome": 0.799,
+  "rawPHome": 0.7685,
+  "simMargin": 9.55,
+  "simScore": [
+   64.67,
+   74.22
+  ],
+  "simTotal": 138.9,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:24.785Z",
+    "pHome": null,
+    "margin": null,
+    "total": null
+   }
+  ],
+  "mkt": {
+   "line": null,
+   "total": null,
+   "pHome": null,
+   "margin": null
+  },
+  "loggedAt": "2026-11-14T08:56:24.785Z",
+  "result": null
+ },
+ "ncaab:401917531": {
+  "key": "ncaab:401917531",
+  "league": "ncaab",
+  "gameId": "401917531",
+  "start": "2026-11-15T21:00Z",
+  "away": {
+   "abbr": "CHST",
+   "name": "Chicago State Cougars"
+  },
+  "home": {
+   "abbr": "LMU",
+   "name": "Loyola Marymount Lions"
+  },
+  "rest": [
+   1,
+   2
+  ],
+  "espnPHome": 0.88,
+  "simPHome": 0.8382,
+  "rawPHome": 0.807,
+  "simMargin": 12.11,
+  "simScore": [
+   67.49,
+   79.61
+  ],
+  "simTotal": 147.1,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:24.799Z",
+    "pHome": null,
+    "margin": null,
+    "total": null
+   }
+  ],
+  "mkt": {
+   "line": null,
+   "total": null,
+   "pHome": null,
+   "margin": null
+  },
+  "loggedAt": "2026-11-14T08:56:24.799Z",
+  "result": null
+ },
+ "ncaab:401917528": {
+  "key": "ncaab:401917528",
+  "league": "ncaab",
+  "gameId": "401917528",
+  "start": "2026-11-15T21:00Z",
+  "away": {
+   "abbr": "IDST",
+   "name": "Idaho State Bengals"
+  },
+  "home": {
+   "abbr": "SEA",
+   "name": "Seattle U Redhawks"
+  },
+  "rest": [
+   null,
+   3
+  ],
+  "espnPHome": 0.888,
+  "simPHome": 0.8251,
+  "rawPHome": 0.794,
+  "simMargin": 11,
+  "simScore": [
+   67.09,
+   78.1
+  ],
+  "simTotal": 145.19,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:24.812Z",
+    "pHome": 0.9363,
+    "margin": 16.5,
+    "total": 144.5
+   }
+  ],
+  "mkt": {
+   "line": "SEA -16.5",
+   "total": 144.5,
+   "pHome": 0.9362520528769038,
+   "margin": 16.5
+  },
+  "loggedAt": "2026-11-14T08:56:24.812Z",
+  "result": null
+ },
+ "ncaab:401923393": {
+  "key": "ncaab:401923393",
+  "league": "ncaab",
+  "gameId": "401923393",
+  "start": "2026-11-15T21:30Z",
+  "away": {
+   "abbr": "WMU",
+   "name": "Western Michigan Broncos"
+  },
+  "home": {
+   "abbr": "USI",
+   "name": "Southern Indiana Screaming Eagles"
+  },
+  "rest": [
+   2,
+   3
+  ],
+  "espnPHome": 0.32,
+  "simPHome": 0.477,
+  "rawPHome": 0.48,
+  "simMargin": -0.7,
+  "simScore": [
+   71.29,
+   70.6
+  ],
+  "simTotal": 141.89,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:24.830Z",
+    "pHome": null,
+    "margin": null,
+    "total": null
+   }
+  ],
+  "mkt": {
+   "line": null,
+   "total": null,
+   "pHome": null,
+   "margin": null
+  },
+  "loggedAt": "2026-11-14T08:56:24.830Z",
+  "result": null
+ },
+ "ncaab:401917175": {
+  "key": "ncaab:401917175",
+  "league": "ncaab",
+  "gameId": "401917175",
+  "start": "2026-11-15T21:30Z",
+  "away": {
+   "abbr": "NHVN",
+   "name": "New Haven Chargers"
+  },
+  "home": {
+   "abbr": "PSU",
+   "name": "Penn State Nittany Lions"
+  },
+  "rest": [
+   null,
+   2
+  ],
+  "espnPHome": 0.953,
+  "simPHome": 0.8541,
+  "rawPHome": 0.823,
+  "simMargin": 13,
+  "simScore": [
+   64.73,
+   77.74
+  ],
+  "simTotal": 142.47,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:24.843Z",
+    "pHome": null,
+    "margin": null,
+    "total": null
+   }
+  ],
+  "mkt": {
+   "line": null,
+   "total": null,
+   "pHome": null,
+   "margin": null
+  },
+  "loggedAt": "2026-11-14T08:56:24.843Z",
+  "result": null
+ },
+ "ncaab:401926073": {
+  "key": "ncaab:401926073",
+  "league": "ncaab",
+  "gameId": "401926073",
+  "start": "2026-11-15T22:00Z",
+  "away": {
+   "abbr": "PEPP",
+   "name": "Pepperdine Waves"
+  },
+  "home": {
+   "abbr": "ORE",
+   "name": "Oregon Ducks"
+  },
+  "rest": [
+   3,
+   3
+  ],
+  "espnPHome": 0.921,
+  "simPHome": 0.8422,
+  "rawPHome": 0.811,
+  "simMargin": 12.14,
+  "simScore": [
+   72.81,
+   84.95
+  ],
+  "simTotal": 157.76,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:24.855Z",
+    "pHome": null,
+    "margin": null,
+    "total": null
+   }
+  ],
+  "mkt": {
+   "line": null,
+   "total": null,
+   "pHome": null,
+   "margin": null
+  },
+  "loggedAt": "2026-11-14T08:56:24.855Z",
+  "result": null
+ },
+ "ncaab:401911017": {
+  "key": "ncaab:401911017",
+  "league": "ncaab",
+  "gameId": "401911017",
+  "start": "2026-11-15T22:30Z",
+  "away": {
+   "abbr": "CAN",
+   "name": "Canisius Golden Griffins"
+  },
+  "home": {
+   "abbr": "BUF",
+   "name": "Buffalo Bulls"
+  },
+  "rest": [
+   2,
+   null
+  ],
+  "espnPHome": 0.839,
+  "simPHome": 0.8108,
+  "rawPHome": 0.78,
+  "simMargin": 10.74,
+  "simScore": [
+   71.21,
+   81.95
+  ],
+  "simTotal": 153.15,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:24.869Z",
+    "pHome": null,
+    "margin": null,
+    "total": null
+   }
+  ],
+  "mkt": {
+   "line": null,
+   "total": null,
+   "pHome": null,
+   "margin": null
+  },
+  "loggedAt": "2026-11-14T08:56:24.869Z",
+  "result": null
+ },
+ "ncaab:401920124": {
+  "key": "ncaab:401920124",
+  "league": "ncaab",
+  "gameId": "401920124",
+  "start": "2026-11-15T23:00Z",
+  "away": {
+   "abbr": "CP",
+   "name": "Cal Poly Mustangs"
+  },
+  "home": {
+   "abbr": "MTST",
+   "name": "Montana State Bobcats"
+  },
+  "rest": [
+   1,
+   2
+  ],
+  "espnPHome": 0.844,
+  "simPHome": 0.7891,
+  "rawPHome": 0.759,
+  "simMargin": 9.58,
+  "simScore": [
+   76.54,
+   86.11
+  ],
+  "simTotal": 162.65,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:24.882Z",
+    "pHome": null,
+    "margin": null,
+    "total": null
+   }
+  ],
+  "mkt": {
+   "line": null,
+   "total": null,
+   "pHome": null,
+   "margin": null
+  },
+  "loggedAt": "2026-11-14T08:56:24.882Z",
+  "result": null
+ },
+ "ncaab:401920681": {
+  "key": "ncaab:401920681",
+  "league": "ncaab",
+  "gameId": "401920681",
+  "start": "2026-11-16T00:00Z",
+  "away": {
+   "abbr": "SYR",
+   "name": "Syracuse Orange"
+  },
+  "home": {
+   "abbr": "SJU",
+   "name": "St. John's Red Storm"
+  },
+  "rest": [
+   null,
+   3
+  ],
+  "espnPHome": 0.823,
+  "simPHome": 0.7974,
+  "rawPHome": 0.767,
+  "simMargin": 9.97,
+  "simScore": [
+   72.82,
+   82.79
+  ],
+  "simTotal": 155.61,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:24.895Z",
+    "pHome": null,
+    "margin": null,
+    "total": null
+   }
+  ],
+  "mkt": {
+   "line": null,
+   "total": null,
+   "pHome": null,
+   "margin": null
+  },
+  "loggedAt": "2026-11-14T08:56:24.895Z",
+  "result": null
+ },
+ "ncaab:401926772": {
+  "key": "ncaab:401926772",
+  "league": "ncaab",
+  "gameId": "401926772",
+  "start": "2026-11-16T00:00Z",
+  "away": {
+   "abbr": "UAPB",
+   "name": "Arkansas-Pine Bluff Golden Lions"
+  },
+  "home": {
+   "abbr": "USC",
+   "name": "USC Trojans"
+  },
+  "rest": [
+   1,
+   3
+  ],
+  "espnPHome": 0.995,
+  "simPHome": 0.9967,
+  "rawPHome": 0.993,
+  "simMargin": 31.65,
+  "simScore": [
+   63.66,
+   95.31
+  ],
+  "simTotal": 158.96,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:24.907Z",
+    "pHome": null,
+    "margin": null,
+    "total": null
+   }
+  ],
+  "mkt": {
+   "line": null,
+   "total": null,
+   "pHome": null,
+   "margin": null
+  },
+  "loggedAt": "2026-11-14T08:56:24.907Z",
+  "result": null
+ },
+ "ncaab:401929419": {
+  "key": "ncaab:401929419",
+  "league": "ncaab",
+  "gameId": "401929419",
+  "start": "2026-11-16T01:00Z",
+  "away": {
+   "abbr": "FAMU",
+   "name": "Florida A&M Rattlers"
+  },
+  "home": {
+   "abbr": "UTEP",
+   "name": "UTEP Miners"
+  },
+  "rest": [
+   3,
+   2
+  ],
+  "espnPHome": 0.937,
+  "simPHome": 0.9229,
+  "rawPHome": 0.8965,
+  "simMargin": 16.32,
+  "simScore": [
+   62.9,
+   79.22
+  ],
+  "simTotal": 142.13,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:24.920Z",
+    "pHome": null,
+    "margin": null,
+    "total": null
+   }
+  ],
+  "mkt": {
+   "line": null,
+   "total": null,
+   "pHome": null,
+   "margin": null
+  },
+  "loggedAt": "2026-11-14T08:56:24.920Z",
+  "result": null
+ },
+ "ncaab:401929200": {
+  "key": "ncaab:401929200",
+  "league": "ncaab",
+  "gameId": "401929200",
+  "start": "2026-11-16T01:00Z",
+  "away": {
+   "abbr": "TXST",
+   "name": "Texas State Bobcats"
+  },
+  "home": {
+   "abbr": "UTSA",
+   "name": "UTSA Roadrunners"
+  },
+  "rest": [
+   1,
+   3
+  ],
+  "espnPHome": 0.359,
+  "simPHome": 0.2475,
+  "rawPHome": 0.2755,
+  "simMargin": -8.03,
+  "simScore": [
+   79.44,
+   71.42
+  ],
+  "simTotal": 150.86,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:24.932Z",
+    "pHome": null,
+    "margin": null,
+    "total": null
+   }
+  ],
+  "mkt": {
+   "line": null,
+   "total": null,
+   "pHome": null,
+   "margin": null
+  },
+  "loggedAt": "2026-11-14T08:56:24.932Z",
+  "result": null
+ },
+ "ncaab:401920896": {
+  "key": "ncaab:401920896",
+  "league": "ncaab",
+  "gameId": "401920896",
+  "start": "2026-11-16T01:00Z",
+  "away": {
+   "abbr": "CCU",
+   "name": "Coastal Carolina Chanticleers"
+  },
+  "home": {
+   "abbr": "WIS",
+   "name": "Wisconsin Badgers"
+  },
+  "rest": [
+   2,
+   null
+  ],
+  "espnPHome": 0.975,
+  "simPHome": 0.963,
+  "rawPHome": 0.9445,
+  "simMargin": 21.04,
+  "simScore": [
+   62.76,
+   83.8
+  ],
+  "simTotal": 146.56,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:24.945Z",
+    "pHome": null,
+    "margin": null,
+    "total": null
+   }
+  ],
+  "mkt": {
+   "line": null,
+   "total": null,
+   "pHome": null,
+   "margin": null
+  },
+  "loggedAt": "2026-11-14T08:56:24.945Z",
+  "result": null
+ },
+ "ncaab:401911472": {
+  "key": "ncaab:401911472",
+  "league": "ncaab",
+  "gameId": "401911472",
+  "start": "2026-11-16T02:00Z",
+  "away": {
+   "abbr": "ALST",
+   "name": "Alabama State Hornets"
+  },
+  "home": {
+   "abbr": "SJSU",
+   "name": "San José State Spartans"
+  },
+  "rest": [
+   3,
+   2
+  ],
+  "espnPHome": 0.938,
+  "simPHome": 0.8798,
+  "rawPHome": 0.8495,
+  "simMargin": 14.09,
+  "simScore": [
+   71.13,
+   85.22
+  ],
+  "simTotal": 156.35,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:24.961Z",
+    "pHome": null,
+    "margin": null,
+    "total": null
+   }
+  ],
+  "mkt": {
+   "line": null,
+   "total": null,
+   "pHome": null,
+   "margin": null
+  },
+  "loggedAt": "2026-11-14T08:56:24.961Z",
+  "result": null
+ },
+ "ncaab:401921087": {
+  "key": "ncaab:401921087",
+  "league": "ncaab",
+  "gameId": "401921087",
+  "start": "2026-11-16T23:00Z",
+  "away": {
+   "abbr": "IONA",
+   "name": "Iona Gaels"
+  },
+  "home": {
+   "abbr": "UMBC",
+   "name": "UMBC Retrievers"
+  },
+  "rest": [
+   2,
+   1
+  ],
+  "espnPHome": 0.485,
+  "simPHome": 0.6014,
+  "rawPHome": 0.5885,
+  "simMargin": 3.48,
+  "simScore": [
+   72.17,
+   75.64
+  ],
+  "simTotal": 147.81,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:24.974Z",
+    "pHome": null,
+    "margin": null,
+    "total": null
+   }
+  ],
+  "mkt": {
+   "line": null,
+   "total": null,
+   "pHome": null,
+   "margin": null
+  },
+  "loggedAt": "2026-11-14T08:56:24.974Z",
+  "result": null
+ },
+ "ncaab:401916298": {
+  "key": "ncaab:401916298",
+  "league": "ncaab",
+  "gameId": "401916298",
+  "start": "2026-11-16T23:00Z",
+  "away": {
+   "abbr": "ALCN",
+   "name": "Alcorn State Braves"
+  },
+  "home": {
+   "abbr": "MD",
+   "name": "Maryland Terrapins"
+  },
+  "rest": [
+   2,
+   2
+  ],
+  "espnPHome": 0.986,
+  "simPHome": 0.9559,
+  "rawPHome": 0.9355,
+  "simMargin": 19.48,
+  "simScore": [
+   67.81,
+   87.28
+  ],
+  "simTotal": 155.09,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:24.987Z",
+    "pHome": null,
+    "margin": null,
+    "total": null
+   }
+  ],
+  "mkt": {
+   "line": null,
+   "total": null,
+   "pHome": null,
+   "margin": null
+  },
+  "loggedAt": "2026-11-14T08:56:24.987Z",
+  "result": null
+ },
+ "ncaab:401916317": {
+  "key": "ncaab:401916317",
+  "league": "ncaab",
+  "gameId": "401916317",
+  "start": "2026-11-16T23:30Z",
+  "away": {
+   "abbr": "PV",
+   "name": "Prairie View A&M Panthers"
+  },
+  "home": {
+   "abbr": "OSU",
+   "name": "Ohio State Buckeyes"
+  },
+  "rest": [
+   2,
+   2
+  ],
+  "espnPHome": 0.991,
+  "simPHome": 0.9614,
+  "rawPHome": 0.9425,
+  "simMargin": 21.32,
+  "simScore": [
+   68.32,
+   89.64
+  ],
+  "simTotal": 157.96,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:25.000Z",
+    "pHome": null,
+    "margin": null,
+    "total": null
+   }
+  ],
+  "mkt": {
+   "line": null,
+   "total": null,
+   "pHome": null,
+   "margin": null
+  },
+  "loggedAt": "2026-11-14T08:56:25.000Z",
+  "result": null
+ },
+ "ncaab:401921804": {
+  "key": "ncaab:401921804",
+  "league": "ncaab",
+  "gameId": "401921804",
+  "start": "2026-11-17T00:00Z",
+  "away": {
+   "abbr": "GRAM",
+   "name": "Grambling Tigers"
+  },
+  "home": {
+   "abbr": "UK",
+   "name": "Kentucky Wildcats"
+  },
+  "rest": [
+   null,
+   2
+  ],
+  "espnPHome": 0.982,
+  "simPHome": 0.9207,
+  "rawPHome": 0.894,
+  "simMargin": 15.87,
+  "simScore": [
+   68.74,
+   84.61
+  ],
+  "simTotal": 153.34,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:25.013Z",
+    "pHome": null,
+    "margin": null,
+    "total": null
+   }
+  ],
+  "mkt": {
+   "line": null,
+   "total": null,
+   "pHome": null,
+   "margin": null
+  },
+  "loggedAt": "2026-11-14T08:56:25.013Z",
+  "result": null
+ },
+ "ncaab:401928841": {
+  "key": "ncaab:401928841",
+  "league": "ncaab",
+  "gameId": "401928841",
+  "start": "2026-11-17T00:00Z",
+  "away": {
+   "abbr": "EKU",
+   "name": "Eastern Kentucky Colonels"
+  },
+  "home": {
+   "abbr": "KENT",
+   "name": "Kent State Golden Flashes"
+  },
+  "rest": [
+   2,
+   4
+  ],
+  "espnPHome": 0.81,
+  "simPHome": 0.6292,
+  "rawPHome": 0.613,
+  "simMargin": 4,
+  "simScore": [
+   82.25,
+   86.25
+  ],
+  "simTotal": 168.5,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:25.027Z",
+    "pHome": null,
+    "margin": null,
+    "total": null
+   }
+  ],
+  "mkt": {
+   "line": null,
+   "total": null,
+   "pHome": null,
+   "margin": null
+  },
+  "loggedAt": "2026-11-14T08:56:25.027Z",
+  "result": null
+ },
+ "ncaab:401925864": {
+  "key": "ncaab:401925864",
+  "league": "ncaab",
+  "gameId": "401925864",
+  "start": "2026-11-17T00:00Z",
+  "away": {
+   "abbr": "WKU",
+   "name": "Western Kentucky Hilltoppers"
+  },
+  "home": {
+   "abbr": "TLSA",
+   "name": "Tulsa Golden Hurricane"
+  },
+  "rest": [
+   4,
+   4
+  ],
+  "espnPHome": 0.74,
+  "simPHome": 0.8031,
+  "rawPHome": 0.7725,
+  "simMargin": 9.97,
+  "simScore": [
+   73.69,
+   83.66
+  ],
+  "simTotal": 157.34,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:25.039Z",
+    "pHome": null,
+    "margin": null,
+    "total": null
+   }
+  ],
+  "mkt": {
+   "line": null,
+   "total": null,
+   "pHome": null,
+   "margin": null
+  },
+  "loggedAt": "2026-11-14T08:56:25.039Z",
+  "result": null
+ },
+ "ncaab:401919807": {
+  "key": "ncaab:401919807",
+  "league": "ncaab",
+  "gameId": "401919807",
+  "start": "2026-11-17T00:00Z",
+  "away": {
+   "abbr": "STMN",
+   "name": "St. Thomas Tommies"
+  },
+  "home": {
+   "abbr": "LIU",
+   "name": "Long Island University Sharks"
+  },
+  "rest": [
+   1,
+   2
+  ],
+  "espnPHome": 0.388,
+  "simPHome": 0.4185,
+  "rawPHome": 0.429,
+  "simMargin": -2.6,
+  "simScore": [
+   77.4,
+   74.8
+  ],
+  "simTotal": 152.21,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:25.052Z",
+    "pHome": null,
+    "margin": null,
+    "total": null
+   }
+  ],
+  "mkt": {
+   "line": null,
+   "total": null,
+   "pHome": null,
+   "margin": null
+  },
+  "loggedAt": "2026-11-14T08:56:25.052Z",
+  "result": null
+ },
+ "ncaab:401918075": {
+  "key": "ncaab:401918075",
+  "league": "ncaab",
+  "gameId": "401918075",
+  "start": "2026-11-17T00:00Z",
+  "away": {
+   "abbr": "CIT",
+   "name": "The Citadel Bulldogs"
+  },
+  "home": {
+   "abbr": "CLEM",
+   "name": "Clemson Tigers"
+  },
+  "rest": [
+   1,
+   2
+  ],
+  "espnPHome": 0.972,
+  "simPHome": 0.8482,
+  "rawPHome": 0.817,
+  "simMargin": 11.82,
+  "simScore": [
+   68.67,
+   80.49
+  ],
+  "simTotal": 149.16,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:25.064Z",
+    "pHome": null,
+    "margin": null,
+    "total": null
+   }
+  ],
+  "mkt": {
+   "line": null,
+   "total": null,
+   "pHome": null,
+   "margin": null
+  },
+  "loggedAt": "2026-11-14T08:56:25.064Z",
+  "result": null
+ },
+ "ncaab:401911240": {
+  "key": "ncaab:401911240",
+  "league": "ncaab",
+  "gameId": "401911240",
+  "start": "2026-11-17T00:00Z",
+  "away": {
+   "abbr": "RICH",
+   "name": "Richmond Spiders"
+  },
+  "home": {
+   "abbr": "VT",
+   "name": "Virginia Tech Hokies"
+  },
+  "rest": [
+   3,
+   2
+  ],
+  "espnPHome": 0.843,
+  "simPHome": 0.7282,
+  "rawPHome": 0.702,
+  "simMargin": 7.35,
+  "simScore": [
+   76.05,
+   83.4
+  ],
+  "simTotal": 159.45,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:25.077Z",
+    "pHome": null,
+    "margin": null,
+    "total": null
+   }
+  ],
+  "mkt": {
+   "line": null,
+   "total": null,
+   "pHome": null,
+   "margin": null
+  },
+  "loggedAt": "2026-11-14T08:56:25.077Z",
+  "result": null
+ },
+ "ncaab:401906783": {
+  "key": "ncaab:401906783",
+  "league": "ncaab",
+  "gameId": "401906783",
+  "start": "2026-11-17T00:00Z",
+  "away": {
+   "abbr": "JAX",
+   "name": "Jacksonville Dolphins"
+  },
+  "home": {
+   "abbr": "UGA",
+   "name": "Georgia Bulldogs"
+  },
+  "rest": [
+   null,
+   2
+  ],
+  "espnPHome": 0.933,
+  "simPHome": 0.8783,
+  "rawPHome": 0.848,
+  "simMargin": 14.32,
+  "simScore": [
+   69.79,
+   84.11
+  ],
+  "simTotal": 153.9,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:25.089Z",
+    "pHome": null,
+    "margin": null,
+    "total": null
+   }
+  ],
+  "mkt": {
+   "line": null,
+   "total": null,
+   "pHome": null,
+   "margin": null
+  },
+  "loggedAt": "2026-11-14T08:56:25.089Z",
+  "result": null
+ },
+ "ncaab:401927364": {
+  "key": "ncaab:401927364",
+  "league": "ncaab",
+  "gameId": "401927364",
+  "start": "2026-11-17T00:30Z",
+  "away": {
+   "abbr": "TAR",
+   "name": "Tarleton State Texans"
+  },
+  "home": {
+   "abbr": "DRKE",
+   "name": "Drake Bulldogs"
+  },
+  "rest": [
+   2,
+   2
+  ],
+  "espnPHome": 0.864,
+  "simPHome": 0.7906,
+  "rawPHome": 0.7605,
+  "simMargin": 9.21,
+  "simScore": [
+   70.21,
+   79.42
+  ],
+  "simTotal": 149.63,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:25.101Z",
+    "pHome": null,
+    "margin": null,
+    "total": null
+   }
+  ],
+  "mkt": {
+   "line": null,
+   "total": null,
+   "pHome": null,
+   "margin": null
+  },
+  "loggedAt": "2026-11-14T08:56:25.101Z",
+  "result": null
+ },
+ "ncaab:401926143": {
+  "key": "ncaab:401926143",
+  "league": "ncaab",
+  "gameId": "401926143",
+  "start": "2026-11-17T01:00Z",
+  "away": {
+   "abbr": "SIUE",
+   "name": "SIU Edwardsville Cougars"
+  },
+  "home": {
+   "abbr": "UND",
+   "name": "North Dakota Fighting Hawks"
+  },
+  "rest": [
+   2,
+   1
+  ],
+  "espnPHome": 0.58,
+  "simPHome": 0.5316,
+  "rawPHome": 0.5275,
+  "simMargin": 0.78,
+  "simScore": [
+   73.73,
+   74.5
+  ],
+  "simTotal": 148.23,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:25.114Z",
+    "pHome": null,
+    "margin": null,
+    "total": null
+   }
+  ],
+  "mkt": {
+   "line": null,
+   "total": null,
+   "pHome": null,
+   "margin": null
+  },
+  "loggedAt": "2026-11-14T08:56:25.114Z",
+  "result": null
+ },
+ "ncaab:401920735": {
+  "key": "ncaab:401920735",
+  "league": "ncaab",
+  "gameId": "401920735",
+  "start": "2026-11-17T01:00Z",
+  "away": {
+   "abbr": "COLU",
+   "name": "Columbia Lions"
+  },
+  "home": {
+   "abbr": "NU",
+   "name": "Northwestern Wildcats"
+  },
+  "rest": [
+   2,
+   2
+  ],
+  "espnPHome": 0.894,
+  "simPHome": 0.6624,
+  "rawPHome": 0.6425,
+  "simMargin": 4.94,
+  "simScore": [
+   69.37,
+   74.31
+  ],
+  "simTotal": 143.68,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:25.126Z",
+    "pHome": null,
+    "margin": null,
+    "total": null
+   }
+  ],
+  "mkt": {
+   "line": null,
+   "total": null,
+   "pHome": null,
+   "margin": null
+  },
+  "loggedAt": "2026-11-14T08:56:25.126Z",
+  "result": null
+ },
+ "ncaab:401917964": {
+  "key": "ncaab:401917964",
+  "league": "ncaab",
+  "gameId": "401917964",
+  "start": "2026-11-17T01:00Z",
+  "away": {
+   "abbr": "ACU",
+   "name": "Abilene Christian Wildcats"
+  },
+  "home": {
+   "abbr": "MOST",
+   "name": "Missouri State Bears"
+  },
+  "rest": [
+   4,
+   null
+  ],
+  "espnPHome": 0.593,
+  "simPHome": 0.6585,
+  "rawPHome": 0.639,
+  "simMargin": 4.75,
+  "simScore": [
+   71.42,
+   76.17
+  ],
+  "simTotal": 147.59,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:25.139Z",
+    "pHome": null,
+    "margin": null,
+    "total": null
+   }
+  ],
+  "mkt": {
+   "line": null,
+   "total": null,
+   "pHome": null,
+   "margin": null
+  },
+  "loggedAt": "2026-11-14T08:56:25.139Z",
+  "result": null
+ },
+ "ncaab:401917917": {
+  "key": "ncaab:401917917",
+  "league": "ncaab",
+  "gameId": "401917917",
+  "start": "2026-11-17T01:00Z",
+  "away": {
+   "abbr": "CARK",
+   "name": "Central Arkansas Bears"
+  },
+  "home": {
+   "abbr": "OKST",
+   "name": "Oklahoma State Cowboys"
+  },
+  "rest": [
+   2,
+   3
+  ],
+  "espnPHome": 0.941,
+  "simPHome": 0.7578,
+  "rawPHome": 0.7295,
+  "simMargin": 8.39,
+  "simScore": [
+   76.46,
+   84.85
+  ],
+  "simTotal": 161.31,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:25.151Z",
+    "pHome": null,
+    "margin": null,
+    "total": null
+   }
+  ],
+  "mkt": {
+   "line": null,
+   "total": null,
+   "pHome": null,
+   "margin": null
+  },
+  "loggedAt": "2026-11-14T08:56:25.151Z",
+  "result": null
+ },
+ "ncaab:401916307": {
+  "key": "ncaab:401916307",
+  "league": "ncaab",
+  "gameId": "401916307",
+  "start": "2026-11-17T01:00Z",
+  "away": {
+   "abbr": "WIU",
+   "name": "Western Illinois Leathernecks"
+  },
+  "home": {
+   "abbr": "MINN",
+   "name": "Minnesota Golden Gophers"
+  },
+  "rest": [
+   3,
+   3
+  ],
+  "espnPHome": 0.986,
+  "simPHome": 0.9759,
+  "rawPHome": 0.9615,
+  "simMargin": 22.96,
+  "simScore": [
+   56.53,
+   79.49
+  ],
+  "simTotal": 136.02,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:25.163Z",
+    "pHome": null,
+    "margin": null,
+    "total": null
+   }
+  ],
+  "mkt": {
+   "line": null,
+   "total": null,
+   "pHome": null,
+   "margin": null
+  },
+  "loggedAt": "2026-11-14T08:56:25.163Z",
+  "result": null
+ },
+ "ncaab:401909798": {
+  "key": "ncaab:401909798",
+  "league": "ncaab",
+  "gameId": "401909798",
+  "start": "2026-11-17T01:00Z",
+  "away": {
+   "abbr": "MONT",
+   "name": "Montana Grizzlies"
+  },
+  "home": {
+   "abbr": "KSU",
+   "name": "Kansas State Wildcats"
+  },
+  "rest": [
+   1,
+   null
+  ],
+  "espnPHome": 0.807,
+  "simPHome": 0.6669,
+  "rawPHome": 0.6465,
+  "simMargin": 5.08,
+  "simScore": [
+   75.6,
+   80.68
+  ],
+  "simTotal": 156.28,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:25.176Z",
+    "pHome": null,
+    "margin": null,
+    "total": null
+   }
+  ],
+  "mkt": {
+   "line": null,
+   "total": null,
+   "pHome": null,
+   "margin": null
+  },
+  "loggedAt": "2026-11-14T08:56:25.176Z",
+  "result": null
+ },
+ "ncaab:401920808": {
+  "key": "ncaab:401920808",
+  "league": "ncaab",
+  "gameId": "401920808",
+  "start": "2026-11-17T01:30Z",
+  "away": {
+   "abbr": "SELA",
+   "name": "SE Louisiana Lions"
+  },
+  "home": {
+   "abbr": "TA&M",
+   "name": "Texas A&M Aggies"
+  },
+  "rest": [
+   null,
+   3
+  ],
+  "espnPHome": 0.981,
+  "simPHome": 0.9834,
+  "rawPHome": 0.972,
+  "simMargin": 27.07,
+  "simScore": [
+   63.19,
+   90.26
+  ],
+  "simTotal": 153.45,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:25.187Z",
+    "pHome": null,
+    "margin": null,
+    "total": null
+   }
+  ],
+  "mkt": {
+   "line": null,
+   "total": null,
+   "pHome": null,
+   "margin": null
+  },
+  "loggedAt": "2026-11-14T08:56:25.187Z",
+  "result": null
+ },
+ "ncaab:401929192": {
+  "key": "ncaab:401929192",
+  "league": "ncaab",
+  "gameId": "401929192",
+  "start": "2026-11-17T02:30Z",
+  "away": {
+   "abbr": "ETAM",
+   "name": "East Texas A&M Lions"
+  },
+  "home": {
+   "abbr": "ORST",
+   "name": "Oregon State Beavers"
+  },
+  "rest": [
+   2,
+   2
+  ],
+  "espnPHome": 0.911,
+  "simPHome": 0.8031,
+  "rawPHome": 0.7725,
+  "simMargin": 10.44,
+  "simScore": [
+   71.52,
+   81.96
+  ],
+  "simTotal": 153.49,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:25.200Z",
+    "pHome": null,
+    "margin": null,
+    "total": null
+   }
+  ],
+  "mkt": {
+   "line": null,
+   "total": null,
+   "pHome": null,
+   "margin": null
+  },
+  "loggedAt": "2026-11-14T08:56:25.200Z",
+  "result": null
+ },
+ "ncaab:401924265": {
+  "key": "ncaab:401924265",
+  "league": "ncaab",
+  "gameId": "401924265",
+  "start": "2026-11-17T03:00Z",
+  "away": {
+   "abbr": "LBSU",
+   "name": "Long Beach State Beach"
+  },
+  "home": {
+   "abbr": "UCLA",
+   "name": "UCLA Bruins"
+  },
+  "rest": [
+   4,
+   4
+  ],
+  "espnPHome": 0.987,
+  "simPHome": 0.9837,
+  "rawPHome": 0.9725,
+  "simMargin": 25.45,
+  "simScore": [
+   61.4,
+   86.84
+  ],
+  "simTotal": 148.24,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:25.212Z",
+    "pHome": null,
+    "margin": null,
+    "total": null
+   }
+  ],
+  "mkt": {
+   "line": null,
+   "total": null,
+   "pHome": null,
+   "margin": null
+  },
+  "loggedAt": "2026-11-14T08:56:25.212Z",
+  "result": null
+ },
+ "ncaab:401920373": {
+  "key": "ncaab:401920373",
+  "league": "ncaab",
+  "gameId": "401920373",
+  "start": "2026-11-17T03:00Z",
+  "away": {
+   "abbr": "TXSO",
+   "name": "Texas Southern Tigers"
+  },
+  "home": {
+   "abbr": "UCSD",
+   "name": "UC San Diego Tritons"
+  },
+  "rest": [
+   2,
+   2
+  ],
+  "espnPHome": 0.945,
+  "simPHome": 0.8561,
+  "rawPHome": 0.825,
+  "simMargin": 13.3,
+  "simScore": [
+   73.19,
+   86.49
+  ],
+  "simTotal": 159.68,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:25.226Z",
+    "pHome": null,
+    "margin": null,
+    "total": null
+   }
+  ],
+  "mkt": {
+   "line": null,
+   "total": null,
+   "pHome": null,
+   "margin": null
+  },
+  "loggedAt": "2026-11-14T08:56:25.226Z",
+  "result": null
+ },
+ "ncaab:401917532": {
+  "key": "ncaab:401917532",
+  "league": "ncaab",
+  "gameId": "401917532",
+  "start": "2026-11-17T03:00Z",
+  "away": {
+   "abbr": "PRST",
+   "name": "Portland State Vikings"
+  },
+  "home": {
+   "abbr": "SMC",
+   "name": "Saint Mary's Gaels"
+  },
+  "rest": [
+   1,
+   2
+  ],
+  "espnPHome": 0.945,
+  "simPHome": 0.9229,
+  "rawPHome": 0.8965,
+  "simMargin": 17.11,
+  "simScore": [
+   69.72,
+   86.83
+  ],
+  "simTotal": 156.54,
+  "lines": [
+   {
+    "t": "2026-11-14T08:56:25.240Z",
+    "pHome": null,
+    "margin": null,
+    "total": null
+   }
+  ],
+  "mkt": {
+   "line": null,
+   "total": null,
+   "pHome": null,
+   "margin": null
+  },
+  "loggedAt": "2026-11-14T08:56:25.240Z",
   "result": null
  }
 }

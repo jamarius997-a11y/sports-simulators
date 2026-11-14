@@ -2,12 +2,13 @@
 'use strict';
 const fs = require('fs'), path = require('path');
 const FILE = path.join(__dirname, 'picks-log.json');
-const SPORT = { nba: 'basketball', nfl: 'football', nhl: 'hockey' };
+const SPORT = { nba: 'basketball/nba', nfl: 'football/nfl', nhl: 'hockey/nhl', ncaaf: 'football/college-football', ncaab: 'basketball/mens-college-basketball' };
+const GROUPS = { ncaaf: '&groups=80&limit=500', ncaab: '&groups=50&limit=500' }, ALL = Object.keys(SPORT);
 const log = fs.existsSync(FILE) ? JSON.parse(fs.readFileSync(FILE, 'utf8')) : {};
 
 async function board(sp, ymd) {
   try {
-    const r = await fetch('https://site.api.espn.com/apis/site/v2/sports/' + SPORT[sp] + '/' + sp + '/scoreboard?dates=' + ymd, { signal: AbortSignal.timeout(20000) });
+    const r = await fetch('https://site.api.espn.com/apis/site/v2/sports/' + SPORT[sp] + '/scoreboard?dates=' + ymd + (GROUPS[sp] || ''), { signal: AbortSignal.timeout(20000) });
     return r.ok ? (await r.json()).events || [] : [];
   } catch (e) { return []; }
 }
@@ -35,7 +36,7 @@ const ymdOf = d => d.getUTCFullYear() + String(d.getUTCMonth() + 1).padStart(2, 
   fs.writeFileSync(FILE, JSON.stringify(log, null, 1));
 
   const out = { generated: new Date().toISOString(), leagues: {} };
-  for (const sp of ['nba', 'nfl', 'nhl']) {
+  for (const sp of ALL) {
     const done = Object.values(log).filter(e => e.league === sp && e.result).sort((x, y) => x.start.localeCompare(y.start));
     const pending = Object.values(log).filter(e => e.league === sp && !e.result).length;
     if (!done.length) { out.leagues[sp] = { n: 0, pending }; continue; }
@@ -66,5 +67,5 @@ const ymdOf = d => d.getUTCFullYear() + String(d.getUTCMonth() + 1).padStart(2, 
     };
   }
   fs.writeFileSync(path.join(__dirname, 'picks-results.js'), 'window.PICKS = ' + JSON.stringify(out) + ';\n');
-  console.log('scored ' + scored + ' newly finished games; ' + Object.values(out.leagues).map((l, i) => ['nba', 'nfl', 'nhl'][i] + ' ' + l.n).join(', ') + ' tracked');
+  console.log('scored ' + scored + ' newly finished games; ' + ALL.map(sp => sp + ' ' + out.leagues[sp].n).join(', ') + ' tracked');
 })();

@@ -11,7 +11,7 @@
   body { margin:0; background:var(--bg); color:var(--text); font:16px/1.5 system-ui,Segoe UI,Roboto,sans-serif; }
   .wrap { max-width:960px; margin:0 auto; padding:16px; }
   h1 { font-size:20px; margin:0 0 12px; }
-  .tabs { display:flex; gap:8px; margin-bottom:12px; }
+  .tabs { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:12px; }
   .tab { flex:1; padding:10px; border:1px solid var(--line); background:var(--panel); color:var(--text); border-radius:8px; font-weight:600; cursor:pointer; }
   .tab.on { background:var(--accent); border-color:var(--accent); color:#fff; }
   .panel { background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:14px; margin-bottom:12px; }
@@ -44,7 +44,8 @@
   .muted { color:var(--muted); font-weight:400; font-size:13px; }
   h1 { font-size:24px; letter-spacing:-.01em; }
   h2 { font-size:19px; margin:0; }
-  .tab { font-size:16px; padding:12px; }
+  .tab { font-size:16px; padding:12px; white-space:nowrap; min-width:84px; }
+  .g-names { font-size:13px; color:var(--muted); margin:-4px 0 6px; }
   .panel > summary, details.fold > summary, details.tool > summary { cursor:pointer; font-weight:600; font-size:16px; list-style:none; color:var(--text); }
   details.fold > summary::before, details.tool > summary::before { content:'\25B8'; display:inline-block; width:1.1em; color:var(--accent); }
   details.fold[open] > summary::before, details.tool[open] > summary::before { content:'\25BE'; }
@@ -128,7 +129,7 @@ function fmt(x) { return Number.isInteger(x) ? x : x.toFixed(1); }
 function buildTabs() {
   $('tabs').innerHTML = '';
   for (const k in S) {
-    if (k === 'mlb') continue;   // hidden: no live MLB data and it is the offseason (engine kept in sim.js)
+    if (k === 'mlb' || !S[k].teams.length) continue;   // MLB hidden: no live data and it is the offseason (engine kept in sim.js). College tabs need data.js for their team lists.
     const b = document.createElement('button');
     b.className = 'tab' + (k === sport ? ' on' : ''); b.textContent = S[k].label;
     b.onclick = () => { sport = k; buildTabs(); buildTeams(); $('out').innerHTML = ''; renderUpcoming(); renderPicks(); renderBacktest(); };
@@ -147,20 +148,22 @@ function buildTeams() {
   $('awaySel').value = 1; $('homeSel').value = 0;
   buildFields('away'); buildFields('home'); buildRoster('away'); buildRoster('home');
 }
-$('awaySel').onchange = () => { curRest = null; curWx = null; buildFields('away'); buildRoster('away'); };
-$('homeSel').onchange = () => { curRest = null; curWx = null; buildFields('home'); buildRoster('home'); };
+$('awaySel').onchange = () => { curRest = null; curWx = null; curNeutral = false; buildFields('away'); buildRoster('away'); };
+$('homeSel').onchange = () => { curRest = null; curWx = null; curNeutral = false; buildFields('home'); buildRoster('home'); };
 
 // Roster editor: rename players, mark injured players Out, tweak the rating that drives their share of the action.
 function buildRoster(side) {
-  const t = team($(side + 'Sel')), R = Sim.roster(sport, t);
+  const t = team($(side + 'Sel'));
+  if (sport === 'ncaab') { $(side + 'Roster').innerHTML = '<p class="note">College basketball is simulated at the team level (no player data). Edit the two ratings above instead.</p>'; return; }
+  const R = Sim.roster(sport, t);
   const G = {
     nba: [['Rotation', R.players, 'min', 'Min'], ['', null]],
     mlb: [['Lineup', R.lineup, 'bat', 'Bat']],
     nfl: [['QB', R.qb, 'ypa', 'Y/A'], ['RB', R.rb, 'car', 'Car'], ['WR / TE', R.rec, 'tgt', 'Tgt'], ['O-line', R.ol && R.ol.length ? R.ol : null, 'snap', 'Snap%'], ['Defense', R.defense, R.defense && R.defense.some(p => p.snap != null) ? 'snap' : 'prod', R.defense && R.defense.some(p => p.snap != null) ? 'Snap%' : 'Prod']],
     nhl: [['Forwards', R.fwd, 'w', 'Shot wt'], ['Defense', R.def, 'w', 'Shot wt']],
-  }[sport].filter(g => g[1]);
+  }[sport === 'ncaaf' ? 'nfl' : sport].filter(g => g[1]);
   const hasOut = sport !== 'mlb';
-  let html = (t.live ? '<p class="note">Live ratings and rosters (' + (t.liveGp || 0) + ' games this season, blended with last season). Tick <b>Out</b> to sit a player.</p>' : '<p class="note">Names are generated placeholders &mdash; rename them and adjust ratings.</p>');
+  let html = sport === 'ncaaf' ? '<p class="note">Live team ratings. College rosters are not loaded: this depth chart is a generated placeholder that only fills in the box score.</p>' : (t.live ? '<p class="note">Live ratings and rosters (' + (t.liveGp || 0) + ' games this season, blended with last season). Tick <b>Out</b> to sit a player.</p>' : '<p class="note">Names are generated placeholders &mdash; rename them and adjust ratings.</p>');
   if (sport === 'mlb') {
     html += '<label>Starting pitcher</label><select data-start>' + '<option value="-1">Random from rotation</option>' +
       R.rotation.map((p, i) => '<option value="' + i + '"' + (t.startIdx === i ? ' selected' : '') + '>' + p.name + ' (' + (p.adj > 0 ? '+' : '') + p.adj + ' RA)</option>').join('') + '</select>';
@@ -200,7 +203,7 @@ function matchup() {
 
 $('bGame').onclick = () => {
   const m = matchup(); if (!m) return;
-  const g = Sim.simGame(sport, m[0], m[1], rng(), { detail: true, rest: curRest, weather: curWx });
+  const g = Sim.simGame(sport, m[0], m[1], rng(), { detail: true, rest: curRest, weather: curWx, neutral: curNeutral });
   const w = g.winner;
   $('out').innerHTML = `<div class="panel">
     <div class="score">
@@ -220,7 +223,7 @@ $('bGame').onclick = () => {
 
 $('bMC').onclick = () => {
   const m = matchup(); if (!m) return;
-  const n = +$('nGames').value, r = Sim.monteCarlo(sport, m[0], m[1], n, rng(), { rest: curRest, weather: curWx });
+  const n = +$('nGames').value, r = Sim.monteCarlo(sport, m[0], m[1], n, rng(), { rest: curRest, weather: curWx, neutral: curNeutral });
   const pa = r.wins[0] / n * 100, ph = r.wins[1] / n * 100, pt = r.wins[2] / n * 100;
   let rows = '', peak = 0;
   for (const v of r.margins.values()) peak = Math.max(peak, v);
@@ -256,7 +259,7 @@ $('bSeries').onclick = () => {
 $('bLeague').onclick = () => {
   const out = $('out'); out.innerHTML = '<div class="panel">Simulating every team against every other team, home and away&hellip;</div>';
   setTimeout(() => {
-    const reps = sport === 'mlb' ? 4 : 6, rows = Sim.leagueTable(sport, reps, rng());
+    const reps = sport === 'mlb' ? 4 : S[sport].college ? 2 : 6, rows = Sim.leagueTable(sport, reps, rng());
     out.innerHTML = `<div class="panel"><b>League power table</b> <span class="note">(${reps} full home-and-away round robins, ${rows[0].gp} games each)</span>
     <table><tr><th>#&nbsp;Team</th><th>W</th><th>L</th><th>Win%</th><th>Avg PF</th><th>Avg PA</th></tr>
     ${rows.map((x, i) => `<tr><td>${i + 1}. ${x.team.name}</td><td>${x.w}</td><td>${x.l}</td><td>${x.pct.toFixed(3)}</td><td>${(x.pf / x.gp).toFixed(1)}</td><td>${(x.pa / x.gp).toFixed(1)}</td></tr>`).join('')}</table></div>`;
@@ -265,11 +268,11 @@ $('bLeague').onclick = () => {
 
 const liveN = window.LIVE_DATA ? Sim.applyLive(window.LIVE_DATA) : 0;
 $('liveNote').textContent = liveN
-  ? 'Live ratings for ' + liveN + ' teams. Data: ESPN, nflverse and MoneyPuck.com (NHL, non-commercial use). Refreshes every 2 hours on game days.'
+  ? 'Live ratings for ' + liveN + ' teams (NBA, NFL, NHL, FBS college football, Division I college basketball). Data: ESPN, nflverse and MoneyPuck.com (NHL, non-commercial use). Refreshes every 2 hours on game days.'
   : 'No live data loaded (data.js missing) — using built-in approximate ratings. Run: node update-data.js';
 // ---------- Upcoming games ----------
 const normName = x => x.toLowerCase().replace(/[^a-z]/g, '');
-function findTeam(sp, side) { const T = S[sp].teams; return T.find(t => normName(t.name) === normName(side.name)) || T.find(t => t.id === side.abbr); }
+function findTeam(sp, side) { const T = S[sp].teams; return (side.id && T.find(t => t.eid === side.id)) || T.find(t => normName(t.name) === normName(side.name)) || T.find(t => t.id === side.abbr); }
 function prepGame(g, sp) {   // sp: the sport being simulated (the visible tab can change mid-run)
   sp = sp || sport;
   const a = findTeam(sp, g.away), h = findTeam(sp, g.home); if (!a || !h) return null;
@@ -286,20 +289,20 @@ function market(g) {
   const r = g.line && /^(\S+)\s+([+-]?\d+(?:\.\d+)?)$/.exec(g.line);
   if (r) {
     // the line can spell a team differently from the schedule (NHL "UTAH" vs "UTA"), so match on a shared prefix and rule out the away team first
-    const fav = r[1], v = parseFloat(r[2]), same = (x, y) => x === y || x.startsWith(y) || y.startsWith(x), isHome = fav !== g.away.abbr && same(fav, g.home.abbr);
+    const fav = r[1], v = parseFloat(r[2]), same = (x, y) => x === y || x.startsWith(y) || y.startsWith(x), isHome = g.homeFav != null ? (g.homeFav ? v <= 0 : v > 0) : fav !== g.away.abbr && same(fav, g.home.abbr);
     if (Math.abs(v) >= 100) { if (m.homeProb == null) { const p = imp(v); m.homeProb = isHome ? p : 1 - p; } }
     else m.homeMargin = isHome ? -v : v;
   }
   return m;
 }
-const SPREAD_SD = { nfl: 13.2, nba: 12.0 }, normCdf = z => 0.5 * (1 + Math.sign(z) * Math.sqrt(1 - Math.exp(-4 * (z / Math.SQRT2) ** 2 / Math.PI)));
+const SPREAD_SD = { nfl: 13.2, nba: 12.0, ncaaf: 16, ncaab: 11 }, normCdf = z => 0.5 * (1 + Math.sign(z) * Math.sqrt(1 - Math.exp(-4 * (z / Math.SQRT2) ** 2 / Math.PI)));
 // Sim weight in the best-pick blend. The market beat the sim in the NFL backtests (best weight 0% in 2024, 25% in 2025) and in the live
 // track record for every sport so far, so best picks lean on the market; with no line posted yet, the sim's own number is used.
-const BLEND = { nfl: 0.15, nba: 0.15, nhl: 0.15 };
+const BLEND = { nfl: 0.15, nba: 0.15, nhl: 0.15, ncaaf: 0.15, ncaab: 0.15 };   // college: no track record yet, so the same market-heavy blend
 // Spread and total picks: the same 85/15 blend, measured against the posted number. The blend only differs from the line by 15% of the
 // sim's disagreement, so these are small edges; the chance is a normal approximation around the blended number (SDs from the backtests).
 // Live record so far: when the sim disagreed by 2+ points its side hit 48% (NBA spreads) and 44% (NBA totals), so treat these as close to coin flips.
-const ATS_SD = { nba: 12.0, nfl: 13.2 }, TOT_SD = { nba: 18.0, nfl: 13.5, nhl: 2.3 };
+const ATS_SD = { nba: 12.0, nfl: 13.2, ncaaf: 16, ncaab: 11 }, TOT_SD = { nba: 18.0, nfl: 13.5, nhl: 2.3, ncaaf: 16, ncaab: 16 };   // college SDs: rounded from the 2025 backtest's misses (backtest-college.js)
 const confLine = q => q >= 0.57 ? 'Solid' : q >= 0.53 ? 'Lean' : 'Toss-up';
 function spreadPick(g, r, mk) {
   if (mk.homeMargin == null || !ATS_SD[sport]) return null;
@@ -319,9 +322,9 @@ function bestPick(g, r, mp) {
   const simSide = r.pHome >= 0.5, why = mp == null ? 'sim only, no line yet' : simSide === (mp >= 0.5) ? 'sim and market agree' : 'sim prefers ' + (simSide ? g.home.abbr : g.away.abbr);
   return { team: home ? g.home.abbr : g.away.abbr, p: q, conf, why };
 }
-let curRest = null, curWx = null;
+let curRest = null, curWx = null, curNeutral = false;
 function loadGame(g) {
-  curRest = { away: g.awayRest, home: g.homeRest }; curWx = g.weather || null;
+  curRest = { away: g.awayRest, home: g.homeRest }; curWx = g.weather || null; curNeutral = !!(g.venue && g.venue.neutral);
   const T = S[sport].teams, p = prepGame(g); if (!p) return;
   $('awaySel').value = T.indexOf(p[0]); $('homeSel').value = T.indexOf(p[1]);
   buildFields('away'); buildFields('home'); buildRoster('away'); buildRoster('home'); $('tool').open = true; $('tool').scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -345,14 +348,14 @@ async function runSim(force) {
     const g = sched[i]; $('simStatus') && ($('simStatus').textContent = 'Simulating game ' + (i + 1) + ' of ' + sched.length + '…');
     await new Promise(r => setTimeout(r, 0));
     const p = prepGame(g, sp); if (!p) { res.push(null); continue; }
-    const m = Sim.monteCarlo(sp, p[0], p[1], 2000, R, { rest: { away: g.awayRest, home: g.homeRest }, weather: g.weather });
+    const m = Sim.monteCarlo(sp, p[0], p[1], 2000, R, { rest: { away: g.awayRest, home: g.homeRest }, weather: g.weather, neutral: !!(g.venue && g.venue.neutral) });
     const raw = (m.wins[1] + m.wins[2] / 2) / m.n, a = (window.BACKTEST && window.BACKTEST.leagues[sp] && window.BACKTEST.leagues[sp].stretch) || 1;
     const z = Math.log(Math.min(0.999, Math.max(0.001, raw)) / (1 - Math.min(0.999, Math.max(0.001, raw))));
     res.push({ raw, pHome: 1 / (1 + Math.exp(-a * z)), margin: m.avg[1] - m.avg[0], total: m.avgTotal, away: m.avg[0], home: m.avg[1] });
   }
   simRes[sp] = res; simBusy = false; if (sport === sp) renderUpcoming(); else runSim();
 }
-const TOT_GAP = { nba: 4, nfl: 2.5, nhl: 0.4 };
+const TOT_GAP = { nba: 4, nfl: 2.5, nhl: 0.4, ncaaf: 3.5, ncaab: 4 };
 function dayLabel(d) {
   const t0 = new Date(); t0.setHours(0, 0, 0, 0); const diff = Math.round((new Date(d).setHours(0, 0, 0, 0) - t0) / 86400000);
   return diff <= 0 ? 'Today' : diff === 1 ? 'Tomorrow' : new Date(d).toLocaleDateString([], { weekday: 'long', month: 'short', day: 'numeric' });
@@ -365,9 +368,11 @@ function gameCard(g, i, r) {
   const chips = [];
   if (sport === 'nba' || sport === 'nhl') { if (g.awayRest === 0) chips.push(g.away.abbr + ' back-to-back'); if (g.homeRest === 0) chips.push(g.home.abbr + ' back-to-back'); }
   if (sport === 'nhl') chips.push('low confidence');
+  if (S[sport].college && g.venue && g.venue.neutral) chips.push('Neutral site');
   if (sport === 'nfl' && g.weather && !g.weather.indoor) { const adj = Sim.nflWeatherAdj(g.weather); if (adj <= -0.5 || g.weather.precip >= 0.5) chips.push('Weather: ' + g.weather.wind + ' mph wind, ' + g.weather.temp + '°F' + (g.weather.precip >= 0.5 ? ', rain/snow' : '') + (adj <= -0.5 ? ' (total ' + adj.toFixed(1) + ')' : '')); }
   [[g.away, g.awayFrom], [g.home, g.homeFrom]].forEach(([t, from]) => { const mi = from && from !== g.home.abbr ? Travel.miles(sport, from, g.home.abbr) : null, tz = from ? Travel.tzShift(sport, from, g.home.abbr) : null; if (mi != null && (mi >= 1500 || Math.abs(tz) >= 2)) chips.push(t.abbr + ' traveled ' + Math.round(mi / 100) * 100 + ' mi' + (Math.abs(tz) >= 2 ? ', ' + Math.abs(tz) + ' time zones ' + (tz > 0 ? 'east' : 'west') : '')); });
   let rows = '', verdict = '', cls = '';
+  const rk = x => x.rank ? '<span class="at">#' + x.rank + '</span> ' : '';
   const dash = '<span class="muted">–</span>';
   if (r) {
     const bp = bestPick(g, r, mp);
@@ -375,7 +380,7 @@ function gameCard(g, i, r) {
       (sport !== 'nhl' ? '<tr class="best"><td>Spread pick</td><td colspan="2">' + pickHtml(spreadPick(g, r, mk)) + '</td></tr>' : '') +
       '<tr class="best"><td>Total pick</td><td colspan="2">' + pickHtml(totalPick(r, mk)) + '</td></tr>' +
       '<tr><td>Win chance</td><td><b>' + fav(r.pHome) + '</b></td><td>' + (mp != null ? fav(mp) : dash) + '</td></tr>' +
-      (g.espnP != null ? '<tr><td>ESPN model</td><td colspan="2">' + fav(g.espnP) + ' <span class="muted">(' + (sport === 'nba' ? 'BPI' : 'FPI') + '; tracked, not used in picks yet)</span></td></tr>' : '') +
+      (g.espnP != null ? '<tr><td>ESPN model</td><td colspan="2">' + fav(g.espnP) + ' <span class="muted">(' + (sport === 'nba' || sport === 'ncaab' ? 'BPI' : 'FPI') + '; tracked, not used in picks yet)</span></td></tr>' : '') +
       (sport !== 'nhl' ? '<tr><td>Margin</td><td>' + by(r.margin) + '</td><td>' + (mk.homeMargin != null ? by(mk.homeMargin) : dash) + '</td></tr>' : '') +
       '<tr><td>Total points</td><td>' + f1(r.total) + '</td><td>' + (mk.total ? mk.total : dash) + '</td></tr>' +
       '<tr><td>Projected score</td><td colspan="2">' + g.away.abbr + ' ' + r.away.toFixed(dec) + ' – ' + g.home.abbr + ' ' + r.home.toFixed(dec) + '</td></tr>';
@@ -393,7 +398,8 @@ function gameCard(g, i, r) {
   }
   const goalie = sport === 'nhl' && (g.away.probable || g.home.probable || g.away.confirmed || g.home.confirmed) ? '<div class="goal"><span class="lbl">Goalies</span>' + [[g.away], [g.home]].map(([x]) => x.abbr + ' ' + (x.confirmed ? x.confirmed + ' <span class="pos">(confirmed)</span>' : (x.probable || '?') + ' <span class="muted">(probable)</span>')).join(' · ') + '</div>' : '';
   return { day: dayLabel(g.date), html: '<div class="game' + cls + '"><div class="g-top"><span class="when">' + when + '</span>' + chips.map(c => '<span class="chip">' + c + '</span>').join('') + '<button class="act alt" data-load="' + i + '">Open in simulator</button></div>' +
-    '<div class="g-teams">' + g.away.abbr + ' <span class="at">@</span> ' + g.home.abbr + '<span class="mline">' + (mk.text !== '–' ? 'Line: ' + mk.text : '') + '</span></div>' +
+    '<div class="g-teams">' + rk(g.away) + g.away.abbr + ' <span class="at">' + (g.venue && g.venue.neutral && S[sport].college ? 'vs' : '@') + '</span> ' + rk(g.home) + g.home.abbr + '<span class="mline">' + (mk.text !== '–' ? 'Line: ' + mk.text : '') + '</span></div>' +
+    (S[sport].college ? '<div class="g-names">' + g.away.name + (g.venue && g.venue.neutral ? ' vs ' : ' at ') + g.home.name + '</div>' : '') +
     '<table class="cmp"><tr><th></th><th>Sim</th><th>Market</th></tr>' + rows + '</table>' + verdict + goalie + injHtml(g) + '</div>' };
 }
 function renderUpcoming() {
@@ -422,7 +428,7 @@ function renderUpcoming() {
   }
   html = sum + html;
   box.innerHTML = head + '<p class="note" style="margin:0 0 6px">Data updated ' + new Date(gen).toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' }) + ' (' + Math.round((Date.now() - new Date(gen)) / 60000) + ' min ago). Late scratches can be missing.</p>' +
-    '<details class="how"><summary>How to read this</summary><p class="note">Sim = this simulator, 2,000 games per matchup, calibrated on the backtest. Market = ESPN/DraftKings at the last data update. &ldquo;Margin&rdquo; is the expected winning margin; &ldquo;Total&rdquo; is both teams&rsquo; points added together. Travel chips are information only: backtests found no reliable effect of travel distance or time zones, and the live log is recording it to check again. Missing key defenders raise the opponent&rsquo;s scoring a little (the NFL size is backed by a weak backtest signal; the NBA and NHL sizes are judgement calls). Each game&rsquo;s best pick leans on the line (85% market, 15% sim), because the line beat the sim in the NFL backtests and in the live track record for every sport; with no line posted yet it is the sim alone. NHL win chances are only slightly better than a coin flip.</p></details>' + html;
+    '<details class="how"><summary>How to read this</summary><p class="note">Sim = this simulator, 2,000 games per matchup, calibrated on the backtest. Market = ESPN/DraftKings at the last data update. &ldquo;Margin&rdquo; is the expected winning margin; &ldquo;Total&rdquo; is both teams&rsquo; points added together. Travel chips are information only: backtests found no reliable effect of travel distance or time zones, and the live log is recording it to check again. Missing key defenders raise the opponent&rsquo;s scoring a little (the NFL size is backed by a weak backtest signal; the NBA and NHL sizes are judgement calls). Each game&rsquo;s best pick leans on the line (85% market, 15% sim), because the line beat the sim in the NFL backtests and in the live track record for every sport; with no line posted yet it is the sim alone. NHL win chances are only slightly better than a coin flip.' + (S[sport].college ? ' College games are simulated from team ratings only (points scored and allowed, adjusted for the strength of each opponent): no injuries, rosters or weather, so check the news on a big gap.' : '') + '</p></details>' + html;
   box.querySelectorAll('[data-load]').forEach(b => b.onclick = () => loadGame(sched[+b.dataset.load]));
   if (!res) runSim();
 }
@@ -451,10 +457,10 @@ function renderPicks() {
 // ---------- Backtest ----------
 function renderBacktest() {
   const box = $('backtest'), B = window.BACKTEST && window.BACKTEST.leagues && window.BACKTEST.leagues[sport];
-  if (!B) { box.innerHTML = '<summary>How accurate is the sim?</summary><p class="note">' + (sport === 'mlb' ? 'No backtest for MLB yet (it has no live data).' : 'No backtest loaded. Run <code>node backtest.js</code>.') + '</p>'; return; }
+  if (!B) { box.innerHTML = '<summary>How accurate is the sim?</summary><p class="note">' + (sport === 'mlb' ? 'No backtest for MLB yet (it has no live data).' : 'No backtest loaded. Run <code>node ' + (S[sport].college ? 'backtest-college.js' : 'backtest.js') + '</code>.') + '</p>'; return; }
   const better = (a, b) => a < b ? 'pos' : 'neg';
   box.innerHTML = '<summary>How accurate is the ' + S[sport].label + ' sim? <span class="muted">(backtest on past seasons)</span></summary>' +
-    '<p class="note">' + B.n.toLocaleString() + ' real games, ' + B.window + '. Each game was predicted using only team results from before that game (' + B.sims + ' sims per game, teams rated after ' + B.minGp + '+ games). Team-level only: no historical injuries or lineups' + (sport === 'nfl' ? '.' : ', and no betting lines to compare against.') + '</p>' +
+    '<p class="note">' + B.n.toLocaleString() + ' real games, ' + B.window + '. Each game was predicted using only team results from before that game' + (S[sport].college ? ', plus the season before as a starting point' : '') + ' (' + B.sims + ' sims per game, teams rated after ' + B.minGp + '+ games). Team-level only: no historical injuries or lineups' + (sport === 'nfl' ? '.' : ', and no betting lines to compare against.') + '</p>' +
     '<table><tr><th></th><th>Sim</th><th>Baseline (home-win rate)</th></tr>' +
     '<tr><td>Picked the winner</td><td class="' + (B.acc > B.accBase ? 'pos' : 'neg') + '">' + (B.acc * 100).toFixed(1) + '%</td><td>' + (B.accBase * 100).toFixed(1) + '%</td></tr>' +
     '<tr><td>Brier score (lower is better)</td><td class="' + better(B.brier, B.brierBase) + '">' + B.brier + '</td><td>' + B.brierBase + '</td></tr>' +
@@ -472,7 +478,7 @@ function renderBacktest() {
     (B.oos ? '<h4 style="margin:14px 0 4px">Out-of-sample check: same settings on the 2024-25 season (' + B.oos.n.toLocaleString() + ' games)</h4><table><tr><th></th><th>Sim</th><th>Baseline</th></tr><tr><td>Picked the winner</td><td>' + (B.oos.acc * 100).toFixed(1) + '%</td><td>' + (B.oos.accBase * 100).toFixed(1) + '%</td></tr><tr><td>Brier</td><td class="' + better(B.oos.brier, B.oos.brierBase) + '">' + B.oos.brier + '</td><td>' + B.oos.brierBase + '</td></tr>' + (B.oos.market ? '<tr><td>Brier vs closing line</td><td>' + B.oos.market.brierSim + '</td><td>market ' + B.oos.market.brierMarket + '</td></tr>' : '') + '</table><p class="note">Settings were tuned on 2025-26, so 2024-25 is a fair test of whether they hold up on games they were not tuned on.</p>' : '') +
     '<h4 style="margin:14px 0 4px">Calibration: when the sim says X%, how often does the home team win?</h4>' +
     '<table><tr><th>Sim said</th><th>Games</th><th>Home actually won</th></tr>' + B.cal.map(c => '<tr><td>' + (c.pred * 100).toFixed(0) + '%</td><td>' + c.n + '</td><td>' + (c.act * 100).toFixed(0) + '%</td></tr>').join('') + '</table>' +
-    '<p class="note">Re-run with <code>node backtest.js</code> (last run ' + new Date(window.BACKTEST.generated).toLocaleDateString() + ').</p>';
+    '<p class="note">Re-run with <code>node ' + (S[sport].college ? 'backtest-college.js' : 'backtest.js') + '</code> (last run ' + new Date(window.BACKTEST.generated).toLocaleDateString() + ').</p>';
 }
 
 buildTabs(); buildTeams(); renderUpcoming(); renderPicks(); renderBacktest();
