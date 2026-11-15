@@ -844,7 +844,7 @@
   function ncaafGame(away, home, rng, opts) { return nflGame(away, home, rng, Object.assign({}, opts, { college: true, weather: null })); }
 
   // Basketball: possession by possession, two 20-minute halves. Division I averages for the possession mix.
-  const CB = { tov: 0.165, ft: 0.105, oreb: 0.28, three: 0.39, ftp: 0.72, p3: 0.338, p2: 0.502, pace: 68.5, noise: 0.02, paceSd: 0.04 };
+  const CB = { tov: 0.165, ft: 0.105, oreb: 0.28, three: 0.39, ftp: 0.72, p3: 0.338, p2: 0.502, pace: 68.5, noise: 0.02, paceSd: 0.04, band: 0.0016, lift: 1.25 };
   function cbEV(d) {
     const p3 = CB.p3 + d, p2 = CB.p2 + 1.5 * d, e = CB.three * 3 * p3 + (1 - CB.three) * 2 * p2, miss = 1 - (CB.three * p3 + (1 - CB.three) * p2);
     return (1 - CB.tov - CB.ft) * e / (1 - miss * CB.oreb) + CB.ft * 2 * CB.ftp;
@@ -858,7 +858,12 @@
     const e = [clamp(raw[0] - str, 35, 130), clamp(raw[1] + str, 35, 130)];
     // High-scoring matchups are part pace, part efficiency: possessions scale with the square root of the expected total.
     const paceMean = CB.pace * Math.sqrt((e[0] + e[1]) / (2 * NCAAB_LG)), poss = paceMean * clamp(1 + normal(rng) * CB.paceSd, 0.85, 1.15);
-    const sh = e.map(x => {
+    // Score effects: real games are tighter than independent possessions allow (a team that is ahead eases off, one that is behind presses), so
+    // each point of lead costs the leader CB.band of shooting percentage. That alone would also shrink a favorite's margin, so the margin the
+    // engine aims for is lifted by CB.lift first; the two were set together so the average margin still matches the ratings.
+    // (0.996: overtime and the lift leave the engine about 0.4% over the total it is asked for)
+    const mid = 0.996 * (e[0] + e[1]) / 2, half = (e[1] - e[0]) / 2 * CB.lift, aim = [clamp(mid - half, 30, 140), clamp(mid + half, 30, 140)];
+    const sh = aim.map(x => {
       const target = clamp(x / paceMean * lognormal(1, CB.noise, rng), 0.45, 1.75);   // each team has a hot or cold night
       let lo = -0.3, hi = 0.3;
       for (let i = 0; i < 30; i++) { const m = (lo + hi) / 2; if (cbEV(m) < target) lo = m; else hi = m; }
@@ -868,12 +873,12 @@
     const score = [0, 0], periods = [[], []];
     let leadChanges = 0, lastLeader = -1; const maxLead = [0, 0];
     function possession(i) {
-      const o = sh[i], s = st[i], d = st[1 - i], r = rng();
+      const o = sh[i], s = st[i], d = st[1 - i], r = rng(), bd = CB.band * (score[i] - score[1 - i]);
       if (r < CB.tov) { s.tov++; return 0; }
       if (r < CB.tov + CB.ft) { let pts = 0; s.fta += 2; for (let k = 0; k < 2; k++) if (rng() < CB.ftp) { pts++; s.ftm++; } return pts; }
       for (;;) {
         const three = rng() < CB.three; s.fga++; if (three) s.tpa++;
-        if (rng() < (three ? o.p3 : o.p2)) { s.fgm++; if (three) s.tpm++; return three ? 3 : 2; }
+        if (rng() < (three ? o.p3 - bd : o.p2 - 1.5 * bd)) { s.fgm++; if (three) s.tpm++; return three ? 3 : 2; }
         if (rng() < CB.oreb) { s.reb++; continue; }
         d.reb++; return 0;
       }

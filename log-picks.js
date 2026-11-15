@@ -31,7 +31,10 @@ function market(sp, g) {
   }
   return m;
 }
-const BLEND = { nfl: 0.15 };   // sim weight in the sim/market blend (nfl backtests: best weight 0% in 2024, 25% in 2025)
+// sim weight in the sim/market blend, the same numbers index.html uses for best picks (nfl backtests: best weight 0% in 2024, 25% in 2025;
+// college football 30% and 45%, college basketball 10% and 15%)
+const BLEND = { nfl: 0.15, ncaaf: 0.3, ncaab: 0.1 };
+const dump = o => '{\n' + Object.keys(o).map(k => JSON.stringify(k) + ':' + JSON.stringify(o[k])).join(',\n') + '\n}\n';   // one game per line: small file, readable diffs
 // every refresh that sees a different market appends a snapshot, so we keep opening-to-closing line movement for free
 function lineHistory(prev, mk) {
   const h = (prev && prev.lines) || [], last = h[h.length - 1], now = { t: new Date().toISOString(), pHome: mk.pHome != null ? +mk.pHome.toFixed(4) : null, margin: mk.margin, total: mk.total };
@@ -44,7 +47,7 @@ const log = fs.existsSync(FILE) ? JSON.parse(fs.readFileSync(FILE, 'utf8')) : {}
 const rng = Sim.makeRng((Date.now() & 0xffffffff) >>> 0);
 let added = 0, updated = 0;
 for (const sp of ['nba', 'nfl', 'nhl', 'ncaaf', 'ncaab']) {
-  const col = !!Sim.SPORTS[sp].college;   // college: hundreds of games a week, so each entry is kept small (no injuries or travel, shorter line history)
+  const col = !!Sim.SPORTS[sp].college;   // college: hundreds of games a week, so each entry is kept small (two flagged players a side, no travel, shorter line history)
   const sched = (window.LIVE_DATA.schedule && window.LIVE_DATA.schedule[sp]) || [];
   const a = stretch(sp);
   for (const g of sched) {
@@ -75,5 +78,5 @@ for (const sp of ['nba', 'nfl', 'nhl', 'ncaaf', 'ncaab']) {
     prev ? updated++ : added++;
   }
 }
-fs.writeFileSync(FILE, JSON.stringify(log, null, 1));
+fs.writeFileSync(FILE, dump(log));
 console.log('picks logged: ' + added + ' new, ' + updated + ' refreshed, ' + Object.keys(log).length + ' total');

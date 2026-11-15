@@ -5,6 +5,26 @@ const FILE = path.join(__dirname, 'picks-log.json');
 const SPORT = { nba: 'basketball/nba', nfl: 'football/nfl', nhl: 'hockey/nhl', ncaaf: 'football/college-football', ncaab: 'basketball/mens-college-basketball' };
 const GROUPS = { ncaaf: '&groups=80&limit=500', ncaab: '&groups=50&limit=500' }, ALL = Object.keys(SPORT);
 const log = fs.existsSync(FILE) ? JSON.parse(fs.readFileSync(FILE, 'utf8')) : {};
+const dump = o => '{\n' + Object.keys(o).map(k => JSON.stringify(k) + ':' + JSON.stringify(o[k])).join(',\n') + '\n}\n';   // one game per line: small file, readable diffs
+// Scored games older than KEEP_DAYS move out of picks-log.json into picks-archive/<year-month>.json, trimmed to what the track record needs,
+// so the log that is rewritten on every refresh stays small (college adds about 150 games a day).
+const ARCH = path.join(__dirname, 'picks-archive'), KEEP_DAYS = 3;
+const slim = e => ({ key: e.key, league: e.league, start: e.start, away: { abbr: e.away.abbr }, home: { abbr: e.home.abbr }, espnPHome: e.espnPHome, simPHome: e.simPHome, simMargin: e.simMargin, simTotal: e.simTotal, blendPHome: e.blendPHome,
+  lines: e.lines && e.lines.length >= 2 ? [e.lines[0], e.lines[e.lines.length - 1]].map(l => ({ pHome: l.pHome })) : undefined, mkt: e.mkt && { pHome: e.mkt.pHome, margin: e.mkt.margin, total: e.mkt.total }, result: e.result });
+function archive() {
+  const move = Object.values(log).filter(e => e.result && new Date(e.start).getTime() < Date.now() - KEEP_DAYS * 86400000), byMonth = {};
+  for (const e of move) (byMonth[e.start.slice(0, 7)] = byMonth[e.start.slice(0, 7)] || []).push(e);
+  for (const m in byMonth) {
+    const f = path.join(ARCH, m + '.json'); fs.mkdirSync(ARCH, { recursive: true });
+    const a = fs.existsSync(f) ? JSON.parse(fs.readFileSync(f, 'utf8')) : {};
+    for (const e of byMonth[m]) a[e.key] = slim(e);
+    fs.writeFileSync(f, dump(a));          // the archive is written first, so a crash here can only leave a game in both places
+  }
+  for (const e of move) delete log[e.key];
+  return move.length;
+}
+const archived = () => fs.existsSync(ARCH) ? fs.readdirSync(ARCH).filter(f => /^\d{4}-\d{2}\.json$/.test(f)).flatMap(f => Object.values(JSON.parse(fs.readFileSync(path.join(ARCH, f), 'utf8')))) : [];
+const WAIT = { nba: 3, nhl: 3, ncaab: 3 };   // hours after the start before looking for a final score (football: 4)
 
 async function board(sp, ymd) {
   try {
@@ -18,7 +38,7 @@ const ymdOf = d => d.getUTCFullYear() + String(d.getUTCMonth() + 1).padStart(2, 
   // group unresolved games by league + day, one request per day
   const need = {};
   for (const e of Object.values(log)) {
-    if (e.result || new Date(e.start).getTime() > Date.now() - 4 * 3600e3) continue;
+    if (e.result || new Date(e.start).getTime() > Date.now() - (WAIT[e.league] || 4) * 3600e3) continue;
     for (const off of [0, -1]) { const d = new Date(new Date(e.start).getTime() + off * 86400000 - 5 * 3600e3); (need[e.league + '|' + ymdOf(d)] = need[e.league + '|' + ymdOf(d)] || []).push(e); }
   }
   let scored = 0;
@@ -33,11 +53,12 @@ const ymdOf = d => d.getUTCFullYear() + String(d.getUTCMonth() + 1).padStart(2, 
       e.result = { homeScore: +h.score, awayScore: +a.score }; scored++;
     }
   }
-  fs.writeFileSync(FILE, JSON.stringify(log, null, 1));
+  const moved = archive(), every = Object.values(log).concat(archived().filter(e => !log[e.key]));
+  fs.writeFileSync(FILE, dump(log));
 
   const out = { generated: new Date().toISOString(), leagues: {} };
   for (const sp of ALL) {
-    const done = Object.values(log).filter(e => e.league === sp && e.result).sort((x, y) => x.start.localeCompare(y.start));
+    const done = every.filter(e => e.league === sp && e.result).sort((x, y) => x.start.localeCompare(y.start));
     const pending = Object.values(log).filter(e => e.league === sp && !e.result).length;
     if (!done.length) { out.leagues[sp] = { n: 0, pending }; continue; }
     const y = e => e.result.homeScore === e.result.awayScore ? 0.5 : e.result.homeScore > e.result.awayScore ? 1 : 0;
@@ -48,7 +69,7 @@ const ymdOf = d => d.getUTCFullYear() + String(d.getUTCMonth() + 1).padStart(2, 
     const callsT = T.filter(e => Math.abs(e.simTotal - e.mkt.total) >= 2 && tot(e) !== e.mkt.total), callsS = S.filter(e => Math.abs(e.simMargin - e.mkt.margin) >= 2 && mar(e) !== e.mkt.margin);
     const MV = done.filter(e => e.lines && e.lines.length >= 2 && e.lines[0].pHome != null && e.lines[e.lines.length - 1].pHome != null && Math.abs(e.lines[e.lines.length - 1].pHome - e.lines[0].pHome) >= 0.01);
     const towardSim = e => Math.sign(e.lines[e.lines.length - 1].pHome - e.lines[0].pHome) === Math.sign(e.simPHome - e.lines[0].pHome);
-    const BW = { nfl: 0.15 }[sp], B = BW == null ? [] : M.filter(e => e.blendPHome != null);
+    const BW = { nfl: 0.15, ncaaf: 0.3, ncaab: 0.1 }[sp], B = BW == null ? [] : M.filter(e => e.blendPHome != null);
     out.leagues[sp] = {
       n: done.length, pending,
       acc: right(done, e => e.simPHome), brier: mean(done, e => (e.simPHome - y(e)) ** 2),
@@ -67,5 +88,5 @@ const ymdOf = d => d.getUTCFullYear() + String(d.getUTCMonth() + 1).padStart(2, 
     };
   }
   fs.writeFileSync(path.join(__dirname, 'picks-results.js'), 'window.PICKS = ' + JSON.stringify(out) + ';\n');
-  console.log('scored ' + scored + ' newly finished games; ' + ALL.map(sp => sp + ' ' + out.leagues[sp].n).join(', ') + ' tracked');
+  console.log('scored ' + scored + ' newly finished games, archived ' + moved + '; ' + ALL.map(sp => sp + ' ' + out.leagues[sp].n).join(', ') + ' tracked');
 })();

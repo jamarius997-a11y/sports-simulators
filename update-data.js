@@ -216,7 +216,7 @@ const r1 = x => Math.round(x * 10) / 10, r3 = x => Math.round(x * 1000) / 1000;
 // College teams: opponent-adjusted ratings from this season's results (college.js), starting from last season's ratings, plus each team's
 // players from the box scores. college-cache.json (committed) keeps last season's ratings, this season's finished days and the player totals,
 // so a refresh only downloads days that were not finished last time. A day is closed (box scores read, never downloaded again) once all its
-// games are final, or after 3 days whatever its state; days close in order so "missed the last game" stays right.
+// games are final and every box score loaded, or after 3 days whatever its state; days close in order so "missed the last game" stays right.
 async function buildCollege(L) {
   const C = require('./college.js'), cfg = C.CFG[L], year = C.seasonOf(L), file = path.join(__dirname, 'college-cache.json'), VER = 2;
   let cache = {}; try { cache = JSON.parse(fs.readFileSync(file, 'utf8')); } catch (e) { /* first run */ }
@@ -237,8 +237,8 @@ async function buildCollege(L) {
   for (let i = 0; i < need.length; i++) {
     const d = need[i], games = got[i], age = all.length - 1 - all.indexOf(d);
     if (!games) { inOrder = false; continue; }
-    if (inOrder && (games.pending === 0 || age > 3)) {
-      const det = await C.pool(games, 10, g => C.gameDetail(L, g[5]));
+    const det = inOrder && (games.pending === 0 || age > 3) ? await C.pool(games, 10, g => C.gameDetail(L, g[5])) : null;
+    if (det && (age > 3 || det.every(Boolean))) {   // a box score that failed to load keeps the day open so it is tried again next time
       c.days[d] = games.map((g, k) => { C.track(L, c.pl, g, det[k]); return C.gameRow(L, g, det[k]); }); boxes += games.length;
     } else { inOrder = false; if (games.length) c.open[d] = games.map(g => g.slice(0, 6)); }
   }
