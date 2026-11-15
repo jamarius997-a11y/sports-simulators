@@ -604,8 +604,8 @@
     const qbl = R.map(r => col && r.qb !== r.base ? NCAAF_QB : 0);
     if (col) R.forEach(r => { r.cmpRel = r.ypaRel = r.intRel = 1; });
     // College: ratings are opponent-adjusted points per game, combined additively (a 60-point offense against a bad defense is common, so the NFL's ratio form overshoots).
-    const e = col ? [clamp(away.pf + home.pa - NCAAF_LG - hf - qbl[0] * 2 / 3 + qbl[1] / 3, 2, 75), clamp(home.pf + away.pa - NCAAF_LG + hf - qbl[1] * 2 / 3 + qbl[0] / 3, 2, 75)] : [away.pf * home.pa / NFL_LG - 1.0 + R[1].defLost - R[0].offLost + wx, home.pf * away.pa / NFL_LG + 1.0 + R[0].defLost - R[1].offLost + wx];
-    const s = opts.strength || (col ? nflStrengths(e) : e.map(x => clamp(x / NFL_LG, 0.45, 1.8)));
+    const e = col ? ncaafExpect(away.pf + home.pa - NCAAF_LG - hf - qbl[0] * 2 / 3 + qbl[1] / 3, home.pf + away.pa - NCAAF_LG + hf - qbl[1] * 2 / 3 + qbl[0] / 3) : [away.pf * home.pa / NFL_LG - 1.0 + R[1].defLost - R[0].offLost + wx, home.pf * away.pa / NFL_LG + 1.0 + R[0].defLost - R[1].offLost + wx];
+    const s = opts.strength || (col ? nflStrengths([e[0] / ncaafFix(e[0], e[1]), e[1] / ncaafFix(e[1], e[0])]) : e.map(x => clamp(x / NFL_LG, 0.45, 1.8)));
     const score = [0, 0], byQ = [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0]];
     const st = [0, 1].map(() => ({ plays: 0, yds: 0, pass: 0, rush: 0, to: 0, pen: 0, penYds: 0, c3: 0, a3: 0, top: 0, sacks: 0 }));
     const qbS = R.map(() => ({ cmp: 0, att: 0, yds: 0, td: 0, int: 0, sk: 0 }));
@@ -812,6 +812,34 @@
     let s = [1, 1];
     for (let k = 0; k < 4; k++) s = [curveAt(e[0] / curveAt(s[1], 0, 2), 1, 0), curveAt(e[1] / curveAt(s[0], 0, 2), 1, 0)];
     return s;
+  }
+  // Totals: adding up two teams' ratings spreads totals too wide. Across 2024-2026 (1,900 games) games rated 60+ came in 1 to 5.6 points lower
+  // and games rated under 45 came in 2.5 to 4.3 higher; actual totals moved 0.59 to 0.81 points per rated point. The total keeps
+  // NCAAF_TOTAL of its distance from the league average and the margin is left alone.
+  const NCAAF_TOTAL = 0.75;
+  function ncaafExpect(a, h) { const cut = (1 - NCAAF_TOTAL) * (a + h - 2 * NCAAF_LG) / 2; return [clamp(a - cut, 2, 75), clamp(h - cut, 2, 75)]; }
+  // What the engine scores divided by what it was asked for, by a team's own expected points (rows) and its opponent's (columns), measured with
+  // 6,000 games per cell after the strength curve above. Two strong offenses trade quick scores and each gets more drives (up to 13% over), and a
+  // very weak one against a strong one runs short. Targets are divided by this before they are turned into strengths.
+  const NCAAF_AX = [4, 8, 12, 16, 20, 24, 28, 32, 37, 43, 50, 58, 68];
+  const NCAAF_FIX = [
+    [1.95, 1.5, 1.31, 1.203, 1.129, 1.054, 1.002, 0.959, 0.925, 0.919, 0.887, 0.874, 0.868],
+    [1.505, 1.298, 1.184, 1.095, 1.056, 1.003, 0.963, 0.977, 0.962, 0.96, 0.926, 0.921, 0.927],
+    [1.286, 1.172, 1.113, 1.065, 1.046, 1.014, 0.984, 0.986, 0.974, 0.963, 0.959, 0.961, 0.976],
+    [1.161, 1.1, 1.054, 1.036, 1.014, 0.992, 0.984, 0.988, 0.984, 0.976, 0.967, 0.966, 0.976],
+    [1.08, 1.045, 1.029, 1.015, 1.012, 1, 0.998, 1, 0.998, 0.99, 0.993, 1.003, 0.989],
+    [1.049, 1.013, 1, 0.998, 1.005, 0.987, 0.999, 1.007, 1.011, 1.017, 1.019, 1.007, 0.996],
+    [1.004, 0.989, 0.996, 0.995, 1.011, 1.012, 1.029, 1.034, 1.045, 1.044, 1.043, 1.036, 1.019],
+    [0.992, 0.984, 0.989, 0.995, 1.002, 1.006, 1.026, 1.051, 1.056, 1.068, 1.065, 1.057, 1.039],
+    [0.978, 0.985, 0.994, 1.003, 0.992, 1.002, 1.024, 1.046, 1.062, 1.067, 1.073, 1.071, 1.065],
+    [0.968, 0.972, 0.989, 0.992, 1.005, 1.009, 1.03, 1.053, 1.068, 1.095, 1.105, 1.101, 1.082],
+    [0.965, 0.988, 0.993, 1.006, 1.009, 1.003, 1.029, 1.039, 1.059, 1.09, 1.118, 1.122, 1.119],
+    [0.971, 0.99, 0.998, 1.003, 1.01, 1.005, 1.016, 1.029, 1.043, 1.073, 1.099, 1.123, 1.128],
+    [0.965, 0.995, 1.002, 1.005, 1.011, 1.002, 1.005, 1.014, 1.026, 1.041, 1.062, 1.095, 1.126]];
+  function ncaafFix(own, opp) {
+    const A = NCAAF_AX, pos = x => { x = clamp(x, A[0], A[A.length - 1]); let i = 0; while (i < A.length - 2 && x > A[i + 1]) i++; return [i, (x - A[i]) / (A[i + 1] - A[i])]; };
+    const [i, u] = pos(own), [j, v] = pos(opp), T = NCAAF_FIX;
+    return (T[i][j] * (1 - v) + T[i][j + 1] * v) * (1 - u) + (T[i + 1][j] * (1 - v) + T[i + 1][j + 1] * v) * u;
   }
   function ncaafGame(away, home, rng, opts) { return nflGame(away, home, rng, Object.assign({}, opts, { college: true, weather: null })); }
 
