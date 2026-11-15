@@ -76,7 +76,7 @@
   .inj, .goal { margin-top:8px; font-size:13px; color:var(--muted); line-height:1.5; }
   .inj .lbl, .goal .lbl { display:block; font-size:11px; text-transform:uppercase; letter-spacing:.08em; margin-bottom:1px; }
   .inj b, .goal b { color:var(--text); }
-  .st-out { color:var(--bad); } .st-q { color:#d9a441; }
+  .st-out { color:var(--bad); } .st-q { color:#d9a441; } .st-ok { color:var(--good, #4cc38a); }
   details.how { margin:2px 0 6px; }
   @media (max-width:560px) { .wrap { padding:12px; } .g-teams { font-size:20px; } table.cmp td:first-child, table.cmp th:first-child { width:30%; } }
 </style>
@@ -117,6 +117,9 @@
 <script src="data.js" onerror="void 0"></script>
 <script src="backtest-results.js" onerror="void 0"></script>
 <script src="picks-results.js" onerror="void 0"></script>
+<script src="news-data.js" onerror="void 0"></script>
+<script src="blend-weights.js" onerror="void 0"></script>
+<script src="recap-data.js" onerror="void 0"></script>
 <script>
 const $ = id => document.getElementById(id);
 let sport = 'nba';
@@ -300,7 +303,8 @@ function market(g) {
 const SPREAD_SD = { nfl: 13.2, nba: 12.0, ncaaf: 16, ncaab: 11 }, normCdf = z => 0.5 * (1 + Math.sign(z) * Math.sqrt(1 - Math.exp(-4 * (z / Math.SQRT2) ** 2 / Math.PI)));
 // Sim weight in the best-pick blend. The market beat the sim in the NFL backtests (best weight 0% in 2024, 25% in 2025) and in the live
 // track record for every sport so far, so best picks lean on the market; with no line posted yet, the sim's own number is used.
-const BLEND = { nfl: 0.15, nba: 0.15, nhl: 0.15, ncaaf: 0.3, ncaab: 0.1 };   // college: from backtest-college.js against closing lines (best weight 30% and 45% in football, 10% and 15% in basketball)
+const BLEND = Object.assign({ nfl: 0.15, nba: 0.15, nhl: 0.15, ncaaf: 0.3, ncaab: 0.1 }, (window.BLEND_FIT && window.BLEND_FIT.apply) || {});   // fit-blend.js replaces a default only after 150 scored games in that sport
+const BLEND_DEFAULT_NOTE = 'defaults until a sport has 150 scored games with a line, then fitted by fit-blend.js';   // college: from backtest-college.js against closing lines (best weight 30% and 45% in football, 10% and 15% in basketball)
 // Spread and total picks: the same blend, measured against the posted number. The blend only differs from the line by the sim's share of the
 // sim's disagreement, so these are small edges; the chance is a normal approximation around the blended number (SDs from the backtests).
 // Live record so far: when the sim disagreed by 2+ points its side hit 48% (NBA spreads) and 44% (NBA totals), so treat these as close to coin flips.
@@ -337,6 +341,37 @@ function injHtml(g) {
   const part = (abbr, t) => { const l = Sim.injuries(sport, t, 3); return l.length ? '<div><b>' + abbr + '</b> ' + l.map(p => '<span class="' + (p.out ? 'st-out' : 'st-q') + '">' + p.name + ' (' + ST[p.status] + ')</span>').join(', ') + '</div>' : ''; };
   const bits = part(g.away.abbr, a) + part(g.home.abbr, h);
   return bits ? '<div class="inj"><span class="lbl">Injuries</span>' + bits + '</div>' : '';
+}
+// Headline flags from fetch-news.js (last 48 hours): display only, the sim does not use them. Hover for the headline and outlet.
+const NEWS_LABEL = { out: 'out', doubtful: 'doubtful', questionable: 'questionable', playing: 'expected to play' };
+function newsHtml(g) {
+  const N = window.NEWS; if (!N || !N.items || !N.items.length) return '';
+  const a = findTeam(sport, g.away), h = findTeam(sport, g.home); if (!a || !h) return '';
+  const ago = d => { const m = Math.round((Date.now() - new Date(d)) / 60000); return m < 90 ? Math.max(1, m) + ' min ago' : m < 2880 ? Math.round(m / 60) + ' h ago' : Math.round(m / 1440) + ' d ago'; };
+  const part = (abbr, t) => {
+    const seen = new Set(), l = N.items.filter(i => i.sport === sport && i.team === t.name && !seen.has(i.player) && seen.add(i.player)).slice(0, 3);
+    return l.length ? '<div><b>' + abbr + '</b> ' + l.map(i => '<span class="' + (i.status === 'out' || i.status === 'doubtful' ? 'st-out' : i.status === 'playing' ? 'st-ok' : 'st-q') + '" title="' + String(i.title).replace(/"/g, '&quot;') + ' (' + i.source + ', ' + ago(i.date) + ')">' + i.player + ' (' + NEWS_LABEL[i.status] + (i.by === 'model' ? ', AI-read' : '') + ')</span>').join(', ') + '</div>' : '';
+  };
+  const bits = part(g.away.abbr, a) + part(g.home.abbr, h);
+  return bits ? '<div class="inj"><span class="lbl">News <span class="muted">(headlines, not in the sim)</span></span>' + bits + '</div>' : '';
+}
+// Alerts: where the sim and the market disagree by 12+ points, and players the headlines say are out or doubtful.
+function alertsHtml(sched, res) {
+  if (!res) return '';
+  const items = [], fav = (g, p) => p >= 0.5 ? g.home.abbr + ' ' + Math.round(p * 100) + '%' : g.away.abbr + ' ' + Math.round((1 - p) * 100) + '%';
+  sched.forEach((g, i) => {
+    const r = res[i]; if (!r) return;
+    const mp = marketProb(market(g)); if (mp != null && Math.abs(r.pHome - mp) >= 0.12) items.push({ w: 2, t: '<b>' + g.away.abbr + ' @ ' + g.home.abbr + '</b>: the sim gives ' + fav(g, r.pHome) + ', the market ' + fav(g, mp) + '.' });
+    for (const [ab, side] of [[g.away.abbr, g.away], [g.home.abbr, g.home]]) { const t = findTeam(sport, side); if (!t) continue;
+      for (const n of (window.NEWS && window.NEWS.items) || []) if (n.sport === sport && n.team === t.name && (n.status === 'out' || n.status === 'doubtful')) items.push({ w: 1, t: '<b>' + ab + '</b>: ' + n.player + ' is ' + NEWS_LABEL[n.status] + ' per a headline (' + n.source + ').' }); }
+  });
+  const seen = new Set(), list = items.sort((a, b) => b.w - a.w).filter(x => !seen.has(x.t) && seen.add(x.t)).slice(0, 8);
+  return list.length ? '<details class="fold" open><summary>Alerts (' + list.length + ')</summary><ul style="margin:4px 0 0 18px;padding:0;font-size:13px;line-height:1.5">' + list.map(x => '<li>' + x.t + '</li>').join('') + '</ul></details>' : '';
+}
+// Plain-English recap of the last 30 hours of finished games, written by recap.js from the scored picks.
+function recapHtml() {
+  const R = window.RECAP && window.RECAP.leagues && window.RECAP.leagues[sport]; if (!R) return '';
+  return '<details class="fold"><summary>Last ' + window.RECAP.hours + ' hours</summary>' + R.lines.map(l => '<p class="note" style="margin:3px 0">' + l + '</p>').join('') + '</details>';
 }
 function marketProb(mk) { return mk.homeProb != null ? mk.homeProb : (mk.homeMargin != null && SPREAD_SD[sport]) ? normCdf(mk.homeMargin / SPREAD_SD[sport]) : null; }
 
@@ -402,7 +437,7 @@ function gameCard(g, i, r) {
   return { day: dayLabel(g.date), html: '<div class="game' + cls + '"><div class="g-top"><span class="when">' + when + '</span>' + chips.map(c => '<span class="chip">' + c + '</span>').join('') + '<button class="act alt" data-load="' + i + '">Open in simulator</button></div>' +
     '<div class="g-teams">' + rk(g.away) + g.away.abbr + ' <span class="at">' + (g.venue && g.venue.neutral && S[sport].college ? 'vs' : '@') + '</span> ' + rk(g.home) + g.home.abbr + '<span class="mline">' + (mk.text !== '–' ? 'Line: ' + mk.text : '') + '</span></div>' +
     (S[sport].college ? '<div class="g-names">' + g.away.name + (g.venue && g.venue.neutral ? ' vs ' : ' at ') + g.home.name + '</div>' : '') +
-    '<table class="cmp"><tr><th></th><th>Sim</th><th>Market</th></tr>' + rows + '</table>' + verdict + goalie + injHtml(g) + '</div>' };
+    '<table class="cmp"><tr><th></th><th>Sim</th><th>Market</th></tr>' + rows + '</table>' + verdict + goalie + injHtml(g) + newsHtml(g) + '</div>' };
 }
 function renderUpcoming() {
   const box = $('upcoming'), sched = window.LIVE_DATA && window.LIVE_DATA.schedule && window.LIVE_DATA.schedule[sport];
@@ -428,9 +463,9 @@ function renderUpcoming() {
           (ats ? '<td>' + pickHtml(spreadPick(g, res[i], mk)) + '</td>' : '') + '<td>' + pickHtml(totalPick(res[i], mk)) + '</td></tr>'; }).join('') +
       '</table></details>';
   }
-  html = sum + html;
+  html = alertsHtml(sched, res) + recapHtml() + sum + html;
   box.innerHTML = head + '<p class="note" style="margin:0 0 6px">Data updated ' + new Date(gen).toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' }) + ' (' + Math.round((Date.now() - new Date(gen)) / 60000) + ' min ago). Late scratches can be missing.</p>' +
-    '<details class="how"><summary>How to read this</summary><p class="note">Sim = this simulator, 2,000 games per matchup, calibrated on the backtest. Market = ESPN/DraftKings at the last data update. &ldquo;Margin&rdquo; is the expected winning margin; &ldquo;Total&rdquo; is both teams&rsquo; points added together. Travel chips are information only: backtests found no reliable effect of travel distance or time zones, and the live log is recording it to check again. Missing key defenders raise the opponent&rsquo;s scoring a little (the NFL size is backed by a weak backtest signal; the NBA and NHL sizes are judgement calls). Each game&rsquo;s best pick leans on the line (85% market, 15% sim), because the line beat the sim in the NFL backtests and in the live track record for every sport; with no line posted yet it is the sim alone. NHL win chances are only slightly better than a coin flip.' + (S[sport].college ? ' College ratings are points scored and allowed, adjusted for each opponent and for luck in the box score. There is no college injury report: a regular who sat out his team&rsquo;s last game is treated as out and listed on the card, so check the news on a big gap. No weather.' : '') + '</p></details>' + html;
+    '<details class="how"><summary>How to read this</summary><p class="note">Sim = this simulator, 2,000 games per matchup, calibrated on the backtest. Market = ESPN/DraftKings at the last data update. &ldquo;Margin&rdquo; is the expected winning margin; &ldquo;Total&rdquo; is both teams&rsquo; points added together. <b>Alerts</b> list big sim-versus-market gaps and players a recent headline calls out or doubtful; the <b>News</b> row on a card shows those headlines (read by keyword rules; hover for the outlet) and the sim does not use them. Travel chips are information only: backtests found no reliable effect of travel distance or time zones, and the live log is recording it to check again. Missing key defenders raise the opponent&rsquo;s scoring a little (the NFL size is backed by a weak backtest signal; the NBA and NHL sizes are judgement calls). Each game&rsquo;s best pick leans on the line (' + Math.round(100 * (1 - (BLEND[sport] || 0.15))) + '% market, ' + Math.round(100 * (BLEND[sport] || 0.15)) + '% sim), because the line has beaten the sim in the backtests and the live track record so far; with no line posted yet it is the sim alone. NHL win chances are only slightly better than a coin flip.' + (S[sport].college ? ' College ratings are points scored and allowed, adjusted for each opponent and for luck in the box score. There is no college injury report: a regular who sat out his team&rsquo;s last game is treated as out and listed on the card, so check the news on a big gap. No weather.' : '') + '</p></details>' + html;
   box.querySelectorAll('[data-load]').forEach(b => b.onclick = () => loadGame(sched[+b.dataset.load]));
   if (!res) runSim();
 }

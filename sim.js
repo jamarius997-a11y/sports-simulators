@@ -22,12 +22,15 @@
   function normal(rng) { return Math.sqrt(-2 * Math.log(1 - rng())) * Math.cos(2 * Math.PI * rng()); }
   const clamp = (x, lo, hi) => Math.min(hi, Math.max(lo, x));
   // Chance a player with an uncertain injury designation does not play (a hard "Out" always sits).
-  const SIT = { doubtful: 0.75, questionable: 0.4, 'day-to-day': 0.3, probable: 0.05 };
+  // Fit on the NFL's official reports, 2024 and 2025 (nflverse injuries against snap counts; sitfit.js in the audit): Doubtful sat 309 of 309 times
+  // (the old 0.75 was too low), Questionable sat 35% of 2,608 times but quarterbacks 73% of 73. Only the NFL has this history; the other sports reuse the
+  // numbers, and "day-to-day" and "probable" are still estimates.
+  const SIT = { doubtful: 0.99, questionable: 0.35, 'day-to-day': 0.3, probable: 0.05 }, SIT_QB = { questionable: 0.73 };
   function sits(p, rng) {
     if (p.out) return true;
     if (!p.note || !rng) return false;
     const n = p.note.toLowerCase();
-    for (const k in SIT) if (n.includes(k)) return rng() < SIT[k];
+    for (const k in SIT) if (n.includes(k)) return rng() < (p.pos === 'QB' && SIT_QB[k] != null ? SIT_QB[k] : SIT[k]);
     return false;
   }
 

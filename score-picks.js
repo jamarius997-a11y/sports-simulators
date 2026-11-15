@@ -9,7 +9,7 @@ const dump = o => '{\n' + Object.keys(o).map(k => JSON.stringify(k) + ':' + JSON
 // Scored games older than KEEP_DAYS move out of picks-log.json into picks-archive/<year-month>.json, trimmed to what the track record needs,
 // so the log that is rewritten on every refresh stays small (college adds about 150 games a day).
 const ARCH = path.join(__dirname, 'picks-archive'), KEEP_DAYS = 3;
-const slim = e => ({ key: e.key, league: e.league, start: e.start, away: { abbr: e.away.abbr }, home: { abbr: e.home.abbr }, espnPHome: e.espnPHome, simPHome: e.simPHome, simMargin: e.simMargin, simTotal: e.simTotal, blendPHome: e.blendPHome,
+const slim = e => ({ key: e.key, league: e.league, start: e.start, away: { abbr: e.away.abbr }, home: { abbr: e.home.abbr }, espnPHome: e.espnPHome, simPHome: e.simPHome, simMargin: e.simMargin, simTotal: e.simTotal, blendPHome: e.blendPHome, news: e.news,
   lines: e.lines && e.lines.length >= 2 ? [e.lines[0], e.lines[e.lines.length - 1]].map(l => ({ pHome: l.pHome })) : undefined, mkt: e.mkt && { pHome: e.mkt.pHome, margin: e.mkt.margin, total: e.mkt.total }, result: e.result });
 function archive() {
   const move = Object.values(log).filter(e => e.result && new Date(e.start).getTime() < Date.now() - KEEP_DAYS * 86400000), byMonth = {};
@@ -69,7 +69,7 @@ const ymdOf = d => d.getUTCFullYear() + String(d.getUTCMonth() + 1).padStart(2, 
     const callsT = T.filter(e => Math.abs(e.simTotal - e.mkt.total) >= 2 && tot(e) !== e.mkt.total), callsS = S.filter(e => Math.abs(e.simMargin - e.mkt.margin) >= 2 && mar(e) !== e.mkt.margin);
     const MV = done.filter(e => e.lines && e.lines.length >= 2 && e.lines[0].pHome != null && e.lines[e.lines.length - 1].pHome != null && Math.abs(e.lines[e.lines.length - 1].pHome - e.lines[0].pHome) >= 0.01);
     const towardSim = e => Math.sign(e.lines[e.lines.length - 1].pHome - e.lines[0].pHome) === Math.sign(e.simPHome - e.lines[0].pHome);
-    const BW = { nfl: 0.15, ncaaf: 0.3, ncaab: 0.1 }[sp], B = BW == null ? [] : M.filter(e => e.blendPHome != null);
+    const BW = { nba: 0.15, nfl: 0.15, nhl: 0.15, ncaaf: 0.3, ncaab: 0.1 }[sp], B = BW == null ? [] : M.filter(e => e.blendPHome != null);
     out.leagues[sp] = {
       n: done.length, pending,
       acc: right(done, e => e.simPHome), brier: mean(done, e => (e.simPHome - y(e)) ** 2),
@@ -83,6 +83,9 @@ const ymdOf = d => d.getUTCFullYear() + String(d.getUTCMonth() + 1).padStart(2, 
       totBias: mean(T, e => tot(e) - e.simTotal), mktTotBias: mean(T, e => tot(e) - e.mkt.total),
       nCallT: callsT.length, hitCallT: callsT.length ? +(callsT.filter(e => (e.simTotal > e.mkt.total) === (tot(e) > e.mkt.total)).length / callsT.length).toFixed(3) : null,
       nCallS: callsS.length, hitCallS: callsS.length ? +(callsS.filter(e => (e.simMargin > e.mkt.margin) === (mar(e) > e.mkt.margin)).length / callsS.length).toFixed(3) : null,
+      // headline flags (fetch-news.js): games where exactly one side had a player flagged OUT. newsMiss = points by which the flagged side did WORSE than the sim expected
+      // (positive means the sim was missing something the headline knew). Needs a few hundred games before it means anything.
+      ...(NO => ({ nNews: NO.length, newsMiss: mean(NO, e => { const resid = mar(e) - e.simMargin; return e.news[1].some(x => x.s === 'out') ? -resid : resid; }) }))(done.filter(e => e.news && e.news[0].some(x => x.s === 'out') !== e.news[1].some(x => x.s === 'out'))),
       nTot: T.length, totMAESim: mean(T, e => Math.abs(e.simTotal - (e.result.homeScore + e.result.awayScore))), totMAEMkt: mean(T, e => Math.abs(e.mkt.total - (e.result.homeScore + e.result.awayScore))),
       recent: done.slice(-15).reverse().map(e => ({ d: e.start, g: e.away.abbr + ' @ ' + e.home.abbr, p: e.simPHome, mp: e.mkt && e.mkt.pHome, st: e.simTotal, mt: e.mkt && e.mkt.total, hs: e.result.homeScore, as: e.result.awayScore })),
     };

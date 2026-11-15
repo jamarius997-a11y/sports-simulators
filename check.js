@@ -1,4 +1,6 @@
 // Quick health check for every sport: node check.js   (exit code 1 if anything fails)
+// node check.js --ci   fails only on hard errors (a crash, a missing or NaN rating, a bad score, an unreadable picks log); softer findings (fewer players than usual,
+//                      no backtest) are printed as warnings. The refresh workflow runs this before committing, so bad data never reaches the site.
 // Loads the live data, then for each sport plays a detailed game, a 400-game Monte Carlo and a series, and checks the upcoming schedule,
 // the picks log and the track record all line up. Run it after changing sim.js or the data scripts.
 'use strict';
@@ -7,7 +9,8 @@ global.window = global;
 const Sim = require('./sim.js');
 require('./data.js'); try { require('./backtest-results.js'); require('./picks-results.js'); } catch (e) { /* optional */ }
 const D = window.LIVE_DATA, live = Sim.applyLive(D), fails = [];
-const ok = (cond, msg) => { if (!cond) fails.push(msg); return cond; };
+const CI = process.argv.includes('--ci'), warns = [], SOFT = /fewer than 90%|no backtest/;
+const ok = (cond, msg) => { if (!cond) (CI && SOFT.test(msg) ? warns : fails).push(msg); return cond; };
 const fin = x => typeof x === 'number' && isFinite(x);
 
 for (const sp of Object.keys(Sim.SPORTS)) {
@@ -45,5 +48,6 @@ try {
   ok(Object.values(log).every(e => e.key && e.league && e.start && fin(e.simPHome)), 'picks-log.json has a malformed entry');
   console.log('picks-log.json: ' + n + ' games, ' + kb + ' KB');
 } catch (e) { fails.push('picks-log.json unreadable: ' + e.message); }
+if (warns.length) console.log('\nWarnings (not blocking):\n - ' + warns.join('\n - '));
 if (fails.length) { console.log('\nPROBLEMS:\n - ' + fails.join('\n - ')); process.exit(1); }
 console.log('\nAll checks passed.');

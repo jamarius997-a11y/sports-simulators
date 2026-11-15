@@ -1,0 +1,26 @@
+# A weekly health and accuracy report (reports/weekly-<date>.md): live record vs backtest and market, drift flags, feed checks. Plain statistics, no model.
+# Runs Mondays at 14:11 UTC (off the hour on purpose: GitHub drops scheduled runs at :00 and :30). Needs Settings > Actions > General > Workflow permissions > "Read and write".
+name: weekly-review
+on:
+  schedule:
+    - cron: '11 14 * * 1'
+  workflow_dispatch: {}
+permissions:
+  contents: write
+concurrency: weekly-review
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - run: node weekly-review.js
+      - name: Commit the report
+        run: |
+          git config user.name "sportssim-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add reports
+          git diff --cached --quiet || git commit -m "Weekly review"
+          git pull --rebase -q
+          git push

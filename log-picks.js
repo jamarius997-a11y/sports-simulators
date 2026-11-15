@@ -7,6 +7,8 @@ const Sim = require('./sim.js');
 const Travel = require('./travel.js');
 require('./data.js');
 try { require('./backtest-results.js'); } catch (e) { /* optional */ }
+try { require('./news-data.js'); } catch (e) { /* optional */ }
+const newsFor = (sp, team) => ((window.NEWS && window.NEWS.items) || []).filter(i => i.sport === sp && i.team === team.name && i.status !== 'playing').map(i => ({ p: i.player, s: i.status, by: i.by }));   // headline flags, kept so score-picks.js can check them
 Sim.applyLive(window.LIVE_DATA);
 
 const FILE = path.join(__dirname, 'picks-log.json');
@@ -33,7 +35,8 @@ function market(sp, g) {
 }
 // sim weight in the sim/market blend, the same numbers index.html uses for best picks (nfl backtests: best weight 0% in 2024, 25% in 2025;
 // college football 30% and 45%, college basketball 10% and 15%)
-const BLEND = { nfl: 0.15, ncaaf: 0.3, ncaab: 0.1 };
+try { require('./blend-weights.js'); } catch (e) { /* optional */ }   // fit-blend.js: fitted weights once a sport has enough scored games
+const BLEND = Object.assign({ nba: 0.15, nfl: 0.15, nhl: 0.15, ncaaf: 0.3, ncaab: 0.1 }, (window.BLEND_FIT && window.BLEND_FIT.apply) || {});
 const dump = o => '{\n' + Object.keys(o).map(k => JSON.stringify(k) + ':' + JSON.stringify(o[k])).join(',\n') + '\n}\n';   // one game per line: small file, readable diffs
 // every refresh that sees a different market appends a snapshot, so we keep opening-to-closing line movement for free
 function lineHistory(prev, mk) {
@@ -71,6 +74,7 @@ for (const sp of ['nba', 'nfl', 'nhl', 'ncaaf', 'ncaab']) {
       simPHome: +(1 / (1 + Math.exp(-a * z))).toFixed(4), rawPHome: +raw.toFixed(4), simMargin: +(m.avg[1] - m.avg[0]).toFixed(2), simScore: [+m.avg[0].toFixed(2), +m.avg[1].toFixed(2)], simTotal: +m.avgTotal.toFixed(2),
       blendPHome: BLEND[sp] != null && mk.pHome != null ? +(BLEND[sp] * (1 / (1 + Math.exp(-a * z))) + (1 - BLEND[sp]) * mk.pHome).toFixed(4) : undefined,
       inj: col ? [Sim.injuries(sp, away, 2), Sim.injuries(sp, home, 2)].map(l => l.map(p => ({ name: p.name, status: p.status }))) : [Sim.injuries(sp, away), Sim.injuries(sp, home)],
+      news: (n => n[0].length || n[1].length ? n : undefined)([newsFor(sp, away), newsFor(sp, home)]),
       lines: col ? lineHistory(prev, mk).slice(-8) : lineHistory(prev, mk),
       travel: col ? undefined : [[g.awayFrom, g.home.abbr], [g.homeFrom, g.home.abbr]].map(([f, to]) => f && f !== to ? { from: f, miles: Math.round(Travel.miles(sp, f, to) || 0), tz: Travel.tzShift(sp, f, to) } : null),
       mkt: mk, loggedAt: new Date().toISOString(), result: prev ? prev.result : null,

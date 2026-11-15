@@ -322,6 +322,19 @@ async function build(L) {
   const scale = 1, lgMean = (mean('off') + mean('def')) / 2;
 
   const result = {};
+  // The NFL's own injury report overrides ESPN's status for the players it lists (see sources.js); counted so a quiet failure shows in the log.
+  const Src = require('./sources.js'), official = L === 'nfl' ? await Src.nflOfficial() : null, ofc = { teams: 0, players: 0, changed: 0 };
+  if (L === 'nfl') console.log('  NFL.com official report: ' + (official ? Object.keys(official).length + ' teams' : 'unavailable'));
+  function applyOfficial(t, players) {
+    const rows = official && Object.keys(official).filter(n => t.displayName.endsWith(n)).map(n => official[n])[0]; if (!rows) return; ofc.teams++;
+    const all = [].concat(players.qb || [], players.rb || [], players.rec || [], players.ol || [], players.defense || []), by = {};
+    for (const p of all) by[Src.snapName(p.name)] = p;
+    for (const r of rows) {
+      const p = by[Src.snapName(r.name)]; if (!r.game || !p) continue; ofc.players++;
+      const was = p.out ? 'Out' : (/doubtful/i.test(p.note || '') ? 'Doubtful' : /question/i.test(p.note || '') ? 'Questionable' : '');
+      p.out = r.game === 'Out'; p.note = r.game + (r.injury ? ' (' + r.injury + ')' : ''); if (was !== r.game) ofc.changed++;
+    }
+  }
   await pool(teams, 4, async t => {
     if (!raw[t.id]) return;
     const rost = await get(SITE + cfg.sport + '/' + key + '/teams/' + t.id + '/roster');
@@ -342,9 +355,11 @@ async function build(L) {
       const code = NFLV_CODE[t.abbreviation] || t.abbreviation, snap = snaps ? name => snaps(code, name) : null;
       entry.players = nflPlayers(rows, await depthOf('nfl', t.id, 'qb'), ath); entry.players.defense = nflDefenders(defs, dc, dp, snap);
       if (snap) { for (const p of entry.players.rb.concat(entry.players.rec)) p.snap = snap(p.name); entry.players.ol = nflLine(ath, snap); }
+      applyOfficial(t, entry.players);
     }
     result[t.abbreviation] = entry;
   });
+  if (L === 'nfl' && official) console.log('  NFL.com official report: ' + ofc.players + ' players matched on ' + ofc.teams + ' teams, ' + ofc.changed + ' statuses differed from ESPN\'s');
   META[L] = { lg: Math.round(lgMean * 1000) / 1000 };
   return result;
 }
